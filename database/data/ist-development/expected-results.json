@@ -1,0 +1,754 @@
+{
+  "schema_version": 1,
+  "dataset": "ist-development",
+  "dataset_type": "development",
+  "metadata_only": true,
+  "dataset_version": 1,
+  "record_version": 900000001,
+  "answer_sheet": {
+    "SE": [
+      {
+        "question_number": 1,
+        "selected_option_key": "A",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 2,
+        "selected_option_key": "B",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 3,
+        "selected_option_key": "C",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 4,
+        "selected_option_key": "D",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 5,
+        "selected_option_key": "E",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 6,
+        "selected_option_key": "A",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 7,
+        "selected_option_key": "B",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 8,
+        "selected_option_key": "C",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 9,
+        "selected_option_key": "D",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 10,
+        "selected_option_key": "E",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 11,
+        "selected_option_key": "A",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 12,
+        "selected_option_key": "B",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      }
+    ],
+    "WA": [
+      {
+        "question_number": 1,
+        "selected_option_key": "A",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 2,
+        "selected_option_key": "B",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 3,
+        "selected_option_key": "C",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 4,
+        "selected_option_key": "D",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 5,
+        "selected_option_key": "E",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 6,
+        "selected_option_key": "A",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 7,
+        "selected_option_key": "B",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 8,
+        "selected_option_key": "C",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 9,
+        "selected_option_key": "D",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 10,
+        "selected_option_key": "E",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 11,
+        "selected_option_key": "A",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 12,
+        "selected_option_key": "B",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      }
+    ],
+    "AN": [
+      {
+        "question_number": 1,
+        "selected_option_key": "A",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 2,
+        "selected_option_key": "B",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 3,
+        "selected_option_key": "C",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 4,
+        "selected_option_key": "D",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 5,
+        "selected_option_key": "E",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 6,
+        "selected_option_key": "A",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 7,
+        "selected_option_key": "B",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 8,
+        "selected_option_key": "C",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 9,
+        "selected_option_key": "D",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 10,
+        "selected_option_key": "E",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 11,
+        "selected_option_key": "A",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 12,
+        "selected_option_key": "B",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      }
+    ],
+    "GE": [
+      {
+        "question_number": 1,
+        "selected_option_key": "A",
+        "expected_score": 4,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 2,
+        "selected_option_key": "B",
+        "expected_score": 4,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 3,
+        "selected_option_key": "C",
+        "expected_score": 4,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 4,
+        "selected_option_key": "D",
+        "expected_score": 4,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 5,
+        "selected_option_key": "E",
+        "expected_score": 4,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 6,
+        "selected_option_key": "A",
+        "expected_score": 4,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 7,
+        "selected_option_key": "B",
+        "expected_score": 4,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 8,
+        "selected_option_key": "C",
+        "expected_score": 4,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 9,
+        "selected_option_key": "D",
+        "expected_score": 4,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 10,
+        "selected_option_key": "E",
+        "expected_score": 4,
+        "expected_outcome": "correct"
+      }
+    ],
+    "RA": [
+      {
+        "question_number": 1,
+        "numeric_answer": "10.000000",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 2,
+        "numeric_answer": "20.000000",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 3,
+        "numeric_answer": "30.000000",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 4,
+        "numeric_answer": "40.000000",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 5,
+        "numeric_answer": "50.000000",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 6,
+        "numeric_answer": "60.000000",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 7,
+        "numeric_answer": "70.000000",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 8,
+        "numeric_answer": "80.000000",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 9,
+        "numeric_answer": "90.000000",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 10,
+        "numeric_answer": "100.000000",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 11,
+        "numeric_answer": "110.000000",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 12,
+        "numeric_answer": "120.000000",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      }
+    ],
+    "ZR": [
+      {
+        "question_number": 1,
+        "numeric_answer": "10.000000",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 2,
+        "numeric_answer": "20.000000",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 3,
+        "numeric_answer": "30.000000",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 4,
+        "numeric_answer": "40.000000",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 5,
+        "numeric_answer": "50.000000",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 6,
+        "numeric_answer": "60.000000",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 7,
+        "numeric_answer": "70.000000",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 8,
+        "numeric_answer": "80.000000",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 9,
+        "numeric_answer": "90.000000",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 10,
+        "numeric_answer": "100.000000",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 11,
+        "numeric_answer": "110.000000",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 12,
+        "numeric_answer": "120.000000",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      }
+    ],
+    "FA": [
+      {
+        "question_number": 1,
+        "selected_option_key": "A",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 2,
+        "selected_option_key": "B",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 3,
+        "selected_option_key": "C",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 4,
+        "selected_option_key": "D",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 5,
+        "selected_option_key": "E",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 6,
+        "selected_option_key": "A",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 7,
+        "selected_option_key": "B",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 8,
+        "selected_option_key": "C",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 9,
+        "selected_option_key": "D",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 10,
+        "selected_option_key": "E",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      }
+    ],
+    "WU": [
+      {
+        "question_number": 1,
+        "selected_option_key": "A",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 2,
+        "selected_option_key": "B",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 3,
+        "selected_option_key": "C",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 4,
+        "selected_option_key": "D",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 5,
+        "selected_option_key": "E",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 6,
+        "selected_option_key": "A",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 7,
+        "selected_option_key": "B",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 8,
+        "selected_option_key": "C",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 9,
+        "selected_option_key": "D",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 10,
+        "selected_option_key": "E",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 11,
+        "selected_option_key": "A",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 12,
+        "selected_option_key": "B",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      }
+    ],
+    "ME": [
+      {
+        "question_number": 1,
+        "selected_option_key": "A",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 2,
+        "selected_option_key": "B",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 3,
+        "selected_option_key": "C",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 4,
+        "selected_option_key": "D",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 5,
+        "selected_option_key": "E",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 6,
+        "selected_option_key": "A",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 7,
+        "selected_option_key": "B",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 8,
+        "selected_option_key": "C",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 9,
+        "selected_option_key": "D",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 10,
+        "selected_option_key": "E",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 11,
+        "selected_option_key": "A",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      },
+      {
+        "question_number": 12,
+        "selected_option_key": "B",
+        "expected_score": 1,
+        "expected_outcome": "correct"
+      }
+    ]
+  },
+  "expected_all_correct": {
+    "scored_question_count": 104,
+    "total_awarded_score": 134,
+    "total_max_score": 134,
+    "total_internal_score": 100,
+    "subtests": {
+      "SE": {
+        "awarded_score": 12,
+        "max_score": 12,
+        "correct_count": 12,
+        "partial_count": 0,
+        "wrong_count": 0,
+        "blank_count": 0,
+        "percentage": 100
+      },
+      "WA": {
+        "awarded_score": 12,
+        "max_score": 12,
+        "correct_count": 12,
+        "partial_count": 0,
+        "wrong_count": 0,
+        "blank_count": 0,
+        "percentage": 100
+      },
+      "AN": {
+        "awarded_score": 12,
+        "max_score": 12,
+        "correct_count": 12,
+        "partial_count": 0,
+        "wrong_count": 0,
+        "blank_count": 0,
+        "percentage": 100
+      },
+      "GE": {
+        "awarded_score": 40,
+        "max_score": 40,
+        "correct_count": 10,
+        "partial_count": 0,
+        "wrong_count": 0,
+        "blank_count": 0,
+        "percentage": 100
+      },
+      "RA": {
+        "awarded_score": 12,
+        "max_score": 12,
+        "correct_count": 12,
+        "partial_count": 0,
+        "wrong_count": 0,
+        "blank_count": 0,
+        "percentage": 100
+      },
+      "ZR": {
+        "awarded_score": 12,
+        "max_score": 12,
+        "correct_count": 12,
+        "partial_count": 0,
+        "wrong_count": 0,
+        "blank_count": 0,
+        "percentage": 100
+      },
+      "FA": {
+        "awarded_score": 10,
+        "max_score": 10,
+        "correct_count": 10,
+        "partial_count": 0,
+        "wrong_count": 0,
+        "blank_count": 0,
+        "percentage": 100
+      },
+      "WU": {
+        "awarded_score": 12,
+        "max_score": 12,
+        "correct_count": 12,
+        "partial_count": 0,
+        "wrong_count": 0,
+        "blank_count": 0,
+        "percentage": 100
+      },
+      "ME": {
+        "awarded_score": 12,
+        "max_score": 12,
+        "correct_count": 12,
+        "partial_count": 0,
+        "wrong_count": 0,
+        "blank_count": 0,
+        "percentage": 100
+      }
+    }
+  },
+  "verification_cases": {
+    "numeric_canonical_equivalents": [
+      "10",
+      "10.0",
+      "10.000000"
+    ],
+    "ge_partial_scores": [
+      1,
+      2,
+      3
+    ],
+    "blank_score": 0
+  }
+}

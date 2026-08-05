@@ -1,0 +1,802 @@
+{
+  "schema_version": 1,
+  "dataset": "ist-development",
+  "dataset_version": 1,
+  "code": "GE",
+  "instruction_content": "[DEV:ist-development] Petunjuk dummy GE. Semua materi hanya untuk development/testing dan bukan soal IST asli.",
+  "memorization_content": null,
+  "questions": [
+    {
+      "question_number": 1,
+      "display_order": 1,
+      "kind": "scored",
+      "answer_type": "single_choice_weighted",
+      "prompt": "[DEV:ist-development] Pilih tingkat kecocokan tertinggi untuk aturan DEV-GE-1.",
+      "image_disk": null,
+      "image_path": null,
+      "image_alt": null,
+      "example_explanation": null,
+      "numeric_answer_key": null,
+      "max_score": 4,
+      "source_version": 900000001,
+      "is_active": true,
+      "options": [
+        {
+          "option_key": "A",
+          "option_text": "DEV-GE-1-A tingkat 4",
+          "image_disk": null,
+          "image_path": null,
+          "image_alt": null,
+          "display_order": 1,
+          "is_correct": true,
+          "score_value": 4,
+          "is_active": true
+        },
+        {
+          "option_key": "B",
+          "option_text": "DEV-GE-1-B tingkat 3",
+          "image_disk": null,
+          "image_path": null,
+          "image_alt": null,
+          "display_order": 2,
+          "is_correct": false,
+          "score_value": 3,
+          "is_active": true
+        },
+        {
+          "option_key": "C",
+          "option_text": "DEV-GE-1-C tingkat 2",
+          "image_disk": null,
+          "image_path": null,
+          "image_alt": null,
+          "display_order": 3,
+          "is_correct": false,
+          "score_value": 2,
+          "is_active": true
+        },
+        {
+          "option_key": "D",
+          "option_text": "DEV-GE-1-D tingkat 1",
+          "image_disk": null,
+          "image_path": null,
+          "image_alt": null,
+          "display_order": 4,
+          "is_correct": false,
+          "score_value": 1,
+          "is_active": true
+        },
+        {
+          "option_key": "E",
+          "option_text": "DEV-GE-1-E tingkat 0",
+          "image_disk": null,
+          "image_path": null,
+          "image_alt": null,
+          "display_order": 5,
+          "is_correct": false,
+          "score_value": 0,
+          "is_active": true
+        }
+      ]
+    },
+    {
+      "question_number": 2,
+      "display_order": 2,
+      "kind": "scored",
+      "answer_type": "single_choice_weighted",
+      "prompt": "[DEV:ist-development] Pilih tingkat kecocokan tertinggi untuk aturan DEV-GE-2.",
+      "image_disk": null,
+      "image_path": null,
+      "image_alt": null,
+      "example_explanation": null,
+      "numeric_answer_key": null,
+      "max_score": 4,
+      "source_version": 900000001,
+      "is_active": true,
+      "options": [
+        {
+          "option_key": "A",
+          "option_text": "DEV-GE-2-A tingkat 0",
+          "image_disk": null,
+          "image_path": null,
+          "image_alt": null,
+          "display_order": 1,
+          "is_correct": false,
+          "score_value": 0,
+          "is_active": true
+        },
+        {
+          "option_key": "B",
+          "option_text": "DEV-GE-2-B tingkat 4",
+          "image_disk": null,
+          "image_path": null,
+          "image_alt": null,
+          "display_order": 2,
+          "is_correct": true,
+          "score_value": 4,
+          "is_active": true
+        },
+        {
+          "option_key": "C",
+          "option_text": "DEV-GE-2-C tingkat 3",
+          "image_disk": null,
+          "image_path": null,
+          "image_alt": null,
+          "display_order": 3,
+          "is_correct": false,
+          "score_value": 3,
+          "is_active": true
+        },
+        {
+          "option_key": "D",
+          "option_text": "DEV-GE-2-D tingkat 2",
+          "image_disk": null,
+          "image_path": null,
+          "image_alt": null,
+          "display_order": 4,
+          "is_correct": false,
+          "score_value": 2,
+          "is_active": true
+        },
+        {
+          "option_key": "E",
+          "option_text": "DEV-GE-2-E tingkat 1",
+          "image_disk": null,
+          "image_path": null,
+          "image_alt": null,
+          "display_order": 5,
+          "is_correct": false,
+          "score_value": 1,
+          "is_active": true
+        }
+      ]
+    },
+    {
+      "question_number": 3,
+      "display_order": 3,
+      "kind": "scored",
+      "answer_type": "single_choice_weighted",
+      "prompt": "[DEV:ist-development] Pilih tingkat kecocokan tertinggi untuk aturan DEV-GE-3.",
+      "image_disk": null,
+      "image_path": null,
+      "image_alt": null,
+      "example_explanation": null,
+      "numeric_answer_key": null,
+      "max_score": 4,
+      "source_version": 900000001,
+      "is_active": true,
+      "options": [
+        {
+          "option_key": "A",
+          "option_text": "DEV-GE-3-A tingkat 1",
+          "image_disk": null,
+          "image_path": null,
+          "image_alt": null,
+          "display_order": 1,
+          "is_correct": false,
+          "score_value": 1,
+          "is_active": true
+        },
+        {
+          "option_key": "B",
+          "option_text": "DEV-GE-3-B tingkat 0",
+          "image_disk": null,
+          "image_path": null,
+          "image_alt": null,
+          "display_order": 2,
+          "is_correct": false,
+          "score_value": 0,
+          "is_active": true
+        },
+        {
+          "option_key": "C",
+          "option_text": "DEV-GE-3-C tingkat 4",
+          "image_disk": null,
+          "image_path": null,
+          "image_alt": null,
+          "display_order": 3,
+          "is_correct": true,
+          "score_value": 4,
+          "is_active": true
+        },
+        {
+          "option_key": "D",
+          "option_text": "DEV-GE-3-D tingkat 3",
+          "image_disk": null,
+          "image_path": null,
+          "image_alt": null,
+          "display_order": 4,
+          "is_correct": false,
+          "score_value": 3,
+          "is_active": true
+        },
+        {
+          "option_key": "E",
+          "option_text": "DEV-GE-3-E tingkat 2",
+          "image_disk": null,
+          "image_path": null,
+          "image_alt": null,
+          "display_order": 5,
+          "is_correct": false,
+          "score_value": 2,
+          "is_active": true
+        }
+      ]
+    },
+    {
+      "question_number": 4,
+      "display_order": 4,
+      "kind": "scored",
+      "answer_type": "single_choice_weighted",
+      "prompt": "[DEV:ist-development] Pilih tingkat kecocokan tertinggi untuk aturan DEV-GE-4.",
+      "image_disk": null,
+      "image_path": null,
+      "image_alt": null,
+      "example_explanation": null,
+      "numeric_answer_key": null,
+      "max_score": 4,
+      "source_version": 900000001,
+      "is_active": true,
+      "options": [
+        {
+          "option_key": "A",
+          "option_text": "DEV-GE-4-A tingkat 2",
+          "image_disk": null,
+          "image_path": null,
+          "image_alt": null,
+          "display_order": 1,
+          "is_correct": false,
+          "score_value": 2,
+          "is_active": true
+        },
+        {
+          "option_key": "B",
+          "option_text": "DEV-GE-4-B tingkat 1",
+          "image_disk": null,
+          "image_path": null,
+          "image_alt": null,
+          "display_order": 2,
+          "is_correct": false,
+          "score_value": 1,
+          "is_active": true
+        },
+        {
+          "option_key": "C",
+          "option_text": "DEV-GE-4-C tingkat 0",
+          "image_disk": null,
+          "image_path": null,
+          "image_alt": null,
+          "display_order": 3,
+          "is_correct": false,
+          "score_value": 0,
+          "is_active": true
+        },
+        {
+          "option_key": "D",
+          "option_text": "DEV-GE-4-D tingkat 4",
+          "image_disk": null,
+          "image_path": null,
+          "image_alt": null,
+          "display_order": 4,
+          "is_correct": true,
+          "score_value": 4,
+          "is_active": true
+        },
+        {
+          "option_key": "E",
+          "option_text": "DEV-GE-4-E tingkat 3",
+          "image_disk": null,
+          "image_path": null,
+          "image_alt": null,
+          "display_order": 5,
+          "is_correct": false,
+          "score_value": 3,
+          "is_active": true
+        }
+      ]
+    },
+    {
+      "question_number": 5,
+      "display_order": 5,
+      "kind": "scored",
+      "answer_type": "single_choice_weighted",
+      "prompt": "[DEV:ist-development] Pilih tingkat kecocokan tertinggi untuk aturan DEV-GE-5.",
+      "image_disk": null,
+      "image_path": null,
+      "image_alt": null,
+      "example_explanation": null,
+      "numeric_answer_key": null,
+      "max_score": 4,
+      "source_version": 900000001,
+      "is_active": true,
+      "options": [
+        {
+          "option_key": "A",
+          "option_text": "DEV-GE-5-A tingkat 3",
+          "image_disk": null,
+          "image_path": null,
+          "image_alt": null,
+          "display_order": 1,
+          "is_correct": false,
+          "score_value": 3,
+          "is_active": true
+        },
+        {
+          "option_key": "B",
+          "option_text": "DEV-GE-5-B tingkat 2",
+          "image_disk": null,
+          "image_path": null,
+          "image_alt": null,
+          "display_order": 2,
+          "is_correct": false,
+          "score_value": 2,
+          "is_active": true
+        },
+        {
+          "option_key": "C",
+          "option_text": "DEV-GE-5-C tingkat 1",
+          "image_disk": null,
+          "image_path": null,
+          "image_alt": null,
+          "display_order": 3,
+          "is_correct": false,
+          "score_value": 1,
+          "is_active": true
+        },
+        {
+          "option_key": "D",
+          "option_text": "DEV-GE-5-D tingkat 0",
+          "image_disk": null,
+          "image_path": null,
+          "image_alt": null,
+          "display_order": 4,
+          "is_correct": false,
+          "score_value": 0,
+          "is_active": true
+        },
+        {
+          "option_key": "E",
+          "option_text": "DEV-GE-5-E tingkat 4",
+          "image_disk": null,
+          "image_path": null,
+          "image_alt": null,
+          "display_order": 5,
+          "is_correct": true,
+          "score_value": 4,
+          "is_active": true
+        }
+      ]
+    },
+    {
+      "question_number": 6,
+      "display_order": 6,
+      "kind": "scored",
+      "answer_type": "single_choice_weighted",
+      "prompt": "[DEV:ist-development] Pilih tingkat kecocokan tertinggi untuk aturan DEV-GE-6.",
+      "image_disk": null,
+      "image_path": null,
+      "image_alt": null,
+      "example_explanation": null,
+      "numeric_answer_key": null,
+      "max_score": 4,
+      "source_version": 900000001,
+      "is_active": true,
+      "options": [
+        {
+          "option_key": "A",
+          "option_text": "DEV-GE-6-A tingkat 4",
+          "image_disk": null,
+          "image_path": null,
+          "image_alt": null,
+          "display_order": 1,
+          "is_correct": true,
+          "score_value": 4,
+          "is_active": true
+        },
+        {
+          "option_key": "B",
+          "option_text": "DEV-GE-6-B tingkat 3",
+          "image_disk": null,
+          "image_path": null,
+          "image_alt": null,
+          "display_order": 2,
+          "is_correct": false,
+          "score_value": 3,
+          "is_active": true
+        },
+        {
+          "option_key": "C",
+          "option_text": "DEV-GE-6-C tingkat 2",
+          "image_disk": null,
+          "image_path": null,
+          "image_alt": null,
+          "display_order": 3,
+          "is_correct": false,
+          "score_value": 2,
+          "is_active": true
+        },
+        {
+          "option_key": "D",
+          "option_text": "DEV-GE-6-D tingkat 1",
+          "image_disk": null,
+          "image_path": null,
+          "image_alt": null,
+          "display_order": 4,
+          "is_correct": false,
+          "score_value": 1,
+          "is_active": true
+        },
+        {
+          "option_key": "E",
+          "option_text": "DEV-GE-6-E tingkat 0",
+          "image_disk": null,
+          "image_path": null,
+          "image_alt": null,
+          "display_order": 5,
+          "is_correct": false,
+          "score_value": 0,
+          "is_active": true
+        }
+      ]
+    },
+    {
+      "question_number": 7,
+      "display_order": 7,
+      "kind": "scored",
+      "answer_type": "single_choice_weighted",
+      "prompt": "[DEV:ist-development] Pilih tingkat kecocokan tertinggi untuk aturan DEV-GE-7.",
+      "image_disk": null,
+      "image_path": null,
+      "image_alt": null,
+      "example_explanation": null,
+      "numeric_answer_key": null,
+      "max_score": 4,
+      "source_version": 900000001,
+      "is_active": true,
+      "options": [
+        {
+          "option_key": "A",
+          "option_text": "DEV-GE-7-A tingkat 0",
+          "image_disk": null,
+          "image_path": null,
+          "image_alt": null,
+          "display_order": 1,
+          "is_correct": false,
+          "score_value": 0,
+          "is_active": true
+        },
+        {
+          "option_key": "B",
+          "option_text": "DEV-GE-7-B tingkat 4",
+          "image_disk": null,
+          "image_path": null,
+          "image_alt": null,
+          "display_order": 2,
+          "is_correct": true,
+          "score_value": 4,
+          "is_active": true
+        },
+        {
+          "option_key": "C",
+          "option_text": "DEV-GE-7-C tingkat 3",
+          "image_disk": null,
+          "image_path": null,
+          "image_alt": null,
+          "display_order": 3,
+          "is_correct": false,
+          "score_value": 3,
+          "is_active": true
+        },
+        {
+          "option_key": "D",
+          "option_text": "DEV-GE-7-D tingkat 2",
+          "image_disk": null,
+          "image_path": null,
+          "image_alt": null,
+          "display_order": 4,
+          "is_correct": false,
+          "score_value": 2,
+          "is_active": true
+        },
+        {
+          "option_key": "E",
+          "option_text": "DEV-GE-7-E tingkat 1",
+          "image_disk": null,
+          "image_path": null,
+          "image_alt": null,
+          "display_order": 5,
+          "is_correct": false,
+          "score_value": 1,
+          "is_active": true
+        }
+      ]
+    },
+    {
+      "question_number": 8,
+      "display_order": 8,
+      "kind": "scored",
+      "answer_type": "single_choice_weighted",
+      "prompt": "[DEV:ist-development] Pilih tingkat kecocokan tertinggi untuk aturan DEV-GE-8.",
+      "image_disk": null,
+      "image_path": null,
+      "image_alt": null,
+      "example_explanation": null,
+      "numeric_answer_key": null,
+      "max_score": 4,
+      "source_version": 900000001,
+      "is_active": true,
+      "options": [
+        {
+          "option_key": "A",
+          "option_text": "DEV-GE-8-A tingkat 1",
+          "image_disk": null,
+          "image_path": null,
+          "image_alt": null,
+          "display_order": 1,
+          "is_correct": false,
+          "score_value": 1,
+          "is_active": true
+        },
+        {
+          "option_key": "B",
+          "option_text": "DEV-GE-8-B tingkat 0",
+          "image_disk": null,
+          "image_path": null,
+          "image_alt": null,
+          "display_order": 2,
+          "is_correct": false,
+          "score_value": 0,
+          "is_active": true
+        },
+        {
+          "option_key": "C",
+          "option_text": "DEV-GE-8-C tingkat 4",
+          "image_disk": null,
+          "image_path": null,
+          "image_alt": null,
+          "display_order": 3,
+          "is_correct": true,
+          "score_value": 4,
+          "is_active": true
+        },
+        {
+          "option_key": "D",
+          "option_text": "DEV-GE-8-D tingkat 3",
+          "image_disk": null,
+          "image_path": null,
+          "image_alt": null,
+          "display_order": 4,
+          "is_correct": false,
+          "score_value": 3,
+          "is_active": true
+        },
+        {
+          "option_key": "E",
+          "option_text": "DEV-GE-8-E tingkat 2",
+          "image_disk": null,
+          "image_path": null,
+          "image_alt": null,
+          "display_order": 5,
+          "is_correct": false,
+          "score_value": 2,
+          "is_active": true
+        }
+      ]
+    },
+    {
+      "question_number": 9,
+      "display_order": 9,
+      "kind": "scored",
+      "answer_type": "single_choice_weighted",
+      "prompt": "[DEV:ist-development] Pilih tingkat kecocokan tertinggi untuk aturan DEV-GE-9.",
+      "image_disk": null,
+      "image_path": null,
+      "image_alt": null,
+      "example_explanation": null,
+      "numeric_answer_key": null,
+      "max_score": 4,
+      "source_version": 900000001,
+      "is_active": true,
+      "options": [
+        {
+          "option_key": "A",
+          "option_text": "DEV-GE-9-A tingkat 2",
+          "image_disk": null,
+          "image_path": null,
+          "image_alt": null,
+          "display_order": 1,
+          "is_correct": false,
+          "score_value": 2,
+          "is_active": true
+        },
+        {
+          "option_key": "B",
+          "option_text": "DEV-GE-9-B tingkat 1",
+          "image_disk": null,
+          "image_path": null,
+          "image_alt": null,
+          "display_order": 2,
+          "is_correct": false,
+          "score_value": 1,
+          "is_active": true
+        },
+        {
+          "option_key": "C",
+          "option_text": "DEV-GE-9-C tingkat 0",
+          "image_disk": null,
+          "image_path": null,
+          "image_alt": null,
+          "display_order": 3,
+          "is_correct": false,
+          "score_value": 0,
+          "is_active": true
+        },
+        {
+          "option_key": "D",
+          "option_text": "DEV-GE-9-D tingkat 4",
+          "image_disk": null,
+          "image_path": null,
+          "image_alt": null,
+          "display_order": 4,
+          "is_correct": true,
+          "score_value": 4,
+          "is_active": true
+        },
+        {
+          "option_key": "E",
+          "option_text": "DEV-GE-9-E tingkat 3",
+          "image_disk": null,
+          "image_path": null,
+          "image_alt": null,
+          "display_order": 5,
+          "is_correct": false,
+          "score_value": 3,
+          "is_active": true
+        }
+      ]
+    },
+    {
+      "question_number": 10,
+      "display_order": 10,
+      "kind": "scored",
+      "answer_type": "single_choice_weighted",
+      "prompt": "[DEV:ist-development] Pilih tingkat kecocokan tertinggi untuk aturan DEV-GE-10.",
+      "image_disk": null,
+      "image_path": null,
+      "image_alt": null,
+      "example_explanation": null,
+      "numeric_answer_key": null,
+      "max_score": 4,
+      "source_version": 900000001,
+      "is_active": true,
+      "options": [
+        {
+          "option_key": "A",
+          "option_text": "DEV-GE-10-A tingkat 3",
+          "image_disk": null,
+          "image_path": null,
+          "image_alt": null,
+          "display_order": 1,
+          "is_correct": false,
+          "score_value": 3,
+          "is_active": true
+        },
+        {
+          "option_key": "B",
+          "option_text": "DEV-GE-10-B tingkat 2",
+          "image_disk": null,
+          "image_path": null,
+          "image_alt": null,
+          "display_order": 2,
+          "is_correct": false,
+          "score_value": 2,
+          "is_active": true
+        },
+        {
+          "option_key": "C",
+          "option_text": "DEV-GE-10-C tingkat 1",
+          "image_disk": null,
+          "image_path": null,
+          "image_alt": null,
+          "display_order": 3,
+          "is_correct": false,
+          "score_value": 1,
+          "is_active": true
+        },
+        {
+          "option_key": "D",
+          "option_text": "DEV-GE-10-D tingkat 0",
+          "image_disk": null,
+          "image_path": null,
+          "image_alt": null,
+          "display_order": 4,
+          "is_correct": false,
+          "score_value": 0,
+          "is_active": true
+        },
+        {
+          "option_key": "E",
+          "option_text": "DEV-GE-10-E tingkat 4",
+          "image_disk": null,
+          "image_path": null,
+          "image_alt": null,
+          "display_order": 5,
+          "is_correct": true,
+          "score_value": 4,
+          "is_active": true
+        }
+      ]
+    },
+    {
+      "question_number": 1,
+      "display_order": 1,
+      "kind": "example",
+      "answer_type": "single_choice_weighted",
+      "prompt": "[DEV:ist-development] Contoh GE: Pilih tingkat kecocokan tertinggi untuk aturan DEV-GE-1.",
+      "image_disk": null,
+      "image_path": null,
+      "image_alt": null,
+      "example_explanation": "[DEV:ist-development] Jawaban contoh mengikuti aturan dummy yang tertulis langsung pada prompt.",
+      "numeric_answer_key": null,
+      "max_score": 4,
+      "source_version": 900000001,
+      "is_active": true,
+      "options": [
+        {
+          "option_key": "A",
+          "option_text": "DEV-GE-1-A tingkat 4",
+          "image_disk": null,
+          "image_path": null,
+          "image_alt": null,
+          "display_order": 1,
+          "is_correct": true,
+          "score_value": 4,
+          "is_active": true
+        },
+        {
+          "option_key": "B",
+          "option_text": "DEV-GE-1-B tingkat 3",
+          "image_disk": null,
+          "image_path": null,
+          "image_alt": null,
+          "display_order": 2,
+          "is_correct": false,
+          "score_value": 3,
+          "is_active": true
+        },
+        {
+          "option_key": "C",
+          "option_text": "DEV-GE-1-C tingkat 2",
+          "image_disk": null,
+          "image_path": null,
+          "image_alt": null,
+          "display_order": 3,
+          "is_correct": false,
+          "score_value": 2,
+          "is_active": true
+        },
+        {
+          "option_key": "D",
+          "option_text": "DEV-GE-1-D tingkat 1",
+          "image_disk": null,
+          "image_path": null,
+          "image_alt": null,
+          "display_order": 4,
+          "is_correct": false,
+          "score_value": 1,
+          "is_active": true
+        },
+        {
+          "option_key": "E",
+          "option_text": "DEV-GE-1-E tingkat 0",
+          "image_disk": null,
+          "image_path": null,
+          "image_alt": null,
+          "display_order": 5,
+          "is_correct": false,
+          "score_value": 0,
+          "is_active": true
+        }
+      ]
+    }
+  ]
+}

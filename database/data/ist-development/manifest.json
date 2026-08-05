@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "dataset": "ist-development",
+  "dataset_type": "development",
+  "dataset_version": 1,
+  "record_version": 900000001,
+  "ownership_marker": "[DEV:ist-development]",
+  "environments": [
+    "local",
+    "testing"
+  ],
+  "total_scored_question_count": 104,
+  "total_example_question_count": 9,
+  "subtests": {
+    "SE": {
+      "file": "se.json",
+      "scored_question_count": 12,
+      "example_question_count": 1,
+      "sha256": "c7c9f8c22a342789480dcdad02abfa61dd744c7271c5110e0d82daa2684b3715"
+    },
+    "WA": {
+      "file": "wa.json",
+      "scored_question_count": 12,
+      "example_question_count": 1,
+      "sha256": "07b90e3f4eb4dc344e63a60297163f549f912cc438803976711669c8d5e8ce7c"
+    },
+    "AN": {
+      "file": "an.json",
+      "scored_question_count": 12,
+      "example_question_count": 1,
+      "sha256": "1c3eb8f30d140df4dbba23554841e2a9343ce27f22305c6e7dffdc47a65f504e"
+    },
+    "GE": {
+      "file": "ge.json",
+      "scored_question_count": 10,
+      "example_question_count": 1,
+      "sha256": "3f55998123b759adcdf37f56120b9a2717ff225fd3613acc114af0790043c655"
+    },
+    "RA": {
+      "file": "ra.json",
+      "scored_question_count": 12,
+      "example_question_count": 1,
+      "sha256": "dde3aa8781a029c5854aae5b0ef74cb5daf5525629382e41c1f3ee5d7d8d36ef"
+    },
+    "ZR": {
+      "file": "zr.json",
+      "scored_question_count": 12,
+      "example_question_count": 1,
+      "sha256": "ba92adf55e66a2d7bc69126467cff86b8a424049536a383f0df05115f2df1a31"
+    },
+    "FA": {
+      "file": "fa.json",
+      "scored_question_count": 10,
+      "example_question_count": 1,
+      "sha256": "dfa9922fbde17711ada48afd4e768fbd1cff522beeb7b781f2e3dc80b12fdd72"
+    },
+    "WU": {
+      "file": "wu.json",
+      "scored_question_count": 12,
+      "example_question_count": 1,
+      "sha256": "0e28febdd9c342e24478ffe0e4ebc242cb42161ea4f76d3a282c5c62040b6196"
+    },
+    "ME": {
+      "file": "me.json",
+      "scored_question_count": 12,
+      "example_question_count": 1,
+      "sha256": "008ff1c89215d0ab5bab5ca19d591f4c79aeed8a2598bda7790b4ca3e85328f4"
+    }
+  },
+  "expected_results": {
+    "file": "expected-results.json",
+    "sha256": "8e83ae05a61ca9c83c1d43b088bbebb4a14c20a3166f9b8588ea0600c7f524cc"
+  },
+  "media": [
+    {
+      "file": "media/dev-prompt.svg",
+      "target_path": "ist-development/v1/dev-prompt.svg",
+      "sha256": "27ffa128383ebdbba7ddff5a8694348c41d45bff97a83c1fc403b38f9aec932b"
+    },
+    {
+      "file": "media/dev-option-a.svg",
+      "target_path": "ist-development/v1/dev-option-a.svg",
+      "sha256": "505e28995c64d91b9dd85bf8189578a142237d81cabbb944876699ae1dd48c15"
+    },
+    {
+      "file": "media/dev-option-b.svg",
+      "target_path": "ist-development/v1/dev-option-b.svg",
+      "sha256": "c8311504cbbfc839a98ca4508d8fa0365ac5d747a6012d47290b16700345e835"
+    },
+    {
+      "file": "media/dev-option-c.svg",
+      "target_path": "ist-development/v1/dev-option-c.svg",
+      "sha256": "41f0fac809a7ede691c83a944030ff28f7186a2fa470263c59b1a7359e5fc8aa"
+    },
+    {
+      "file": "media/dev-option-d.svg",
+      "target_path": "ist-development/v1/dev-option-d.svg",
+      "sha256": "c3774dce59fce140f9c2e8b2221602b0b3598058aea5c054810e20941be60197"
+    },
+    {
+      "file": "media/dev-option-e.svg",
+      "target_path": "ist-development/v1/dev-option-e.svg",
+      "sha256": "092eb0ed73f1368d9123c361e8cd6d064fc7b9ce7a2943dc0c10c07714677b31"
+    }
+  ]
+}
