@@ -8,6 +8,14 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class IstTestQuestion extends Model
 {
+    /**
+     * This model must never be sent directly as a participant payload.
+     * Controllers must explicitly shape participant-safe question data.
+     */
+    protected $hidden = [
+        'answer_key_snapshot',
+    ];
+
     protected $fillable = [
         'ist_test_subtest_id',
         'source_question_id',

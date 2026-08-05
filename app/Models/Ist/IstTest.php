@@ -17,6 +17,10 @@ class IstTest extends Model
 
     public const STATUS_CANCELLED = 'cancelled';
 
+    protected $hidden = [
+        'access_token_hash',
+    ];
+
     protected $fillable = [
         'public_id',
         'access_token_hash',
