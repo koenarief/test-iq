@@ -80,7 +80,7 @@ export default function Result({
 
     return (
         <PublicLayout>
-            <Head title="Hasil Tes IST" />
+            <Head title="Hasil Tes Kemampuan Kognitif Adaptasi" />
 
             <div className="mx-auto w-full max-w-7xl flex-1 px-4 py-8 sm:px-6 sm:py-12">
                 <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
@@ -98,8 +98,8 @@ export default function Result({
                 </div>
 
                 <header className="mb-6 overflow-hidden rounded-2xl border border-zinc-800 bg-gradient-to-r from-blue-950/50 via-zinc-900 to-indigo-950/40 p-6 shadow-2xl sm:p-8">
-                    <p className="text-xs font-mono uppercase tracking-widest text-blue-300">Laporan internal IST</p>
-                    <h1 className="mt-2 text-2xl font-bold text-white sm:text-3xl">Ringkasan Hasil Tes</h1>
+                    <p className="text-xs font-mono uppercase tracking-widest text-blue-300">Tes Kemampuan Kognitif Adaptasi</p>
+                    <h1 className="mt-2 text-2xl font-bold text-white sm:text-3xl">Ringkasan Hasil</h1>
                     <p className="mt-2 max-w-3xl text-sm leading-relaxed text-zinc-400">
                         Ringkasan berikut menampilkan persentase internal pada sembilan subtes yang telah final.
                     </p>
@@ -153,7 +153,7 @@ export default function Result({
                             <Award className="h-4 w-4" aria-hidden="true" />
                             Rata-rata Skor Internal
                         </div>
-                        <p className="text-sm text-zinc-300">Rata-rata persentase dari sembilan subtes</p>
+                        <p className="text-sm text-zinc-300">Rata-rata persentase dari sembilan subtes.</p>
                         <p className="mt-3 text-4xl font-bold text-white">
                             {hasTotalInternalScore ? formatNumber(totalInternalScore) : '—'}
                             {hasTotalInternalScore && <span className="ml-1 text-xl text-blue-300">%</span>}
@@ -174,7 +174,7 @@ export default function Result({
                             <BarChart3 className="h-5 w-5" aria-hidden="true" />
                         </span>
                         <div>
-                            <h2 id="ist-result-chart-title" className="text-lg font-bold text-white">Profil sembilan subtes</h2>
+                            <h2 id="ist-result-chart-title" className="text-lg font-bold text-white">Profil Sembilan Subtes</h2>
                             <p id="ist-result-chart-description" className="text-xs text-zinc-500">Persentase internal 0–100</p>
                         </div>
                     </div>
@@ -183,7 +183,7 @@ export default function Result({
 
                 <section className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/90 shadow-xl">
                     <div className="border-b border-zinc-800 p-5 sm:px-7">
-                        <h2 className="text-lg font-bold text-white">Detail skor subtes</h2>
+                        <h2 className="text-lg font-bold text-white">Rincian hasil sembilan subtes</h2>
                         <p className="mt-1 text-xs text-zinc-500">Tabel ini merupakan representasi lengkap dari grafik.</p>
                     </div>
 
@@ -192,7 +192,7 @@ export default function Result({
                     ) : (
                         <div className="overflow-x-auto focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-blue-400" tabIndex={0} role="region" aria-label="Detail skor sembilan subtes, gulir horizontal bila diperlukan">
                             <table className="min-w-[920px] w-full border-collapse text-left text-sm">
-                                <caption className="sr-only">Detail skor diperoleh, skor maksimum, statistik jawaban, dan persentase untuk sembilan subtes IST.</caption>
+                                <caption className="sr-only">Rincian hasil sembilan subtes</caption>
                                 <thead className="bg-zinc-950/80 text-xs uppercase tracking-wider text-zinc-400">
                                     <tr>
                                         <th scope="col" className="px-5 py-4">Subtes</th>
@@ -230,7 +230,7 @@ export default function Result({
                 </section>
 
                 <p className="mt-6 rounded-xl border border-amber-500/30 bg-amber-500/10 p-4 text-sm leading-relaxed text-amber-100">
-                    Hasil ini merupakan skor internal berdasarkan sembilan subtes. Nilai ini belum merupakan skor IQ atau interpretasi normatif karena tabel norma yang tervalidasi belum diterapkan.
+                    Hasil ini merupakan skor internal berdasarkan sembilan subtes. Nilai ini belum merupakan skor IQ atau interpretasi normatif.
                 </p>
             </div>
         </PublicLayout>

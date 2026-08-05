@@ -461,7 +461,7 @@ export default function Work({
                 setFinalizationError('Permintaan ditolak oleh validasi. Periksa format jawaban.');
                 setFinalizing(false);
             } else {
-                setFinalizationError('Layanan IST sedang bermasalah. Tidak ada detail internal yang ditampilkan.');
+                setFinalizationError('Layanan asesmen sedang bermasalah. Tidak ada detail internal yang ditampilkan.');
                 setFinalizing(false);
             }
 
@@ -488,11 +488,11 @@ export default function Work({
         };
     }, []);
 
-    const title = `${subtest?.code ?? 'IST'} — ${subtest?.name ?? 'Subtes'}`;
+    const title = `${subtest?.code ?? 'Subtes'} — ${subtest?.name ?? 'Pengerjaan Subtes'}`;
 
     return (
         <PublicLayout>
-            <Head title={`Pengerjaan IST ${subtest?.code ?? ''}`} />
+            <Head title={`Tes Kemampuan Kognitif Adaptasi${subtest?.code ? ` — ${subtest.code}` : ''}`} />
 
             <div className="sr-only" aria-live="polite">{timerAnnouncement}</div>
 
@@ -553,7 +553,7 @@ export default function Work({
                                         href={route('ist.index')}
                                         className="inline-flex min-h-11 items-center rounded-lg border border-red-300/30 px-4 font-semibold hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
                                     >
-                                        Kembali ke Halaman IST
+                                        Kembali ke Halaman Asesmen
                                     </Link>
                                 )}
                             </div>

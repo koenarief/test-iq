@@ -20,7 +20,7 @@ final class IstResultController extends Controller
         try {
             $result = $results->build($test);
         } catch (IstResultUnavailableException) {
-            abort(409, 'IST result is not available.');
+            abort(409, 'Hasil asesmen belum tersedia.');
         }
 
         return Inertia::render('IST/Result', $presenter->result($result));

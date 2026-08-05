@@ -108,14 +108,23 @@ class IstSessionOwnershipHttpTest extends IstHttpTestCase
     {
         $this->assertTrue(Route::has('landing'));
         $this->assertTrue(Route::has('disc.index'));
+        $this->assertTrue(Route::has('ist.index'));
+        $this->assertTrue(Route::has('ist.start'));
+        $this->assertTrue(Route::has('ist.resume'));
         $this->assertSame('disc', Route::getRoutes()->getByName('disc.index')->uri());
+        $this->assertSame('ist', Route::getRoutes()->getByName('ist.index')->uri());
 
         $landing = file_get_contents(resource_path('js/Pages/Landing/Index.jsx'));
         $this->assertIsString($landing);
         $this->assertStringContainsString('title="DISC Personality Test"', $landing);
-        $this->assertStringContainsString('title="IST (Intelligenz Struktur Test)"', $landing);
+        $this->assertStringContainsString('title="Tes Kemampuan Kognitif Adaptasi"', $landing);
+        $this->assertStringContainsString('Durasi: Sekitar 45 menit', $landing);
         $this->assertMatchesRegularExpression(
-            '/title="IST \(Intelligenz Struktur Test\)"[\s\S]*?isActive=\{false\}/',
+            '/title="Tes Kemampuan Kognitif Adaptasi"[\s\S]*?isActive=\{false\}/',
+            $landing,
+        );
+        $this->assertMatchesRegularExpression(
+            '/title="DISC Personality Test"[\s\S]*?isActive=\{true\}/',
             $landing,
         );
     }

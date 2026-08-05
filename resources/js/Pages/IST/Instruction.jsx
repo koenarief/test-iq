@@ -59,7 +59,7 @@ export default function Instruction({
 
     return (
         <PublicLayout>
-            <Head title={`Petunjuk IST ${subtest?.code ?? ''}`} />
+            <Head title={`Petunjuk Subtes — Tes Kemampuan Kognitif Adaptasi${subtest?.code ? ` — ${subtest.code}` : ''}`} />
 
             <div className="mx-auto w-full max-w-5xl flex-1 px-4 py-8 sm:px-6 sm:py-12">
                 <div className="mb-5">
@@ -68,13 +68,12 @@ export default function Instruction({
 
                 <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/90 shadow-2xl">
                     <header className="border-b border-zinc-800 bg-gradient-to-r from-blue-950/50 via-zinc-900 to-indigo-950/40 p-6 sm:p-8">
-                        <p className="text-xs font-mono uppercase tracking-widest text-blue-300">
-                            Subtes {subtest?.sequence ?? '-'} dari 9
-                        </p>
+                        <p className="text-xs font-mono uppercase tracking-widest text-blue-300">Tes Kemampuan Kognitif Adaptasi</p>
+                        <p className="mt-2 text-xs text-zinc-400">Subtes {subtest?.sequence ?? '-'} dari 9</p>
                         <div className="mt-2 flex flex-wrap items-end justify-between gap-4">
                             <div>
                                 <h1 className="text-2xl font-bold text-white sm:text-3xl">
-                                    {subtest?.code ?? 'IST'} — {subtest?.name ?? 'Petunjuk Subtes'}
+                                    {subtest?.code ?? 'Subtes'} — {subtest?.name ?? 'Petunjuk Subtes'}
                                 </h1>
                                 <p className="mt-2 text-sm text-zinc-400">Timer baru dimulai setelah tombol Mulai Subtes ditekan.</p>
                             </div>
@@ -158,14 +157,18 @@ export default function Instruction({
                                             <p className="whitespace-pre-line text-sm leading-7 text-zinc-200">
                                                 {example?.prompt ?? 'Teks contoh belum tersedia.'}
                                             </p>
-                                            <IstImageViewer image={example?.image} className="mt-4" />
+                                            <IstImageViewer image={example?.image} fallbackAlt="Ilustrasi contoh soal" className="mt-4" />
 
                                             {Array.isArray(example?.options) && example.options.length > 0 && (
                                                 <ol className="mt-4 grid gap-2 sm:grid-cols-2">
                                                     {example.options.map((option, optionIndex) => (
                                                         <li key={option?.optionKey ?? optionIndex} className="rounded-lg border border-zinc-800 bg-zinc-900/70 p-3 text-sm text-zinc-300">
                                                             <span>{option?.text ?? `Pilihan ${optionIndex + 1}`}</span>
-                                                            <IstImageViewer image={option?.image} className="mt-2" />
+                                                            <IstImageViewer
+                                                                image={option?.image}
+                                                                fallbackAlt={`Ilustrasi pilihan ${option?.optionKey ?? optionIndex + 1}`}
+                                                                className="mt-2"
+                                                            />
                                                         </li>
                                                     ))}
                                                 </ol>

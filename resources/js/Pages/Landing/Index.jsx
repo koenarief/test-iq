@@ -64,17 +64,18 @@ export default function LandingIndex() {
                     />
 
                     <TestCard
-                        title="IST (Intelligenz Struktur Test)"
-                        subtitle="Struktur Kemampuan Intelektual"
-                        description="Tes potensi akademik komprehensif untuk mengukur 9 subtes kecerdasan verbal, numerik, dan spasial secara rinci."
+                        title="Tes Kemampuan Kognitif Adaptasi"
+                        subtitle="Mengukur performa pada sembilan area kemampuan kognitif melalui asesmen singkat sekitar 45 menit."
+                        description="Asesmen singkat untuk melihat profil performa pada sembilan area kemampuan kognitif."
                         icon={BrainCircuit}
-                        badge="Tahap Pengembangan"
+                        badge="Dalam Pengembangan"
                         isActive={false}
                         features={[
-                            '9 Subtes Intelektual Terpisah',
-                            'Skor Kemampuan Komprehensif',
-                            'Evaluasi Logika & Penalaran',
-                            'Estimasi Waktu: 90 Menit',
+                            'Durasi: Sekitar 45 menit',
+                            '9 subtes',
+                            '104 soal',
+                            'Hasil internal',
+                            'Autosave pengerjaan',
                         ]}
                         index={1}
                     />

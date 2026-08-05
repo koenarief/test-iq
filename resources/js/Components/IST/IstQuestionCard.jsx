@@ -38,7 +38,7 @@ export default function IstQuestionCard({
                     <span className="inline-flex h-10 min-w-10 items-center justify-center rounded-xl border border-blue-500/30 bg-blue-500/10 px-2 font-mono text-sm font-bold text-blue-300">
                         #{question.displayOrder ?? '-'}
                     </span>
-                    <h1 className="text-lg font-bold text-white">Soal IST</h1>
+                    <h1 className="text-lg font-bold text-white">Pengerjaan Subtes</h1>
                 </div>
 
                 <span
@@ -72,7 +72,7 @@ export default function IstQuestionCard({
                     <p className="text-sm text-zinc-500">Teks soal tidak tersedia.</p>
                 )}
 
-                <IstImageViewer image={question.image} />
+                <IstImageViewer image={question.image} fallbackAlt="Ilustrasi soal" />
 
                 {isChoice && (
                     <fieldset>
@@ -126,7 +126,11 @@ export default function IstQuestionCard({
                                                 <span className="leading-relaxed">{optionLabel(option, index)}</span>
                                             </label>
 
-                                            <IstImageViewer image={option?.image} className="mt-2" />
+                                            <IstImageViewer
+                                                image={option?.image}
+                                                fallbackAlt={`Ilustrasi pilihan ${optionKey}`}
+                                                className="mt-2"
+                                            />
                                         </div>
                                     );
                                 })}

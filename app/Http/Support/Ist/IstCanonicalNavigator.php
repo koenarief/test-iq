@@ -36,7 +36,7 @@ final class IstCanonicalNavigator
         }
 
         if ($decision->destination === IstAccessDestination::COMPLETED) {
-            abort(409, 'IST completed runtime was not advanced.');
+            abort(409, 'Sesi yang selesai belum dapat dilanjutkan.');
         }
 
         $runtime = $decision->canonicalTestSubtestId === null
@@ -47,7 +47,7 @@ final class IstCanonicalNavigator
                 ->find($decision->canonicalTestSubtestId);
 
         if (! $runtime || ! $runtime->subtest) {
-            abort(409, 'IST canonical runtime is unavailable.');
+            abort(409, 'Sesi asesmen belum tersedia.');
         }
 
         $route = $decision->destination === IstAccessDestination::INSTRUCTION

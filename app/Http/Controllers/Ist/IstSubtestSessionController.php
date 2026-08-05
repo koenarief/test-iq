@@ -47,7 +47,7 @@ final class IstSubtestSessionController extends Controller
                 $now,
             );
         } catch (DomainException) {
-            abort(409, 'IST subtest cannot be started.');
+            abort(409, 'Subtes belum dapat dimulai.');
         }
 
         return $navigator->redirect($test, $decision);
@@ -76,7 +76,7 @@ final class IstSubtestSessionController extends Controller
                 $now,
             );
         } catch (DomainException) {
-            abort(409, 'IST session state is invalid.');
+            abort(409, 'Status sesi asesmen tidak valid.');
         }
 
         $workDestinations = [
@@ -128,7 +128,7 @@ final class IstSubtestSessionController extends Controller
             if ($reason !== IstFinalizationReason::SUBMITTED
                 || ! $freshRuntime
                 || ! $timer->isExpired($freshRuntime, $now)) {
-                abort(409, 'IST subtest cannot be finalized.');
+                abort(409, 'Subtes belum dapat diselesaikan.');
             }
 
             try {
@@ -138,10 +138,10 @@ final class IstSubtestSessionController extends Controller
                     $now,
                 );
             } catch (DomainException) {
-                abort(409, 'IST subtest cannot be reconciled as timeout.');
+                abort(409, 'Batas waktu subtes belum dapat diselesaikan.');
             }
         } catch (DomainException) {
-            abort(409, 'IST subtest cannot be finalized.');
+            abort(409, 'Subtes belum dapat diselesaikan.');
         }
 
         try {
@@ -153,7 +153,7 @@ final class IstSubtestSessionController extends Controller
                 $now,
             );
         } catch (DomainException) {
-            abort(409, 'IST canonical destination is unavailable.');
+            abort(409, 'Tujuan asesmen belum tersedia.');
         }
 
         return $navigator->redirect($freshTest, $decision);

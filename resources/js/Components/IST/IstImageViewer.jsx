@@ -2,9 +2,9 @@ import { Dialog, DialogPanel, DialogTitle } from '@headlessui/react';
 import { Expand, ImageOff, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
-export default function IstImageViewer({ image, className = '' }) {
+export default function IstImageViewer({ image, fallbackAlt = 'Ilustrasi soal', className = '' }) {
     const url = image?.url ?? null;
-    const alt = image?.alt?.trim() || 'Ilustrasi soal IST';
+    const alt = image?.alt?.trim() || fallbackAlt;
     const [isOpen, setIsOpen] = useState(false);
     const [isLoading, setIsLoading] = useState(Boolean(url));
     const [hasError, setHasError] = useState(false);

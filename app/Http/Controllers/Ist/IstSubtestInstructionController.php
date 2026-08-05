@@ -40,7 +40,7 @@ final class IstSubtestInstructionController extends Controller
                 $now,
             );
         } catch (DomainException) {
-            abort(409, 'IST session state is invalid.');
+            abort(409, 'Status sesi asesmen tidak valid.');
         }
 
         if ((int) $decision->canonicalTestSubtestId !== (int) $subtest->id

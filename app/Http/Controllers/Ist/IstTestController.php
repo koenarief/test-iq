@@ -28,7 +28,7 @@ final class IstTestController extends Controller
         try {
             $creation = $creator->create($request->participantData());
         } catch (DomainException) {
-            abort(409, 'IST question bank is not ready.');
+            abort(409, 'Asesmen belum tersedia.');
         }
 
         $rawToken = $creation->takeRawAccessToken();
@@ -58,7 +58,7 @@ final class IstTestController extends Controller
                 $now,
             );
         } catch (DomainException) {
-            abort(409, 'IST session state is invalid.');
+            abort(409, 'Status sesi asesmen tidak valid.');
         }
 
         return $navigator->redirect($test, $decision);

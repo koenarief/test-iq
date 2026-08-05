@@ -46,7 +46,7 @@ export default function PublicLayout({ children }) {
                     <div className="flex items-center gap-6">
                         <span>DISC Assessment</span>
                         <span className="text-zinc-700">•</span>
-                        <span>IST Assessment</span>
+                        <span>Tes Kemampuan Kognitif Adaptasi</span>
                     </div>
                 </div>
             </footer>
