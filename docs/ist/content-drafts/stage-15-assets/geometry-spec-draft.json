@@ -1,0 +1,7002 @@
+{
+  "schema_version": "stage-15-draft-v1",
+  "instrument": "Tes Kemampuan Kognitif Adaptasi",
+  "warning": "INTERNAL REVIEW ONLY — CONTAINS ANSWER KEYS AND GEOMETRY PROOFS",
+  "note": "Konten visual ini dibuat secara internal untuk asesmen adaptasi dan tidak ditujukan sebagai reproduksi, substitusi normatif, atau salinan instrumen psikologi lain.",
+  "status": {
+    "author_draft": "complete",
+    "automated_visual_review": "complete",
+    "automated_geometry_review": "complete",
+    "automated_rotation_review": "complete",
+    "automated_language_review": "complete",
+    "automated_logic_review": "complete",
+    "human_visual_review": "pending",
+    "human_geometry_review": "pending",
+    "human_rotation_review": "pending",
+    "human_language_review": "pending",
+    "human_logic_review": "pending",
+    "overall_status": "in_review",
+    "active": false,
+    "approved": false,
+    "frozen": false,
+    "imported": false
+  },
+  "records": [
+    {
+      "logical_id": "fa-example-001",
+      "subtest_code": "FA",
+      "kind": "example",
+      "display_order": 0,
+      "answer_type": "image_choice",
+      "difficulty_target": null,
+      "prompt_text": "Perhatikan seluruh potongan pada gambar. Pilih bentuk utuh yang dapat disusun menggunakan setiap potongan tepat satu kali. Potongan boleh diputar, tetapi tidak boleh dicerminkan.",
+      "prompt_media_id": "fa-example-001-prompt",
+      "prompt_relative_path": "fa/examples/fa-example-001-prompt.svg",
+      "piece_names": [
+        "D2",
+        "L3",
+        "I3"
+      ],
+      "pieces": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ]
+        ]
+      ],
+      "correct_placements": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "options": [
+        {
+          "code": "A",
+          "media_id": "fa-example-001-option-a",
+          "cells": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              1
+            ]
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "concavity_mismatch",
+          "rationale_internal": "Susunan cekung mengunci satu sel sehingga exact-cover rotasi-only tidak dapat menempatkan seluruh potongan.",
+          "alt_text": "Diagram pilihan A"
+        },
+        {
+          "code": "B",
+          "media_id": "fa-example-001-option-b",
+          "cells": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              2
+            ]
+          ],
+          "is_correct": true,
+          "score_value": 1,
+          "failure_mode": "exact_cover_valid",
+          "rationale_internal": "Seluruh potongan menutup siluet tepat satu kali tanpa tumpang tindih; exact-cover rotasi-only berhasil.",
+          "alt_text": "Diagram pilihan B"
+        },
+        {
+          "code": "C",
+          "media_id": "fa-example-001-option-c",
+          "cells": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "terminal_residue",
+          "rationale_internal": "Penempatan potongan pada ujung kontur selalu menyisakan residu yang tidak cocok dengan potongan tersisa.",
+          "alt_text": "Diagram pilihan C"
+        },
+        {
+          "code": "D",
+          "media_id": "fa-example-001-option-d",
+          "cells": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              1
+            ]
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "composition_mismatch",
+          "rationale_internal": "Area siluet sama, tetapi enumerasi exact-cover dengan seluruh rotasi legal tidak menemukan pembagian yang cocok untuk ketiga potongan.",
+          "alt_text": "Diagram pilihan D"
+        },
+        {
+          "code": "E",
+          "media_id": "fa-example-001-option-e",
+          "cells": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              1
+            ]
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "boundary_partition_mismatch",
+          "rationale_internal": "Pemisahan kontur memaksa pembagian sel yang tidak sesuai dengan bentuk ketiga potongan.",
+          "alt_text": "Diagram pilihan E"
+        }
+      ],
+      "explanation": "Bandingkan jumlah dan bentuk seluruh potongan dengan setiap pilihan. Pilihan yang tepat memakai semua potongan sekali, tanpa tumpang tindih atau pencerminan.",
+      "rationale_internal": "Tiga potongan D2, L3, I3 mempunyai total 8 sel satuan. Opsi B adalah satu-satunya siluet yang lolos exact-cover dengan rotasi tanpa refleksi.",
+      "visual_logic": {
+        "model": "unit_cell_exact_cover",
+        "rotations_allowed": true,
+        "reflections_allowed": false,
+        "target_area": 8,
+        "correct_target_cells": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      },
+      "audits": {
+        "area_composition": "pass",
+        "topology": "pass",
+        "rotation": "pass",
+        "reflection": "pass",
+        "small_screen": "pass",
+        "ambiguity": "pass"
+      },
+      "reviews": {
+        "automated_visual_review": "pass",
+        "automated_geometry_review": "pass",
+        "automated_language_review": "pass",
+        "automated_logic_review": "pass",
+        "qc_status": "pass"
+      },
+      "content_origin": "original_internal",
+      "source_reference": null,
+      "copyright_status": "internally_authored",
+      "normative_compatibility": "none",
+      "review_status": "in_review",
+      "active": false
+    },
+    {
+      "logical_id": "fa-001",
+      "subtest_code": "FA",
+      "kind": "scored",
+      "display_order": 1,
+      "answer_type": "image_choice",
+      "difficulty_target": "easy",
+      "prompt_text": "Perhatikan seluruh potongan pada gambar. Pilih bentuk utuh yang dapat disusun menggunakan setiap potongan tepat satu kali. Potongan boleh diputar, tetapi tidak boleh dicerminkan.",
+      "prompt_media_id": "fa-001-prompt",
+      "prompt_relative_path": "fa/questions/fa-q001-prompt.svg",
+      "piece_names": [
+        "D2",
+        "L3",
+        "T4"
+      ],
+      "pieces": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            0
+          ]
+        ]
+      ],
+      "correct_placements": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "options": [
+        {
+          "code": "A",
+          "media_id": "fa-001-option-a",
+          "cells": [
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              3,
+              2
+            ]
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "concavity_mismatch",
+          "rationale_internal": "Susunan cekung mengunci satu sel sehingga exact-cover rotasi-only tidak dapat menempatkan seluruh potongan.",
+          "alt_text": "Diagram pilihan A"
+        },
+        {
+          "code": "B",
+          "media_id": "fa-001-option-b",
+          "cells": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              2
+            ]
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "terminal_residue",
+          "rationale_internal": "Penempatan potongan pada ujung kontur selalu menyisakan residu yang tidak cocok dengan potongan tersisa.",
+          "alt_text": "Diagram pilihan B"
+        },
+        {
+          "code": "C",
+          "media_id": "fa-001-option-c",
+          "cells": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              2
+            ]
+          ],
+          "is_correct": true,
+          "score_value": 1,
+          "failure_mode": "exact_cover_valid",
+          "rationale_internal": "Seluruh potongan menutup siluet tepat satu kali tanpa tumpang tindih; exact-cover rotasi-only berhasil.",
+          "alt_text": "Diagram pilihan C"
+        },
+        {
+          "code": "D",
+          "media_id": "fa-001-option-d",
+          "cells": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "composition_mismatch",
+          "rationale_internal": "Area siluet sama, tetapi enumerasi exact-cover dengan seluruh rotasi legal tidak menemukan pembagian yang cocok untuk ketiga potongan.",
+          "alt_text": "Diagram pilihan D"
+        },
+        {
+          "code": "E",
+          "media_id": "fa-001-option-e",
+          "cells": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "boundary_partition_mismatch",
+          "rationale_internal": "Pemisahan kontur memaksa pembagian sel yang tidak sesuai dengan bentuk ketiga potongan.",
+          "alt_text": "Diagram pilihan E"
+        }
+      ],
+      "explanation": null,
+      "rationale_internal": "Tiga potongan D2, L3, T4 mempunyai total 9 sel satuan. Opsi C adalah satu-satunya siluet yang lolos exact-cover dengan rotasi tanpa refleksi.",
+      "visual_logic": {
+        "model": "unit_cell_exact_cover",
+        "rotations_allowed": true,
+        "reflections_allowed": false,
+        "target_area": 9,
+        "correct_target_cells": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      },
+      "audits": {
+        "area_composition": "pass",
+        "topology": "pass",
+        "rotation": "pass",
+        "reflection": "pass",
+        "small_screen": "pass",
+        "ambiguity": "pass"
+      },
+      "reviews": {
+        "automated_visual_review": "pass",
+        "automated_geometry_review": "pass",
+        "automated_language_review": "pass",
+        "automated_logic_review": "pass",
+        "qc_status": "pass"
+      },
+      "content_origin": "original_internal",
+      "source_reference": null,
+      "copyright_status": "internally_authored",
+      "normative_compatibility": "none",
+      "review_status": "in_review",
+      "active": false
+    },
+    {
+      "logical_id": "fa-002",
+      "subtest_code": "FA",
+      "kind": "scored",
+      "display_order": 2,
+      "answer_type": "image_choice",
+      "difficulty_target": "easy",
+      "prompt_text": "Perhatikan seluruh potongan pada gambar. Pilih bentuk utuh yang dapat disusun menggunakan setiap potongan tepat satu kali. Potongan boleh diputar, tetapi tidak boleh dicerminkan.",
+      "prompt_media_id": "fa-002-prompt",
+      "prompt_relative_path": "fa/questions/fa-q002-prompt.svg",
+      "piece_names": [
+        "I3",
+        "L3",
+        "O4"
+      ],
+      "pieces": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      ],
+      "correct_placements": [
+        [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ]
+        ]
+      ],
+      "options": [
+        {
+          "code": "A",
+          "media_id": "fa-002-option-a",
+          "cells": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "is_correct": true,
+          "score_value": 1,
+          "failure_mode": "exact_cover_valid",
+          "rationale_internal": "Seluruh potongan menutup siluet tepat satu kali tanpa tumpang tindih; exact-cover rotasi-only berhasil.",
+          "alt_text": "Diagram pilihan A"
+        },
+        {
+          "code": "B",
+          "media_id": "fa-002-option-b",
+          "cells": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              3
+            ]
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "concavity_mismatch",
+          "rationale_internal": "Susunan cekung mengunci satu sel sehingga exact-cover rotasi-only tidak dapat menempatkan seluruh potongan.",
+          "alt_text": "Diagram pilihan B"
+        },
+        {
+          "code": "C",
+          "media_id": "fa-002-option-c",
+          "cells": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "terminal_residue",
+          "rationale_internal": "Penempatan potongan pada ujung kontur selalu menyisakan residu yang tidak cocok dengan potongan tersisa.",
+          "alt_text": "Diagram pilihan C"
+        },
+        {
+          "code": "D",
+          "media_id": "fa-002-option-d",
+          "cells": [
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              3,
+              3
+            ]
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "composition_mismatch",
+          "rationale_internal": "Area siluet sama, tetapi enumerasi exact-cover dengan seluruh rotasi legal tidak menemukan pembagian yang cocok untuk ketiga potongan.",
+          "alt_text": "Diagram pilihan D"
+        },
+        {
+          "code": "E",
+          "media_id": "fa-002-option-e",
+          "cells": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              4
+            ]
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "boundary_partition_mismatch",
+          "rationale_internal": "Pemisahan kontur memaksa pembagian sel yang tidak sesuai dengan bentuk ketiga potongan.",
+          "alt_text": "Diagram pilihan E"
+        }
+      ],
+      "explanation": null,
+      "rationale_internal": "Tiga potongan I3, L3, O4 mempunyai total 10 sel satuan. Opsi A adalah satu-satunya siluet yang lolos exact-cover dengan rotasi tanpa refleksi.",
+      "visual_logic": {
+        "model": "unit_cell_exact_cover",
+        "rotations_allowed": true,
+        "reflections_allowed": false,
+        "target_area": 10,
+        "correct_target_cells": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ]
+        ]
+      },
+      "audits": {
+        "area_composition": "pass",
+        "topology": "pass",
+        "rotation": "pass",
+        "reflection": "pass",
+        "small_screen": "pass",
+        "ambiguity": "pass"
+      },
+      "reviews": {
+        "automated_visual_review": "pass",
+        "automated_geometry_review": "pass",
+        "automated_language_review": "pass",
+        "automated_logic_review": "pass",
+        "qc_status": "pass"
+      },
+      "content_origin": "original_internal",
+      "source_reference": null,
+      "copyright_status": "internally_authored",
+      "normative_compatibility": "none",
+      "review_status": "in_review",
+      "active": false
+    },
+    {
+      "logical_id": "fa-003",
+      "subtest_code": "FA",
+      "kind": "scored",
+      "display_order": 3,
+      "answer_type": "image_choice",
+      "difficulty_target": "easy",
+      "prompt_text": "Perhatikan seluruh potongan pada gambar. Pilih bentuk utuh yang dapat disusun menggunakan setiap potongan tepat satu kali. Potongan boleh diputar, tetapi tidak boleh dicerminkan.",
+      "prompt_media_id": "fa-003-prompt",
+      "prompt_relative_path": "fa/questions/fa-q003-prompt.svg",
+      "piece_names": [
+        "D2",
+        "S4",
+        "L4"
+      ],
+      "pieces": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            2
+          ]
+        ]
+      ],
+      "correct_placements": [
+        [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            3
+          ]
+        ]
+      ],
+      "options": [
+        {
+          "code": "A",
+          "media_id": "fa-003-option-a",
+          "cells": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              0
+            ]
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "concavity_mismatch",
+          "rationale_internal": "Susunan cekung mengunci satu sel sehingga exact-cover rotasi-only tidak dapat menempatkan seluruh potongan.",
+          "alt_text": "Diagram pilihan A"
+        },
+        {
+          "code": "B",
+          "media_id": "fa-003-option-b",
+          "cells": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              3,
+              3
+            ]
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "terminal_residue",
+          "rationale_internal": "Penempatan potongan pada ujung kontur selalu menyisakan residu yang tidak cocok dengan potongan tersisa.",
+          "alt_text": "Diagram pilihan B"
+        },
+        {
+          "code": "C",
+          "media_id": "fa-003-option-c",
+          "cells": [
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              3,
+              3
+            ]
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "composition_mismatch",
+          "rationale_internal": "Area siluet sama, tetapi enumerasi exact-cover dengan seluruh rotasi legal tidak menemukan pembagian yang cocok untuk ketiga potongan.",
+          "alt_text": "Diagram pilihan C"
+        },
+        {
+          "code": "D",
+          "media_id": "fa-003-option-d",
+          "cells": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              2
+            ]
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "boundary_partition_mismatch",
+          "rationale_internal": "Pemisahan kontur memaksa pembagian sel yang tidak sesuai dengan bentuk ketiga potongan.",
+          "alt_text": "Diagram pilihan D"
+        },
+        {
+          "code": "E",
+          "media_id": "fa-003-option-e",
+          "cells": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "is_correct": true,
+          "score_value": 1,
+          "failure_mode": "exact_cover_valid",
+          "rationale_internal": "Seluruh potongan menutup siluet tepat satu kali tanpa tumpang tindih; exact-cover rotasi-only berhasil.",
+          "alt_text": "Diagram pilihan E"
+        }
+      ],
+      "explanation": null,
+      "rationale_internal": "Tiga potongan D2, S4, L4 mempunyai total 10 sel satuan. Opsi E adalah satu-satunya siluet yang lolos exact-cover dengan rotasi tanpa refleksi.",
+      "visual_logic": {
+        "model": "unit_cell_exact_cover",
+        "rotations_allowed": true,
+        "reflections_allowed": false,
+        "target_area": 10,
+        "correct_target_cells": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ]
+        ]
+      },
+      "audits": {
+        "area_composition": "pass",
+        "topology": "pass",
+        "rotation": "pass",
+        "reflection": "pass",
+        "small_screen": "pass",
+        "ambiguity": "pass"
+      },
+      "reviews": {
+        "automated_visual_review": "pass",
+        "automated_geometry_review": "pass",
+        "automated_language_review": "pass",
+        "automated_logic_review": "pass",
+        "qc_status": "pass"
+      },
+      "content_origin": "original_internal",
+      "source_reference": null,
+      "copyright_status": "internally_authored",
+      "normative_compatibility": "none",
+      "review_status": "in_review",
+      "active": false
+    },
+    {
+      "logical_id": "fa-004",
+      "subtest_code": "FA",
+      "kind": "scored",
+      "display_order": 4,
+      "answer_type": "image_choice",
+      "difficulty_target": "medium",
+      "prompt_text": "Perhatikan seluruh potongan pada gambar. Pilih bentuk utuh yang dapat disusun menggunakan setiap potongan tepat satu kali. Potongan boleh diputar, tetapi tidak boleh dicerminkan.",
+      "prompt_media_id": "fa-004-prompt",
+      "prompt_relative_path": "fa/questions/fa-q004-prompt.svg",
+      "piece_names": [
+        "L3",
+        "T4",
+        "Z4"
+      ],
+      "pieces": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            1
+          ]
+        ]
+      ],
+      "correct_placements": [
+        [
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            0
+          ],
+          [
+            5,
+            0
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            6,
+            1
+          ]
+        ]
+      ],
+      "options": [
+        {
+          "code": "A",
+          "media_id": "fa-004-option-a",
+          "cells": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              5,
+              2
+            ]
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "concavity_mismatch",
+          "rationale_internal": "Susunan cekung mengunci satu sel sehingga exact-cover rotasi-only tidak dapat menempatkan seluruh potongan.",
+          "alt_text": "Diagram pilihan A"
+        },
+        {
+          "code": "B",
+          "media_id": "fa-004-option-b",
+          "cells": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              5,
+              0
+            ],
+            [
+              5,
+              1
+            ],
+            [
+              6,
+              1
+            ]
+          ],
+          "is_correct": true,
+          "score_value": 1,
+          "failure_mode": "exact_cover_valid",
+          "rationale_internal": "Seluruh potongan menutup siluet tepat satu kali tanpa tumpang tindih; exact-cover rotasi-only berhasil.",
+          "alt_text": "Diagram pilihan B"
+        },
+        {
+          "code": "C",
+          "media_id": "fa-004-option-c",
+          "cells": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              5,
+              0
+            ],
+            [
+              5,
+              1
+            ],
+            [
+              5,
+              2
+            ],
+            [
+              6,
+              1
+            ]
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "terminal_residue",
+          "rationale_internal": "Penempatan potongan pada ujung kontur selalu menyisakan residu yang tidak cocok dengan potongan tersisa.",
+          "alt_text": "Diagram pilihan C"
+        },
+        {
+          "code": "D",
+          "media_id": "fa-004-option-d",
+          "cells": [
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              5,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              5,
+              1
+            ],
+            [
+              6,
+              1
+            ]
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "reflection_required",
+          "rationale_internal": "Siluet baru dapat ditutup bila salah satu potongan dicerminkan; refleksi tidak diizinkan.",
+          "alt_text": "Diagram pilihan D"
+        },
+        {
+          "code": "E",
+          "media_id": "fa-004-option-e",
+          "cells": [
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              5,
+              0
+            ],
+            [
+              5,
+              1
+            ],
+            [
+              5,
+              2
+            ],
+            [
+              6,
+              2
+            ]
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "boundary_partition_mismatch",
+          "rationale_internal": "Pemisahan kontur memaksa pembagian sel yang tidak sesuai dengan bentuk ketiga potongan.",
+          "alt_text": "Diagram pilihan E"
+        }
+      ],
+      "explanation": null,
+      "rationale_internal": "Tiga potongan L3, T4, Z4 mempunyai total 11 sel satuan. Opsi B adalah satu-satunya siluet yang lolos exact-cover dengan rotasi tanpa refleksi.",
+      "visual_logic": {
+        "model": "unit_cell_exact_cover",
+        "rotations_allowed": true,
+        "reflections_allowed": false,
+        "target_area": 11,
+        "correct_target_cells": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            4,
+            0
+          ],
+          [
+            5,
+            0
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            6,
+            1
+          ]
+        ]
+      },
+      "audits": {
+        "area_composition": "pass",
+        "topology": "pass",
+        "rotation": "pass",
+        "reflection": "pass",
+        "small_screen": "pass",
+        "ambiguity": "pass"
+      },
+      "reviews": {
+        "automated_visual_review": "pass",
+        "automated_geometry_review": "pass",
+        "automated_language_review": "pass",
+        "automated_logic_review": "pass",
+        "qc_status": "pass"
+      },
+      "content_origin": "original_internal",
+      "source_reference": null,
+      "copyright_status": "internally_authored",
+      "normative_compatibility": "none",
+      "review_status": "in_review",
+      "active": false
+    },
+    {
+      "logical_id": "fa-005",
+      "subtest_code": "FA",
+      "kind": "scored",
+      "display_order": 5,
+      "answer_type": "image_choice",
+      "difficulty_target": "medium",
+      "prompt_text": "Perhatikan seluruh potongan pada gambar. Pilih bentuk utuh yang dapat disusun menggunakan setiap potongan tepat satu kali. Potongan boleh diputar, tetapi tidak boleh dicerminkan.",
+      "prompt_media_id": "fa-005-prompt",
+      "prompt_relative_path": "fa/questions/fa-q005-prompt.svg",
+      "piece_names": [
+        "I3",
+        "O4",
+        "L4"
+      ],
+      "pieces": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            2
+          ]
+        ]
+      ],
+      "correct_placements": [
+        [
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "options": [
+        {
+          "code": "A",
+          "media_id": "fa-005-option-a",
+          "cells": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "concavity_mismatch",
+          "rationale_internal": "Susunan cekung mengunci satu sel sehingga exact-cover rotasi-only tidak dapat menempatkan seluruh potongan.",
+          "alt_text": "Diagram pilihan A"
+        },
+        {
+          "code": "B",
+          "media_id": "fa-005-option-b",
+          "cells": [
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              4
+            ]
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "terminal_residue",
+          "rationale_internal": "Penempatan potongan pada ujung kontur selalu menyisakan residu yang tidak cocok dengan potongan tersisa.",
+          "alt_text": "Diagram pilihan B"
+        },
+        {
+          "code": "C",
+          "media_id": "fa-005-option-c",
+          "cells": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              3,
+              3
+            ]
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "composition_mismatch",
+          "rationale_internal": "Area siluet sama, tetapi enumerasi exact-cover dengan seluruh rotasi legal tidak menemukan pembagian yang cocok untuk ketiga potongan.",
+          "alt_text": "Diagram pilihan C"
+        },
+        {
+          "code": "D",
+          "media_id": "fa-005-option-d",
+          "cells": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "is_correct": true,
+          "score_value": 1,
+          "failure_mode": "exact_cover_valid",
+          "rationale_internal": "Seluruh potongan menutup siluet tepat satu kali tanpa tumpang tindih; exact-cover rotasi-only berhasil.",
+          "alt_text": "Diagram pilihan D"
+        },
+        {
+          "code": "E",
+          "media_id": "fa-005-option-e",
+          "cells": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              1
+            ]
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "boundary_partition_mismatch",
+          "rationale_internal": "Pemisahan kontur memaksa pembagian sel yang tidak sesuai dengan bentuk ketiga potongan.",
+          "alt_text": "Diagram pilihan E"
+        }
+      ],
+      "explanation": null,
+      "rationale_internal": "Tiga potongan I3, O4, L4 mempunyai total 11 sel satuan. Opsi D adalah satu-satunya siluet yang lolos exact-cover dengan rotasi tanpa refleksi.",
+      "visual_logic": {
+        "model": "unit_cell_exact_cover",
+        "rotations_allowed": true,
+        "reflections_allowed": false,
+        "target_area": 11,
+        "correct_target_cells": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ]
+        ]
+      },
+      "audits": {
+        "area_composition": "pass",
+        "topology": "pass",
+        "rotation": "pass",
+        "reflection": "pass",
+        "small_screen": "pass",
+        "ambiguity": "pass"
+      },
+      "reviews": {
+        "automated_visual_review": "pass",
+        "automated_geometry_review": "pass",
+        "automated_language_review": "pass",
+        "automated_logic_review": "pass",
+        "qc_status": "pass"
+      },
+      "content_origin": "original_internal",
+      "source_reference": null,
+      "copyright_status": "internally_authored",
+      "normative_compatibility": "none",
+      "review_status": "in_review",
+      "active": false
+    },
+    {
+      "logical_id": "fa-006",
+      "subtest_code": "FA",
+      "kind": "scored",
+      "display_order": 6,
+      "answer_type": "image_choice",
+      "difficulty_target": "medium",
+      "prompt_text": "Perhatikan seluruh potongan pada gambar. Pilih bentuk utuh yang dapat disusun menggunakan setiap potongan tepat satu kali. Potongan boleh diputar, tetapi tidak boleh dicerminkan.",
+      "prompt_media_id": "fa-006-prompt",
+      "prompt_relative_path": "fa/questions/fa-q006-prompt.svg",
+      "piece_names": [
+        "D2",
+        "T4",
+        "U5"
+      ],
+      "pieces": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            1
+          ]
+        ]
+      ],
+      "correct_placements": [
+        [
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            0
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            5,
+            0
+          ],
+          [
+            6,
+            0
+          ],
+          [
+            6,
+            1
+          ]
+        ]
+      ],
+      "options": [
+        {
+          "code": "A",
+          "media_id": "fa-006-option-a",
+          "cells": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              5,
+              1
+            ],
+            [
+              5,
+              2
+            ]
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "concavity_mismatch",
+          "rationale_internal": "Susunan cekung mengunci satu sel sehingga exact-cover rotasi-only tidak dapat menempatkan seluruh potongan.",
+          "alt_text": "Diagram pilihan A"
+        },
+        {
+          "code": "B",
+          "media_id": "fa-006-option-b",
+          "cells": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              5,
+              0
+            ],
+            [
+              6,
+              0
+            ],
+            [
+              6,
+              1
+            ]
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "terminal_residue",
+          "rationale_internal": "Penempatan potongan pada ujung kontur selalu menyisakan residu yang tidak cocok dengan potongan tersisa.",
+          "alt_text": "Diagram pilihan B"
+        },
+        {
+          "code": "C",
+          "media_id": "fa-006-option-c",
+          "cells": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              5,
+              0
+            ],
+            [
+              6,
+              0
+            ],
+            [
+              6,
+              1
+            ]
+          ],
+          "is_correct": true,
+          "score_value": 1,
+          "failure_mode": "exact_cover_valid",
+          "rationale_internal": "Seluruh potongan menutup siluet tepat satu kali tanpa tumpang tindih; exact-cover rotasi-only berhasil.",
+          "alt_text": "Diagram pilihan C"
+        },
+        {
+          "code": "D",
+          "media_id": "fa-006-option-d",
+          "cells": [
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              5,
+              1
+            ],
+            [
+              6,
+              1
+            ],
+            [
+              6,
+              2
+            ]
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "composition_mismatch",
+          "rationale_internal": "Area siluet sama, tetapi enumerasi exact-cover dengan seluruh rotasi legal tidak menemukan pembagian yang cocok untuk ketiga potongan.",
+          "alt_text": "Diagram pilihan D"
+        },
+        {
+          "code": "E",
+          "media_id": "fa-006-option-e",
+          "cells": [
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              5,
+              1
+            ],
+            [
+              6,
+              0
+            ],
+            [
+              6,
+              1
+            ],
+            [
+              6,
+              2
+            ]
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "boundary_partition_mismatch",
+          "rationale_internal": "Pemisahan kontur memaksa pembagian sel yang tidak sesuai dengan bentuk ketiga potongan.",
+          "alt_text": "Diagram pilihan E"
+        }
+      ],
+      "explanation": null,
+      "rationale_internal": "Tiga potongan D2, T4, U5 mempunyai total 11 sel satuan. Opsi C adalah satu-satunya siluet yang lolos exact-cover dengan rotasi tanpa refleksi.",
+      "visual_logic": {
+        "model": "unit_cell_exact_cover",
+        "rotations_allowed": true,
+        "reflections_allowed": false,
+        "target_area": 11,
+        "correct_target_cells": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            4,
+            0
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            5,
+            0
+          ],
+          [
+            6,
+            0
+          ],
+          [
+            6,
+            1
+          ]
+        ]
+      },
+      "audits": {
+        "area_composition": "pass",
+        "topology": "pass",
+        "rotation": "pass",
+        "reflection": "pass",
+        "small_screen": "pass",
+        "ambiguity": "pass"
+      },
+      "reviews": {
+        "automated_visual_review": "pass",
+        "automated_geometry_review": "pass",
+        "automated_language_review": "pass",
+        "automated_logic_review": "pass",
+        "qc_status": "pass"
+      },
+      "content_origin": "original_internal",
+      "source_reference": null,
+      "copyright_status": "internally_authored",
+      "normative_compatibility": "none",
+      "review_status": "in_review",
+      "active": false
+    },
+    {
+      "logical_id": "fa-007",
+      "subtest_code": "FA",
+      "kind": "scored",
+      "display_order": 7,
+      "answer_type": "image_choice",
+      "difficulty_target": "medium",
+      "prompt_text": "Perhatikan seluruh potongan pada gambar. Pilih bentuk utuh yang dapat disusun menggunakan setiap potongan tepat satu kali. Potongan boleh diputar, tetapi tidak boleh dicerminkan.",
+      "prompt_media_id": "fa-007-prompt",
+      "prompt_relative_path": "fa/questions/fa-q007-prompt.svg",
+      "piece_names": [
+        "L3",
+        "S4",
+        "P5"
+      ],
+      "pieces": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      ],
+      "correct_placements": [
+        [
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            0
+          ]
+        ],
+        [
+          [
+            4,
+            0
+          ],
+          [
+            5,
+            0
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            6,
+            0
+          ],
+          [
+            6,
+            1
+          ]
+        ]
+      ],
+      "options": [
+        {
+          "code": "A",
+          "media_id": "fa-007-option-a",
+          "cells": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              5,
+              0
+            ],
+            [
+              5,
+              1
+            ],
+            [
+              6,
+              0
+            ],
+            [
+              6,
+              1
+            ]
+          ],
+          "is_correct": true,
+          "score_value": 1,
+          "failure_mode": "exact_cover_valid",
+          "rationale_internal": "Seluruh potongan menutup siluet tepat satu kali tanpa tumpang tindih; exact-cover rotasi-only berhasil.",
+          "alt_text": "Diagram pilihan A"
+        },
+        {
+          "code": "B",
+          "media_id": "fa-007-option-b",
+          "cells": [
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              5,
+              0
+            ],
+            [
+              5,
+              1
+            ],
+            [
+              5,
+              2
+            ],
+            [
+              6,
+              1
+            ],
+            [
+              6,
+              2
+            ]
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "concavity_mismatch",
+          "rationale_internal": "Susunan cekung mengunci satu sel sehingga exact-cover rotasi-only tidak dapat menempatkan seluruh potongan.",
+          "alt_text": "Diagram pilihan B"
+        },
+        {
+          "code": "C",
+          "media_id": "fa-007-option-c",
+          "cells": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              5,
+              0
+            ],
+            [
+              5,
+              1
+            ],
+            [
+              6,
+              0
+            ],
+            [
+              6,
+              1
+            ],
+            [
+              7,
+              0
+            ]
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "terminal_residue",
+          "rationale_internal": "Penempatan potongan pada ujung kontur selalu menyisakan residu yang tidak cocok dengan potongan tersisa.",
+          "alt_text": "Diagram pilihan C"
+        },
+        {
+          "code": "D",
+          "media_id": "fa-007-option-d",
+          "cells": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              5,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              5,
+              1
+            ],
+            [
+              6,
+              1
+            ]
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "reflection_required",
+          "rationale_internal": "Siluet baru dapat ditutup bila salah satu potongan dicerminkan; refleksi tidak diizinkan.",
+          "alt_text": "Diagram pilihan D"
+        },
+        {
+          "code": "E",
+          "media_id": "fa-007-option-e",
+          "cells": [
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              5,
+              1
+            ],
+            [
+              5,
+              2
+            ],
+            [
+              6,
+              1
+            ],
+            [
+              6,
+              2
+            ]
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "boundary_partition_mismatch",
+          "rationale_internal": "Pemisahan kontur memaksa pembagian sel yang tidak sesuai dengan bentuk ketiga potongan.",
+          "alt_text": "Diagram pilihan E"
+        }
+      ],
+      "explanation": null,
+      "rationale_internal": "Tiga potongan L3, S4, P5 mempunyai total 12 sel satuan. Opsi A adalah satu-satunya siluet yang lolos exact-cover dengan rotasi tanpa refleksi.",
+      "visual_logic": {
+        "model": "unit_cell_exact_cover",
+        "rotations_allowed": true,
+        "reflections_allowed": false,
+        "target_area": 12,
+        "correct_target_cells": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            4,
+            0
+          ],
+          [
+            5,
+            0
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            6,
+            0
+          ],
+          [
+            6,
+            1
+          ]
+        ]
+      },
+      "audits": {
+        "area_composition": "pass",
+        "topology": "pass",
+        "rotation": "pass",
+        "reflection": "pass",
+        "small_screen": "pass",
+        "ambiguity": "pass"
+      },
+      "reviews": {
+        "automated_visual_review": "pass",
+        "automated_geometry_review": "pass",
+        "automated_language_review": "pass",
+        "automated_logic_review": "pass",
+        "qc_status": "pass"
+      },
+      "content_origin": "original_internal",
+      "source_reference": null,
+      "copyright_status": "internally_authored",
+      "normative_compatibility": "none",
+      "review_status": "in_review",
+      "active": false
+    },
+    {
+      "logical_id": "fa-008",
+      "subtest_code": "FA",
+      "kind": "scored",
+      "display_order": 8,
+      "answer_type": "image_choice",
+      "difficulty_target": "hard",
+      "prompt_text": "Perhatikan seluruh potongan pada gambar. Pilih bentuk utuh yang dapat disusun menggunakan setiap potongan tepat satu kali. Potongan boleh diputar, tetapi tidak boleh dicerminkan.",
+      "prompt_media_id": "fa-008-prompt",
+      "prompt_relative_path": "fa/questions/fa-q008-prompt.svg",
+      "piece_names": [
+        "I3",
+        "T4",
+        "V5"
+      ],
+      "pieces": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "correct_placements": [
+        [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            3
+          ]
+        ]
+      ],
+      "options": [
+        {
+          "code": "A",
+          "media_id": "fa-008-option-a",
+          "cells": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              2
+            ]
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "concavity_mismatch",
+          "rationale_internal": "Susunan cekung mengunci satu sel sehingga exact-cover rotasi-only tidak dapat menempatkan seluruh potongan.",
+          "alt_text": "Diagram pilihan A"
+        },
+        {
+          "code": "B",
+          "media_id": "fa-008-option-b",
+          "cells": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              4,
+              2
+            ]
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "terminal_residue",
+          "rationale_internal": "Penempatan potongan pada ujung kontur selalu menyisakan residu yang tidak cocok dengan potongan tersisa.",
+          "alt_text": "Diagram pilihan B"
+        },
+        {
+          "code": "C",
+          "media_id": "fa-008-option-c",
+          "cells": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              4,
+              0
+            ]
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "composition_mismatch",
+          "rationale_internal": "Area siluet sama, tetapi enumerasi exact-cover dengan seluruh rotasi legal tidak menemukan pembagian yang cocok untuk ketiga potongan.",
+          "alt_text": "Diagram pilihan C"
+        },
+        {
+          "code": "D",
+          "media_id": "fa-008-option-d",
+          "cells": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              2
+            ]
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "boundary_partition_mismatch",
+          "rationale_internal": "Pemisahan kontur memaksa pembagian sel yang tidak sesuai dengan bentuk ketiga potongan.",
+          "alt_text": "Diagram pilihan D"
+        },
+        {
+          "code": "E",
+          "media_id": "fa-008-option-e",
+          "cells": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              2
+            ]
+          ],
+          "is_correct": true,
+          "score_value": 1,
+          "failure_mode": "exact_cover_valid",
+          "rationale_internal": "Seluruh potongan menutup siluet tepat satu kali tanpa tumpang tindih; exact-cover rotasi-only berhasil.",
+          "alt_text": "Diagram pilihan E"
+        }
+      ],
+      "explanation": null,
+      "rationale_internal": "Tiga potongan I3, T4, V5 mempunyai total 12 sel satuan. Opsi E adalah satu-satunya siluet yang lolos exact-cover dengan rotasi tanpa refleksi.",
+      "visual_logic": {
+        "model": "unit_cell_exact_cover",
+        "rotations_allowed": true,
+        "reflections_allowed": false,
+        "target_area": 12,
+        "correct_target_cells": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            2
+          ]
+        ]
+      },
+      "audits": {
+        "area_composition": "pass",
+        "topology": "pass",
+        "rotation": "pass",
+        "reflection": "pass",
+        "small_screen": "pass",
+        "ambiguity": "pass"
+      },
+      "reviews": {
+        "automated_visual_review": "pass",
+        "automated_geometry_review": "pass",
+        "automated_language_review": "pass",
+        "automated_logic_review": "pass",
+        "qc_status": "pass"
+      },
+      "content_origin": "original_internal",
+      "source_reference": null,
+      "copyright_status": "internally_authored",
+      "normative_compatibility": "none",
+      "review_status": "in_review",
+      "active": false
+    },
+    {
+      "logical_id": "fa-009",
+      "subtest_code": "FA",
+      "kind": "scored",
+      "display_order": 9,
+      "answer_type": "image_choice",
+      "difficulty_target": "hard",
+      "prompt_text": "Perhatikan seluruh potongan pada gambar. Pilih bentuk utuh yang dapat disusun menggunakan setiap potongan tepat satu kali. Potongan boleh diputar, tetapi tidak boleh dicerminkan.",
+      "prompt_media_id": "fa-009-prompt",
+      "prompt_relative_path": "fa/questions/fa-q009-prompt.svg",
+      "piece_names": [
+        "L4",
+        "O4",
+        "W5"
+      ],
+      "pieces": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "correct_placements": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            4,
+            0
+          ],
+          [
+            4,
+            1
+          ]
+        ]
+      ],
+      "options": [
+        {
+          "code": "A",
+          "media_id": "fa-009-option-a",
+          "cells": [
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              4,
+              2
+            ]
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "concavity_mismatch",
+          "rationale_internal": "Susunan cekung mengunci satu sel sehingga exact-cover rotasi-only tidak dapat menempatkan seluruh potongan.",
+          "alt_text": "Diagram pilihan A"
+        },
+        {
+          "code": "B",
+          "media_id": "fa-009-option-b",
+          "cells": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              4,
+              1
+            ]
+          ],
+          "is_correct": true,
+          "score_value": 1,
+          "failure_mode": "exact_cover_valid",
+          "rationale_internal": "Seluruh potongan menutup siluet tepat satu kali tanpa tumpang tindih; exact-cover rotasi-only berhasil.",
+          "alt_text": "Diagram pilihan B"
+        },
+        {
+          "code": "C",
+          "media_id": "fa-009-option-c",
+          "cells": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              4,
+              2
+            ]
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "terminal_residue",
+          "rationale_internal": "Penempatan potongan pada ujung kontur selalu menyisakan residu yang tidak cocok dengan potongan tersisa.",
+          "alt_text": "Diagram pilihan C"
+        },
+        {
+          "code": "D",
+          "media_id": "fa-009-option-d",
+          "cells": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              4,
+              2
+            ]
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "composition_mismatch",
+          "rationale_internal": "Area siluet sama, tetapi enumerasi exact-cover dengan seluruh rotasi legal tidak menemukan pembagian yang cocok untuk ketiga potongan.",
+          "alt_text": "Diagram pilihan D"
+        },
+        {
+          "code": "E",
+          "media_id": "fa-009-option-e",
+          "cells": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              4,
+              2
+            ]
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "boundary_partition_mismatch",
+          "rationale_internal": "Pemisahan kontur memaksa pembagian sel yang tidak sesuai dengan bentuk ketiga potongan.",
+          "alt_text": "Diagram pilihan E"
+        }
+      ],
+      "explanation": null,
+      "rationale_internal": "Tiga potongan L4, O4, W5 mempunyai total 13 sel satuan. Opsi B adalah satu-satunya siluet yang lolos exact-cover dengan rotasi tanpa refleksi.",
+      "visual_logic": {
+        "model": "unit_cell_exact_cover",
+        "rotations_allowed": true,
+        "reflections_allowed": false,
+        "target_area": 13,
+        "correct_target_cells": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            4,
+            0
+          ],
+          [
+            4,
+            1
+          ]
+        ]
+      },
+      "audits": {
+        "area_composition": "pass",
+        "topology": "pass",
+        "rotation": "pass",
+        "reflection": "pass",
+        "small_screen": "pass",
+        "ambiguity": "pass"
+      },
+      "reviews": {
+        "automated_visual_review": "pass",
+        "automated_geometry_review": "pass",
+        "automated_language_review": "pass",
+        "automated_logic_review": "pass",
+        "qc_status": "pass"
+      },
+      "content_origin": "original_internal",
+      "source_reference": null,
+      "copyright_status": "internally_authored",
+      "normative_compatibility": "none",
+      "review_status": "in_review",
+      "active": false
+    },
+    {
+      "logical_id": "fa-010",
+      "subtest_code": "FA",
+      "kind": "scored",
+      "display_order": 10,
+      "answer_type": "image_choice",
+      "difficulty_target": "hard",
+      "prompt_text": "Perhatikan seluruh potongan pada gambar. Pilih bentuk utuh yang dapat disusun menggunakan setiap potongan tepat satu kali. Potongan boleh diputar, tetapi tidak boleh dicerminkan.",
+      "prompt_media_id": "fa-010-prompt",
+      "prompt_relative_path": "fa/questions/fa-q010-prompt.svg",
+      "piece_names": [
+        "T4",
+        "Z4",
+        "Y5"
+      ],
+      "pieces": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      ],
+      "correct_placements": [
+        [
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            4
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            4
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            0,
+            7
+          ],
+          [
+            1,
+            5
+          ]
+        ]
+      ],
+      "options": [
+        {
+          "code": "A",
+          "media_id": "fa-010-option-a",
+          "cells": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              1,
+              7
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              2,
+              5
+            ]
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "concavity_mismatch",
+          "rationale_internal": "Susunan cekung mengunci satu sel sehingga exact-cover rotasi-only tidak dapat menempatkan seluruh potongan.",
+          "alt_text": "Diagram pilihan A"
+        },
+        {
+          "code": "B",
+          "media_id": "fa-010-option-b",
+          "cells": [
+            [
+              0,
+              4
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              1,
+              7
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              2,
+              5
+            ]
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "terminal_residue",
+          "rationale_internal": "Penempatan potongan pada ujung kontur selalu menyisakan residu yang tidak cocok dengan potongan tersisa.",
+          "alt_text": "Diagram pilihan B"
+        },
+        {
+          "code": "C",
+          "media_id": "fa-010-option-c",
+          "cells": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              0,
+              5
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              1,
+              7
+            ]
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "reflection_required",
+          "rationale_internal": "Siluet baru dapat ditutup bila salah satu potongan dicerminkan; refleksi tidak diizinkan.",
+          "alt_text": "Diagram pilihan C"
+        },
+        {
+          "code": "D",
+          "media_id": "fa-010-option-d",
+          "cells": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              5
+            ],
+            [
+              0,
+              6
+            ],
+            [
+              0,
+              7
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              1,
+              5
+            ]
+          ],
+          "is_correct": true,
+          "score_value": 1,
+          "failure_mode": "exact_cover_valid",
+          "rationale_internal": "Seluruh potongan menutup siluet tepat satu kali tanpa tumpang tindih; exact-cover rotasi-only berhasil.",
+          "alt_text": "Diagram pilihan D"
+        },
+        {
+          "code": "E",
+          "media_id": "fa-010-option-e",
+          "cells": [
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              1,
+              7
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              2,
+              5
+            ]
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "boundary_partition_mismatch",
+          "rationale_internal": "Pemisahan kontur memaksa pembagian sel yang tidak sesuai dengan bentuk ketiga potongan.",
+          "alt_text": "Diagram pilihan E"
+        }
+      ],
+      "explanation": null,
+      "rationale_internal": "Tiga potongan T4, Z4, Y5 mempunyai total 13 sel satuan. Opsi D adalah satu-satunya siluet yang lolos exact-cover dengan rotasi tanpa refleksi.",
+      "visual_logic": {
+        "model": "unit_cell_exact_cover",
+        "rotations_allowed": true,
+        "reflections_allowed": false,
+        "target_area": 13,
+        "correct_target_cells": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            0,
+            7
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            1,
+            5
+          ]
+        ]
+      },
+      "audits": {
+        "area_composition": "pass",
+        "topology": "pass",
+        "rotation": "pass",
+        "reflection": "pass",
+        "small_screen": "pass",
+        "ambiguity": "pass"
+      },
+      "reviews": {
+        "automated_visual_review": "pass",
+        "automated_geometry_review": "pass",
+        "automated_language_review": "pass",
+        "automated_logic_review": "pass",
+        "qc_status": "pass"
+      },
+      "content_origin": "original_internal",
+      "source_reference": null,
+      "copyright_status": "internally_authored",
+      "normative_compatibility": "none",
+      "review_status": "in_review",
+      "active": false
+    },
+    {
+      "logical_id": "wu-example-001",
+      "subtest_code": "WU",
+      "kind": "example",
+      "display_order": 0,
+      "answer_type": "image_choice",
+      "difficulty_target": null,
+      "prompt_text": "Perhatikan dua tampilan kubus referensi. Pilih kubus yang menunjukkan susunan sisi yang sama setelah rotasi.",
+      "prompt_media_id": "wu-example-001-reference",
+      "prompt_relative_path": "wu/examples/wu-example-001-reference.svg",
+      "face_symbols": {
+        "top": "circle",
+        "bottom": "plus",
+        "front": "cross",
+        "back": "bullseye",
+        "right": "fourdots",
+        "left": "diamond"
+      },
+      "reference_views": [
+        [
+          "top",
+          "front",
+          "right"
+        ],
+        [
+          "bottom",
+          "left",
+          "back"
+        ]
+      ],
+      "options": [
+        {
+          "code": "A",
+          "media_id": "wu-example-001-option-a",
+          "visible_faces": [
+            "top",
+            "right",
+            "front"
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "mirror_chirality",
+          "rationale_internal": "Tuple top/right/front membalik urutan siklik tiga muka; ini merupakan mirror, bukan rotasi proper.",
+          "alt_text": "Kubus pilihan A"
+        },
+        {
+          "code": "B",
+          "media_id": "wu-example-001-option-b",
+          "visible_faces": [
+            "bottom",
+            "front",
+            "left"
+          ],
+          "is_correct": true,
+          "score_value": 1,
+          "failure_mode": "proper_rotation",
+          "rationale_internal": "Tuple Top/Front/Right bottom/front/left termasuk salah satu dari 24 rotasi proper dan mempertahankan adjacency, opposite faces, serta chirality.",
+          "alt_text": "Kubus pilihan B"
+        },
+        {
+          "code": "C",
+          "media_id": "wu-example-001-option-c",
+          "visible_faces": [
+            "top",
+            "bottom",
+            "front"
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "opposite_faces_adjacent",
+          "rationale_internal": "Tuple top/bottom/front menempatkan pasangan sisi berlawanan pada satu sudut, sehingga tidak mungkin.",
+          "alt_text": "Kubus pilihan C"
+        },
+        {
+          "code": "D",
+          "media_id": "wu-example-001-option-d",
+          "visible_faces": [
+            "top",
+            "front",
+            "left"
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "mirror_chirality",
+          "rationale_internal": "Tuple top/front/left membalik urutan siklik tiga muka; ini merupakan mirror, bukan rotasi proper.",
+          "alt_text": "Kubus pilihan D"
+        },
+        {
+          "code": "E",
+          "media_id": "wu-example-001-option-e",
+          "visible_faces": [
+            "top",
+            "back",
+            "front"
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "opposite_faces_adjacent",
+          "rationale_internal": "Tuple top/back/front menempatkan pasangan sisi berlawanan pada satu sudut, sehingga tidak mungkin.",
+          "alt_text": "Kubus pilihan E"
+        }
+      ],
+      "explanation": "Rotasi kubus mempertahankan sisi yang bersebelahan, sisi yang berlawanan, dan urutan tiga sisi pada satu sudut.",
+      "rationale_internal": "Mapping enam sisi unik diverifikasi melalui 24 rotasi proper. Hanya opsi B yang mempunyai tuple orientasi valid.",
+      "rotation_proof": {
+        "visible_faces": [
+          "bottom",
+          "front",
+          "left"
+        ],
+        "rotation_sequence": [
+          "putar searah pandang 90°",
+          "putar searah pandang 90°"
+        ],
+        "statement": "putar searah pandang 90° → putar searah pandang 90° menghasilkan Top=bottom, Front=front, Right=left."
+      },
+      "audits": {
+        "adjacency": "pass",
+        "opposite_faces": "pass",
+        "chirality": "pass",
+        "symbol_orientation": "pass",
+        "small_screen": "pass",
+        "ambiguity": "pass"
+      },
+      "reviews": {
+        "automated_visual_review": "pass",
+        "automated_geometry_review": "pass",
+        "automated_rotation_review": "pass",
+        "automated_language_review": "pass",
+        "automated_logic_review": "pass",
+        "qc_status": "pass"
+      },
+      "content_origin": "original_internal",
+      "source_reference": null,
+      "copyright_status": "internally_authored",
+      "normative_compatibility": "none",
+      "review_status": "in_review",
+      "active": false
+    },
+    {
+      "logical_id": "wu-001",
+      "subtest_code": "WU",
+      "kind": "scored",
+      "display_order": 1,
+      "answer_type": "image_choice",
+      "difficulty_target": "easy",
+      "prompt_text": "Perhatikan dua tampilan kubus referensi. Pilih kubus yang menunjukkan susunan sisi yang sama setelah rotasi.",
+      "prompt_media_id": "wu-001-reference",
+      "prompt_relative_path": "wu/questions/wu-q001-reference.svg",
+      "face_symbols": {
+        "top": "bullseye",
+        "bottom": "fourdots",
+        "front": "diamond",
+        "back": "square",
+        "right": "hexagon",
+        "left": "star"
+      },
+      "reference_views": [
+        [
+          "top",
+          "front",
+          "right"
+        ],
+        [
+          "bottom",
+          "left",
+          "back"
+        ]
+      ],
+      "options": [
+        {
+          "code": "A",
+          "media_id": "wu-001-option-a",
+          "visible_faces": [
+            "bottom",
+            "left",
+            "front"
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "mirror_chirality",
+          "rationale_internal": "Tuple bottom/left/front membalik urutan siklik tiga muka; ini merupakan mirror, bukan rotasi proper.",
+          "alt_text": "Kubus pilihan A"
+        },
+        {
+          "code": "B",
+          "media_id": "wu-001-option-b",
+          "visible_faces": [
+            "top",
+            "front",
+            "back"
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "opposite_faces_adjacent",
+          "rationale_internal": "Tuple top/front/back menempatkan pasangan sisi berlawanan pada satu sudut, sehingga tidak mungkin.",
+          "alt_text": "Kubus pilihan B"
+        },
+        {
+          "code": "C",
+          "media_id": "wu-001-option-c",
+          "visible_faces": [
+            "bottom",
+            "left",
+            "back"
+          ],
+          "is_correct": true,
+          "score_value": 1,
+          "failure_mode": "proper_rotation",
+          "rationale_internal": "Tuple Top/Front/Right bottom/left/back termasuk salah satu dari 24 rotasi proper dan mempertahankan adjacency, opposite faces, serta chirality.",
+          "alt_text": "Kubus pilihan C"
+        },
+        {
+          "code": "D",
+          "media_id": "wu-001-option-d",
+          "visible_faces": [
+            "bottom",
+            "back",
+            "left"
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "mirror_chirality",
+          "rationale_internal": "Tuple bottom/back/left membalik urutan siklik tiga muka; ini merupakan mirror, bukan rotasi proper.",
+          "alt_text": "Kubus pilihan D"
+        },
+        {
+          "code": "E",
+          "media_id": "wu-001-option-e",
+          "visible_faces": [
+            "bottom",
+            "top",
+            "front"
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "opposite_faces_adjacent",
+          "rationale_internal": "Tuple bottom/top/front menempatkan pasangan sisi berlawanan pada satu sudut, sehingga tidak mungkin.",
+          "alt_text": "Kubus pilihan E"
+        }
+      ],
+      "explanation": null,
+      "rationale_internal": "Mapping enam sisi unik diverifikasi melalui 24 rotasi proper. Hanya opsi C yang mempunyai tuple orientasi valid.",
+      "rotation_proof": {
+        "visible_faces": [
+          "bottom",
+          "left",
+          "back"
+        ],
+        "rotation_sequence": [
+          "putar vertikal 90°",
+          "putar maju 90°",
+          "putar maju 90°"
+        ],
+        "statement": "putar vertikal 90° → putar maju 90° → putar maju 90° menghasilkan Top=bottom, Front=left, Right=back."
+      },
+      "audits": {
+        "adjacency": "pass",
+        "opposite_faces": "pass",
+        "chirality": "pass",
+        "symbol_orientation": "pass",
+        "small_screen": "pass",
+        "ambiguity": "pass"
+      },
+      "reviews": {
+        "automated_visual_review": "pass",
+        "automated_geometry_review": "pass",
+        "automated_rotation_review": "pass",
+        "automated_language_review": "pass",
+        "automated_logic_review": "pass",
+        "qc_status": "pass"
+      },
+      "content_origin": "original_internal",
+      "source_reference": null,
+      "copyright_status": "internally_authored",
+      "normative_compatibility": "none",
+      "review_status": "in_review",
+      "active": false
+    },
+    {
+      "logical_id": "wu-002",
+      "subtest_code": "WU",
+      "kind": "scored",
+      "display_order": 2,
+      "answer_type": "image_choice",
+      "difficulty_target": "easy",
+      "prompt_text": "Perhatikan dua tampilan kubus referensi. Pilih kubus yang menunjukkan susunan sisi yang sama setelah rotasi.",
+      "prompt_media_id": "wu-002-reference",
+      "prompt_relative_path": "wu/questions/wu-q002-reference.svg",
+      "face_symbols": {
+        "top": "square",
+        "bottom": "hexagon",
+        "front": "star",
+        "back": "doublecircle",
+        "right": "circle",
+        "left": "plus"
+      },
+      "reference_views": [
+        [
+          "top",
+          "front",
+          "right"
+        ],
+        [
+          "bottom",
+          "left",
+          "back"
+        ]
+      ],
+      "options": [
+        {
+          "code": "A",
+          "media_id": "wu-002-option-a",
+          "visible_faces": [
+            "front",
+            "right",
+            "top"
+          ],
+          "is_correct": true,
+          "score_value": 1,
+          "failure_mode": "proper_rotation",
+          "rationale_internal": "Tuple Top/Front/Right front/right/top termasuk salah satu dari 24 rotasi proper dan mempertahankan adjacency, opposite faces, serta chirality.",
+          "alt_text": "Kubus pilihan A"
+        },
+        {
+          "code": "B",
+          "media_id": "wu-002-option-b",
+          "visible_faces": [
+            "front",
+            "left",
+            "top"
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "mirror_chirality",
+          "rationale_internal": "Tuple front/left/top membalik urutan siklik tiga muka; ini merupakan mirror, bukan rotasi proper.",
+          "alt_text": "Kubus pilihan B"
+        },
+        {
+          "code": "C",
+          "media_id": "wu-002-option-c",
+          "visible_faces": [
+            "top",
+            "left",
+            "bottom"
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "opposite_faces_adjacent",
+          "rationale_internal": "Tuple top/left/bottom menempatkan pasangan sisi berlawanan pada satu sudut, sehingga tidak mungkin.",
+          "alt_text": "Kubus pilihan C"
+        },
+        {
+          "code": "D",
+          "media_id": "wu-002-option-d",
+          "visible_faces": [
+            "front",
+            "bottom",
+            "left"
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "mirror_chirality",
+          "rationale_internal": "Tuple front/bottom/left membalik urutan siklik tiga muka; ini merupakan mirror, bukan rotasi proper.",
+          "alt_text": "Kubus pilihan D"
+        },
+        {
+          "code": "E",
+          "media_id": "wu-002-option-e",
+          "visible_faces": [
+            "bottom",
+            "front",
+            "back"
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "opposite_faces_adjacent",
+          "rationale_internal": "Tuple bottom/front/back menempatkan pasangan sisi berlawanan pada satu sudut, sehingga tidak mungkin.",
+          "alt_text": "Kubus pilihan E"
+        }
+      ],
+      "explanation": null,
+      "rationale_internal": "Mapping enam sisi unik diverifikasi melalui 24 rotasi proper. Hanya opsi A yang mempunyai tuple orientasi valid.",
+      "rotation_proof": {
+        "visible_faces": [
+          "front",
+          "right",
+          "top"
+        ],
+        "rotation_sequence": [
+          "putar vertikal 90°",
+          "putar searah pandang 90°"
+        ],
+        "statement": "putar vertikal 90° → putar searah pandang 90° menghasilkan Top=front, Front=right, Right=top."
+      },
+      "audits": {
+        "adjacency": "pass",
+        "opposite_faces": "pass",
+        "chirality": "pass",
+        "symbol_orientation": "pass",
+        "small_screen": "pass",
+        "ambiguity": "pass"
+      },
+      "reviews": {
+        "automated_visual_review": "pass",
+        "automated_geometry_review": "pass",
+        "automated_rotation_review": "pass",
+        "automated_language_review": "pass",
+        "automated_logic_review": "pass",
+        "qc_status": "pass"
+      },
+      "content_origin": "original_internal",
+      "source_reference": null,
+      "copyright_status": "internally_authored",
+      "normative_compatibility": "none",
+      "review_status": "in_review",
+      "active": false
+    },
+    {
+      "logical_id": "wu-003",
+      "subtest_code": "WU",
+      "kind": "scored",
+      "display_order": 3,
+      "answer_type": "image_choice",
+      "difficulty_target": "easy",
+      "prompt_text": "Perhatikan dua tampilan kubus referensi. Pilih kubus yang menunjukkan susunan sisi yang sama setelah rotasi.",
+      "prompt_media_id": "wu-003-reference",
+      "prompt_relative_path": "wu/questions/wu-q003-reference.svg",
+      "face_symbols": {
+        "top": "doublecircle",
+        "bottom": "circle",
+        "front": "plus",
+        "back": "cross",
+        "right": "bullseye",
+        "left": "fourdots"
+      },
+      "reference_views": [
+        [
+          "top",
+          "front",
+          "right"
+        ],
+        [
+          "bottom",
+          "left",
+          "back"
+        ]
+      ],
+      "options": [
+        {
+          "code": "A",
+          "media_id": "wu-003-option-a",
+          "visible_faces": [
+            "back",
+            "right",
+            "top"
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "mirror_chirality",
+          "rationale_internal": "Tuple back/right/top membalik urutan siklik tiga muka; ini merupakan mirror, bukan rotasi proper.",
+          "alt_text": "Kubus pilihan A"
+        },
+        {
+          "code": "B",
+          "media_id": "wu-003-option-b",
+          "visible_faces": [
+            "bottom",
+            "top",
+            "left"
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "opposite_faces_adjacent",
+          "rationale_internal": "Tuple bottom/top/left menempatkan pasangan sisi berlawanan pada satu sudut, sehingga tidak mungkin.",
+          "alt_text": "Kubus pilihan B"
+        },
+        {
+          "code": "C",
+          "media_id": "wu-003-option-c",
+          "visible_faces": [
+            "back",
+            "top",
+            "left"
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "mirror_chirality",
+          "rationale_internal": "Tuple back/top/left membalik urutan siklik tiga muka; ini merupakan mirror, bukan rotasi proper.",
+          "alt_text": "Kubus pilihan C"
+        },
+        {
+          "code": "D",
+          "media_id": "wu-003-option-d",
+          "visible_faces": [
+            "back",
+            "bottom",
+            "left"
+          ],
+          "is_correct": true,
+          "score_value": 1,
+          "failure_mode": "proper_rotation",
+          "rationale_internal": "Tuple Top/Front/Right back/bottom/left termasuk salah satu dari 24 rotasi proper dan mempertahankan adjacency, opposite faces, serta chirality.",
+          "alt_text": "Kubus pilihan D"
+        },
+        {
+          "code": "E",
+          "media_id": "wu-003-option-e",
+          "visible_faces": [
+            "bottom",
+            "left",
+            "top"
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "opposite_faces_adjacent",
+          "rationale_internal": "Tuple bottom/left/top menempatkan pasangan sisi berlawanan pada satu sudut, sehingga tidak mungkin.",
+          "alt_text": "Kubus pilihan E"
+        }
+      ],
+      "explanation": null,
+      "rationale_internal": "Mapping enam sisi unik diverifikasi melalui 24 rotasi proper. Hanya opsi D yang mempunyai tuple orientasi valid.",
+      "rotation_proof": {
+        "visible_faces": [
+          "back",
+          "bottom",
+          "left"
+        ],
+        "rotation_sequence": [
+          "putar maju 90°",
+          "putar vertikal 90°",
+          "putar vertikal 90°"
+        ],
+        "statement": "putar maju 90° → putar vertikal 90° → putar vertikal 90° menghasilkan Top=back, Front=bottom, Right=left."
+      },
+      "audits": {
+        "adjacency": "pass",
+        "opposite_faces": "pass",
+        "chirality": "pass",
+        "symbol_orientation": "pass",
+        "small_screen": "pass",
+        "ambiguity": "pass"
+      },
+      "reviews": {
+        "automated_visual_review": "pass",
+        "automated_geometry_review": "pass",
+        "automated_rotation_review": "pass",
+        "automated_language_review": "pass",
+        "automated_logic_review": "pass",
+        "qc_status": "pass"
+      },
+      "content_origin": "original_internal",
+      "source_reference": null,
+      "copyright_status": "internally_authored",
+      "normative_compatibility": "none",
+      "review_status": "in_review",
+      "active": false
+    },
+    {
+      "logical_id": "wu-004",
+      "subtest_code": "WU",
+      "kind": "scored",
+      "display_order": 4,
+      "answer_type": "image_choice",
+      "difficulty_target": "easy",
+      "prompt_text": "Perhatikan dua tampilan kubus referensi. Pilih kubus yang menunjukkan susunan sisi yang sama setelah rotasi.",
+      "prompt_media_id": "wu-004-reference",
+      "prompt_relative_path": "wu/questions/wu-q004-reference.svg",
+      "face_symbols": {
+        "top": "cross",
+        "bottom": "bullseye",
+        "front": "fourdots",
+        "back": "diamond",
+        "right": "square",
+        "left": "hexagon"
+      },
+      "reference_views": [
+        [
+          "top",
+          "front",
+          "right"
+        ],
+        [
+          "bottom",
+          "left",
+          "back"
+        ]
+      ],
+      "options": [
+        {
+          "code": "A",
+          "media_id": "wu-004-option-a",
+          "visible_faces": [
+            "right",
+            "front",
+            "top"
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "mirror_chirality",
+          "rationale_internal": "Tuple right/front/top membalik urutan siklik tiga muka; ini merupakan mirror, bukan rotasi proper.",
+          "alt_text": "Kubus pilihan A"
+        },
+        {
+          "code": "B",
+          "media_id": "wu-004-option-b",
+          "visible_faces": [
+            "right",
+            "top",
+            "front"
+          ],
+          "is_correct": true,
+          "score_value": 1,
+          "failure_mode": "proper_rotation",
+          "rationale_internal": "Tuple Top/Front/Right right/top/front termasuk salah satu dari 24 rotasi proper dan mempertahankan adjacency, opposite faces, serta chirality.",
+          "alt_text": "Kubus pilihan B"
+        },
+        {
+          "code": "C",
+          "media_id": "wu-004-option-c",
+          "visible_faces": [
+            "bottom",
+            "right",
+            "top"
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "opposite_faces_adjacent",
+          "rationale_internal": "Tuple bottom/right/top menempatkan pasangan sisi berlawanan pada satu sudut, sehingga tidak mungkin.",
+          "alt_text": "Kubus pilihan C"
+        },
+        {
+          "code": "D",
+          "media_id": "wu-004-option-d",
+          "visible_faces": [
+            "right",
+            "top",
+            "back"
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "mirror_chirality",
+          "rationale_internal": "Tuple right/top/back membalik urutan siklik tiga muka; ini merupakan mirror, bukan rotasi proper.",
+          "alt_text": "Kubus pilihan D"
+        },
+        {
+          "code": "E",
+          "media_id": "wu-004-option-e",
+          "visible_faces": [
+            "front",
+            "bottom",
+            "back"
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "opposite_faces_adjacent",
+          "rationale_internal": "Tuple front/bottom/back menempatkan pasangan sisi berlawanan pada satu sudut, sehingga tidak mungkin.",
+          "alt_text": "Kubus pilihan E"
+        }
+      ],
+      "explanation": null,
+      "rationale_internal": "Mapping enam sisi unik diverifikasi melalui 24 rotasi proper. Hanya opsi B yang mempunyai tuple orientasi valid.",
+      "rotation_proof": {
+        "visible_faces": [
+          "right",
+          "top",
+          "front"
+        ],
+        "rotation_sequence": [
+          "putar vertikal 90°",
+          "putar vertikal 90°",
+          "putar vertikal 90°",
+          "putar maju 90°"
+        ],
+        "statement": "putar vertikal 90° → putar vertikal 90° → putar vertikal 90° → putar maju 90° menghasilkan Top=right, Front=top, Right=front."
+      },
+      "audits": {
+        "adjacency": "pass",
+        "opposite_faces": "pass",
+        "chirality": "pass",
+        "symbol_orientation": "pass",
+        "small_screen": "pass",
+        "ambiguity": "pass"
+      },
+      "reviews": {
+        "automated_visual_review": "pass",
+        "automated_geometry_review": "pass",
+        "automated_rotation_review": "pass",
+        "automated_language_review": "pass",
+        "automated_logic_review": "pass",
+        "qc_status": "pass"
+      },
+      "content_origin": "original_internal",
+      "source_reference": null,
+      "copyright_status": "internally_authored",
+      "normative_compatibility": "none",
+      "review_status": "in_review",
+      "active": false
+    },
+    {
+      "logical_id": "wu-005",
+      "subtest_code": "WU",
+      "kind": "scored",
+      "display_order": 5,
+      "answer_type": "image_choice",
+      "difficulty_target": "medium",
+      "prompt_text": "Perhatikan dua tampilan kubus referensi. Pilih kubus yang menunjukkan susunan sisi yang sama setelah rotasi.",
+      "prompt_media_id": "wu-005-reference",
+      "prompt_relative_path": "wu/questions/wu-q005-reference.svg",
+      "face_symbols": {
+        "top": "diamond",
+        "bottom": "square",
+        "front": "hexagon",
+        "back": "star",
+        "right": "doublecircle",
+        "left": "circle"
+      },
+      "reference_views": [
+        [
+          "top",
+          "front",
+          "right"
+        ],
+        [
+          "bottom",
+          "left",
+          "back"
+        ]
+      ],
+      "options": [
+        {
+          "code": "A",
+          "media_id": "wu-005-option-a",
+          "visible_faces": [
+            "left",
+            "back",
+            "top"
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "mirror_chirality",
+          "rationale_internal": "Tuple left/back/top membalik urutan siklik tiga muka; ini merupakan mirror, bukan rotasi proper.",
+          "alt_text": "Kubus pilihan A"
+        },
+        {
+          "code": "B",
+          "media_id": "wu-005-option-b",
+          "visible_faces": [
+            "left",
+            "bottom",
+            "back"
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "mirror_chirality",
+          "rationale_internal": "Tuple left/bottom/back membalik urutan siklik tiga muka; ini merupakan mirror, bukan rotasi proper.",
+          "alt_text": "Kubus pilihan B"
+        },
+        {
+          "code": "C",
+          "media_id": "wu-005-option-c",
+          "visible_faces": [
+            "top",
+            "front",
+            "left"
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "mirror_chirality",
+          "rationale_internal": "Tuple top/front/left membalik urutan siklik tiga muka; ini merupakan mirror, bukan rotasi proper.",
+          "alt_text": "Kubus pilihan C"
+        },
+        {
+          "code": "D",
+          "media_id": "wu-005-option-d",
+          "visible_faces": [
+            "bottom",
+            "back",
+            "left"
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "mirror_chirality",
+          "rationale_internal": "Tuple bottom/back/left membalik urutan siklik tiga muka; ini merupakan mirror, bukan rotasi proper.",
+          "alt_text": "Kubus pilihan D"
+        },
+        {
+          "code": "E",
+          "media_id": "wu-005-option-e",
+          "visible_faces": [
+            "right",
+            "back",
+            "top"
+          ],
+          "is_correct": true,
+          "score_value": 1,
+          "failure_mode": "proper_rotation",
+          "rationale_internal": "Tuple Top/Front/Right right/back/top termasuk salah satu dari 24 rotasi proper dan mempertahankan adjacency, opposite faces, serta chirality.",
+          "alt_text": "Kubus pilihan E"
+        }
+      ],
+      "explanation": null,
+      "rationale_internal": "Mapping enam sisi unik diverifikasi melalui 24 rotasi proper. Hanya opsi E yang mempunyai tuple orientasi valid.",
+      "rotation_proof": {
+        "visible_faces": [
+          "right",
+          "back",
+          "top"
+        ],
+        "rotation_sequence": [
+          "putar vertikal 90°",
+          "putar vertikal 90°",
+          "putar searah pandang 90°"
+        ],
+        "statement": "putar vertikal 90° → putar vertikal 90° → putar searah pandang 90° menghasilkan Top=right, Front=back, Right=top."
+      },
+      "audits": {
+        "adjacency": "pass",
+        "opposite_faces": "pass",
+        "chirality": "pass",
+        "symbol_orientation": "pass",
+        "small_screen": "pass",
+        "ambiguity": "pass"
+      },
+      "reviews": {
+        "automated_visual_review": "pass",
+        "automated_geometry_review": "pass",
+        "automated_rotation_review": "pass",
+        "automated_language_review": "pass",
+        "automated_logic_review": "pass",
+        "qc_status": "pass"
+      },
+      "content_origin": "original_internal",
+      "source_reference": null,
+      "copyright_status": "internally_authored",
+      "normative_compatibility": "none",
+      "review_status": "in_review",
+      "active": false
+    },
+    {
+      "logical_id": "wu-006",
+      "subtest_code": "WU",
+      "kind": "scored",
+      "display_order": 6,
+      "answer_type": "image_choice",
+      "difficulty_target": "medium",
+      "prompt_text": "Perhatikan dua tampilan kubus referensi. Pilih kubus yang menunjukkan susunan sisi yang sama setelah rotasi.",
+      "prompt_media_id": "wu-006-reference",
+      "prompt_relative_path": "wu/questions/wu-q006-reference.svg",
+      "face_symbols": {
+        "top": "star",
+        "bottom": "doublecircle",
+        "front": "circle",
+        "back": "plus",
+        "right": "cross",
+        "left": "bullseye"
+      },
+      "reference_views": [
+        [
+          "top",
+          "front",
+          "right"
+        ],
+        [
+          "bottom",
+          "left",
+          "back"
+        ]
+      ],
+      "options": [
+        {
+          "code": "A",
+          "media_id": "wu-006-option-a",
+          "visible_faces": [
+            "top",
+            "right",
+            "front"
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "mirror_chirality",
+          "rationale_internal": "Tuple top/right/front membalik urutan siklik tiga muka; ini merupakan mirror, bukan rotasi proper.",
+          "alt_text": "Kubus pilihan A"
+        },
+        {
+          "code": "B",
+          "media_id": "wu-006-option-b",
+          "visible_faces": [
+            "top",
+            "front",
+            "left"
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "mirror_chirality",
+          "rationale_internal": "Tuple top/front/left membalik urutan siklik tiga muka; ini merupakan mirror, bukan rotasi proper.",
+          "alt_text": "Kubus pilihan B"
+        },
+        {
+          "code": "C",
+          "media_id": "wu-006-option-c",
+          "visible_faces": [
+            "left",
+            "front",
+            "top"
+          ],
+          "is_correct": true,
+          "score_value": 1,
+          "failure_mode": "proper_rotation",
+          "rationale_internal": "Tuple Top/Front/Right left/front/top termasuk salah satu dari 24 rotasi proper dan mempertahankan adjacency, opposite faces, serta chirality.",
+          "alt_text": "Kubus pilihan C"
+        },
+        {
+          "code": "D",
+          "media_id": "wu-006-option-d",
+          "visible_faces": [
+            "bottom",
+            "back",
+            "left"
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "mirror_chirality",
+          "rationale_internal": "Tuple bottom/back/left membalik urutan siklik tiga muka; ini merupakan mirror, bukan rotasi proper.",
+          "alt_text": "Kubus pilihan D"
+        },
+        {
+          "code": "E",
+          "media_id": "wu-006-option-e",
+          "visible_faces": [
+            "front",
+            "bottom",
+            "left"
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "mirror_chirality",
+          "rationale_internal": "Tuple front/bottom/left membalik urutan siklik tiga muka; ini merupakan mirror, bukan rotasi proper.",
+          "alt_text": "Kubus pilihan E"
+        }
+      ],
+      "explanation": null,
+      "rationale_internal": "Mapping enam sisi unik diverifikasi melalui 24 rotasi proper. Hanya opsi C yang mempunyai tuple orientasi valid.",
+      "rotation_proof": {
+        "visible_faces": [
+          "left",
+          "front",
+          "top"
+        ],
+        "rotation_sequence": [
+          "putar searah pandang 90°"
+        ],
+        "statement": "putar searah pandang 90° menghasilkan Top=left, Front=front, Right=top."
+      },
+      "audits": {
+        "adjacency": "pass",
+        "opposite_faces": "pass",
+        "chirality": "pass",
+        "symbol_orientation": "pass",
+        "small_screen": "pass",
+        "ambiguity": "pass"
+      },
+      "reviews": {
+        "automated_visual_review": "pass",
+        "automated_geometry_review": "pass",
+        "automated_rotation_review": "pass",
+        "automated_language_review": "pass",
+        "automated_logic_review": "pass",
+        "qc_status": "pass"
+      },
+      "content_origin": "original_internal",
+      "source_reference": null,
+      "copyright_status": "internally_authored",
+      "normative_compatibility": "none",
+      "review_status": "in_review",
+      "active": false
+    },
+    {
+      "logical_id": "wu-007",
+      "subtest_code": "WU",
+      "kind": "scored",
+      "display_order": 7,
+      "answer_type": "image_choice",
+      "difficulty_target": "medium",
+      "prompt_text": "Perhatikan dua tampilan kubus referensi. Pilih kubus yang menunjukkan susunan sisi yang sama setelah rotasi.",
+      "prompt_media_id": "wu-007-reference",
+      "prompt_relative_path": "wu/questions/wu-q007-reference.svg",
+      "face_symbols": {
+        "top": "plus",
+        "bottom": "cross",
+        "front": "bullseye",
+        "back": "fourdots",
+        "right": "diamond",
+        "left": "square"
+      },
+      "reference_views": [
+        [
+          "top",
+          "front",
+          "right"
+        ],
+        [
+          "bottom",
+          "left",
+          "back"
+        ]
+      ],
+      "options": [
+        {
+          "code": "A",
+          "media_id": "wu-007-option-a",
+          "visible_faces": [
+            "bottom",
+            "left",
+            "front"
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "mirror_chirality",
+          "rationale_internal": "Tuple bottom/left/front membalik urutan siklik tiga muka; ini merupakan mirror, bukan rotasi proper.",
+          "alt_text": "Kubus pilihan A"
+        },
+        {
+          "code": "B",
+          "media_id": "wu-007-option-b",
+          "visible_faces": [
+            "bottom",
+            "back",
+            "left"
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "mirror_chirality",
+          "rationale_internal": "Tuple bottom/back/left membalik urutan siklik tiga muka; ini merupakan mirror, bukan rotasi proper.",
+          "alt_text": "Kubus pilihan B"
+        },
+        {
+          "code": "C",
+          "media_id": "wu-007-option-c",
+          "visible_faces": [
+            "front",
+            "bottom",
+            "left"
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "mirror_chirality",
+          "rationale_internal": "Tuple front/bottom/left membalik urutan siklik tiga muka; ini merupakan mirror, bukan rotasi proper.",
+          "alt_text": "Kubus pilihan C"
+        },
+        {
+          "code": "D",
+          "media_id": "wu-007-option-d",
+          "visible_faces": [
+            "bottom",
+            "back",
+            "right"
+          ],
+          "is_correct": true,
+          "score_value": 1,
+          "failure_mode": "proper_rotation",
+          "rationale_internal": "Tuple Top/Front/Right bottom/back/right termasuk salah satu dari 24 rotasi proper dan mempertahankan adjacency, opposite faces, serta chirality.",
+          "alt_text": "Kubus pilihan D"
+        },
+        {
+          "code": "E",
+          "media_id": "wu-007-option-e",
+          "visible_faces": [
+            "back",
+            "top",
+            "left"
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "mirror_chirality",
+          "rationale_internal": "Tuple back/top/left membalik urutan siklik tiga muka; ini merupakan mirror, bukan rotasi proper.",
+          "alt_text": "Kubus pilihan E"
+        }
+      ],
+      "explanation": null,
+      "rationale_internal": "Mapping enam sisi unik diverifikasi melalui 24 rotasi proper. Hanya opsi D yang mempunyai tuple orientasi valid.",
+      "rotation_proof": {
+        "visible_faces": [
+          "bottom",
+          "back",
+          "right"
+        ],
+        "rotation_sequence": [
+          "putar maju 90°",
+          "putar maju 90°"
+        ],
+        "statement": "putar maju 90° → putar maju 90° menghasilkan Top=bottom, Front=back, Right=right."
+      },
+      "audits": {
+        "adjacency": "pass",
+        "opposite_faces": "pass",
+        "chirality": "pass",
+        "symbol_orientation": "pass",
+        "small_screen": "pass",
+        "ambiguity": "pass"
+      },
+      "reviews": {
+        "automated_visual_review": "pass",
+        "automated_geometry_review": "pass",
+        "automated_rotation_review": "pass",
+        "automated_language_review": "pass",
+        "automated_logic_review": "pass",
+        "qc_status": "pass"
+      },
+      "content_origin": "original_internal",
+      "source_reference": null,
+      "copyright_status": "internally_authored",
+      "normative_compatibility": "none",
+      "review_status": "in_review",
+      "active": false
+    },
+    {
+      "logical_id": "wu-008",
+      "subtest_code": "WU",
+      "kind": "scored",
+      "display_order": 8,
+      "answer_type": "image_choice",
+      "difficulty_target": "medium",
+      "prompt_text": "Perhatikan dua tampilan kubus referensi. Pilih kubus yang menunjukkan susunan sisi yang sama setelah rotasi.",
+      "prompt_media_id": "wu-008-reference",
+      "prompt_relative_path": "wu/questions/wu-q008-reference.svg",
+      "face_symbols": {
+        "top": "fourdots",
+        "bottom": "diamond",
+        "front": "square",
+        "back": "hexagon",
+        "right": "star",
+        "left": "doublecircle"
+      },
+      "reference_views": [
+        [
+          "top",
+          "front",
+          "right"
+        ],
+        [
+          "bottom",
+          "left",
+          "back"
+        ]
+      ],
+      "options": [
+        {
+          "code": "A",
+          "media_id": "wu-008-option-a",
+          "visible_faces": [
+            "front",
+            "top",
+            "left"
+          ],
+          "is_correct": true,
+          "score_value": 1,
+          "failure_mode": "proper_rotation",
+          "rationale_internal": "Tuple Top/Front/Right front/top/left termasuk salah satu dari 24 rotasi proper dan mempertahankan adjacency, opposite faces, serta chirality.",
+          "alt_text": "Kubus pilihan A"
+        },
+        {
+          "code": "B",
+          "media_id": "wu-008-option-b",
+          "visible_faces": [
+            "front",
+            "left",
+            "top"
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "mirror_chirality",
+          "rationale_internal": "Tuple front/left/top membalik urutan siklik tiga muka; ini merupakan mirror, bukan rotasi proper.",
+          "alt_text": "Kubus pilihan B"
+        },
+        {
+          "code": "C",
+          "media_id": "wu-008-option-c",
+          "visible_faces": [
+            "front",
+            "bottom",
+            "left"
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "mirror_chirality",
+          "rationale_internal": "Tuple front/bottom/left membalik urutan siklik tiga muka; ini merupakan mirror, bukan rotasi proper.",
+          "alt_text": "Kubus pilihan C"
+        },
+        {
+          "code": "D",
+          "media_id": "wu-008-option-d",
+          "visible_faces": [
+            "back",
+            "top",
+            "left"
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "mirror_chirality",
+          "rationale_internal": "Tuple back/top/left membalik urutan siklik tiga muka; ini merupakan mirror, bukan rotasi proper.",
+          "alt_text": "Kubus pilihan D"
+        },
+        {
+          "code": "E",
+          "media_id": "wu-008-option-e",
+          "visible_faces": [
+            "right",
+            "top",
+            "back"
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "mirror_chirality",
+          "rationale_internal": "Tuple right/top/back membalik urutan siklik tiga muka; ini merupakan mirror, bukan rotasi proper.",
+          "alt_text": "Kubus pilihan E"
+        }
+      ],
+      "explanation": null,
+      "rationale_internal": "Mapping enam sisi unik diverifikasi melalui 24 rotasi proper. Hanya opsi A yang mempunyai tuple orientasi valid.",
+      "rotation_proof": {
+        "visible_faces": [
+          "front",
+          "top",
+          "left"
+        ],
+        "rotation_sequence": [
+          "putar vertikal 90°",
+          "putar vertikal 90°",
+          "putar maju 90°"
+        ],
+        "statement": "putar vertikal 90° → putar vertikal 90° → putar maju 90° menghasilkan Top=front, Front=top, Right=left."
+      },
+      "audits": {
+        "adjacency": "pass",
+        "opposite_faces": "pass",
+        "chirality": "pass",
+        "symbol_orientation": "pass",
+        "small_screen": "pass",
+        "ambiguity": "pass"
+      },
+      "reviews": {
+        "automated_visual_review": "pass",
+        "automated_geometry_review": "pass",
+        "automated_rotation_review": "pass",
+        "automated_language_review": "pass",
+        "automated_logic_review": "pass",
+        "qc_status": "pass"
+      },
+      "content_origin": "original_internal",
+      "source_reference": null,
+      "copyright_status": "internally_authored",
+      "normative_compatibility": "none",
+      "review_status": "in_review",
+      "active": false
+    },
+    {
+      "logical_id": "wu-009",
+      "subtest_code": "WU",
+      "kind": "scored",
+      "display_order": 9,
+      "answer_type": "image_choice",
+      "difficulty_target": "medium",
+      "prompt_text": "Perhatikan dua tampilan kubus referensi. Pilih kubus yang menunjukkan susunan sisi yang sama setelah rotasi.",
+      "prompt_media_id": "wu-009-reference",
+      "prompt_relative_path": "wu/questions/wu-q009-reference.svg",
+      "face_symbols": {
+        "top": "hexagon",
+        "bottom": "star",
+        "front": "doublecircle",
+        "back": "circle",
+        "right": "plus",
+        "left": "cross"
+      },
+      "reference_views": [
+        [
+          "top",
+          "front",
+          "right"
+        ],
+        [
+          "bottom",
+          "left",
+          "back"
+        ]
+      ],
+      "options": [
+        {
+          "code": "A",
+          "media_id": "wu-009-option-a",
+          "visible_faces": [
+            "back",
+            "right",
+            "top"
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "mirror_chirality",
+          "rationale_internal": "Tuple back/right/top membalik urutan siklik tiga muka; ini merupakan mirror, bukan rotasi proper.",
+          "alt_text": "Kubus pilihan A"
+        },
+        {
+          "code": "B",
+          "media_id": "wu-009-option-b",
+          "visible_faces": [
+            "back",
+            "top",
+            "left"
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "mirror_chirality",
+          "rationale_internal": "Tuple back/top/left membalik urutan siklik tiga muka; ini merupakan mirror, bukan rotasi proper.",
+          "alt_text": "Kubus pilihan B"
+        },
+        {
+          "code": "C",
+          "media_id": "wu-009-option-c",
+          "visible_faces": [
+            "front",
+            "left",
+            "bottom"
+          ],
+          "is_correct": true,
+          "score_value": 1,
+          "failure_mode": "proper_rotation",
+          "rationale_internal": "Tuple Top/Front/Right front/left/bottom termasuk salah satu dari 24 rotasi proper dan mempertahankan adjacency, opposite faces, serta chirality.",
+          "alt_text": "Kubus pilihan C"
+        },
+        {
+          "code": "D",
+          "media_id": "wu-009-option-d",
+          "visible_faces": [
+            "right",
+            "top",
+            "back"
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "mirror_chirality",
+          "rationale_internal": "Tuple right/top/back membalik urutan siklik tiga muka; ini merupakan mirror, bukan rotasi proper.",
+          "alt_text": "Kubus pilihan D"
+        },
+        {
+          "code": "E",
+          "media_id": "wu-009-option-e",
+          "visible_faces": [
+            "left",
+            "bottom",
+            "back"
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "mirror_chirality",
+          "rationale_internal": "Tuple left/bottom/back membalik urutan siklik tiga muka; ini merupakan mirror, bukan rotasi proper.",
+          "alt_text": "Kubus pilihan E"
+        }
+      ],
+      "explanation": null,
+      "rationale_internal": "Mapping enam sisi unik diverifikasi melalui 24 rotasi proper. Hanya opsi C yang mempunyai tuple orientasi valid.",
+      "rotation_proof": {
+        "visible_faces": [
+          "front",
+          "left",
+          "bottom"
+        ],
+        "rotation_sequence": [
+          "putar vertikal 90°",
+          "putar vertikal 90°",
+          "putar maju 90°",
+          "putar vertikal 90°"
+        ],
+        "statement": "putar vertikal 90° → putar vertikal 90° → putar maju 90° → putar vertikal 90° menghasilkan Top=front, Front=left, Right=bottom."
+      },
+      "audits": {
+        "adjacency": "pass",
+        "opposite_faces": "pass",
+        "chirality": "pass",
+        "symbol_orientation": "pass",
+        "small_screen": "pass",
+        "ambiguity": "pass"
+      },
+      "reviews": {
+        "automated_visual_review": "pass",
+        "automated_geometry_review": "pass",
+        "automated_rotation_review": "pass",
+        "automated_language_review": "pass",
+        "automated_logic_review": "pass",
+        "qc_status": "pass"
+      },
+      "content_origin": "original_internal",
+      "source_reference": null,
+      "copyright_status": "internally_authored",
+      "normative_compatibility": "none",
+      "review_status": "in_review",
+      "active": false
+    },
+    {
+      "logical_id": "wu-010",
+      "subtest_code": "WU",
+      "kind": "scored",
+      "display_order": 10,
+      "answer_type": "image_choice",
+      "difficulty_target": "hard",
+      "prompt_text": "Perhatikan dua tampilan kubus referensi. Pilih kubus yang menunjukkan susunan sisi yang sama setelah rotasi.",
+      "prompt_media_id": "wu-010-reference",
+      "prompt_relative_path": "wu/questions/wu-q010-reference.svg",
+      "face_symbols": {
+        "top": "circle",
+        "bottom": "plus",
+        "front": "cross",
+        "back": "bullseye",
+        "right": "fourdots",
+        "left": "diamond"
+      },
+      "reference_views": [
+        [
+          "top",
+          "front",
+          "right"
+        ],
+        [
+          "bottom",
+          "left",
+          "back"
+        ]
+      ],
+      "options": [
+        {
+          "code": "A",
+          "media_id": "wu-010-option-a",
+          "visible_faces": [
+            "right",
+            "front",
+            "top"
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "mirror_chirality",
+          "rationale_internal": "Tuple right/front/top membalik urutan siklik tiga muka; ini merupakan mirror, bukan rotasi proper.",
+          "alt_text": "Kubus pilihan A"
+        },
+        {
+          "code": "B",
+          "media_id": "wu-010-option-b",
+          "visible_faces": [
+            "right",
+            "top",
+            "back"
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "mirror_chirality",
+          "rationale_internal": "Tuple right/top/back membalik urutan siklik tiga muka; ini merupakan mirror, bukan rotasi proper.",
+          "alt_text": "Kubus pilihan B"
+        },
+        {
+          "code": "C",
+          "media_id": "wu-010-option-c",
+          "visible_faces": [
+            "left",
+            "bottom",
+            "back"
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "mirror_chirality",
+          "rationale_internal": "Tuple left/bottom/back membalik urutan siklik tiga muka; ini merupakan mirror, bukan rotasi proper.",
+          "alt_text": "Kubus pilihan C"
+        },
+        {
+          "code": "D",
+          "media_id": "wu-010-option-d",
+          "visible_faces": [
+            "top",
+            "front",
+            "left"
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "mirror_chirality",
+          "rationale_internal": "Tuple top/front/left membalik urutan siklik tiga muka; ini merupakan mirror, bukan rotasi proper.",
+          "alt_text": "Kubus pilihan D"
+        },
+        {
+          "code": "E",
+          "media_id": "wu-010-option-e",
+          "visible_faces": [
+            "back",
+            "right",
+            "bottom"
+          ],
+          "is_correct": true,
+          "score_value": 1,
+          "failure_mode": "proper_rotation",
+          "rationale_internal": "Tuple Top/Front/Right back/right/bottom termasuk salah satu dari 24 rotasi proper dan mempertahankan adjacency, opposite faces, serta chirality.",
+          "alt_text": "Kubus pilihan E"
+        }
+      ],
+      "explanation": null,
+      "rationale_internal": "Mapping enam sisi unik diverifikasi melalui 24 rotasi proper. Hanya opsi E yang mempunyai tuple orientasi valid.",
+      "rotation_proof": {
+        "visible_faces": [
+          "back",
+          "right",
+          "bottom"
+        ],
+        "rotation_sequence": [
+          "putar maju 90°",
+          "putar vertikal 90°"
+        ],
+        "statement": "putar maju 90° → putar vertikal 90° menghasilkan Top=back, Front=right, Right=bottom."
+      },
+      "audits": {
+        "adjacency": "pass",
+        "opposite_faces": "pass",
+        "chirality": "pass",
+        "symbol_orientation": "pass",
+        "small_screen": "pass",
+        "ambiguity": "pass"
+      },
+      "reviews": {
+        "automated_visual_review": "pass",
+        "automated_geometry_review": "pass",
+        "automated_rotation_review": "pass",
+        "automated_language_review": "pass",
+        "automated_logic_review": "pass",
+        "qc_status": "pass"
+      },
+      "content_origin": "original_internal",
+      "source_reference": null,
+      "copyright_status": "internally_authored",
+      "normative_compatibility": "none",
+      "review_status": "in_review",
+      "active": false
+    },
+    {
+      "logical_id": "wu-011",
+      "subtest_code": "WU",
+      "kind": "scored",
+      "display_order": 11,
+      "answer_type": "image_choice",
+      "difficulty_target": "hard",
+      "prompt_text": "Perhatikan dua tampilan kubus referensi. Pilih kubus yang menunjukkan susunan sisi yang sama setelah rotasi.",
+      "prompt_media_id": "wu-011-reference",
+      "prompt_relative_path": "wu/questions/wu-q011-reference.svg",
+      "face_symbols": {
+        "top": "bullseye",
+        "bottom": "fourdots",
+        "front": "diamond",
+        "back": "square",
+        "right": "hexagon",
+        "left": "star"
+      },
+      "reference_views": [
+        [
+          "top",
+          "front",
+          "right"
+        ],
+        [
+          "bottom",
+          "left",
+          "back"
+        ]
+      ],
+      "options": [
+        {
+          "code": "A",
+          "media_id": "wu-011-option-a",
+          "visible_faces": [
+            "left",
+            "back",
+            "top"
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "mirror_chirality",
+          "rationale_internal": "Tuple left/back/top membalik urutan siklik tiga muka; ini merupakan mirror, bukan rotasi proper.",
+          "alt_text": "Kubus pilihan A"
+        },
+        {
+          "code": "B",
+          "media_id": "wu-011-option-b",
+          "visible_faces": [
+            "right",
+            "bottom",
+            "back"
+          ],
+          "is_correct": true,
+          "score_value": 1,
+          "failure_mode": "proper_rotation",
+          "rationale_internal": "Tuple Top/Front/Right right/bottom/back termasuk salah satu dari 24 rotasi proper dan mempertahankan adjacency, opposite faces, serta chirality.",
+          "alt_text": "Kubus pilihan B"
+        },
+        {
+          "code": "C",
+          "media_id": "wu-011-option-c",
+          "visible_faces": [
+            "left",
+            "bottom",
+            "back"
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "mirror_chirality",
+          "rationale_internal": "Tuple left/bottom/back membalik urutan siklik tiga muka; ini merupakan mirror, bukan rotasi proper.",
+          "alt_text": "Kubus pilihan C"
+        },
+        {
+          "code": "D",
+          "media_id": "wu-011-option-d",
+          "visible_faces": [
+            "top",
+            "front",
+            "left"
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "mirror_chirality",
+          "rationale_internal": "Tuple top/front/left membalik urutan siklik tiga muka; ini merupakan mirror, bukan rotasi proper.",
+          "alt_text": "Kubus pilihan D"
+        },
+        {
+          "code": "E",
+          "media_id": "wu-011-option-e",
+          "visible_faces": [
+            "bottom",
+            "back",
+            "left"
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "mirror_chirality",
+          "rationale_internal": "Tuple bottom/back/left membalik urutan siklik tiga muka; ini merupakan mirror, bukan rotasi proper.",
+          "alt_text": "Kubus pilihan E"
+        }
+      ],
+      "explanation": null,
+      "rationale_internal": "Mapping enam sisi unik diverifikasi melalui 24 rotasi proper. Hanya opsi B yang mempunyai tuple orientasi valid.",
+      "rotation_proof": {
+        "visible_faces": [
+          "right",
+          "bottom",
+          "back"
+        ],
+        "rotation_sequence": [
+          "putar vertikal 90°",
+          "putar maju 90°",
+          "putar maju 90°",
+          "putar maju 90°"
+        ],
+        "statement": "putar vertikal 90° → putar maju 90° → putar maju 90° → putar maju 90° menghasilkan Top=right, Front=bottom, Right=back."
+      },
+      "audits": {
+        "adjacency": "pass",
+        "opposite_faces": "pass",
+        "chirality": "pass",
+        "symbol_orientation": "pass",
+        "small_screen": "pass",
+        "ambiguity": "pass"
+      },
+      "reviews": {
+        "automated_visual_review": "pass",
+        "automated_geometry_review": "pass",
+        "automated_rotation_review": "pass",
+        "automated_language_review": "pass",
+        "automated_logic_review": "pass",
+        "qc_status": "pass"
+      },
+      "content_origin": "original_internal",
+      "source_reference": null,
+      "copyright_status": "internally_authored",
+      "normative_compatibility": "none",
+      "review_status": "in_review",
+      "active": false
+    },
+    {
+      "logical_id": "wu-012",
+      "subtest_code": "WU",
+      "kind": "scored",
+      "display_order": 12,
+      "answer_type": "image_choice",
+      "difficulty_target": "hard",
+      "prompt_text": "Perhatikan dua tampilan kubus referensi. Pilih kubus yang menunjukkan susunan sisi yang sama setelah rotasi.",
+      "prompt_media_id": "wu-012-reference",
+      "prompt_relative_path": "wu/questions/wu-q012-reference.svg",
+      "face_symbols": {
+        "top": "square",
+        "bottom": "hexagon",
+        "front": "star",
+        "back": "doublecircle",
+        "right": "circle",
+        "left": "plus"
+      },
+      "reference_views": [
+        [
+          "top",
+          "front",
+          "right"
+        ],
+        [
+          "bottom",
+          "left",
+          "back"
+        ]
+      ],
+      "options": [
+        {
+          "code": "A",
+          "media_id": "wu-012-option-a",
+          "visible_faces": [
+            "top",
+            "right",
+            "front"
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "mirror_chirality",
+          "rationale_internal": "Tuple top/right/front membalik urutan siklik tiga muka; ini merupakan mirror, bukan rotasi proper.",
+          "alt_text": "Kubus pilihan A"
+        },
+        {
+          "code": "B",
+          "media_id": "wu-012-option-b",
+          "visible_faces": [
+            "top",
+            "front",
+            "left"
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "mirror_chirality",
+          "rationale_internal": "Tuple top/front/left membalik urutan siklik tiga muka; ini merupakan mirror, bukan rotasi proper.",
+          "alt_text": "Kubus pilihan B"
+        },
+        {
+          "code": "C",
+          "media_id": "wu-012-option-c",
+          "visible_faces": [
+            "bottom",
+            "back",
+            "left"
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "mirror_chirality",
+          "rationale_internal": "Tuple bottom/back/left membalik urutan siklik tiga muka; ini merupakan mirror, bukan rotasi proper.",
+          "alt_text": "Kubus pilihan C"
+        },
+        {
+          "code": "D",
+          "media_id": "wu-012-option-d",
+          "visible_faces": [
+            "left",
+            "top",
+            "back"
+          ],
+          "is_correct": true,
+          "score_value": 1,
+          "failure_mode": "proper_rotation",
+          "rationale_internal": "Tuple Top/Front/Right left/top/back termasuk salah satu dari 24 rotasi proper dan mempertahankan adjacency, opposite faces, serta chirality.",
+          "alt_text": "Kubus pilihan D"
+        },
+        {
+          "code": "E",
+          "media_id": "wu-012-option-e",
+          "visible_faces": [
+            "front",
+            "bottom",
+            "left"
+          ],
+          "is_correct": false,
+          "score_value": 0,
+          "failure_mode": "mirror_chirality",
+          "rationale_internal": "Tuple front/bottom/left membalik urutan siklik tiga muka; ini merupakan mirror, bukan rotasi proper.",
+          "alt_text": "Kubus pilihan E"
+        }
+      ],
+      "explanation": null,
+      "rationale_internal": "Mapping enam sisi unik diverifikasi melalui 24 rotasi proper. Hanya opsi D yang mempunyai tuple orientasi valid.",
+      "rotation_proof": {
+        "visible_faces": [
+          "left",
+          "top",
+          "back"
+        ],
+        "rotation_sequence": [
+          "putar vertikal 90°",
+          "putar maju 90°"
+        ],
+        "statement": "putar vertikal 90° → putar maju 90° menghasilkan Top=left, Front=top, Right=back."
+      },
+      "audits": {
+        "adjacency": "pass",
+        "opposite_faces": "pass",
+        "chirality": "pass",
+        "symbol_orientation": "pass",
+        "small_screen": "pass",
+        "ambiguity": "pass"
+      },
+      "reviews": {
+        "automated_visual_review": "pass",
+        "automated_geometry_review": "pass",
+        "automated_rotation_review": "pass",
+        "automated_language_review": "pass",
+        "automated_logic_review": "pass",
+        "qc_status": "pass"
+      },
+      "content_origin": "original_internal",
+      "source_reference": null,
+      "copyright_status": "internally_authored",
+      "normative_compatibility": "none",
+      "review_status": "in_review",
+      "active": false
+    }
+  ]
+}
