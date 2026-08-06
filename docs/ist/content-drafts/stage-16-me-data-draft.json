@@ -1,0 +1,380 @@
+{
+  "schema_version": 1,
+  "document_type": "internal_content_review_draft",
+  "product_name": "Tes Kemampuan Kognitif Adaptasi",
+  "subtest": {
+    "code": "ME",
+    "answer_type": "single_choice",
+    "memorization_seconds": 120,
+    "answering_seconds": 240,
+    "duration_seconds": 360,
+    "single_start": true,
+    "scored_question_count": 12,
+    "maximum_score": 12
+  },
+  "status": {
+    "author_draft": "complete",
+    "automated_language_review": "passed",
+    "automated_logic_review": "passed",
+    "automated_association_review": "passed",
+    "automated_memory_design_review": "passed",
+    "automated_leakage_review": "passed",
+    "human_language_review": "passed",
+    "human_logic_review": "passed",
+    "human_association_review": "passed",
+    "human_memory_design_review": "passed",
+    "human_leakage_review": "passed",
+    "overall_status": "human_review_passed",
+    "review_status": "human_review_passed",
+    "active": false,
+    "approved": false,
+    "frozen": false,
+    "imported": false
+  },
+  "originality_note": "Konten ME ini dibuat secara internal sebagai asesmen ingatan pasangan informasi dan tidak ditujukan sebagai reproduksi atau pengganti instrumen psikologi normatif.",
+  "instruction": "Anda akan melihat 15 pasangan kata selama 2 menit. Ingat hubungan setiap pasangan. Setelah waktu menghafal berakhir, materi akan ditutup otomatis dan tidak dapat dibuka kembali. Anda kemudian memiliki 4 menit untuk menjawab 12 soal pilihan ganda. Pilih satu jawaban untuk setiap soal. Contoh tidak dihitung dalam skor.",
+  "example": {
+    "logical_id": "me-example-001",
+    "subtest_code": "ME",
+    "kind": "example",
+    "display_order": 0,
+    "answer_type": "single_choice",
+    "difficulty_target": null,
+    "pairs": [
+      {"cue": "tas", "associate": "senja"},
+      {"cue": "roti", "associate": "pagar"},
+      {"cue": "lampu", "associate": "pasir"},
+      {"cue": "meja", "associate": "kabut"},
+      {"cue": "bukit", "associate": "daun"}
+    ],
+    "prompt": "Dalam materi contoh, kata “roti” dipasangkan dengan kata apa?",
+    "options": [
+      {"code": "A", "text": "kabut", "is_correct": false, "score_value": 0, "rationale_internal": "Kabut dipasangkan dengan meja pada materi contoh."},
+      {"code": "B", "text": "pagar", "is_correct": true, "score_value": 1, "rationale_internal": "Pagar adalah pasangan roti pada materi contoh."},
+      {"code": "C", "text": "senja", "is_correct": false, "score_value": 0, "rationale_internal": "Senja dipasangkan dengan tas pada materi contoh."},
+      {"code": "D", "text": "pasir", "is_correct": false, "score_value": 0, "rationale_internal": "Pasir dipasangkan dengan lampu pada materi contoh."},
+      {"code": "E", "text": "daun", "is_correct": false, "score_value": 0, "rationale_internal": "Daun dipasangkan dengan bukit pada materi contoh."}
+    ],
+    "explanation": "Jawaban yang benar adalah pagar karena pada materi contoh terdapat pasangan roti — pagar. Saat subtes utama dimulai, materi hafalan akan ditutup setelah 2 menit dan tidak dapat dibuka kembali. Contoh ini tidak dihitung dalam skor.",
+    "rationale_internal": "Lima pasangan contoh sepenuhnya terpisah dari materi utama. Seluruh opsi berasal dari sisi associate materi contoh sehingga prosedurnya sama dengan soal utama.",
+    "ambiguity_review": "pass",
+    "leakage_review": "pass",
+    "language_review_notes": "automated_language_review: pass; redaksi ringkas dan umum.",
+    "logic_review_notes": "automated_logic_review: pass; tepat satu jawaban sesuai materi contoh.",
+    "content_origin": "original_internal",
+    "source_reference": null,
+    "copyright_status": "internally_authored",
+    "normative_compatibility": "none",
+    "review_status": "human_review_passed",
+    "active": false
+  },
+  "main_pairs": [
+    {
+      "logical_id": "me-pair-001", "cue": "jendela", "associate": "irama", "display_order": 1, "tested": true, "question_logical_id": "me-001",
+      "association_review": {"natural_association": "none", "semantic_relation": "none", "notes": "Benda bangunan dan pola bunyi tidak memiliki hubungan umum."},
+      "semantic_review": "pass", "phonological_review": {"similarity": "none", "status": "pass"}, "memorability_review": {"outlier": false, "status": "pass"},
+      "content_origin": "original_internal", "source_reference": null, "copyright_status": "internally_authored", "normative_compatibility": "none", "review_status": "human_review_passed", "active": false
+    },
+    {
+      "logical_id": "me-pair-002", "cue": "sawah", "associate": "kancing", "display_order": 2, "tested": true, "question_logical_id": "me-002",
+      "association_review": {"natural_association": "none", "semantic_relation": "none", "notes": "Lahan pertanian dan pengait pakaian berasal dari kategori berbeda."},
+      "semantic_review": "pass", "phonological_review": {"similarity": "none", "status": "pass"}, "memorability_review": {"outlier": false, "status": "pass"},
+      "content_origin": "original_internal", "source_reference": null, "copyright_status": "internally_authored", "normative_compatibility": "none", "review_status": "human_review_passed", "active": false
+    },
+    {
+      "logical_id": "me-pair-003", "cue": "bantal", "associate": "lorong", "display_order": 3, "tested": true, "question_logical_id": "me-003",
+      "association_review": {"natural_association": "none", "semantic_relation": "none", "notes": "Perlengkapan tidur dan jalur penghubung tidak berhubungan fungsi."},
+      "semantic_review": "pass", "phonological_review": {"similarity": "none", "status": "pass"}, "memorability_review": {"outlier": false, "status": "pass"},
+      "content_origin": "original_internal", "source_reference": null, "copyright_status": "internally_authored", "normative_compatibility": "none", "review_status": "human_review_passed", "active": false
+    },
+    {
+      "logical_id": "me-pair-004", "cue": "ember", "associate": "cerita", "display_order": 4, "tested": false, "question_logical_id": null,
+      "association_review": {"natural_association": "none", "semantic_relation": "none", "notes": "Wadah dan narasi tidak memiliki relasi kategori atau fungsi langsung."},
+      "semantic_review": "pass", "phonological_review": {"similarity": "none", "status": "pass"}, "memorability_review": {"outlier": false, "status": "pass"},
+      "content_origin": "original_internal", "source_reference": null, "copyright_status": "internally_authored", "normative_compatibility": "none", "review_status": "human_review_passed", "active": false
+    },
+    {
+      "logical_id": "me-pair-005", "cue": "sepatu", "associate": "kalender", "display_order": 5, "tested": true, "question_logical_id": "me-005",
+      "association_review": {"natural_association": "none", "semantic_relation": "none", "notes": "Alas kaki dan penanda tanggal tidak memiliki asosiasi umum."},
+      "semantic_review": "pass", "phonological_review": {"similarity": "none", "status": "pass"}, "memorability_review": {"outlier": false, "status": "pass"},
+      "content_origin": "original_internal", "source_reference": null, "copyright_status": "internally_authored", "normative_compatibility": "none", "review_status": "human_review_passed", "active": false
+    },
+    {
+      "logical_id": "me-pair-006", "cue": "sungai", "associate": "pensil", "display_order": 6, "tested": true, "question_logical_id": "me-004",
+      "association_review": {"natural_association": "none", "semantic_relation": "none", "notes": "Aliran air dan alat tulis tidak memiliki hubungan langsung."},
+      "semantic_review": "pass", "phonological_review": {"similarity": "none", "status": "pass"}, "memorability_review": {"outlier": false, "status": "pass"},
+      "content_origin": "original_internal", "source_reference": null, "copyright_status": "internally_authored", "normative_compatibility": "none", "review_status": "human_review_passed", "active": false
+    },
+    {
+      "logical_id": "me-pair-007", "cue": "cermin", "associate": "ladang", "display_order": 7, "tested": true, "question_logical_id": "me-007",
+      "association_review": {"natural_association": "none", "semantic_relation": "none", "notes": "Permukaan pemantul dan lahan budidaya tidak terkait fungsi."},
+      "semantic_review": "pass", "phonological_review": {"similarity": "none", "status": "pass"}, "memorability_review": {"outlier": false, "status": "pass"},
+      "content_origin": "original_internal", "source_reference": null, "copyright_status": "internally_authored", "normative_compatibility": "none", "review_status": "human_review_passed", "active": false
+    },
+    {
+      "logical_id": "me-pair-008", "cue": "tangga", "associate": "rempah", "display_order": 8, "tested": true, "question_logical_id": "me-006",
+      "association_review": {"natural_association": "none", "semantic_relation": "none", "notes": "Sarana berpindah tingkat dan bahan masakan tidak berhubungan umum."},
+      "semantic_review": "pass", "phonological_review": {"similarity": "none", "status": "pass"}, "memorability_review": {"outlier": false, "status": "pass"},
+      "content_origin": "original_internal", "source_reference": null, "copyright_status": "internally_authored", "normative_compatibility": "none", "review_status": "human_review_passed", "active": false
+    },
+    {
+      "logical_id": "me-pair-009", "cue": "piring", "associate": "hutan", "display_order": 9, "tested": false, "question_logical_id": null,
+      "association_review": {"natural_association": "none", "semantic_relation": "none", "notes": "Peralatan makan dan kawasan pepohonan tidak memiliki relasi langsung."},
+      "semantic_review": "pass", "phonological_review": {"similarity": "none", "status": "pass"}, "memorability_review": {"outlier": false, "status": "pass"},
+      "content_origin": "original_internal", "source_reference": null, "copyright_status": "internally_authored", "normative_compatibility": "none", "review_status": "human_review_passed", "active": false
+    },
+    {
+      "logical_id": "me-pair-010", "cue": "payung", "associate": "kerikil", "display_order": 10, "tested": true, "question_logical_id": "me-009",
+      "association_review": {"natural_association": "none", "semantic_relation": "none", "notes": "Pelindung portabel dan batu kecil tidak berhubungan fungsi atau kategori."},
+      "semantic_review": "pass", "phonological_review": {"similarity": "none", "status": "pass"}, "memorability_review": {"outlier": false, "status": "pass"},
+      "content_origin": "original_internal", "source_reference": null, "copyright_status": "internally_authored", "normative_compatibility": "none", "review_status": "human_review_passed", "active": false
+    },
+    {
+      "logical_id": "me-pair-011", "cue": "kertas", "associate": "balkon", "display_order": 11, "tested": true, "question_logical_id": "me-008",
+      "association_review": {"natural_association": "none", "semantic_relation": "none", "notes": "Bahan lembaran dan bagian bangunan tidak memiliki relasi utama."},
+      "semantic_review": "pass", "phonological_review": {"similarity": "none", "status": "pass"}, "memorability_review": {"outlier": false, "status": "pass"},
+      "content_origin": "original_internal", "source_reference": null, "copyright_status": "internally_authored", "normative_compatibility": "none", "review_status": "human_review_passed", "active": false
+    },
+    {
+      "logical_id": "me-pair-012", "cue": "lemari", "associate": "ombak", "display_order": 12, "tested": true, "question_logical_id": "me-010",
+      "association_review": {"natural_association": "none", "semantic_relation": "none", "notes": "Perabot penyimpanan dan gerak permukaan air tidak berkaitan langsung."},
+      "semantic_review": "pass", "phonological_review": {"similarity": "none", "status": "pass"}, "memorability_review": {"outlier": false, "status": "pass"},
+      "content_origin": "original_internal", "source_reference": null, "copyright_status": "internally_authored", "normative_compatibility": "none", "review_status": "human_review_passed", "active": false
+    },
+    {
+      "logical_id": "me-pair-013", "cue": "gelas", "associate": "taman", "display_order": 13, "tested": false, "question_logical_id": null,
+      "association_review": {"natural_association": "weak", "semantic_relation": "none", "notes": "Keduanya dapat berada di ruang yang sama, tetapi tidak memiliki relasi khas atau fungsi bersama."},
+      "semantic_review": "pass", "phonological_review": {"similarity": "none", "status": "pass"}, "memorability_review": {"outlier": false, "status": "pass"},
+      "content_origin": "original_internal", "source_reference": null, "copyright_status": "internally_authored", "normative_compatibility": "none", "review_status": "human_review_passed", "active": false
+    },
+    {
+      "logical_id": "me-pair-014", "cue": "kursi", "associate": "petir", "display_order": 14, "tested": true, "question_logical_id": "me-011",
+      "association_review": {"natural_association": "none", "semantic_relation": "none", "notes": "Tempat duduk dan gejala cuaca tidak memiliki relasi umum."},
+      "semantic_review": "pass", "phonological_review": {"similarity": "none", "status": "pass"}, "memorability_review": {"outlier": false, "status": "pass"},
+      "content_origin": "original_internal", "source_reference": null, "copyright_status": "internally_authored", "normative_compatibility": "none", "review_status": "human_review_passed", "active": false
+    },
+    {
+      "logical_id": "me-pair-015", "cue": "kapal", "associate": "pita", "display_order": 15, "tested": true, "question_logical_id": "me-012",
+      "association_review": {"natural_association": "none", "semantic_relation": "none", "notes": "Kendaraan air dan bahan berbentuk jalur tidak mempunyai hubungan umum."},
+      "semantic_review": "pass", "phonological_review": {"similarity": "none", "status": "pass"}, "memorability_review": {"outlier": false, "status": "pass"},
+      "content_origin": "original_internal", "source_reference": null, "copyright_status": "internally_authored", "normative_compatibility": "none", "review_status": "human_review_passed", "active": false
+    }
+  ],
+  "questions": [
+    {
+      "logical_id": "me-001", "subtest_code": "ME", "kind": "scored", "display_order": 1, "answer_type": "single_choice", "difficulty_target": "easy", "recall_direction": "cue_to_associate", "target_pair_id": "me-pair-001",
+      "prompt": "Dalam materi hafalan, kata “jendela” dipasangkan dengan kata apa?",
+      "options": [
+        {"code": "A", "text": "kancing", "is_correct": false, "score_value": 0, "source_pair_id": "me-pair-002", "rationale_internal": "Kancing adalah associate pasangan lain."},
+        {"code": "B", "text": "cerita", "is_correct": false, "score_value": 0, "source_pair_id": "me-pair-004", "rationale_internal": "Cerita adalah associate pasangan lain."},
+        {"code": "C", "text": "irama", "is_correct": true, "score_value": 1, "source_pair_id": "me-pair-001", "rationale_internal": "Irama adalah associate target jendela."},
+        {"code": "D", "text": "hutan", "is_correct": false, "score_value": 0, "source_pair_id": "me-pair-009", "rationale_internal": "Hutan adalah associate pasangan lain."},
+        {"code": "E", "text": "petir", "is_correct": false, "score_value": 0, "source_pair_id": "me-pair-014", "rationale_internal": "Petir adalah associate pasangan lain."}
+      ],
+      "explanation": null, "rationale_internal": "Recall langsung cue ke associate dengan distraktor lintas posisi.", "difficulty_rationale": "Target berada pada awal materi; distractor tersebar dan berbeda kategori sehingga kompetisi editorial relatif rendah.", "ambiguity_review": "pass", "leakage_review": "pass", "language_review_notes": "pass", "logic_review_notes": "pass",
+      "content_origin": "original_internal", "source_reference": null, "copyright_status": "internally_authored", "normative_compatibility": "none", "review_status": "human_review_passed", "active": false
+    },
+    {
+      "logical_id": "me-002", "subtest_code": "ME", "kind": "scored", "display_order": 2, "answer_type": "single_choice", "difficulty_target": "easy", "recall_direction": "cue_to_associate", "target_pair_id": "me-pair-002",
+      "prompt": "Dalam materi hafalan, kata “sawah” dipasangkan dengan kata apa?",
+      "options": [
+        {"code": "A", "text": "kancing", "is_correct": true, "score_value": 1, "source_pair_id": "me-pair-002", "rationale_internal": "Kancing adalah associate target sawah."},
+        {"code": "B", "text": "kalender", "is_correct": false, "score_value": 0, "source_pair_id": "me-pair-005", "rationale_internal": "Kalender adalah associate pasangan lain."},
+        {"code": "C", "text": "pensil", "is_correct": false, "score_value": 0, "source_pair_id": "me-pair-006", "rationale_internal": "Pensil adalah associate pasangan lain."},
+        {"code": "D", "text": "taman", "is_correct": false, "score_value": 0, "source_pair_id": "me-pair-013", "rationale_internal": "Taman adalah associate pasangan lain."},
+        {"code": "E", "text": "pita", "is_correct": false, "score_value": 0, "source_pair_id": "me-pair-015", "rationale_internal": "Pita adalah associate pasangan lain."}
+      ],
+      "explanation": null, "rationale_internal": "Recall langsung dengan pilihan associate yang sama-sama umum.", "difficulty_rationale": "Target berada dekat awal materi dan distractor berasal dari posisi yang tersebar dengan kompetisi kategori rendah.", "ambiguity_review": "pass", "leakage_review": "pass", "language_review_notes": "pass", "logic_review_notes": "pass",
+      "content_origin": "original_internal", "source_reference": null, "copyright_status": "internally_authored", "normative_compatibility": "none", "review_status": "human_review_passed", "active": false
+    },
+    {
+      "logical_id": "me-003", "subtest_code": "ME", "kind": "scored", "display_order": 3, "answer_type": "single_choice", "difficulty_target": "medium", "recall_direction": "cue_to_associate", "target_pair_id": "me-pair-003",
+      "prompt": "Dalam materi hafalan, kata “bantal” dipasangkan dengan kata apa?",
+      "options": [
+        {"code": "A", "text": "irama", "is_correct": false, "score_value": 0, "source_pair_id": "me-pair-001", "rationale_internal": "Irama adalah associate pasangan lain."},
+        {"code": "B", "text": "rempah", "is_correct": false, "score_value": 0, "source_pair_id": "me-pair-008", "rationale_internal": "Rempah adalah associate pasangan lain."},
+        {"code": "C", "text": "balkon", "is_correct": false, "score_value": 0, "source_pair_id": "me-pair-011", "rationale_internal": "Balkon adalah associate pasangan lain."},
+        {"code": "D", "text": "lorong", "is_correct": true, "score_value": 1, "source_pair_id": "me-pair-003", "rationale_internal": "Lorong adalah associate target bantal."},
+        {"code": "E", "text": "ombak", "is_correct": false, "score_value": 0, "source_pair_id": "me-pair-012", "rationale_internal": "Ombak adalah associate pasangan lain."}
+      ],
+      "explanation": null, "rationale_internal": "Recall langsung; opsi tidak membentuk hubungan semantik dengan cue.", "difficulty_rationale": "Distractor mencakup pair awal yang berdekatan dan beberapa associate dengan panjang serupa, sehingga kompetisi meningkat tanpa menjadi ambigu.", "ambiguity_review": "pass", "leakage_review": "pass", "language_review_notes": "pass", "logic_review_notes": "pass",
+      "content_origin": "original_internal", "source_reference": null, "copyright_status": "internally_authored", "normative_compatibility": "none", "review_status": "human_review_passed", "active": false
+    },
+    {
+      "logical_id": "me-004", "subtest_code": "ME", "kind": "scored", "display_order": 4, "answer_type": "single_choice", "difficulty_target": "easy", "recall_direction": "associate_to_cue", "target_pair_id": "me-pair-006",
+      "prompt": "Dalam materi hafalan, kata apa yang dipasangkan dengan “pensil”?",
+      "options": [
+        {"code": "A", "text": "jendela", "is_correct": false, "score_value": 0, "source_pair_id": "me-pair-001", "rationale_internal": "Jendela adalah cue pasangan lain."},
+        {"code": "B", "text": "sungai", "is_correct": true, "score_value": 1, "source_pair_id": "me-pair-006", "rationale_internal": "Sungai adalah cue target pensil."},
+        {"code": "C", "text": "ember", "is_correct": false, "score_value": 0, "source_pair_id": "me-pair-004", "rationale_internal": "Ember adalah cue pasangan lain."},
+        {"code": "D", "text": "piring", "is_correct": false, "score_value": 0, "source_pair_id": "me-pair-009", "rationale_internal": "Piring adalah cue pasangan lain."},
+        {"code": "E", "text": "gelas", "is_correct": false, "score_value": 0, "source_pair_id": "me-pair-013", "rationale_internal": "Gelas adalah cue pasangan lain."}
+      ],
+      "explanation": null, "rationale_internal": "Reverse recall pertama menggunakan cue dari berbagai posisi termasuk filler tanpa menandainya.", "difficulty_rationale": "Cue distractor berasal dari posisi yang berjauhan dan kategori yang mudah dibedakan, sehingga kompetisi editorial relatif rendah.", "ambiguity_review": "pass", "leakage_review": "pass", "language_review_notes": "pass", "logic_review_notes": "pass",
+      "content_origin": "original_internal", "source_reference": null, "copyright_status": "internally_authored", "normative_compatibility": "none", "review_status": "human_review_passed", "active": false
+    },
+    {
+      "logical_id": "me-005", "subtest_code": "ME", "kind": "scored", "display_order": 5, "answer_type": "single_choice", "difficulty_target": "medium", "recall_direction": "cue_to_associate", "target_pair_id": "me-pair-005",
+      "prompt": "Dalam materi hafalan, kata “sepatu” dipasangkan dengan kata apa?",
+      "options": [
+        {"code": "A", "text": "cerita", "is_correct": false, "score_value": 0, "source_pair_id": "me-pair-004", "rationale_internal": "Cerita adalah associate pasangan lain."},
+        {"code": "B", "text": "ladang", "is_correct": false, "score_value": 0, "source_pair_id": "me-pair-007", "rationale_internal": "Ladang adalah associate pasangan lain."},
+        {"code": "C", "text": "kerikil", "is_correct": false, "score_value": 0, "source_pair_id": "me-pair-010", "rationale_internal": "Kerikil adalah associate pasangan lain."},
+        {"code": "D", "text": "petir", "is_correct": false, "score_value": 0, "source_pair_id": "me-pair-014", "rationale_internal": "Petir adalah associate pasangan lain."},
+        {"code": "E", "text": "kalender", "is_correct": true, "score_value": 1, "source_pair_id": "me-pair-005", "rationale_internal": "Kalender adalah associate target sepatu."}
+      ],
+      "explanation": null, "rationale_internal": "Recall langsung dengan opsi tersebar dan tanpa petunjuk posisi materi.", "difficulty_rationale": "Salah satu distractor berasal dari pair yang berdekatan dengan target dan beberapa associate mempunyai tingkat familiaritas serupa.", "ambiguity_review": "pass", "leakage_review": "pass", "language_review_notes": "pass", "logic_review_notes": "pass",
+      "content_origin": "original_internal", "source_reference": null, "copyright_status": "internally_authored", "normative_compatibility": "none", "review_status": "human_review_passed", "active": false
+    },
+    {
+      "logical_id": "me-006", "subtest_code": "ME", "kind": "scored", "display_order": 6, "answer_type": "single_choice", "difficulty_target": "easy", "recall_direction": "associate_to_cue", "target_pair_id": "me-pair-008",
+      "prompt": "Dalam materi hafalan, kata apa yang dipasangkan dengan “rempah”?",
+      "options": [
+        {"code": "A", "text": "sawah", "is_correct": false, "score_value": 0, "source_pair_id": "me-pair-002", "rationale_internal": "Sawah adalah cue pasangan lain."},
+        {"code": "B", "text": "sepatu", "is_correct": false, "score_value": 0, "source_pair_id": "me-pair-005", "rationale_internal": "Sepatu adalah cue pasangan lain."},
+        {"code": "C", "text": "tangga", "is_correct": true, "score_value": 1, "source_pair_id": "me-pair-008", "rationale_internal": "Tangga adalah cue target rempah."},
+        {"code": "D", "text": "payung", "is_correct": false, "score_value": 0, "source_pair_id": "me-pair-010", "rationale_internal": "Payung adalah cue pasangan lain."},
+        {"code": "E", "text": "bantal", "is_correct": false, "score_value": 0, "source_pair_id": "me-pair-003", "rationale_internal": "Bantal adalah cue pasangan lain."}
+      ],
+      "explanation": null, "rationale_internal": "Reverse recall dengan cue yang panjangnya relatif seimbang.", "difficulty_rationale": "Cue pilihan berbeda kategori dan sumbernya cukup tersebar dalam materi, sehingga kompetisi tetap rendah meskipun panjang kata relatif seimbang.", "ambiguity_review": "pass", "leakage_review": "pass", "language_review_notes": "pass", "logic_review_notes": "pass",
+      "content_origin": "original_internal", "source_reference": null, "copyright_status": "internally_authored", "normative_compatibility": "none", "review_status": "human_review_passed", "active": false
+    },
+    {
+      "logical_id": "me-007", "subtest_code": "ME", "kind": "scored", "display_order": 7, "answer_type": "single_choice", "difficulty_target": "medium", "recall_direction": "cue_to_associate", "target_pair_id": "me-pair-007",
+      "prompt": "Dalam materi hafalan, kata “cermin” dipasangkan dengan kata apa?",
+      "options": [
+        {"code": "A", "text": "pensil", "is_correct": false, "score_value": 0, "source_pair_id": "me-pair-006", "rationale_internal": "Pensil adalah associate pasangan lain."},
+        {"code": "B", "text": "hutan", "is_correct": false, "score_value": 0, "source_pair_id": "me-pair-009", "rationale_internal": "Hutan adalah associate pasangan lain."},
+        {"code": "C", "text": "pita", "is_correct": false, "score_value": 0, "source_pair_id": "me-pair-015", "rationale_internal": "Pita adalah associate pasangan lain."},
+        {"code": "D", "text": "ladang", "is_correct": true, "score_value": 1, "source_pair_id": "me-pair-007", "rationale_internal": "Ladang adalah associate target cermin."},
+        {"code": "E", "text": "kancing", "is_correct": false, "score_value": 0, "source_pair_id": "me-pair-002", "rationale_internal": "Kancing adalah associate pasangan lain."}
+      ],
+      "explanation": null, "rationale_internal": "Forward recall medium dengan beberapa opsi dari posisi berdekatan.", "difficulty_rationale": "Distractor dari pair 6 dan 9 mengapit posisi target 7, menambah kompetisi kedekatan materi dengan pilihan yang tetap jelas.", "ambiguity_review": "pass", "leakage_review": "pass", "language_review_notes": "pass", "logic_review_notes": "pass",
+      "content_origin": "original_internal", "source_reference": null, "copyright_status": "internally_authored", "normative_compatibility": "none", "review_status": "human_review_passed", "active": false
+    },
+    {
+      "logical_id": "me-008", "subtest_code": "ME", "kind": "scored", "display_order": 8, "answer_type": "single_choice", "difficulty_target": "medium", "recall_direction": "associate_to_cue", "target_pair_id": "me-pair-011",
+      "prompt": "Dalam materi hafalan, kata apa yang dipasangkan dengan “balkon”?",
+      "options": [
+        {"code": "A", "text": "kertas", "is_correct": true, "score_value": 1, "source_pair_id": "me-pair-011", "rationale_internal": "Kertas adalah cue target balkon."},
+        {"code": "B", "text": "cermin", "is_correct": false, "score_value": 0, "source_pair_id": "me-pair-007", "rationale_internal": "Cermin adalah cue pasangan lain."},
+        {"code": "C", "text": "lemari", "is_correct": false, "score_value": 0, "source_pair_id": "me-pair-012", "rationale_internal": "Lemari adalah cue pasangan lain."},
+        {"code": "D", "text": "kursi", "is_correct": false, "score_value": 0, "source_pair_id": "me-pair-014", "rationale_internal": "Kursi adalah cue pasangan lain."},
+        {"code": "E", "text": "kapal", "is_correct": false, "score_value": 0, "source_pair_id": "me-pair-015", "rationale_internal": "Kapal adalah cue pasangan lain."}
+      ],
+      "explanation": null, "rationale_internal": "Recall memakai cue yang familiaritas dan panjangnya berdekatan.", "difficulty_rationale": "Beberapa cue distractor berasal dari posisi 12, 14, dan 15 yang berdekatan dengan target 11 serta mempunyai familiaritas serupa.", "ambiguity_review": "pass", "leakage_review": "pass", "language_review_notes": "pass", "logic_review_notes": "pass",
+      "content_origin": "original_internal", "source_reference": null, "copyright_status": "internally_authored", "normative_compatibility": "none", "review_status": "human_review_passed", "active": false
+    },
+    {
+      "logical_id": "me-009", "subtest_code": "ME", "kind": "scored", "display_order": 9, "answer_type": "single_choice", "difficulty_target": "hard", "recall_direction": "cue_to_associate", "target_pair_id": "me-pair-010",
+      "prompt": "Dalam materi hafalan, kata “payung” dipasangkan dengan kata apa?",
+      "options": [
+        {"code": "A", "text": "balkon", "is_correct": false, "score_value": 0, "source_pair_id": "me-pair-011", "rationale_internal": "Balkon adalah associate pasangan lain."},
+        {"code": "B", "text": "taman", "is_correct": false, "score_value": 0, "source_pair_id": "me-pair-013", "rationale_internal": "Taman adalah associate pasangan lain."},
+        {"code": "C", "text": "kerikil", "is_correct": true, "score_value": 1, "source_pair_id": "me-pair-010", "rationale_internal": "Kerikil adalah associate target payung."},
+        {"code": "D", "text": "lorong", "is_correct": false, "score_value": 0, "source_pair_id": "me-pair-003", "rationale_internal": "Lorong adalah associate pasangan lain."},
+        {"code": "E", "text": "rempah", "is_correct": false, "score_value": 0, "source_pair_id": "me-pair-008", "rationale_internal": "Rempah adalah associate pasangan lain."}
+      ],
+      "explanation": null, "rationale_internal": "Recall cue ke associate dengan seluruh opsi dari sisi associate materi.", "difficulty_rationale": "Tiga distractor berasal dari posisi 8, 11, dan 13 yang berdekatan dengan target 10 serta mempunyai panjang dan familiaritas yang bersaing.", "ambiguity_review": "pass", "leakage_review": "pass", "language_review_notes": "pass", "logic_review_notes": "pass",
+      "content_origin": "original_internal", "source_reference": null, "copyright_status": "internally_authored", "normative_compatibility": "none", "review_status": "human_review_passed", "active": false
+    },
+    {
+      "logical_id": "me-010", "subtest_code": "ME", "kind": "scored", "display_order": 10, "answer_type": "single_choice", "difficulty_target": "medium", "recall_direction": "associate_to_cue", "target_pair_id": "me-pair-012",
+      "prompt": "Dalam materi hafalan, kata apa yang dipasangkan dengan “ombak”?",
+      "options": [
+        {"code": "A", "text": "piring", "is_correct": false, "score_value": 0, "source_pair_id": "me-pair-009", "rationale_internal": "Piring adalah cue pasangan lain."},
+        {"code": "B", "text": "gelas", "is_correct": false, "score_value": 0, "source_pair_id": "me-pair-013", "rationale_internal": "Gelas adalah cue pasangan lain."},
+        {"code": "C", "text": "jendela", "is_correct": false, "score_value": 0, "source_pair_id": "me-pair-001", "rationale_internal": "Jendela adalah cue pasangan lain."},
+        {"code": "D", "text": "ember", "is_correct": false, "score_value": 0, "source_pair_id": "me-pair-004", "rationale_internal": "Ember adalah cue pasangan lain."},
+        {"code": "E", "text": "lemari", "is_correct": true, "score_value": 1, "source_pair_id": "me-pair-012", "rationale_internal": "Lemari adalah cue target ombak."}
+      ],
+      "explanation": null, "rationale_internal": "Recall memakai opsi cue dengan familiaritas serupa dan posisi materi tersebar.", "difficulty_rationale": "Piring, gelas, jendela, ember, dan lemari sama-sama benda konkret sehari-hari, tetapi penyebaran posisi distractor membatasi kompetisinya pada tingkat medium.", "ambiguity_review": "pass", "leakage_review": "pass", "language_review_notes": "pass", "logic_review_notes": "pass",
+      "content_origin": "original_internal", "source_reference": null, "copyright_status": "internally_authored", "normative_compatibility": "none", "review_status": "human_review_passed", "active": false
+    },
+    {
+      "logical_id": "me-011", "subtest_code": "ME", "kind": "scored", "display_order": 11, "answer_type": "single_choice", "difficulty_target": "hard", "recall_direction": "associate_to_cue", "target_pair_id": "me-pair-014",
+      "prompt": "Dalam materi hafalan, kata apa yang dipasangkan dengan “petir”?",
+      "options": [
+        {"code": "A", "text": "payung", "is_correct": false, "score_value": 0, "source_pair_id": "me-pair-010", "rationale_internal": "Payung adalah cue pasangan lain."},
+        {"code": "B", "text": "kursi", "is_correct": true, "score_value": 1, "source_pair_id": "me-pair-014", "rationale_internal": "Kursi adalah cue target petir."},
+        {"code": "C", "text": "bantal", "is_correct": false, "score_value": 0, "source_pair_id": "me-pair-003", "rationale_internal": "Bantal adalah cue pasangan lain."},
+        {"code": "D", "text": "sawah", "is_correct": false, "score_value": 0, "source_pair_id": "me-pair-002", "rationale_internal": "Sawah adalah cue pasangan lain."},
+        {"code": "E", "text": "sepatu", "is_correct": false, "score_value": 0, "source_pair_id": "me-pair-005", "rationale_internal": "Sepatu adalah cue pasangan lain."}
+      ],
+      "explanation": null, "rationale_internal": "Semua cue umum tanpa kemiripan ejaan yang membingungkan.", "difficulty_rationale": "Semua opsi berupa benda konkret yang sangat familiar dan panjangnya relatif serupa, sehingga kompetisi distractor tinggi meskipun tidak ambigu.", "ambiguity_review": "pass", "leakage_review": "pass", "language_review_notes": "pass", "logic_review_notes": "pass",
+      "content_origin": "original_internal", "source_reference": null, "copyright_status": "internally_authored", "normative_compatibility": "none", "review_status": "human_review_passed", "active": false
+    },
+    {
+      "logical_id": "me-012", "subtest_code": "ME", "kind": "scored", "display_order": 12, "answer_type": "single_choice", "difficulty_target": "hard", "recall_direction": "associate_to_cue", "target_pair_id": "me-pair-015",
+      "prompt": "Dalam materi hafalan, kata apa yang dipasangkan dengan “pita”?",
+      "options": [
+        {"code": "A", "text": "sungai", "is_correct": false, "score_value": 0, "source_pair_id": "me-pair-006", "rationale_internal": "Sungai adalah cue pasangan lain."},
+        {"code": "B", "text": "tangga", "is_correct": false, "score_value": 0, "source_pair_id": "me-pair-008", "rationale_internal": "Tangga adalah cue pasangan lain."},
+        {"code": "C", "text": "kertas", "is_correct": false, "score_value": 0, "source_pair_id": "me-pair-011", "rationale_internal": "Kertas adalah cue pasangan lain."},
+        {"code": "D", "text": "kapal", "is_correct": true, "score_value": 1, "source_pair_id": "me-pair-015", "rationale_internal": "Kapal adalah cue target pita."},
+        {"code": "E", "text": "cermin", "is_correct": false, "score_value": 0, "source_pair_id": "me-pair-007", "rationale_internal": "Cermin adalah cue pasangan lain."}
+      ],
+      "explanation": null, "rationale_internal": "Recall target pasangan akhir dengan distractor cue lintas posisi.", "difficulty_rationale": "Distractor terkonsentrasi pada posisi 6–11 dengan kata konkret yang familiar, menciptakan kompetisi dari kelompok tengah terhadap target pada akhir materi.", "ambiguity_review": "pass", "leakage_review": "pass", "language_review_notes": "pass", "logic_review_notes": "pass",
+      "content_origin": "original_internal", "source_reference": null, "copyright_status": "internally_authored", "normative_compatibility": "none", "review_status": "human_review_passed", "active": false
+    }
+  ],
+  "participant_facing": {
+    "instruction": "Anda akan melihat 15 pasangan kata selama 2 menit. Ingat hubungan setiap pasangan. Setelah waktu menghafal berakhir, materi akan ditutup otomatis dan tidak dapat dibuka kembali. Anda kemudian memiliki 4 menit untuk menjawab 12 soal pilihan ganda. Pilih satu jawaban untuk setiap soal. Contoh tidak dihitung dalam skor.",
+    "example": {
+      "pairs": [
+        {"cue": "tas", "associate": "senja"},
+        {"cue": "roti", "associate": "pagar"},
+        {"cue": "lampu", "associate": "pasir"},
+        {"cue": "meja", "associate": "kabut"},
+        {"cue": "bukit", "associate": "daun"}
+      ],
+      "question": {
+        "prompt": "Dalam materi contoh, kata “roti” dipasangkan dengan kata apa?",
+        "options": [
+          {"code": "A", "text": "kabut"},
+          {"code": "B", "text": "pagar"},
+          {"code": "C", "text": "senja"},
+          {"code": "D", "text": "pasir"},
+          {"code": "E", "text": "daun"}
+        ],
+        "explanation": "Jawaban yang benar adalah pagar karena pada materi contoh terdapat pasangan roti — pagar. Saat subtes utama dimulai, materi hafalan akan ditutup setelah 2 menit dan tidak dapat dibuka kembali. Contoh ini tidak dihitung dalam skor."
+      }
+    },
+    "memorization": {
+      "layout_contract": "responsive_up_to_three_columns_without_numbering_or_visual_grouping",
+      "pairs": [
+        {"cue": "jendela", "associate": "irama"},
+        {"cue": "sawah", "associate": "kancing"},
+        {"cue": "bantal", "associate": "lorong"},
+        {"cue": "ember", "associate": "cerita"},
+        {"cue": "sepatu", "associate": "kalender"},
+        {"cue": "sungai", "associate": "pensil"},
+        {"cue": "cermin", "associate": "ladang"},
+        {"cue": "tangga", "associate": "rempah"},
+        {"cue": "piring", "associate": "hutan"},
+        {"cue": "payung", "associate": "kerikil"},
+        {"cue": "kertas", "associate": "balkon"},
+        {"cue": "lemari", "associate": "ombak"},
+        {"cue": "gelas", "associate": "taman"},
+        {"cue": "kursi", "associate": "petir"},
+        {"cue": "kapal", "associate": "pita"}
+      ]
+    },
+    "answering": {
+      "questions": [
+        {"display_order": 1, "prompt": "Dalam materi hafalan, kata “jendela” dipasangkan dengan kata apa?", "options": [{"code": "A", "text": "kancing"}, {"code": "B", "text": "cerita"}, {"code": "C", "text": "irama"}, {"code": "D", "text": "hutan"}, {"code": "E", "text": "petir"}]},
+        {"display_order": 2, "prompt": "Dalam materi hafalan, kata “sawah” dipasangkan dengan kata apa?", "options": [{"code": "A", "text": "kancing"}, {"code": "B", "text": "kalender"}, {"code": "C", "text": "pensil"}, {"code": "D", "text": "taman"}, {"code": "E", "text": "pita"}]},
+        {"display_order": 3, "prompt": "Dalam materi hafalan, kata “bantal” dipasangkan dengan kata apa?", "options": [{"code": "A", "text": "irama"}, {"code": "B", "text": "rempah"}, {"code": "C", "text": "balkon"}, {"code": "D", "text": "lorong"}, {"code": "E", "text": "ombak"}]},
+        {"display_order": 4, "prompt": "Dalam materi hafalan, kata apa yang dipasangkan dengan “pensil”?", "options": [{"code": "A", "text": "jendela"}, {"code": "B", "text": "sungai"}, {"code": "C", "text": "ember"}, {"code": "D", "text": "piring"}, {"code": "E", "text": "gelas"}]},
+        {"display_order": 5, "prompt": "Dalam materi hafalan, kata “sepatu” dipasangkan dengan kata apa?", "options": [{"code": "A", "text": "cerita"}, {"code": "B", "text": "ladang"}, {"code": "C", "text": "kerikil"}, {"code": "D", "text": "petir"}, {"code": "E", "text": "kalender"}]},
+        {"display_order": 6, "prompt": "Dalam materi hafalan, kata apa yang dipasangkan dengan “rempah”?", "options": [{"code": "A", "text": "sawah"}, {"code": "B", "text": "sepatu"}, {"code": "C", "text": "tangga"}, {"code": "D", "text": "payung"}, {"code": "E", "text": "bantal"}]},
+        {"display_order": 7, "prompt": "Dalam materi hafalan, kata “cermin” dipasangkan dengan kata apa?", "options": [{"code": "A", "text": "pensil"}, {"code": "B", "text": "hutan"}, {"code": "C", "text": "pita"}, {"code": "D", "text": "ladang"}, {"code": "E", "text": "kancing"}]},
+        {"display_order": 8, "prompt": "Dalam materi hafalan, kata apa yang dipasangkan dengan “balkon”?", "options": [{"code": "A", "text": "kertas"}, {"code": "B", "text": "cermin"}, {"code": "C", "text": "lemari"}, {"code": "D", "text": "kursi"}, {"code": "E", "text": "kapal"}]},
+        {"display_order": 9, "prompt": "Dalam materi hafalan, kata “payung” dipasangkan dengan kata apa?", "options": [{"code": "A", "text": "balkon"}, {"code": "B", "text": "taman"}, {"code": "C", "text": "kerikil"}, {"code": "D", "text": "lorong"}, {"code": "E", "text": "rempah"}]},
+        {"display_order": 10, "prompt": "Dalam materi hafalan, kata apa yang dipasangkan dengan “ombak”?", "options": [{"code": "A", "text": "piring"}, {"code": "B", "text": "gelas"}, {"code": "C", "text": "jendela"}, {"code": "D", "text": "ember"}, {"code": "E", "text": "lemari"}]},
+        {"display_order": 11, "prompt": "Dalam materi hafalan, kata apa yang dipasangkan dengan “petir”?", "options": [{"code": "A", "text": "payung"}, {"code": "B", "text": "kursi"}, {"code": "C", "text": "bantal"}, {"code": "D", "text": "sawah"}, {"code": "E", "text": "sepatu"}]},
+        {"display_order": 12, "prompt": "Dalam materi hafalan, kata apa yang dipasangkan dengan “pita”?", "options": [{"code": "A", "text": "sungai"}, {"code": "B", "text": "tangga"}, {"code": "C", "text": "kertas"}, {"code": "D", "text": "kapal"}, {"code": "E", "text": "cermin"}]}
+      ]
+    }
+  }
+}
