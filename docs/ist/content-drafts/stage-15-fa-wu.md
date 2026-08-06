@@ -12,12 +12,12 @@ Konten visual ini dibuat secara internal untuk asesmen adaptasi dan tidak dituju
 - `automated_rotation_review`: complete
 - `automated_language_review`: complete
 - `automated_logic_review`: complete
-- `human_visual_review`: pending
-- `human_geometry_review`: pending
-- `human_rotation_review`: pending
-- `human_language_review`: pending
-- `human_logic_review`: pending
-- `overall_status`: in_review
+- `human_visual_review`: passed
+- `human_geometry_review`: passed
+- `human_rotation_review`: passed
+- `human_language_review`: passed
+- `human_logic_review`: passed
+- `overall_status`: human_review_passed
 - `active`: false
 - `approved`: false
 - `frozen`: false
@@ -25,7 +25,7 @@ Konten visual ini dibuat secara internal untuk asesmen adaptasi dan tidak dituju
 - `answer_type`: image_choice
 - Skor setiap butir: benar `1`; salah/kosong `0`.
 - Aset berada hanya di `docs/ist/content-drafts/stage-15-assets/` dan tidak dibaca runtime.
-- Seluruh metadata record: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
+- Seluruh metadata record: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=human_review_passed`; `active=false`.
 
 ---
 
@@ -57,7 +57,7 @@ Konten visual ini dibuat secara internal untuk asesmen adaptasi dan tidak dituju
 - Visual logic: model `unit_cell_exact_cover`; area 8; target cells `0,0 0,1 0,2 1,1 1,2 2,0 2,1 2,2`.
 - Geometry audit: area/composition=pass; topology=pass; rotation=pass; reflection=pass; small_screen=pass.
 - Reviews: `ambiguity_review=pass`; `automated_visual_review=pass`; `automated_geometry_review=pass`; `automated_language_review=pass`; `automated_logic_review=pass`; `qc_status=pass`.
-- Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
+- Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=human_review_passed`; `active=false`.
 
 ### fa-001
 
@@ -77,7 +77,7 @@ Konten visual ini dibuat secara internal untuk asesmen adaptasi dan tidak dituju
 - Visual logic: model `unit_cell_exact_cover`; area 9; target cells `0,0 0,1 0,2 1,0 1,1 1,2 2,0 2,1 2,2`.
 - Geometry audit: area/composition=pass; topology=pass; rotation=pass; reflection=pass; small_screen=pass.
 - Reviews: `ambiguity_review=pass`; `automated_visual_review=pass`; `automated_geometry_review=pass`; `automated_language_review=pass`; `automated_logic_review=pass`; `qc_status=pass`.
-- Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
+- Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=human_review_passed`; `active=false`.
 
 ### fa-002
 
@@ -97,7 +97,7 @@ Konten visual ini dibuat secara internal untuk asesmen adaptasi dan tidak dituju
 - Visual logic: model `unit_cell_exact_cover`; area 10; target cells `0,0 0,1 0,2 0,3 1,0 1,1 1,2 1,3 2,2 2,3`.
 - Geometry audit: area/composition=pass; topology=pass; rotation=pass; reflection=pass; small_screen=pass.
 - Reviews: `ambiguity_review=pass`; `automated_visual_review=pass`; `automated_geometry_review=pass`; `automated_language_review=pass`; `automated_logic_review=pass`; `qc_status=pass`.
-- Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
+- Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=human_review_passed`; `active=false`.
 
 ### fa-003
 
@@ -117,7 +117,7 @@ Konten visual ini dibuat secara internal untuk asesmen adaptasi dan tidak dituju
 - Visual logic: model `unit_cell_exact_cover`; area 10; target cells `0,1 0,2 0,3 1,0 1,1 1,2 1,3 2,0 2,2 2,3`.
 - Geometry audit: area/composition=pass; topology=pass; rotation=pass; reflection=pass; small_screen=pass.
 - Reviews: `ambiguity_review=pass`; `automated_visual_review=pass`; `automated_geometry_review=pass`; `automated_language_review=pass`; `automated_logic_review=pass`; `qc_status=pass`.
-- Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
+- Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=human_review_passed`; `active=false`.
 
 ### fa-004
 
@@ -137,7 +137,7 @@ Konten visual ini dibuat secara internal untuk asesmen adaptasi dan tidak dituju
 - Visual logic: model `unit_cell_exact_cover`; area 11; target cells `0,1 1,0 1,1 2,0 2,1 3,0 3,1 4,0 5,0 5,1 6,1`.
 - Geometry audit: area/composition=pass; topology=pass; rotation=pass; reflection=pass; small_screen=pass.
 - Reviews: `ambiguity_review=pass`; `automated_visual_review=pass`; `automated_geometry_review=pass`; `automated_language_review=pass`; `automated_logic_review=pass`; `qc_status=pass`.
-- Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
+- Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=human_review_passed`; `active=false`.
 
 ### fa-005
 
@@ -157,7 +157,7 @@ Konten visual ini dibuat secara internal untuk asesmen adaptasi dan tidak dituju
 - Visual logic: model `unit_cell_exact_cover`; area 11; target cells `0,1 0,2 0,3 1,0 1,1 1,2 1,3 2,0 2,1 2,2 2,3`.
 - Geometry audit: area/composition=pass; topology=pass; rotation=pass; reflection=pass; small_screen=pass.
 - Reviews: `ambiguity_review=pass`; `automated_visual_review=pass`; `automated_geometry_review=pass`; `automated_language_review=pass`; `automated_logic_review=pass`; `qc_status=pass`.
-- Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
+- Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=human_review_passed`; `active=false`.
 
 ### fa-006
 
@@ -177,7 +177,7 @@ Konten visual ini dibuat secara internal untuk asesmen adaptasi dan tidak dituju
 - Visual logic: model `unit_cell_exact_cover`; area 11; target cells `0,1 1,0 1,1 2,0 2,1 3,0 4,0 4,1 5,0 6,0 6,1`.
 - Geometry audit: area/composition=pass; topology=pass; rotation=pass; reflection=pass; small_screen=pass.
 - Reviews: `ambiguity_review=pass`; `automated_visual_review=pass`; `automated_geometry_review=pass`; `automated_language_review=pass`; `automated_logic_review=pass`; `qc_status=pass`.
-- Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
+- Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=human_review_passed`; `active=false`.
 
 ### fa-007
 
@@ -197,7 +197,7 @@ Konten visual ini dibuat secara internal untuk asesmen adaptasi dan tidak dituju
 - Visual logic: model `unit_cell_exact_cover`; area 12; target cells `0,1 1,0 1,1 2,0 2,1 3,0 3,1 4,0 5,0 5,1 6,0 6,1`.
 - Geometry audit: area/composition=pass; topology=pass; rotation=pass; reflection=pass; small_screen=pass.
 - Reviews: `ambiguity_review=pass`; `automated_visual_review=pass`; `automated_geometry_review=pass`; `automated_language_review=pass`; `automated_logic_review=pass`; `qc_status=pass`.
-- Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
+- Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=human_review_passed`; `active=false`.
 
 ### fa-008
 
@@ -217,7 +217,7 @@ Konten visual ini dibuat secara internal untuk asesmen adaptasi dan tidak dituju
 - Visual logic: model `unit_cell_exact_cover`; area 12; target cells `0,1 0,2 0,3 1,0 1,2 1,3 2,0 2,1 2,2 2,3 3,0 3,2`.
 - Geometry audit: area/composition=pass; topology=pass; rotation=pass; reflection=pass; small_screen=pass.
 - Reviews: `ambiguity_review=pass`; `automated_visual_review=pass`; `automated_geometry_review=pass`; `automated_language_review=pass`; `automated_logic_review=pass`; `qc_status=pass`.
-- Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
+- Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=human_review_passed`; `active=false`.
 
 ### fa-009
 
@@ -237,7 +237,7 @@ Konten visual ini dibuat secara internal untuk asesmen adaptasi dan tidak dituju
 - Visual logic: model `unit_cell_exact_cover`; area 13; target cells `0,0 0,1 0,2 1,0 1,1 1,2 2,0 2,1 2,2 3,1 3,2 4,0 4,1`.
 - Geometry audit: area/composition=pass; topology=pass; rotation=pass; reflection=pass; small_screen=pass.
 - Reviews: `ambiguity_review=pass`; `automated_visual_review=pass`; `automated_geometry_review=pass`; `automated_language_review=pass`; `automated_logic_review=pass`; `qc_status=pass`.
-- Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
+- Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=human_review_passed`; `active=false`.
 
 ### fa-010
 
@@ -257,7 +257,7 @@ Konten visual ini dibuat secara internal untuk asesmen adaptasi dan tidak dituju
 - Visual logic: model `unit_cell_exact_cover`; area 13; target cells `0,1 0,2 0,3 0,4 0,5 0,6 0,7 1,0 1,1 1,2 1,3 1,4 1,5`.
 - Geometry audit: area/composition=pass; topology=pass; rotation=pass; reflection=pass; small_screen=pass.
 - Reviews: `ambiguity_review=pass`; `automated_visual_review=pass`; `automated_geometry_review=pass`; `automated_language_review=pass`; `automated_logic_review=pass`; `qc_status=pass`.
-- Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
+- Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=human_review_passed`; `active=false`.
 
 ## Rekap FA
 
@@ -297,7 +297,7 @@ Konten visual ini dibuat secara internal untuk asesmen adaptasi dan tidak dituju
 - Rotation proof: putar searah pandang 90° → putar searah pandang 90° menghasilkan Top=bottom, Front=front, Right=left.
 - Cube audit: adjacency=pass; opposite-face=pass; chirality=pass; symbol-orientation=pass; small_screen=pass.
 - Reviews: `ambiguity_review=pass`; `automated_visual_review=pass`; `automated_geometry_review=pass`; `automated_rotation_review=pass`; `automated_language_review=pass`; `automated_logic_review=pass`; `qc_status=pass`.
-- Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
+- Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=human_review_passed`; `active=false`.
 
 ### wu-001
 
@@ -318,7 +318,7 @@ Konten visual ini dibuat secara internal untuk asesmen adaptasi dan tidak dituju
 - Rotation proof: putar vertikal 90° → putar maju 90° → putar maju 90° menghasilkan Top=bottom, Front=left, Right=back.
 - Cube audit: adjacency=pass; opposite-face=pass; chirality=pass; symbol-orientation=pass; small_screen=pass.
 - Reviews: `ambiguity_review=pass`; `automated_visual_review=pass`; `automated_geometry_review=pass`; `automated_rotation_review=pass`; `automated_language_review=pass`; `automated_logic_review=pass`; `qc_status=pass`.
-- Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
+- Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=human_review_passed`; `active=false`.
 
 ### wu-002
 
@@ -339,7 +339,7 @@ Konten visual ini dibuat secara internal untuk asesmen adaptasi dan tidak dituju
 - Rotation proof: putar vertikal 90° → putar searah pandang 90° menghasilkan Top=front, Front=right, Right=top.
 - Cube audit: adjacency=pass; opposite-face=pass; chirality=pass; symbol-orientation=pass; small_screen=pass.
 - Reviews: `ambiguity_review=pass`; `automated_visual_review=pass`; `automated_geometry_review=pass`; `automated_rotation_review=pass`; `automated_language_review=pass`; `automated_logic_review=pass`; `qc_status=pass`.
-- Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
+- Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=human_review_passed`; `active=false`.
 
 ### wu-003
 
@@ -360,7 +360,7 @@ Konten visual ini dibuat secara internal untuk asesmen adaptasi dan tidak dituju
 - Rotation proof: putar maju 90° → putar vertikal 90° → putar vertikal 90° menghasilkan Top=back, Front=bottom, Right=left.
 - Cube audit: adjacency=pass; opposite-face=pass; chirality=pass; symbol-orientation=pass; small_screen=pass.
 - Reviews: `ambiguity_review=pass`; `automated_visual_review=pass`; `automated_geometry_review=pass`; `automated_rotation_review=pass`; `automated_language_review=pass`; `automated_logic_review=pass`; `qc_status=pass`.
-- Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
+- Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=human_review_passed`; `active=false`.
 
 ### wu-004
 
@@ -381,7 +381,7 @@ Konten visual ini dibuat secara internal untuk asesmen adaptasi dan tidak dituju
 - Rotation proof: putar vertikal 90° → putar vertikal 90° → putar vertikal 90° → putar maju 90° menghasilkan Top=right, Front=top, Right=front.
 - Cube audit: adjacency=pass; opposite-face=pass; chirality=pass; symbol-orientation=pass; small_screen=pass.
 - Reviews: `ambiguity_review=pass`; `automated_visual_review=pass`; `automated_geometry_review=pass`; `automated_rotation_review=pass`; `automated_language_review=pass`; `automated_logic_review=pass`; `qc_status=pass`.
-- Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
+- Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=human_review_passed`; `active=false`.
 
 ### wu-005
 
@@ -402,7 +402,7 @@ Konten visual ini dibuat secara internal untuk asesmen adaptasi dan tidak dituju
 - Rotation proof: putar vertikal 90° → putar vertikal 90° → putar searah pandang 90° menghasilkan Top=right, Front=back, Right=top.
 - Cube audit: adjacency=pass; opposite-face=pass; chirality=pass; symbol-orientation=pass; small_screen=pass.
 - Reviews: `ambiguity_review=pass`; `automated_visual_review=pass`; `automated_geometry_review=pass`; `automated_rotation_review=pass`; `automated_language_review=pass`; `automated_logic_review=pass`; `qc_status=pass`.
-- Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
+- Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=human_review_passed`; `active=false`.
 
 ### wu-006
 
@@ -423,7 +423,7 @@ Konten visual ini dibuat secara internal untuk asesmen adaptasi dan tidak dituju
 - Rotation proof: putar searah pandang 90° menghasilkan Top=left, Front=front, Right=top.
 - Cube audit: adjacency=pass; opposite-face=pass; chirality=pass; symbol-orientation=pass; small_screen=pass.
 - Reviews: `ambiguity_review=pass`; `automated_visual_review=pass`; `automated_geometry_review=pass`; `automated_rotation_review=pass`; `automated_language_review=pass`; `automated_logic_review=pass`; `qc_status=pass`.
-- Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
+- Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=human_review_passed`; `active=false`.
 
 ### wu-007
 
@@ -444,7 +444,7 @@ Konten visual ini dibuat secara internal untuk asesmen adaptasi dan tidak dituju
 - Rotation proof: putar maju 90° → putar maju 90° menghasilkan Top=bottom, Front=back, Right=right.
 - Cube audit: adjacency=pass; opposite-face=pass; chirality=pass; symbol-orientation=pass; small_screen=pass.
 - Reviews: `ambiguity_review=pass`; `automated_visual_review=pass`; `automated_geometry_review=pass`; `automated_rotation_review=pass`; `automated_language_review=pass`; `automated_logic_review=pass`; `qc_status=pass`.
-- Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
+- Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=human_review_passed`; `active=false`.
 
 ### wu-008
 
@@ -465,7 +465,7 @@ Konten visual ini dibuat secara internal untuk asesmen adaptasi dan tidak dituju
 - Rotation proof: putar vertikal 90° → putar vertikal 90° → putar maju 90° menghasilkan Top=front, Front=top, Right=left.
 - Cube audit: adjacency=pass; opposite-face=pass; chirality=pass; symbol-orientation=pass; small_screen=pass.
 - Reviews: `ambiguity_review=pass`; `automated_visual_review=pass`; `automated_geometry_review=pass`; `automated_rotation_review=pass`; `automated_language_review=pass`; `automated_logic_review=pass`; `qc_status=pass`.
-- Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
+- Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=human_review_passed`; `active=false`.
 
 ### wu-009
 
@@ -486,7 +486,7 @@ Konten visual ini dibuat secara internal untuk asesmen adaptasi dan tidak dituju
 - Rotation proof: putar vertikal 90° → putar vertikal 90° → putar maju 90° → putar vertikal 90° menghasilkan Top=front, Front=left, Right=bottom.
 - Cube audit: adjacency=pass; opposite-face=pass; chirality=pass; symbol-orientation=pass; small_screen=pass.
 - Reviews: `ambiguity_review=pass`; `automated_visual_review=pass`; `automated_geometry_review=pass`; `automated_rotation_review=pass`; `automated_language_review=pass`; `automated_logic_review=pass`; `qc_status=pass`.
-- Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
+- Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=human_review_passed`; `active=false`.
 
 ### wu-010
 
@@ -507,7 +507,7 @@ Konten visual ini dibuat secara internal untuk asesmen adaptasi dan tidak dituju
 - Rotation proof: putar maju 90° → putar vertikal 90° menghasilkan Top=back, Front=right, Right=bottom.
 - Cube audit: adjacency=pass; opposite-face=pass; chirality=pass; symbol-orientation=pass; small_screen=pass.
 - Reviews: `ambiguity_review=pass`; `automated_visual_review=pass`; `automated_geometry_review=pass`; `automated_rotation_review=pass`; `automated_language_review=pass`; `automated_logic_review=pass`; `qc_status=pass`.
-- Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
+- Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=human_review_passed`; `active=false`.
 
 ### wu-011
 
@@ -528,7 +528,7 @@ Konten visual ini dibuat secara internal untuk asesmen adaptasi dan tidak dituju
 - Rotation proof: putar vertikal 90° → putar maju 90° → putar maju 90° → putar maju 90° menghasilkan Top=right, Front=bottom, Right=back.
 - Cube audit: adjacency=pass; opposite-face=pass; chirality=pass; symbol-orientation=pass; small_screen=pass.
 - Reviews: `ambiguity_review=pass`; `automated_visual_review=pass`; `automated_geometry_review=pass`; `automated_rotation_review=pass`; `automated_language_review=pass`; `automated_logic_review=pass`; `qc_status=pass`.
-- Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
+- Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=human_review_passed`; `active=false`.
 
 ### wu-012
 
@@ -549,7 +549,7 @@ Konten visual ini dibuat secara internal untuk asesmen adaptasi dan tidak dituju
 - Rotation proof: putar vertikal 90° → putar maju 90° menghasilkan Top=left, Front=top, Right=back.
 - Cube audit: adjacency=pass; opposite-face=pass; chirality=pass; symbol-orientation=pass; small_screen=pass.
 - Reviews: `ambiguity_review=pass`; `automated_visual_review=pass`; `automated_geometry_review=pass`; `automated_rotation_review=pass`; `automated_language_review=pass`; `automated_logic_review=pass`; `qc_status=pass`.
-- Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
+- Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=human_review_passed`; `active=false`.
 
 ## Rekap WU
 
@@ -564,7 +564,6 @@ Konten visual ini dibuat secara internal untuk asesmen adaptasi dan tidak dituju
 
 - Total 24 record: 2 example + 22 scored.
 - Total 120 opsi visual dan 144 media pertanyaan.
-- Seluruh record `review_status=in_review`, `active=false`, belum approved, belum frozen, dan belum diimpor.
+- Seluruh record `review_status=human_review_passed`, `active=false`, belum approved, belum frozen, dan belum diimpor.
 - Tidak ada klaim kesetaraan dengan instrumen normatif, skor standar, norma, atau IQ.
-- Human visual, geometry, rotation, language, dan logic review tetap pending.
-
+- Human visual, geometry, rotation, language, dan logic review telah passed.

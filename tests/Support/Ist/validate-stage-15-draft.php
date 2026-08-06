@@ -58,7 +58,7 @@ foreach ([$specRaw, $manifestRaw] as $index => $raw) {
 }
 
 $expectedStatus = [
-    'overall_status' => 'in_review',
+    'overall_status' => 'human_review_passed',
     'active' => false,
     'approved' => false,
     'frozen' => false,
@@ -76,8 +76,8 @@ foreach ($expectedStatus as $field => $expected) {
 }
 
 foreach (['human_visual_review', 'human_geometry_review', 'human_rotation_review', 'human_language_review', 'human_logic_review'] as $field) {
-    if (($spec['status'][$field] ?? null) !== 'pending') {
-        $fail("{$field} harus pending");
+    if (($spec['status'][$field] ?? null) !== 'passed') {
+        $fail("{$field} harus passed");
     }
 }
 
@@ -328,7 +328,7 @@ foreach ($records as $recordIndex => $record) {
         || $record['source_reference'] !== null
         || ($record['copyright_status'] ?? null) !== 'internally_authored'
         || ($record['normative_compatibility'] ?? null) !== 'none'
-        || ($record['review_status'] ?? null) !== 'in_review'
+        || ($record['review_status'] ?? null) !== 'human_review_passed'
         || ($record['active'] ?? null) !== false) {
         $fail("{$id}: metadata record tidak valid");
     }
@@ -554,7 +554,7 @@ foreach ($media as $index => $item) {
     if (($item['mime_type'] ?? null) !== 'image/svg+xml'
         || ($item['content_origin'] ?? null) !== 'original_internal'
         || ($item['copyright_status'] ?? null) !== 'internally_authored'
-        || ($item['review_status'] ?? null) !== 'in_review'
+        || ($item['review_status'] ?? null) !== 'human_review_passed'
         || ($item['active'] ?? null) !== false) {
         $fail("Metadata manifest tidak valid: {$id}");
     }
@@ -646,7 +646,7 @@ if (! is_string($contactSheet)
 printf("records=%d; examples=%d; scored=%d\n", count($records), $exampleCount, $scoredCount);
 printf("FA records=%d; difficulty=%s; keys=%s\n", $subtestCounts['FA'], json_encode($difficulty['FA']), json_encode($keyCounts['FA']));
 printf("WU records=%d; difficulty=%s; keys=%s; proper_rotations=%d\n", $subtestCounts['WU'], json_encode($difficulty['WU']), json_encode($keyCounts['WU']), $rotationCount);
-printf("media=%d; svg_files=%d; status=in_review; active=false\n", count($media), count($actualSvgPaths));
+printf("media=%d; svg_files=%d; status=human_review_passed; active=false\n", count($media), count($actualSvgPaths));
 
 if ($errors !== []) {
     foreach ($errors as $error) {

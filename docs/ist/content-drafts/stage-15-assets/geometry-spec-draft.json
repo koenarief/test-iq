@@ -10,12 +10,12 @@
     "automated_rotation_review": "complete",
     "automated_language_review": "complete",
     "automated_logic_review": "complete",
-    "human_visual_review": "pending",
-    "human_geometry_review": "pending",
-    "human_rotation_review": "pending",
-    "human_language_review": "pending",
-    "human_logic_review": "pending",
-    "overall_status": "in_review",
+    "human_visual_review": "passed",
+    "human_geometry_review": "passed",
+    "human_rotation_review": "passed",
+    "human_language_review": "passed",
+    "human_logic_review": "passed",
+    "overall_status": "human_review_passed",
     "active": false,
     "approved": false,
     "frozen": false,
@@ -395,7 +395,7 @@
       "source_reference": null,
       "copyright_status": "internally_authored",
       "normative_compatibility": "none",
-      "review_status": "in_review",
+      "review_status": "human_review_passed",
       "active": false
     },
     {
@@ -803,7 +803,7 @@
       "source_reference": null,
       "copyright_status": "internally_authored",
       "normative_compatibility": "none",
-      "review_status": "in_review",
+      "review_status": "human_review_passed",
       "active": false
     },
     {
@@ -1243,7 +1243,7 @@
       "source_reference": null,
       "copyright_status": "internally_authored",
       "normative_compatibility": "none",
-      "review_status": "in_review",
+      "review_status": "human_review_passed",
       "active": false
     },
     {
@@ -1683,7 +1683,7 @@
       "source_reference": null,
       "copyright_status": "internally_authored",
       "normative_compatibility": "none",
-      "review_status": "in_review",
+      "review_status": "human_review_passed",
       "active": false
     },
     {
@@ -2155,7 +2155,7 @@
       "source_reference": null,
       "copyright_status": "internally_authored",
       "normative_compatibility": "none",
-      "review_status": "in_review",
+      "review_status": "human_review_passed",
       "active": false
     },
     {
@@ -2627,7 +2627,7 @@
       "source_reference": null,
       "copyright_status": "internally_authored",
       "normative_compatibility": "none",
-      "review_status": "in_review",
+      "review_status": "human_review_passed",
       "active": false
     },
     {
@@ -3099,7 +3099,7 @@
       "source_reference": null,
       "copyright_status": "internally_authored",
       "normative_compatibility": "none",
-      "review_status": "in_review",
+      "review_status": "human_review_passed",
       "active": false
     },
     {
@@ -3603,7 +3603,7 @@
       "source_reference": null,
       "copyright_status": "internally_authored",
       "normative_compatibility": "none",
-      "review_status": "in_review",
+      "review_status": "human_review_passed",
       "active": false
     },
     {
@@ -4107,7 +4107,7 @@
       "source_reference": null,
       "copyright_status": "internally_authored",
       "normative_compatibility": "none",
-      "review_status": "in_review",
+      "review_status": "human_review_passed",
       "active": false
     },
     {
@@ -4643,7 +4643,7 @@
       "source_reference": null,
       "copyright_status": "internally_authored",
       "normative_compatibility": "none",
-      "review_status": "in_review",
+      "review_status": "human_review_passed",
       "active": false
     },
     {
@@ -5179,7 +5179,7 @@
       "source_reference": null,
       "copyright_status": "internally_authored",
       "normative_compatibility": "none",
-      "review_status": "in_review",
+      "review_status": "human_review_passed",
       "active": false
     },
     {
@@ -5318,7 +5318,7 @@
       "source_reference": null,
       "copyright_status": "internally_authored",
       "normative_compatibility": "none",
-      "review_status": "in_review",
+      "review_status": "human_review_passed",
       "active": false
     },
     {
@@ -5458,7 +5458,7 @@
       "source_reference": null,
       "copyright_status": "internally_authored",
       "normative_compatibility": "none",
-      "review_status": "in_review",
+      "review_status": "human_review_passed",
       "active": false
     },
     {
@@ -5597,7 +5597,7 @@
       "source_reference": null,
       "copyright_status": "internally_authored",
       "normative_compatibility": "none",
-      "review_status": "in_review",
+      "review_status": "human_review_passed",
       "active": false
     },
     {
@@ -5737,7 +5737,7 @@
       "source_reference": null,
       "copyright_status": "internally_authored",
       "normative_compatibility": "none",
-      "review_status": "in_review",
+      "review_status": "human_review_passed",
       "active": false
     },
     {
@@ -5878,7 +5878,7 @@
       "source_reference": null,
       "copyright_status": "internally_authored",
       "normative_compatibility": "none",
-      "review_status": "in_review",
+      "review_status": "human_review_passed",
       "active": false
     },
     {
@@ -6018,7 +6018,7 @@
       "source_reference": null,
       "copyright_status": "internally_authored",
       "normative_compatibility": "none",
-      "review_status": "in_review",
+      "review_status": "human_review_passed",
       "active": false
     },
     {
@@ -6156,7 +6156,7 @@
       "source_reference": null,
       "copyright_status": "internally_authored",
       "normative_compatibility": "none",
-      "review_status": "in_review",
+      "review_status": "human_review_passed",
       "active": false
     },
     {
@@ -6295,7 +6295,7 @@
       "source_reference": null,
       "copyright_status": "internally_authored",
       "normative_compatibility": "none",
-      "review_status": "in_review",
+      "review_status": "human_review_passed",
       "active": false
     },
     {
@@ -6435,7 +6435,7 @@
       "source_reference": null,
       "copyright_status": "internally_authored",
       "normative_compatibility": "none",
-      "review_status": "in_review",
+      "review_status": "human_review_passed",
       "active": false
     },
     {
@@ -6576,7 +6576,7 @@
       "source_reference": null,
       "copyright_status": "internally_authored",
       "normative_compatibility": "none",
-      "review_status": "in_review",
+      "review_status": "human_review_passed",
       "active": false
     },
     {
@@ -6715,7 +6715,7 @@
       "source_reference": null,
       "copyright_status": "internally_authored",
       "normative_compatibility": "none",
-      "review_status": "in_review",
+      "review_status": "human_review_passed",
       "active": false
     },
     {
@@ -6856,7 +6856,7 @@
       "source_reference": null,
       "copyright_status": "internally_authored",
       "normative_compatibility": "none",
-      "review_status": "in_review",
+      "review_status": "human_review_passed",
       "active": false
     },
     {
@@ -6995,7 +6995,7 @@
       "source_reference": null,
       "copyright_status": "internally_authored",
       "normative_compatibility": "none",
-      "review_status": "in_review",
+      "review_status": "human_review_passed",
       "active": false
     }
   ]
