@@ -88,19 +88,22 @@ final class IstFinalQuestionDatasetImporter
 
                     $subtestSnapshots[$subtest->id] = $subtest->only($this->masterSubtestFields());
                     $subtest->forceFill([
-                        'code' => $code,
-                        'name' => $manifestDefinition['name'],
-                        'sequence' => $manifestDefinition['sequence'],
-                        'question_count' => $manifestDefinition['question_count'],
-                        'default_answer_type' => $manifestDefinition['default_answer_type'],
-                        'instruction_content' => trim($payload['instruction_content']),
-                        'memorization_content' => $code === 'ME'
-                            ? $payload['memorization_content']
-                            : null,
-                        'duration_seconds' => $manifestDefinition['duration_seconds'],
-                        'memorization_seconds' => $manifestDefinition['memorization_duration_seconds'],
-                        'answering_seconds' => $manifestDefinition['answering_duration_seconds'],
-                    ])->save();
+                    'code' => $code,
+
+                    // name dan sequence berasal dari master IstSubtest yang sudah
+                    // dibuat oleh IstSubtestSeeder / IstSubtestCatalog.
+                    // Jangan membaca field yang memang tidak ada di manifest final.
+
+                    'question_count' => $manifestDefinition['scored_question_count'],
+                    'default_answer_type' => $manifestDefinition['answer_type'],
+                    'instruction_content' => trim($payload['instruction_content']),
+                    'memorization_content' => $code === 'ME'
+                        ? $payload['memorization_content']
+                        : null,
+                    'duration_seconds' => $manifestDefinition['duration_seconds'],
+                    'memorization_seconds' => $manifestDefinition['memorization_duration_seconds'],
+                    'answering_seconds' => $manifestDefinition['answering_duration_seconds'],
+                ])->save();
 
                     foreach ($payload['questions'] as $record) {
                         $collision = IstQuestion::withTrashed()
