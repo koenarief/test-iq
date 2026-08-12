@@ -17,30 +17,30 @@
       "image_alt": null,
       "example_explanation": null,
       "numeric_answer_key": null,
-      "max_score": 4,
+      "max_score": 3,
       "source_version": 900000001,
       "is_active": true,
       "options": [
         {
           "option_key": "A",
-          "option_text": "DEV-GE-1-A tingkat 4",
+          "option_text": "DEV-GE-1-A tingkat 3",
           "image_disk": null,
           "image_path": null,
           "image_alt": null,
           "display_order": 1,
           "is_correct": true,
-          "score_value": 4,
+          "score_value": 3,
           "is_active": true
         },
         {
           "option_key": "B",
-          "option_text": "DEV-GE-1-B tingkat 3",
+          "option_text": "DEV-GE-1-B tingkat 2",
           "image_disk": null,
           "image_path": null,
           "image_alt": null,
           "display_order": 2,
           "is_correct": false,
-          "score_value": 3,
+          "score_value": 2,
           "is_active": true
         },
         {
@@ -89,7 +89,7 @@
       "image_alt": null,
       "example_explanation": null,
       "numeric_answer_key": null,
-      "max_score": 4,
+      "max_score": 3,
       "source_version": 900000001,
       "is_active": true,
       "options": [
@@ -106,24 +106,24 @@
         },
         {
           "option_key": "B",
-          "option_text": "DEV-GE-2-B tingkat 4",
+          "option_text": "DEV-GE-2-B tingkat 3",
           "image_disk": null,
           "image_path": null,
           "image_alt": null,
           "display_order": 2,
           "is_correct": true,
-          "score_value": 4,
+          "score_value": 3,
           "is_active": true
         },
         {
           "option_key": "C",
-          "option_text": "DEV-GE-2-C tingkat 3",
+          "option_text": "DEV-GE-2-C tingkat 2",
           "image_disk": null,
           "image_path": null,
           "image_alt": null,
           "display_order": 3,
           "is_correct": false,
-          "score_value": 3,
+          "score_value": 2,
           "is_active": true
         },
         {
@@ -161,7 +161,7 @@
       "image_alt": null,
       "example_explanation": null,
       "numeric_answer_key": null,
-      "max_score": 4,
+      "max_score": 3,
       "source_version": 900000001,
       "is_active": true,
       "options": [
@@ -189,24 +189,24 @@
         },
         {
           "option_key": "C",
-          "option_text": "DEV-GE-3-C tingkat 4",
+          "option_text": "DEV-GE-3-C tingkat 3",
           "image_disk": null,
           "image_path": null,
           "image_alt": null,
           "display_order": 3,
           "is_correct": true,
-          "score_value": 4,
+          "score_value": 3,
           "is_active": true
         },
         {
           "option_key": "D",
-          "option_text": "DEV-GE-3-D tingkat 3",
+          "option_text": "DEV-GE-3-D tingkat 2",
           "image_disk": null,
           "image_path": null,
           "image_alt": null,
           "display_order": 4,
           "is_correct": false,
-          "score_value": 3,
+          "score_value": 2,
           "is_active": true
         },
         {
@@ -233,7 +233,7 @@
       "image_alt": null,
       "example_explanation": null,
       "numeric_answer_key": null,
-      "max_score": 4,
+      "max_score": 3,
       "source_version": 900000001,
       "is_active": true,
       "options": [
@@ -272,24 +272,24 @@
         },
         {
           "option_key": "D",
-          "option_text": "DEV-GE-4-D tingkat 4",
+          "option_text": "DEV-GE-4-D tingkat 3",
           "image_disk": null,
           "image_path": null,
           "image_alt": null,
           "display_order": 4,
           "is_correct": true,
-          "score_value": 4,
+          "score_value": 3,
           "is_active": true
         },
         {
           "option_key": "E",
-          "option_text": "DEV-GE-4-E tingkat 3",
+          "option_text": "DEV-GE-4-E tingkat 2",
           "image_disk": null,
           "image_path": null,
           "image_alt": null,
           "display_order": 5,
           "is_correct": false,
-          "score_value": 3,
+          "score_value": 2,
           "is_active": true
         }
       ]
@@ -305,19 +305,19 @@
       "image_alt": null,
       "example_explanation": null,
       "numeric_answer_key": null,
-      "max_score": 4,
+      "max_score": 3,
       "source_version": 900000001,
       "is_active": true,
       "options": [
         {
           "option_key": "A",
-          "option_text": "DEV-GE-5-A tingkat 3",
+          "option_text": "DEV-GE-5-A tingkat 2",
           "image_disk": null,
           "image_path": null,
           "image_alt": null,
           "display_order": 1,
           "is_correct": false,
-          "score_value": 3,
+          "score_value": 2,
           "is_active": true
         },
         {
@@ -355,13 +355,13 @@
         },
         {
           "option_key": "E",
-          "option_text": "DEV-GE-5-E tingkat 4",
+          "option_text": "DEV-GE-5-E tingkat 3",
           "image_disk": null,
           "image_path": null,
           "image_alt": null,
           "display_order": 5,
           "is_correct": true,
-          "score_value": 4,
+          "score_value": 3,
           "is_active": true
         }
       ]
@@ -377,30 +377,30 @@
       "image_alt": null,
       "example_explanation": null,
       "numeric_answer_key": null,
-      "max_score": 4,
+      "max_score": 3,
       "source_version": 900000001,
       "is_active": true,
       "options": [
         {
           "option_key": "A",
-          "option_text": "DEV-GE-6-A tingkat 4",
+          "option_text": "DEV-GE-6-A tingkat 3",
           "image_disk": null,
           "image_path": null,
           "image_alt": null,
           "display_order": 1,
           "is_correct": true,
-          "score_value": 4,
+          "score_value": 3,
           "is_active": true
         },
         {
           "option_key": "B",
-          "option_text": "DEV-GE-6-B tingkat 3",
+          "option_text": "DEV-GE-6-B tingkat 2",
           "image_disk": null,
           "image_path": null,
           "image_alt": null,
           "display_order": 2,
           "is_correct": false,
-          "score_value": 3,
+          "score_value": 2,
           "is_active": true
         },
         {
@@ -449,7 +449,7 @@
       "image_alt": null,
       "example_explanation": null,
       "numeric_answer_key": null,
-      "max_score": 4,
+      "max_score": 3,
       "source_version": 900000001,
       "is_active": true,
       "options": [
@@ -466,24 +466,24 @@
         },
         {
           "option_key": "B",
-          "option_text": "DEV-GE-7-B tingkat 4",
+          "option_text": "DEV-GE-7-B tingkat 3",
           "image_disk": null,
           "image_path": null,
           "image_alt": null,
           "display_order": 2,
           "is_correct": true,
-          "score_value": 4,
+          "score_value": 3,
           "is_active": true
         },
         {
           "option_key": "C",
-          "option_text": "DEV-GE-7-C tingkat 3",
+          "option_text": "DEV-GE-7-C tingkat 2",
           "image_disk": null,
           "image_path": null,
           "image_alt": null,
           "display_order": 3,
           "is_correct": false,
-          "score_value": 3,
+          "score_value": 2,
           "is_active": true
         },
         {
@@ -521,7 +521,7 @@
       "image_alt": null,
       "example_explanation": null,
       "numeric_answer_key": null,
-      "max_score": 4,
+      "max_score": 3,
       "source_version": 900000001,
       "is_active": true,
       "options": [
@@ -549,24 +549,24 @@
         },
         {
           "option_key": "C",
-          "option_text": "DEV-GE-8-C tingkat 4",
+          "option_text": "DEV-GE-8-C tingkat 3",
           "image_disk": null,
           "image_path": null,
           "image_alt": null,
           "display_order": 3,
           "is_correct": true,
-          "score_value": 4,
+          "score_value": 3,
           "is_active": true
         },
         {
           "option_key": "D",
-          "option_text": "DEV-GE-8-D tingkat 3",
+          "option_text": "DEV-GE-8-D tingkat 2",
           "image_disk": null,
           "image_path": null,
           "image_alt": null,
           "display_order": 4,
           "is_correct": false,
-          "score_value": 3,
+          "score_value": 2,
           "is_active": true
         },
         {
@@ -593,7 +593,7 @@
       "image_alt": null,
       "example_explanation": null,
       "numeric_answer_key": null,
-      "max_score": 4,
+      "max_score": 3,
       "source_version": 900000001,
       "is_active": true,
       "options": [
@@ -632,24 +632,24 @@
         },
         {
           "option_key": "D",
-          "option_text": "DEV-GE-9-D tingkat 4",
+          "option_text": "DEV-GE-9-D tingkat 3",
           "image_disk": null,
           "image_path": null,
           "image_alt": null,
           "display_order": 4,
           "is_correct": true,
-          "score_value": 4,
+          "score_value": 3,
           "is_active": true
         },
         {
           "option_key": "E",
-          "option_text": "DEV-GE-9-E tingkat 3",
+          "option_text": "DEV-GE-9-E tingkat 2",
           "image_disk": null,
           "image_path": null,
           "image_alt": null,
           "display_order": 5,
           "is_correct": false,
-          "score_value": 3,
+          "score_value": 2,
           "is_active": true
         }
       ]
@@ -665,19 +665,19 @@
       "image_alt": null,
       "example_explanation": null,
       "numeric_answer_key": null,
-      "max_score": 4,
+      "max_score": 3,
       "source_version": 900000001,
       "is_active": true,
       "options": [
         {
           "option_key": "A",
-          "option_text": "DEV-GE-10-A tingkat 3",
+          "option_text": "DEV-GE-10-A tingkat 2",
           "image_disk": null,
           "image_path": null,
           "image_alt": null,
           "display_order": 1,
           "is_correct": false,
-          "score_value": 3,
+          "score_value": 2,
           "is_active": true
         },
         {
@@ -715,13 +715,13 @@
         },
         {
           "option_key": "E",
-          "option_text": "DEV-GE-10-E tingkat 4",
+          "option_text": "DEV-GE-10-E tingkat 3",
           "image_disk": null,
           "image_path": null,
           "image_alt": null,
           "display_order": 5,
           "is_correct": true,
-          "score_value": 4,
+          "score_value": 3,
           "is_active": true
         }
       ]
@@ -737,30 +737,30 @@
       "image_alt": null,
       "example_explanation": "[DEV:ist-development] Jawaban contoh mengikuti aturan dummy yang tertulis langsung pada prompt.",
       "numeric_answer_key": null,
-      "max_score": 4,
+      "max_score": 3,
       "source_version": 900000001,
       "is_active": true,
       "options": [
         {
           "option_key": "A",
-          "option_text": "DEV-GE-1-A tingkat 4",
+          "option_text": "DEV-GE-1-A tingkat 3",
           "image_disk": null,
           "image_path": null,
           "image_alt": null,
           "display_order": 1,
           "is_correct": true,
-          "score_value": 4,
+          "score_value": 3,
           "is_active": true
         },
         {
           "option_key": "B",
-          "option_text": "DEV-GE-1-B tingkat 3",
+          "option_text": "DEV-GE-1-B tingkat 2",
           "image_disk": null,
           "image_path": null,
           "image_alt": null,
           "display_order": 2,
           "is_correct": false,
-          "score_value": 3,
+          "score_value": 2,
           "is_active": true
         },
         {

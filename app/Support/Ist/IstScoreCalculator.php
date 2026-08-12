@@ -67,8 +67,8 @@ final class IstScoreCalculator
     /**
      * Final GE scoring:
      *
-     * 4   = correct
-     * 1-3 = partial
+     * 3   = correct
+     * 1-2 = partial
      * 0   = wrong
      * null = blank
      */
@@ -87,16 +87,16 @@ final class IstScoreCalculator
 
         $canonical = $this->canonicalNumber($scoreValue);
 
-        if (! in_array($canonical, ['0', '1', '2', '3', '4'], true)) {
+        if (! in_array($canonical, ['0', '1', '2', '3'], true)) {
             throw new InvalidArgumentException(
-                'Weighted IST score must be an integer from 0 to 4.'
+                'Weighted IST score must be an integer from 0 to 3.'
             );
         }
 
         $baseScore = (int) $canonical;
         $awardedScore = $baseScore * $weight;
 
-        if ($baseScore === 4) {
+        if ($baseScore === 3) {
             return $this->result(
                 $awardedScore,
                 IstAnswer::OUTCOME_CORRECT,
@@ -148,7 +148,7 @@ final class IstScoreCalculator
      *
      * Examples:
      * binary hard: 1 × 3 = 3
-     * GE medium:   4 × 2 = 8
+     * GE medium:   3 × 2 = 6
      */
     public function weightedMaxScore(
         int|float|string $baseMaxScore,

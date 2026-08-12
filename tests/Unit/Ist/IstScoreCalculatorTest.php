@@ -49,21 +49,21 @@ class IstScoreCalculatorTest extends TestCase
     public function test_ge_weighted_scoring_uses_difficulty_weights(): void
     {
         $this->assertSame(
-            ['awarded_score' => 4, 'outcome' => IstAnswer::OUTCOME_CORRECT],
-            $this->calculator->scoreWeighted(4, 'easy')
+            ['awarded_score' => 3, 'outcome' => IstAnswer::OUTCOME_CORRECT],
+            $this->calculator->scoreWeighted(3, 'easy')
         );
 
         $this->assertSame(
-            ['awarded_score' => 8, 'outcome' => IstAnswer::OUTCOME_CORRECT],
-            $this->calculator->scoreWeighted(4, 'medium')
+            ['awarded_score' => 6, 'outcome' => IstAnswer::OUTCOME_CORRECT],
+            $this->calculator->scoreWeighted(3, 'medium')
         );
 
         $this->assertSame(
-            ['awarded_score' => 12, 'outcome' => IstAnswer::OUTCOME_CORRECT],
-            $this->calculator->scoreWeighted(4, 'hard')
+            ['awarded_score' => 9, 'outcome' => IstAnswer::OUTCOME_CORRECT],
+            $this->calculator->scoreWeighted(3, 'hard')
         );
 
-        foreach ([1, 2, 3] as $score) {
+        foreach ([1, 2] as $score) {
             $this->assertSame(
                 [
                     'awarded_score' => $score * 3,
@@ -84,11 +84,11 @@ class IstScoreCalculatorTest extends TestCase
         );
     }
 
-    public function test_ge_rejects_a_weight_outside_zero_to_four(): void
+    public function test_ge_rejects_a_weight_outside_zero_to_three(): void
     {
         $this->expectException(InvalidArgumentException::class);
 
-        $this->calculator->scoreWeighted(5, 'medium');
+        $this->calculator->scoreWeighted(4, 'medium');
     }
 
     public function test_numeric_scoring_compares_canonical_numeric_values(): void
@@ -162,18 +162,18 @@ class IstScoreCalculatorTest extends TestCase
         );
 
         $this->assertSame(
-            4.0,
-            $this->calculator->weightedMaxScore(4, 'easy')
+            3.0,
+            $this->calculator->weightedMaxScore(3, 'easy')
         );
 
         $this->assertSame(
-            8.0,
-            $this->calculator->weightedMaxScore(4, 'medium')
+            6.0,
+            $this->calculator->weightedMaxScore(3, 'medium')
         );
 
         $this->assertSame(
-            12.0,
-            $this->calculator->weightedMaxScore(4, 'hard')
+            9.0,
+            $this->calculator->weightedMaxScore(3, 'hard')
         );
     }
 

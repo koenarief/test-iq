@@ -60,12 +60,12 @@ class IstSubtestFinalizationServiceTest extends IstDatabaseTestCase
         $this->assertSame('submitted', $runtime->finalized_reason);
         $this->assertNotNull($runtime->locked_at);
         $this->assertSame('8.0000', $runtime->awarded_score);
-        $this->assertSame('14.0000', $runtime->max_score);
+        $this->assertSame('12.0000', $runtime->max_score);
         $this->assertSame(2, $runtime->correct_count);
         $this->assertSame(1, $runtime->partial_count);
         $this->assertSame(0, $runtime->wrong_count);
         $this->assertSame(1, $runtime->blank_count);
-        $this->assertSame('57.143', $runtime->percentage);
+        $this->assertSame('66.667', $runtime->percentage);
         $this->assertSame(4, IstAnswer::whereIn('ist_test_question_id', collect($questions)->pluck('id'))->count());
         $this->assertDatabaseHas('ist_answers', [
             'ist_test_question_id' => $questions[3]->id,
@@ -81,7 +81,7 @@ class IstSubtestFinalizationServiceTest extends IstDatabaseTestCase
         $this->assertNull($test->total_internal_score);
     }
 
-    public function test_persisted_ge_score_four_finalizes_without_final_answers_or_revision_conflict(): void
+    public function test_persisted_ge_score_three_finalizes_without_final_answers_or_revision_conflict(): void
     {
         [$test, $runtime, $questions] = $this->scoringRuntime();
         $weightedQuestion = $questions[1];
@@ -104,7 +104,7 @@ class IstSubtestFinalizationServiceTest extends IstDatabaseTestCase
 
         $this->assertSame('B', $answer->selected_option_key);
         $this->assertSame(1, $answer->client_revision);
-        $this->assertSame('8.0000', $answer->awarded_score);
+        $this->assertSame('6.0000', $answer->awarded_score);
         $this->assertSame(IstAnswer::OUTCOME_CORRECT, $answer->outcome);
         $this->assertSame(1, $result->correctCount);
         $this->assertSame(0, $result->partialCount);
@@ -379,7 +379,7 @@ class IstSubtestFinalizationServiceTest extends IstDatabaseTestCase
 
         $questions = [
             $this->createChoiceQuestion($runtime, 1, IstAnswerType::SINGLE_CHOICE, 1),
-            $this->createChoiceQuestion($runtime, 2, IstAnswerType::SINGLE_CHOICE_WEIGHTED, 4),
+            $this->createChoiceQuestion($runtime, 2, IstAnswerType::SINGLE_CHOICE_WEIGHTED, 3),
             IstTestQuestion::create([
                 'ist_test_subtest_id' => $runtime->id,
                 'source_question_id' => null,
@@ -404,7 +404,7 @@ class IstSubtestFinalizationServiceTest extends IstDatabaseTestCase
     ): IstTestQuestion {
         $keys = ['A', 'B', 'C', 'D', 'E'];
         $answerKey = $answerType === IstAnswerType::SINGLE_CHOICE_WEIGHTED
-            ? ['scores' => ['A' => 0, 'B' => 4, 'C' => 2, 'D' => 1, 'E' => 3]]
+            ? ['scores' => ['A' => 0, 'B' => 3, 'C' => 2, 'D' => 1, 'E' => 2]]
             : ['correct_option_key' => 'B'];
 
         return IstTestQuestion::create([

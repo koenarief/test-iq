@@ -34,7 +34,7 @@
       "file": "ge.json",
       "scored_question_count": 10,
       "example_question_count": 1,
-      "sha256": "3f55998123b759adcdf37f56120b9a2717ff225fd3613acc114af0790043c655"
+      "sha256": "e377db41a63ebe6c5835e4c7630de0b9ef62a97a195a272e3619d29850d04e3e"
     },
     "RA": {
       "file": "ra.json",
@@ -69,7 +69,7 @@
   },
   "expected_results": {
     "file": "expected-results.json",
-    "sha256": "8e83ae05a61ca9c83c1d43b088bbebb4a14c20a3166f9b8588ea0600c7f524cc"
+    "sha256": "53ddb67f9bd377bb1ea1cf94405d387a0fca222d764dcab6c585da2a1655b4c7"
   },
   "media": [
     {

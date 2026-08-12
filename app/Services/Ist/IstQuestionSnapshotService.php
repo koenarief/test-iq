@@ -283,19 +283,19 @@ final class IstQuestionSnapshotService
         foreach ($options as $option) {
             $score = $this->integerScore($subtestCode, $question, $option->score_value);
 
-            if ($score < 0 || $score > 4) {
+            if ($score < 0 || $score > 3) {
                 throw $this->invalidDefinition(
                     $subtestCode,
                     $question,
-                    'weighted option score must be an integer from 0 to 4',
+                    'weighted option score must be an integer from 0 to 3',
                 );
             }
 
-            if ($score === 4) {
+            if ($score === 3) {
                 $maximumScoreCount++;
             }
 
-            if (($score === 4) !== $option->is_correct) {
+            if (($score === 3) !== $option->is_correct) {
                 throw $this->invalidDefinition(
                     $subtestCode,
                     $question,
@@ -305,7 +305,7 @@ final class IstQuestionSnapshotService
 
             $scores[$option->option_key] = $score;
             $outcomes[$option->option_key] = match (true) {
-                $score === 4 => 'correct',
+                $score === 3 => 'correct',
                 $score >= 1 => 'partial',
                 default => 'wrong',
             };
@@ -315,7 +315,7 @@ final class IstQuestionSnapshotService
             throw $this->invalidDefinition(
                 $subtestCode,
                 $question,
-                'weighted question must have exactly one option with score 4',
+                'weighted question must have exactly one option with score 3',
             );
         }
 

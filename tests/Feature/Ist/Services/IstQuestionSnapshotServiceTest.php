@@ -114,14 +114,14 @@ class IstQuestionSnapshotServiceTest extends IstDatabaseTestCase
         $runtime = $this->runtime('GE', 1);
         $question = $this->question($runtime, 1, [
             'answer_type' => IstAnswerType::SINGLE_CHOICE_WEIGHTED,
-            'max_score' => 4,
+            'max_score' => 3,
         ]);
-        $this->weightedOptions($question, [0, 2, 4, 1, 3], 2);
+        $this->weightedOptions($question, [0, 2, 3, 1, 2], 2);
 
         $snapshot = $this->snapshotService->snapshot($runtime)->first();
 
         $this->assertSame(
-            ['A' => 0, 'B' => 2, 'C' => 4, 'D' => 1, 'E' => 3],
+            ['A' => 0, 'B' => 2, 'C' => 3, 'D' => 1, 'E' => 2],
             $snapshot->answer_key_snapshot['scores'],
         );
         $this->assertSame(
@@ -243,27 +243,27 @@ class IstQuestionSnapshotServiceTest extends IstDatabaseTestCase
         $this->snapshotService->snapshot($runtime);
     }
 
-    public function test_ge_without_score_four_is_rejected(): void
+    public function test_ge_without_score_three_is_rejected(): void
     {
         $runtime = $this->runtime('GE', 1);
         $question = $this->question($runtime, 1, [
             'answer_type' => IstAnswerType::SINGLE_CHOICE_WEIGHTED,
-            'max_score' => 4,
+            'max_score' => 3,
         ]);
-        $this->weightedOptions($question, [0, 1, 2, 3, 0], null);
+        $this->weightedOptions($question, [0, 1, 2, 2, 0], null);
 
         $this->expectException(InvalidIstQuestionDefinitionException::class);
         $this->snapshotService->snapshot($runtime);
     }
 
-    public function test_ge_with_two_score_four_options_is_rejected(): void
+    public function test_ge_with_two_score_three_options_is_rejected(): void
     {
         $runtime = $this->runtime('GE', 1);
         $question = $this->question($runtime, 1, [
             'answer_type' => IstAnswerType::SINGLE_CHOICE_WEIGHTED,
-            'max_score' => 4,
+            'max_score' => 3,
         ]);
-        $this->weightedOptions($question, [4, 4, 2, 1, 0], 0, [1]);
+        $this->weightedOptions($question, [3, 3, 2, 1, 0], 0, [1]);
 
         $this->expectException(InvalidIstQuestionDefinitionException::class);
         $this->snapshotService->snapshot($runtime);
@@ -274,9 +274,9 @@ class IstQuestionSnapshotServiceTest extends IstDatabaseTestCase
         $runtime = $this->runtime('GE', 1);
         $question = $this->question($runtime, 1, [
             'answer_type' => IstAnswerType::SINGLE_CHOICE_WEIGHTED,
-            'max_score' => 4,
+            'max_score' => 3,
         ]);
-        $this->weightedOptions($question, [0, 1, 4, 2, 3], 1);
+        $this->weightedOptions($question, [0, 1, 3, 2, 2], 1);
 
         $this->expectException(InvalidIstQuestionDefinitionException::class);
         $this->snapshotService->snapshot($runtime);

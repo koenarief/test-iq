@@ -38,7 +38,7 @@ Validator final ketat tetap berlaku. Jalur `validateStaging()` ditambahkan untuk
 | SE | `se.json` | 12 | 1 | single_choice | 12 |
 | WA | `wa.json` | 12 | 1 | single_choice | 12 |
 | AN | `an.json` | 12 | 1 | single_choice | 12 |
-| GE | `ge.json` | 10 | 1 | single_choice_weighted | 40 |
+| GE | `ge.json` | 10 | 1 | single_choice_weighted | 30 |
 | RA | `ra.json` | 12 | 1 | numeric | 12 |
 | ZR | `zr.json` | 12 | 1 | numeric | 12 |
 | FA | `fa.json` | 10 | 1 | image_choice | 10 |
@@ -59,7 +59,7 @@ Sebanyak 144 SVG FA/WU disalin byte-identik ke staging. Metadata mencakup logica
 
 ## Scoring dan batas produk
 
-Kontrak scoring tidak berubah. Binary/numeric memberi 1 atau 0; GE memakai 0–4 dengan skor 4 sebagai correct dan 1–3 sebagai partial. Persentase subtes tetap `awarded_score / max_subtest_score * 100`; total internal adalah rata-rata aritmetika sembilan persentase, bukan jumlah raw score.
+Kontrak scoring tidak berubah. Binary/numeric memberi 1 atau 0; GE memakai 0–3 dengan skor 3 sebagai correct dan 1–2 sebagai partial. Persentase subtes tetap `awarded_score / max_subtest_score * 100`; total internal adalah rata-rata aritmetika sembilan persentase, bukan jumlah raw score.
 
 Nama, subtitle, dan disclaimer produk divalidasi persis. Dataset menyatakan `normative=false` dan `iq_output=false`. Tidak ada SW, Gesamt, IQ, norma, kategori normatif, atau interpretasi psikologis yang ditambahkan.
 

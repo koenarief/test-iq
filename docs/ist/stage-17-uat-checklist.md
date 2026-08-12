@@ -61,7 +61,7 @@ Status dokumen: `prepared`. Semua item di bawah belum dianggap sign-off sampai d
 
 - [ ] Binary/image/ME: correct=1, wrong/blank=0.
 - [ ] Numeric: exact canonical match=1; wrong/blank=0.
-- [ ] GE: score 4 correct, 1–3 partial, 0 wrong, kosong blank.
+- [ ] GE: score 3 correct, 1–2 partial, 0 wrong, kosong blank.
 - [ ] Persentase memakai awarded/max × 100.
 - [ ] Total internal adalah rata-rata sembilan persentase, bukan jumlah raw score.
 

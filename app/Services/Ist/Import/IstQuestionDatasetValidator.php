@@ -237,7 +237,7 @@ final class IstQuestionDatasetValidator
             $keys = [];
             $optionOrders = [];
             $correct = 0;
-            $scoreFour = 0;
+            $scoreThree = 0;
             foreach ($options as $optionIndex => $option) {
                 $optionLabel = "{$label} option #{$optionIndex}";
                 $key = $option['option_key'] ?? null;
@@ -262,11 +262,11 @@ final class IstQuestionDatasetValidator
                 $this->validateImageMetadata($option, $mediaTargets, "{$optionLabel} image");
 
                 if ($type === IstAnswerType::SINGLE_CHOICE_WEIGHTED) {
-                    if (! is_int($score) || $score < 0 || $score > 4) {
-                        $this->fail("{$optionLabel} skor GE harus integer 0-4");
+                    if (! is_int($score) || $score < 0 || $score > 3) {
+                        $this->fail("{$optionLabel} skor GE harus integer 0-3");
                     }
-                    $scoreFour += $score === 4 ? 1 : 0;
-                    if (($score === 4) !== $option['is_correct']) {
+                    $scoreThree += $score === 3 ? 1 : 0;
+                    if (($score === 3) !== $option['is_correct']) {
                         $this->fail("{$optionLabel} skor GE dan is_correct tidak konsisten");
                     }
                 } elseif (! in_array($score, [0, 1], true) || (($score === 1) !== $option['is_correct'])) {
@@ -274,10 +274,10 @@ final class IstQuestionDatasetValidator
                 }
             }
 
-            if ($correct !== 1 || ($type === IstAnswerType::SINGLE_CHOICE_WEIGHTED && $scoreFour !== 1)) {
+            if ($correct !== 1 || ($type === IstAnswerType::SINGLE_CHOICE_WEIGHTED && $scoreThree !== 1)) {
                 $this->fail("{$label} harus mempunyai tepat satu jawaban benar");
             }
-            $expectedMax = $type === IstAnswerType::SINGLE_CHOICE_WEIGHTED ? 4 : 1;
+            $expectedMax = $type === IstAnswerType::SINGLE_CHOICE_WEIGHTED ? 3 : 1;
             if (! $this->sameNumber($question['max_score'] ?? null, $expectedMax)) {
                 $this->fail("{$label} max_score tidak tepat");
             }
@@ -335,8 +335,8 @@ final class IstQuestionDatasetValidator
 
         $allCorrect = $expected['expected_all_correct'] ?? null;
         if (! is_array($allCorrect)
-            || ! $this->sameNumber($allCorrect['total_awarded_score'] ?? null, 134)
-            || ! $this->sameNumber($allCorrect['total_max_score'] ?? null, 134)
+            || ! $this->sameNumber($allCorrect['total_awarded_score'] ?? null, 124)
+            || ! $this->sameNumber($allCorrect['total_max_score'] ?? null, 124)
             || ! $this->sameNumber($allCorrect['total_internal_score'] ?? null, 100)
             || ! is_array($allCorrect['subtests'] ?? null)
             || array_keys($allCorrect['subtests']) !== array_keys($catalog)) {
@@ -346,7 +346,7 @@ final class IstQuestionDatasetValidator
         $verification = $expected['verification_cases'] ?? null;
         if (! is_array($verification)
             || ($verification['numeric_canonical_equivalents'] ?? null) !== ['10', '10.0', '10.000000']
-            || ($verification['ge_partial_scores'] ?? null) !== [1, 2, 3]
+            || ($verification['ge_partial_scores'] ?? null) !== [1, 2]
             || ($verification['blank_score'] ?? null) !== 0) {
             $this->fail('verification_cases expected-results tidak valid');
         }

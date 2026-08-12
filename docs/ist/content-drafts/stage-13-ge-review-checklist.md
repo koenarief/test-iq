@@ -11,29 +11,28 @@
 | Total record | 11 |
 | Opsi per record | 5 |
 | Total opsi | 55 |
-| Skor per record | tepat satu masing-masing 0, 1, 2, 3, 4 |
-| Best answer | tepat satu skor 4 dan `is_correct=true` |
+| Skor per record | satu skor 3, dua skor 2, satu skor 1, satu skor 0 |
+| Best answer | tepat satu skor 3 dan `is_correct=true` |
 | Difficulty scored | easy 3, medium 4, hard 3 |
-| Maksimum skor subtes | 40 |
+| Maksimum skor dasar subtes | 30 |
 
 ## Checklist per record
 
 - [ ] Logical ID tepat: `ge-example-001` atau `ge-001`–`ge-010`.
 - [ ] Prompt menampilkan tepat dua konsep dan tidak terlalu panjang.
 - [ ] Terdapat tepat lima opsi A–E.
-- [ ] Score values adalah integer dan tepat membentuk himpunan `{0,1,2,3,4}`.
-- [ ] Tepat satu opsi skor 4 dengan `is_correct=true`.
-- [ ] Seluruh opsi skor 0–3 mempunyai `is_correct=false`.
-- [ ] Opsi skor 4 menyatakan persamaan utama paling spesifik dan bermakna.
-- [ ] Opsi skor 3 berkaitan kuat tetapi lebih umum atau kurang lengkap.
-- [ ] Opsi skor 2 mempunyai hubungan yang benar tetapi jauh lebih luas.
+- [ ] Score values adalah integer dalam rentang `{0,1,2,3}`.
+- [ ] Tepat satu opsi skor 3 dengan `is_correct=true`.
+- [ ] Seluruh opsi skor 0–2 mempunyai `is_correct=false`.
+- [ ] Opsi skor 3 menyatakan persamaan utama paling spesifik dan bermakna.
+- [ ] Dua opsi skor 2 tetap berkaitan, tetapi lebih umum atau kurang lengkap daripada jawaban terbaik.
 - [ ] Opsi skor 1 hanya mempunyai ciri permukaan, kemungkinan, atau hubungan sangat lemah.
 - [ ] Opsi skor 0 tidak sesuai atau berlawanan dengan persamaan utama.
-- [ ] Tidak ada dua opsi yang layak memperoleh bobot sama.
-- [ ] Panjang opsi tidak menjadi petunjuk tunggal bagi bobot 4.
+- [ ] Tidak ada opsi skor 2 yang layak dianggap setara dengan jawaban terbaik.
+- [ ] Panjang opsi tidak menjadi petunjuk tunggal bagi bobot 3.
 - [ ] Bahasa baku, tidak sensitif, dan tidak membutuhkan pengetahuan khusus.
 - [ ] Difficulty adalah label editorial, bukan klaim empiris.
-- [ ] Rationale menjelaskan seluruh urutan bobot 4→0.
+- [ ] Rationale menjelaskan seluruh tingkat bobot 3, 2, 1, dan 0.
 - [ ] Metadata orisinalitas lengkap; `review_status=in_review`; `active=false`.
 
 ## Sign-off per logical ID

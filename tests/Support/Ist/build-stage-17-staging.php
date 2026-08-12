@@ -218,7 +218,7 @@ $parseWeightedMarkdown = static function (string $path) use (
         $id = $block['id'];
         $body = $block['body'];
         $definition = $contract($body, $id);
-        preg_match_all('/^\s+- ([A-E])\. `text=(.*?)`; `score_value=([0-4])`; `is_correct=(true|false)`\.$/mu', $body, $matches, PREG_SET_ORDER);
+        preg_match_all('/^\s+- ([A-E])\. `text=(.*?)`; `score_value=([0-3])`; `is_correct=(true|false)`\.$/mu', $body, $matches, PREG_SET_ORDER);
 
         if (count($matches) !== 5) {
             throw new RuntimeException("Opsi GE tidak lengkap: {$id}");
@@ -247,7 +247,7 @@ $parseWeightedMarkdown = static function (string $path) use (
             $definition['difficulty'],
             (string) $lineValue($body, 'Prompt', $id),
             $definition['kind'] === 'example' ? $lineValue($body, 'Explanation peserta', $id) : null,
-            ['max_score' => 4, 'rationale' => $rationale],
+            ['max_score' => 3, 'rationale' => $rationale],
             $options,
             null,
             ['rationale' => $rationale],
@@ -377,7 +377,7 @@ $catalog = [
     'SE' => [12, 240, 0, 240, 'single_choice', 12, 'Pilih satu kata atau frasa yang paling tepat untuk melengkapi kalimat. Gunakan makna seluruh kalimat, bukan hanya kecocokan tata bahasa.'],
     'WA' => [12, 240, 0, 240, 'single_choice', 12, 'Empat pilihan mempunyai kategori atau fungsi bersama. Pilih satu pilihan yang tidak termasuk kelompok tersebut.'],
     'AN' => [12, 240, 0, 240, 'single_choice', 12, 'Tentukan hubungan pada pasangan pertama, lalu pilih kata yang membentuk hubungan paling setara pada pasangan kedua.'],
-    'GE' => [10, 300, 0, 300, 'single_choice_weighted', 40, 'Setiap soal menampilkan dua konsep. Pilih opsi yang paling tepat menjelaskan persamaan utama keduanya.'],
+    'GE' => [10, 300, 0, 300, 'single_choice_weighted', 30, 'Setiap soal menampilkan dua konsep. Pilih opsi yang paling tepat menjelaskan persamaan utama keduanya.'],
     'RA' => [12, 360, 0, 360, 'numeric', 12, 'Bacalah situasi hitung dengan cermat. Masukkan satu bilangan bulat tanpa satuan atau pemisah ribuan.'],
     'ZR' => [12, 360, 0, 360, 'numeric', 12, 'Temukan aturan paling sederhana yang konsisten pada deret, lalu masukkan satu bilangan berikutnya.'],
     'FA' => [10, 240, 0, 240, 'image_choice', 10, 'Perhatikan seluruh potongan pada gambar. Pilih bentuk utuh yang dapat disusun menggunakan setiap potongan tepat satu kali. Potongan boleh diputar, tetapi tidak boleh dicerminkan.'],

@@ -75,7 +75,7 @@ abstract class IstHttpTestCase extends IstDatabaseTestCase
                         ? "Temporary structure fixture {$subtest->code} {$number}"
                         : "Kata yang mempunyai huruf permulaan “{$meTarget['initial']}” berada pada kelompok ...",
                     'numeric_answer_key' => $type === IstAnswerType::NUMERIC ? 10 : null,
-                    'max_score' => $type === IstAnswerType::SINGLE_CHOICE_WEIGHTED ? 4 : 1,
+                    'max_score' => $type === IstAnswerType::SINGLE_CHOICE_WEIGHTED ? 3 : 1,
                     'difficulty' => $this->difficultyForQuestion(
                         $number,
                         $subtest->question_count,
@@ -87,7 +87,7 @@ abstract class IstHttpTestCase extends IstDatabaseTestCase
                 if ($type !== IstAnswerType::NUMERIC) {
                     foreach (['A', 'B', 'C', 'D', 'E'] as $index => $key) {
                         $weighted = $type === IstAnswerType::SINGLE_CHOICE_WEIGHTED;
-                        $scores = [0, 4, 1, 2, 3];
+                        $scores = [0, 3, 1, 2, 2];
                         $correctKey = $meTarget['group_key'] ?? 'B';
                         $score = $weighted ? $scores[$index] : ($key === $correctKey ? 1 : 0);
 

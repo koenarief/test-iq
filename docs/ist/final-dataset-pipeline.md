@@ -81,7 +81,7 @@ Algoritma yang dipakai adalah SHA-256. `checksums.json` mencantumkan, secara can
 Tipe yang didukung adalah `single_choice`, `single_choice_weighted`, `numeric`, dan `image_choice`.
 
 - Binary/image choice: lima opsi, satu correct, skor 1/0, max item 1.
-- GE: lima opsi, satu skor 4, minimal satu partial 1–3, seluruh skor 0–4, max item 4, dan rationale internal.
+- GE: lima opsi, tepat satu skor 3 sebagai correct, partial hanya 1–2, skor 0 sebagai wrong, seluruh skor 0–3, max item 3, dan rationale internal.
 - Numeric: satu canonical answer, tanpa multi-key, max item 1.
 - Example menggunakan tipe subtes, berada di luar scored count, dan tidak masuk runtime snapshot.
 

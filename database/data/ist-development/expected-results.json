@@ -232,61 +232,61 @@
       {
         "question_number": 1,
         "selected_option_key": "A",
-        "expected_score": 4,
+        "expected_score": 3,
         "expected_outcome": "correct"
       },
       {
         "question_number": 2,
         "selected_option_key": "B",
-        "expected_score": 4,
+        "expected_score": 3,
         "expected_outcome": "correct"
       },
       {
         "question_number": 3,
         "selected_option_key": "C",
-        "expected_score": 4,
+        "expected_score": 3,
         "expected_outcome": "correct"
       },
       {
         "question_number": 4,
         "selected_option_key": "D",
-        "expected_score": 4,
+        "expected_score": 3,
         "expected_outcome": "correct"
       },
       {
         "question_number": 5,
         "selected_option_key": "E",
-        "expected_score": 4,
+        "expected_score": 3,
         "expected_outcome": "correct"
       },
       {
         "question_number": 6,
         "selected_option_key": "A",
-        "expected_score": 4,
+        "expected_score": 3,
         "expected_outcome": "correct"
       },
       {
         "question_number": 7,
         "selected_option_key": "B",
-        "expected_score": 4,
+        "expected_score": 3,
         "expected_outcome": "correct"
       },
       {
         "question_number": 8,
         "selected_option_key": "C",
-        "expected_score": 4,
+        "expected_score": 3,
         "expected_outcome": "correct"
       },
       {
         "question_number": 9,
         "selected_option_key": "D",
-        "expected_score": 4,
+        "expected_score": 3,
         "expected_outcome": "correct"
       },
       {
         "question_number": 10,
         "selected_option_key": "E",
-        "expected_score": 4,
+        "expected_score": 3,
         "expected_outcome": "correct"
       }
     ],
@@ -651,8 +651,8 @@
   },
   "expected_all_correct": {
     "scored_question_count": 104,
-    "total_awarded_score": 134,
-    "total_max_score": 134,
+    "total_awarded_score": 124,
+    "total_max_score": 124,
     "total_internal_score": 100,
     "subtests": {
       "SE": {
@@ -683,8 +683,8 @@
         "percentage": 100
       },
       "GE": {
-        "awarded_score": 40,
-        "max_score": 40,
+        "awarded_score": 30,
+        "max_score": 30,
         "correct_count": 10,
         "partial_count": 0,
         "wrong_count": 0,
@@ -746,8 +746,7 @@
     ],
     "ge_partial_scores": [
       1,
-      2,
-      3
+      2
     ],
     "blank_score": 0
   }

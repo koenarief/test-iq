@@ -12,7 +12,7 @@ class IstQuestionOption extends Model
 
     /**
      * Binary options use score 1 for correct and 0 for wrong.
-     * GE uses 4 for correct, 1-3 for partial, and 0 for wrong.
+     * GE uses 3 for correct, 1-2 for partial, and 0 for wrong.
      */
     protected $fillable = [
         'ist_question_id',
