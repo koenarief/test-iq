@@ -88,6 +88,50 @@ final class IstFaUxContractTest extends TestCase
         $this->assertSame(['easy' => 3, 'medium' => 4, 'hard' => 3], $difficultyCounts);
     }
 
+    public function test_each_prompt_matches_the_reviewed_baseline_and_has_one_exact_cover_answer(): void
+    {
+        $draft = $this->json('docs/ist/content-drafts/stage-15-assets/geometry-spec-draft.json');
+        $draftRecords = collect($draft['records'])
+            ->where('subtest_code', 'FA')
+            ->keyBy('logical_id');
+        $verifiedKeys = [];
+
+        foreach ($this->fa['questions'] as $question) {
+            $draftId = $question['kind'] === 'example'
+                ? 'fa-example-001'
+                : 'fa-'.str_pad((string) $question['display_order'], 3, '0', STR_PAD_LEFT);
+            $draftRecord = $draftRecords[$draftId];
+            $promptRecord = $this->media[$question['media']['prompt_ref']];
+            $relative = substr($promptRecord['relative_path'], strlen('media/fa/'));
+            $baseline = $this->source('docs/ist/content-drafts/stage-15-assets/fa/'.$relative);
+            $staging = $this->source('database/data/ist-final-staging/'.$promptRecord['relative_path']);
+
+            $this->assertSame(
+                $this->geometryFingerprint($baseline),
+                $this->geometryFingerprint($staging),
+                "Geometri prompt {$draftId} berbeda dari baseline human-reviewed."
+            );
+            $this->assertSame(
+                array_sum(array_map('count', $draftRecord['pieces'])),
+                count($this->rectangles($staging)),
+                "Jumlah unit potongan {$draftId} tidak sesuai dengan spesifikasi."
+            );
+
+            $tileable = [];
+            foreach ($draftRecord['options'] as $option) {
+                if ($this->canTile($option['cells'], $draftRecord['pieces'])) {
+                    $tileable[] = $option['code'];
+                }
+            }
+
+            $datasetKey = collect($question['options'])->firstWhere('correct', true)['key'];
+            $this->assertSame([$datasetKey], $tileable, "{$draftId} harus mempunyai tepat satu exact-cover yang cocok dengan key.");
+            $verifiedKeys[] = $datasetKey;
+        }
+
+        $this->assertSame(['B', 'C', 'A', 'E', 'B', 'D', 'C', 'A', 'E', 'B', 'D'], $verifiedKeys);
+    }
+
     public function test_frontend_resolves_fa_options_per_item_and_keeps_prompt_from_snapshot(): void
     {
         $questionCard = $this->source('resources/js/Components/IST/IstQuestionCard.jsx');
@@ -119,8 +163,23 @@ final class IstFaUxContractTest extends TestCase
 
     private function geometryFingerprint(string $svg): string
     {
-        preg_match_all('/<rect\s+([^>]+)\/>/', $svg, $matches);
         $coordinates = [];
+
+        foreach ($this->rectangles($svg) as $rectangle) {
+            $coordinates[] = implode(',', $rectangle);
+        }
+
+        $this->assertNotEmpty($coordinates);
+        sort($coordinates, SORT_STRING);
+
+        return hash('sha256', implode(';', $coordinates));
+    }
+
+    /** @return list<array{x:int,y:int,width:int,height:int}> */
+    private function rectangles(string $svg): array
+    {
+        preg_match_all('/<rect\s+([^>]+)\/>/', $svg, $matches);
+        $rectangles = [];
 
         foreach ($matches[1] as $attributes) {
             $values = [];
@@ -131,16 +190,132 @@ final class IstFaUxContractTest extends TestCase
                     preg_match('/(?:^|\s)'.preg_quote($name, '/').'="(-?[0-9]+)"/', $attributes, $match),
                     "Atribut {$name} tidak tersedia."
                 );
-                $values[] = $match[1];
+                $values[$name] = (int) $match[1];
             }
 
-            $coordinates[] = implode(',', $values);
+            $rectangles[] = $values;
         }
 
-        $this->assertNotEmpty($coordinates);
-        sort($coordinates, SORT_STRING);
+        return $rectangles;
+    }
 
-        return hash('sha256', implode(';', $coordinates));
+    private function canTile(array $target, array $pieces): bool
+    {
+        if (count($target) !== array_sum(array_map('count', $pieces))) {
+            return false;
+        }
+
+        $remaining = [];
+        foreach ($target as $cell) {
+            $remaining[$this->cellKey($cell)] = [(int) $cell[0], (int) $cell[1]];
+        }
+
+        if (count($remaining) !== count($target)) {
+            return false;
+        }
+
+        $pieceOrientations = array_map(fn (array $piece): array => $this->orientations($piece), $pieces);
+        $memo = [];
+
+        $search = function (array $available, int $usedMask) use (&$search, &$memo, $pieceOrientations, $pieces): bool {
+            if ($available === []) {
+                return $usedMask === (1 << count($pieces)) - 1;
+            }
+
+            ksort($available);
+            $memoKey = $usedMask.'|'.implode(';', array_keys($available));
+
+            if (array_key_exists($memoKey, $memo)) {
+                return $memo[$memoKey];
+            }
+
+            $anchor = reset($available);
+
+            foreach ($pieceOrientations as $pieceIndex => $variants) {
+                if (($usedMask & (1 << $pieceIndex)) !== 0) {
+                    continue;
+                }
+
+                foreach ($variants as $variant) {
+                    foreach ($variant as $origin) {
+                        $offsetX = $anchor[0] - $origin[0];
+                        $offsetY = $anchor[1] - $origin[1];
+                        $placed = [];
+
+                        foreach ($variant as $cell) {
+                            $key = $this->cellKey([$cell[0] + $offsetX, $cell[1] + $offsetY]);
+
+                            if (! isset($available[$key])) {
+                                continue 2;
+                            }
+
+                            $placed[] = $key;
+                        }
+
+                        $next = $available;
+                        foreach ($placed as $key) {
+                            unset($next[$key]);
+                        }
+
+                        if ($search($next, $usedMask | (1 << $pieceIndex))) {
+                            return $memo[$memoKey] = true;
+                        }
+                    }
+                }
+            }
+
+            return $memo[$memoKey] = false;
+        };
+
+        return $search($remaining, 0);
+    }
+
+    private function orientations(array $piece): array
+    {
+        $orientations = [];
+
+        for ($rotation = 0; $rotation < 4; $rotation++) {
+            $transformed = [];
+
+            foreach ($piece as $cell) {
+                $x = (int) $cell[0];
+                $y = (int) $cell[1];
+
+                for ($step = 0; $step < $rotation; $step++) {
+                    [$x, $y] = [-$y, $x];
+                }
+
+                $transformed[] = [$x, $y];
+            }
+
+            $normalized = $this->normalizeCells($transformed);
+            $orientations[$this->cellSetKey($normalized)] = $normalized;
+        }
+
+        return array_values($orientations);
+    }
+
+    private function normalizeCells(array $cells): array
+    {
+        $minimumX = min(array_column($cells, 0));
+        $minimumY = min(array_column($cells, 1));
+        $normalized = array_map(
+            static fn (array $cell): array => [(int) $cell[0] - $minimumX, (int) $cell[1] - $minimumY],
+            $cells,
+        );
+        usort($normalized, static fn (array $left, array $right): int => [$left[1], $left[0]] <=> [$right[1], $right[0]]);
+
+        return $normalized;
+    }
+
+    private function cellSetKey(array $cells): string
+    {
+        return implode(';', array_map(fn (array $cell): string => $this->cellKey($cell), $this->normalizeCells($cells)));
+    }
+
+    private function cellKey(array $cell): string
+    {
+        return ((int) $cell[0]).','.((int) $cell[1]);
     }
 
     private function json(string $relativePath): array

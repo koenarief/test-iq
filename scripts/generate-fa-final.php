@@ -3,12 +3,14 @@
 declare(strict_types=1);
 
 /**
- * Restore the human-reviewed per-item FA option geometry and improve only its
- * rendering. Prompt/piece media, answer keys, and question data are untouched.
+ * Restore all human-reviewed FA media from Stage 15. Prompt/piece SVG geometry
+ * is copied exactly (with only EOF whitespace normalized), while per-item
+ * options retain their reviewed geometry and receive the approved rendering.
  */
 
 $root = dirname(__DIR__);
 $baselineRoot = $root.'/docs/ist/content-drafts/stage-15-assets/fa';
+$baselineManifestPath = $root.'/docs/ist/content-drafts/stage-15-assets/media-manifest-draft.json';
 $datasetRoot = $root.'/database/data/ist-final-staging';
 $metadataPath = $datasetRoot.'/media/metadata.json';
 $manifestPath = $datasetRoot.'/manifest.json';
@@ -80,6 +82,31 @@ function faGeometryFingerprint(array $rectangles): string
     return hash('sha256', implode(';', $coordinates));
 }
 
+/** @return array{width:int,height:int,view_box:string} */
+function faSvgDimensions(string $svg, string $path): array
+{
+    if (preg_match('/<svg\b([^>]*)>/', $svg, $rootMatch) !== 1) {
+        throw new RuntimeException("Root SVG tidak valid pada {$path}.");
+    }
+
+    $attributes = $rootMatch[1];
+    $values = [];
+
+    foreach (['width', 'height', 'viewBox'] as $name) {
+        if (preg_match('/(?:^|\s)'.preg_quote($name, '/').'="([^"]+)"/', $attributes, $match) !== 1) {
+            throw new RuntimeException("Atribut {$name} tidak tersedia pada {$path}.");
+        }
+
+        $values[$name] = $match[1];
+    }
+
+    return [
+        'width' => (int) $values['width'],
+        'height' => (int) $values['height'],
+        'view_box' => $values['viewBox'],
+    ];
+}
+
 function faStyledOption(string $svg, string $path): string
 {
     $rectangles = faRectangles($svg, $path);
@@ -142,6 +169,57 @@ function faStyledOption(string $svg, string $path): string
     return $styled;
 }
 
+$baselineManifest = faReadJson($baselineManifestPath);
+$baselineMedia = [];
+
+foreach ($baselineManifest['media'] ?? [] as $record) {
+    if (isset($record['relative_path'])) {
+        $baselineMedia[$record['relative_path']] = $record;
+    }
+}
+
+$promptFiles = array_merge(
+    glob($baselineRoot.'/examples/*-prompt.svg') ?: [],
+    glob($baselineRoot.'/questions/*-prompt.svg') ?: [],
+);
+sort($promptFiles, SORT_STRING);
+
+if (count($promptFiles) !== 11) {
+    throw new RuntimeException('Baseline FA harus mempunyai tepat 11 SVG prompt.');
+}
+
+$promptFingerprints = [];
+
+foreach ($promptFiles as $baselinePath) {
+    $relativePath = substr($baselinePath, strlen($baselineRoot) + 1);
+    $targetPath = $datasetRoot.'/media/fa/'.$relativePath;
+    $baseline = file_get_contents($baselinePath);
+    $manifestRecord = $baselineMedia['fa/'.$relativePath] ?? null;
+
+    if ($baseline === false) {
+        throw new RuntimeException("Tidak dapat membaca {$baselinePath}.");
+    }
+
+    if (! is_array($manifestRecord)
+        || ($manifestRecord['review_status'] ?? null) !== 'human_review_passed'
+        || ! hash_equals((string) ($manifestRecord['sha256'] ?? ''), hash('sha256', $baseline))) {
+        throw new RuntimeException("Prompt baseline tidak cocok dengan manifest human-reviewed: {$relativePath}.");
+    }
+
+    $fingerprint = faGeometryFingerprint(faRectangles($baseline, $relativePath));
+    $restored = rtrim($baseline)."\n";
+
+    if (file_put_contents($targetPath, $restored) === false) {
+        throw new RuntimeException("Tidak dapat menulis {$targetPath}.");
+    }
+
+    if ($fingerprint !== faGeometryFingerprint(faRectangles((string) file_get_contents($targetPath), $targetPath))) {
+        throw new RuntimeException("Geometri prompt berubah saat restore {$relativePath}.");
+    }
+
+    $promptFingerprints[$relativePath] = $fingerprint;
+}
+
 $optionFiles = array_merge(
     glob($baselineRoot.'/examples/*-option-*.svg') ?: [],
     glob($baselineRoot.'/options/*.svg') ?: [],
@@ -170,13 +248,39 @@ foreach ($optionFiles as $baselinePath) {
 
 $metadata = faReadJson($metadataPath);
 $updatedOptions = 0;
+$updatedPrompts = 0;
 
 foreach ($metadata['media'] as &$record) {
-    if (($record['subtest_code'] ?? null) !== 'FA' || ($record['role'] ?? null) !== 'option') {
+    if (($record['subtest_code'] ?? null) !== 'FA') {
         continue;
     }
 
     $path = $datasetRoot.'/'.$record['relative_path'];
+
+    if (($record['role'] ?? null) === 'prompt') {
+        $svg = file_get_contents($path);
+
+        if ($svg === false) {
+            throw new RuntimeException("Tidak dapat membaca {$path}.");
+        }
+
+        $dimensions = faSvgDimensions($svg, $path);
+        $record['byte_size'] = filesize($path);
+        $record['width'] = $dimensions['width'];
+        $record['height'] = $dimensions['height'];
+        $record['view_box'] = $dimensions['view_box'];
+        $record['sha256'] = hash_file('sha256', $path);
+        $record['provenance'] = 'stage-15-human-reviewed-prompt-baseline';
+        unset($record['duplicate_hash_reason']);
+        $updatedPrompts++;
+
+        continue;
+    }
+
+    if (($record['role'] ?? null) !== 'option') {
+        continue;
+    }
+
     $record['byte_size'] = filesize($path);
     $record['sha256'] = hash_file('sha256', $path);
     $record['provenance'] = 'stage-15-human-reviewed-geometry-styling-only';
@@ -187,6 +291,10 @@ unset($record);
 
 if ($updatedOptions !== 55) {
     throw new RuntimeException("Metadata opsi FA harus tepat 55, ditemukan {$updatedOptions}.");
+}
+
+if ($updatedPrompts !== 11) {
+    throw new RuntimeException("Metadata prompt FA harus tepat 11, ditemukan {$updatedPrompts}.");
 }
 
 faWriteJson($metadataPath, $metadata);
@@ -223,7 +331,7 @@ $checksums['algorithm'] = 'sha256';
 $checksums['files'] = $files;
 faWriteJson($checksumsPath, $checksums);
 
-echo "FA BASELINE OPTION RESTORE: SUCCESS\n";
+echo "FA BASELINE MEDIA RESTORE: SUCCESS\n";
+echo "Prompts restored from reviewed geometry: 11\n";
 echo "Options restored/styled: 55\n";
-echo "Prompt media changed: 0\n";
 echo "Geometry changed: 0\n";
