@@ -68,8 +68,9 @@ export default function LandingIndex() {
                         subtitle="Mengukur performa pada sembilan area kemampuan kognitif melalui asesmen singkat sekitar 45 menit."
                         description="Asesmen singkat untuk melihat profil performa pada sembilan area kemampuan kognitif."
                         icon={BrainCircuit}
-                        badge="Dalam Pengembangan"
-                        isActive={false}
+                        badge="Tersedia / Aktif"
+                        isActive={true}
+                        href={route('ist.index')}
                         features={[
                             'Durasi: Sekitar 45 menit',
                             '9 subtes',

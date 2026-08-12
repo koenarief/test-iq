@@ -17,8 +17,12 @@ final class IstFinalMediaValidator
         'svg' => 'image/svg+xml',
     ];
 
-    public function validate(string $directory, array $manifest, array $payload): array
-    {
+    public function validate(
+        string $directory,
+        array $manifest,
+        array $payload,
+        string $requiredReviewStatus = 'approved',
+    ): array {
         if (($payload['schema_version'] ?? null) !== ($manifest['schema_version'] ?? null)
             || ($payload['instrument_identifier'] ?? null) !== ($manifest['instrument_identifier'] ?? null)
             || ($payload['question_bank_version'] ?? null) !== ($manifest['question_bank_version'] ?? null)) {
@@ -115,8 +119,8 @@ final class IstFinalMediaValidator
                 }
             }
 
-            if ($record['review_status'] !== 'approved') {
-                $this->fail("media belum berstatus approved: {$id}");
+            if ($record['review_status'] !== $requiredReviewStatus) {
+                $this->fail("status review media tidak sesuai kontrak: {$id}");
             }
 
             [$width, $height] = $extension === 'svg'

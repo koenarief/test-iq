@@ -222,7 +222,12 @@ final class IstSubtestFinalizationService
             $answer->update($score);
 
             $statistics['awarded_score'] += (float) $score['awarded_score'];
-            $statistics['max_score'] += (float) $question->max_score;
+
+            $statistics['max_score'] += $this->calculator->weightedMaxScore(
+                $question->max_score,
+                $question->difficulty,
+            );
+
             $statistics[$score['outcome'].'_count']++;
         }
 
@@ -239,43 +244,59 @@ final class IstSubtestFinalizationService
     }
 
     private function scoreQuestion(
-        IstTestSubtest $runtime,
+    IstTestSubtest $runtime,
+    IstTestQuestion $question,
+    IstAnswer $answer,
+): array {
+    try {
+        return match ($question->answer_type) {
+            IstAnswerType::SINGLE_CHOICE,
+            IstAnswerType::IMAGE_CHOICE => $this->calculator->scoreBinary(
+                $answer->selected_option_key === null
+                    ? null
+                    : $answer->selected_option_key
+                        === ($question->answer_key_snapshot['correct_option_key'] ?? null),
+                $question->difficulty,
+            ),
+
+            IstAnswerType::SINGLE_CHOICE_WEIGHTED => $this->scoreWeighted(
+                $question,
+                $answer,
+            ),
+
+            IstAnswerType::NUMERIC => $this->calculator->scoreNumeric(
+                $answer->numeric_answer,
+                $question->answer_key_snapshot['numeric_answer'] ?? throw new InvalidIstFinalizationException(
+                    $runtime->id,
+                    'numeric answer key snapshot is unavailable',
+                ),
+                $question->difficulty,
+            ),
+
+            default => throw new InvalidIstFinalizationException(
+                $runtime->id,
+                'snapshot answer type is unsupported',
+            ),
+        };
+    } catch (InvalidIstFinalizationException $exception) {
+        throw $exception;
+    } catch (Throwable) {
+        throw new InvalidIstFinalizationException(
+            $runtime->id,
+            'snapshot scoring data is invalid',
+        );
+    }
+}
+
+    private function scoreWeighted(
         IstTestQuestion $question,
         IstAnswer $answer,
     ): array {
-        try {
-            return match ($question->answer_type) {
-                IstAnswerType::SINGLE_CHOICE,
-                IstAnswerType::IMAGE_CHOICE => $this->calculator->scoreBinary(
-                    $answer->selected_option_key === null
-                        ? null
-                        : $answer->selected_option_key
-                            === ($question->answer_key_snapshot['correct_option_key'] ?? null),
-                ),
-                IstAnswerType::SINGLE_CHOICE_WEIGHTED => $this->scoreWeighted($question, $answer),
-                IstAnswerType::NUMERIC => $this->calculator->scoreNumeric(
-                    $answer->numeric_answer,
-                    $question->answer_key_snapshot['numeric_answer'] ?? throw new InvalidIstFinalizationException(
-                        $runtime->id,
-                        'numeric answer key snapshot is unavailable',
-                    ),
-                ),
-                default => throw new InvalidIstFinalizationException(
-                    $runtime->id,
-                    'snapshot answer type is unsupported',
-                ),
-            };
-        } catch (InvalidIstFinalizationException $exception) {
-            throw $exception;
-        } catch (Throwable) {
-            throw new InvalidIstFinalizationException($runtime->id, 'snapshot scoring data is invalid');
-        }
-    }
-
-    private function scoreWeighted(IstTestQuestion $question, IstAnswer $answer): array
-    {
         if ($answer->selected_option_key === null) {
-            return $this->calculator->scoreWeighted(null);
+            return $this->calculator->scoreWeighted(
+                null,
+                $question->difficulty,
+            );
         }
 
         $scores = $question->answer_key_snapshot['scores'] ?? [];
@@ -287,7 +308,10 @@ final class IstSubtestFinalizationService
             );
         }
 
-        return $this->calculator->scoreWeighted($scores[$answer->selected_option_key]);
+        return $this->calculator->scoreWeighted(
+            $scores[$answer->selected_option_key],
+            $question->difficulty,
+        );
     }
 
     private function completeOverallTest(
@@ -300,6 +324,7 @@ final class IstSubtestFinalizationService
         }
 
         $runtimes = IstTestSubtest::query()
+            ->with('subtest')
             ->where('ist_test_id', $test->id)
             ->orderBy('sequence')
             ->get();
@@ -309,13 +334,36 @@ final class IstSubtestFinalizationService
             throw new InvalidIstFinalizationException($runtime->id, 'exactly nine finalized subtests are required');
         }
 
-        $percentages = $terminal->pluck('percentage')->all();
+        $subtestScores = [];
 
-        if (count(array_filter($percentages, static fn ($value): bool => $value !== null)) !== 9) {
-            throw new InvalidIstFinalizationException($runtime->id, 'a finalized percentage is unavailable');
+        foreach ($terminal as $item) {
+            if (
+                ! $item->subtest
+                || $item->percentage === null
+            ) {
+                throw new InvalidIstFinalizationException(
+                    $runtime->id,
+                    'a finalized subtest score is unavailable',
+                );
+            }
+
+            $code = strtoupper(
+                trim((string) $item->subtest->code)
+            );
+
+            $subtestScores[$code] = (float) $item->percentage;
         }
 
-        $total = $this->calculator->totalInternalScore($percentages);
+        if (count($subtestScores) !== 9) {
+            throw new InvalidIstFinalizationException(
+                $runtime->id,
+                'exactly nine unique finalized subtest scores are required',
+            );
+        }
+
+        $total = $this->calculator->totalInternalScore(
+            $subtestScores
+        );
 
         if ($total === null) {
             throw new InvalidIstFinalizationException($runtime->id, 'overall score is not final');

@@ -6,15 +6,21 @@ use App\Exceptions\Ist\IncompleteIstSnapshotException;
 use App\Exceptions\Ist\InvalidIstQuestionCountException;
 use App\Exceptions\Ist\InvalidIstQuestionDefinitionException;
 use App\Models\Ist\IstQuestion;
+use App\Models\Ist\IstSubtest;
 use App\Models\Ist\IstTestQuestion;
 use App\Models\Ist\IstTestSubtest;
 use App\Support\Ist\IstAnswerType;
+use App\Support\Ist\IstMeRuntimeContent;
 use DomainException;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 
 final class IstQuestionSnapshotService
 {
+    public function __construct(
+        private readonly IstMeRuntimeContent $meRuntimeContent,
+    ) {}
+
     /**
      * The returned models contain server-only answer keys. They must never be
      * passed directly to participant-facing serializers or Inertia payloads.
@@ -77,11 +83,25 @@ final class IstQuestionSnapshotService
                 );
             }
 
+            $meRuntime = $runtime->subtest->code === 'ME'
+                ? $this->meRuntimeContent->fromMaster($runtime->subtest)
+                : null;
+
             foreach ($questions as $question) {
                 [$optionsSnapshot, $answerKeySnapshot] = $this->buildAnswerSnapshots(
                     $runtime->subtest->code,
                     $question,
                 );
+
+                if ($meRuntime !== null) {
+                    $this->assertMeQuestionContract(
+                        $runtime->subtest,
+                        $question,
+                        $optionsSnapshot,
+                        $answerKeySnapshot,
+                        $meRuntime,
+                    );
+                }
 
                 $runtime->testQuestions()->create([
                     'source_question_id' => $question->id,
@@ -94,10 +114,15 @@ final class IstQuestionSnapshotService
                         'image_alt' => $question->image_alt,
                         'source_version' => $question->version,
                         'source_question_number' => $question->question_number,
+                        ...($meRuntime === null ? [] : ['me_runtime' => $meRuntime]),
                     ],
                     'options_snapshot' => $optionsSnapshot,
                     'answer_key_snapshot' => $answerKeySnapshot,
                     'max_score' => $question->max_score,
+                    'difficulty' => $this->validatedDifficulty(
+                        $runtime->subtest->code,
+                        $question,
+                    ),
                 ]);
             }
 
@@ -105,6 +130,82 @@ final class IstQuestionSnapshotService
                 ->orderBy('display_order')
                 ->get();
         });
+    }
+
+    private function validatedDifficulty(
+        string $subtestCode,
+        IstQuestion $question,
+    ): string {
+        $difficulty = strtolower(trim((string) $question->difficulty));
+
+        if (! in_array($difficulty, ['easy', 'medium', 'hard'], true)) {
+            throw $this->invalidDefinition(
+                $subtestCode,
+                $question,
+                'difficulty must be easy, medium, or hard',
+            );
+        }
+
+        return $difficulty;
+    }
+
+    private function assertMeQuestionContract(
+        IstSubtest $subtest,
+        IstQuestion $question,
+        array $options,
+        array $answerKey,
+        array $runtimeContent,
+    ): void {
+        if (preg_match_all(
+            '/huruf\s+permulaan\s+[“"]?(\p{L})[”"]?/ui',
+            (string) $question->prompt,
+            $matches,
+        ) !== 1) {
+            throw $this->invalidDefinition(
+                $subtest->code,
+                $question,
+                'ME prompt must contain exactly one target initial',
+            );
+        }
+
+        $targetInitial = mb_strtoupper($matches[1][0], 'UTF-8');
+        $target = null;
+        $categoryNames = [];
+
+        foreach ($runtimeContent['groups'] as $group) {
+            $categoryNames[$group['key']] = $group['name'];
+
+            foreach ($group['words'] as $word) {
+                $initial = mb_strtoupper(mb_substr($word, 0, 1, 'UTF-8'), 'UTF-8');
+
+                if ($initial === $targetInitial) {
+                    $target = ['word' => $word, 'groupKey' => $group['key']];
+                }
+            }
+        }
+
+        if ($target === null
+            || ($answerKey['correct_option_key'] ?? null) !== $target['groupKey']
+            || mb_stripos((string) $question->prompt, $target['word'], 0, 'UTF-8') !== false) {
+            throw $this->invalidDefinition(
+                $subtest->code,
+                $question,
+                'ME target initial, hidden word, and answer key are inconsistent',
+            );
+        }
+
+        foreach ($options as $index => $option) {
+            $expectedKey = chr(ord('A') + $index);
+
+            if (($option['option_key'] ?? null) !== $expectedKey
+                || ($option['option_text'] ?? null) !== ($categoryNames[$expectedKey] ?? null)) {
+                throw $this->invalidDefinition(
+                    $subtest->code,
+                    $question,
+                    'ME options must be the five memorization categories',
+                );
+            }
+        }
     }
 
     private function buildAnswerSnapshots(string $subtestCode, IstQuestion $question): array

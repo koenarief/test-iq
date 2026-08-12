@@ -65,8 +65,45 @@ final class IstFinalQuestionDatasetImporterTest extends IstFinalImportTestCase
         $this->assertSame(0, IstQuestionOption::query()->whereIn('ist_question_id', $finalQuestionIds)->where('is_active', true)->count());
         $this->assertTrue(IstQuestion::query()->whereKey($development->id)->exists());
         $this->assertSame($developmentManifestHash, hash_file('sha256', database_path('data/ist-development/manifest.json')));
-        $this->assertSame(0, IstSubtest::query()->whereNotNull('instruction_content')->count());
+        $this->assertSame(9, IstSubtest::query()->whereNotNull('instruction_content')->count());
+        $this->assertSame(
+            '[TEST-FIXTURE] Materi hafalan sintetis untuk pengujian pipeline.',
+            IstSubtest::query()->where('code', 'ME')->value('memorization_content'),
+        );
+        $this->assertSame(
+            0,
+            IstSubtest::query()->where('code', '!=', 'ME')->whereNotNull('memorization_content')->count(),
+        );
         Storage::disk('ist-final-feature')->assertExists('ist/final/1.0.0-test/options/option-a.svg');
+    }
+
+    public function test_clean_install_import_populates_complete_pipeline_owned_master_definition(): void
+    {
+        app(IstFinalQuestionDatasetImporter::class)->import(
+            $this->datasetDirectory,
+            'tes_iq_testing',
+            false,
+        );
+
+        $subtests = IstSubtest::query()->orderBy('sequence')->get()->keyBy('code');
+
+        $this->assertCount(9, $subtests);
+        $this->assertSame(range(1, 9), $subtests->pluck('sequence')->all());
+        $this->assertSame(104, $subtests->sum('question_count'));
+        $this->assertSame(2700, $subtests->sum('duration_seconds'));
+
+        foreach ($subtests as $code => $subtest) {
+            $this->assertNotSame('', trim((string) $subtest->instruction_content));
+
+            if ($code === 'ME') {
+                $this->assertNotSame('', trim((string) $subtest->memorization_content));
+                $this->assertSame(120, $subtest->memorization_seconds);
+                $this->assertSame(240, $subtest->answering_seconds);
+            } else {
+                $this->assertNull($subtest->memorization_content);
+                $this->assertSame(0, $subtest->memorization_seconds);
+            }
+        }
     }
 
     public function test_reimport_of_the_same_version_is_explicitly_rejected(): void
@@ -80,6 +117,11 @@ final class IstFinalQuestionDatasetImporterTest extends IstFinalImportTestCase
 
     public function test_publish_failure_compensates_database_and_cleans_staged_media(): void
     {
+        $before = IstSubtest::query()
+            ->orderBy('id')
+            ->get()
+            ->mapWithKeys(fn (IstSubtest $subtest): array => [$subtest->id => $subtest->getAttributes()])
+            ->all();
         $failingInstaller = new class extends IstFinalMediaInstaller
         {
             public function publish(IstFinalMediaStage $stage): void
@@ -99,6 +141,14 @@ final class IstFinalQuestionDatasetImporterTest extends IstFinalImportTestCase
         } catch (IstFinalMediaException) {
             $this->assertSame(0, IstQuestion::query()->where('version', FinalDatasetFactory::RECORD_VERSION)->count());
             $this->assertSame(0, IstQuestionOption::query()->count());
+            $this->assertSame(0, IstSubtest::query()->whereNotNull('instruction_content')->count());
+            $this->assertSame(0, IstSubtest::query()->whereNotNull('memorization_content')->count());
+            $after = IstSubtest::query()
+                ->orderBy('id')
+                ->get()
+                ->mapWithKeys(fn (IstSubtest $subtest): array => [$subtest->id => $subtest->getAttributes()])
+                ->all();
+            $this->assertSame($before, $after);
             $this->assertSame([], Storage::disk('ist-final-feature')->allFiles());
         }
     }
@@ -125,6 +175,8 @@ final class IstFinalQuestionDatasetImporterTest extends IstFinalImportTestCase
         } catch (IstFinalMediaException) {
             $this->assertSame(0, IstQuestion::query()->where('version', FinalDatasetFactory::RECORD_VERSION)->count());
             $this->assertSame(0, IstQuestionOption::query()->count());
+            $this->assertSame(0, IstSubtest::query()->whereNotNull('instruction_content')->count());
+            $this->assertSame(0, IstSubtest::query()->whereNotNull('memorization_content')->count());
             $this->assertSame([], Storage::disk('ist-final-feature')->allFiles());
         }
     }
@@ -140,6 +192,34 @@ final class IstFinalQuestionDatasetImporterTest extends IstFinalImportTestCase
 
         $this->assertSame(0, IstQuestion::query()->count());
         $this->assertSame([], Storage::disk('ist-final-feature')->allFiles());
+    }
+
+    public function test_command_requires_confirmation_flag_before_write(): void
+    {
+        $this->artisan('ist:import-final-dataset', [
+            'path' => $this->datasetDirectory,
+            '--allow-database' => 'tes_iq_testing',
+            '--question-bank-version' => FinalDatasetFactory::QUESTION_BANK_VERSION,
+        ])
+            ->expectsOutputToContain('Mode: DRY-RUN')
+            ->assertSuccessful();
+
+        $this->assertSame(0, IstQuestion::query()->count());
+        $this->assertSame([], Storage::disk('ist-final-feature')->allFiles());
+    }
+
+    public function test_command_rejects_conflicting_dry_run_and_write_confirmation(): void
+    {
+        $this->artisan('ist:import-final-dataset', [
+            'path' => $this->datasetDirectory,
+            '--allow-database' => 'tes_iq_testing',
+            '--dry-run' => true,
+            '--confirm-write' => true,
+        ])
+            ->expectsOutputToContain('--dry-run dan --confirm-write')
+            ->assertFailed();
+
+        $this->assertSame(0, IstQuestion::query()->count());
     }
 
     public function test_command_rejects_mismatched_question_bank_version_without_mutation(): void

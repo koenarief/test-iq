@@ -47,17 +47,39 @@ abstract class IstHttpTestCase extends IstDatabaseTestCase
             ->get();
 
         foreach ($subtests as $subtest) {
+            $meGroups = null;
+
+            if ($subtest->code === 'ME') {
+                $meGroups = $this->meCategoryGroups();
+                $subtest->update([
+                    'instruction_content' => 'Hafalkan lima kelompok kata. Setelah materi ditutup, pilih kategori berdasarkan huruf awal.',
+                    'memorization_content' => json_encode(
+                        ['groups' => $meGroups],
+                        JSON_THROW_ON_ERROR,
+                    ),
+                ]);
+            }
+
             for ($number = 1; $number <= $subtest->question_count; $number++) {
                 $type = $subtest->default_answer_type;
+                $meTarget = $subtest->code === 'ME'
+                    ? $this->meTargetForQuestion($meGroups, $number)
+                    : null;
                 $question = IstQuestion::create([
                     'ist_subtest_id' => $subtest->id,
                     'question_number' => $number,
                     'display_order' => $number,
                     'kind' => IstQuestion::KIND_SCORED,
                     'answer_type' => $type,
-                    'prompt' => "Temporary structure fixture {$subtest->code} {$number}",
+                    'prompt' => $meTarget === null
+                        ? "Temporary structure fixture {$subtest->code} {$number}"
+                        : "Kata yang mempunyai huruf permulaan “{$meTarget['initial']}” berada pada kelompok ...",
                     'numeric_answer_key' => $type === IstAnswerType::NUMERIC ? 10 : null,
                     'max_score' => $type === IstAnswerType::SINGLE_CHOICE_WEIGHTED ? 4 : 1,
+                    'difficulty' => $this->difficultyForQuestion(
+                        $number,
+                        $subtest->question_count,
+                    ),
                     'version' => 1,
                     'is_active' => true,
                 ]);
@@ -66,14 +88,17 @@ abstract class IstHttpTestCase extends IstDatabaseTestCase
                     foreach (['A', 'B', 'C', 'D', 'E'] as $index => $key) {
                         $weighted = $type === IstAnswerType::SINGLE_CHOICE_WEIGHTED;
                         $scores = [0, 4, 1, 2, 3];
-                        $score = $weighted ? $scores[$index] : ($key === 'B' ? 1 : 0);
+                        $correctKey = $meTarget['group_key'] ?? 'B';
+                        $score = $weighted ? $scores[$index] : ($key === $correctKey ? 1 : 0);
 
                         IstQuestionOption::create([
                             'ist_question_id' => $question->id,
                             'option_key' => $key,
-                            'option_text' => "Option {$key}",
+                            'option_text' => $meTarget === null
+                                ? "Option {$key}"
+                                : $meGroups[$index]['name'],
                             'display_order' => $index + 1,
-                            'is_correct' => $key === 'B',
+                            'is_correct' => $key === $correctKey,
                             'score_value' => $score,
                             'is_active' => true,
                         ]);
@@ -81,6 +106,58 @@ abstract class IstHttpTestCase extends IstDatabaseTestCase
                 }
             }
         }
+    }
+
+    private function meCategoryGroups(): array
+    {
+        $initials = range('A', 'Y');
+
+        return array_map(
+            static fn (string $key, int $index): array => [
+                'key' => $key,
+                'name' => "Kategori {$key}",
+                'words' => array_map(
+                    static fn (string $initial): string => $initial.'kata',
+                    array_slice($initials, $index * 5, 5),
+                ),
+                'display_order' => $index + 1,
+            ],
+            ['A', 'B', 'C', 'D', 'E'],
+            range(0, 4),
+        );
+    }
+
+    private function meTargetForQuestion(array $groups, int $number): array
+    {
+        $flatWords = [];
+
+        foreach ($groups as $group) {
+            foreach ($group['words'] as $word) {
+                $flatWords[] = [
+                    'initial' => mb_strtoupper(mb_substr($word, 0, 1, 'UTF-8'), 'UTF-8'),
+                    'group_key' => $group['key'],
+                ];
+            }
+        }
+
+        return $flatWords[$number - 1];
+    }
+
+    private function difficultyForQuestion(int $number, int $questionCount): string
+    {
+        if ($questionCount === 10) {
+            return match (true) {
+                $number <= 3 => 'easy',
+                $number <= 7 => 'medium',
+                default => 'hard',
+            };
+        }
+
+        return match (true) {
+            $number <= 4 => 'easy',
+            $number <= 9 => 'medium',
+            default => 'hard',
+        };
     }
 
     protected function createOwnedTest(string $participant = 'HTTP Participant'): array

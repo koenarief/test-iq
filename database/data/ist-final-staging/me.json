@@ -1,0 +1,1548 @@
+{
+    "schema_version": 1,
+    "instrument_identifier": "tes-kemampuan-kognitif-adaptasi-104",
+    "question_bank_version": "2026.08.06-stage17",
+    "subtest_code": "ME",
+    "review_status": "human_review_passed",
+    "active": false,
+    "content_origin": "original_internal",
+    "source_reference": null,
+    "copyright_status": "internally_authored",
+    "normative_compatibility": "none",
+    "instruction_content": "Anda akan melihat 5 kelompok kata selama 2 menit.\nSetiap kelompok berisi 5 kata. Hafalkan kata-kata beserta kelompoknya.\nSetelah waktu menghafal berakhir, materi akan ditutup otomatis dan tidak dapat dibuka kembali.\nAnda kemudian memiliki 4 menit untuk menjawab 12 soal pilihan ganda.\nPada setiap soal ditampilkan satu huruf awal. Ingat kata yang berawalan huruf tersebut, lalu pilih kelompok tempat kata itu berada.\nPilih satu jawaban A–E untuk setiap soal.\nContoh tidak dihitung dalam skor.",
+    "memorization_content": "{\"groups\":[{\"key\":\"A\",\"name\":\"Tanaman\",\"words\":[\"Anggrek\",\"Dahlia\",\"Kaktus\",\"Melati\",\"Teratai\"],\"display_order\":1},{\"key\":\"B\",\"name\":\"Peralatan\",\"words\":[\"Bor\",\"Gergaji\",\"Obeng\",\"Palu\",\"Ragum\"],\"display_order\":2},{\"key\":\"C\",\"name\":\"Hewan\",\"words\":[\"Cendrawasih\",\"Elang\",\"Jerapah\",\"Unta\",\"Zebra\"],\"display_order\":3},{\"key\":\"D\",\"name\":\"Kesenian\",\"words\":[\"Lukisan\",\"Nyanyian\",\"Qasidah\",\"Wayang\",\"Xilofon\"],\"display_order\":4},{\"key\":\"E\",\"name\":\"Transportasi\",\"words\":[\"Feri\",\"Helikopter\",\"Sepeda\",\"Van\",\"Yacht\"],\"display_order\":5}]}",
+    "memorization": {
+        "model": "initial_letter_to_category",
+        "group_count": 5,
+        "words_per_group": 5,
+        "total_words": 25,
+        "unique_initials_required": true,
+        "groups": [
+            {
+                "key": "A",
+                "name": "Tanaman",
+                "display_order": 1,
+                "words": [
+                    {
+                        "logical_id": "me-word-a",
+                        "word": "Anggrek",
+                        "initial": "A",
+                        "display_order": 1,
+                        "tested": true,
+                        "question_logical_id": "ME-S-001",
+                        "content_origin": "original_internal",
+                        "source_reference": null,
+                        "copyright_status": "internally_authored",
+                        "normative_compatibility": "none",
+                        "review_status": "human_review_passed",
+                        "active": false
+                    },
+                    {
+                        "logical_id": "me-word-d",
+                        "word": "Dahlia",
+                        "initial": "D",
+                        "display_order": 2,
+                        "tested": false,
+                        "question_logical_id": null,
+                        "content_origin": "original_internal",
+                        "source_reference": null,
+                        "copyright_status": "internally_authored",
+                        "normative_compatibility": "none",
+                        "review_status": "human_review_passed",
+                        "active": false
+                    },
+                    {
+                        "logical_id": "me-word-k",
+                        "word": "Kaktus",
+                        "initial": "K",
+                        "display_order": 3,
+                        "tested": false,
+                        "question_logical_id": null,
+                        "content_origin": "original_internal",
+                        "source_reference": null,
+                        "copyright_status": "internally_authored",
+                        "normative_compatibility": "none",
+                        "review_status": "human_review_passed",
+                        "active": false
+                    },
+                    {
+                        "logical_id": "me-word-m",
+                        "word": "Melati",
+                        "initial": "M",
+                        "display_order": 4,
+                        "tested": false,
+                        "question_logical_id": null,
+                        "content_origin": "original_internal",
+                        "source_reference": null,
+                        "copyright_status": "internally_authored",
+                        "normative_compatibility": "none",
+                        "review_status": "human_review_passed",
+                        "active": false
+                    },
+                    {
+                        "logical_id": "me-word-t",
+                        "word": "Teratai",
+                        "initial": "T",
+                        "display_order": 5,
+                        "tested": true,
+                        "question_logical_id": "ME-S-009",
+                        "content_origin": "original_internal",
+                        "source_reference": null,
+                        "copyright_status": "internally_authored",
+                        "normative_compatibility": "none",
+                        "review_status": "human_review_passed",
+                        "active": false
+                    }
+                ]
+            },
+            {
+                "key": "B",
+                "name": "Peralatan",
+                "display_order": 2,
+                "words": [
+                    {
+                        "logical_id": "me-word-b",
+                        "word": "Bor",
+                        "initial": "B",
+                        "display_order": 1,
+                        "tested": true,
+                        "question_logical_id": "ME-S-002",
+                        "content_origin": "original_internal",
+                        "source_reference": null,
+                        "copyright_status": "internally_authored",
+                        "normative_compatibility": "none",
+                        "review_status": "human_review_passed",
+                        "active": false
+                    },
+                    {
+                        "logical_id": "me-word-g",
+                        "word": "Gergaji",
+                        "initial": "G",
+                        "display_order": 2,
+                        "tested": true,
+                        "question_logical_id": "ME-S-005",
+                        "content_origin": "original_internal",
+                        "source_reference": null,
+                        "copyright_status": "internally_authored",
+                        "normative_compatibility": "none",
+                        "review_status": "human_review_passed",
+                        "active": false
+                    },
+                    {
+                        "logical_id": "me-word-o",
+                        "word": "Obeng",
+                        "initial": "O",
+                        "display_order": 3,
+                        "tested": false,
+                        "question_logical_id": null,
+                        "content_origin": "original_internal",
+                        "source_reference": null,
+                        "copyright_status": "internally_authored",
+                        "normative_compatibility": "none",
+                        "review_status": "human_review_passed",
+                        "active": false
+                    },
+                    {
+                        "logical_id": "me-word-p",
+                        "word": "Palu",
+                        "initial": "P",
+                        "display_order": 4,
+                        "tested": false,
+                        "question_logical_id": null,
+                        "content_origin": "original_internal",
+                        "source_reference": null,
+                        "copyright_status": "internally_authored",
+                        "normative_compatibility": "none",
+                        "review_status": "human_review_passed",
+                        "active": false
+                    },
+                    {
+                        "logical_id": "me-word-r",
+                        "word": "Ragum",
+                        "initial": "R",
+                        "display_order": 5,
+                        "tested": false,
+                        "question_logical_id": null,
+                        "content_origin": "original_internal",
+                        "source_reference": null,
+                        "copyright_status": "internally_authored",
+                        "normative_compatibility": "none",
+                        "review_status": "human_review_passed",
+                        "active": false
+                    }
+                ]
+            },
+            {
+                "key": "C",
+                "name": "Hewan",
+                "display_order": 3,
+                "words": [
+                    {
+                        "logical_id": "me-word-c",
+                        "word": "Cendrawasih",
+                        "initial": "C",
+                        "display_order": 1,
+                        "tested": false,
+                        "question_logical_id": null,
+                        "content_origin": "original_internal",
+                        "source_reference": null,
+                        "copyright_status": "internally_authored",
+                        "normative_compatibility": "none",
+                        "review_status": "human_review_passed",
+                        "active": false
+                    },
+                    {
+                        "logical_id": "me-word-e",
+                        "word": "Elang",
+                        "initial": "E",
+                        "display_order": 2,
+                        "tested": true,
+                        "question_logical_id": "ME-S-003",
+                        "content_origin": "original_internal",
+                        "source_reference": null,
+                        "copyright_status": "internally_authored",
+                        "normative_compatibility": "none",
+                        "review_status": "human_review_passed",
+                        "active": false
+                    },
+                    {
+                        "logical_id": "me-word-j",
+                        "word": "Jerapah",
+                        "initial": "J",
+                        "display_order": 3,
+                        "tested": true,
+                        "question_logical_id": "ME-S-006",
+                        "content_origin": "original_internal",
+                        "source_reference": null,
+                        "copyright_status": "internally_authored",
+                        "normative_compatibility": "none",
+                        "review_status": "human_review_passed",
+                        "active": false
+                    },
+                    {
+                        "logical_id": "me-word-u",
+                        "word": "Unta",
+                        "initial": "U",
+                        "display_order": 4,
+                        "tested": true,
+                        "question_logical_id": "ME-S-011",
+                        "content_origin": "original_internal",
+                        "source_reference": null,
+                        "copyright_status": "internally_authored",
+                        "normative_compatibility": "none",
+                        "review_status": "human_review_passed",
+                        "active": false
+                    },
+                    {
+                        "logical_id": "me-word-z",
+                        "word": "Zebra",
+                        "initial": "Z",
+                        "display_order": 5,
+                        "tested": false,
+                        "question_logical_id": null,
+                        "content_origin": "original_internal",
+                        "source_reference": null,
+                        "copyright_status": "internally_authored",
+                        "normative_compatibility": "none",
+                        "review_status": "human_review_passed",
+                        "active": false
+                    }
+                ]
+            },
+            {
+                "key": "D",
+                "name": "Kesenian",
+                "display_order": 4,
+                "words": [
+                    {
+                        "logical_id": "me-word-l",
+                        "word": "Lukisan",
+                        "initial": "L",
+                        "display_order": 1,
+                        "tested": true,
+                        "question_logical_id": "ME-S-007",
+                        "content_origin": "original_internal",
+                        "source_reference": null,
+                        "copyright_status": "internally_authored",
+                        "normative_compatibility": "none",
+                        "review_status": "human_review_passed",
+                        "active": false
+                    },
+                    {
+                        "logical_id": "me-word-n",
+                        "word": "Nyanyian",
+                        "initial": "N",
+                        "display_order": 2,
+                        "tested": false,
+                        "question_logical_id": null,
+                        "content_origin": "original_internal",
+                        "source_reference": null,
+                        "copyright_status": "internally_authored",
+                        "normative_compatibility": "none",
+                        "review_status": "human_review_passed",
+                        "active": false
+                    },
+                    {
+                        "logical_id": "me-word-q",
+                        "word": "Qasidah",
+                        "initial": "Q",
+                        "display_order": 3,
+                        "tested": true,
+                        "question_logical_id": "ME-S-010",
+                        "content_origin": "original_internal",
+                        "source_reference": null,
+                        "copyright_status": "internally_authored",
+                        "normative_compatibility": "none",
+                        "review_status": "human_review_passed",
+                        "active": false
+                    },
+                    {
+                        "logical_id": "me-word-w",
+                        "word": "Wayang",
+                        "initial": "W",
+                        "display_order": 4,
+                        "tested": false,
+                        "question_logical_id": null,
+                        "content_origin": "original_internal",
+                        "source_reference": null,
+                        "copyright_status": "internally_authored",
+                        "normative_compatibility": "none",
+                        "review_status": "human_review_passed",
+                        "active": false
+                    },
+                    {
+                        "logical_id": "me-word-x",
+                        "word": "Xilofon",
+                        "initial": "X",
+                        "display_order": 5,
+                        "tested": true,
+                        "question_logical_id": "ME-S-012",
+                        "content_origin": "original_internal",
+                        "source_reference": null,
+                        "copyright_status": "internally_authored",
+                        "normative_compatibility": "none",
+                        "review_status": "human_review_passed",
+                        "active": false
+                    }
+                ]
+            },
+            {
+                "key": "E",
+                "name": "Transportasi",
+                "display_order": 5,
+                "words": [
+                    {
+                        "logical_id": "me-word-f",
+                        "word": "Feri",
+                        "initial": "F",
+                        "display_order": 1,
+                        "tested": false,
+                        "question_logical_id": null,
+                        "content_origin": "original_internal",
+                        "source_reference": null,
+                        "copyright_status": "internally_authored",
+                        "normative_compatibility": "none",
+                        "review_status": "human_review_passed",
+                        "active": false
+                    },
+                    {
+                        "logical_id": "me-word-h",
+                        "word": "Helikopter",
+                        "initial": "H",
+                        "display_order": 2,
+                        "tested": true,
+                        "question_logical_id": "ME-S-004",
+                        "content_origin": "original_internal",
+                        "source_reference": null,
+                        "copyright_status": "internally_authored",
+                        "normative_compatibility": "none",
+                        "review_status": "human_review_passed",
+                        "active": false
+                    },
+                    {
+                        "logical_id": "me-word-s",
+                        "word": "Sepeda",
+                        "initial": "S",
+                        "display_order": 3,
+                        "tested": true,
+                        "question_logical_id": "ME-S-008",
+                        "content_origin": "original_internal",
+                        "source_reference": null,
+                        "copyright_status": "internally_authored",
+                        "normative_compatibility": "none",
+                        "review_status": "human_review_passed",
+                        "active": false
+                    },
+                    {
+                        "logical_id": "me-word-v",
+                        "word": "Van",
+                        "initial": "V",
+                        "display_order": 4,
+                        "tested": false,
+                        "question_logical_id": null,
+                        "content_origin": "original_internal",
+                        "source_reference": null,
+                        "copyright_status": "internally_authored",
+                        "normative_compatibility": "none",
+                        "review_status": "human_review_passed",
+                        "active": false
+                    },
+                    {
+                        "logical_id": "me-word-y",
+                        "word": "Yacht",
+                        "initial": "Y",
+                        "display_order": 5,
+                        "tested": false,
+                        "question_logical_id": null,
+                        "content_origin": "original_internal",
+                        "source_reference": null,
+                        "copyright_status": "internally_authored",
+                        "normative_compatibility": "none",
+                        "review_status": "human_review_passed",
+                        "active": false
+                    }
+                ]
+            }
+        ],
+        "review": {
+            "initial_uniqueness": "pass",
+            "category_membership": "pass",
+            "ambiguity_review": "pass",
+            "memorization_duration_seconds": 120,
+            "answering_duration_seconds": 240
+        }
+    },
+    "questions": [
+        {
+            "logical_id": "ME-E-001",
+            "subtest_code": "ME",
+            "kind": "example",
+            "question_number": 1,
+            "display_order": 1,
+            "answer_type": "single_choice",
+            "difficulty_target": null,
+            "prompt": "Kata yang mempunyai huruf permulaan P termasuk kelompok …",
+            "explanation": "Jawaban yang benar adalah Peralatan. Pada subtes utama, Anda tidak akan diberi nama katanya. Anda harus mengingat kata berdasarkan huruf awalnya, kemudian menentukan kelompok tempat kata tersebut berada. Contoh tidak dihitung dalam skor.",
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-original/stage-17-me-category-memory#example"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": "Tanaman",
+                    "display_order": 1,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "B",
+                    "text": "Peralatan",
+                    "display_order": 2,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": null
+                },
+                {
+                    "key": "C",
+                    "text": "Hewan",
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "D",
+                    "text": "Kesenian",
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "E",
+                    "text": "Transportasi",
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                }
+            ],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "me-example-001",
+                    "memory_model": "initial_letter_to_category",
+                    "example_word": "Pahat",
+                    "example_initial": "P",
+                    "example_category_key": "B",
+                    "example_category_name": "Peralatan",
+                    "rationale": "Contoh menggunakan kata latihan di luar 25 kata hafalan utama sehingga tidak membocorkan target scored."
+                }
+            }
+        },
+        {
+            "logical_id": "ME-S-001",
+            "subtest_code": "ME",
+            "kind": "scored",
+            "question_number": 1,
+            "display_order": 1,
+            "answer_type": "single_choice",
+            "difficulty_target": "easy",
+            "prompt": "Kata yang mempunyai huruf permulaan A termasuk kelompok …",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-original/stage-17-me-category-memory#me-s-001"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": "Tanaman",
+                    "display_order": 1,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": null
+                },
+                {
+                    "key": "B",
+                    "text": "Peralatan",
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "C",
+                    "text": "Hewan",
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "D",
+                    "text": "Kesenian",
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "E",
+                    "text": "Transportasi",
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                }
+            ],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "me-001",
+                    "memory_model": "initial_letter_to_category",
+                    "target_initial": "A",
+                    "target_word": "Anggrek",
+                    "target_category_key": "A",
+                    "target_category_name": "Tanaman",
+                    "rationale": "Huruf A hanya muncul sebagai huruf awal kata Anggrek dalam seluruh materi hafalan; kata tersebut berada pada kelompok Tanaman."
+                }
+            }
+        },
+        {
+            "logical_id": "ME-S-002",
+            "subtest_code": "ME",
+            "kind": "scored",
+            "question_number": 2,
+            "display_order": 2,
+            "answer_type": "single_choice",
+            "difficulty_target": "easy",
+            "prompt": "Kata yang mempunyai huruf permulaan B termasuk kelompok …",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-original/stage-17-me-category-memory#me-s-002"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": "Tanaman",
+                    "display_order": 1,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "B",
+                    "text": "Peralatan",
+                    "display_order": 2,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": null
+                },
+                {
+                    "key": "C",
+                    "text": "Hewan",
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "D",
+                    "text": "Kesenian",
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "E",
+                    "text": "Transportasi",
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                }
+            ],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "me-002",
+                    "memory_model": "initial_letter_to_category",
+                    "target_initial": "B",
+                    "target_word": "Bor",
+                    "target_category_key": "B",
+                    "target_category_name": "Peralatan",
+                    "rationale": "Huruf B hanya muncul sebagai huruf awal kata Bor dalam seluruh materi hafalan; kata tersebut berada pada kelompok Peralatan."
+                }
+            }
+        },
+        {
+            "logical_id": "ME-S-003",
+            "subtest_code": "ME",
+            "kind": "scored",
+            "question_number": 3,
+            "display_order": 3,
+            "answer_type": "single_choice",
+            "difficulty_target": "easy",
+            "prompt": "Kata yang mempunyai huruf permulaan E termasuk kelompok …",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-original/stage-17-me-category-memory#me-s-003"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": "Tanaman",
+                    "display_order": 1,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "B",
+                    "text": "Peralatan",
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "C",
+                    "text": "Hewan",
+                    "display_order": 3,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": null
+                },
+                {
+                    "key": "D",
+                    "text": "Kesenian",
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "E",
+                    "text": "Transportasi",
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                }
+            ],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "me-003",
+                    "memory_model": "initial_letter_to_category",
+                    "target_initial": "E",
+                    "target_word": "Elang",
+                    "target_category_key": "C",
+                    "target_category_name": "Hewan",
+                    "rationale": "Huruf E hanya muncul sebagai huruf awal kata Elang dalam seluruh materi hafalan; kata tersebut berada pada kelompok Hewan."
+                }
+            }
+        },
+        {
+            "logical_id": "ME-S-004",
+            "subtest_code": "ME",
+            "kind": "scored",
+            "question_number": 4,
+            "display_order": 4,
+            "answer_type": "single_choice",
+            "difficulty_target": "easy",
+            "prompt": "Kata yang mempunyai huruf permulaan H termasuk kelompok …",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-original/stage-17-me-category-memory#me-s-004"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": "Tanaman",
+                    "display_order": 1,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "B",
+                    "text": "Peralatan",
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "C",
+                    "text": "Hewan",
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "D",
+                    "text": "Kesenian",
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "E",
+                    "text": "Transportasi",
+                    "display_order": 5,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": null
+                }
+            ],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "me-004",
+                    "memory_model": "initial_letter_to_category",
+                    "target_initial": "H",
+                    "target_word": "Helikopter",
+                    "target_category_key": "E",
+                    "target_category_name": "Transportasi",
+                    "rationale": "Huruf H hanya muncul sebagai huruf awal kata Helikopter dalam seluruh materi hafalan; kata tersebut berada pada kelompok Transportasi."
+                }
+            }
+        },
+        {
+            "logical_id": "ME-S-005",
+            "subtest_code": "ME",
+            "kind": "scored",
+            "question_number": 5,
+            "display_order": 5,
+            "answer_type": "single_choice",
+            "difficulty_target": "medium",
+            "prompt": "Kata yang mempunyai huruf permulaan G termasuk kelompok …",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-original/stage-17-me-category-memory#me-s-005"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": "Tanaman",
+                    "display_order": 1,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "B",
+                    "text": "Peralatan",
+                    "display_order": 2,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": null
+                },
+                {
+                    "key": "C",
+                    "text": "Hewan",
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "D",
+                    "text": "Kesenian",
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "E",
+                    "text": "Transportasi",
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                }
+            ],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "me-005",
+                    "memory_model": "initial_letter_to_category",
+                    "target_initial": "G",
+                    "target_word": "Gergaji",
+                    "target_category_key": "B",
+                    "target_category_name": "Peralatan",
+                    "rationale": "Huruf G hanya muncul sebagai huruf awal kata Gergaji dalam seluruh materi hafalan; kata tersebut berada pada kelompok Peralatan."
+                }
+            }
+        },
+        {
+            "logical_id": "ME-S-006",
+            "subtest_code": "ME",
+            "kind": "scored",
+            "question_number": 6,
+            "display_order": 6,
+            "answer_type": "single_choice",
+            "difficulty_target": "medium",
+            "prompt": "Kata yang mempunyai huruf permulaan J termasuk kelompok …",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-original/stage-17-me-category-memory#me-s-006"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": "Tanaman",
+                    "display_order": 1,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "B",
+                    "text": "Peralatan",
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "C",
+                    "text": "Hewan",
+                    "display_order": 3,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": null
+                },
+                {
+                    "key": "D",
+                    "text": "Kesenian",
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "E",
+                    "text": "Transportasi",
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                }
+            ],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "me-006",
+                    "memory_model": "initial_letter_to_category",
+                    "target_initial": "J",
+                    "target_word": "Jerapah",
+                    "target_category_key": "C",
+                    "target_category_name": "Hewan",
+                    "rationale": "Huruf J hanya muncul sebagai huruf awal kata Jerapah dalam seluruh materi hafalan; kata tersebut berada pada kelompok Hewan."
+                }
+            }
+        },
+        {
+            "logical_id": "ME-S-007",
+            "subtest_code": "ME",
+            "kind": "scored",
+            "question_number": 7,
+            "display_order": 7,
+            "answer_type": "single_choice",
+            "difficulty_target": "medium",
+            "prompt": "Kata yang mempunyai huruf permulaan L termasuk kelompok …",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-original/stage-17-me-category-memory#me-s-007"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": "Tanaman",
+                    "display_order": 1,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "B",
+                    "text": "Peralatan",
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "C",
+                    "text": "Hewan",
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "D",
+                    "text": "Kesenian",
+                    "display_order": 4,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": null
+                },
+                {
+                    "key": "E",
+                    "text": "Transportasi",
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                }
+            ],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "me-007",
+                    "memory_model": "initial_letter_to_category",
+                    "target_initial": "L",
+                    "target_word": "Lukisan",
+                    "target_category_key": "D",
+                    "target_category_name": "Kesenian",
+                    "rationale": "Huruf L hanya muncul sebagai huruf awal kata Lukisan dalam seluruh materi hafalan; kata tersebut berada pada kelompok Kesenian."
+                }
+            }
+        },
+        {
+            "logical_id": "ME-S-008",
+            "subtest_code": "ME",
+            "kind": "scored",
+            "question_number": 8,
+            "display_order": 8,
+            "answer_type": "single_choice",
+            "difficulty_target": "medium",
+            "prompt": "Kata yang mempunyai huruf permulaan S termasuk kelompok …",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-original/stage-17-me-category-memory#me-s-008"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": "Tanaman",
+                    "display_order": 1,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "B",
+                    "text": "Peralatan",
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "C",
+                    "text": "Hewan",
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "D",
+                    "text": "Kesenian",
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "E",
+                    "text": "Transportasi",
+                    "display_order": 5,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": null
+                }
+            ],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "me-008",
+                    "memory_model": "initial_letter_to_category",
+                    "target_initial": "S",
+                    "target_word": "Sepeda",
+                    "target_category_key": "E",
+                    "target_category_name": "Transportasi",
+                    "rationale": "Huruf S hanya muncul sebagai huruf awal kata Sepeda dalam seluruh materi hafalan; kata tersebut berada pada kelompok Transportasi."
+                }
+            }
+        },
+        {
+            "logical_id": "ME-S-009",
+            "subtest_code": "ME",
+            "kind": "scored",
+            "question_number": 9,
+            "display_order": 9,
+            "answer_type": "single_choice",
+            "difficulty_target": "medium",
+            "prompt": "Kata yang mempunyai huruf permulaan T termasuk kelompok …",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-original/stage-17-me-category-memory#me-s-009"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": "Tanaman",
+                    "display_order": 1,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": null
+                },
+                {
+                    "key": "B",
+                    "text": "Peralatan",
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "C",
+                    "text": "Hewan",
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "D",
+                    "text": "Kesenian",
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "E",
+                    "text": "Transportasi",
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                }
+            ],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "me-009",
+                    "memory_model": "initial_letter_to_category",
+                    "target_initial": "T",
+                    "target_word": "Teratai",
+                    "target_category_key": "A",
+                    "target_category_name": "Tanaman",
+                    "rationale": "Huruf T hanya muncul sebagai huruf awal kata Teratai dalam seluruh materi hafalan; kata tersebut berada pada kelompok Tanaman."
+                }
+            }
+        },
+        {
+            "logical_id": "ME-S-010",
+            "subtest_code": "ME",
+            "kind": "scored",
+            "question_number": 10,
+            "display_order": 10,
+            "answer_type": "single_choice",
+            "difficulty_target": "hard",
+            "prompt": "Kata yang mempunyai huruf permulaan Q termasuk kelompok …",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-original/stage-17-me-category-memory#me-s-010"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": "Tanaman",
+                    "display_order": 1,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "B",
+                    "text": "Peralatan",
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "C",
+                    "text": "Hewan",
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "D",
+                    "text": "Kesenian",
+                    "display_order": 4,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": null
+                },
+                {
+                    "key": "E",
+                    "text": "Transportasi",
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                }
+            ],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "me-010",
+                    "memory_model": "initial_letter_to_category",
+                    "target_initial": "Q",
+                    "target_word": "Qasidah",
+                    "target_category_key": "D",
+                    "target_category_name": "Kesenian",
+                    "rationale": "Huruf Q hanya muncul sebagai huruf awal kata Qasidah dalam seluruh materi hafalan; kata tersebut berada pada kelompok Kesenian."
+                }
+            }
+        },
+        {
+            "logical_id": "ME-S-011",
+            "subtest_code": "ME",
+            "kind": "scored",
+            "question_number": 11,
+            "display_order": 11,
+            "answer_type": "single_choice",
+            "difficulty_target": "hard",
+            "prompt": "Kata yang mempunyai huruf permulaan U termasuk kelompok …",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-original/stage-17-me-category-memory#me-s-011"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": "Tanaman",
+                    "display_order": 1,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "B",
+                    "text": "Peralatan",
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "C",
+                    "text": "Hewan",
+                    "display_order": 3,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": null
+                },
+                {
+                    "key": "D",
+                    "text": "Kesenian",
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "E",
+                    "text": "Transportasi",
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                }
+            ],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "me-011",
+                    "memory_model": "initial_letter_to_category",
+                    "target_initial": "U",
+                    "target_word": "Unta",
+                    "target_category_key": "C",
+                    "target_category_name": "Hewan",
+                    "rationale": "Huruf U hanya muncul sebagai huruf awal kata Unta dalam seluruh materi hafalan; kata tersebut berada pada kelompok Hewan."
+                }
+            }
+        },
+        {
+            "logical_id": "ME-S-012",
+            "subtest_code": "ME",
+            "kind": "scored",
+            "question_number": 12,
+            "display_order": 12,
+            "answer_type": "single_choice",
+            "difficulty_target": "hard",
+            "prompt": "Kata yang mempunyai huruf permulaan X termasuk kelompok …",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-original/stage-17-me-category-memory#me-s-012"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": "Tanaman",
+                    "display_order": 1,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "B",
+                    "text": "Peralatan",
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "C",
+                    "text": "Hewan",
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "D",
+                    "text": "Kesenian",
+                    "display_order": 4,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": null
+                },
+                {
+                    "key": "E",
+                    "text": "Transportasi",
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                }
+            ],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "me-012",
+                    "memory_model": "initial_letter_to_category",
+                    "target_initial": "X",
+                    "target_word": "Xilofon",
+                    "target_category_key": "D",
+                    "target_category_name": "Kesenian",
+                    "rationale": "Huruf X hanya muncul sebagai huruf awal kata Xilofon dalam seluruh materi hafalan; kata tersebut berada pada kelompok Kesenian."
+                }
+            }
+        }
+    ]
+}

@@ -26,6 +26,11 @@ final class FinalDatasetFactory
             $subtestEntries[] = [
                 'code' => $code,
                 'file' => $file,
+                'name' => $definition['name'],
+                'sequence' => $definition['sequence'],
+                'question_count' => $definition['question_count'],
+                'default_answer_type' => $definition['default_answer_type'],
+                'answer_type' => $definition['default_answer_type'],
                 'scored_question_count' => $definition['question_count'],
                 'example_count' => 1,
                 'duration_seconds' => $definition['duration_seconds'],
@@ -213,14 +218,14 @@ final class FinalDatasetFactory
     ): array {
         $prefix = $kind === 'scored' ? 'S' : 'E';
         $logicalId = sprintf('%s-%s-%03d', $code, $prefix, $number);
-        $scoring = ['max_score' => $answerType === IstAnswerType::SINGLE_CHOICE_WEIGHTED ? 4 : 1];
+        $scoring = ['max_score' => $answerType === IstAnswerType::SINGLE_CHOICE_WEIGHTED ? 3 : 1];
 
         if ($answerType === IstAnswerType::NUMERIC) {
             $scoring['canonical_answer'] = (string) ($number + 10);
         }
 
         if ($answerType === IstAnswerType::SINGLE_CHOICE_WEIGHTED) {
-            $scoring['rationale'] = '[TEST-FIXTURE] Bobot sintetis 4–0 untuk memvalidasi kontrak partial.';
+            $scoring['rationale'] = '[TEST-FIXTURE] Bobot sintetis 3–0 untuk memvalidasi kontrak partial.';
         }
 
         return [
@@ -265,7 +270,7 @@ final class FinalDatasetFactory
         return array_map(function (string $key, int $index) use ($answerType, $correctIndex): array {
             $isCorrect = $index === $correctIndex;
             $score = $answerType === IstAnswerType::SINGLE_CHOICE_WEIGHTED
-                ? [4, 3, 2, 1, 0][($index - $correctIndex + 5) % 5]
+                ? [3, 2, 2, 1, 0][($index - $correctIndex + 5) % 5]
                 : ($isCorrect ? 1 : 0);
 
             return [

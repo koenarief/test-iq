@@ -77,4 +77,86 @@ final class IstFinalEnvironmentGuardTest extends TestCase
 
         $this->addToAssertionCount(1);
     }
+
+    public function test_automated_test_database_is_rejected_for_real_final_dataset(): void
+    {
+        $this->expectException(UnsafeIstFinalDatabaseException::class);
+
+        $this->guard->assertConfigurationSafe(
+            'testing',
+            'mysql',
+            'tes_iq_testing',
+            ['tes_iq_testing'],
+            'tes_iq_testing',
+            true,
+            false,
+        );
+    }
+
+    public function test_automated_test_database_is_allowed_only_for_marked_test_fixture(): void
+    {
+        $this->guard->assertConfigurationSafe(
+            'testing',
+            'mysql',
+            'tes_iq_testing',
+            ['tes_iq_testing'],
+            'tes_iq_testing',
+            true,
+            true,
+        );
+        $this->guard->assertDatabaseNamesSafe(
+            'tes_iq_testing',
+            'tes_iq_testing',
+            ['tes_iq_testing'],
+            'tes_iq_testing',
+            true,
+            true,
+        );
+
+        $this->addToAssertionCount(1);
+    }
+
+    public function test_primary_database_requires_separate_production_gate(): void
+    {
+        $this->expectException(UnsafeIstFinalDatabaseException::class);
+
+        $this->guard->assertConfigurationSafe(
+            'local',
+            'mysql',
+            'tes_iq',
+            ['tes_iq'],
+            'tes_iq',
+            true,
+            false,
+            'tes_iq',
+            false,
+        );
+    }
+
+    public function test_primary_database_can_only_pass_when_production_gate_and_allowlist_match(): void
+    {
+        $this->guard->assertConfigurationSafe(
+            'local',
+            'mysql',
+            'tes_iq',
+            ['tes_iq'],
+            'tes_iq',
+            true,
+            false,
+            'tes_iq',
+            true,
+        );
+        $this->guard->assertDatabaseNamesSafe(
+            'tes_iq',
+            'tes_iq',
+            ['tes_iq'],
+            'tes_iq',
+            true,
+            false,
+            'tes_iq',
+            true,
+        );
+
+        $this->addToAssertionCount(1);
+    }
 }

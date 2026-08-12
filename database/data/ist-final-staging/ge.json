@@ -1,0 +1,930 @@
+{
+    "schema_version": 1,
+    "instrument_identifier": "tes-kemampuan-kognitif-adaptasi-104",
+    "question_bank_version": "2026.08.06-stage17",
+    "subtest_code": "GE",
+    "review_status": "human_review_passed",
+    "active": false,
+    "content_origin": "original_internal",
+    "source_reference": null,
+    "copyright_status": "internally_authored",
+    "normative_compatibility": "none",
+    "instruction_content": "Setiap soal menampilkan dua konsep. Pilih opsi yang paling tepat menjelaskan persamaan utama keduanya.",
+    "memorization_content": null,
+    "memorization": null,
+    "questions": [
+        {
+            "logical_id": "GE-E-001",
+            "subtest_code": "GE",
+            "kind": "example",
+            "question_number": 1,
+            "display_order": 1,
+            "answer_type": "single_choice_weighted",
+            "difficulty_target": null,
+            "prompt": "Apakah persamaan utama antara jam dinding dan kalender?",
+            "explanation": "Keduanya membantu manusia memahami dan mengatur waktu. Jam menunjukkan waktu dalam sehari, sedangkan kalender menunjukkan hari dan tanggal.",
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-13-ge-weighted.md#ge-example-001"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 3,
+                "rationale": "Skor 3 menyatakan fungsi temporal bersama secara paling tepat. Skor 2 masih menggambarkan persamaan yang relevan tetapi lebih umum. Skor 1 hanya menyebut ciri permukaan. Skor 0 tidak sesuai."
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": "Benda yang dapat ditempatkan pada dinding",
+                    "display_order": 1,
+                    "correct": false,
+                    "score": 1,
+                    "media_ref": null
+                },
+                {
+                    "key": "B",
+                    "text": "Alat bantu untuk memahami dan mengatur waktu",
+                    "display_order": 2,
+                    "correct": true,
+                    "score": 3,
+                    "media_ref": null
+                },
+                {
+                    "key": "C",
+                    "text": "Penyaji informasi yang dapat dilihat",
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 2,
+                    "media_ref": null
+                },
+                {
+                    "key": "D",
+                    "text": "Benda yang memuat angka atau tanda",
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 2,
+                    "media_ref": null
+                },
+                {
+                    "key": "E",
+                    "text": "Alat untuk mengukur suhu",
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                }
+            ],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "ge-example-001",
+                    "rationale": "Persamaan utama berada pada fungsi temporal, bukan bentuk fisik atau penempatan."
+                }
+            }
+        },
+        {
+            "logical_id": "GE-S-001",
+            "subtest_code": "GE",
+            "kind": "scored",
+            "question_number": 1,
+            "display_order": 1,
+            "answer_type": "single_choice_weighted",
+            "difficulty_target": "easy",
+            "prompt": "Apakah persamaan utama antara payung dan jas hujan?",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-13-ge-weighted.md#ge-001"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 3,
+                "rationale": "Skor 3 menyebut fungsi perlindungan dari hujan secara spesifik. Skor 2 tetap relevan tetapi lebih umum. Skor 1 hanya ciri penggunaan. Skor 0 tidak sesuai."
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": "Perlengkapan untuk menghadapi kondisi cuaca",
+                    "display_order": 1,
+                    "correct": false,
+                    "score": 2,
+                    "media_ref": null
+                },
+                {
+                    "key": "B",
+                    "text": "Alat untuk mengeringkan pakaian",
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "C",
+                    "text": "Perlengkapan yang melindungi tubuh dari hujan",
+                    "display_order": 3,
+                    "correct": true,
+                    "score": 3,
+                    "media_ref": null
+                },
+                {
+                    "key": "D",
+                    "text": "Barang yang biasa dipakai di luar ruangan",
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 2,
+                    "media_ref": null
+                },
+                {
+                    "key": "E",
+                    "text": "Benda yang dapat disimpan setelah dipakai",
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 1,
+                    "media_ref": null
+                }
+            ],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "ge-001",
+                    "rationale": "Persamaan utama adalah fungsi protektif terhadap hujan."
+                }
+            }
+        },
+        {
+            "logical_id": "GE-S-002",
+            "subtest_code": "GE",
+            "kind": "scored",
+            "question_number": 2,
+            "display_order": 2,
+            "answer_type": "single_choice_weighted",
+            "difficulty_target": "easy",
+            "prompt": "Apakah persamaan utama antara sepeda dan perahu dayung?",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-13-ge-weighted.md#ge-002"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 3,
+                "rationale": "Skor 3 menangkap fungsi transportasi dan sumber tenaga manusia. Skor 2 hanya menyebut fungsi transportasi atau konteks penggunaan. Skor 1 sangat umum. Skor 0 salah."
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": "Alat transportasi yang digerakkan dengan tenaga manusia",
+                    "display_order": 1,
+                    "correct": true,
+                    "score": 3,
+                    "media_ref": null
+                },
+                {
+                    "key": "B",
+                    "text": "Alat yang memindahkan orang dari satu tempat ke tempat lain",
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 2,
+                    "media_ref": null
+                },
+                {
+                    "key": "C",
+                    "text": "Benda yang dapat digunakan untuk kegiatan luar ruang",
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 2,
+                    "media_ref": null
+                },
+                {
+                    "key": "D",
+                    "text": "Kendaraan yang selalu menggunakan bahan bakar",
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "E",
+                    "text": "Barang yang dapat dimiliki secara pribadi",
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 1,
+                    "media_ref": null
+                }
+            ],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "ge-002",
+                    "rationale": "Keduanya merupakan sarana transportasi yang dapat digerakkan oleh tenaga manusia."
+                }
+            }
+        },
+        {
+            "logical_id": "GE-S-003",
+            "subtest_code": "GE",
+            "kind": "scored",
+            "question_number": 3,
+            "display_order": 3,
+            "answer_type": "single_choice_weighted",
+            "difficulty_target": "easy",
+            "prompt": "Apakah persamaan utama antara pensil dan kapur tulis?",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-13-ge-weighted.md#ge-003"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 3,
+                "rationale": "Skor 3 menyebut fungsi utama sebagai alat membuat tanda atau tulisan. Skor 2 benar tetapi lebih umum. Skor 1 hanya ciri bentuk. Skor 0 tidak sesuai."
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": "Benda yang biasanya berbentuk memanjang",
+                    "display_order": 1,
+                    "correct": false,
+                    "score": 1,
+                    "media_ref": null
+                },
+                {
+                    "key": "B",
+                    "text": "Alat untuk membuat tulisan atau gambar pada permukaan",
+                    "display_order": 2,
+                    "correct": true,
+                    "score": 3,
+                    "media_ref": null
+                },
+                {
+                    "key": "C",
+                    "text": "Perlengkapan yang sering digunakan dalam kegiatan belajar",
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 2,
+                    "media_ref": null
+                },
+                {
+                    "key": "D",
+                    "text": "Alat yang meninggalkan tanda ketika digunakan",
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 2,
+                    "media_ref": null
+                },
+                {
+                    "key": "E",
+                    "text": "Alat yang menggunakan tinta cair",
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                }
+            ],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "ge-003",
+                    "rationale": "Persamaan utama terletak pada fungsi membuat tanda atau tulisan."
+                }
+            }
+        },
+        {
+            "logical_id": "GE-S-004",
+            "subtest_code": "GE",
+            "kind": "scored",
+            "question_number": 4,
+            "display_order": 4,
+            "answer_type": "single_choice_weighted",
+            "difficulty_target": "medium",
+            "prompt": "Apakah persamaan utama antara peta dan diagram?",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-13-ge-weighted.md#ge-004"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 3,
+                "rationale": "Skor 3 menangkap fungsi representasi informasi secara visual dan terstruktur. Skor 2 menggambarkan karakter relevan namun kurang lengkap. Skor 1 terlalu umum. Skor 0 salah."
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": "Representasi visual yang membantu memahami informasi atau hubungan",
+                    "display_order": 1,
+                    "correct": true,
+                    "score": 3,
+                    "media_ref": null
+                },
+                {
+                    "key": "B",
+                    "text": "Gambar yang menggunakan simbol atau tanda",
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 2,
+                    "media_ref": null
+                },
+                {
+                    "key": "C",
+                    "text": "Media yang menyajikan informasi secara visual",
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 2,
+                    "media_ref": null
+                },
+                {
+                    "key": "D",
+                    "text": "Benda yang selalu menunjukkan lokasi geografis",
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "E",
+                    "text": "Dokumen yang dapat dicetak pada kertas",
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 1,
+                    "media_ref": null
+                }
+            ],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "ge-004",
+                    "rationale": "Peta dan diagram sama-sama menyederhanakan informasi melalui representasi visual."
+                }
+            }
+        },
+        {
+            "logical_id": "GE-S-005",
+            "subtest_code": "GE",
+            "kind": "scored",
+            "question_number": 5,
+            "display_order": 5,
+            "answer_type": "single_choice_weighted",
+            "difficulty_target": "medium",
+            "prompt": "Apakah persamaan utama antara aturan dan jadwal?",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-13-ge-weighted.md#ge-005"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 3,
+                "rationale": "Skor 3 menyatakan fungsi pengaturan perilaku atau aktivitas. Skor 2 benar pada tingkat umum. Skor 1 hanya karakter formal. Skor 0 tidak relevan."
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": "Sarana untuk mengatur pelaksanaan aktivitas",
+                    "display_order": 1,
+                    "correct": true,
+                    "score": 3,
+                    "media_ref": null
+                },
+                {
+                    "key": "B",
+                    "text": "Pedoman yang membantu menciptakan keteraturan",
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 2,
+                    "media_ref": null
+                },
+                {
+                    "key": "C",
+                    "text": "Dokumen atau informasi yang dapat dijadikan acuan",
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 2,
+                    "media_ref": null
+                },
+                {
+                    "key": "D",
+                    "text": "Benda yang selalu ditulis dalam bentuk tabel",
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "E",
+                    "text": "Sesuatu yang biasanya dibuat sebelum kegiatan berlangsung",
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 1,
+                    "media_ref": null
+                }
+            ],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "ge-005",
+                    "rationale": "Keduanya digunakan untuk memberi struktur dan keteraturan pada aktivitas."
+                }
+            }
+        },
+        {
+            "logical_id": "GE-S-006",
+            "subtest_code": "GE",
+            "kind": "scored",
+            "question_number": 6,
+            "display_order": 6,
+            "answer_type": "single_choice_weighted",
+            "difficulty_target": "medium",
+            "prompt": "Apakah persamaan utama antara hipotesis dan ramalan?",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-13-ge-weighted.md#ge-006"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 3,
+                "rationale": "Skor 3 menangkap sifat keduanya sebagai pernyataan yang belum pasti dan memerlukan pembuktian atau kenyataan berikutnya. Skor 2 menggambarkan sebagian karakter. Skor 1 terlalu luas. Skor 0 salah."
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": "Pernyataan mengenai sesuatu yang belum dapat dipastikan sepenuhnya",
+                    "display_order": 1,
+                    "correct": true,
+                    "score": 3,
+                    "media_ref": null
+                },
+                {
+                    "key": "B",
+                    "text": "Pernyataan yang dapat dibandingkan dengan hasil atau kenyataan",
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 2,
+                    "media_ref": null
+                },
+                {
+                    "key": "C",
+                    "text": "Bentuk perkiraan berdasarkan informasi tertentu",
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 2,
+                    "media_ref": null
+                },
+                {
+                    "key": "D",
+                    "text": "Kesimpulan yang telah terbukti benar",
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "E",
+                    "text": "Pernyataan yang dibuat sebelum hasil diketahui",
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 1,
+                    "media_ref": null
+                }
+            ],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "ge-006",
+                    "rationale": "Keduanya mengandung unsur ketidakpastian mengenai keadaan atau hasil yang belum sepenuhnya diketahui."
+                }
+            }
+        },
+        {
+            "logical_id": "GE-S-007",
+            "subtest_code": "GE",
+            "kind": "scored",
+            "question_number": 7,
+            "display_order": 7,
+            "answer_type": "single_choice_weighted",
+            "difficulty_target": "medium",
+            "prompt": "Apakah persamaan utama antara filter dan pemeriksaan?",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-13-ge-weighted.md#ge-007"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 3,
+                "rationale": "Skor 3 menangkap fungsi seleksi berdasarkan kriteria. Skor 2 masih relevan tetapi lebih umum. Skor 1 sekadar akibat umum. Skor 0 berlawanan."
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": "Proses untuk memilah atau menyeleksi berdasarkan kriteria tertentu",
+                    "display_order": 1,
+                    "correct": true,
+                    "score": 3,
+                    "media_ref": null
+                },
+                {
+                    "key": "B",
+                    "text": "Cara untuk menentukan apakah sesuatu memenuhi persyaratan",
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 2,
+                    "media_ref": null
+                },
+                {
+                    "key": "C",
+                    "text": "Proses yang membantu mengurangi unsur yang tidak sesuai",
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 2,
+                    "media_ref": null
+                },
+                {
+                    "key": "D",
+                    "text": "Proses untuk memasukkan semua unsur tanpa pengecualian",
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "E",
+                    "text": "Kegiatan yang dapat menghasilkan pilihan",
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 1,
+                    "media_ref": null
+                }
+            ],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "ge-007",
+                    "rationale": "Keduanya dapat berfungsi menyeleksi objek atau informasi menurut kriteria tertentu."
+                }
+            }
+        },
+        {
+            "logical_id": "GE-S-008",
+            "subtest_code": "GE",
+            "kind": "scored",
+            "question_number": 8,
+            "display_order": 8,
+            "answer_type": "single_choice_weighted",
+            "difficulty_target": "hard",
+            "prompt": "Apakah persamaan utama antara teori dan peta?",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-13-ge-weighted.md#ge-008"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 3,
+                "rationale": "Skor 3 menangkap fungsi keduanya sebagai representasi yang menyederhanakan realitas. Skor 2 mengarah pada fungsi penjelasan tetapi kurang lengkap. Skor 1 terlalu umum. Skor 0 salah."
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": "Representasi yang menyederhanakan sebagian aspek realitas",
+                    "display_order": 1,
+                    "correct": true,
+                    "score": 3,
+                    "media_ref": null
+                },
+                {
+                    "key": "B",
+                    "text": "Kerangka yang membantu memahami sesuatu yang kompleks",
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 2,
+                    "media_ref": null
+                },
+                {
+                    "key": "C",
+                    "text": "Alat bantu untuk menjelaskan hubungan tertentu",
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 2,
+                    "media_ref": null
+                },
+                {
+                    "key": "D",
+                    "text": "Salinan yang selalu sama persis dengan kenyataan",
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "E",
+                    "text": "Sesuatu yang dapat digunakan sebagai acuan",
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 1,
+                    "media_ref": null
+                }
+            ],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "ge-008",
+                    "rationale": "Teori dan peta sama-sama merupakan model representasional yang menyederhanakan kenyataan."
+                }
+            }
+        },
+        {
+            "logical_id": "GE-S-009",
+            "subtest_code": "GE",
+            "kind": "scored",
+            "question_number": 9,
+            "display_order": 9,
+            "answer_type": "single_choice_weighted",
+            "difficulty_target": "hard",
+            "prompt": "Apakah persamaan utama antara bukti dan indikator?",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-13-ge-weighted.md#ge-009"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 3,
+                "rationale": "Skor 3 menyatakan bahwa keduanya digunakan sebagai dasar inferensi terhadap kondisi yang tidak selalu diamati secara langsung. Skor 2 relevan tetapi kurang spesifik. Skor 1 terlalu umum. Skor 0 salah."
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": "Informasi yang dapat digunakan untuk menilai atau menyimpulkan suatu kondisi",
+                    "display_order": 1,
+                    "correct": true,
+                    "score": 3,
+                    "media_ref": null
+                },
+                {
+                    "key": "B",
+                    "text": "Petunjuk yang membantu mendukung suatu penilaian",
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 2,
+                    "media_ref": null
+                },
+                {
+                    "key": "C",
+                    "text": "Sumber informasi yang memiliki hubungan dengan suatu keadaan",
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 2,
+                    "media_ref": null
+                },
+                {
+                    "key": "D",
+                    "text": "Pernyataan yang tidak memerlukan interpretasi apa pun",
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "E",
+                    "text": "Sesuatu yang dapat diperhatikan oleh pengamat",
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 1,
+                    "media_ref": null
+                }
+            ],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "ge-009",
+                    "rationale": "Bukti dan indikator sama-sama dipakai untuk mendukung inferensi mengenai suatu keadaan."
+                }
+            }
+        },
+        {
+            "logical_id": "GE-S-010",
+            "subtest_code": "GE",
+            "kind": "scored",
+            "question_number": 10,
+            "display_order": 10,
+            "answer_type": "single_choice_weighted",
+            "difficulty_target": "hard",
+            "prompt": "Apakah persamaan utama antara prinsip dan algoritma?",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-13-ge-weighted.md#ge-010"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 3,
+                "rationale": "Skor 3 menangkap fungsi keduanya sebagai dasar yang mengarahkan tindakan atau proses. Skor 2 mengandung hubungan relevan tetapi lebih sempit atau lebih umum. Skor 1 hanya ciri formal. Skor 0 salah."
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": "Kerangka yang memberi arah pada cara bertindak atau menyelesaikan proses",
+                    "display_order": 1,
+                    "correct": true,
+                    "score": 3,
+                    "media_ref": null
+                },
+                {
+                    "key": "B",
+                    "text": "Pedoman yang membantu menghasilkan tindakan yang lebih terstruktur",
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 2,
+                    "media_ref": null
+                },
+                {
+                    "key": "C",
+                    "text": "Dasar yang dapat digunakan untuk menentukan langkah atau keputusan",
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 2,
+                    "media_ref": null
+                },
+                {
+                    "key": "D",
+                    "text": "Daftar langkah yang selalu bersifat matematis",
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "E",
+                    "text": "Sesuatu yang dapat ditulis dalam bentuk aturan",
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 1,
+                    "media_ref": null
+                }
+            ],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "ge-010",
+                    "rationale": "Prinsip dan algoritma sama-sama menyediakan struktur yang mengarahkan cara menjalankan tindakan atau proses."
+                }
+            }
+        }
+    ]
+}

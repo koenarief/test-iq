@@ -9,6 +9,7 @@ Pipeline tidak membaca workbook norma, tidak menghitung SW/Gesamt/IQ, tidak memb
 ## Pemisahan development dan final
 
 - `database/data/ist-development/` tetap merupakan fixture development dengan version range dan media path tersendiri.
+- `database/data/ist-final-staging/` menampung hasil konsolidasi yang telah lulus review manusia tetapi belum approved/frozen. Paket ini hanya dapat memakai validator staging read-only dan tidak dapat diimpor.
 - Dataset final menggunakan identifier `tes-kemampuan-kognitif-adaptasi-104`, final version range, validator, guard, installer, dan command terpisah.
 - Importer final tidak mengubah, menghapus, atau mengambil kepemilikan natural key milik dataset development.
 - Fixture otomatis Tahap 10 dibangkitkan di direktori sementara saat test. Fixture memakai marker `[TEST-FIXTURE]`, selalu inactive, dan ditolak activation gate.
@@ -94,11 +95,21 @@ SVG tidak boleh memuat script, event handler, external reference, `foreignObject
 
 ## Database guard
 
-Guard hanya menerima `APP_ENV=local|testing`, connection MySQL, serta configured dan active database yang sama-sama berada dalam allowlist eksplisit `IST_FINAL_DATABASE_ALLOWLIST`. Database `tes_iq` selalu ditolak.
+Guard dataset nyata hanya menerima `APP_ENV=local` dan connection MySQL. Environment testing/`tes_iq_testing` terbatas pada fixture otomatis yang ditandai. Configured dan active database harus sama serta berada dalam allowlist eksplisit `IST_FINAL_DATABASE_ALLOWLIST`. Database utama memerlukan production gate terpisah yang default-nya nonaktif.
 
-Operasi tulis juga memerlukan `--allow-database` yang tepat sama dengan configured dan active database. Nama environment, connection, configured database, active database, instrument, version, dan mode ditampilkan sebelum import.
+Operasi tulis juga memerlukan `--allow-database` yang tepat sama dengan configured dan active database serta `--confirm-write`. Nama environment, connection, host, configured database, active database, instrument, version, fingerprint, approval/freeze, dan mode ditampilkan sebelum import.
 
 ## Dry-run dan import
+
+Validasi paket staging yang belum approved/frozen:
+
+```bash
+php artisan ist:import-final-dataset database/data/ist-final-staging \
+  --dry-run \
+  --staging
+```
+
+Mode `--staging` tidak menerima `--allow-database`, tidak membuka koneksi database, dan tidak menulis database atau media. Validator final ketat tetap menolak paket staging; perubahan status ke approved/frozen harus dilakukan dalam tahap terpisah beserta checksum baru.
 
 Command:
 
@@ -106,13 +117,14 @@ Command:
 php artisan ist:import-final-dataset /path/to/dataset --dry-run
 ```
 
-Tanpa `--allow-database`, command selalu menjadi dry-run. Dry-run melakukan guard read-only dan seluruh validasi file tanpa menulis database atau media.
+Tanpa `--confirm-write`, command selalu menjadi dry-run. Dry-run melakukan guard read-only dan seluruh validasi file tanpa menulis database atau media. Memberikan `--allow-database` saja tidak mengizinkan write.
 
 Operasi tulis terkontrol:
 
 ```bash
 php artisan ist:import-final-dataset /path/to/dataset \
   --allow-database=database_allowlisted \
+  --confirm-write \
   --question-bank-version=question_bank_version
 ```
 

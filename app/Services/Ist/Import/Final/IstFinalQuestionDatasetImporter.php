@@ -24,9 +24,13 @@ final class IstFinalQuestionDatasetImporter
         string $datasetDirectory,
         ?string $allowDatabase = null,
         bool $dryRun = true,
+        bool $allowStaging = false,
     ): IstFinalQuestionDatasetImportResult {
-        $context = $this->guard->inspect($allowDatabase, ! $dryRun);
-        $dataset = $this->validator->validate($datasetDirectory);
+        $dataset = $allowStaging
+            ? $this->validator->validateStaging($datasetDirectory)
+            : $this->validator->validate($datasetDirectory);
+        $testFixture = ($dataset->manifest['test_fixture'] ?? false) === true;
+        $context = $this->guard->inspect($allowDatabase, ! $dryRun, $testFixture);
 
         if (($dataset->manifest['test_fixture'] ?? false) === true
             && $context->environment !== 'testing') {
@@ -49,11 +53,13 @@ final class IstFinalQuestionDatasetImporter
         $this->assertDatabaseCanAccept($dataset->manifest['record_version']);
         $stage = $this->mediaInstaller->stage($dataset);
         $createdQuestionIds = [];
+        $subtestSnapshots = [];
 
         try {
             [$questionCount, $optionCount] = DB::transaction(function () use (
                 $dataset,
                 &$createdQuestionIds,
+                &$subtestSnapshots,
             ): array {
                 $this->assertDatabaseCanAccept($dataset->manifest['record_version'], true);
                 $subtests = IstSubtest::query()
@@ -66,12 +72,35 @@ final class IstFinalQuestionDatasetImporter
                     $this->fail('master subtest belum lengkap');
                 }
 
+                $manifestSubtests = collect($dataset->manifest['subtests'])->keyBy('code');
+
                 $questionsCreated = 0;
                 $optionsCreated = 0;
 
                 foreach ($dataset->subtests as $code => $payload) {
                     /** @var IstSubtest $subtest */
                     $subtest = $subtests[$code];
+                    $manifestDefinition = $manifestSubtests[$code] ?? null;
+
+                    if (! is_array($manifestDefinition)) {
+                        $this->fail("master definition subtest {$code} tidak lengkap");
+                    }
+
+                    $subtestSnapshots[$subtest->id] = $subtest->only($this->masterSubtestFields());
+                    $subtest->forceFill([
+                        'code' => $code,
+                        'name' => $manifestDefinition['name'],
+                        'sequence' => $manifestDefinition['sequence'],
+                        'question_count' => $manifestDefinition['question_count'],
+                        'default_answer_type' => $manifestDefinition['default_answer_type'],
+                        'instruction_content' => trim($payload['instruction_content']),
+                        'memorization_content' => $code === 'ME'
+                            ? $payload['memorization_content']
+                            : null,
+                        'duration_seconds' => $manifestDefinition['duration_seconds'],
+                        'memorization_seconds' => $manifestDefinition['memorization_duration_seconds'],
+                        'answering_seconds' => $manifestDefinition['answering_duration_seconds'],
+                    ])->save();
 
                     foreach ($payload['questions'] as $record) {
                         $collision = IstQuestion::withTrashed()
@@ -92,6 +121,9 @@ final class IstFinalQuestionDatasetImporter
                             'display_order' => $record['display_order'],
                             'kind' => $record['kind'],
                             'answer_type' => $record['answer_type'],
+                            'difficulty' => $record['kind'] === IstQuestion::KIND_SCORED
+                            ? $record['difficulty_target']
+                            : null,
                             'prompt' => $record['prompt'],
                             'image_disk' => $promptMedia === null ? null : config('ist.final_media_disk', 'public'),
                             'image_path' => $promptMedia['target_path'] ?? null,
@@ -140,7 +172,7 @@ final class IstFinalQuestionDatasetImporter
         try {
             $this->mediaInstaller->publish($stage);
         } catch (Throwable $exception) {
-            $this->compensateCreatedQuestions($createdQuestionIds);
+            $this->compensateImport($createdQuestionIds, $subtestSnapshots);
             $this->mediaInstaller->discard($stage);
             throw $exception;
         }
@@ -187,16 +219,39 @@ final class IstFinalQuestionDatasetImporter
         return $media[$logicalId];
     }
 
-    private function compensateCreatedQuestions(array $questionIds): void
+    private function compensateImport(array $questionIds, array $subtestSnapshots): void
     {
-        if ($questionIds === []) {
+        if ($questionIds === [] && $subtestSnapshots === []) {
             return;
         }
 
-        DB::transaction(function () use ($questionIds): void {
-            DB::table('ist_question_options')->whereIn('ist_question_id', $questionIds)->delete();
-            DB::table('ist_questions')->whereIn('id', $questionIds)->delete();
+        DB::transaction(function () use ($questionIds, $subtestSnapshots): void {
+            if ($questionIds !== []) {
+                DB::table('ist_question_options')->whereIn('ist_question_id', $questionIds)->delete();
+                DB::table('ist_questions')->whereIn('id', $questionIds)->delete();
+            }
+
+            foreach ($subtestSnapshots as $subtestId => $snapshot) {
+                DB::table('ist_subtests')->where('id', $subtestId)->update($snapshot);
+            }
         }, 3);
+    }
+
+    private function masterSubtestFields(): array
+    {
+        return [
+            'code',
+            'name',
+            'sequence',
+            'question_count',
+            'default_answer_type',
+            'instruction_content',
+            'memorization_content',
+            'duration_seconds',
+            'memorization_seconds',
+            'answering_seconds',
+            'updated_at',
+        ];
     }
 
     private function result(

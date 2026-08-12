@@ -7,6 +7,7 @@ final readonly class IstFinalDatabaseContext
     public function __construct(
         public string $environment,
         public string $connection,
+        public string $host,
         public string $configuredDatabase,
         public string $activeDatabase,
         public array $allowlistedDatabases,

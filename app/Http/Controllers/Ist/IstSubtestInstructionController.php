@@ -52,6 +52,7 @@ final class IstSubtestInstructionController extends Controller
             $test,
             $subtest,
             $decision->snapshotComplete,
+            $subtest->subtest?->code !== 'ME' || $subtest->instruction_viewed_at !== null,
         ));
     }
 }

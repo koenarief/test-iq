@@ -6,12 +6,17 @@ use App\Exceptions\Ist\IncompleteIstSnapshotException;
 use App\Exceptions\Ist\InvalidIstSubtestStartException;
 use App\Models\Ist\IstTest;
 use App\Models\Ist\IstTestSubtest;
+use App\Support\Ist\IstMeRuntimeContent;
 use Carbon\CarbonImmutable;
 use Carbon\CarbonInterface;
 use Illuminate\Support\Facades\DB;
 
 final class IstSubtestStartService
 {
+    public function __construct(
+        private readonly IstMeRuntimeContent $meRuntimeContent,
+    ) {}
+
     public function start(
         IstTestSubtest $testSubtest,
         CarbonInterface $now,
@@ -51,6 +56,15 @@ final class IstSubtestStartService
                 throw new InvalidIstSubtestStartException($runtime->id, 'subtest is locked');
             }
 
+            if ($runtime->subtest->code === 'ME'
+                && $runtime->started_at === null
+                && $runtime->instruction_viewed_at === null) {
+                throw new InvalidIstSubtestStartException(
+                    $runtime->id,
+                    'ME example has not been completed',
+                );
+            }
+
             $snapshotCount = $runtime->testQuestions()->count();
 
             if ($snapshotCount !== $runtime->question_count) {
@@ -59,6 +73,21 @@ final class IstSubtestStartService
                     $runtime->question_count,
                     $snapshotCount,
                 );
+            }
+
+            if ($runtime->subtest->code === 'ME') {
+                $firstSnapshot = $runtime->testQuestions()
+                    ->orderBy('display_order')
+                    ->first(['question_snapshot']);
+
+                if ($this->meRuntimeContent->fromQuestionSnapshot(
+                    $firstSnapshot?->question_snapshot,
+                ) === null) {
+                    throw new InvalidIstSubtestStartException(
+                        $runtime->id,
+                        'ME category runtime snapshot is unavailable',
+                    );
+                }
             }
 
             if ($runtime->started_at !== null) {

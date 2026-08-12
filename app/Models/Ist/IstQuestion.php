@@ -29,10 +29,12 @@ class IstQuestion extends Model
         'example_explanation',
         'numeric_answer_key',
         'max_score',
+        'difficulty',
         'version',
         'is_active',
         'created_by',
         'updated_by',
+
     ];
 
     protected function casts(): array

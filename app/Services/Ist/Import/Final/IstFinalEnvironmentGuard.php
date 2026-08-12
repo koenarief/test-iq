@@ -8,12 +8,19 @@ use Illuminate\Support\Facades\DB;
 
 final class IstFinalEnvironmentGuard
 {
-    public function inspect(?string $explicitDatabase = null, bool $write = false): IstFinalDatabaseContext
-    {
+    public function inspect(
+        ?string $explicitDatabase = null,
+        bool $write = false,
+        bool $testFixture = false,
+    ): IstFinalDatabaseContext {
         $environment = app()->environment();
         $connection = (string) config('database.default');
+        $host = (string) config("database.connections.{$connection}.host");
         $configured = (string) config("database.connections.{$connection}.database");
         $allowlist = config('ist.final_database_allowlist', []);
+        $primaryDatabase = (string) config('ist.final_primary_database', 'tes_iq');
+        $primaryWriteEnabled = (bool) config('ist.final_primary_write_enabled', false);
+        $testingDatabase = (string) config('ist.final_testing_database', 'tes_iq_testing');
 
         if (! is_array($allowlist)) {
             $allowlist = [];
@@ -31,6 +38,10 @@ final class IstFinalEnvironmentGuard
             $allowlist,
             $explicitDatabase,
             $write,
+            $testFixture,
+            $primaryDatabase,
+            $primaryWriteEnabled,
+            $testingDatabase,
         );
 
         $active = DB::connection($connection)
@@ -43,11 +54,16 @@ final class IstFinalEnvironmentGuard
             $allowlist,
             $explicitDatabase,
             $write,
+            $testFixture,
+            $primaryDatabase,
+            $primaryWriteEnabled,
+            $testingDatabase,
         );
 
         return new IstFinalDatabaseContext(
             environment: $environment,
             connection: $connection,
+            host: $host,
             configuredDatabase: $configured,
             activeDatabase: (string) $active,
             allowlistedDatabases: $allowlist,
@@ -62,17 +78,29 @@ final class IstFinalEnvironmentGuard
         array $allowlist,
         ?string $explicitDatabase,
         bool $write,
+        bool $testFixture = false,
+        string $primaryDatabase = 'tes_iq',
+        bool $primaryWriteEnabled = false,
+        string $testingDatabase = 'tes_iq_testing',
     ): void {
-        if (! in_array($environment, ['local', 'testing'], true)) {
-            throw UnsafeIstFinalDatabaseException::because('APP_ENV harus local atau testing');
+        if ($environment !== 'local' && ! ($environment === 'testing' && $testFixture)) {
+            throw UnsafeIstFinalDatabaseException::because('APP_ENV harus local; testing hanya untuk test fixture');
         }
 
         if ($connection !== 'mysql') {
             throw UnsafeIstFinalDatabaseException::because('connection harus mysql');
         }
 
-        if ($configuredDatabase === '' || $configuredDatabase === 'tes_iq') {
-            throw UnsafeIstFinalDatabaseException::because('configured database kosong atau merupakan database utama');
+        if ($configuredDatabase === '') {
+            throw UnsafeIstFinalDatabaseException::because('configured database kosong');
+        }
+
+        if ($configuredDatabase === $testingDatabase && ! $testFixture) {
+            throw UnsafeIstFinalDatabaseException::because('database automated test tidak boleh menjadi target final dataset');
+        }
+
+        if ($configuredDatabase === $primaryDatabase && ! $primaryWriteEnabled) {
+            throw UnsafeIstFinalDatabaseException::because('database utama belum diizinkan oleh production migration gate');
         }
 
         if ($allowlist === [] || ! in_array($configuredDatabase, $allowlist, true)) {
@@ -94,9 +122,21 @@ final class IstFinalEnvironmentGuard
         array $allowlist,
         ?string $explicitDatabase,
         bool $write,
+        bool $testFixture = false,
+        string $primaryDatabase = 'tes_iq',
+        bool $primaryWriteEnabled = false,
+        string $testingDatabase = 'tes_iq_testing',
     ): void {
-        if (! is_string($activeDatabase) || $activeDatabase === '' || $activeDatabase === 'tes_iq') {
-            throw UnsafeIstFinalDatabaseException::because('active database kosong atau merupakan database utama');
+        if (! is_string($activeDatabase) || $activeDatabase === '') {
+            throw UnsafeIstFinalDatabaseException::because('active database kosong');
+        }
+
+        if ($activeDatabase === $testingDatabase && ! $testFixture) {
+            throw UnsafeIstFinalDatabaseException::because('database automated test tidak boleh menjadi target final dataset');
+        }
+
+        if ($activeDatabase === $primaryDatabase && ! $primaryWriteEnabled) {
+            throw UnsafeIstFinalDatabaseException::because('database utama belum diizinkan oleh production migration gate');
         }
 
         if ($activeDatabase !== $configuredDatabase) {

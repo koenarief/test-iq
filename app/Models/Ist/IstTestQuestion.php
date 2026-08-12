@@ -25,6 +25,7 @@ class IstTestQuestion extends Model
         'options_snapshot',
         'answer_key_snapshot',
         'max_score',
+        'difficulty',
     ];
 
     protected function casts(): array

@@ -1,0 +1,563 @@
+{
+    "schema_version": 1,
+    "instrument_identifier": "tes-kemampuan-kognitif-adaptasi-104",
+    "question_bank_version": "2026.08.06-stage17",
+    "subtest_code": "RA",
+    "review_status": "human_review_passed",
+    "active": false,
+    "content_origin": "original_internal",
+    "source_reference": null,
+    "copyright_status": "internally_authored",
+    "normative_compatibility": "none",
+    "instruction_content": "Bacalah situasi hitung dengan cermat. Masukkan satu bilangan bulat tanpa satuan atau pemisah ribuan.",
+    "memorization_content": null,
+    "memorization": null,
+    "questions": [
+        {
+            "logical_id": "RA-E-001",
+            "subtest_code": "RA",
+            "kind": "example",
+            "question_number": 1,
+            "display_order": 1,
+            "answer_type": "numeric",
+            "difficulty_target": null,
+            "prompt": "Sebuah rak mempunyai 4 tingkat. Setiap tingkat berisi 6 kotak. Berapa jumlah seluruh kotak? Masukkan angka saja.",
+            "explanation": "Empat tingkat masing-masing berisi enam kotak, sehingga jumlahnya 4 × 6 = 24.",
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-14-ra-zr-numeric.md#ra-example-001"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1,
+                "canonical_answer": "24"
+            },
+            "options": [],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "ra-example-001",
+                    "rationale": "Contoh perkalian langsung dengan satu hasil bilangan bulat."
+                }
+            }
+        },
+        {
+            "logical_id": "RA-S-001",
+            "subtest_code": "RA",
+            "kind": "scored",
+            "question_number": 1,
+            "display_order": 1,
+            "answer_type": "numeric",
+            "difficulty_target": "easy",
+            "prompt": "Terdapat 8 kotak. Setiap kotak berisi 7 botol. Berapa jumlah seluruh botol? Masukkan angka saja.",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-14-ra-zr-numeric.md#ra-001"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1,
+                "canonical_answer": "56"
+            },
+            "options": [],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "ra-001",
+                    "rationale": "Perkalian langsung jumlah kelompok dan isi per kelompok."
+                }
+            }
+        },
+        {
+            "logical_id": "RA-S-002",
+            "subtest_code": "RA",
+            "kind": "scored",
+            "question_number": 2,
+            "display_order": 2,
+            "answer_type": "numeric",
+            "difficulty_target": "easy",
+            "prompt": "Sebanyak 72 dokumen dibagikan sama rata kepada 8 tim. Berapa dokumen yang diterima setiap tim? Masukkan angka saja.",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-14-ra-zr-numeric.md#ra-002"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1,
+                "canonical_answer": "9"
+            },
+            "options": [],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "ra-002",
+                    "rationale": "Pembagian langsung dan menghasilkan bilangan bulat."
+                }
+            }
+        },
+        {
+            "logical_id": "RA-S-003",
+            "subtest_code": "RA",
+            "kind": "scored",
+            "question_number": 3,
+            "display_order": 3,
+            "answer_type": "numeric",
+            "difficulty_target": "easy",
+            "prompt": "Sebuah gudang menyimpan 95 paket. Sebanyak 28 paket dikirim pada pagi hari. Berapa paket yang masih tersisa? Masukkan angka saja.",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-14-ra-zr-numeric.md#ra-003"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1,
+                "canonical_answer": "67"
+            },
+            "options": [],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "ra-003",
+                    "rationale": "Pengurangan langsung dari jumlah awal."
+                }
+            }
+        },
+        {
+            "logical_id": "RA-S-004",
+            "subtest_code": "RA",
+            "kind": "scored",
+            "question_number": 4,
+            "display_order": 4,
+            "answer_type": "numeric",
+            "difficulty_target": "easy",
+            "prompt": "Empat meja masing-masing memiliki 6 kursi. Setelah ditambah 5 kursi cadangan, berapa jumlah seluruh kursi? Masukkan angka saja.",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-14-ra-zr-numeric.md#ra-004"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1,
+                "canonical_answer": "29"
+            },
+            "options": [],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "ra-004",
+                    "rationale": "Perkalian sederhana dilanjutkan penambahan."
+                }
+            }
+        },
+        {
+            "logical_id": "RA-S-005",
+            "subtest_code": "RA",
+            "kind": "scored",
+            "question_number": 5,
+            "display_order": 5,
+            "answer_type": "numeric",
+            "difficulty_target": "medium",
+            "prompt": "Sebuah tim memiliki anggaran 240 token. Mereka membeli 6 perlengkapan dengan harga masing-masing 25 token. Berapa token yang masih tersisa? Masukkan angka saja.",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-14-ra-zr-numeric.md#ra-005"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1,
+                "canonical_answer": "90"
+            },
+            "options": [],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "ra-005",
+                    "rationale": "Total pembelian dihitung terlebih dahulu lalu dikurangkan dari anggaran."
+                }
+            }
+        },
+        {
+            "logical_id": "RA-S-006",
+            "subtest_code": "RA",
+            "kind": "scored",
+            "question_number": 6,
+            "display_order": 6,
+            "answer_type": "numeric",
+            "difficulty_target": "medium",
+            "prompt": "Lima mesin masing-masing menghasilkan 18 unit dalam satu jam. Jika seluruh mesin bekerja selama 3 jam, berapa unit yang dihasilkan? Masukkan angka saja.",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-14-ra-zr-numeric.md#ra-006"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1,
+                "canonical_answer": "270"
+            },
+            "options": [],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "ra-006",
+                    "rationale": "Jumlah mesin, hasil per jam, dan durasi semuanya harus dikalikan."
+                }
+            }
+        },
+        {
+            "logical_id": "RA-S-007",
+            "subtest_code": "RA",
+            "kind": "scored",
+            "question_number": 7,
+            "display_order": 7,
+            "answer_type": "numeric",
+            "difficulty_target": "medium",
+            "prompt": "Sebuah proyek membutuhkan 360 meter kabel. Pada tahap pertama digunakan 125 meter dan tahap kedua 95 meter. Berapa meter kabel yang belum digunakan? Masukkan angka saja.",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-14-ra-zr-numeric.md#ra-007"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1,
+                "canonical_answer": "140"
+            },
+            "options": [],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "ra-007",
+                    "rationale": "Dua pemakaian dijumlahkan lalu dikurangkan dari kebutuhan total."
+                }
+            }
+        },
+        {
+            "logical_id": "RA-S-008",
+            "subtest_code": "RA",
+            "kind": "scored",
+            "question_number": 8,
+            "display_order": 8,
+            "answer_type": "numeric",
+            "difficulty_target": "medium",
+            "prompt": "Delapan pekerja menyelesaikan masing-masing 14 formulir pada pagi hari dan 9 formulir pada sore hari. Berapa total formulir yang diselesaikan seluruh pekerja? Masukkan angka saja.",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-14-ra-zr-numeric.md#ra-008"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1,
+                "canonical_answer": "184"
+            },
+            "options": [],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "ra-008",
+                    "rationale": "Output per pekerja dijumlahkan terlebih dahulu lalu dikalikan jumlah pekerja."
+                }
+            }
+        },
+        {
+            "logical_id": "RA-S-009",
+            "subtest_code": "RA",
+            "kind": "scored",
+            "question_number": 9,
+            "display_order": 9,
+            "answer_type": "numeric",
+            "difficulty_target": "medium",
+            "prompt": "Sebuah perusahaan membeli 9 paket perangkat dengan harga 32 token per paket. Setelah mendapat potongan 45 token dari total pembelian, berapa token yang harus dibayar? Masukkan angka saja.",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-14-ra-zr-numeric.md#ra-009"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1,
+                "canonical_answer": "243"
+            },
+            "options": [],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "ra-009",
+                    "rationale": "Total pembelian dihitung lalu dikurangi potongan tetap."
+                }
+            }
+        },
+        {
+            "logical_id": "RA-S-010",
+            "subtest_code": "RA",
+            "kind": "scored",
+            "question_number": 10,
+            "display_order": 10,
+            "answer_type": "numeric",
+            "difficulty_target": "hard",
+            "prompt": "Enam kotak masing-masing berisi 24 komponen. Sebanyak 36 komponen digunakan. Sisa komponen dibagikan sama rata ke 9 laci. Berapa komponen pada setiap laci? Masukkan angka saja.",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-14-ra-zr-numeric.md#ra-010"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1,
+                "canonical_answer": "12"
+            },
+            "options": [],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "ra-010",
+                    "rationale": "Jumlah awal dihitung, dikurangi pemakaian, lalu dibagi rata."
+                }
+            }
+        },
+        {
+            "logical_id": "RA-S-011",
+            "subtest_code": "RA",
+            "kind": "scored",
+            "question_number": 11,
+            "display_order": 11,
+            "answer_type": "numeric",
+            "difficulty_target": "hard",
+            "prompt": "Sebuah tim memproses 420 data. Pada tahap pertama 3 kelompok masing-masing memproses 48 data. Sisanya dibagi rata kepada 6 kelompok berikutnya. Berapa data yang diproses setiap kelompok berikutnya? Masukkan angka saja.",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-14-ra-zr-numeric.md#ra-011"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1,
+                "canonical_answer": "46"
+            },
+            "options": [],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "ra-011",
+                    "rationale": "Tahap pertama memproses 144 data; sisa 276 dibagi kepada 6 kelompok."
+                }
+            }
+        },
+        {
+            "logical_id": "RA-S-012",
+            "subtest_code": "RA",
+            "kind": "scored",
+            "question_number": 12,
+            "display_order": 12,
+            "answer_type": "numeric",
+            "difficulty_target": "hard",
+            "prompt": "Sebuah gudang menerima 12 peti, masing-masing berisi 35 unit. Sebanyak 84 unit dikirim ke cabang A dan 126 unit ke cabang B. Sisa unit ditempatkan sama rata pada 7 rak. Berapa unit pada setiap rak? Masukkan angka saja.",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-14-ra-zr-numeric.md#ra-012"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1,
+                "canonical_answer": "30"
+            },
+            "options": [],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "ra-012",
+                    "rationale": "Total awal 420; setelah dua pengiriman tersisa 210; dibagi 7 menghasilkan 30."
+                }
+            }
+        }
+    ]
+}

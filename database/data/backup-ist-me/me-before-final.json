@@ -1,0 +1,1556 @@
+{
+    "schema_version": 1,
+    "instrument_identifier": "tes-kemampuan-kognitif-adaptasi-104",
+    "question_bank_version": "2026.08.06-stage17",
+    "subtest_code": "ME",
+    "review_status": "human_review_passed",
+    "active": false,
+    "content_origin": "original_internal",
+    "source_reference": null,
+    "copyright_status": "internally_authored",
+    "normative_compatibility": "none",
+    "instruction_content": "Anda akan melihat 15 pasangan kata selama 2 menit. Ingat hubungan setiap pasangan. Setelah waktu menghafal berakhir, materi akan ditutup otomatis dan tidak dapat dibuka kembali. Anda kemudian memiliki 4 menit untuk menjawab 12 soal pilihan ganda. Pilih satu jawaban untuk setiap soal. Contoh tidak dihitung dalam skor.",
+    "memorization_content": "{\"pairs\":[{\"cue\":\"jendela\",\"associate\":\"irama\",\"display_order\":1},{\"cue\":\"sawah\",\"associate\":\"kancing\",\"display_order\":2},{\"cue\":\"bantal\",\"associate\":\"lorong\",\"display_order\":3},{\"cue\":\"ember\",\"associate\":\"cerita\",\"display_order\":4},{\"cue\":\"sepatu\",\"associate\":\"kalender\",\"display_order\":5},{\"cue\":\"sungai\",\"associate\":\"pensil\",\"display_order\":6},{\"cue\":\"cermin\",\"associate\":\"ladang\",\"display_order\":7},{\"cue\":\"tangga\",\"associate\":\"rempah\",\"display_order\":8},{\"cue\":\"piring\",\"associate\":\"hutan\",\"display_order\":9},{\"cue\":\"payung\",\"associate\":\"kerikil\",\"display_order\":10},{\"cue\":\"kertas\",\"associate\":\"balkon\",\"display_order\":11},{\"cue\":\"lemari\",\"associate\":\"ombak\",\"display_order\":12},{\"cue\":\"gelas\",\"associate\":\"taman\",\"display_order\":13},{\"cue\":\"kursi\",\"associate\":\"petir\",\"display_order\":14},{\"cue\":\"kapal\",\"associate\":\"pita\",\"display_order\":15}]}",
+    "memorization": {
+        "main_pairs": [
+            {
+                "logical_id": "me-pair-001",
+                "cue": "jendela",
+                "associate": "irama",
+                "display_order": 1,
+                "tested": true,
+                "question_logical_id": "me-001",
+                "association_review": {
+                    "natural_association": "none",
+                    "semantic_relation": "none",
+                    "notes": "Benda bangunan dan pola bunyi tidak memiliki hubungan umum."
+                },
+                "semantic_review": "pass",
+                "phonological_review": {
+                    "similarity": "none",
+                    "status": "pass"
+                },
+                "memorability_review": {
+                    "outlier": false,
+                    "status": "pass"
+                },
+                "content_origin": "original_internal",
+                "source_reference": null,
+                "copyright_status": "internally_authored",
+                "normative_compatibility": "none",
+                "review_status": "human_review_passed",
+                "active": false
+            },
+            {
+                "logical_id": "me-pair-002",
+                "cue": "sawah",
+                "associate": "kancing",
+                "display_order": 2,
+                "tested": true,
+                "question_logical_id": "me-002",
+                "association_review": {
+                    "natural_association": "none",
+                    "semantic_relation": "none",
+                    "notes": "Lahan pertanian dan pengait pakaian berasal dari kategori berbeda."
+                },
+                "semantic_review": "pass",
+                "phonological_review": {
+                    "similarity": "none",
+                    "status": "pass"
+                },
+                "memorability_review": {
+                    "outlier": false,
+                    "status": "pass"
+                },
+                "content_origin": "original_internal",
+                "source_reference": null,
+                "copyright_status": "internally_authored",
+                "normative_compatibility": "none",
+                "review_status": "human_review_passed",
+                "active": false
+            },
+            {
+                "logical_id": "me-pair-003",
+                "cue": "bantal",
+                "associate": "lorong",
+                "display_order": 3,
+                "tested": true,
+                "question_logical_id": "me-003",
+                "association_review": {
+                    "natural_association": "none",
+                    "semantic_relation": "none",
+                    "notes": "Perlengkapan tidur dan jalur penghubung tidak berhubungan fungsi."
+                },
+                "semantic_review": "pass",
+                "phonological_review": {
+                    "similarity": "none",
+                    "status": "pass"
+                },
+                "memorability_review": {
+                    "outlier": false,
+                    "status": "pass"
+                },
+                "content_origin": "original_internal",
+                "source_reference": null,
+                "copyright_status": "internally_authored",
+                "normative_compatibility": "none",
+                "review_status": "human_review_passed",
+                "active": false
+            },
+            {
+                "logical_id": "me-pair-004",
+                "cue": "ember",
+                "associate": "cerita",
+                "display_order": 4,
+                "tested": false,
+                "question_logical_id": null,
+                "association_review": {
+                    "natural_association": "none",
+                    "semantic_relation": "none",
+                    "notes": "Wadah dan narasi tidak memiliki relasi kategori atau fungsi langsung."
+                },
+                "semantic_review": "pass",
+                "phonological_review": {
+                    "similarity": "none",
+                    "status": "pass"
+                },
+                "memorability_review": {
+                    "outlier": false,
+                    "status": "pass"
+                },
+                "content_origin": "original_internal",
+                "source_reference": null,
+                "copyright_status": "internally_authored",
+                "normative_compatibility": "none",
+                "review_status": "human_review_passed",
+                "active": false
+            },
+            {
+                "logical_id": "me-pair-005",
+                "cue": "sepatu",
+                "associate": "kalender",
+                "display_order": 5,
+                "tested": true,
+                "question_logical_id": "me-005",
+                "association_review": {
+                    "natural_association": "none",
+                    "semantic_relation": "none",
+                    "notes": "Alas kaki dan penanda tanggal tidak memiliki asosiasi umum."
+                },
+                "semantic_review": "pass",
+                "phonological_review": {
+                    "similarity": "none",
+                    "status": "pass"
+                },
+                "memorability_review": {
+                    "outlier": false,
+                    "status": "pass"
+                },
+                "content_origin": "original_internal",
+                "source_reference": null,
+                "copyright_status": "internally_authored",
+                "normative_compatibility": "none",
+                "review_status": "human_review_passed",
+                "active": false
+            },
+            {
+                "logical_id": "me-pair-006",
+                "cue": "sungai",
+                "associate": "pensil",
+                "display_order": 6,
+                "tested": true,
+                "question_logical_id": "me-004",
+                "association_review": {
+                    "natural_association": "none",
+                    "semantic_relation": "none",
+                    "notes": "Aliran air dan alat tulis tidak memiliki hubungan langsung."
+                },
+                "semantic_review": "pass",
+                "phonological_review": {
+                    "similarity": "none",
+                    "status": "pass"
+                },
+                "memorability_review": {
+                    "outlier": false,
+                    "status": "pass"
+                },
+                "content_origin": "original_internal",
+                "source_reference": null,
+                "copyright_status": "internally_authored",
+                "normative_compatibility": "none",
+                "review_status": "human_review_passed",
+                "active": false
+            },
+            {
+                "logical_id": "me-pair-007",
+                "cue": "cermin",
+                "associate": "ladang",
+                "display_order": 7,
+                "tested": true,
+                "question_logical_id": "me-007",
+                "association_review": {
+                    "natural_association": "none",
+                    "semantic_relation": "none",
+                    "notes": "Permukaan pemantul dan lahan budidaya tidak terkait fungsi."
+                },
+                "semantic_review": "pass",
+                "phonological_review": {
+                    "similarity": "none",
+                    "status": "pass"
+                },
+                "memorability_review": {
+                    "outlier": false,
+                    "status": "pass"
+                },
+                "content_origin": "original_internal",
+                "source_reference": null,
+                "copyright_status": "internally_authored",
+                "normative_compatibility": "none",
+                "review_status": "human_review_passed",
+                "active": false
+            },
+            {
+                "logical_id": "me-pair-008",
+                "cue": "tangga",
+                "associate": "rempah",
+                "display_order": 8,
+                "tested": true,
+                "question_logical_id": "me-006",
+                "association_review": {
+                    "natural_association": "none",
+                    "semantic_relation": "none",
+                    "notes": "Sarana berpindah tingkat dan bahan masakan tidak berhubungan umum."
+                },
+                "semantic_review": "pass",
+                "phonological_review": {
+                    "similarity": "none",
+                    "status": "pass"
+                },
+                "memorability_review": {
+                    "outlier": false,
+                    "status": "pass"
+                },
+                "content_origin": "original_internal",
+                "source_reference": null,
+                "copyright_status": "internally_authored",
+                "normative_compatibility": "none",
+                "review_status": "human_review_passed",
+                "active": false
+            },
+            {
+                "logical_id": "me-pair-009",
+                "cue": "piring",
+                "associate": "hutan",
+                "display_order": 9,
+                "tested": false,
+                "question_logical_id": null,
+                "association_review": {
+                    "natural_association": "none",
+                    "semantic_relation": "none",
+                    "notes": "Peralatan makan dan kawasan pepohonan tidak memiliki relasi langsung."
+                },
+                "semantic_review": "pass",
+                "phonological_review": {
+                    "similarity": "none",
+                    "status": "pass"
+                },
+                "memorability_review": {
+                    "outlier": false,
+                    "status": "pass"
+                },
+                "content_origin": "original_internal",
+                "source_reference": null,
+                "copyright_status": "internally_authored",
+                "normative_compatibility": "none",
+                "review_status": "human_review_passed",
+                "active": false
+            },
+            {
+                "logical_id": "me-pair-010",
+                "cue": "payung",
+                "associate": "kerikil",
+                "display_order": 10,
+                "tested": true,
+                "question_logical_id": "me-009",
+                "association_review": {
+                    "natural_association": "none",
+                    "semantic_relation": "none",
+                    "notes": "Pelindung portabel dan batu kecil tidak berhubungan fungsi atau kategori."
+                },
+                "semantic_review": "pass",
+                "phonological_review": {
+                    "similarity": "none",
+                    "status": "pass"
+                },
+                "memorability_review": {
+                    "outlier": false,
+                    "status": "pass"
+                },
+                "content_origin": "original_internal",
+                "source_reference": null,
+                "copyright_status": "internally_authored",
+                "normative_compatibility": "none",
+                "review_status": "human_review_passed",
+                "active": false
+            },
+            {
+                "logical_id": "me-pair-011",
+                "cue": "kertas",
+                "associate": "balkon",
+                "display_order": 11,
+                "tested": true,
+                "question_logical_id": "me-008",
+                "association_review": {
+                    "natural_association": "none",
+                    "semantic_relation": "none",
+                    "notes": "Bahan lembaran dan bagian bangunan tidak memiliki relasi utama."
+                },
+                "semantic_review": "pass",
+                "phonological_review": {
+                    "similarity": "none",
+                    "status": "pass"
+                },
+                "memorability_review": {
+                    "outlier": false,
+                    "status": "pass"
+                },
+                "content_origin": "original_internal",
+                "source_reference": null,
+                "copyright_status": "internally_authored",
+                "normative_compatibility": "none",
+                "review_status": "human_review_passed",
+                "active": false
+            },
+            {
+                "logical_id": "me-pair-012",
+                "cue": "lemari",
+                "associate": "ombak",
+                "display_order": 12,
+                "tested": true,
+                "question_logical_id": "me-010",
+                "association_review": {
+                    "natural_association": "none",
+                    "semantic_relation": "none",
+                    "notes": "Perabot penyimpanan dan gerak permukaan air tidak berkaitan langsung."
+                },
+                "semantic_review": "pass",
+                "phonological_review": {
+                    "similarity": "none",
+                    "status": "pass"
+                },
+                "memorability_review": {
+                    "outlier": false,
+                    "status": "pass"
+                },
+                "content_origin": "original_internal",
+                "source_reference": null,
+                "copyright_status": "internally_authored",
+                "normative_compatibility": "none",
+                "review_status": "human_review_passed",
+                "active": false
+            },
+            {
+                "logical_id": "me-pair-013",
+                "cue": "gelas",
+                "associate": "taman",
+                "display_order": 13,
+                "tested": false,
+                "question_logical_id": null,
+                "association_review": {
+                    "natural_association": "weak",
+                    "semantic_relation": "none",
+                    "notes": "Keduanya dapat berada di ruang yang sama, tetapi tidak memiliki relasi khas atau fungsi bersama."
+                },
+                "semantic_review": "pass",
+                "phonological_review": {
+                    "similarity": "none",
+                    "status": "pass"
+                },
+                "memorability_review": {
+                    "outlier": false,
+                    "status": "pass"
+                },
+                "content_origin": "original_internal",
+                "source_reference": null,
+                "copyright_status": "internally_authored",
+                "normative_compatibility": "none",
+                "review_status": "human_review_passed",
+                "active": false
+            },
+            {
+                "logical_id": "me-pair-014",
+                "cue": "kursi",
+                "associate": "petir",
+                "display_order": 14,
+                "tested": true,
+                "question_logical_id": "me-011",
+                "association_review": {
+                    "natural_association": "none",
+                    "semantic_relation": "none",
+                    "notes": "Tempat duduk dan gejala cuaca tidak memiliki relasi umum."
+                },
+                "semantic_review": "pass",
+                "phonological_review": {
+                    "similarity": "none",
+                    "status": "pass"
+                },
+                "memorability_review": {
+                    "outlier": false,
+                    "status": "pass"
+                },
+                "content_origin": "original_internal",
+                "source_reference": null,
+                "copyright_status": "internally_authored",
+                "normative_compatibility": "none",
+                "review_status": "human_review_passed",
+                "active": false
+            },
+            {
+                "logical_id": "me-pair-015",
+                "cue": "kapal",
+                "associate": "pita",
+                "display_order": 15,
+                "tested": true,
+                "question_logical_id": "me-012",
+                "association_review": {
+                    "natural_association": "none",
+                    "semantic_relation": "none",
+                    "notes": "Kendaraan air dan bahan berbentuk jalur tidak mempunyai hubungan umum."
+                },
+                "semantic_review": "pass",
+                "phonological_review": {
+                    "similarity": "none",
+                    "status": "pass"
+                },
+                "memorability_review": {
+                    "outlier": false,
+                    "status": "pass"
+                },
+                "content_origin": "original_internal",
+                "source_reference": null,
+                "copyright_status": "internally_authored",
+                "normative_compatibility": "none",
+                "review_status": "human_review_passed",
+                "active": false
+            }
+        ],
+        "example_pairs": [
+            {
+                "cue": "tas",
+                "associate": "senja"
+            },
+            {
+                "cue": "roti",
+                "associate": "pagar"
+            },
+            {
+                "cue": "lampu",
+                "associate": "pasir"
+            },
+            {
+                "cue": "meja",
+                "associate": "kabut"
+            },
+            {
+                "cue": "bukit",
+                "associate": "daun"
+            }
+        ],
+        "tested_count": 12,
+        "filler_count": 3,
+        "forward_count": 6,
+        "reverse_count": 6
+    },
+    "questions": [
+        {
+            "logical_id": "ME-E-001",
+            "subtest_code": "ME",
+            "kind": "example",
+            "question_number": 1,
+            "display_order": 1,
+            "answer_type": "single_choice",
+            "difficulty_target": null,
+            "prompt": "Dalam materi contoh, kata “roti” dipasangkan dengan kata apa?",
+            "explanation": "Jawaban yang benar adalah pagar karena pada materi contoh terdapat pasangan roti — pagar. Saat subtes utama dimulai, materi hafalan akan ditutup setelah 2 menit dan tidak dapat dibuka kembali. Contoh ini tidak dihitung dalam skor.",
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-16-me-data-draft.json#me-example-001"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": "kabut",
+                    "display_order": 1,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "B",
+                    "text": "pagar",
+                    "display_order": 2,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": null
+                },
+                {
+                    "key": "C",
+                    "text": "senja",
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "D",
+                    "text": "pasir",
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "E",
+                    "text": "daun",
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                }
+            ],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "me-example-001",
+                    "rationale": "Lima pasangan contoh sepenuhnya terpisah dari materi utama. Seluruh opsi berasal dari sisi associate materi contoh sehingga prosedurnya sama dengan soal utama."
+                }
+            }
+        },
+        {
+            "logical_id": "ME-S-001",
+            "subtest_code": "ME",
+            "kind": "scored",
+            "question_number": 1,
+            "display_order": 1,
+            "answer_type": "single_choice",
+            "difficulty_target": "easy",
+            "prompt": "Dalam materi hafalan, kata “jendela” dipasangkan dengan kata apa?",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-16-me-data-draft.json#me-001"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": "kancing",
+                    "display_order": 1,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "B",
+                    "text": "cerita",
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "C",
+                    "text": "irama",
+                    "display_order": 3,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": null
+                },
+                {
+                    "key": "D",
+                    "text": "hutan",
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "E",
+                    "text": "petir",
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                }
+            ],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "me-001",
+                    "rationale": "Recall langsung cue ke associate dengan distraktor lintas posisi.",
+                    "recall_direction": "cue_to_associate",
+                    "target_pair_id": "me-pair-001"
+                }
+            }
+        },
+        {
+            "logical_id": "ME-S-002",
+            "subtest_code": "ME",
+            "kind": "scored",
+            "question_number": 2,
+            "display_order": 2,
+            "answer_type": "single_choice",
+            "difficulty_target": "easy",
+            "prompt": "Dalam materi hafalan, kata “sawah” dipasangkan dengan kata apa?",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-16-me-data-draft.json#me-002"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": "kancing",
+                    "display_order": 1,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": null
+                },
+                {
+                    "key": "B",
+                    "text": "kalender",
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "C",
+                    "text": "pensil",
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "D",
+                    "text": "taman",
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "E",
+                    "text": "pita",
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                }
+            ],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "me-002",
+                    "rationale": "Recall langsung dengan pilihan associate yang sama-sama umum.",
+                    "recall_direction": "cue_to_associate",
+                    "target_pair_id": "me-pair-002"
+                }
+            }
+        },
+        {
+            "logical_id": "ME-S-003",
+            "subtest_code": "ME",
+            "kind": "scored",
+            "question_number": 3,
+            "display_order": 3,
+            "answer_type": "single_choice",
+            "difficulty_target": "medium",
+            "prompt": "Dalam materi hafalan, kata “bantal” dipasangkan dengan kata apa?",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-16-me-data-draft.json#me-003"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": "irama",
+                    "display_order": 1,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "B",
+                    "text": "rempah",
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "C",
+                    "text": "balkon",
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "D",
+                    "text": "lorong",
+                    "display_order": 4,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": null
+                },
+                {
+                    "key": "E",
+                    "text": "ombak",
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                }
+            ],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "me-003",
+                    "rationale": "Recall langsung; opsi tidak membentuk hubungan semantik dengan cue.",
+                    "recall_direction": "cue_to_associate",
+                    "target_pair_id": "me-pair-003"
+                }
+            }
+        },
+        {
+            "logical_id": "ME-S-004",
+            "subtest_code": "ME",
+            "kind": "scored",
+            "question_number": 4,
+            "display_order": 4,
+            "answer_type": "single_choice",
+            "difficulty_target": "easy",
+            "prompt": "Dalam materi hafalan, kata apa yang dipasangkan dengan “pensil”?",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-16-me-data-draft.json#me-004"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": "jendela",
+                    "display_order": 1,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "B",
+                    "text": "sungai",
+                    "display_order": 2,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": null
+                },
+                {
+                    "key": "C",
+                    "text": "ember",
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "D",
+                    "text": "piring",
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "E",
+                    "text": "gelas",
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                }
+            ],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "me-004",
+                    "rationale": "Reverse recall pertama menggunakan cue dari berbagai posisi termasuk filler tanpa menandainya.",
+                    "recall_direction": "associate_to_cue",
+                    "target_pair_id": "me-pair-006"
+                }
+            }
+        },
+        {
+            "logical_id": "ME-S-005",
+            "subtest_code": "ME",
+            "kind": "scored",
+            "question_number": 5,
+            "display_order": 5,
+            "answer_type": "single_choice",
+            "difficulty_target": "medium",
+            "prompt": "Dalam materi hafalan, kata “sepatu” dipasangkan dengan kata apa?",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-16-me-data-draft.json#me-005"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": "cerita",
+                    "display_order": 1,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "B",
+                    "text": "ladang",
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "C",
+                    "text": "kerikil",
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "D",
+                    "text": "petir",
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "E",
+                    "text": "kalender",
+                    "display_order": 5,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": null
+                }
+            ],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "me-005",
+                    "rationale": "Recall langsung dengan opsi tersebar dan tanpa petunjuk posisi materi.",
+                    "recall_direction": "cue_to_associate",
+                    "target_pair_id": "me-pair-005"
+                }
+            }
+        },
+        {
+            "logical_id": "ME-S-006",
+            "subtest_code": "ME",
+            "kind": "scored",
+            "question_number": 6,
+            "display_order": 6,
+            "answer_type": "single_choice",
+            "difficulty_target": "easy",
+            "prompt": "Dalam materi hafalan, kata apa yang dipasangkan dengan “rempah”?",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-16-me-data-draft.json#me-006"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": "sawah",
+                    "display_order": 1,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "B",
+                    "text": "sepatu",
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "C",
+                    "text": "tangga",
+                    "display_order": 3,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": null
+                },
+                {
+                    "key": "D",
+                    "text": "payung",
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "E",
+                    "text": "bantal",
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                }
+            ],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "me-006",
+                    "rationale": "Reverse recall dengan cue yang panjangnya relatif seimbang.",
+                    "recall_direction": "associate_to_cue",
+                    "target_pair_id": "me-pair-008"
+                }
+            }
+        },
+        {
+            "logical_id": "ME-S-007",
+            "subtest_code": "ME",
+            "kind": "scored",
+            "question_number": 7,
+            "display_order": 7,
+            "answer_type": "single_choice",
+            "difficulty_target": "medium",
+            "prompt": "Dalam materi hafalan, kata “cermin” dipasangkan dengan kata apa?",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-16-me-data-draft.json#me-007"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": "pensil",
+                    "display_order": 1,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "B",
+                    "text": "hutan",
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "C",
+                    "text": "pita",
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "D",
+                    "text": "ladang",
+                    "display_order": 4,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": null
+                },
+                {
+                    "key": "E",
+                    "text": "kancing",
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                }
+            ],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "me-007",
+                    "rationale": "Forward recall medium dengan beberapa opsi dari posisi berdekatan.",
+                    "recall_direction": "cue_to_associate",
+                    "target_pair_id": "me-pair-007"
+                }
+            }
+        },
+        {
+            "logical_id": "ME-S-008",
+            "subtest_code": "ME",
+            "kind": "scored",
+            "question_number": 8,
+            "display_order": 8,
+            "answer_type": "single_choice",
+            "difficulty_target": "medium",
+            "prompt": "Dalam materi hafalan, kata apa yang dipasangkan dengan “balkon”?",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-16-me-data-draft.json#me-008"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": "kertas",
+                    "display_order": 1,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": null
+                },
+                {
+                    "key": "B",
+                    "text": "cermin",
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "C",
+                    "text": "lemari",
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "D",
+                    "text": "kursi",
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "E",
+                    "text": "kapal",
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                }
+            ],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "me-008",
+                    "rationale": "Recall memakai cue yang familiaritas dan panjangnya berdekatan.",
+                    "recall_direction": "associate_to_cue",
+                    "target_pair_id": "me-pair-011"
+                }
+            }
+        },
+        {
+            "logical_id": "ME-S-009",
+            "subtest_code": "ME",
+            "kind": "scored",
+            "question_number": 9,
+            "display_order": 9,
+            "answer_type": "single_choice",
+            "difficulty_target": "hard",
+            "prompt": "Dalam materi hafalan, kata “payung” dipasangkan dengan kata apa?",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-16-me-data-draft.json#me-009"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": "balkon",
+                    "display_order": 1,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "B",
+                    "text": "taman",
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "C",
+                    "text": "kerikil",
+                    "display_order": 3,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": null
+                },
+                {
+                    "key": "D",
+                    "text": "lorong",
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "E",
+                    "text": "rempah",
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                }
+            ],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "me-009",
+                    "rationale": "Recall cue ke associate dengan seluruh opsi dari sisi associate materi.",
+                    "recall_direction": "cue_to_associate",
+                    "target_pair_id": "me-pair-010"
+                }
+            }
+        },
+        {
+            "logical_id": "ME-S-010",
+            "subtest_code": "ME",
+            "kind": "scored",
+            "question_number": 10,
+            "display_order": 10,
+            "answer_type": "single_choice",
+            "difficulty_target": "medium",
+            "prompt": "Dalam materi hafalan, kata apa yang dipasangkan dengan “ombak”?",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-16-me-data-draft.json#me-010"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": "piring",
+                    "display_order": 1,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "B",
+                    "text": "gelas",
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "C",
+                    "text": "jendela",
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "D",
+                    "text": "ember",
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "E",
+                    "text": "lemari",
+                    "display_order": 5,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": null
+                }
+            ],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "me-010",
+                    "rationale": "Recall memakai opsi cue dengan familiaritas serupa dan posisi materi tersebar.",
+                    "recall_direction": "associate_to_cue",
+                    "target_pair_id": "me-pair-012"
+                }
+            }
+        },
+        {
+            "logical_id": "ME-S-011",
+            "subtest_code": "ME",
+            "kind": "scored",
+            "question_number": 11,
+            "display_order": 11,
+            "answer_type": "single_choice",
+            "difficulty_target": "hard",
+            "prompt": "Dalam materi hafalan, kata apa yang dipasangkan dengan “petir”?",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-16-me-data-draft.json#me-011"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": "payung",
+                    "display_order": 1,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "B",
+                    "text": "kursi",
+                    "display_order": 2,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": null
+                },
+                {
+                    "key": "C",
+                    "text": "bantal",
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "D",
+                    "text": "sawah",
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "E",
+                    "text": "sepatu",
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                }
+            ],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "me-011",
+                    "rationale": "Semua cue umum tanpa kemiripan ejaan yang membingungkan.",
+                    "recall_direction": "associate_to_cue",
+                    "target_pair_id": "me-pair-014"
+                }
+            }
+        },
+        {
+            "logical_id": "ME-S-012",
+            "subtest_code": "ME",
+            "kind": "scored",
+            "question_number": 12,
+            "display_order": 12,
+            "answer_type": "single_choice",
+            "difficulty_target": "hard",
+            "prompt": "Dalam materi hafalan, kata apa yang dipasangkan dengan “pita”?",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-16-me-data-draft.json#me-012"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": "sungai",
+                    "display_order": 1,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "B",
+                    "text": "tangga",
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "C",
+                    "text": "kertas",
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "D",
+                    "text": "kapal",
+                    "display_order": 4,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": null
+                },
+                {
+                    "key": "E",
+                    "text": "cermin",
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                }
+            ],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "me-012",
+                    "rationale": "Recall target pasangan akhir dengan distractor cue lintas posisi.",
+                    "recall_direction": "associate_to_cue",
+                    "target_pair_id": "me-pair-015"
+                }
+            }
+        }
+    ]
+}

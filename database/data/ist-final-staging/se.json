@@ -1,0 +1,1083 @@
+{
+    "schema_version": 1,
+    "instrument_identifier": "tes-kemampuan-kognitif-adaptasi-104",
+    "question_bank_version": "2026.08.06-stage17",
+    "subtest_code": "SE",
+    "review_status": "human_review_passed",
+    "active": false,
+    "content_origin": "original_internal",
+    "source_reference": null,
+    "copyright_status": "internally_authored",
+    "normative_compatibility": "none",
+    "instruction_content": "Pilih satu kata atau frasa yang paling tepat untuk melengkapi kalimat. Gunakan makna seluruh kalimat, bukan hanya kecocokan tata bahasa.",
+    "memorization_content": null,
+    "memorization": null,
+    "questions": [
+        {
+            "logical_id": "SE-E-001",
+            "subtest_code": "SE",
+            "kind": "example",
+            "question_number": 1,
+            "display_order": 1,
+            "answer_type": "single_choice",
+            "difficulty_target": null,
+            "prompt": "Petugas menutup jendela agar air hujan tidak ___ ke dalam ruangan.",
+            "explanation": "Kata “masuk” paling tepat karena jendela ditutup untuk mencegah air hujan bergerak ke dalam ruangan.",
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-12-se-wa-an.md#se-example-001"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": "mengering",
+                    "display_order": 1,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "B",
+                    "text": "masuk",
+                    "display_order": 2,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": null
+                },
+                {
+                    "key": "C",
+                    "text": "berhenti",
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "D",
+                    "text": "menyusut",
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "E",
+                    "text": "mengeras",
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                }
+            ],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "se-example-001",
+                    "rationale": "Hubungan tujuan tindakan dinyatakan oleh “agar tidak”; hanya “masuk” menghasilkan tujuan yang logis."
+                }
+            }
+        },
+        {
+            "logical_id": "SE-S-001",
+            "subtest_code": "SE",
+            "kind": "scored",
+            "question_number": 1,
+            "display_order": 1,
+            "answer_type": "single_choice",
+            "difficulty_target": "easy",
+            "prompt": "Karena hujan deras, panitia memindahkan acara ke dalam gedung agar kegiatan tetap ___.",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-12-se-wa-an.md#se-001"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": "tertunda",
+                    "display_order": 1,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "B",
+                    "text": "dibatalkan",
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "C",
+                    "text": "berlangsung",
+                    "display_order": 3,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": null
+                },
+                {
+                    "key": "D",
+                    "text": "dihentikan",
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "E",
+                    "text": "dipersingkat",
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                }
+            ],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "se-001",
+                    "rationale": "Pemindahan lokasi dilakukan agar kegiatan dapat tetap berlangsung meskipun hujan deras."
+                }
+            }
+        },
+        {
+            "logical_id": "SE-S-002",
+            "subtest_code": "SE",
+            "kind": "scored",
+            "question_number": 2,
+            "display_order": 2,
+            "answer_type": "single_choice",
+            "difficulty_target": "easy",
+            "prompt": "Sebelum dokumen dikirim, petugas memeriksa kembali setiap halaman untuk memastikan tidak ada data yang ___.",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-12-se-wa-an.md#se-002"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": "terlewat",
+                    "display_order": 1,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": null
+                },
+                {
+                    "key": "B",
+                    "text": "tercetak",
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "C",
+                    "text": "terbaca",
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "D",
+                    "text": "tersusun",
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "E",
+                    "text": "tersimpan",
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                }
+            ],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "se-002",
+                    "rationale": "Pemeriksaan ulang dilakukan untuk memastikan tidak ada informasi yang terlewat sebelum dokumen dikirim."
+                }
+            }
+        },
+        {
+            "logical_id": "SE-S-003",
+            "subtest_code": "SE",
+            "kind": "scored",
+            "question_number": 3,
+            "display_order": 3,
+            "answer_type": "single_choice",
+            "difficulty_target": "easy",
+            "prompt": "Ketika sirene darurat berbunyi, seluruh karyawan diminta meninggalkan gedung secara ___.",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-12-se-wa-an.md#se-003"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": "terpisah",
+                    "display_order": 1,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "B",
+                    "text": "tertib",
+                    "display_order": 2,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": null
+                },
+                {
+                    "key": "C",
+                    "text": "tertunda",
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "D",
+                    "text": "tertutup",
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "E",
+                    "text": "terbatas",
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                }
+            ],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "se-003",
+                    "rationale": "Dalam keadaan darurat, meninggalkan gedung secara tertib merupakan tindakan yang paling logis."
+                }
+            }
+        },
+        {
+            "logical_id": "SE-S-004",
+            "subtest_code": "SE",
+            "kind": "scored",
+            "question_number": 4,
+            "display_order": 4,
+            "answer_type": "single_choice",
+            "difficulty_target": "easy",
+            "prompt": "Keberangkatan pesawat mengalami keterlambatan, sehingga penumpang diminta ___ pengumuman berikutnya.",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-12-se-wa-an.md#se-004"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": "menghapus",
+                    "display_order": 1,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "B",
+                    "text": "mengabaikan",
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "C",
+                    "text": "mengulang",
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "D",
+                    "text": "menunggu",
+                    "display_order": 4,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": null
+                },
+                {
+                    "key": "E",
+                    "text": "membatalkan",
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                }
+            ],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "se-004",
+                    "rationale": "Jika keberangkatan tertunda dan informasi lanjutan belum tersedia, penumpang secara logis perlu menunggu pengumuman berikutnya."
+                }
+            }
+        },
+        {
+            "logical_id": "SE-S-005",
+            "subtest_code": "SE",
+            "kind": "scored",
+            "question_number": 5,
+            "display_order": 5,
+            "answer_type": "single_choice",
+            "difficulty_target": "medium",
+            "prompt": "Meskipun hasil awal tampak menjanjikan, tim peneliti menunda kesimpulan sampai data tambahan berhasil ___.",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-12-se-wa-an.md#se-005"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": "diperkirakan",
+                    "display_order": 1,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "B",
+                    "text": "diringkas",
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "C",
+                    "text": "diverifikasi",
+                    "display_order": 3,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": null
+                },
+                {
+                    "key": "D",
+                    "text": "dipisahkan",
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "E",
+                    "text": "dipublikasikan",
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                }
+            ],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "se-005",
+                    "rationale": "Penundaan kesimpulan menunjukkan kebutuhan untuk memastikan keandalan data tambahan melalui proses verifikasi."
+                }
+            }
+        },
+        {
+            "logical_id": "SE-S-006",
+            "subtest_code": "SE",
+            "kind": "scored",
+            "question_number": 6,
+            "display_order": 6,
+            "answer_type": "single_choice",
+            "difficulty_target": "medium",
+            "prompt": "Dalam negosiasi, kedua pihak menunda pembahasan isu paling sensitif sampai kesepahaman awal berhasil ___.",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-12-se-wa-an.md#se-006"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": "dihindari",
+                    "display_order": 1,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "B",
+                    "text": "dihapus",
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "C",
+                    "text": "dibatasi",
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "D",
+                    "text": "dibangun",
+                    "display_order": 4,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": null
+                },
+                {
+                    "key": "E",
+                    "text": "diperdebatkan",
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                }
+            ],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "se-006",
+                    "rationale": "Pembahasan isu sensitif lebih mungkin dilakukan setelah kedua pihak berhasil membangun dasar kesepahaman."
+                }
+            }
+        },
+        {
+            "logical_id": "SE-S-007",
+            "subtest_code": "SE",
+            "kind": "scored",
+            "question_number": 7,
+            "display_order": 7,
+            "answer_type": "single_choice",
+            "difficulty_target": "medium",
+            "prompt": "Laporan tersebut kaya akan angka, tetapi belum menjelaskan pola yang ___ perubahan antarvariabel.",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-12-se-wa-an.md#se-007"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": "menutupi",
+                    "display_order": 1,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "B",
+                    "text": "mendasari",
+                    "display_order": 2,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": null
+                },
+                {
+                    "key": "C",
+                    "text": "menghentikan",
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "D",
+                    "text": "memisahkan",
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "E",
+                    "text": "mengulang",
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                }
+            ],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "se-007",
+                    "rationale": "Yang belum dijelaskan adalah pola dasar yang menjadi landasan terjadinya perubahan antarvariabel."
+                }
+            }
+        },
+        {
+            "logical_id": "SE-S-008",
+            "subtest_code": "SE",
+            "kind": "scored",
+            "question_number": 8,
+            "display_order": 8,
+            "answer_type": "single_choice",
+            "difficulty_target": "medium",
+            "prompt": "Agar keputusan tidak bergantung pada satu sudut pandang, setiap usulan perlu ___ dari beberapa pertimbangan.",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-12-se-wa-an.md#se-008"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": "ditinjau",
+                    "display_order": 1,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": null
+                },
+                {
+                    "key": "B",
+                    "text": "dipertahankan",
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "C",
+                    "text": "dihilangkan",
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "D",
+                    "text": "dipisahkan",
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "E",
+                    "text": "dipercepat",
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                }
+            ],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "se-008",
+                    "rationale": "Untuk mengurangi ketergantungan pada satu sudut pandang, usulan perlu ditinjau menggunakan beberapa pertimbangan."
+                }
+            }
+        },
+        {
+            "logical_id": "SE-S-009",
+            "subtest_code": "SE",
+            "kind": "scored",
+            "question_number": 9,
+            "display_order": 9,
+            "answer_type": "single_choice",
+            "difficulty_target": "medium",
+            "prompt": "Pernyataan itu terdengar meyakinkan, tetapi tanpa bukti yang dapat diuji, kesimpulannya tetap bersifat ___.",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-12-se-wa-an.md#se-009"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": "objektif",
+                    "display_order": 1,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "B",
+                    "text": "definitif",
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "C",
+                    "text": "spekulatif",
+                    "display_order": 3,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": null
+                },
+                {
+                    "key": "D",
+                    "text": "empiris",
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "E",
+                    "text": "konklusif",
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                }
+            ],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "se-009",
+                    "rationale": "Tanpa bukti yang dapat diuji, kesimpulan belum memiliki dasar empiris yang cukup dan masih bersifat spekulatif."
+                }
+            }
+        },
+        {
+            "logical_id": "SE-S-010",
+            "subtest_code": "SE",
+            "kind": "scored",
+            "question_number": 10,
+            "display_order": 10,
+            "answer_type": "single_choice",
+            "difficulty_target": "hard",
+            "prompt": "Aturan yang terlalu longgar berisiko membuat penerapan kebijakan menjadi tidak ___.",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-12-se-wa-an.md#se-010"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": "populer",
+                    "display_order": 1,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "B",
+                    "text": "singkat",
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "C",
+                    "text": "fleksibel",
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "D",
+                    "text": "konsisten",
+                    "display_order": 4,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": null
+                },
+                {
+                    "key": "E",
+                    "text": "sederhana",
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                }
+            ],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "se-010",
+                    "rationale": "Aturan yang terlalu longgar membuka peluang interpretasi berbeda sehingga penerapan kebijakan berisiko tidak konsisten."
+                }
+            }
+        },
+        {
+            "logical_id": "SE-S-011",
+            "subtest_code": "SE",
+            "kind": "scored",
+            "question_number": 11,
+            "display_order": 11,
+            "answer_type": "single_choice",
+            "difficulty_target": "hard",
+            "prompt": "Ketika dua sumber memberikan informasi yang bertentangan, penilai perlu terlebih dahulu ___ dasar bukti masing-masing.",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-12-se-wa-an.md#se-011"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": "mengabaikan",
+                    "display_order": 1,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "B",
+                    "text": "membandingkan",
+                    "display_order": 2,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": null
+                },
+                {
+                    "key": "C",
+                    "text": "menyamakan",
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "D",
+                    "text": "menyembunyikan",
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "E",
+                    "text": "meniadakan",
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                }
+            ],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "se-011",
+                    "rationale": "Informasi yang bertentangan perlu dievaluasi dengan membandingkan dasar bukti dari masing-masing sumber."
+                }
+            }
+        },
+        {
+            "logical_id": "SE-S-012",
+            "subtest_code": "SE",
+            "kind": "scored",
+            "question_number": 12,
+            "display_order": 12,
+            "answer_type": "single_choice",
+            "difficulty_target": "hard",
+            "prompt": "Argumen yang baik tidak hanya menyatakan posisi, tetapi juga memberikan alasan yang cukup agar kesimpulannya dapat ___ secara logis.",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-12-se-wa-an.md#se-012"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": "dipertanggungjawabkan",
+                    "display_order": 1,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": null
+                },
+                {
+                    "key": "B",
+                    "text": "diperpendek",
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "C",
+                    "text": "disederhanakan",
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "D",
+                    "text": "dipopulerkan",
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "E",
+                    "text": "dipercepat",
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                }
+            ],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "se-012",
+                    "rationale": "Alasan yang memadai memungkinkan suatu kesimpulan dipertanggungjawabkan berdasarkan hubungan logis antara premis dan kesimpulan."
+                }
+            }
+        }
+    ]
+}

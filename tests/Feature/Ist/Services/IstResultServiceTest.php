@@ -55,6 +55,64 @@ class IstResultServiceTest extends IstDatabaseTestCase
         ));
         $this->assertCount(9, $result->graphPoints);
         $this->assertSame(['code' => 'SE', 'percentage' => 10.0], $result->graphPoints[0]);
+        $this->assertSame([
+            'verbal' => 25.0,
+            'numeric' => 55.0,
+            'figural' => 75.0,
+            'memory' => 90.0,
+        ], $result->areaScores);
+
+        $this->assertSame([
+            [
+                'key' => 'verbal',
+                'label' => 'Verbal',
+                'percentage' => 25.0,
+            ],
+            [
+                'key' => 'numeric',
+                'label' => 'Numerik',
+                'percentage' => 55.0,
+            ],
+            [
+                'key' => 'figural',
+                'label' => 'Figural',
+                'percentage' => 75.0,
+            ],
+            [
+                'key' => 'memory',
+                'label' => 'Memori',
+                'percentage' => 90.0,
+            ],
+        ], $result->areaGraphPoints);
+
+        $this->assertSame(61.25, $result->totalInternalScore);
+        $this->assertSame('Cukup', $result->performanceCategory);
+        $this->assertSame('Rata-rata', $result->performanceBenchmark);
+
+        $this->assertSame(
+            ['memory', 'figural'],
+            $result->strongestAreas
+        );
+
+        $this->assertSame(
+            ['verbal'],
+            $result->developmentAreas
+        );
+
+        $this->assertSame(
+            65.0,
+            $result->profileSpread
+        );
+
+        $this->assertSame(
+            'Perbedaan Kemampuan Cukup Menonjol',
+            $result->profileBalanceLabel
+        );
+
+        $this->assertSame(
+            '25–34 tahun',
+            $result->ageGroup
+        );
         $this->assertSame($updatedAt, $test->fresh()->updated_at->toISOString());
         $this->assertSame(
             $runtimeTimestamps,
@@ -184,7 +242,7 @@ class IstResultServiceTest extends IstDatabaseTestCase
             'started_at' => $this->startedAt,
             'finished_at' => $this->finishedAt,
             'current_subtest_sequence' => 9,
-            'total_internal_score' => 50,
+            'total_internal_score' => 61.25,
         ]);
 
         foreach ($test->subtests()->get() as $runtime) {

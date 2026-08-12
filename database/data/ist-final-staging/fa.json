@@ -1,0 +1,996 @@
+{
+    "schema_version": 1,
+    "instrument_identifier": "tes-kemampuan-kognitif-adaptasi-104",
+    "question_bank_version": "2026.08.06-stage17",
+    "subtest_code": "FA",
+    "review_status": "human_review_passed",
+    "active": false,
+    "content_origin": "original_internal",
+    "source_reference": null,
+    "copyright_status": "internally_authored",
+    "normative_compatibility": "none",
+    "instruction_content": "Perhatikan potongan-potongan pada gambar. Tentukan bentuk utuh A, B, C, D, atau E yang dapat disusun menggunakan seluruh potongan tepat satu kali. Potongan boleh diputar, tetapi tidak boleh dicerminkan.",
+    "memorization_content": null,
+    "memorization": null,
+    "questions": [
+        {
+            "logical_id": "FA-E-001",
+            "subtest_code": "FA",
+            "kind": "example",
+            "question_number": 1,
+            "display_order": 1,
+            "answer_type": "image_choice",
+            "difficulty_target": null,
+            "prompt": "Perhatikan lima bentuk acuan A–E, lalu tentukan bentuk yang dapat disusun menggunakan seluruh potongan contoh tepat satu kali.",
+            "explanation": "Jawaban yang benar adalah bentuk B. Seluruh potongan mempunyai exact-cover unik pada master B menggunakan rotasi tanpa pencerminan.",
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-15-assets/geometry-spec-draft.json#fa-example-001"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": null,
+                    "display_order": 1,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "fa-example-001-option-a"
+                },
+                {
+                    "key": "B",
+                    "text": null,
+                    "display_order": 2,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": "fa-example-001-option-b"
+                },
+                {
+                    "key": "C",
+                    "text": null,
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "fa-example-001-option-c"
+                },
+                {
+                    "key": "D",
+                    "text": null,
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "fa-example-001-option-d"
+                },
+                {
+                    "key": "E",
+                    "text": null,
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "fa-example-001-option-e"
+                }
+            ],
+            "media": {
+                "prompt_ref": "fa-example-001-prompt"
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "visual"
+                },
+                "internal": {
+                    "draft_logical_id": "fa-example-001",
+                    "rationale": "3 potongan hanya mempunyai exact-cover pada master B; master A-E dan seluruh rotasi/refleksi alternatif telah diaudit.",
+                    "fixed_master_key": "B",
+                    "piece_count": 3,
+                    "rotation_only_verified": true,
+                    "reflection_ambiguity_checked": true,
+                    "matching_masters": [
+                        "B"
+                    ]
+                }
+            }
+        },
+        {
+            "logical_id": "FA-S-001",
+            "subtest_code": "FA",
+            "kind": "scored",
+            "question_number": 1,
+            "display_order": 1,
+            "answer_type": "image_choice",
+            "difficulty_target": "easy",
+            "prompt": "Tentukan bentuk acuan A–E yang dapat disusun menggunakan seluruh potongan pada gambar tepat satu kali.",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-15-assets/geometry-spec-draft.json#fa-001"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": null,
+                    "display_order": 1,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "fa-001-option-a"
+                },
+                {
+                    "key": "B",
+                    "text": null,
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "fa-001-option-b"
+                },
+                {
+                    "key": "C",
+                    "text": null,
+                    "display_order": 3,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": "fa-001-option-c"
+                },
+                {
+                    "key": "D",
+                    "text": null,
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "fa-001-option-d"
+                },
+                {
+                    "key": "E",
+                    "text": null,
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "fa-001-option-e"
+                }
+            ],
+            "media": {
+                "prompt_ref": "fa-001-prompt"
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "visual"
+                },
+                "internal": {
+                    "draft_logical_id": "fa-001",
+                    "rationale": "3 potongan hanya mempunyai exact-cover pada master C; master A-E dan seluruh rotasi/refleksi alternatif telah diaudit.",
+                    "fixed_master_key": "C",
+                    "piece_count": 3,
+                    "rotation_only_verified": true,
+                    "reflection_ambiguity_checked": true,
+                    "matching_masters": [
+                        "C"
+                    ]
+                }
+            }
+        },
+        {
+            "logical_id": "FA-S-002",
+            "subtest_code": "FA",
+            "kind": "scored",
+            "question_number": 2,
+            "display_order": 2,
+            "answer_type": "image_choice",
+            "difficulty_target": "easy",
+            "prompt": "Tentukan bentuk acuan A–E yang dapat disusun menggunakan seluruh potongan pada gambar tepat satu kali.",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-15-assets/geometry-spec-draft.json#fa-002"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": null,
+                    "display_order": 1,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": "fa-002-option-a"
+                },
+                {
+                    "key": "B",
+                    "text": null,
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "fa-002-option-b"
+                },
+                {
+                    "key": "C",
+                    "text": null,
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "fa-002-option-c"
+                },
+                {
+                    "key": "D",
+                    "text": null,
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "fa-002-option-d"
+                },
+                {
+                    "key": "E",
+                    "text": null,
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "fa-002-option-e"
+                }
+            ],
+            "media": {
+                "prompt_ref": "fa-002-prompt"
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "visual"
+                },
+                "internal": {
+                    "draft_logical_id": "fa-002",
+                    "rationale": "3 potongan hanya mempunyai exact-cover pada master A; master A-E dan seluruh rotasi/refleksi alternatif telah diaudit.",
+                    "fixed_master_key": "A",
+                    "piece_count": 3,
+                    "rotation_only_verified": true,
+                    "reflection_ambiguity_checked": true,
+                    "matching_masters": [
+                        "A"
+                    ]
+                }
+            }
+        },
+        {
+            "logical_id": "FA-S-003",
+            "subtest_code": "FA",
+            "kind": "scored",
+            "question_number": 3,
+            "display_order": 3,
+            "answer_type": "image_choice",
+            "difficulty_target": "easy",
+            "prompt": "Tentukan bentuk acuan A–E yang dapat disusun menggunakan seluruh potongan pada gambar tepat satu kali.",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-15-assets/geometry-spec-draft.json#fa-003"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": null,
+                    "display_order": 1,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "fa-003-option-a"
+                },
+                {
+                    "key": "B",
+                    "text": null,
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "fa-003-option-b"
+                },
+                {
+                    "key": "C",
+                    "text": null,
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "fa-003-option-c"
+                },
+                {
+                    "key": "D",
+                    "text": null,
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "fa-003-option-d"
+                },
+                {
+                    "key": "E",
+                    "text": null,
+                    "display_order": 5,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": "fa-003-option-e"
+                }
+            ],
+            "media": {
+                "prompt_ref": "fa-003-prompt"
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "visual"
+                },
+                "internal": {
+                    "draft_logical_id": "fa-003",
+                    "rationale": "3 potongan hanya mempunyai exact-cover pada master E; master A-E dan seluruh rotasi/refleksi alternatif telah diaudit.",
+                    "fixed_master_key": "E",
+                    "piece_count": 3,
+                    "rotation_only_verified": true,
+                    "reflection_ambiguity_checked": true,
+                    "matching_masters": [
+                        "E"
+                    ]
+                }
+            }
+        },
+        {
+            "logical_id": "FA-S-004",
+            "subtest_code": "FA",
+            "kind": "scored",
+            "question_number": 4,
+            "display_order": 4,
+            "answer_type": "image_choice",
+            "difficulty_target": "medium",
+            "prompt": "Tentukan bentuk acuan A–E yang dapat disusun menggunakan seluruh potongan pada gambar tepat satu kali.",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-15-assets/geometry-spec-draft.json#fa-004"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": null,
+                    "display_order": 1,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "fa-004-option-a"
+                },
+                {
+                    "key": "B",
+                    "text": null,
+                    "display_order": 2,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": "fa-004-option-b"
+                },
+                {
+                    "key": "C",
+                    "text": null,
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "fa-004-option-c"
+                },
+                {
+                    "key": "D",
+                    "text": null,
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "fa-004-option-d"
+                },
+                {
+                    "key": "E",
+                    "text": null,
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "fa-004-option-e"
+                }
+            ],
+            "media": {
+                "prompt_ref": "fa-004-prompt"
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "visual"
+                },
+                "internal": {
+                    "draft_logical_id": "fa-004",
+                    "rationale": "4 potongan hanya mempunyai exact-cover pada master B; master A-E dan seluruh rotasi/refleksi alternatif telah diaudit.",
+                    "fixed_master_key": "B",
+                    "piece_count": 4,
+                    "rotation_only_verified": true,
+                    "reflection_ambiguity_checked": true,
+                    "matching_masters": [
+                        "B"
+                    ]
+                }
+            }
+        },
+        {
+            "logical_id": "FA-S-005",
+            "subtest_code": "FA",
+            "kind": "scored",
+            "question_number": 5,
+            "display_order": 5,
+            "answer_type": "image_choice",
+            "difficulty_target": "medium",
+            "prompt": "Tentukan bentuk acuan A–E yang dapat disusun menggunakan seluruh potongan pada gambar tepat satu kali.",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-15-assets/geometry-spec-draft.json#fa-005"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": null,
+                    "display_order": 1,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "fa-005-option-a"
+                },
+                {
+                    "key": "B",
+                    "text": null,
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "fa-005-option-b"
+                },
+                {
+                    "key": "C",
+                    "text": null,
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "fa-005-option-c"
+                },
+                {
+                    "key": "D",
+                    "text": null,
+                    "display_order": 4,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": "fa-005-option-d"
+                },
+                {
+                    "key": "E",
+                    "text": null,
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "fa-005-option-e"
+                }
+            ],
+            "media": {
+                "prompt_ref": "fa-005-prompt"
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "visual"
+                },
+                "internal": {
+                    "draft_logical_id": "fa-005",
+                    "rationale": "4 potongan hanya mempunyai exact-cover pada master D; master A-E dan seluruh rotasi/refleksi alternatif telah diaudit.",
+                    "fixed_master_key": "D",
+                    "piece_count": 4,
+                    "rotation_only_verified": true,
+                    "reflection_ambiguity_checked": true,
+                    "matching_masters": [
+                        "D"
+                    ]
+                }
+            }
+        },
+        {
+            "logical_id": "FA-S-006",
+            "subtest_code": "FA",
+            "kind": "scored",
+            "question_number": 6,
+            "display_order": 6,
+            "answer_type": "image_choice",
+            "difficulty_target": "medium",
+            "prompt": "Tentukan bentuk acuan A–E yang dapat disusun menggunakan seluruh potongan pada gambar tepat satu kali.",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-15-assets/geometry-spec-draft.json#fa-006"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": null,
+                    "display_order": 1,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "fa-006-option-a"
+                },
+                {
+                    "key": "B",
+                    "text": null,
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "fa-006-option-b"
+                },
+                {
+                    "key": "C",
+                    "text": null,
+                    "display_order": 3,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": "fa-006-option-c"
+                },
+                {
+                    "key": "D",
+                    "text": null,
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "fa-006-option-d"
+                },
+                {
+                    "key": "E",
+                    "text": null,
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "fa-006-option-e"
+                }
+            ],
+            "media": {
+                "prompt_ref": "fa-006-prompt"
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "visual"
+                },
+                "internal": {
+                    "draft_logical_id": "fa-006",
+                    "rationale": "4 potongan hanya mempunyai exact-cover pada master C; master A-E dan seluruh rotasi/refleksi alternatif telah diaudit.",
+                    "fixed_master_key": "C",
+                    "piece_count": 4,
+                    "rotation_only_verified": true,
+                    "reflection_ambiguity_checked": true,
+                    "matching_masters": [
+                        "C"
+                    ]
+                }
+            }
+        },
+        {
+            "logical_id": "FA-S-007",
+            "subtest_code": "FA",
+            "kind": "scored",
+            "question_number": 7,
+            "display_order": 7,
+            "answer_type": "image_choice",
+            "difficulty_target": "medium",
+            "prompt": "Tentukan bentuk acuan A–E yang dapat disusun menggunakan seluruh potongan pada gambar tepat satu kali.",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-15-assets/geometry-spec-draft.json#fa-007"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": null,
+                    "display_order": 1,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": "fa-007-option-a"
+                },
+                {
+                    "key": "B",
+                    "text": null,
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "fa-007-option-b"
+                },
+                {
+                    "key": "C",
+                    "text": null,
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "fa-007-option-c"
+                },
+                {
+                    "key": "D",
+                    "text": null,
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "fa-007-option-d"
+                },
+                {
+                    "key": "E",
+                    "text": null,
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "fa-007-option-e"
+                }
+            ],
+            "media": {
+                "prompt_ref": "fa-007-prompt"
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "visual"
+                },
+                "internal": {
+                    "draft_logical_id": "fa-007",
+                    "rationale": "4 potongan hanya mempunyai exact-cover pada master A; master A-E dan seluruh rotasi/refleksi alternatif telah diaudit.",
+                    "fixed_master_key": "A",
+                    "piece_count": 4,
+                    "rotation_only_verified": true,
+                    "reflection_ambiguity_checked": true,
+                    "matching_masters": [
+                        "A"
+                    ]
+                }
+            }
+        },
+        {
+            "logical_id": "FA-S-008",
+            "subtest_code": "FA",
+            "kind": "scored",
+            "question_number": 8,
+            "display_order": 8,
+            "answer_type": "image_choice",
+            "difficulty_target": "hard",
+            "prompt": "Tentukan bentuk acuan A–E yang dapat disusun menggunakan seluruh potongan pada gambar tepat satu kali.",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-15-assets/geometry-spec-draft.json#fa-008"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": null,
+                    "display_order": 1,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "fa-008-option-a"
+                },
+                {
+                    "key": "B",
+                    "text": null,
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "fa-008-option-b"
+                },
+                {
+                    "key": "C",
+                    "text": null,
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "fa-008-option-c"
+                },
+                {
+                    "key": "D",
+                    "text": null,
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "fa-008-option-d"
+                },
+                {
+                    "key": "E",
+                    "text": null,
+                    "display_order": 5,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": "fa-008-option-e"
+                }
+            ],
+            "media": {
+                "prompt_ref": "fa-008-prompt"
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "visual"
+                },
+                "internal": {
+                    "draft_logical_id": "fa-008",
+                    "rationale": "5 potongan hanya mempunyai exact-cover pada master E; master A-E dan seluruh rotasi/refleksi alternatif telah diaudit.",
+                    "fixed_master_key": "E",
+                    "piece_count": 5,
+                    "rotation_only_verified": true,
+                    "reflection_ambiguity_checked": true,
+                    "matching_masters": [
+                        "E"
+                    ]
+                }
+            }
+        },
+        {
+            "logical_id": "FA-S-009",
+            "subtest_code": "FA",
+            "kind": "scored",
+            "question_number": 9,
+            "display_order": 9,
+            "answer_type": "image_choice",
+            "difficulty_target": "hard",
+            "prompt": "Tentukan bentuk acuan A–E yang dapat disusun menggunakan seluruh potongan pada gambar tepat satu kali.",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-15-assets/geometry-spec-draft.json#fa-009"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": null,
+                    "display_order": 1,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "fa-009-option-a"
+                },
+                {
+                    "key": "B",
+                    "text": null,
+                    "display_order": 2,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": "fa-009-option-b"
+                },
+                {
+                    "key": "C",
+                    "text": null,
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "fa-009-option-c"
+                },
+                {
+                    "key": "D",
+                    "text": null,
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "fa-009-option-d"
+                },
+                {
+                    "key": "E",
+                    "text": null,
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "fa-009-option-e"
+                }
+            ],
+            "media": {
+                "prompt_ref": "fa-009-prompt"
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "visual"
+                },
+                "internal": {
+                    "draft_logical_id": "fa-009",
+                    "rationale": "5 potongan hanya mempunyai exact-cover pada master B; master A-E dan seluruh rotasi/refleksi alternatif telah diaudit.",
+                    "fixed_master_key": "B",
+                    "piece_count": 5,
+                    "rotation_only_verified": true,
+                    "reflection_ambiguity_checked": true,
+                    "matching_masters": [
+                        "B"
+                    ]
+                }
+            }
+        },
+        {
+            "logical_id": "FA-S-010",
+            "subtest_code": "FA",
+            "kind": "scored",
+            "question_number": 10,
+            "display_order": 10,
+            "answer_type": "image_choice",
+            "difficulty_target": "hard",
+            "prompt": "Tentukan bentuk acuan A–E yang dapat disusun menggunakan seluruh potongan pada gambar tepat satu kali.",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-15-assets/geometry-spec-draft.json#fa-010"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": null,
+                    "display_order": 1,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "fa-010-option-a"
+                },
+                {
+                    "key": "B",
+                    "text": null,
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "fa-010-option-b"
+                },
+                {
+                    "key": "C",
+                    "text": null,
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "fa-010-option-c"
+                },
+                {
+                    "key": "D",
+                    "text": null,
+                    "display_order": 4,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": "fa-010-option-d"
+                },
+                {
+                    "key": "E",
+                    "text": null,
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "fa-010-option-e"
+                }
+            ],
+            "media": {
+                "prompt_ref": "fa-010-prompt"
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "visual"
+                },
+                "internal": {
+                    "draft_logical_id": "fa-010",
+                    "rationale": "5 potongan hanya mempunyai exact-cover pada master D; master A-E dan seluruh rotasi/refleksi alternatif telah diaudit.",
+                    "fixed_master_key": "D",
+                    "piece_count": 5,
+                    "rotation_only_verified": true,
+                    "reflection_ambiguity_checked": true,
+                    "matching_masters": [
+                        "D"
+                    ]
+                }
+            }
+        }
+    ]
+}

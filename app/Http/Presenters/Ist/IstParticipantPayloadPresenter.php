@@ -10,51 +10,67 @@ use App\Models\Ist\IstQuestion;
 use App\Models\Ist\IstTest;
 use App\Models\Ist\IstTestQuestion;
 use App\Models\Ist\IstTestSubtest;
+use App\Support\Ist\IstMeRuntimeContent;
 use Carbon\CarbonInterface;
 use Illuminate\Support\Facades\Storage;
 use Throwable;
 
 final class IstParticipantPayloadPresenter
 {
+    public function __construct(
+        private readonly IstMeRuntimeContent $meRuntimeContent,
+    ) {}
+
     public function instruction(
         IstTest $test,
         IstTestSubtest $runtime,
         bool $snapshotComplete,
+        bool $exampleCompleted = true,
     ): array {
         $runtime->loadMissing('subtest');
+        $requiresExampleCompletion = $runtime->subtest->code === 'ME';
+        $meRuntime = $requiresExampleCompletion
+            ? $this->meRuntimeSnapshot($runtime)
+            : null;
 
-        $examples = IstQuestion::query()
-            ->where('ist_subtest_id', $runtime->ist_subtest_id)
-            ->where('kind', IstQuestion::KIND_EXAMPLE)
-            ->where('is_active', true)
-            ->with(['options' => fn ($query) => $query
+        $examples = [];
+
+        if (! $requiresExampleCompletion || $meRuntime !== null) {
+            $examples = IstQuestion::query()
+                ->where('ist_subtest_id', $runtime->ist_subtest_id)
+                ->where('kind', IstQuestion::KIND_EXAMPLE)
                 ->where('is_active', true)
-                ->orderBy('display_order')])
-            ->orderBy('display_order')
-            ->get()
-            ->map(fn (IstQuestion $question): array => [
-                'displayOrder' => $question->display_order,
-                'answerType' => $question->answer_type,
-                'prompt' => $question->prompt,
-                'image' => $this->media(
-                    $question->image_disk,
-                    $question->image_path,
-                    $question->image_alt,
-                ),
-                'options' => $question->options->map(fn ($option): array => [
-                    'optionKey' => $option->option_key,
-                    'text' => $option->option_text,
-                    'displayOrder' => $option->display_order,
+                ->with(['options' => fn ($query) => $query
+                    ->where('is_active', true)
+                    ->orderBy('display_order')])
+                ->orderBy('display_order')
+                ->get()
+                ->map(fn (IstQuestion $question): array => [
+                    'displayOrder' => $question->display_order,
+                    'answerType' => $question->answer_type,
+                    'prompt' => $question->prompt,
                     'image' => $this->media(
-                        $option->image_disk,
-                        $option->image_path,
-                        $option->image_alt,
+                        $question->image_disk,
+                        $question->image_path,
+                        $question->image_alt,
                     ),
-                ])->values()->all(),
-                'explanation' => $question->example_explanation,
-            ])
-            ->values()
-            ->all();
+                    'options' => $question->options->map(fn ($option): array => [
+                        'optionKey' => $option->option_key,
+                        'text' => $option->option_text,
+                        'displayOrder' => $option->display_order,
+                        'image' => $this->media(
+                            $option->image_disk,
+                            $option->image_path,
+                            $option->image_alt,
+                        ),
+                    ])->values()->all(),
+                    'explanation' => $requiresExampleCompletion && ! $exampleCompleted
+                        ? null
+                        : $question->example_explanation,
+                ])
+                ->values()
+                ->all();
+        }
 
         return [
             'testPublicId' => $test->public_id,
@@ -63,14 +79,25 @@ final class IstParticipantPayloadPresenter
                 'name' => $runtime->subtest->name,
                 'sequence' => $runtime->sequence,
                 'questionCount' => $runtime->question_count,
-                'instructionContent' => $runtime->subtest->instruction_content,
+                'instructionContent' => $requiresExampleCompletion
+                    ? ($meRuntime['instructionContent'] ?? null)
+                    : $runtime->subtest->instruction_content,
                 'durationSeconds' => $runtime->subtest->duration_seconds,
                 'memorizationSeconds' => $runtime->subtest->memorization_seconds,
                 'answeringSeconds' => $runtime->subtest->answering_seconds,
             ],
             'examples' => $examples,
             'snapshotComplete' => $snapshotComplete,
-            'canStart' => $snapshotComplete,
+            'requiresExampleCompletion' => $requiresExampleCompletion,
+            'exampleCompleted' => ! $requiresExampleCompletion || $exampleCompleted,
+            'exampleCompletionUrl' => $requiresExampleCompletion
+                ? route('ist.subtests.example.complete', [
+                    'test' => $test->public_id,
+                    'subtest' => 'ME',
+                ])
+                : null,
+            'canStart' => $snapshotComplete
+                && (! $requiresExampleCompletion || ($exampleCompleted && $meRuntime !== null)),
             'startUrl' => route('ist.subtests.start', [
                 'test' => $test->public_id,
                 'subtest' => $runtime->subtest->code,
@@ -85,6 +112,9 @@ final class IstParticipantPayloadPresenter
         CarbonInterface $serverTime,
     ): array {
         $runtime->loadMissing('subtest');
+        $meRuntime = $runtime->subtest->code === 'ME'
+            ? $this->meRuntimeSnapshot($runtime)
+            : null;
         $mode = match ($decision->destination) {
             IstAccessDestination::MEMORIZATION => 'memorization',
             IstAccessDestination::EXPIRED => 'expired',
@@ -136,9 +166,9 @@ final class IstParticipantPayloadPresenter
                 'name' => $runtime->subtest->name,
                 'sequence' => $runtime->sequence,
             ],
-            'memorizationContent' => $mode === 'memorization'
-                ? $runtime->subtest->memorization_content
-                : null,
+            'memorizationGroups' => $mode === 'memorization'
+                ? ($meRuntime['groups'] ?? [])
+                : [],
             'questions' => $questions,
             'serverTime' => $serverTime->toISOString(),
             'phaseEndsAt' => $decision->phaseEndsAt?->toISOString(),
@@ -160,11 +190,19 @@ final class IstParticipantPayloadPresenter
             'participant' => [
                 'name' => $result->participantName,
                 'age' => $result->age,
+                'ageGroup' => $result->ageGroup,
                 'gender' => $result->gender,
             ],
+
             'startedAt' => $result->startedAt->toISOString(),
             'finishedAt' => $result->finishedAt->toISOString(),
             'durationSeconds' => $result->durationSeconds,
+
+            /*
+            |--------------------------------------------------------------------------
+            | 9 Subtests
+            |--------------------------------------------------------------------------
+            */
             'subtests' => array_map(
                 static fn (IstSubtestResultData $subtest): array => [
                     'code' => $subtest->code,
@@ -180,8 +218,40 @@ final class IstParticipantPayloadPresenter
                 ],
                 $result->subtests,
             ),
+
+            /*
+            |--------------------------------------------------------------------------
+            | 9 Subtest Chart
+            |--------------------------------------------------------------------------
+            */
             'graphPoints' => $result->graphPoints,
+
+            /*
+            |--------------------------------------------------------------------------
+            | 4 Cognitive Areas
+            |--------------------------------------------------------------------------
+            */
+            'areaScores' => $result->areaScores,
+            'areaGraphPoints' => $result->areaGraphPoints,
+
+            /*
+            |--------------------------------------------------------------------------
+            | Overall Cognitive Performance
+            |--------------------------------------------------------------------------
+            */
             'totalInternalScore' => $result->totalInternalScore,
+            'performanceCategory' => $result->performanceCategory,
+            'performanceBenchmark' => $result->performanceBenchmark,
+
+            /*
+            |--------------------------------------------------------------------------
+            | Profile Interpretation
+            |--------------------------------------------------------------------------
+            */
+            'strongestAreas' => $result->strongestAreas,
+            'developmentAreas' => $result->developmentAreas,
+            'profileSpread' => $result->profileSpread,
+            'profileBalanceLabel' => $result->profileBalanceLabel,
         ];
     }
 
@@ -206,5 +276,16 @@ final class IstParticipantPayloadPresenter
         }
 
         return ['url' => $url, 'alt' => $alt];
+    }
+
+    private function meRuntimeSnapshot(IstTestSubtest $runtime): ?array
+    {
+        $question = $runtime->testQuestions()
+            ->orderBy('display_order')
+            ->first(['question_snapshot']);
+
+        return $this->meRuntimeContent->fromQuestionSnapshot(
+            $question?->question_snapshot,
+        );
     }
 }

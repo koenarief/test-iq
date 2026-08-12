@@ -9,7 +9,7 @@ export default function TestCard({
     icon: Icon,
     badge,
     isActive = false,
-    href = '#',
+    href = '/ist',
     features = [],
     index = 0,
 }) {

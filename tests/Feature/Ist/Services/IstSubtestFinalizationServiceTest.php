@@ -59,8 +59,8 @@ class IstSubtestFinalizationServiceTest extends IstDatabaseTestCase
         $this->assertSame(IstTestSubtest::STATUS_COMPLETED, $runtime->status);
         $this->assertSame('submitted', $runtime->finalized_reason);
         $this->assertNotNull($runtime->locked_at);
-        $this->assertSame('4.0000', $runtime->awarded_score);
-        $this->assertSame('7.0000', $runtime->max_score);
+        $this->assertSame('8.0000', $runtime->awarded_score);
+        $this->assertSame('14.0000', $runtime->max_score);
         $this->assertSame(2, $runtime->correct_count);
         $this->assertSame(1, $runtime->partial_count);
         $this->assertSame(0, $runtime->wrong_count);
@@ -79,6 +79,38 @@ class IstSubtestFinalizationServiceTest extends IstDatabaseTestCase
         $this->assertNull($next->started_at);
         $this->assertNull($next->answering_ends_at);
         $this->assertNull($test->total_internal_score);
+    }
+
+    public function test_persisted_ge_score_four_finalizes_without_final_answers_or_revision_conflict(): void
+    {
+        [$test, $runtime, $questions] = $this->scoringRuntime();
+        $weightedQuestion = $questions[1];
+
+        $this->autosave->save(
+            $runtime,
+            [$this->choiceChange($weightedQuestion, 'B', 1)],
+            $this->now,
+        );
+
+        $result = $this->service->finalize(
+            $runtime,
+            IstFinalizationReason::SUBMITTED,
+            $this->now->addSecond(),
+        );
+
+        $answer = IstAnswer::query()
+            ->where('ist_test_question_id', $weightedQuestion->id)
+            ->firstOrFail();
+
+        $this->assertSame('B', $answer->selected_option_key);
+        $this->assertSame(1, $answer->client_revision);
+        $this->assertSame('8.0000', $answer->awarded_score);
+        $this->assertSame(IstAnswer::OUTCOME_CORRECT, $answer->outcome);
+        $this->assertSame(1, $result->correctCount);
+        $this->assertSame(0, $result->partialCount);
+        $this->assertSame(3, $result->blankCount);
+        $this->assertSame(2, $test->fresh()->current_subtest_sequence);
+        $this->assertNotNull($result->nextTestSubtestId);
     }
 
     public function test_submit_and_timeout_obey_exact_deadline_boundaries(): void
@@ -316,8 +348,8 @@ class IstSubtestFinalizationServiceTest extends IstDatabaseTestCase
         $this->assertTrue($result->overallCompleted);
         $this->assertSame(IstTest::STATUS_COMPLETED, $test->status);
         $this->assertSame(9, $test->current_subtest_sequence);
-        $this->assertSame('51.111', $test->total_internal_score);
-        $this->assertSame(51.111, $result->totalInternalScore);
+        $this->assertSame('63.750', $test->total_internal_score);
+        $this->assertSame(63.75, $result->totalInternalScore);
         $this->assertNotNull($test->finished_at);
         $this->assertNull($test->subtests()->where('sequence', 10)->first());
     }

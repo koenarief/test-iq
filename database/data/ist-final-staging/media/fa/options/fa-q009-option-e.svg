@@ -1,0 +1,16 @@
+<svg shape-rendering="crispEdges" xmlns="http://www.w3.org/2000/svg" width="240" height="180" viewBox="0 0 240 180" role="img" aria-hidden="true">
+<rect x="45" y="45" width="30" height="30" fill="#e5e7eb" stroke="#374151" stroke-width="2" vector-effect="non-scaling-stroke" shape-rendering="crispEdges"/>
+<rect x="45" y="75" width="30" height="30" fill="#e5e7eb" stroke="#374151" stroke-width="2" vector-effect="non-scaling-stroke" shape-rendering="crispEdges"/>
+<rect x="45" y="105" width="30" height="30" fill="#e5e7eb" stroke="#374151" stroke-width="2" vector-effect="non-scaling-stroke" shape-rendering="crispEdges"/>
+<rect x="75" y="45" width="30" height="30" fill="#e5e7eb" stroke="#374151" stroke-width="2" vector-effect="non-scaling-stroke" shape-rendering="crispEdges"/>
+<rect x="75" y="105" width="30" height="30" fill="#e5e7eb" stroke="#374151" stroke-width="2" vector-effect="non-scaling-stroke" shape-rendering="crispEdges"/>
+<rect x="105" y="45" width="30" height="30" fill="#e5e7eb" stroke="#374151" stroke-width="2" vector-effect="non-scaling-stroke" shape-rendering="crispEdges"/>
+<rect x="105" y="75" width="30" height="30" fill="#e5e7eb" stroke="#374151" stroke-width="2" vector-effect="non-scaling-stroke" shape-rendering="crispEdges"/>
+<rect x="105" y="105" width="30" height="30" fill="#e5e7eb" stroke="#374151" stroke-width="2" vector-effect="non-scaling-stroke" shape-rendering="crispEdges"/>
+<rect x="135" y="75" width="30" height="30" fill="#e5e7eb" stroke="#374151" stroke-width="2" vector-effect="non-scaling-stroke" shape-rendering="crispEdges"/>
+<rect x="135" y="105" width="30" height="30" fill="#e5e7eb" stroke="#374151" stroke-width="2" vector-effect="non-scaling-stroke" shape-rendering="crispEdges"/>
+<rect x="165" y="45" width="30" height="30" fill="#e5e7eb" stroke="#374151" stroke-width="2" vector-effect="non-scaling-stroke" shape-rendering="crispEdges"/>
+<rect x="165" y="75" width="30" height="30" fill="#e5e7eb" stroke="#374151" stroke-width="2" vector-effect="non-scaling-stroke" shape-rendering="crispEdges"/>
+<rect x="165" y="105" width="30" height="30" fill="#e5e7eb" stroke="#374151" stroke-width="2" vector-effect="non-scaling-stroke" shape-rendering="crispEdges"/>
+<path data-fa-layer="outer-outline" d="M45 45L45 75M45 45L75 45M45 75L45 105M75 75L75 105M45 105L45 135M45 135L75 135M75 45L105 45M75 75L105 75M75 105L105 105M75 135L105 135M135 45L135 75M105 45L135 45M105 75L105 105M105 135L135 135M135 75L165 75M135 135L165 135M165 45L165 75M195 45L195 75M165 45L195 45M195 75L195 105M195 105L195 135M165 135L195 135" fill="none" stroke="#111827" stroke-width="3" vector-effect="non-scaling-stroke" shape-rendering="crispEdges" stroke-linecap="square" stroke-linejoin="miter"/>
+</svg>

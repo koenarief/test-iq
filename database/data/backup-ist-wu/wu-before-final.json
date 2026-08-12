@@ -1,0 +1,1083 @@
+{
+    "schema_version": 1,
+    "instrument_identifier": "tes-kemampuan-kognitif-adaptasi-104",
+    "question_bank_version": "2026.08.06-stage17",
+    "subtest_code": "WU",
+    "review_status": "human_review_passed",
+    "active": false,
+    "content_origin": "original_internal",
+    "source_reference": null,
+    "copyright_status": "internally_authored",
+    "normative_compatibility": "none",
+    "instruction_content": "Perhatikan dua tampilan kubus referensi. Pilih kubus yang menunjukkan susunan sisi yang sama setelah rotasi.",
+    "memorization_content": null,
+    "memorization": null,
+    "questions": [
+        {
+            "logical_id": "WU-E-001",
+            "subtest_code": "WU",
+            "kind": "example",
+            "question_number": 1,
+            "display_order": 1,
+            "answer_type": "image_choice",
+            "difficulty_target": null,
+            "prompt": "Perhatikan dua tampilan kubus referensi. Pilih kubus yang menunjukkan susunan sisi yang sama setelah rotasi.",
+            "explanation": "Rotasi kubus mempertahankan sisi yang bersebelahan, sisi yang berlawanan, dan urutan tiga sisi pada satu sudut.",
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-15-assets/geometry-spec-draft.json#wu-example-001"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": null,
+                    "display_order": 1,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "wu-example-001-option-a"
+                },
+                {
+                    "key": "B",
+                    "text": null,
+                    "display_order": 2,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": "wu-example-001-option-b"
+                },
+                {
+                    "key": "C",
+                    "text": null,
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "wu-example-001-option-c"
+                },
+                {
+                    "key": "D",
+                    "text": null,
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "wu-example-001-option-d"
+                },
+                {
+                    "key": "E",
+                    "text": null,
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "wu-example-001-option-e"
+                }
+            ],
+            "media": {
+                "prompt_ref": "wu-example-001-reference"
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "visual"
+                },
+                "internal": {
+                    "draft_logical_id": "wu-example-001",
+                    "rationale": "Mapping enam sisi unik diverifikasi melalui 24 rotasi proper. Hanya opsi B yang mempunyai tuple orientasi valid."
+                }
+            }
+        },
+        {
+            "logical_id": "WU-S-001",
+            "subtest_code": "WU",
+            "kind": "scored",
+            "question_number": 1,
+            "display_order": 1,
+            "answer_type": "image_choice",
+            "difficulty_target": "easy",
+            "prompt": "Perhatikan dua tampilan kubus referensi. Pilih kubus yang menunjukkan susunan sisi yang sama setelah rotasi.",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-15-assets/geometry-spec-draft.json#wu-001"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": null,
+                    "display_order": 1,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "wu-001-option-a"
+                },
+                {
+                    "key": "B",
+                    "text": null,
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "wu-001-option-b"
+                },
+                {
+                    "key": "C",
+                    "text": null,
+                    "display_order": 3,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": "wu-001-option-c"
+                },
+                {
+                    "key": "D",
+                    "text": null,
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "wu-001-option-d"
+                },
+                {
+                    "key": "E",
+                    "text": null,
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "wu-001-option-e"
+                }
+            ],
+            "media": {
+                "prompt_ref": "wu-001-reference"
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "visual"
+                },
+                "internal": {
+                    "draft_logical_id": "wu-001",
+                    "rationale": "Mapping enam sisi unik diverifikasi melalui 24 rotasi proper. Hanya opsi C yang mempunyai tuple orientasi valid."
+                }
+            }
+        },
+        {
+            "logical_id": "WU-S-002",
+            "subtest_code": "WU",
+            "kind": "scored",
+            "question_number": 2,
+            "display_order": 2,
+            "answer_type": "image_choice",
+            "difficulty_target": "easy",
+            "prompt": "Perhatikan dua tampilan kubus referensi. Pilih kubus yang menunjukkan susunan sisi yang sama setelah rotasi.",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-15-assets/geometry-spec-draft.json#wu-002"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": null,
+                    "display_order": 1,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": "wu-002-option-a"
+                },
+                {
+                    "key": "B",
+                    "text": null,
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "wu-002-option-b"
+                },
+                {
+                    "key": "C",
+                    "text": null,
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "wu-002-option-c"
+                },
+                {
+                    "key": "D",
+                    "text": null,
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "wu-002-option-d"
+                },
+                {
+                    "key": "E",
+                    "text": null,
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "wu-002-option-e"
+                }
+            ],
+            "media": {
+                "prompt_ref": "wu-002-reference"
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "visual"
+                },
+                "internal": {
+                    "draft_logical_id": "wu-002",
+                    "rationale": "Mapping enam sisi unik diverifikasi melalui 24 rotasi proper. Hanya opsi A yang mempunyai tuple orientasi valid."
+                }
+            }
+        },
+        {
+            "logical_id": "WU-S-003",
+            "subtest_code": "WU",
+            "kind": "scored",
+            "question_number": 3,
+            "display_order": 3,
+            "answer_type": "image_choice",
+            "difficulty_target": "easy",
+            "prompt": "Perhatikan dua tampilan kubus referensi. Pilih kubus yang menunjukkan susunan sisi yang sama setelah rotasi.",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-15-assets/geometry-spec-draft.json#wu-003"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": null,
+                    "display_order": 1,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "wu-003-option-a"
+                },
+                {
+                    "key": "B",
+                    "text": null,
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "wu-003-option-b"
+                },
+                {
+                    "key": "C",
+                    "text": null,
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "wu-003-option-c"
+                },
+                {
+                    "key": "D",
+                    "text": null,
+                    "display_order": 4,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": "wu-003-option-d"
+                },
+                {
+                    "key": "E",
+                    "text": null,
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "wu-003-option-e"
+                }
+            ],
+            "media": {
+                "prompt_ref": "wu-003-reference"
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "visual"
+                },
+                "internal": {
+                    "draft_logical_id": "wu-003",
+                    "rationale": "Mapping enam sisi unik diverifikasi melalui 24 rotasi proper. Hanya opsi D yang mempunyai tuple orientasi valid."
+                }
+            }
+        },
+        {
+            "logical_id": "WU-S-004",
+            "subtest_code": "WU",
+            "kind": "scored",
+            "question_number": 4,
+            "display_order": 4,
+            "answer_type": "image_choice",
+            "difficulty_target": "easy",
+            "prompt": "Perhatikan dua tampilan kubus referensi. Pilih kubus yang menunjukkan susunan sisi yang sama setelah rotasi.",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-15-assets/geometry-spec-draft.json#wu-004"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": null,
+                    "display_order": 1,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "wu-004-option-a"
+                },
+                {
+                    "key": "B",
+                    "text": null,
+                    "display_order": 2,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": "wu-004-option-b"
+                },
+                {
+                    "key": "C",
+                    "text": null,
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "wu-004-option-c"
+                },
+                {
+                    "key": "D",
+                    "text": null,
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "wu-004-option-d"
+                },
+                {
+                    "key": "E",
+                    "text": null,
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "wu-004-option-e"
+                }
+            ],
+            "media": {
+                "prompt_ref": "wu-004-reference"
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "visual"
+                },
+                "internal": {
+                    "draft_logical_id": "wu-004",
+                    "rationale": "Mapping enam sisi unik diverifikasi melalui 24 rotasi proper. Hanya opsi B yang mempunyai tuple orientasi valid."
+                }
+            }
+        },
+        {
+            "logical_id": "WU-S-005",
+            "subtest_code": "WU",
+            "kind": "scored",
+            "question_number": 5,
+            "display_order": 5,
+            "answer_type": "image_choice",
+            "difficulty_target": "medium",
+            "prompt": "Perhatikan dua tampilan kubus referensi. Pilih kubus yang menunjukkan susunan sisi yang sama setelah rotasi.",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-15-assets/geometry-spec-draft.json#wu-005"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": null,
+                    "display_order": 1,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "wu-005-option-a"
+                },
+                {
+                    "key": "B",
+                    "text": null,
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "wu-005-option-b"
+                },
+                {
+                    "key": "C",
+                    "text": null,
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "wu-005-option-c"
+                },
+                {
+                    "key": "D",
+                    "text": null,
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "wu-005-option-d"
+                },
+                {
+                    "key": "E",
+                    "text": null,
+                    "display_order": 5,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": "wu-005-option-e"
+                }
+            ],
+            "media": {
+                "prompt_ref": "wu-005-reference"
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "visual"
+                },
+                "internal": {
+                    "draft_logical_id": "wu-005",
+                    "rationale": "Mapping enam sisi unik diverifikasi melalui 24 rotasi proper. Hanya opsi E yang mempunyai tuple orientasi valid."
+                }
+            }
+        },
+        {
+            "logical_id": "WU-S-006",
+            "subtest_code": "WU",
+            "kind": "scored",
+            "question_number": 6,
+            "display_order": 6,
+            "answer_type": "image_choice",
+            "difficulty_target": "medium",
+            "prompt": "Perhatikan dua tampilan kubus referensi. Pilih kubus yang menunjukkan susunan sisi yang sama setelah rotasi.",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-15-assets/geometry-spec-draft.json#wu-006"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": null,
+                    "display_order": 1,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "wu-006-option-a"
+                },
+                {
+                    "key": "B",
+                    "text": null,
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "wu-006-option-b"
+                },
+                {
+                    "key": "C",
+                    "text": null,
+                    "display_order": 3,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": "wu-006-option-c"
+                },
+                {
+                    "key": "D",
+                    "text": null,
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "wu-006-option-d"
+                },
+                {
+                    "key": "E",
+                    "text": null,
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "wu-006-option-e"
+                }
+            ],
+            "media": {
+                "prompt_ref": "wu-006-reference"
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "visual"
+                },
+                "internal": {
+                    "draft_logical_id": "wu-006",
+                    "rationale": "Mapping enam sisi unik diverifikasi melalui 24 rotasi proper. Hanya opsi C yang mempunyai tuple orientasi valid."
+                }
+            }
+        },
+        {
+            "logical_id": "WU-S-007",
+            "subtest_code": "WU",
+            "kind": "scored",
+            "question_number": 7,
+            "display_order": 7,
+            "answer_type": "image_choice",
+            "difficulty_target": "medium",
+            "prompt": "Perhatikan dua tampilan kubus referensi. Pilih kubus yang menunjukkan susunan sisi yang sama setelah rotasi.",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-15-assets/geometry-spec-draft.json#wu-007"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": null,
+                    "display_order": 1,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "wu-007-option-a"
+                },
+                {
+                    "key": "B",
+                    "text": null,
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "wu-007-option-b"
+                },
+                {
+                    "key": "C",
+                    "text": null,
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "wu-007-option-c"
+                },
+                {
+                    "key": "D",
+                    "text": null,
+                    "display_order": 4,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": "wu-007-option-d"
+                },
+                {
+                    "key": "E",
+                    "text": null,
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "wu-007-option-e"
+                }
+            ],
+            "media": {
+                "prompt_ref": "wu-007-reference"
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "visual"
+                },
+                "internal": {
+                    "draft_logical_id": "wu-007",
+                    "rationale": "Mapping enam sisi unik diverifikasi melalui 24 rotasi proper. Hanya opsi D yang mempunyai tuple orientasi valid."
+                }
+            }
+        },
+        {
+            "logical_id": "WU-S-008",
+            "subtest_code": "WU",
+            "kind": "scored",
+            "question_number": 8,
+            "display_order": 8,
+            "answer_type": "image_choice",
+            "difficulty_target": "medium",
+            "prompt": "Perhatikan dua tampilan kubus referensi. Pilih kubus yang menunjukkan susunan sisi yang sama setelah rotasi.",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-15-assets/geometry-spec-draft.json#wu-008"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": null,
+                    "display_order": 1,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": "wu-008-option-a"
+                },
+                {
+                    "key": "B",
+                    "text": null,
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "wu-008-option-b"
+                },
+                {
+                    "key": "C",
+                    "text": null,
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "wu-008-option-c"
+                },
+                {
+                    "key": "D",
+                    "text": null,
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "wu-008-option-d"
+                },
+                {
+                    "key": "E",
+                    "text": null,
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "wu-008-option-e"
+                }
+            ],
+            "media": {
+                "prompt_ref": "wu-008-reference"
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "visual"
+                },
+                "internal": {
+                    "draft_logical_id": "wu-008",
+                    "rationale": "Mapping enam sisi unik diverifikasi melalui 24 rotasi proper. Hanya opsi A yang mempunyai tuple orientasi valid."
+                }
+            }
+        },
+        {
+            "logical_id": "WU-S-009",
+            "subtest_code": "WU",
+            "kind": "scored",
+            "question_number": 9,
+            "display_order": 9,
+            "answer_type": "image_choice",
+            "difficulty_target": "medium",
+            "prompt": "Perhatikan dua tampilan kubus referensi. Pilih kubus yang menunjukkan susunan sisi yang sama setelah rotasi.",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-15-assets/geometry-spec-draft.json#wu-009"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": null,
+                    "display_order": 1,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "wu-009-option-a"
+                },
+                {
+                    "key": "B",
+                    "text": null,
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "wu-009-option-b"
+                },
+                {
+                    "key": "C",
+                    "text": null,
+                    "display_order": 3,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": "wu-009-option-c"
+                },
+                {
+                    "key": "D",
+                    "text": null,
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "wu-009-option-d"
+                },
+                {
+                    "key": "E",
+                    "text": null,
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "wu-009-option-e"
+                }
+            ],
+            "media": {
+                "prompt_ref": "wu-009-reference"
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "visual"
+                },
+                "internal": {
+                    "draft_logical_id": "wu-009",
+                    "rationale": "Mapping enam sisi unik diverifikasi melalui 24 rotasi proper. Hanya opsi C yang mempunyai tuple orientasi valid."
+                }
+            }
+        },
+        {
+            "logical_id": "WU-S-010",
+            "subtest_code": "WU",
+            "kind": "scored",
+            "question_number": 10,
+            "display_order": 10,
+            "answer_type": "image_choice",
+            "difficulty_target": "hard",
+            "prompt": "Perhatikan dua tampilan kubus referensi. Pilih kubus yang menunjukkan susunan sisi yang sama setelah rotasi.",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-15-assets/geometry-spec-draft.json#wu-010"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": null,
+                    "display_order": 1,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "wu-010-option-a"
+                },
+                {
+                    "key": "B",
+                    "text": null,
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "wu-010-option-b"
+                },
+                {
+                    "key": "C",
+                    "text": null,
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "wu-010-option-c"
+                },
+                {
+                    "key": "D",
+                    "text": null,
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "wu-010-option-d"
+                },
+                {
+                    "key": "E",
+                    "text": null,
+                    "display_order": 5,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": "wu-010-option-e"
+                }
+            ],
+            "media": {
+                "prompt_ref": "wu-010-reference"
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "visual"
+                },
+                "internal": {
+                    "draft_logical_id": "wu-010",
+                    "rationale": "Mapping enam sisi unik diverifikasi melalui 24 rotasi proper. Hanya opsi E yang mempunyai tuple orientasi valid."
+                }
+            }
+        },
+        {
+            "logical_id": "WU-S-011",
+            "subtest_code": "WU",
+            "kind": "scored",
+            "question_number": 11,
+            "display_order": 11,
+            "answer_type": "image_choice",
+            "difficulty_target": "hard",
+            "prompt": "Perhatikan dua tampilan kubus referensi. Pilih kubus yang menunjukkan susunan sisi yang sama setelah rotasi.",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-15-assets/geometry-spec-draft.json#wu-011"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": null,
+                    "display_order": 1,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "wu-011-option-a"
+                },
+                {
+                    "key": "B",
+                    "text": null,
+                    "display_order": 2,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": "wu-011-option-b"
+                },
+                {
+                    "key": "C",
+                    "text": null,
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "wu-011-option-c"
+                },
+                {
+                    "key": "D",
+                    "text": null,
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "wu-011-option-d"
+                },
+                {
+                    "key": "E",
+                    "text": null,
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "wu-011-option-e"
+                }
+            ],
+            "media": {
+                "prompt_ref": "wu-011-reference"
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "visual"
+                },
+                "internal": {
+                    "draft_logical_id": "wu-011",
+                    "rationale": "Mapping enam sisi unik diverifikasi melalui 24 rotasi proper. Hanya opsi B yang mempunyai tuple orientasi valid."
+                }
+            }
+        },
+        {
+            "logical_id": "WU-S-012",
+            "subtest_code": "WU",
+            "kind": "scored",
+            "question_number": 12,
+            "display_order": 12,
+            "answer_type": "image_choice",
+            "difficulty_target": "hard",
+            "prompt": "Perhatikan dua tampilan kubus referensi. Pilih kubus yang menunjukkan susunan sisi yang sama setelah rotasi.",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-15-assets/geometry-spec-draft.json#wu-012"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": null,
+                    "display_order": 1,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "wu-012-option-a"
+                },
+                {
+                    "key": "B",
+                    "text": null,
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "wu-012-option-b"
+                },
+                {
+                    "key": "C",
+                    "text": null,
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "wu-012-option-c"
+                },
+                {
+                    "key": "D",
+                    "text": null,
+                    "display_order": 4,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": "wu-012-option-d"
+                },
+                {
+                    "key": "E",
+                    "text": null,
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": "wu-012-option-e"
+                }
+            ],
+            "media": {
+                "prompt_ref": "wu-012-reference"
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "visual"
+                },
+                "internal": {
+                    "draft_logical_id": "wu-012",
+                    "rationale": "Mapping enam sisi unik diverifikasi melalui 24 rotasi proper. Hanya opsi D yang mempunyai tuple orientasi valid."
+                }
+            }
+        }
+    ]
+}

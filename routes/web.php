@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Disc\DiscTestController;
+use Inertia\Inertia;
 
 Route::get('/', [LandingController::class, 'index'])
     ->name('landing');
@@ -58,6 +59,10 @@ Route::middleware('auth')->group(function () {
 
     Route::delete('/profile', [ProfileController::class, 'destroy'])
         ->name('profile.destroy');
+});
+
+Route::get('/ist/fa-preview', function () {
+    return Inertia::render('IST/FaPreview');
 });
 
 require __DIR__.'/auth.php';

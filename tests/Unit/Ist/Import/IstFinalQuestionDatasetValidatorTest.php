@@ -103,6 +103,16 @@ final class IstFinalQuestionDatasetValidatorTest extends TestCase
         $this->assertRejected();
     }
 
+    public function test_final_master_subtest_definition_mismatch_is_rejected(): void
+    {
+        $this->mutate('manifest.json', function (array $data): array {
+            $data['subtests'][0]['name'] = 'Wrong master name';
+
+            return $data;
+        });
+        $this->assertRejected();
+    }
+
     public function test_wrong_subtest_order_is_rejected(): void
     {
         $this->mutate('manifest.json', function (array $data): array {

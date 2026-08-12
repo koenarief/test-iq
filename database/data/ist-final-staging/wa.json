@@ -1,0 +1,1083 @@
+{
+    "schema_version": 1,
+    "instrument_identifier": "tes-kemampuan-kognitif-adaptasi-104",
+    "question_bank_version": "2026.08.06-stage17",
+    "subtest_code": "WA",
+    "review_status": "human_review_passed",
+    "active": false,
+    "content_origin": "original_internal",
+    "source_reference": null,
+    "copyright_status": "internally_authored",
+    "normative_compatibility": "none",
+    "instruction_content": "Empat pilihan mempunyai kategori atau fungsi bersama. Pilih satu pilihan yang tidak termasuk kelompok tersebut.",
+    "memorization_content": null,
+    "memorization": null,
+    "questions": [
+        {
+            "logical_id": "WA-E-001",
+            "subtest_code": "WA",
+            "kind": "example",
+            "question_number": 1,
+            "display_order": 1,
+            "answer_type": "single_choice",
+            "difficulty_target": null,
+            "prompt": "Pilih kata yang berbeda dari empat kata lainnya.",
+            "explanation": "Apel, mangga, jeruk, dan pisang adalah buah. Wortel adalah sayuran, sehingga menjadi pilihan yang berbeda.",
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-12-se-wa-an.md#wa-example-001"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": "apel",
+                    "display_order": 1,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "B",
+                    "text": "mangga",
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "C",
+                    "text": "wortel",
+                    "display_order": 3,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": null
+                },
+                {
+                    "key": "D",
+                    "text": "jeruk",
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "E",
+                    "text": "pisang",
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                }
+            ],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "wa-example-001",
+                    "rationale": "Empat opsi merupakan buah, sedangkan wortel merupakan sayuran."
+                }
+            }
+        },
+        {
+            "logical_id": "WA-S-001",
+            "subtest_code": "WA",
+            "kind": "scored",
+            "question_number": 1,
+            "display_order": 1,
+            "answer_type": "single_choice",
+            "difficulty_target": "easy",
+            "prompt": "Pilih kata yang berbeda dari empat kata lainnya.",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-12-se-wa-an.md#wa-001"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": "meja",
+                    "display_order": 1,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "B",
+                    "text": "kursi",
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "C",
+                    "text": "sepeda",
+                    "display_order": 3,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": null
+                },
+                {
+                    "key": "D",
+                    "text": "lemari",
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "E",
+                    "text": "rak",
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                }
+            ],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "wa-001",
+                    "rationale": "Meja, kursi, lemari, dan rak merupakan perabot. Sepeda merupakan alat transportasi."
+                }
+            }
+        },
+        {
+            "logical_id": "WA-S-002",
+            "subtest_code": "WA",
+            "kind": "scored",
+            "question_number": 2,
+            "display_order": 2,
+            "answer_type": "single_choice",
+            "difficulty_target": "easy",
+            "prompt": "Pilih kata yang berbeda dari empat kata lainnya.",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-12-se-wa-an.md#wa-002"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": "mendengar",
+                    "display_order": 1,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "B",
+                    "text": "melihat",
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "C",
+                    "text": "mencium",
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "D",
+                    "text": "menulis",
+                    "display_order": 4,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": null
+                },
+                {
+                    "key": "E",
+                    "text": "mengecap",
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                }
+            ],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "wa-002",
+                    "rationale": "Empat opsi merupakan aktivitas penerimaan rangsangan indrawi. Menulis merupakan aktivitas menghasilkan simbol."
+                }
+            }
+        },
+        {
+            "logical_id": "WA-S-003",
+            "subtest_code": "WA",
+            "kind": "scored",
+            "question_number": 3,
+            "display_order": 3,
+            "answer_type": "single_choice",
+            "difficulty_target": "easy",
+            "prompt": "Pilih kata yang berbeda dari empat kata lainnya.",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-12-se-wa-an.md#wa-003"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": "Senin",
+                    "display_order": 1,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "B",
+                    "text": "Selasa",
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "C",
+                    "text": "Januari",
+                    "display_order": 3,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": null
+                },
+                {
+                    "key": "D",
+                    "text": "Rabu",
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "E",
+                    "text": "Kamis",
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                }
+            ],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "wa-003",
+                    "rationale": "Senin, Selasa, Rabu, dan Kamis merupakan nama hari. Januari merupakan nama bulan."
+                }
+            }
+        },
+        {
+            "logical_id": "WA-S-004",
+            "subtest_code": "WA",
+            "kind": "scored",
+            "question_number": 4,
+            "display_order": 4,
+            "answer_type": "single_choice",
+            "difficulty_target": "easy",
+            "prompt": "Pilih kata yang berbeda dari empat kata lainnya.",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-12-se-wa-an.md#wa-004"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": "meter",
+                    "display_order": 1,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "B",
+                    "text": "kilometer",
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "C",
+                    "text": "sentimeter",
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "D",
+                    "text": "liter",
+                    "display_order": 4,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": null
+                },
+                {
+                    "key": "E",
+                    "text": "milimeter",
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                }
+            ],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "wa-004",
+                    "rationale": "Meter, kilometer, sentimeter, dan milimeter merupakan satuan panjang. Liter merupakan satuan volume."
+                }
+            }
+        },
+        {
+            "logical_id": "WA-S-005",
+            "subtest_code": "WA",
+            "kind": "scored",
+            "question_number": 5,
+            "display_order": 5,
+            "answer_type": "single_choice",
+            "difficulty_target": "medium",
+            "prompt": "Pilih kata yang berbeda dari empat kata lainnya.",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-12-se-wa-an.md#wa-005"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": "akar",
+                    "display_order": 1,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "B",
+                    "text": "fondasi",
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "C",
+                    "text": "landasan",
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "D",
+                    "text": "puncak",
+                    "display_order": 4,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": null
+                },
+                {
+                    "key": "E",
+                    "text": "dasar",
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                }
+            ],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "wa-005",
+                    "rationale": "Akar, fondasi, landasan, dan dasar berhubungan dengan bagian atau konsep penopang di bawah. Puncak menunjukkan bagian teratas."
+                }
+            }
+        },
+        {
+            "logical_id": "WA-S-006",
+            "subtest_code": "WA",
+            "kind": "scored",
+            "question_number": 6,
+            "display_order": 6,
+            "answer_type": "single_choice",
+            "difficulty_target": "medium",
+            "prompt": "Pilih kata yang berbeda dari empat kata lainnya.",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-12-se-wa-an.md#wa-006"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": "merencanakan",
+                    "display_order": 1,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "B",
+                    "text": "mengorganisasi",
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "C",
+                    "text": "mengendalikan",
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "D",
+                    "text": "mengevaluasi",
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "E",
+                    "text": "mengangkut",
+                    "display_order": 5,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": null
+                }
+            ],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "wa-006",
+                    "rationale": "Empat opsi merupakan aktivitas pengelolaan atau manajerial. Mengangkut merupakan aktivitas pemindahan barang atau orang."
+                }
+            }
+        },
+        {
+            "logical_id": "WA-S-007",
+            "subtest_code": "WA",
+            "kind": "scored",
+            "question_number": 7,
+            "display_order": 7,
+            "answer_type": "single_choice",
+            "difficulty_target": "medium",
+            "prompt": "Pilih kata yang berbeda dari empat kata lainnya.",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-12-se-wa-an.md#wa-007"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": "hipotesis",
+                    "display_order": 1,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "B",
+                    "text": "asumsi",
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "C",
+                    "text": "dugaan",
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "D",
+                    "text": "perkiraan",
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "E",
+                    "text": "kepastian",
+                    "display_order": 5,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": null
+                }
+            ],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "wa-007",
+                    "rationale": "Hipotesis, asumsi, dugaan, dan perkiraan sama-sama belum menunjukkan kepastian penuh. Kepastian mempunyai sifat yang berbeda."
+                }
+            }
+        },
+        {
+            "logical_id": "WA-S-008",
+            "subtest_code": "WA",
+            "kind": "scored",
+            "question_number": 8,
+            "display_order": 8,
+            "answer_type": "single_choice",
+            "difficulty_target": "medium",
+            "prompt": "Pilih kata yang berbeda dari empat kata lainnya.",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-12-se-wa-an.md#wa-008"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": "kompas",
+                    "display_order": 1,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "B",
+                    "text": "peta",
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "C",
+                    "text": "GPS",
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "D",
+                    "text": "termometer",
+                    "display_order": 4,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": null
+                },
+                {
+                    "key": "E",
+                    "text": "petunjuk arah",
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                }
+            ],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "wa-008",
+                    "rationale": "Kompas, peta, GPS, dan petunjuk arah berfungsi membantu navigasi. Termometer digunakan untuk mengukur suhu."
+                }
+            }
+        },
+        {
+            "logical_id": "WA-S-009",
+            "subtest_code": "WA",
+            "kind": "scored",
+            "question_number": 9,
+            "display_order": 9,
+            "answer_type": "single_choice",
+            "difficulty_target": "medium",
+            "prompt": "Pilih kata yang berbeda dari empat kata lainnya.",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-12-se-wa-an.md#wa-009"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": "meringkas",
+                    "display_order": 1,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "B",
+                    "text": "merangkum",
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "C",
+                    "text": "menyimpulkan",
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "D",
+                    "text": "memadatkan",
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "E",
+                    "text": "memperluas",
+                    "display_order": 5,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": null
+                }
+            ],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "wa-009",
+                    "rationale": "Empat opsi mengarah pada pengurangan atau pemadatan informasi. Memperluas justru menambah cakupan atau rincian."
+                }
+            }
+        },
+        {
+            "logical_id": "WA-S-010",
+            "subtest_code": "WA",
+            "kind": "scored",
+            "question_number": 10,
+            "display_order": 10,
+            "answer_type": "single_choice",
+            "difficulty_target": "hard",
+            "prompt": "Pilih kata yang berbeda dari empat kata lainnya.",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-12-se-wa-an.md#wa-010"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": "implisit",
+                    "display_order": 1,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "B",
+                    "text": "tersirat",
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "C",
+                    "text": "tersembunyi",
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "D",
+                    "text": "eksplisit",
+                    "display_order": 4,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": null
+                },
+                {
+                    "key": "E",
+                    "text": "terselubung",
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                }
+            ],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "wa-010",
+                    "rationale": "Implisit, tersirat, tersembunyi, dan terselubung memiliki unsur makna tidak dinyatakan secara langsung. Eksplisit berarti dinyatakan secara jelas."
+                }
+            }
+        },
+        {
+            "logical_id": "WA-S-011",
+            "subtest_code": "WA",
+            "kind": "scored",
+            "question_number": 11,
+            "display_order": 11,
+            "answer_type": "single_choice",
+            "difficulty_target": "hard",
+            "prompt": "Pilih kata yang berbeda dari empat kata lainnya.",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-12-se-wa-an.md#wa-011"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": "korelasi",
+                    "display_order": 1,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "B",
+                    "text": "asosiasi",
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "C",
+                    "text": "keterkaitan",
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "D",
+                    "text": "hubungan",
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "E",
+                    "text": "isolasi",
+                    "display_order": 5,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": null
+                }
+            ],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "wa-011",
+                    "rationale": "Korelasi, asosiasi, keterkaitan, dan hubungan menyatakan adanya relasi antara unsur. Isolasi menunjukkan pemisahan."
+                }
+            }
+        },
+        {
+            "logical_id": "WA-S-012",
+            "subtest_code": "WA",
+            "kind": "scored",
+            "question_number": 12,
+            "display_order": 12,
+            "answer_type": "single_choice",
+            "difficulty_target": "hard",
+            "prompt": "Pilih kata yang berbeda dari empat kata lainnya.",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-12-se-wa-an.md#wa-012"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": "premis",
+                    "display_order": 1,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "B",
+                    "text": "alasan",
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "C",
+                    "text": "bukti",
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "D",
+                    "text": "dukungan",
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "E",
+                    "text": "kesimpulan",
+                    "display_order": 5,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": null
+                }
+            ],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "wa-012",
+                    "rationale": "Premis, alasan, bukti, dan dukungan digunakan sebagai dasar untuk menopang suatu argumen. Kesimpulan merupakan hasil yang ditarik dari dasar tersebut."
+                }
+            }
+        }
+    ]
+}

@@ -1,5 +1,11 @@
 import { AlertCircle, CheckCircle2 } from 'lucide-react';
 import IstImageViewer from '@/Components/IST/IstImageViewer';
+import { faQuestionOptionImage } from '@/Support/IST/faVisuals';
+import {
+    WU_QUESTION_PROMPT,
+    wuMasterImage,
+    wuQuestionTargetImage,
+} from '@/Support/IST/wuVisuals';
 
 const choiceTypes = new Set(['single_choice', 'single_choice_weighted', 'image_choice']);
 
@@ -13,6 +19,7 @@ export default function IstQuestionCard({
     onChange,
     disabled = false,
     disabledReason = null,
+    subtestCode = null,
 }) {
     if (!question) {
         return (
@@ -23,6 +30,14 @@ export default function IstQuestionCard({
     }
 
     const answerType = question.answerType;
+    const subtestCodeNormalized = String(subtestCode ?? '').toUpperCase();
+    const isFa = subtestCodeNormalized === 'FA';
+    const isWu = subtestCodeNormalized === 'WU';
+    const usesFixedVisualMasters = isFa || isWu;
+    const displayedPrompt = isWu ? WU_QUESTION_PROMPT : question.prompt;
+    const displayedQuestionImage = isWu
+        ? wuQuestionTargetImage(question.displayOrder)
+        : question.image;
     const options = Array.isArray(question.options) ? question.options : [];
     const isChoice = choiceTypes.has(answerType);
     const isNumeric = answerType === 'numeric';
@@ -64,24 +79,36 @@ export default function IstQuestionCard({
                     </p>
                 )}
 
-                {question.prompt ? (
+                {displayedPrompt ? (
                     <p className="whitespace-pre-line text-base leading-relaxed text-zinc-100 sm:text-lg">
-                        {question.prompt}
+                        {displayedPrompt}
                     </p>
                 ) : (
                     <p className="text-sm text-zinc-500">Teks soal tidak tersedia.</p>
                 )}
 
-                <IstImageViewer image={question.image} fallbackAlt="Ilustrasi soal" />
+                <IstImageViewer image={displayedQuestionImage} fallbackAlt="Ilustrasi soal" />
 
                 {isChoice && (
                     <fieldset>
                         <legend className="mb-3 text-sm font-semibold text-zinc-200">
-                            Pilih satu jawaban
+                            {isFa
+                                ? 'Pilih bentuk jawaban A–E'
+                                : isWu
+                                  ? 'Pilih kubus acuan A–E'
+                                  : 'Pilih satu jawaban'}
                         </legend>
 
                         {options.length > 0 ? (
-                            <div className={answerType === 'image_choice' ? 'grid grid-cols-1 gap-3 sm:grid-cols-2' : 'space-y-3'}>
+                            <div
+                            className={
+                                usesFixedVisualMasters
+                                    ? 'grid grid-cols-2 gap-3 sm:grid-cols-3 xl:grid-cols-5'
+                                    : answerType === 'image_choice'
+                                      ? 'grid grid-cols-1 gap-3 sm:grid-cols-2'
+                                      : 'space-y-3'
+                            }
+                        >
                                 {options.map((option, index) => {
                                     const optionKey = option?.optionKey ?? String(index + 1);
                                     const inputId = `${fieldName}-${optionKey}`;
@@ -111,7 +138,9 @@ export default function IstQuestionCard({
                                             />
                                             <label
                                                 htmlFor={inputId}
-                                                className="flex min-h-11 cursor-pointer items-start gap-3 rounded-lg p-2 text-sm text-zinc-200 focus-within:outline-none peer-disabled:cursor-not-allowed peer-disabled:opacity-60 peer-focus-visible:ring-2 peer-focus-visible:ring-blue-400"
+                                                className={`flex min-h-11 cursor-pointer gap-3 rounded-lg p-2 text-sm text-zinc-200 focus-within:outline-none peer-disabled:cursor-not-allowed peer-disabled:opacity-60 peer-focus-visible:ring-2 peer-focus-visible:ring-blue-400 ${
+                                                    usesFixedVisualMasters ? 'items-center justify-center' : 'items-start'
+                                                }`}
                                             >
                                                 <span
                                                     className={`mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full border ${
@@ -123,13 +152,25 @@ export default function IstQuestionCard({
                                                 >
                                                     <span className="h-2 w-2 rounded-full bg-current" />
                                                 </span>
-                                                <span className="leading-relaxed">{optionLabel(option, index)}</span>
+                                                <span className={usesFixedVisualMasters ? 'text-base font-bold text-blue-200' : 'leading-relaxed'}>
+                                                    {usesFixedVisualMasters ? optionKey : optionLabel(option, index)}
+                                                </span>
                                             </label>
 
                                             <IstImageViewer
-                                                image={option?.image}
-                                                fallbackAlt={`Ilustrasi pilihan ${optionKey}`}
-                                                className="mt-2"
+                                                image={isFa
+                                                    ? faQuestionOptionImage(question.displayOrder, optionKey)
+                                                    : isWu
+                                                      ? wuMasterImage(optionKey)
+                                                      : option?.image}
+                                                fallbackAlt={isFa
+                                                    ? `Pilihan bentuk FA ${optionKey}`
+                                                    : isWu
+                                                      ? `Kubus acuan ${optionKey}`
+                                                      : `Ilustrasi pilihan ${optionKey}`}
+                                                className={usesFixedVisualMasters
+                                                    ? 'mt-2 [&>div]:min-h-24'
+                                                    : 'mt-2'}
                                             />
                                         </div>
                                     );

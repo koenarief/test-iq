@@ -104,7 +104,7 @@ class IstSessionOwnershipHttpTest extends IstHttpTestCase
         $this->get("/ist/{$test->id}/resume")->assertNotFound();
     }
 
-    public function test_landing_disc_routes_and_inactive_ist_card_remain_unchanged(): void
+    public function test_landing_disc_and_active_cognitive_routes_remain_available(): void
     {
         $this->assertTrue(Route::has('landing'));
         $this->assertTrue(Route::has('disc.index'));
@@ -120,7 +120,7 @@ class IstSessionOwnershipHttpTest extends IstHttpTestCase
         $this->assertStringContainsString('title="Tes Kemampuan Kognitif Adaptasi"', $landing);
         $this->assertStringContainsString('Durasi: Sekitar 45 menit', $landing);
         $this->assertMatchesRegularExpression(
-            '/title="Tes Kemampuan Kognitif Adaptasi"[\s\S]*?isActive=\{false\}/',
+            '/title="Tes Kemampuan Kognitif Adaptasi"[\s\S]*?isActive=\{true\}[\s\S]*?href=\{route\(\'ist\.index\'\)\}/',
             $landing,
         );
         $this->assertMatchesRegularExpression(

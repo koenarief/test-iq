@@ -316,7 +316,7 @@ class IstQuestionSnapshotServiceTest extends IstDatabaseTestCase
         int $number,
         array $overrides = [],
     ): IstQuestion {
-        return IstQuestion::create([
+        $attributes = [
             'ist_subtest_id' => $runtime->ist_subtest_id,
             'question_number' => $number,
             'display_order' => $number,
@@ -324,10 +324,18 @@ class IstQuestionSnapshotServiceTest extends IstDatabaseTestCase
             'answer_type' => IstAnswerType::SINGLE_CHOICE,
             'prompt' => "Fixture question {$number}",
             'max_score' => 1,
+            'difficulty' => 'easy',
             'version' => 1,
             'is_active' => true,
             ...$overrides,
-        ]);
+        ];
+
+        if ($attributes['kind'] === IstQuestion::KIND_EXAMPLE
+            && ! array_key_exists('difficulty', $overrides)) {
+            $attributes['difficulty'] = null;
+        }
+
+        return IstQuestion::create($attributes);
     }
 
     private function binaryOptions(

@@ -1,0 +1,15 @@
+{
+    "schema_version": 1,
+    "instrument_identifier": "tes-kemampuan-kognitif-adaptasi-104",
+    "question_bank_version": "2026.08.06-stage17",
+    "review_status": "human_review_passed",
+    "human_content_review_complete": true,
+    "human_visual_review_complete": true,
+    "decision": "not_approved",
+    "approved": false,
+    "approved_at": null,
+    "approval_version": null,
+    "frozen": false,
+    "imported": false,
+    "notes": "Stage 17 consolidation only; approval and freeze require separate explicit checkpoints."
+}

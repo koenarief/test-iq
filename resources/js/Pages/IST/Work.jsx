@@ -97,7 +97,7 @@ export default function Work({
     testPublicId = null,
     mode = 'expired',
     subtest = {},
-    memorizationContent = null,
+    memorizationGroups = [],
     questions = EMPTY_QUESTIONS,
     serverTime = null,
     phaseEndsAt = null,
@@ -350,7 +350,6 @@ export default function Work({
             finishUrl,
             {
                 reason: 'submitted',
-                final_answers: buildFinalAnswers(),
             },
             {
                 preserveScroll: true,
@@ -563,7 +562,7 @@ export default function Work({
 
                 {mode === 'memorization' && (
                     <IstMemorizationPanel
-                        content={memorizationContent}
+                        groups={memorizationGroups}
                         countdown={countdown}
                         locked={countdown.isExpired}
                         transitioning={transitioning}
@@ -603,13 +602,14 @@ export default function Work({
                         ) : (
                             <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_18rem]">
                                 <main>
-                                    <IstQuestionCard
-                                        question={currentQuestion}
-                                        answer={answers[currentQuestion?.id]}
-                                        onChange={handleAnswerChange}
-                                        disabled={inputLocked}
-                                        disabledReason={lockReason}
-                                    />
+                                <IstQuestionCard
+                                    question={currentQuestion}
+                                    answer={answers[currentQuestion?.id]}
+                                    onChange={handleAnswerChange}
+                                    disabled={inputLocked}
+                                    disabledReason={lockReason}
+                                    subtestCode={subtest?.code}
+                                />
 
                                     <div className="mt-5 flex flex-col gap-3 rounded-2xl border border-zinc-800 bg-zinc-900/80 p-4 sm:flex-row sm:items-center sm:justify-between">
                                         <button

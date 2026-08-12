@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="200" viewBox="0 0 360 200" role="img" aria-hidden="true">
+  <g fill="#e2e8f0" stroke="#0f172a" stroke-width="4" stroke-linejoin="round">
+    <!-- Potongan 1 -->
+    <polygon points="70,140 145,140 160,70 95,70" />
+
+    <!-- Potongan 2 -->
+    <g transform="translate(245 105) rotate(22)">
+      <polygon points="-35,35 20,35 0,-35 -20,-35" />
+    </g>
+  </g>
+</svg>

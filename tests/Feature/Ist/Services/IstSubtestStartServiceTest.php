@@ -97,6 +97,31 @@ class IstSubtestStartServiceTest extends IstDatabaseTestCase
         $this->assertSame($overallStartedAt, $test->started_at->toISOString());
     }
 
+    public function test_me_start_is_rejected_until_example_is_completed(): void
+    {
+        [, $runtime] = $this->preparedRuntime('ME', exampleCompleted: false);
+
+        try {
+            $this->startService->start($runtime, $this->now);
+            $this->fail('ME started before its example was completed.');
+        } catch (InvalidIstSubtestStartException) {
+            $runtime->refresh();
+            $this->assertNull($runtime->started_at);
+            $this->assertNull($runtime->memorization_started_at);
+            $this->assertNull($runtime->answering_ends_at);
+        }
+    }
+
+    public function test_me_start_rejects_a_legacy_snapshot_without_category_groups(): void
+    {
+        [, $runtime] = $this->preparedRuntime('ME');
+        $snapshot = $runtime->testQuestions()->firstOrFail();
+        $snapshot->update(['question_snapshot' => ['prompt' => 'Legacy ME prompt']]);
+
+        $this->expectException(InvalidIstSubtestStartException::class);
+        $this->startService->start($runtime, $this->now);
+    }
+
     public function test_start_rejects_both_missing_and_excess_snapshots(): void
     {
         [, $runtime] = $this->preparedRuntime('SE', snapshotCount: 0, expectedCount: 1);
@@ -206,6 +231,7 @@ class IstSubtestStartServiceTest extends IstDatabaseTestCase
         string $code,
         int $snapshotCount = 1,
         int $expectedCount = 1,
+        bool $exampleCompleted = true,
     ): array {
         $result = $this->lifecycleService->create([
             'participant_name' => "Start {$code}",
@@ -227,7 +253,12 @@ class IstSubtestStartServiceTest extends IstDatabaseTestCase
             $runtime->update(['status' => IstTestSubtest::STATUS_INSTRUCTION]);
         }
 
-        $runtime->update(['question_count' => $expectedCount]);
+        $runtime->update([
+            'question_count' => $expectedCount,
+            'instruction_viewed_at' => $code === 'ME' && $exampleCompleted
+                ? $this->now->subSecond()
+                : null,
+        ]);
 
         for ($index = 1; $index <= $snapshotCount; $index++) {
             IstTestQuestion::create([
@@ -235,7 +266,10 @@ class IstSubtestStartServiceTest extends IstDatabaseTestCase
                 'source_question_id' => null,
                 'display_order' => $index,
                 'answer_type' => IstAnswerType::SINGLE_CHOICE,
-                'question_snapshot' => ['prompt' => "Snapshot {$index}"],
+                'question_snapshot' => [
+                    'prompt' => "Snapshot {$index}",
+                    ...($code === 'ME' ? ['me_runtime' => $this->meRuntimeSnapshot()] : []),
+                ],
                 'options_snapshot' => [],
                 'answer_key_snapshot' => ['scores' => []],
                 'max_score' => 1,
@@ -243,5 +277,28 @@ class IstSubtestStartServiceTest extends IstDatabaseTestCase
         }
 
         return [$test->fresh(), $runtime->fresh('subtest')];
+    }
+
+    private function meRuntimeSnapshot(): array
+    {
+        $initials = range('A', 'Y');
+
+        return [
+            'model' => 'initial_letter_to_category',
+            'instructionContent' => 'Hafalkan lima kelompok lalu pilih kategori berdasarkan huruf awal.',
+            'groups' => array_map(
+                static fn (string $key, int $index): array => [
+                    'key' => $key,
+                    'name' => "Kategori {$key}",
+                    'words' => array_map(
+                        static fn (string $initial): string => $initial.'kata',
+                        array_slice($initials, $index * 5, 5),
+                    ),
+                    'displayOrder' => $index + 1,
+                ],
+                ['A', 'B', 'C', 'D', 'E'],
+                range(0, 4),
+            ),
+        ];
     }
 }

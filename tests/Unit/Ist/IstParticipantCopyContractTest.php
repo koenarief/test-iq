@@ -8,8 +8,6 @@ final class IstParticipantCopyContractTest extends TestCase
 {
     private const PRODUCT_NAME = 'Tes Kemampuan Kognitif Adaptasi';
 
-    private const DISCLAIMER = 'Hasil ini merupakan skor internal berdasarkan sembilan subtes. Nilai ini belum merupakan skor IQ atau interpretasi normatif.';
-
     public function test_biodata_uses_product_copy_without_legacy_participant_labels(): void
     {
         $source = $this->source('resources/js/Pages/IST/Biodata.jsx');
@@ -46,22 +44,28 @@ final class IstParticipantCopyContractTest extends TestCase
         $this->assertLegacyParticipantCopyAbsent($work.$question.$image);
     }
 
-    public function test_result_uses_internal_score_labels_and_exact_disclaimer(): void
+    public function test_result_uses_final_four_area_internal_score_copy_without_normative_claims(): void
     {
         $source = $this->source('resources/js/Pages/IST/Result.jsx');
 
-        $this->assertStringContainsString('<Head title="Hasil '.self::PRODUCT_NAME.'" />', $source);
+        $this->assertStringContainsString('<Head title="Hasil Asesmen Kemampuan Kognitif" />', $source);
+        $this->assertStringContainsString('Asesmen Kemampuan Kognitif', $source);
         $this->assertStringContainsString('Ringkasan Hasil', $source);
-        $this->assertStringContainsString('Rata-rata Skor Internal', $source);
-        $this->assertStringContainsString('Rata-rata persentase dari sembilan subtes.', $source);
+        $this->assertStringContainsString('Indeks Performa Kognitif', $source);
+        $this->assertStringContainsString('Skor keseluruhan dari rata-rata', $source);
+        $this->assertStringContainsString('empat area kemampuan.', $source);
+        $this->assertStringContainsString('Profil Empat Area Kemampuan', $source);
+        foreach (['Verbal', 'Numerik', 'Figural', 'Memori'] as $area) {
+            $this->assertStringContainsString($area, $source);
+        }
         $this->assertStringContainsString('Profil Sembilan Subtes', $source);
-        $this->assertStringContainsString('Rincian hasil sembilan subtes', $source);
-        $this->assertSame(1, substr_count($source, self::DISCLAIMER));
-        $this->assertSame(1, preg_match_all('/\bIQ\b/', $source));
+        $this->assertStringContainsString('Rincian Hasil Sembilan Subtes', $source);
+        $this->assertDoesNotMatchRegularExpression('/\bIQ\b/ui', $source);
+        $this->assertDoesNotMatchRegularExpression('/\bnorma(?:tif)?\b/ui', $source);
         $this->assertLegacyParticipantCopyAbsent($source);
     }
 
-    public function test_landing_uses_final_product_copy_and_remains_inactive(): void
+    public function test_landing_uses_final_product_copy_and_remains_active(): void
     {
         $source = $this->source('resources/js/Pages/Landing/Index.jsx');
 
@@ -70,7 +74,7 @@ final class IstParticipantCopyContractTest extends TestCase
         $this->assertStringContainsString('Asesmen singkat untuk melihat profil performa pada sembilan area kemampuan kognitif.', $source);
         $this->assertStringContainsString('Durasi: Sekitar 45 menit', $source);
         $this->assertMatchesRegularExpression(
-            '/title="Tes Kemampuan Kognitif Adaptasi"[\s\S]*?isActive=\{false\}/',
+            '/title="Tes Kemampuan Kognitif Adaptasi"[\s\S]*?isActive=\{true\}[\s\S]*?href=\{route\(\'ist\.index\'\)\}/',
             $source,
         );
         $this->assertStringNotContainsString('90 Menit', $source);
@@ -98,17 +102,23 @@ final class IstParticipantCopyContractTest extends TestCase
         $this->assertStringContainsString("Route::prefix('ist')->name('ist.')", $routes);
     }
 
-    public function test_chart_order_and_value_contract_remain_unchanged(): void
+    public function test_chart_preserves_subtest_order_and_supports_final_area_profile(): void
     {
         $source = $this->source('resources/js/Components/IST/IstResultChart.jsx');
 
-        $this->assertStringContainsString(
-            "const SUBTEST_ORDER = ['SE', 'WA', 'AN', 'GE', 'RA', 'ZR', 'FA', 'WU', 'ME'];",
+        $this->assertMatchesRegularExpression(
+            "/const SUBTEST_ORDER = \[\s*'SE',\s*'WA',\s*'AN',\s*'GE',\s*'RA',\s*'ZR',\s*'FA',\s*'WU',\s*'ME',?\s*\];/",
             $source,
         );
-        $this->assertStringContainsString('percentage: Number.isFinite(numericPercentage)', $source);
-        $this->assertStringContainsString('awardedScore: subtest?.awardedScore', $source);
-        $this->assertStringContainsString('maxScore: subtest?.maxScore', $source);
+        $this->assertMatchesRegularExpression(
+            "/const AREA_ORDER = \[\s*'verbal',\s*'numeric',\s*'figural',\s*'memory',?\s*\];/",
+            $source,
+        );
+        $this->assertStringContainsString('Number.isFinite(', $source);
+        $this->assertStringContainsString('visualPercentage:', $source);
+        $this->assertStringContainsString('awardedScore:', $source);
+        $this->assertStringContainsString('maxScore:', $source);
+        $this->assertStringContainsString("mode === 'area'", $source);
     }
 
     private function assertLegacyParticipantCopyAbsent(string $source): void
