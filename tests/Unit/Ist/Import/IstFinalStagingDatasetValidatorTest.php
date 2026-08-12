@@ -79,7 +79,7 @@ final class IstFinalStagingDatasetValidatorTest extends TestCase
 
         $this->assertSame(1, $refusedWrite);
         $this->assertStringContainsString(
-            'APP_ENV harus local; testing hanya untuk test fixture',
+            'environment tidak diizinkan untuk final dataset',
             Artisan::output(),
         );
     }

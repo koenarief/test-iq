@@ -83,8 +83,17 @@ final class IstFinalEnvironmentGuard
         bool $primaryWriteEnabled = false,
         string $testingDatabase = 'tes_iq_testing',
     ): void {
-        if ($environment !== 'local' && ! ($environment === 'testing' && $testFixture)) {
-            throw UnsafeIstFinalDatabaseException::because('APP_ENV harus local; testing hanya untuk test fixture');
+        $environmentAllowed =
+            $environment === 'local'
+            || ($environment === 'production'
+                && $configuredDatabase === $primaryDatabase
+                && $primaryWriteEnabled)
+            || ($environment === 'testing' && $testFixture);
+
+        if (! $environmentAllowed) {
+            throw UnsafeIstFinalDatabaseException::because(
+                'environment tidak diizinkan untuk final dataset'
+            );
         }
 
         if ($connection !== 'mysql') {
