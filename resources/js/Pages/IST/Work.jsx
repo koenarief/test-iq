@@ -323,9 +323,14 @@ export default function Work({
         if (invalidQuestionIndex >= 0) {
             setSubmitDialogOpen(false);
             setCurrentIndex(invalidQuestionIndex);
-            setFinalizationError('Perbaiki jawaban numerik yang belum lengkap sebelum menyelesaikan subtes.');
+            setFinalizationError(
+                'Perbaiki jawaban numerik yang belum lengkap sebelum menyelesaikan subtes.',
+            );
             return;
         }
+
+        finalizationRequestRef.current = true;
+        finalizationActionRef.current = 'submitted';
 
         setSubmitDialogOpen(false);
         setFinalizationError(null);
@@ -333,18 +338,32 @@ export default function Work({
 
         const flushResult = await autosave.flush();
 
-        if (countdownExpiredRef.current || flushResult?.reason === 'stopped') {
-            return;
-        }
-
-        if (!flushResult?.ok && flushResult?.reason !== 'network') {
+        if (countdownExpiredRef.current) {
+            finalizationRequestRef.current = false;
+            finalizationActionRef.current = null;
             setFinalizing(false);
             return;
         }
 
+        if (!flushResult?.ok) {
+            finalizationRequestRef.current = false;
+            finalizationActionRef.current = null;
+            setFinalizing(false);
+
+            if (flushResult?.reason === 'network') {
+                setFinalizationError(
+                    'Jawaban terakhir belum berhasil disimpan. Periksa koneksi lalu coba selesaikan kembali.',
+                );
+            } else if (flushResult?.reason === 'stopped') {
+                setFinalizationError(
+                    'Penyimpanan jawaban terhenti. Muat ulang state lalu coba kembali.',
+                );
+            }
+
+            return;
+        }
+
         autosave.stop();
-        finalizationRequestRef.current = true;
-        finalizationActionRef.current = 'submitted';
 
         router.post(
             finishUrl,
@@ -353,12 +372,18 @@ export default function Work({
             },
             {
                 preserveScroll: true,
-                onSuccess: () => setFinalized(true),
+
+                onSuccess: () => {
+                    setFinalized(true);
+                },
+
                 onError: () => {
                     setFinalizing(false);
-                    setFinalizationError('Jawaban final ditolak. Periksa kembali format jawaban lalu coba lagi.');
-                    void autosave.retry();
+                    setFinalizationError(
+                        'Jawaban final ditolak. Muat ulang state lalu coba kembali.',
+                    );
                 },
+
                 onFinish: () => {
                     finalizationRequestRef.current = false;
                     finalizationActionRef.current = null;

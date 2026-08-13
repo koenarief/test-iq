@@ -1,0 +1,194 @@
+{
+    "schema_version": 1,
+    "dataset_type": "final_staging",
+    "dataset_version": "2026.08.06-stage17",
+    "creation_timestamp": "2026-08-06T12:00:00+07:00",
+    "instrument_identifier": "tes-kemampuan-kognitif-adaptasi-104",
+    "product_code": "tes-kemampuan-kognitif-adaptasi-104",
+    "product_name": "Tes Kemampuan Kognitif Adaptasi",
+    "display_name": "Tes Kemampuan Kognitif Adaptasi",
+    "subtitle": "Mengukur performa pada sembilan area kemampuan kognitif melalui asesmen singkat sekitar 45 menit.",
+    "result_disclaimer": "Hasil ini merupakan skor internal berdasarkan sembilan subtes. Nilai ini belum merupakan skor IQ atau interpretasi normatif.",
+    "instrument_version": "1.0.0-staging",
+    "question_bank_version": "2026.08.06-stage17",
+    "scoring_rule_version": "1.0.0",
+    "media_version": "1.0.0-staging",
+    "report_version": "1.0.0",
+    "norm_version": null,
+    "record_version": 100000017,
+    "status": "human_review_passed",
+    "review_status": "human_review_passed",
+    "consolidated": true,
+    "approved": false,
+    "frozen": false,
+    "active": false,
+    "imported": false,
+    "normative": false,
+    "iq_output": false,
+    "scored_question_count": 104,
+    "example_count": 9,
+    "subtest_count": 9,
+    "estimated_core_minutes": 45,
+    "total_option_count": 435,
+    "answer_type_counts_scored": {
+        "single_choice": 48,
+        "single_choice_weighted": 10,
+        "numeric": 24,
+        "image_choice": 22
+    },
+    "subtest_order": [
+        "SE",
+        "WA",
+        "AN",
+        "GE",
+        "RA",
+        "ZR",
+        "FA",
+        "WU",
+        "ME"
+    ],
+    "duration_seconds": 2700,
+    "memorization_duration_seconds": 120,
+    "answering_duration_seconds": 240,
+    "subtest_percentage_formula": "awarded_score / max_subtest_score * 100",
+    "total_internal_score_method": "mean_of_four_domain_scores",
+    "subtests": [
+        {
+            "code": "SE",
+            "file": "se.json",
+            "answer_type": "single_choice",
+            "scored_question_count": 12,
+            "example_count": 1,
+            "duration_seconds": 240,
+            "memorization_duration_seconds": 0,
+            "answering_duration_seconds": 240,
+            "max_score": 23
+        },
+        {
+            "code": "WA",
+            "file": "wa.json",
+            "answer_type": "single_choice",
+            "scored_question_count": 12,
+            "example_count": 1,
+            "duration_seconds": 240,
+            "memorization_duration_seconds": 0,
+            "answering_duration_seconds": 240,
+            "max_score": 23
+        },
+        {
+            "code": "AN",
+            "file": "an.json",
+            "answer_type": "single_choice",
+            "scored_question_count": 12,
+            "example_count": 1,
+            "duration_seconds": 240,
+            "memorization_duration_seconds": 0,
+            "answering_duration_seconds": 240,
+            "max_score": 23
+        },
+        {
+            "code": "GE",
+            "file": "ge.json",
+            "answer_type": "single_choice_weighted",
+            "scored_question_count": 10,
+            "example_count": 1,
+            "duration_seconds": 300,
+            "memorization_duration_seconds": 0,
+            "answering_duration_seconds": 300,
+            "max_score": 60
+        },
+        {
+            "code": "RA",
+            "file": "ra.json",
+            "answer_type": "numeric",
+            "scored_question_count": 12,
+            "example_count": 1,
+            "duration_seconds": 360,
+            "memorization_duration_seconds": 0,
+            "answering_duration_seconds": 360,
+            "max_score": 23
+        },
+        {
+            "code": "ZR",
+            "file": "zr.json",
+            "answer_type": "numeric",
+            "scored_question_count": 12,
+            "example_count": 1,
+            "duration_seconds": 360,
+            "memorization_duration_seconds": 0,
+            "answering_duration_seconds": 360,
+            "max_score": 23
+        },
+        {
+            "code": "FA",
+            "file": "fa.json",
+            "answer_type": "image_choice",
+            "scored_question_count": 10,
+            "example_count": 1,
+            "duration_seconds": 240,
+            "memorization_duration_seconds": 0,
+            "answering_duration_seconds": 240,
+            "max_score": 10
+        },
+        {
+            "code": "WU",
+            "file": "wu.json",
+            "answer_type": "image_choice",
+            "scored_question_count": 12,
+            "example_count": 1,
+            "duration_seconds": 360,
+            "memorization_duration_seconds": 0,
+            "answering_duration_seconds": 360,
+            "max_score": 12
+        },
+        {
+            "code": "ME",
+            "file": "me.json",
+            "answer_type": "single_choice",
+            "scored_question_count": 12,
+            "example_count": 1,
+            "duration_seconds": 360,
+            "memorization_duration_seconds": 120,
+            "answering_duration_seconds": 240,
+            "max_score": 23
+        }
+    ],
+    "files": {
+        "approvals": "approvals.json",
+        "checksums": "checksums.json",
+        "media_metadata": "media/metadata.json"
+    },
+    "media": {
+        "root": "media",
+        "count": 144
+    },
+    "source_draft_stages": [
+        "stage-12-se-wa-an.md",
+        "stage-13-ge-weighted.md",
+        "stage-14-ra-zr-numeric.md",
+        "stage-15-assets/geometry-spec-draft.json",
+        "stage-15-assets/media-manifest-draft.json",
+        "stage-16-me-data-draft.json"
+    ],
+    "provenance": {
+        "owner": "internal-assessment-content-team",
+        "creation_method": "deterministic-consolidation-from-human-reviewed-internal-drafts",
+        "usage_scope": "inactive-final-staging-validation-only"
+    },
+    "approval": {
+        "required": true,
+        "completed": false,
+        "file": "approvals.json"
+    },
+    "freeze": {
+        "frozen": false,
+        "frozen_at": null,
+        "frozen_by": null,
+        "freeze_version": null
+    },
+    "checksum_algorithm": "sha256",
+    "content_fingerprint": "94c8a95889dab0dd05176413db65bc8c8d8a3be6a4a88773e4b1423a2981a325",
+    "media_checksum_aggregate": "f6e12f0ab0f539d947d73452ef5c56cfb466ce4e3c3754494719bc667d39f26c",
+    "disclaimer_fingerprint": "dc0f64497e259fa67ea486112c1a7065e48853b848557b841f740c15cd9e9e87",
+    "notes": "Human-reviewed inactive staging dataset. Not approved, frozen, imported, or activatable."
+}

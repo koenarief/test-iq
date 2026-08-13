@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 250" role="img" aria-labelledby="title desc">
+  <title id="title">Percobaan tracing prompt FA sumber 118</title>
+  <desc id="desc">Tiga potongan hitam terpisah seperti pada soal sumber 118.</desc>
+  <rect width="420" height="250" fill="#ffffff"/>
+  <g fill="#111111" shape-rendering="geometricPrecision">
+    <path d="M51 84 C83 86 105 109 105 139 C105 169 84 190 51 191 Z"/>
+    <path d="M145 54 L336 54 C334 82 316 101 287 108 C251 116 204 110 145 110 Z"/>
+    <path d="M145 137 C195 137 240 130 279 137 C309 143 329 162 335 190 L145 190 Z"/>
+  </g>
+</svg>

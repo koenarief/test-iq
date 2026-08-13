@@ -794,14 +794,14 @@ final class IstFinalQuestionDatasetValidator
             IstAnswerType::IMAGE_CHOICE,
         ], 0);
         $expectedMaxScores = [
-            'SE' => 12,
-            'WA' => 12,
-            'AN' => 12,
-            'GE' => 30,
-            'RA' => 12,
-            'ZR' => 12,
+            'SE' => 23,
+            'WA' => 23,
+            'AN' => 23,
+            'GE' => 60,
+            'RA' => 23,
+            'ZR' => 23,
             'FA' => 10,
-            'WU' => 12,
+            'WU' => 23,
             'ME' => 23,
         ];
         $questionIndex = [];

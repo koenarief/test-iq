@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="180" viewBox="0 0 240 180" role="img" aria-labelledby="title desc">
+  <title id="title">Kubus acuan C</title>
+  <desc id="desc">Sisi atas bertitik, sisi depan terbagi diagonal hitam, dan sisi kanan bertanda silang.</desc>
+  <g stroke="#292524" stroke-width="3" stroke-linejoin="round" vector-effect="non-scaling-stroke">
+    <polygon points="120,20 181,45 121,75 58,50" fill="#f7f3e8"/>
+    <polygon points="58,50 121,75 121,151 58,126" fill="#f7f3e8"/>
+    <polygon points="58,126 121,75 121,151" fill="#292524" stroke="none"/>
+    <line x1="58" y1="126" x2="121" y2="75"/>
+    <polygon points="121,75 181,45 181,121 121,151" fill="#f7f3e8"/>
+    <line x1="121" y1="75" x2="181" y2="121"/>
+    <line x1="181" y1="45" x2="121" y2="151"/>
+  </g>
+  <circle cx="81" cy="50" r="5.5" fill="#292524"/>
+</svg>

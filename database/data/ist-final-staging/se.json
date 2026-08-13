@@ -9,7 +9,7 @@
     "source_reference": null,
     "copyright_status": "internally_authored",
     "normative_compatibility": "none",
-    "instruction_content": "Pilih satu kata atau frasa yang paling tepat untuk melengkapi kalimat. Gunakan makna seluruh kalimat, bukan hanya kecocokan tata bahasa.",
+    "instruction_content": "Bacalah setiap kalimat atau pernyataan. Pada setiap soal tersedia lima pilihan jawaban A–E. Pilih satu jawaban yang paling tepat untuk melengkapi atau menjawab pernyataan.",
     "memorization_content": null,
     "memorization": null,
     "questions": [
@@ -21,8 +21,8 @@
             "display_order": 1,
             "answer_type": "single_choice",
             "difficulty_target": null,
-            "prompt": "Petugas menutup jendela agar air hujan tidak ___ ke dalam ruangan.",
-            "explanation": "Kata “masuk” paling tepat karena jendela ditutup untuk mencegah air hujan bergerak ke dalam ruangan.",
+            "prompt": "Seekor kuda mempunyai kesamaan terbanyak dengan seekor .....",
+            "explanation": "Jawaban yang paling tepat adalah keledai.",
             "active": false,
             "source_version": 100000017,
             "source": {
@@ -43,7 +43,7 @@
             "options": [
                 {
                     "key": "A",
-                    "text": "mengering",
+                    "text": "kucing",
                     "display_order": 1,
                     "correct": false,
                     "score": 0,
@@ -51,23 +51,23 @@
                 },
                 {
                     "key": "B",
-                    "text": "masuk",
+                    "text": "bajing",
                     "display_order": 2,
-                    "correct": true,
-                    "score": 1,
-                    "media_ref": null
-                },
-                {
-                    "key": "C",
-                    "text": "berhenti",
-                    "display_order": 3,
                     "correct": false,
                     "score": 0,
                     "media_ref": null
                 },
                 {
+                    "key": "C",
+                    "text": "keledai",
+                    "display_order": 3,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": null
+                },
+                {
                     "key": "D",
-                    "text": "menyusut",
+                    "text": "lembu",
                     "display_order": 4,
                     "correct": false,
                     "score": 0,
@@ -75,7 +75,7 @@
                 },
                 {
                     "key": "E",
-                    "text": "mengeras",
+                    "text": "anjing",
                     "display_order": 5,
                     "correct": false,
                     "score": 0,
@@ -91,7 +91,7 @@
                 },
                 "internal": {
                     "draft_logical_id": "se-example-001",
-                    "rationale": "Hubungan tujuan tindakan dinyatakan oleh “agar tidak”; hanya “masuk” menghasilkan tujuan yang logis."
+                    "rationale": "Kuda dan keledai memiliki kesamaan paling banyak dibandingkan pilihan lain."
                 }
             }
         },
@@ -103,7 +103,7 @@
             "display_order": 1,
             "answer_type": "single_choice",
             "difficulty_target": "easy",
-            "prompt": "Karena hujan deras, panitia memindahkan acara ke dalam gedung agar kegiatan tetap ___.",
+            "prompt": "Pengaruh seseorang terhadap orang lain seharusnya bergantung pada .....",
             "explanation": null,
             "active": false,
             "source_version": 100000017,
@@ -125,7 +125,7 @@
             "options": [
                 {
                     "key": "A",
-                    "text": "tertunda",
+                    "text": "kekuasaan",
                     "display_order": 1,
                     "correct": false,
                     "score": 0,
@@ -133,7 +133,7 @@
                 },
                 {
                     "key": "B",
-                    "text": "dibatalkan",
+                    "text": "bujukan",
                     "display_order": 2,
                     "correct": false,
                     "score": 0,
@@ -141,15 +141,15 @@
                 },
                 {
                     "key": "C",
-                    "text": "berlangsung",
+                    "text": "kekayaan",
                     "display_order": 3,
-                    "correct": true,
-                    "score": 1,
+                    "correct": false,
+                    "score": 0,
                     "media_ref": null
                 },
                 {
                     "key": "D",
-                    "text": "dihentikan",
+                    "text": "keberanian",
                     "display_order": 4,
                     "correct": false,
                     "score": 0,
@@ -157,10 +157,10 @@
                 },
                 {
                     "key": "E",
-                    "text": "dipersingkat",
+                    "text": "kewibawaan",
                     "display_order": 5,
-                    "correct": false,
-                    "score": 0,
+                    "correct": true,
+                    "score": 1,
                     "media_ref": null
                 }
             ],
@@ -173,7 +173,7 @@
                 },
                 "internal": {
                     "draft_logical_id": "se-001",
-                    "rationale": "Pemindahan lokasi dilakukan agar kegiatan dapat tetap berlangsung meskipun hujan deras."
+                    "rationale": "Kewibawaan merupakan dasar pengaruh yang paling tepat dibandingkan kekuasaan, bujukan, kekayaan, atau keberanian."
                 }
             }
         },
@@ -185,7 +185,7 @@
             "display_order": 2,
             "answer_type": "single_choice",
             "difficulty_target": "easy",
-            "prompt": "Sebelum dokumen dikirim, petugas memeriksa kembali setiap halaman untuk memastikan tidak ada data yang ___.",
+            "prompt": "Lawannya “hemat” ialah .....",
             "explanation": null,
             "active": false,
             "source_version": 100000017,
@@ -207,15 +207,15 @@
             "options": [
                 {
                     "key": "A",
-                    "text": "terlewat",
+                    "text": "murah",
                     "display_order": 1,
-                    "correct": true,
-                    "score": 1,
+                    "correct": false,
+                    "score": 0,
                     "media_ref": null
                 },
                 {
                     "key": "B",
-                    "text": "tercetak",
+                    "text": "kikir",
                     "display_order": 2,
                     "correct": false,
                     "score": 0,
@@ -223,15 +223,15 @@
                 },
                 {
                     "key": "C",
-                    "text": "terbaca",
+                    "text": "boros",
                     "display_order": 3,
-                    "correct": false,
-                    "score": 0,
+                    "correct": true,
+                    "score": 1,
                     "media_ref": null
                 },
                 {
                     "key": "D",
-                    "text": "tersusun",
+                    "text": "bernilai",
                     "display_order": 4,
                     "correct": false,
                     "score": 0,
@@ -239,7 +239,7 @@
                 },
                 {
                     "key": "E",
-                    "text": "tersimpan",
+                    "text": "kaya",
                     "display_order": 5,
                     "correct": false,
                     "score": 0,
@@ -255,7 +255,7 @@
                 },
                 "internal": {
                     "draft_logical_id": "se-002",
-                    "rationale": "Pemeriksaan ulang dilakukan untuk memastikan tidak ada informasi yang terlewat sebelum dokumen dikirim."
+                    "rationale": "Boros merupakan lawan kata hemat."
                 }
             }
         },
@@ -267,7 +267,7 @@
             "display_order": 3,
             "answer_type": "single_choice",
             "difficulty_target": "easy",
-            "prompt": "Ketika sirene darurat berbunyi, seluruh karyawan diminta meninggalkan gedung secara ___.",
+            "prompt": "..... tidak termasuk cuaca",
             "explanation": null,
             "active": false,
             "source_version": 100000017,
@@ -289,7 +289,7 @@
             "options": [
                 {
                     "key": "A",
-                    "text": "terpisah",
+                    "text": "angin puyuh",
                     "display_order": 1,
                     "correct": false,
                     "score": 0,
@@ -297,15 +297,15 @@
                 },
                 {
                     "key": "B",
-                    "text": "tertib",
+                    "text": "halilintar",
                     "display_order": 2,
-                    "correct": true,
-                    "score": 1,
+                    "correct": false,
+                    "score": 0,
                     "media_ref": null
                 },
                 {
                     "key": "C",
-                    "text": "tertunda",
+                    "text": "salju",
                     "display_order": 3,
                     "correct": false,
                     "score": 0,
@@ -313,15 +313,15 @@
                 },
                 {
                     "key": "D",
-                    "text": "tertutup",
+                    "text": "gempa bumi",
                     "display_order": 4,
-                    "correct": false,
-                    "score": 0,
+                    "correct": true,
+                    "score": 1,
                     "media_ref": null
                 },
                 {
                     "key": "E",
-                    "text": "terbatas",
+                    "text": "kabut",
                     "display_order": 5,
                     "correct": false,
                     "score": 0,
@@ -337,7 +337,7 @@
                 },
                 "internal": {
                     "draft_logical_id": "se-003",
-                    "rationale": "Dalam keadaan darurat, meninggalkan gedung secara tertib merupakan tindakan yang paling logis."
+                    "rationale": "Gempa bumi merupakan peristiwa geologis, bukan cuaca."
                 }
             }
         },
@@ -349,7 +349,7 @@
             "display_order": 4,
             "answer_type": "single_choice",
             "difficulty_target": "easy",
-            "prompt": "Keberangkatan pesawat mengalami keterlambatan, sehingga penumpang diminta ___ pengumuman berikutnya.",
+            "prompt": "Lawannya “setia” ialah .....",
             "explanation": null,
             "active": false,
             "source_version": 100000017,
@@ -371,7 +371,7 @@
             "options": [
                 {
                     "key": "A",
-                    "text": "menghapus",
+                    "text": "cinta",
                     "display_order": 1,
                     "correct": false,
                     "score": 0,
@@ -379,7 +379,7 @@
                 },
                 {
                     "key": "B",
-                    "text": "mengabaikan",
+                    "text": "benci",
                     "display_order": 2,
                     "correct": false,
                     "score": 0,
@@ -387,7 +387,7 @@
                 },
                 {
                     "key": "C",
-                    "text": "mengulang",
+                    "text": "persahabatan",
                     "display_order": 3,
                     "correct": false,
                     "score": 0,
@@ -395,7 +395,7 @@
                 },
                 {
                     "key": "D",
-                    "text": "menunggu",
+                    "text": "khianat",
                     "display_order": 4,
                     "correct": true,
                     "score": 1,
@@ -403,7 +403,7 @@
                 },
                 {
                     "key": "E",
-                    "text": "membatalkan",
+                    "text": "permusuhan",
                     "display_order": 5,
                     "correct": false,
                     "score": 0,
@@ -419,7 +419,7 @@
                 },
                 "internal": {
                     "draft_logical_id": "se-004",
-                    "rationale": "Jika keberangkatan tertunda dan informasi lanjutan belum tersedia, penumpang secara logis perlu menunggu pengumuman berikutnya."
+                    "rationale": "Khianat merupakan lawan kata setia."
                 }
             }
         },
@@ -431,7 +431,7 @@
             "display_order": 5,
             "answer_type": "single_choice",
             "difficulty_target": "medium",
-            "prompt": "Meskipun hasil awal tampak menjanjikan, tim peneliti menunda kesimpulan sampai data tambahan berhasil ___.",
+            "prompt": "Seekor kuda selalu mempunyai .....",
             "explanation": null,
             "active": false,
             "source_version": 100000017,
@@ -453,7 +453,7 @@
             "options": [
                 {
                     "key": "A",
-                    "text": "diperkirakan",
+                    "text": "kandang",
                     "display_order": 1,
                     "correct": false,
                     "score": 0,
@@ -461,7 +461,7 @@
                 },
                 {
                     "key": "B",
-                    "text": "diringkas",
+                    "text": "ladam",
                     "display_order": 2,
                     "correct": false,
                     "score": 0,
@@ -469,23 +469,23 @@
                 },
                 {
                     "key": "C",
-                    "text": "diverifikasi",
+                    "text": "pelana",
                     "display_order": 3,
-                    "correct": true,
-                    "score": 1,
-                    "media_ref": null
-                },
-                {
-                    "key": "D",
-                    "text": "dipisahkan",
-                    "display_order": 4,
                     "correct": false,
                     "score": 0,
                     "media_ref": null
                 },
                 {
+                    "key": "D",
+                    "text": "kuku",
+                    "display_order": 4,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": null
+                },
+                {
                     "key": "E",
-                    "text": "dipublikasikan",
+                    "text": "surai",
                     "display_order": 5,
                     "correct": false,
                     "score": 0,
@@ -501,7 +501,7 @@
                 },
                 "internal": {
                     "draft_logical_id": "se-005",
-                    "rationale": "Penundaan kesimpulan menunjukkan kebutuhan untuk memastikan keandalan data tambahan melalui proses verifikasi."
+                    "rationale": "Kuku merupakan bagian tubuh yang selalu dimiliki kuda; kandang, ladam, dan pelana bukan bagian tubuh yang selalu ada."
                 }
             }
         },
@@ -513,7 +513,7 @@
             "display_order": 6,
             "answer_type": "single_choice",
             "difficulty_target": "medium",
-            "prompt": "Dalam negosiasi, kedua pihak menunda pembahasan isu paling sensitif sampai kesepahaman awal berhasil ___.",
+            "prompt": "Seorang paman ..... lebih tua dari kemenakannya.",
             "explanation": null,
             "active": false,
             "source_version": 100000017,
@@ -535,7 +535,7 @@
             "options": [
                 {
                     "key": "A",
-                    "text": "dihindari",
+                    "text": "jarang",
                     "display_order": 1,
                     "correct": false,
                     "score": 0,
@@ -543,15 +543,15 @@
                 },
                 {
                     "key": "B",
-                    "text": "dihapus",
+                    "text": "biasanya",
                     "display_order": 2,
-                    "correct": false,
-                    "score": 0,
+                    "correct": true,
+                    "score": 1,
                     "media_ref": null
                 },
                 {
                     "key": "C",
-                    "text": "dibatasi",
+                    "text": "selalu",
                     "display_order": 3,
                     "correct": false,
                     "score": 0,
@@ -559,15 +559,15 @@
                 },
                 {
                     "key": "D",
-                    "text": "dibangun",
+                    "text": "tidak pernah",
                     "display_order": 4,
-                    "correct": true,
-                    "score": 1,
+                    "correct": false,
+                    "score": 0,
                     "media_ref": null
                 },
                 {
                     "key": "E",
-                    "text": "diperdebatkan",
+                    "text": "kadang-kadang",
                     "display_order": 5,
                     "correct": false,
                     "score": 0,
@@ -583,7 +583,7 @@
                 },
                 "internal": {
                     "draft_logical_id": "se-006",
-                    "rationale": "Pembahasan isu sensitif lebih mungkin dilakukan setelah kedua pihak berhasil membangun dasar kesepahaman."
+                    "rationale": "Seorang paman biasanya lebih tua dari kemenakannya, tetapi keadaan itu tidak selalu berlaku."
                 }
             }
         },
@@ -595,7 +595,7 @@
             "display_order": 7,
             "answer_type": "single_choice",
             "difficulty_target": "medium",
-            "prompt": "Laporan tersebut kaya akan angka, tetapi belum menjelaskan pola yang ___ perubahan antarvariabel.",
+            "prompt": "Pada jumlah yang sama, nilai kalori yang tertinggi terdapat pada .....",
             "explanation": null,
             "active": false,
             "source_version": 100000017,
@@ -617,7 +617,7 @@
             "options": [
                 {
                     "key": "A",
-                    "text": "menutupi",
+                    "text": "ikan",
                     "display_order": 1,
                     "correct": false,
                     "score": 0,
@@ -625,23 +625,23 @@
                 },
                 {
                     "key": "B",
-                    "text": "mendasari",
+                    "text": "daging",
                     "display_order": 2,
-                    "correct": true,
-                    "score": 1,
-                    "media_ref": null
-                },
-                {
-                    "key": "C",
-                    "text": "menghentikan",
-                    "display_order": 3,
                     "correct": false,
                     "score": 0,
                     "media_ref": null
                 },
                 {
+                    "key": "C",
+                    "text": "lemak",
+                    "display_order": 3,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": null
+                },
+                {
                     "key": "D",
-                    "text": "memisahkan",
+                    "text": "tahu",
                     "display_order": 4,
                     "correct": false,
                     "score": 0,
@@ -649,7 +649,7 @@
                 },
                 {
                     "key": "E",
-                    "text": "mengulang",
+                    "text": "sayuran",
                     "display_order": 5,
                     "correct": false,
                     "score": 0,
@@ -665,7 +665,7 @@
                 },
                 "internal": {
                     "draft_logical_id": "se-007",
-                    "rationale": "Yang belum dijelaskan adalah pola dasar yang menjadi landasan terjadinya perubahan antarvariabel."
+                    "rationale": "Pada jumlah yang sama, lemak mempunyai nilai kalori paling tinggi dibandingkan pilihan lain."
                 }
             }
         },
@@ -677,7 +677,7 @@
             "display_order": 8,
             "answer_type": "single_choice",
             "difficulty_target": "medium",
-            "prompt": "Agar keputusan tidak bergantung pada satu sudut pandang, setiap usulan perlu ___ dari beberapa pertimbangan.",
+            "prompt": "Pada suatu pertandingan selalu terdapat .....",
             "explanation": null,
             "active": false,
             "source_version": 100000017,
@@ -699,7 +699,7 @@
             "options": [
                 {
                     "key": "A",
-                    "text": "ditinjau",
+                    "text": "lawan",
                     "display_order": 1,
                     "correct": true,
                     "score": 1,
@@ -707,7 +707,7 @@
                 },
                 {
                     "key": "B",
-                    "text": "dipertahankan",
+                    "text": "wasit",
                     "display_order": 2,
                     "correct": false,
                     "score": 0,
@@ -715,7 +715,7 @@
                 },
                 {
                     "key": "C",
-                    "text": "dihilangkan",
+                    "text": "penonton",
                     "display_order": 3,
                     "correct": false,
                     "score": 0,
@@ -723,7 +723,7 @@
                 },
                 {
                     "key": "D",
-                    "text": "dipisahkan",
+                    "text": "sorak",
                     "display_order": 4,
                     "correct": false,
                     "score": 0,
@@ -731,7 +731,7 @@
                 },
                 {
                     "key": "E",
-                    "text": "dipercepat",
+                    "text": "kemenangan",
                     "display_order": 5,
                     "correct": false,
                     "score": 0,
@@ -747,7 +747,7 @@
                 },
                 "internal": {
                     "draft_logical_id": "se-008",
-                    "rationale": "Untuk mengurangi ketergantungan pada satu sudut pandang, usulan perlu ditinjau menggunakan beberapa pertimbangan."
+                    "rationale": "Pertandingan selalu melibatkan lawan, sedangkan pilihan lain tidak selalu ada."
                 }
             }
         },
@@ -759,7 +759,7 @@
             "display_order": 9,
             "answer_type": "single_choice",
             "difficulty_target": "medium",
-            "prompt": "Pernyataan itu terdengar meyakinkan, tetapi tanpa bukti yang dapat diuji, kesimpulannya tetap bersifat ___.",
+            "prompt": "Suatu pernyataan yang belum dipastikan dikatakan sebagai pernyataan yang .....",
             "explanation": null,
             "active": false,
             "source_version": 100000017,
@@ -781,7 +781,7 @@
             "options": [
                 {
                     "key": "A",
-                    "text": "objektif",
+                    "text": "paradoks",
                     "display_order": 1,
                     "correct": false,
                     "score": 0,
@@ -789,7 +789,7 @@
                 },
                 {
                     "key": "B",
-                    "text": "definitif",
+                    "text": "tergesa-gesa",
                     "display_order": 2,
                     "correct": false,
                     "score": 0,
@@ -797,15 +797,15 @@
                 },
                 {
                     "key": "C",
-                    "text": "spekulatif",
+                    "text": "mempunyai arti rangkap",
                     "display_order": 3,
-                    "correct": true,
-                    "score": 1,
+                    "correct": false,
+                    "score": 0,
                     "media_ref": null
                 },
                 {
                     "key": "D",
-                    "text": "empiris",
+                    "text": "menyesatkan",
                     "display_order": 4,
                     "correct": false,
                     "score": 0,
@@ -813,10 +813,10 @@
                 },
                 {
                     "key": "E",
-                    "text": "konklusif",
+                    "text": "hipotesis",
                     "display_order": 5,
-                    "correct": false,
-                    "score": 0,
+                    "correct": true,
+                    "score": 1,
                     "media_ref": null
                 }
             ],
@@ -829,7 +829,7 @@
                 },
                 "internal": {
                     "draft_logical_id": "se-009",
-                    "rationale": "Tanpa bukti yang dapat diuji, kesimpulan belum memiliki dasar empiris yang cukup dan masih bersifat spekulatif."
+                    "rationale": "Hipotesis merupakan pernyataan yang kebenarannya belum dipastikan."
                 }
             }
         },
@@ -841,7 +841,7 @@
             "display_order": 10,
             "answer_type": "single_choice",
             "difficulty_target": "hard",
-            "prompt": "Aturan yang terlalu longgar berisiko membuat penerapan kebijakan menjadi tidak ___.",
+            "prompt": "Pada sepatu selalu terdapat .....",
             "explanation": null,
             "active": false,
             "source_version": 100000017,
@@ -863,7 +863,7 @@
             "options": [
                 {
                     "key": "A",
-                    "text": "populer",
+                    "text": "kulit",
                     "display_order": 1,
                     "correct": false,
                     "score": 0,
@@ -871,15 +871,15 @@
                 },
                 {
                     "key": "B",
-                    "text": "singkat",
+                    "text": "sol",
                     "display_order": 2,
-                    "correct": false,
-                    "score": 0,
+                    "correct": true,
+                    "score": 1,
                     "media_ref": null
                 },
                 {
                     "key": "C",
-                    "text": "fleksibel",
+                    "text": "tali sepatu",
                     "display_order": 3,
                     "correct": false,
                     "score": 0,
@@ -887,15 +887,15 @@
                 },
                 {
                     "key": "D",
-                    "text": "konsisten",
+                    "text": "gesper",
                     "display_order": 4,
-                    "correct": true,
-                    "score": 1,
+                    "correct": false,
+                    "score": 0,
                     "media_ref": null
                 },
                 {
                     "key": "E",
-                    "text": "sederhana",
+                    "text": "lidah",
                     "display_order": 5,
                     "correct": false,
                     "score": 0,
@@ -911,7 +911,7 @@
                 },
                 "internal": {
                     "draft_logical_id": "se-010",
-                    "rationale": "Aturan yang terlalu longgar membuka peluang interpretasi berbeda sehingga penerapan kebijakan berisiko tidak konsisten."
+                    "rationale": "Sol merupakan bagian yang selalu terdapat pada sepatu, sedangkan bahan dan bagian lain bergantung pada jenis sepatu."
                 }
             }
         },
@@ -923,7 +923,7 @@
             "display_order": 11,
             "answer_type": "single_choice",
             "difficulty_target": "hard",
-            "prompt": "Ketika dua sumber memberikan informasi yang bertentangan, penilai perlu terlebih dahulu ___ dasar bukti masing-masing.",
+            "prompt": "Suatu ..... tidak menyangkut persoalan pencegahan kecelakaan.",
             "explanation": null,
             "active": false,
             "source_version": 100000017,
@@ -945,7 +945,7 @@
             "options": [
                 {
                     "key": "A",
-                    "text": "mengabaikan",
+                    "text": "lampu lalu lintas",
                     "display_order": 1,
                     "correct": false,
                     "score": 0,
@@ -953,23 +953,23 @@
                 },
                 {
                     "key": "B",
-                    "text": "membandingkan",
+                    "text": "kacamata pelindung",
                     "display_order": 2,
-                    "correct": true,
-                    "score": 1,
-                    "media_ref": null
-                },
-                {
-                    "key": "C",
-                    "text": "menyamakan",
-                    "display_order": 3,
                     "correct": false,
                     "score": 0,
                     "media_ref": null
                 },
                 {
+                    "key": "C",
+                    "text": "kotak PPPK",
+                    "display_order": 3,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": null
+                },
+                {
                     "key": "D",
-                    "text": "menyembunyikan",
+                    "text": "tanda peringatan",
                     "display_order": 4,
                     "correct": false,
                     "score": 0,
@@ -977,7 +977,7 @@
                 },
                 {
                     "key": "E",
-                    "text": "meniadakan",
+                    "text": "palang kereta api",
                     "display_order": 5,
                     "correct": false,
                     "score": 0,
@@ -993,7 +993,7 @@
                 },
                 "internal": {
                     "draft_logical_id": "se-011",
-                    "rationale": "Informasi yang bertentangan perlu dievaluasi dengan membandingkan dasar bukti dari masing-masing sumber."
+                    "rationale": "Kotak PPPK digunakan untuk penanganan setelah kecelakaan, bukan untuk pencegahan kecelakaan."
                 }
             }
         },
@@ -1005,7 +1005,7 @@
             "display_order": 12,
             "answer_type": "single_choice",
             "difficulty_target": "hard",
-            "prompt": "Argumen yang baik tidak hanya menyatakan posisi, tetapi juga memberikan alasan yang cukup agar kesimpulannya dapat ___ secara logis.",
+            "prompt": "Mata uang logam Rp 50,- tahun 1991, garis tengahnya ialah ..... mm.",
             "explanation": null,
             "active": false,
             "source_version": 100000017,
@@ -1027,15 +1027,15 @@
             "options": [
                 {
                     "key": "A",
-                    "text": "dipertanggungjawabkan",
+                    "text": "17",
                     "display_order": 1,
-                    "correct": true,
-                    "score": 1,
+                    "correct": false,
+                    "score": 0,
                     "media_ref": null
                 },
                 {
                     "key": "B",
-                    "text": "diperpendek",
+                    "text": "29",
                     "display_order": 2,
                     "correct": false,
                     "score": 0,
@@ -1043,7 +1043,7 @@
                 },
                 {
                     "key": "C",
-                    "text": "disederhanakan",
+                    "text": "25",
                     "display_order": 3,
                     "correct": false,
                     "score": 0,
@@ -1051,15 +1051,15 @@
                 },
                 {
                     "key": "D",
-                    "text": "dipopulerkan",
+                    "text": "20",
                     "display_order": 4,
-                    "correct": false,
-                    "score": 0,
+                    "correct": true,
+                    "score": 1,
                     "media_ref": null
                 },
                 {
                     "key": "E",
-                    "text": "dipercepat",
+                    "text": "15",
                     "display_order": 5,
                     "correct": false,
                     "score": 0,
@@ -1075,7 +1075,7 @@
                 },
                 "internal": {
                     "draft_logical_id": "se-012",
-                    "rationale": "Alasan yang memadai memungkinkan suatu kesimpulan dipertanggungjawabkan berdasarkan hubungan logis antara premis dan kesimpulan."
+                    "rationale": "Diameter nominal uang logam Rp 50 tahun emisi 1991 adalah 20 mm."
                 }
             }
         }

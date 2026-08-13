@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="180" viewBox="0 0 240 180" role="img" aria-labelledby="title desc">
+  <title id="title">Kubus acuan D</title>
+  <desc id="desc">Sisi atas bertanda silang, sisi depan berpola papan dua kali dua, dan sisi kanan memiliki diagonal dari pojok kanan-atas ke pojok kiri-bawah dengan bidang bawah berwarna hitam.</desc>
+  <g stroke="#292524" stroke-width="3" stroke-linejoin="round" vector-effect="non-scaling-stroke">
+    <polygon points="120,20 181,45 121,75 58,50" fill="#f7f3e8"/>
+    <line x1="58" y1="50" x2="181" y2="45"/>
+    <line x1="120" y1="20" x2="121" y2="75"/>
+    <polygon points="58,50 121,75 121,151 58,126" fill="#f7f3e8"/>
+    <polygon points="58,50 89.5,62.5 89.5,100.5 58,88" fill="#292524" stroke="none"/>
+    <polygon points="89.5,100.5 121,113 121,151 89.5,138.5" fill="#292524" stroke="none"/>
+    <line x1="89.5" y1="62.5" x2="89.5" y2="138.5"/>
+    <line x1="58" y1="88" x2="121" y2="113"/>
+    <polygon points="121,75 181,45 181,121 121,151" fill="#f7f3e8"/>
+    <polygon points="181,45 181,121 121,151" fill="#292524" stroke="none"/>
+    <line x1="181" y1="45" x2="121" y2="151"/>
+  </g>
+</svg>

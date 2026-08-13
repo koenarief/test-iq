@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="180" viewBox="0 0 240 180" role="img" aria-labelledby="title desc">
+  <title id="title">Kandidat target WU sumber 148</title>
+  <desc id="desc">Sisi atas polos dengan titik di kanan, sisi depan terbagi diagonal dengan bidang kiri-atas gelap, dan sisi kanan berpola checker.</desc>
+  <g stroke="#292524" stroke-width="3" stroke-linejoin="round" vector-effect="non-scaling-stroke">
+    <polygon points="120,20 181,45 121,75 58,50" fill="#f7f3e8"/>
+    <polygon points="58,50 121,75 121,151 58,126" fill="#f7f3e8"/>
+    <polygon points="58,50 121,75 58,126" fill="#292524" stroke="none"/>
+    <line x1="121" y1="75" x2="58" y2="126"/>
+    <polygon points="121,75 181,45 181,121 121,151" fill="#f7f3e8"/>
+    <polygon points="121,75 151,60 151,98 121,113" fill="#292524" stroke="none"/>
+    <polygon points="151,98 181,83 181,121 151,136" fill="#292524" stroke="none"/>
+    <line x1="151" y1="60" x2="151" y2="136"/>
+    <line x1="121" y1="113" x2="181" y2="83"/>
+  </g>
+  <circle cx="165" cy="43" r="5.2" fill="#292524"/>
+</svg>

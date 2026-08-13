@@ -374,14 +374,14 @@ foreach ($meRecords as $record) {
 }
 
 $catalog = [
-    'SE' => [12, 240, 0, 240, 'single_choice', 12, 'Pilih satu kata atau frasa yang paling tepat untuk melengkapi kalimat. Gunakan makna seluruh kalimat, bukan hanya kecocokan tata bahasa.'],
-    'WA' => [12, 240, 0, 240, 'single_choice', 12, 'Empat pilihan mempunyai kategori atau fungsi bersama. Pilih satu pilihan yang tidak termasuk kelompok tersebut.'],
-    'AN' => [12, 240, 0, 240, 'single_choice', 12, 'Tentukan hubungan pada pasangan pertama, lalu pilih kata yang membentuk hubungan paling setara pada pasangan kedua.'],
-    'GE' => [10, 300, 0, 300, 'single_choice_weighted', 30, 'Setiap soal menampilkan dua konsep. Pilih opsi yang paling tepat menjelaskan persamaan utama keduanya.'],
-    'RA' => [12, 360, 0, 360, 'numeric', 12, 'Bacalah situasi hitung dengan cermat. Masukkan satu bilangan bulat tanpa satuan atau pemisah ribuan.'],
-    'ZR' => [12, 360, 0, 360, 'numeric', 12, 'Temukan aturan paling sederhana yang konsisten pada deret, lalu masukkan satu bilangan berikutnya.'],
+    'SE' => [12, 240, 0, 240, 'single_choice', 23, 'Bacalah setiap kalimat atau pernyataan. Pada setiap soal tersedia lima pilihan jawaban A–E. Pilih satu jawaban yang paling tepat untuk melengkapi atau menjawab pernyataan.'],
+    'WA' => [12, 240, 0, 240, 'single_choice', 23, 'Perhatikan lima kata pada setiap soal. Empat kata mempunyai suatu kesamaan. Pilih satu kata yang paling tidak memiliki kesamaan dengan empat kata lainnya.'],
+    'AN' => [12, 240, 0, 240, 'single_choice', 23, 'Perhatikan hubungan antara kata pertama dan kata kedua. Pilih satu kata A–E yang mempunyai hubungan paling tepat dengan kata ketiga, dengan pola hubungan yang sama: Kata 1 : Kata 2 = Kata 3 : ?.'],
+    'GE' => [10, 300, 0, 300, 'single_choice_weighted', 60, 'Pilih kata yang paling tepat mencakup pengertian kedua kata berikut. Beberapa pilihan mungkin masih berhubungan, tetapi pilih konsep yang paling tepat dan paling spesifik untuk keduanya.'],
+    'RA' => [12, 360, 0, 360, 'numeric', 23, 'Persoalan berikut adalah soal-soal hitungan. Bacalah setiap soal dengan cermat, hitung hasil akhirnya, lalu masukkan angka saja tanpa satuan atau pemisah ribuan.'],
+    'ZR' => [12, 360, 0, 360, 'numeric', 23, 'Setiap deret tersusun menurut suatu aturan tertentu. Temukan aturannya, lalu masukkan angka berikutnya saja tanpa satuan atau pemisah.'],
     'FA' => [10, 240, 0, 240, 'image_choice', 10, 'Perhatikan seluruh potongan pada gambar. Pilih bentuk utuh yang dapat disusun menggunakan setiap potongan tepat satu kali. Potongan boleh diputar, tetapi tidak boleh dicerminkan.'],
-    'WU' => [12, 360, 0, 360, 'image_choice', 12, 'Perhatikan dua tampilan kubus referensi. Pilih kubus yang menunjukkan susunan sisi yang sama setelah rotasi.'],
+    'WU' => [12, 360, 0, 360, 'image_choice', 23, 'Perhatikan lima kubus acuan A–E. Setiap soal menampilkan satu kubus target. Pilih kubus acuan yang identik setelah rotasi legal; pencerminan tidak diperbolehkan.'],
     'ME' => [12, 360, 120, 240, 'single_choice', 23, $me['instruction']],
 ];
 

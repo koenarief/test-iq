@@ -9,7 +9,7 @@
     "source_reference": null,
     "copyright_status": "internally_authored",
     "normative_compatibility": "none",
-    "instruction_content": "Perhatikan lima kubus acuan A–E pada contoh.\nBandingkan tiga simbol pada sisi atas, depan, dan kanan yang terlihat.\nPada setiap soal hanya ditampilkan satu kubus.\nTentukan kubus acuan A, B, C, D, atau E yang identik dengan kubus soal setelah diputar.\nKetiga simbol pada kubus soal juga terlihat pada kubus acuan yang benar; perhatikan urutan sisi di sekitar sudut kubus.\nKubus boleh diputar, tetapi tidak boleh dicerminkan.",
+    "instruction_content": "Perhatikan lima kubus acuan A–E.\nSetiap kubus memiliki susunan tanda yang berbeda pada keenam sisinya.\nPada setiap soal hanya ditampilkan satu kubus target dalam kedudukan yang berbeda.\nPilih kubus acuan A, B, C, D, atau E yang identik dengan kubus target setelah diputar secara legal.\nKubus boleh diputar atau digulingkan dalam pikiran, tetapi tidak boleh dicerminkan.",
     "memorization_content": null,
     "memorization": null,
     "questions": [
@@ -21,12 +21,12 @@
             "display_order": 1,
             "answer_type": "image_choice",
             "difficulty_target": null,
-            "prompt": "Bandingkan tiga simbol yang terlihat pada kubus contoh dengan kubus acuan A–E, lalu pilih rotasi legal yang identik.",
-            "explanation": "Jawaban yang benar adalah kubus B. Tiga simbol terlihat sama dan urutannya di sekitar sudut dipertahankan oleh proper rotation, bukan pencerminan.",
+            "prompt": "Perhatikan kubus target contoh. Pilih kubus acuan A–E yang identik setelah rotasi legal.",
+            "explanation": "Jawaban contoh adalah kubus A.",
             "active": false,
             "source_version": 100000017,
             "source": {
-                "reference": "internal-draft/stage-15-assets/geometry-spec-draft.json#wu-example-001"
+                "reference": "user-provided-source/WU-example"
             },
             "source_reference": null,
             "provenance": {
@@ -45,16 +45,16 @@
                     "key": "A",
                     "text": null,
                     "display_order": 1,
-                    "correct": false,
-                    "score": 0,
+                    "correct": true,
+                    "score": 1,
                     "media_ref": "wu-example-001-option-a"
                 },
                 {
                     "key": "B",
                     "text": null,
                     "display_order": 2,
-                    "correct": true,
-                    "score": 1,
+                    "correct": false,
+                    "score": 0,
                     "media_ref": "wu-example-001-option-b"
                 },
                 {
@@ -91,9 +91,10 @@
                 },
                 "internal": {
                     "draft_logical_id": "wu-example-001",
-                    "rationale": "Master B; visible corner 2 quarter-turn. Ketiga simbol terlihat pada reference dan target; 24 proper rotations hanya cocok dengan satu master.",
+                    "source_item_number": "example",
+                    "rationale": "Contoh sumber menyatakan target merupakan kubus A dalam kedudukan berbeda.",
                     "matching_masters": [
-                        "B"
+                        "A"
                     ],
                     "proper_rotations_checked": 24,
                     "reflection_used": false
@@ -108,12 +109,12 @@
             "display_order": 1,
             "answer_type": "image_choice",
             "difficulty_target": "easy",
-            "prompt": "Bandingkan tiga simbol yang terlihat. Tentukan kubus acuan A–E yang identik dengan kubus target setelah rotasi legal.",
+            "prompt": "Perhatikan satu kubus target. Pilih kubus acuan A–E yang identik setelah rotasi legal.",
             "explanation": null,
             "active": false,
             "source_version": 100000017,
             "source": {
-                "reference": "internal-draft/stage-15-assets/geometry-spec-draft.json#wu-001"
+                "reference": "user-provided-source/WU-137"
             },
             "source_reference": null,
             "provenance": {
@@ -132,8 +133,8 @@
                     "key": "A",
                     "text": null,
                     "display_order": 1,
-                    "correct": false,
-                    "score": 0,
+                    "correct": true,
+                    "score": 1,
                     "media_ref": "wu-001-option-a"
                 },
                 {
@@ -148,8 +149,8 @@
                     "key": "C",
                     "text": null,
                     "display_order": 3,
-                    "correct": true,
-                    "score": 1,
+                    "correct": false,
+                    "score": 0,
                     "media_ref": "wu-001-option-c"
                 },
                 {
@@ -178,9 +179,10 @@
                 },
                 "internal": {
                     "draft_logical_id": "wu-001",
-                    "rationale": "Master C; proper rotation distance 0. Visible triple dot|ring|diamond memakai tiga simbol yang juga terlihat pada reference dan hanya valid untuk master C.",
+                    "source_item_number": 137,
+                    "rationale": "Target sumber 137 hanya cocok dengan master A melalui proper cube rotation.",
                     "matching_masters": [
-                        "C"
+                        "A"
                     ],
                     "proper_rotations_checked": 24,
                     "reflection_used": false
@@ -195,12 +197,12 @@
             "display_order": 2,
             "answer_type": "image_choice",
             "difficulty_target": "easy",
-            "prompt": "Bandingkan tiga simbol yang terlihat. Tentukan kubus acuan A–E yang identik dengan kubus target setelah rotasi legal.",
+            "prompt": "Perhatikan satu kubus target. Pilih kubus acuan A–E yang identik setelah rotasi legal.",
             "explanation": null,
             "active": false,
             "source_version": 100000017,
             "source": {
-                "reference": "internal-draft/stage-15-assets/geometry-spec-draft.json#wu-002"
+                "reference": "user-provided-source/WU-138"
             },
             "source_reference": null,
             "provenance": {
@@ -219,8 +221,8 @@
                     "key": "A",
                     "text": null,
                     "display_order": 1,
-                    "correct": true,
-                    "score": 1,
+                    "correct": false,
+                    "score": 0,
                     "media_ref": "wu-002-option-a"
                 },
                 {
@@ -235,8 +237,8 @@
                     "key": "C",
                     "text": null,
                     "display_order": 3,
-                    "correct": false,
-                    "score": 0,
+                    "correct": true,
+                    "score": 1,
                     "media_ref": "wu-002-option-c"
                 },
                 {
@@ -265,9 +267,10 @@
                 },
                 "internal": {
                     "draft_logical_id": "wu-002",
-                    "rationale": "Master A; proper rotation distance 2. Visible triple square|dot|x memakai tiga simbol yang juga terlihat pada reference dan hanya valid untuk master A.",
+                    "source_item_number": 138,
+                    "rationale": "Target sumber 138 hanya cocok dengan master C melalui proper cube rotation.",
                     "matching_masters": [
-                        "A"
+                        "C"
                     ],
                     "proper_rotations_checked": 24,
                     "reflection_used": false
@@ -282,12 +285,12 @@
             "display_order": 3,
             "answer_type": "image_choice",
             "difficulty_target": "easy",
-            "prompt": "Bandingkan tiga simbol yang terlihat. Tentukan kubus acuan A–E yang identik dengan kubus target setelah rotasi legal.",
+            "prompt": "Perhatikan satu kubus target. Pilih kubus acuan A–E yang identik setelah rotasi legal.",
             "explanation": null,
             "active": false,
             "source_version": 100000017,
             "source": {
-                "reference": "internal-draft/stage-15-assets/geometry-spec-draft.json#wu-003"
+                "reference": "user-provided-source/WU-139"
             },
             "source_reference": null,
             "provenance": {
@@ -352,7 +355,8 @@
                 },
                 "internal": {
                     "draft_logical_id": "wu-003",
-                    "rationale": "Master D; proper rotation distance 0. Visible triple dot|ring|x memakai tiga simbol yang juga terlihat pada reference dan hanya valid untuk master D.",
+                    "source_item_number": 139,
+                    "rationale": "Target sumber 139 hanya cocok dengan master D melalui proper cube rotation.",
                     "matching_masters": [
                         "D"
                     ],
@@ -369,12 +373,12 @@
             "display_order": 4,
             "answer_type": "image_choice",
             "difficulty_target": "easy",
-            "prompt": "Bandingkan tiga simbol yang terlihat. Tentukan kubus acuan A–E yang identik dengan kubus target setelah rotasi legal.",
+            "prompt": "Perhatikan satu kubus target. Pilih kubus acuan A–E yang identik setelah rotasi legal.",
             "explanation": null,
             "active": false,
             "source_version": 100000017,
             "source": {
-                "reference": "internal-draft/stage-15-assets/geometry-spec-draft.json#wu-004"
+                "reference": "user-provided-source/WU-140"
             },
             "source_reference": null,
             "provenance": {
@@ -401,8 +405,8 @@
                     "key": "B",
                     "text": null,
                     "display_order": 2,
-                    "correct": true,
-                    "score": 1,
+                    "correct": false,
+                    "score": 0,
                     "media_ref": "wu-004-option-b"
                 },
                 {
@@ -425,8 +429,8 @@
                     "key": "E",
                     "text": null,
                     "display_order": 5,
-                    "correct": false,
-                    "score": 0,
+                    "correct": true,
+                    "score": 1,
                     "media_ref": "wu-004-option-e"
                 }
             ],
@@ -439,9 +443,10 @@
                 },
                 "internal": {
                     "draft_logical_id": "wu-004",
-                    "rationale": "Master B; proper rotation distance 0. Visible triple dot|ring|square memakai tiga simbol yang juga terlihat pada reference dan hanya valid untuk master B.",
+                    "source_item_number": 140,
+                    "rationale": "Target sumber 140 hanya cocok dengan master E melalui proper cube rotation.",
                     "matching_masters": [
-                        "B"
+                        "E"
                     ],
                     "proper_rotations_checked": 24,
                     "reflection_used": false
@@ -456,12 +461,12 @@
             "display_order": 5,
             "answer_type": "image_choice",
             "difficulty_target": "medium",
-            "prompt": "Bandingkan tiga simbol yang terlihat. Tentukan kubus acuan A–E yang identik dengan kubus target setelah rotasi legal.",
+            "prompt": "Perhatikan satu kubus target. Pilih kubus acuan A–E yang identik setelah rotasi legal.",
             "explanation": null,
             "active": false,
             "source_version": 100000017,
             "source": {
-                "reference": "internal-draft/stage-15-assets/geometry-spec-draft.json#wu-005"
+                "reference": "user-provided-source/WU-141"
             },
             "source_reference": null,
             "provenance": {
@@ -480,8 +485,8 @@
                     "key": "A",
                     "text": null,
                     "display_order": 1,
-                    "correct": false,
-                    "score": 0,
+                    "correct": true,
+                    "score": 1,
                     "media_ref": "wu-005-option-a"
                 },
                 {
@@ -512,8 +517,8 @@
                     "key": "E",
                     "text": null,
                     "display_order": 5,
-                    "correct": true,
-                    "score": 1,
+                    "correct": false,
+                    "score": 0,
                     "media_ref": "wu-005-option-e"
                 }
             ],
@@ -526,9 +531,10 @@
                 },
                 "internal": {
                     "draft_logical_id": "wu-005",
-                    "rationale": "Master E; proper rotation distance 2. Visible triple plus|dot|ring memakai tiga simbol yang juga terlihat pada reference dan hanya valid untuk master E.",
+                    "source_item_number": 141,
+                    "rationale": "Target sumber 141 hanya cocok dengan master A melalui proper cube rotation.",
                     "matching_masters": [
-                        "E"
+                        "A"
                     ],
                     "proper_rotations_checked": 24,
                     "reflection_used": false
@@ -543,12 +549,12 @@
             "display_order": 6,
             "answer_type": "image_choice",
             "difficulty_target": "medium",
-            "prompt": "Bandingkan tiga simbol yang terlihat. Tentukan kubus acuan A–E yang identik dengan kubus target setelah rotasi legal.",
+            "prompt": "Perhatikan satu kubus target. Pilih kubus acuan A–E yang identik setelah rotasi legal.",
             "explanation": null,
             "active": false,
             "source_version": 100000017,
             "source": {
-                "reference": "internal-draft/stage-15-assets/geometry-spec-draft.json#wu-006"
+                "reference": "user-provided-source/WU-142"
             },
             "source_reference": null,
             "provenance": {
@@ -613,7 +619,8 @@
                 },
                 "internal": {
                     "draft_logical_id": "wu-006",
-                    "rationale": "Master C; proper rotation distance 2. Visible triple diamond|dot|ring memakai tiga simbol yang juga terlihat pada reference dan hanya valid untuk master C.",
+                    "source_item_number": 142,
+                    "rationale": "Target sumber 142 hanya cocok dengan master C melalui proper cube rotation.",
                     "matching_masters": [
                         "C"
                     ],
@@ -630,12 +637,12 @@
             "display_order": 7,
             "answer_type": "image_choice",
             "difficulty_target": "medium",
-            "prompt": "Bandingkan tiga simbol yang terlihat. Tentukan kubus acuan A–E yang identik dengan kubus target setelah rotasi legal.",
+            "prompt": "Perhatikan satu kubus target. Pilih kubus acuan A–E yang identik setelah rotasi legal.",
             "explanation": null,
             "active": false,
             "source_version": 100000017,
             "source": {
-                "reference": "internal-draft/stage-15-assets/geometry-spec-draft.json#wu-007"
+                "reference": "user-provided-source/WU-143"
             },
             "source_reference": null,
             "provenance": {
@@ -700,7 +707,8 @@
                 },
                 "internal": {
                     "draft_logical_id": "wu-007",
-                    "rationale": "Master D; proper rotation distance 2. Visible triple x|dot|ring memakai tiga simbol yang juga terlihat pada reference dan hanya valid untuk master D.",
+                    "source_item_number": 143,
+                    "rationale": "Target sumber 143 hanya cocok dengan master D melalui proper cube rotation.",
                     "matching_masters": [
                         "D"
                     ],
@@ -717,12 +725,12 @@
             "display_order": 8,
             "answer_type": "image_choice",
             "difficulty_target": "medium",
-            "prompt": "Bandingkan tiga simbol yang terlihat. Tentukan kubus acuan A–E yang identik dengan kubus target setelah rotasi legal.",
+            "prompt": "Perhatikan satu kubus target. Pilih kubus acuan A–E yang identik setelah rotasi legal.",
             "explanation": null,
             "active": false,
             "source_version": 100000017,
             "source": {
-                "reference": "internal-draft/stage-15-assets/geometry-spec-draft.json#wu-008"
+                "reference": "user-provided-source/WU-144"
             },
             "source_reference": null,
             "provenance": {
@@ -741,8 +749,8 @@
                     "key": "A",
                     "text": null,
                     "display_order": 1,
-                    "correct": true,
-                    "score": 1,
+                    "correct": false,
+                    "score": 0,
                     "media_ref": "wu-008-option-a"
                 },
                 {
@@ -757,8 +765,8 @@
                     "key": "C",
                     "text": null,
                     "display_order": 3,
-                    "correct": false,
-                    "score": 0,
+                    "correct": true,
+                    "score": 1,
                     "media_ref": "wu-008-option-c"
                 },
                 {
@@ -787,9 +795,10 @@
                 },
                 "internal": {
                     "draft_logical_id": "wu-008",
-                    "rationale": "Master A; proper rotation distance 4. Visible triple x|square|dot memakai tiga simbol yang juga terlihat pada reference dan hanya valid untuk master A.",
+                    "source_item_number": 144,
+                    "rationale": "Target sumber 144 hanya cocok dengan master C melalui proper cube rotation.",
                     "matching_masters": [
-                        "A"
+                        "C"
                     ],
                     "proper_rotations_checked": 24,
                     "reflection_used": false
@@ -804,12 +813,12 @@
             "display_order": 9,
             "answer_type": "image_choice",
             "difficulty_target": "medium",
-            "prompt": "Bandingkan tiga simbol yang terlihat. Tentukan kubus acuan A–E yang identik dengan kubus target setelah rotasi legal.",
+            "prompt": "Perhatikan satu kubus target. Pilih kubus acuan A–E yang identik setelah rotasi legal.",
             "explanation": null,
             "active": false,
             "source_version": 100000017,
             "source": {
-                "reference": "internal-draft/stage-15-assets/geometry-spec-draft.json#wu-009"
+                "reference": "user-provided-source/WU-145"
             },
             "source_reference": null,
             "provenance": {
@@ -844,8 +853,8 @@
                     "key": "C",
                     "text": null,
                     "display_order": 3,
-                    "correct": true,
-                    "score": 1,
+                    "correct": false,
+                    "score": 0,
                     "media_ref": "wu-009-option-c"
                 },
                 {
@@ -860,8 +869,8 @@
                     "key": "E",
                     "text": null,
                     "display_order": 5,
-                    "correct": false,
-                    "score": 0,
+                    "correct": true,
+                    "score": 1,
                     "media_ref": "wu-009-option-e"
                 }
             ],
@@ -874,9 +883,10 @@
                 },
                 "internal": {
                     "draft_logical_id": "wu-009",
-                    "rationale": "Master C; proper rotation distance 4. Visible triple ring|diamond|dot memakai tiga simbol yang juga terlihat pada reference dan hanya valid untuk master C.",
+                    "source_item_number": 145,
+                    "rationale": "Target sumber 145 hanya cocok dengan master E melalui proper cube rotation.",
                     "matching_masters": [
-                        "C"
+                        "E"
                     ],
                     "proper_rotations_checked": 24,
                     "reflection_used": false
@@ -891,12 +901,12 @@
             "display_order": 10,
             "answer_type": "image_choice",
             "difficulty_target": "hard",
-            "prompt": "Bandingkan tiga simbol yang terlihat. Tentukan kubus acuan A–E yang identik dengan kubus target setelah rotasi legal.",
+            "prompt": "Perhatikan satu kubus target. Pilih kubus acuan A–E yang identik setelah rotasi legal.",
             "explanation": null,
             "active": false,
             "source_version": 100000017,
             "source": {
-                "reference": "internal-draft/stage-15-assets/geometry-spec-draft.json#wu-010"
+                "reference": "user-provided-source/WU-146"
             },
             "source_reference": null,
             "provenance": {
@@ -915,8 +925,8 @@
                     "key": "A",
                     "text": null,
                     "display_order": 1,
-                    "correct": false,
-                    "score": 0,
+                    "correct": true,
+                    "score": 1,
                     "media_ref": "wu-010-option-a"
                 },
                 {
@@ -947,8 +957,8 @@
                     "key": "E",
                     "text": null,
                     "display_order": 5,
-                    "correct": true,
-                    "score": 1,
+                    "correct": false,
+                    "score": 0,
                     "media_ref": "wu-010-option-e"
                 }
             ],
@@ -961,9 +971,10 @@
                 },
                 "internal": {
                     "draft_logical_id": "wu-010",
-                    "rationale": "Master E; proper rotation distance 4. Visible triple ring|plus|dot memakai tiga simbol yang juga terlihat pada reference dan hanya valid untuk master E.",
+                    "source_item_number": 146,
+                    "rationale": "Target sumber 146 hanya cocok dengan master A melalui proper cube rotation.",
                     "matching_masters": [
-                        "E"
+                        "A"
                     ],
                     "proper_rotations_checked": 24,
                     "reflection_used": false
@@ -978,12 +989,12 @@
             "display_order": 11,
             "answer_type": "image_choice",
             "difficulty_target": "hard",
-            "prompt": "Bandingkan tiga simbol yang terlihat. Tentukan kubus acuan A–E yang identik dengan kubus target setelah rotasi legal.",
+            "prompt": "Perhatikan satu kubus target. Pilih kubus acuan A–E yang identik setelah rotasi legal.",
             "explanation": null,
             "active": false,
             "source_version": 100000017,
             "source": {
-                "reference": "internal-draft/stage-15-assets/geometry-spec-draft.json#wu-011"
+                "reference": "user-provided-source/WU-147"
             },
             "source_reference": null,
             "provenance": {
@@ -1048,7 +1059,8 @@
                 },
                 "internal": {
                     "draft_logical_id": "wu-011",
-                    "rationale": "Master B; proper rotation distance 4. Visible triple ring|square|dot memakai tiga simbol yang juga terlihat pada reference dan hanya valid untuk master B.",
+                    "source_item_number": 147,
+                    "rationale": "Target sumber 147 hanya cocok dengan master B melalui proper cube rotation.",
                     "matching_masters": [
                         "B"
                     ],
@@ -1065,12 +1077,12 @@
             "display_order": 12,
             "answer_type": "image_choice",
             "difficulty_target": "hard",
-            "prompt": "Bandingkan tiga simbol yang terlihat. Tentukan kubus acuan A–E yang identik dengan kubus target setelah rotasi legal.",
+            "prompt": "Perhatikan satu kubus target. Pilih kubus acuan A–E yang identik setelah rotasi legal.",
             "explanation": null,
             "active": false,
             "source_version": 100000017,
             "source": {
-                "reference": "internal-draft/stage-15-assets/geometry-spec-draft.json#wu-012"
+                "reference": "user-provided-source/WU-148"
             },
             "source_reference": null,
             "provenance": {
@@ -1135,7 +1147,8 @@
                 },
                 "internal": {
                     "draft_logical_id": "wu-012",
-                    "rationale": "Master D; proper rotation distance 4. Visible triple ring|x|dot memakai tiga simbol yang juga terlihat pada reference dan hanya valid untuk master D.",
+                    "source_item_number": 148,
+                    "rationale": "Target sumber 148 hanya cocok dengan master D melalui proper cube rotation.",
                     "matching_masters": [
                         "D"
                     ],

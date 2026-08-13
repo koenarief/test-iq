@@ -9,7 +9,7 @@
     "source_reference": null,
     "copyright_status": "internally_authored",
     "normative_compatibility": "none",
-    "instruction_content": "Bacalah situasi hitung dengan cermat. Masukkan satu bilangan bulat tanpa satuan atau pemisah ribuan.",
+    "instruction_content": "Persoalan berikut adalah soal-soal hitungan. Bacalah setiap soal dengan cermat, hitung hasil akhirnya, lalu masukkan angka saja tanpa satuan atau pemisah ribuan.",
     "memorization_content": null,
     "memorization": null,
     "questions": [
@@ -21,8 +21,8 @@
             "display_order": 1,
             "answer_type": "numeric",
             "difficulty_target": null,
-            "prompt": "Sebuah rak mempunyai 4 tingkat. Setiap tingkat berisi 6 kotak. Berapa jumlah seluruh kotak? Masukkan angka saja.",
-            "explanation": "Empat tingkat masing-masing berisi enam kotak, sehingga jumlahnya 4 × 6 = 24.",
+            "prompt": "Sebatang pensil harganya 25 rupiah. Berapakah harga 3 batang?",
+            "explanation": "Harga tiga batang pensil adalah 25 × 3 = 75 rupiah. Masukkan 75 pada input jawaban.",
             "active": false,
             "source_version": 100000017,
             "source": {
@@ -39,7 +39,7 @@
             "review_status": "human_review_passed",
             "scoring": {
                 "max_score": 1,
-                "canonical_answer": "24"
+                "canonical_answer": "75"
             },
             "options": [],
             "media": {
@@ -51,7 +51,7 @@
                 },
                 "internal": {
                     "draft_logical_id": "ra-example-001",
-                    "rationale": "Contoh perkalian langsung dengan satu hasil bilangan bulat."
+                    "rationale": "Perkalian harga satu batang dengan tiga batang menghasilkan satu jawaban numerik."
                 }
             }
         },
@@ -63,7 +63,7 @@
             "display_order": 1,
             "answer_type": "numeric",
             "difficulty_target": "easy",
-            "prompt": "Terdapat 8 kotak. Setiap kotak berisi 7 botol. Berapa jumlah seluruh botol? Masukkan angka saja.",
+            "prompt": "Jika seorang anak memiliki 50 rupiah dan memberikan 15 rupiah kepada orang lain, berapa rupiahkah yang masih tinggal padanya?",
             "explanation": null,
             "active": false,
             "source_version": 100000017,
@@ -81,7 +81,7 @@
             "review_status": "human_review_passed",
             "scoring": {
                 "max_score": 1,
-                "canonical_answer": "56"
+                "canonical_answer": "35"
             },
             "options": [],
             "media": {
@@ -93,7 +93,7 @@
                 },
                 "internal": {
                     "draft_logical_id": "ra-001",
-                    "rationale": "Perkalian langsung jumlah kelompok dan isi per kelompok."
+                    "rationale": "Uang yang diberikan dikurangkan dari jumlah awal."
                 }
             }
         },
@@ -105,7 +105,7 @@
             "display_order": 2,
             "answer_type": "numeric",
             "difficulty_target": "easy",
-            "prompt": "Sebanyak 72 dokumen dibagikan sama rata kepada 8 tim. Berapa dokumen yang diterima setiap tim? Masukkan angka saja.",
+            "prompt": "Berapa km-kah yang dapat ditempuh oleh kereta api dalam waktu 7 jam, jika kecepatannya 40 km/jam?",
             "explanation": null,
             "active": false,
             "source_version": 100000017,
@@ -123,7 +123,7 @@
             "review_status": "human_review_passed",
             "scoring": {
                 "max_score": 1,
-                "canonical_answer": "9"
+                "canonical_answer": "280"
             },
             "options": [],
             "media": {
@@ -135,7 +135,7 @@
                 },
                 "internal": {
                     "draft_logical_id": "ra-002",
-                    "rationale": "Pembagian langsung dan menghasilkan bilangan bulat."
+                    "rationale": "Jarak diperoleh dari waktu dikalikan kecepatan."
                 }
             }
         },
@@ -147,7 +147,7 @@
             "display_order": 3,
             "answer_type": "numeric",
             "difficulty_target": "easy",
-            "prompt": "Sebuah gudang menyimpan 95 paket. Sebanyak 28 paket dikirim pada pagi hari. Berapa paket yang masih tersisa? Masukkan angka saja.",
+            "prompt": "15 peti buah-buahan beratnya 250 kg dan setiap peti kosong beratnya 3 kg, berapakah berat buah-buahan itu?",
             "explanation": null,
             "active": false,
             "source_version": 100000017,
@@ -165,7 +165,7 @@
             "review_status": "human_review_passed",
             "scoring": {
                 "max_score": 1,
-                "canonical_answer": "67"
+                "canonical_answer": "205"
             },
             "options": [],
             "media": {
@@ -177,7 +177,7 @@
                 },
                 "internal": {
                     "draft_logical_id": "ra-003",
-                    "rationale": "Pengurangan langsung dari jumlah awal."
+                    "rationale": "Berat seluruh peti kosong dikurangkan dari berat total peti beserta buah."
                 }
             }
         },
@@ -189,7 +189,7 @@
             "display_order": 4,
             "answer_type": "numeric",
             "difficulty_target": "easy",
-            "prompt": "Empat meja masing-masing memiliki 6 kursi. Setelah ditambah 5 kursi cadangan, berapa jumlah seluruh kursi? Masukkan angka saja.",
+            "prompt": "Seseorang mempunyai persediaan rumput yang cukup untuk 7 ekor kuda selama 78 hari. Berapa harikah persediaan itu cukup untuk 21 ekor kuda?",
             "explanation": null,
             "active": false,
             "source_version": 100000017,
@@ -207,7 +207,7 @@
             "review_status": "human_review_passed",
             "scoring": {
                 "max_score": 1,
-                "canonical_answer": "29"
+                "canonical_answer": "26"
             },
             "options": [],
             "media": {
@@ -219,7 +219,7 @@
                 },
                 "internal": {
                     "draft_logical_id": "ra-004",
-                    "rationale": "Perkalian sederhana dilanjutkan penambahan."
+                    "rationale": "Persediaan tetap setara dengan 546 kuda-hari; untuk 21 kuda cukup selama 26 hari."
                 }
             }
         },
@@ -231,306 +231,12 @@
             "display_order": 5,
             "answer_type": "numeric",
             "difficulty_target": "medium",
-            "prompt": "Sebuah tim memiliki anggaran 240 token. Mereka membeli 6 perlengkapan dengan harga masing-masing 25 token. Berapa token yang masih tersisa? Masukkan angka saja.",
+            "prompt": "3 batang coklat harganya Rp 5,-. Berapa batangkah yang dapat kita beli dengan Rp 50,-?",
             "explanation": null,
             "active": false,
             "source_version": 100000017,
             "source": {
                 "reference": "internal-draft/stage-14-ra-zr-numeric.md#ra-005"
-            },
-            "source_reference": null,
-            "provenance": {
-                "owner": "internal-assessment-content-team",
-                "origin": "original_internal"
-            },
-            "content_origin": "original_internal",
-            "copyright_status": "internally_authored",
-            "normative_compatibility": "none",
-            "review_status": "human_review_passed",
-            "scoring": {
-                "max_score": 1,
-                "canonical_answer": "90"
-            },
-            "options": [],
-            "media": {
-                "prompt_ref": null
-            },
-            "metadata": {
-                "public": {
-                    "display_hint": "standard"
-                },
-                "internal": {
-                    "draft_logical_id": "ra-005",
-                    "rationale": "Total pembelian dihitung terlebih dahulu lalu dikurangkan dari anggaran."
-                }
-            }
-        },
-        {
-            "logical_id": "RA-S-006",
-            "subtest_code": "RA",
-            "kind": "scored",
-            "question_number": 6,
-            "display_order": 6,
-            "answer_type": "numeric",
-            "difficulty_target": "medium",
-            "prompt": "Lima mesin masing-masing menghasilkan 18 unit dalam satu jam. Jika seluruh mesin bekerja selama 3 jam, berapa unit yang dihasilkan? Masukkan angka saja.",
-            "explanation": null,
-            "active": false,
-            "source_version": 100000017,
-            "source": {
-                "reference": "internal-draft/stage-14-ra-zr-numeric.md#ra-006"
-            },
-            "source_reference": null,
-            "provenance": {
-                "owner": "internal-assessment-content-team",
-                "origin": "original_internal"
-            },
-            "content_origin": "original_internal",
-            "copyright_status": "internally_authored",
-            "normative_compatibility": "none",
-            "review_status": "human_review_passed",
-            "scoring": {
-                "max_score": 1,
-                "canonical_answer": "270"
-            },
-            "options": [],
-            "media": {
-                "prompt_ref": null
-            },
-            "metadata": {
-                "public": {
-                    "display_hint": "standard"
-                },
-                "internal": {
-                    "draft_logical_id": "ra-006",
-                    "rationale": "Jumlah mesin, hasil per jam, dan durasi semuanya harus dikalikan."
-                }
-            }
-        },
-        {
-            "logical_id": "RA-S-007",
-            "subtest_code": "RA",
-            "kind": "scored",
-            "question_number": 7,
-            "display_order": 7,
-            "answer_type": "numeric",
-            "difficulty_target": "medium",
-            "prompt": "Sebuah proyek membutuhkan 360 meter kabel. Pada tahap pertama digunakan 125 meter dan tahap kedua 95 meter. Berapa meter kabel yang belum digunakan? Masukkan angka saja.",
-            "explanation": null,
-            "active": false,
-            "source_version": 100000017,
-            "source": {
-                "reference": "internal-draft/stage-14-ra-zr-numeric.md#ra-007"
-            },
-            "source_reference": null,
-            "provenance": {
-                "owner": "internal-assessment-content-team",
-                "origin": "original_internal"
-            },
-            "content_origin": "original_internal",
-            "copyright_status": "internally_authored",
-            "normative_compatibility": "none",
-            "review_status": "human_review_passed",
-            "scoring": {
-                "max_score": 1,
-                "canonical_answer": "140"
-            },
-            "options": [],
-            "media": {
-                "prompt_ref": null
-            },
-            "metadata": {
-                "public": {
-                    "display_hint": "standard"
-                },
-                "internal": {
-                    "draft_logical_id": "ra-007",
-                    "rationale": "Dua pemakaian dijumlahkan lalu dikurangkan dari kebutuhan total."
-                }
-            }
-        },
-        {
-            "logical_id": "RA-S-008",
-            "subtest_code": "RA",
-            "kind": "scored",
-            "question_number": 8,
-            "display_order": 8,
-            "answer_type": "numeric",
-            "difficulty_target": "medium",
-            "prompt": "Delapan pekerja menyelesaikan masing-masing 14 formulir pada pagi hari dan 9 formulir pada sore hari. Berapa total formulir yang diselesaikan seluruh pekerja? Masukkan angka saja.",
-            "explanation": null,
-            "active": false,
-            "source_version": 100000017,
-            "source": {
-                "reference": "internal-draft/stage-14-ra-zr-numeric.md#ra-008"
-            },
-            "source_reference": null,
-            "provenance": {
-                "owner": "internal-assessment-content-team",
-                "origin": "original_internal"
-            },
-            "content_origin": "original_internal",
-            "copyright_status": "internally_authored",
-            "normative_compatibility": "none",
-            "review_status": "human_review_passed",
-            "scoring": {
-                "max_score": 1,
-                "canonical_answer": "184"
-            },
-            "options": [],
-            "media": {
-                "prompt_ref": null
-            },
-            "metadata": {
-                "public": {
-                    "display_hint": "standard"
-                },
-                "internal": {
-                    "draft_logical_id": "ra-008",
-                    "rationale": "Output per pekerja dijumlahkan terlebih dahulu lalu dikalikan jumlah pekerja."
-                }
-            }
-        },
-        {
-            "logical_id": "RA-S-009",
-            "subtest_code": "RA",
-            "kind": "scored",
-            "question_number": 9,
-            "display_order": 9,
-            "answer_type": "numeric",
-            "difficulty_target": "medium",
-            "prompt": "Sebuah perusahaan membeli 9 paket perangkat dengan harga 32 token per paket. Setelah mendapat potongan 45 token dari total pembelian, berapa token yang harus dibayar? Masukkan angka saja.",
-            "explanation": null,
-            "active": false,
-            "source_version": 100000017,
-            "source": {
-                "reference": "internal-draft/stage-14-ra-zr-numeric.md#ra-009"
-            },
-            "source_reference": null,
-            "provenance": {
-                "owner": "internal-assessment-content-team",
-                "origin": "original_internal"
-            },
-            "content_origin": "original_internal",
-            "copyright_status": "internally_authored",
-            "normative_compatibility": "none",
-            "review_status": "human_review_passed",
-            "scoring": {
-                "max_score": 1,
-                "canonical_answer": "243"
-            },
-            "options": [],
-            "media": {
-                "prompt_ref": null
-            },
-            "metadata": {
-                "public": {
-                    "display_hint": "standard"
-                },
-                "internal": {
-                    "draft_logical_id": "ra-009",
-                    "rationale": "Total pembelian dihitung lalu dikurangi potongan tetap."
-                }
-            }
-        },
-        {
-            "logical_id": "RA-S-010",
-            "subtest_code": "RA",
-            "kind": "scored",
-            "question_number": 10,
-            "display_order": 10,
-            "answer_type": "numeric",
-            "difficulty_target": "hard",
-            "prompt": "Enam kotak masing-masing berisi 24 komponen. Sebanyak 36 komponen digunakan. Sisa komponen dibagikan sama rata ke 9 laci. Berapa komponen pada setiap laci? Masukkan angka saja.",
-            "explanation": null,
-            "active": false,
-            "source_version": 100000017,
-            "source": {
-                "reference": "internal-draft/stage-14-ra-zr-numeric.md#ra-010"
-            },
-            "source_reference": null,
-            "provenance": {
-                "owner": "internal-assessment-content-team",
-                "origin": "original_internal"
-            },
-            "content_origin": "original_internal",
-            "copyright_status": "internally_authored",
-            "normative_compatibility": "none",
-            "review_status": "human_review_passed",
-            "scoring": {
-                "max_score": 1,
-                "canonical_answer": "12"
-            },
-            "options": [],
-            "media": {
-                "prompt_ref": null
-            },
-            "metadata": {
-                "public": {
-                    "display_hint": "standard"
-                },
-                "internal": {
-                    "draft_logical_id": "ra-010",
-                    "rationale": "Jumlah awal dihitung, dikurangi pemakaian, lalu dibagi rata."
-                }
-            }
-        },
-        {
-            "logical_id": "RA-S-011",
-            "subtest_code": "RA",
-            "kind": "scored",
-            "question_number": 11,
-            "display_order": 11,
-            "answer_type": "numeric",
-            "difficulty_target": "hard",
-            "prompt": "Sebuah tim memproses 420 data. Pada tahap pertama 3 kelompok masing-masing memproses 48 data. Sisanya dibagi rata kepada 6 kelompok berikutnya. Berapa data yang diproses setiap kelompok berikutnya? Masukkan angka saja.",
-            "explanation": null,
-            "active": false,
-            "source_version": 100000017,
-            "source": {
-                "reference": "internal-draft/stage-14-ra-zr-numeric.md#ra-011"
-            },
-            "source_reference": null,
-            "provenance": {
-                "owner": "internal-assessment-content-team",
-                "origin": "original_internal"
-            },
-            "content_origin": "original_internal",
-            "copyright_status": "internally_authored",
-            "normative_compatibility": "none",
-            "review_status": "human_review_passed",
-            "scoring": {
-                "max_score": 1,
-                "canonical_answer": "46"
-            },
-            "options": [],
-            "media": {
-                "prompt_ref": null
-            },
-            "metadata": {
-                "public": {
-                    "display_hint": "standard"
-                },
-                "internal": {
-                    "draft_logical_id": "ra-011",
-                    "rationale": "Tahap pertama memproses 144 data; sisa 276 dibagi kepada 6 kelompok."
-                }
-            }
-        },
-        {
-            "logical_id": "RA-S-012",
-            "subtest_code": "RA",
-            "kind": "scored",
-            "question_number": 12,
-            "display_order": 12,
-            "answer_type": "numeric",
-            "difficulty_target": "hard",
-            "prompt": "Sebuah gudang menerima 12 peti, masing-masing berisi 35 unit. Sebanyak 84 unit dikirim ke cabang A dan 126 unit ke cabang B. Sisa unit ditempatkan sama rata pada 7 rak. Berapa unit pada setiap rak? Masukkan angka saja.",
-            "explanation": null,
-            "active": false,
-            "source_version": 100000017,
-            "source": {
-                "reference": "internal-draft/stage-14-ra-zr-numeric.md#ra-012"
             },
             "source_reference": null,
             "provenance": {
@@ -554,8 +260,302 @@
                     "display_hint": "standard"
                 },
                 "internal": {
+                    "draft_logical_id": "ra-005",
+                    "rationale": "Lima puluh rupiah membeli sepuluh kelompok yang masing-masing berisi tiga batang."
+                }
+            }
+        },
+        {
+            "logical_id": "RA-S-006",
+            "subtest_code": "RA",
+            "kind": "scored",
+            "question_number": 6,
+            "display_order": 6,
+            "answer_type": "numeric",
+            "difficulty_target": "medium",
+            "prompt": "Seseorang dapat berjalan 1,75 m dalam waktu ¼ detik. Berapakah meterkah yang dapat ia tempuh dalam waktu 10 detik?",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-14-ra-zr-numeric.md#ra-006"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1,
+                "canonical_answer": "70"
+            },
+            "options": [],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "ra-006",
+                    "rationale": "Kecepatan berjalan adalah tujuh meter per detik, sehingga dalam sepuluh detik ditempuh 70 meter."
+                }
+            }
+        },
+        {
+            "logical_id": "RA-S-007",
+            "subtest_code": "RA",
+            "kind": "scored",
+            "question_number": 7,
+            "display_order": 7,
+            "answer_type": "numeric",
+            "difficulty_target": "medium",
+            "prompt": "Jika sebuah batu terletak 15 m di sebelah selatan dari sebatang pohon dan pohon itu berada 30 m di sebelah selatan dari sebuah rumah, berapa meterkah jarak antara batu dan rumah itu?",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-14-ra-zr-numeric.md#ra-007"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1,
+                "canonical_answer": "45"
+            },
+            "options": [],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "ra-007",
+                    "rationale": "Batu berada 15 meter lebih jauh ke selatan dari pohon yang sudah 30 meter di selatan rumah."
+                }
+            }
+        },
+        {
+            "logical_id": "RA-S-008",
+            "subtest_code": "RA",
+            "kind": "scored",
+            "question_number": 8,
+            "display_order": 8,
+            "answer_type": "numeric",
+            "difficulty_target": "medium",
+            "prompt": "Jika 4 ½ m bahan sandang harganya Rp 90,-, berapakah rupiahkah harganya 2 ½ m?",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-14-ra-zr-numeric.md#ra-008"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1,
+                "canonical_answer": "50"
+            },
+            "options": [],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "ra-008",
+                    "rationale": "Harga per meter adalah 20 rupiah, sehingga dua setengah meter berharga 50 rupiah."
+                }
+            }
+        },
+        {
+            "logical_id": "RA-S-009",
+            "subtest_code": "RA",
+            "kind": "scored",
+            "question_number": 9,
+            "display_order": 9,
+            "answer_type": "numeric",
+            "difficulty_target": "medium",
+            "prompt": "7 orang dapat menyelesaikan sesuatu pekerjaan dalam 6 hari. Berapa orangkah yang diperlukan untuk menyelesaikan pekerjaan itu dalam setengah hari?",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-14-ra-zr-numeric.md#ra-009"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1,
+                "canonical_answer": "84"
+            },
+            "options": [],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "ra-009",
+                    "rationale": "Pekerjaan memerlukan 42 orang-hari; agar selesai dalam setengah hari diperlukan 84 orang."
+                }
+            }
+        },
+        {
+            "logical_id": "RA-S-010",
+            "subtest_code": "RA",
+            "kind": "scored",
+            "question_number": 10,
+            "display_order": 10,
+            "answer_type": "numeric",
+            "difficulty_target": "hard",
+            "prompt": "Karena dipanaskan, kawat yang panjangnya 48 cm akan mengembang menjadi 52 cm setelah pemanasan, berapakah panjangnya kawat yang berukuran 72 cm?",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-14-ra-zr-numeric.md#ra-010"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1,
+                "canonical_answer": "78"
+            },
+            "options": [],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "ra-010",
+                    "rationale": "Faktor pemuaian yang sama adalah 52/48; diterapkan pada kawat 72 cm menghasilkan 78 cm."
+                }
+            }
+        },
+        {
+            "logical_id": "RA-S-011",
+            "subtest_code": "RA",
+            "kind": "scored",
+            "question_number": 11,
+            "display_order": 11,
+            "answer_type": "numeric",
+            "difficulty_target": "hard",
+            "prompt": "Suatu pabrik dapat menghasilkan 304 batang pensil dalam waktu 8 jam. Berapa batangkah dihasilkan dalam waktu setengah jam?",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-14-ra-zr-numeric.md#ra-011"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1,
+                "canonical_answer": "19"
+            },
+            "options": [],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "ra-011",
+                    "rationale": "Laju produksi adalah 38 batang per jam; dalam setengah jam dihasilkan 19 batang."
+                }
+            }
+        },
+        {
+            "logical_id": "RA-S-012",
+            "subtest_code": "RA",
+            "kind": "scored",
+            "question_number": 12,
+            "display_order": 12,
+            "answer_type": "numeric",
+            "difficulty_target": "hard",
+            "prompt": "Untuk suatu campuran diperlukan 2 bagian perak dan 3 bagian timah. Berapa gramkah perak yang diperlukan untuk mendapatkan campuran itu yang beratnya 15 gram?",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-14-ra-zr-numeric.md#ra-012"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1,
+                "canonical_answer": "6"
+            },
+            "options": [],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
                     "draft_logical_id": "ra-012",
-                    "rationale": "Total awal 420; setelah dua pengiriman tersisa 210; dibagi 7 menghasilkan 30."
+                    "rationale": "Perak merupakan dua dari lima bagian campuran, sehingga massanya dua perlima dari 15 gram."
                 }
             }
         }

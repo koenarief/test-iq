@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="180" viewBox="0 0 240 180" role="img" aria-labelledby="title desc">
+  <title id="title">Kubus acuan B</title>
+  <desc id="desc">Sisi atas bertitik, sisi depan berpola papan dua kali dua, dan sisi kanan memiliki diagonal dari pojok kanan-atas ke pojok kiri-bawah dengan bidang bawah berwarna hitam.</desc>
+  <g stroke="#292524" stroke-width="3" stroke-linejoin="round" vector-effect="non-scaling-stroke">
+    <polygon points="125,23 183,43 124,70 64,50" fill="#f7f3e8"/>
+    <polygon points="64,50 124,70 124,145 64,126" fill="#f7f3e8"/>
+    <polygon points="94,60 124,70 124,107.5 94,97.5" fill="#292524" stroke="none"/>
+    <polygon points="64,88 94,97.5 94,135.5 64,126" fill="#292524" stroke="none"/>
+    <line x1="94" y1="60" x2="94" y2="135.5"/>
+    <line x1="64" y1="88" x2="124" y2="107.5"/>
+    <polygon points="124,70 183,43 183,116 124,145" fill="#f7f3e8"/>
+    <polygon points="183,43 183,116 124,145" fill="#292524" stroke="none"/>
+    <line x1="183" y1="43" x2="124" y2="145"/>
+  </g>
+  <circle cx="84" cy="48" r="5.2" fill="#292524"/>
+</svg>

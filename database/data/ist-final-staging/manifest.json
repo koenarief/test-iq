@@ -62,7 +62,7 @@
             "duration_seconds": 240,
             "memorization_duration_seconds": 0,
             "answering_duration_seconds": 240,
-            "max_score": 12
+            "max_score": 23
         },
         {
             "code": "WA",
@@ -73,7 +73,7 @@
             "duration_seconds": 240,
             "memorization_duration_seconds": 0,
             "answering_duration_seconds": 240,
-            "max_score": 12
+            "max_score": 23
         },
         {
             "code": "AN",
@@ -84,7 +84,7 @@
             "duration_seconds": 240,
             "memorization_duration_seconds": 0,
             "answering_duration_seconds": 240,
-            "max_score": 12
+            "max_score": 23
         },
         {
             "code": "GE",
@@ -95,7 +95,7 @@
             "duration_seconds": 300,
             "memorization_duration_seconds": 0,
             "answering_duration_seconds": 300,
-            "max_score": 30
+            "max_score": 60
         },
         {
             "code": "RA",
@@ -106,7 +106,7 @@
             "duration_seconds": 360,
             "memorization_duration_seconds": 0,
             "answering_duration_seconds": 360,
-            "max_score": 12
+            "max_score": 23
         },
         {
             "code": "ZR",
@@ -117,7 +117,7 @@
             "duration_seconds": 360,
             "memorization_duration_seconds": 0,
             "answering_duration_seconds": 360,
-            "max_score": 12
+            "max_score": 23
         },
         {
             "code": "FA",
@@ -139,7 +139,7 @@
             "duration_seconds": 360,
             "memorization_duration_seconds": 0,
             "answering_duration_seconds": 360,
-            "max_score": 12
+            "max_score": 23
         },
         {
             "code": "ME",
@@ -187,8 +187,8 @@
         "freeze_version": null
     },
     "checksum_algorithm": "sha256",
-    "content_fingerprint": "26d81f54a82e1cbcdebbc53f49d3579cbde98dbe8d2fb803eb6bcdcedd7814a2",
-    "media_checksum_aggregate": "f6e12f0ab0f539d947d73452ef5c56cfb466ce4e3c3754494719bc667d39f26c",
+    "content_fingerprint": "e4ce5576091fd7b0ff8d88aeaa43b72c9e1c00aeb686feed427532fd9392e19d",
+    "media_checksum_aggregate": "1efd433dbe7ee9d951bd1fceec82236666dee2dc3a1800b1fc22686a18598016",
     "disclaimer_fingerprint": "dc0f64497e259fa67ea486112c1a7065e48853b848557b841f740c15cd9e9e87",
     "notes": "Human-reviewed inactive staging dataset. Not approved, frozen, imported, or activatable."
 }

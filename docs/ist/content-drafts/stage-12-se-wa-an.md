@@ -25,22 +25,24 @@ Lima opsi yang masing-masing menjadi key minimal dua kali memakai 10 dari 12 pos
 
 ---
 
-# SE — Melengkapi Kalimat
+# SE — Melengkapi atau Menjawab Pernyataan
 
-**Petunjuk singkat:** Pilih satu kata atau frasa yang paling tepat untuk melengkapi kalimat. Gunakan makna seluruh kalimat, bukan hanya kecocokan tata bahasa.
+**Petunjuk singkat:** Bacalah setiap kalimat atau pernyataan. Pada setiap soal tersedia lima pilihan jawaban A–E. Pilih satu jawaban yang paling tepat untuk melengkapi atau menjawab pernyataan.
+
+**Sumber transkripsi:** Screenshot yang diberikan pemilik proyek; example dan soal sumber 01–12 ditranskripsikan tanpa mengambil soal 13–20. Difficulty merupakan overlay aplikasi dan bukan bagian dari sumber.
 
 ## SE Example
 
 ### se-example-001
 
 - Contract: `subtest_code=SE`; `kind=example`; `display_order=0`; `difficulty_target=null`; `answer_type=single_choice`.
-- Prompt: Petugas menutup jendela agar air hujan tidak ___ ke dalam ruangan.
-- Options: A. mengering (`0`); B. masuk (`1`, key); C. berhenti (`0`); D. menyusut (`0`); E. mengeras (`0`).
-- Key: **B**.
-- Explanation peserta: Kata “masuk” paling tepat karena jendela ditutup untuk mencegah air hujan bergerak ke dalam ruangan.
-- Rationale internal: Hubungan tujuan tindakan dinyatakan oleh “agar tidak”; hanya “masuk” menghasilkan tujuan yang logis.
-- Difficulty basis: Example; hubungan langsung dan kosakata umum, tidak masuk distribusi difficulty.
-- Reviews: `ambiguity_review=pass` (opsi lain tidak menghasilkan tujuan yang wajar); `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
+- Prompt: Seekor kuda mempunyai kesamaan terbanyak dengan seekor .....
+- Options: A. kucing (`0`); B. bajing (`0`); C. keledai (`1`, key); D. lembu (`0`); E. anjing (`0`).
+- Key: **C**.
+- Explanation peserta: Jawaban yang paling tepat adalah keledai.
+- Rationale internal: Kuda dan keledai memiliki kesamaan paling banyak dibandingkan pilihan lain.
+- Difficulty basis: Example; tidak masuk distribusi difficulty.
+- Reviews: `ambiguity_review=pass`; `language_review_notes=source_transcription: pass`; `logic_review_notes=manual_semantic_validation: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ## SE Scored Questions
@@ -48,160 +50,163 @@ Lima opsi yang masing-masing menjadi key minimal dua kali memakai 10 dari 12 pos
 ### se-001
 
 - Contract: `subtest_code=SE`; `kind=scored`; `display_order=1`; `difficulty_target=easy`; `answer_type=single_choice`.
-- Prompt: Lampu lalu lintas berubah merah, sehingga pengendara harus ___.
-- Options: A. berbelok (`0`); B. melaju (`0`); C. berhenti (`1`, key); D. mendahului (`0`); E. berputar (`0`).
-- Key: **C**. Explanation: `null`.
-- Rationale internal: “Sehingga” menandai akibat; tindakan yang sesuai saat lampu merah adalah berhenti.
-- Difficulty basis: Hubungan sebab-akibat langsung dan distraktor berbeda jelas.
-- Reviews: `ambiguity_review=pass`; `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
+- Prompt: Pengaruh seseorang terhadap orang lain seharusnya bergantung pada .....
+- Options: A. kekuasaan (`0`); B. bujukan (`0`); C. kekayaan (`0`); D. keberanian (`0`); E. kewibawaan (`1`, key).
+- Key: **E**. Explanation: `null`.
+- Rationale internal: Kewibawaan merupakan dasar pengaruh yang paling tepat dibandingkan kekuasaan, bujukan, kekayaan, atau keberanian.
+- Difficulty basis: Easy sesuai overlay aplikasi untuk soal 01.
+- Reviews: `ambiguity_review=pass`; `language_review_notes=source_transcription: pass`; `logic_review_notes=manual_semantic_validation: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ### se-002
 
-- Contract: `subtest_code=SE`; `kind=scored`; `display_order=2`; `difficulty_target=medium`; `answer_type=single_choice`.
-- Prompt: Rapat evaluasi baru dapat dimulai setelah seluruh data berhasil ___.
-- Options: A. terkumpul (`1`, key); B. terpisah (`0`); C. tertutup (`0`); D. terbagi (`0`); E. terlipat (`0`).
-- Key: **A**. Explanation: `null`.
-- Rationale internal: Evaluasi memerlukan data yang telah terkumpul; semua opsi cocok secara bentuk, tetapi hanya A sesuai tujuan rapat.
-- Difficulty basis: Memerlukan pemahaman urutan prasyarat, dengan distraktor bentuk kata serupa.
-- Reviews: `ambiguity_review=pass` (tidak ada kondisi tambahan yang mendukung opsi lain); `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
+- Contract: `subtest_code=SE`; `kind=scored`; `display_order=2`; `difficulty_target=easy`; `answer_type=single_choice`.
+- Prompt: Lawannya “hemat” ialah .....
+- Options: A. murah (`0`); B. kikir (`0`); C. boros (`1`, key); D. bernilai (`0`); E. kaya (`0`).
+- Key: **C**. Explanation: `null`.
+- Rationale internal: Boros merupakan lawan kata hemat.
+- Difficulty basis: Easy sesuai overlay aplikasi untuk soal 02.
+- Reviews: `ambiguity_review=pass`; `language_review_notes=source_transcription: pass`; `logic_review_notes=manual_semantic_validation: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ### se-003
 
 - Contract: `subtest_code=SE`; `kind=scored`; `display_order=3`; `difficulty_target=easy`; `answer_type=single_choice`.
-- Prompt: Menjelang perjalanan, awan gelap membuat langit tampak ___.
-- Options: A. cerah (`0`); B. bening (`0`); C. luas (`0`); D. tinggi (`0`); E. mendung (`1`, key).
-- Key: **E**. Explanation: `null`.
-- Rationale internal: Awan gelap membuat langit tampak mendung dan menjadi alasan langsung membawa payung.
-- Difficulty basis: Konteks sehari-hari dan hubungan sebab-akibat langsung.
-- Reviews: `ambiguity_review=pass`; `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
+- Prompt: ..... tidak termasuk cuaca
+- Options: A. angin puyuh (`0`); B. halilintar (`0`); C. salju (`0`); D. gempa bumi (`1`, key); E. kabut (`0`).
+- Key: **D**. Explanation: `null`.
+- Rationale internal: Gempa bumi merupakan peristiwa geologis, bukan cuaca.
+- Difficulty basis: Easy sesuai overlay aplikasi untuk soal 03.
+- Reviews: `ambiguity_review=pass`; `language_review_notes=source_transcription: pass`; `logic_review_notes=manual_semantic_validation: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ### se-004
 
-- Contract: `subtest_code=SE`; `kind=scored`; `display_order=4`; `difficulty_target=hard`; `answer_type=single_choice`.
-- Prompt: Usulan itu terdengar menarik, tetapi belum dapat diterapkan karena uraian langkah kerjanya masih ___.
-- Options: A. ringkas (`0`); B. samar (`1`, key); C. lugas (`0`); D. stabil (`0`); E. tegas (`0`).
-- Key: **B**. Explanation: `null`.
-- Rationale internal: Hambatan penerapan muncul karena uraian tidak cukup jelas; “samar” paling tepat, sedangkan “ringkas” tidak selalu berarti tidak jelas.
-- Difficulty basis: Distraktor semantik dekat mengharuskan peserta membedakan singkat dari tidak jelas.
-- Reviews: `ambiguity_review=pass` (kontras “menarik, tetapi belum dapat diterapkan” mengunci kebutuhan kejelasan); `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
+- Contract: `subtest_code=SE`; `kind=scored`; `display_order=4`; `difficulty_target=easy`; `answer_type=single_choice`.
+- Prompt: Lawannya “setia” ialah .....
+- Options: A. cinta (`0`); B. benci (`0`); C. persahabatan (`0`); D. khianat (`1`, key); E. permusuhan (`0`).
+- Key: **D**. Explanation: `null`.
+- Rationale internal: Khianat merupakan lawan kata setia.
+- Difficulty basis: Easy sesuai overlay aplikasi untuk soal 04.
+- Reviews: `ambiguity_review=pass`; `language_review_notes=source_transcription: pass`; `logic_review_notes=manual_semantic_validation: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ### se-005
 
 - Contract: `subtest_code=SE`; `kind=scored`; `display_order=5`; `difficulty_target=medium`; `answer_type=single_choice`.
-- Prompt: Jalan utama ditutup sementara, maka pengemudi perlu mencari rute ___.
-- Options: A. tetap (`0`); B. sempit (`0`); C. terdekat (`0`); D. alternatif (`1`, key); E. terpanjang (`0`).
+- Prompt: Seekor kuda selalu mempunyai .....
+- Options: A. kandang (`0`); B. ladam (`0`); C. pelana (`0`); D. kuku (`1`, key); E. surai (`0`).
 - Key: **D**. Explanation: `null`.
-- Rationale internal: Penutupan rute utama menuntut rute pengganti; “alternatif” menyatakan fungsi itu secara tepat.
-- Difficulty basis: Memerlukan pemahaman konsekuensi praktis; beberapa opsi dapat menjadi sifat rute tetapi bukan fungsi yang diperlukan.
-- Reviews: `ambiguity_review=pass`; `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
+- Rationale internal: Kuku merupakan bagian tubuh yang selalu dimiliki kuda; kandang, ladam, dan pelana bukan bagian tubuh yang selalu ada.
+- Difficulty basis: Medium sesuai overlay aplikasi untuk soal 05.
+- Reviews: `ambiguity_review=pass`; `language_review_notes=source_transcription: pass`; `logic_review_notes=manual_semantic_validation: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ### se-006
 
-- Contract: `subtest_code=SE`; `kind=scored`; `display_order=6`; `difficulty_target=easy`; `answer_type=single_choice`.
-- Prompt: Agar dokumen mudah ditemukan kembali, berkas disusun secara ___.
-- Options: A. terpisah (`0`); B. terburu-buru (`0`); C. teratur (`1`, key); D. tertutup (`0`); E. sementara (`0`).
-- Key: **C**. Explanation: `null`.
-- Rationale internal: Susunan teratur secara langsung mendukung kemudahan menemukan kembali dokumen.
-- Difficulty basis: Hubungan tujuan langsung dan kosakata umum.
-- Reviews: `ambiguity_review=pass`; `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
+- Contract: `subtest_code=SE`; `kind=scored`; `display_order=6`; `difficulty_target=medium`; `answer_type=single_choice`.
+- Prompt: Seorang paman ..... lebih tua dari kemenakannya.
+- Options: A. jarang (`0`); B. biasanya (`1`, key); C. selalu (`0`); D. tidak pernah (`0`); E. kadang-kadang (`0`).
+- Key: **B**. Explanation: `null`.
+- Rationale internal: Seorang paman biasanya lebih tua dari kemenakannya, tetapi keadaan itu tidak selalu berlaku.
+- Difficulty basis: Medium sesuai overlay aplikasi untuk soal 06.
+- Reviews: `ambiguity_review=pass`; `language_review_notes=source_transcription: pass`; `logic_review_notes=manual_semantic_validation: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ### se-007
 
 - Contract: `subtest_code=SE`; `kind=scored`; `display_order=7`; `difficulty_target=medium`; `answer_type=single_choice`.
-- Prompt: Dengan memprioritaskan langkah penting, tim dapat bekerja lebih ___ meskipun waktu persiapan singkat.
-- Options: A. perlahan (`0`); B. efisien (`1`, key); C. terpisah (`0`); D. longgar (`0`); E. spontan (`0`).
-- Key: **B**. Explanation: `null`.
-- Rationale internal: Prioritas membantu menggunakan waktu dan usaha secara efisien.
-- Difficulty basis: Peserta perlu menghubungkan strategi prioritas dengan cara kerja, bukan sekadar kecepatan.
-- Reviews: `ambiguity_review=pass`; `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
+- Prompt: Pada jumlah yang sama, nilai kalori yang tertinggi terdapat pada .....
+- Options: A. ikan (`0`); B. daging (`0`); C. lemak (`1`, key); D. tahu (`0`); E. sayuran (`0`).
+- Key: **C**. Explanation: `null`.
+- Rationale internal: Pada jumlah yang sama, lemak mempunyai nilai kalori paling tinggi dibandingkan pilihan lain.
+- Difficulty basis: Medium sesuai overlay aplikasi untuk soal 07.
+- Reviews: `ambiguity_review=pass`; `language_review_notes=source_transcription: pass`; `logic_review_notes=manual_semantic_validation: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ### se-008
 
-- Contract: `subtest_code=SE`; `kind=scored`; `display_order=8`; `difficulty_target=hard`; `answer_type=single_choice`.
-- Prompt: Pernyataan itu tampak meyakinkan, namun bukti yang diberikan belum cukup ___ kesimpulannya.
-- Options: A. mengulang (`0`); B. menyertai (`0`); C. membatasi (`0`); D. menggantikan (`0`); E. mendukung (`1`, key).
-- Key: **E**. Explanation: `null`.
-- Rationale internal: Fungsi bukti adalah mendukung kesimpulan; kedekatan konteks opsi lain tidak membentuk relasi pembuktian.
-- Difficulty basis: Konteks abstrak dan distraktor verba yang sama-sama dapat berkaitan dengan pernyataan.
-- Reviews: `ambiguity_review=pass`; `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
+- Contract: `subtest_code=SE`; `kind=scored`; `display_order=8`; `difficulty_target=medium`; `answer_type=single_choice`.
+- Prompt: Pada suatu pertandingan selalu terdapat .....
+- Options: A. lawan (`1`, key); B. wasit (`0`); C. penonton (`0`); D. sorak (`0`); E. kemenangan (`0`).
+- Key: **A**. Explanation: `null`.
+- Rationale internal: Pertandingan selalu melibatkan lawan, sedangkan pilihan lain tidak selalu ada.
+- Difficulty basis: Medium sesuai overlay aplikasi untuk soal 08.
+- Reviews: `ambiguity_review=pass`; `language_review_notes=source_transcription: pass`; `logic_review_notes=manual_semantic_validation: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ### se-009
 
-- Contract: `subtest_code=SE`; `kind=scored`; `display_order=9`; `difficulty_target=easy`; `answer_type=single_choice`.
-- Prompt: Setelah hujan berhenti, udara terasa lebih ___.
-- Options: A. sejuk (`1`, key); B. bising (`0`); C. padat (`0`); D. tajam (`0`); E. kasar (`0`).
-- Key: **A**. Explanation: `null`.
-- Rationale internal: “Sejuk” merupakan sifat udara yang wajar setelah hujan; opsi lain tidak sesuai konteks sensasi udara.
-- Difficulty basis: Makna kontekstual langsung dengan distraktor berbeda jelas.
-- Reviews: `ambiguity_review=pass`; `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
+- Contract: `subtest_code=SE`; `kind=scored`; `display_order=9`; `difficulty_target=medium`; `answer_type=single_choice`.
+- Prompt: Suatu pernyataan yang belum dipastikan dikatakan sebagai pernyataan yang .....
+- Options: A. paradoks (`0`); B. tergesa-gesa (`0`); C. mempunyai arti rangkap (`0`); D. menyesatkan (`0`); E. hipotesis (`1`, key).
+- Key: **E**. Explanation: `null`.
+- Rationale internal: Hipotesis merupakan pernyataan yang kebenarannya belum dipastikan.
+- Difficulty basis: Medium sesuai overlay aplikasi untuk soal 09.
+- Reviews: `ambiguity_review=pass`; `language_review_notes=source_transcription: pass`; `logic_review_notes=manual_semantic_validation: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ### se-010
 
-- Contract: `subtest_code=SE`; `kind=scored`; `display_order=10`; `difficulty_target=medium`; `answer_type=single_choice`.
-- Prompt: Petunjuk diringkas supaya pembaca dapat memahami urutan kerja secara ___.
-- Options: A. utuh (`0`); B. acak (`0`); C. sempit (`0`); D. jelas (`1`, key); E. kasar (`0`).
-- Key: **D**. Explanation: `null`.
-- Rationale internal: Perangkuman petunjuk bertujuan memperjelas urutan kerja; “utuh” tidak menjelaskan cara pemahaman.
-- Difficulty basis: Memerlukan pemilihan adverbia yang paling sesuai dengan tujuan komunikasi.
-- Reviews: `ambiguity_review=pass`; `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
+- Contract: `subtest_code=SE`; `kind=scored`; `display_order=10`; `difficulty_target=hard`; `answer_type=single_choice`.
+- Prompt: Pada sepatu selalu terdapat .....
+- Options: A. kulit (`0`); B. sol (`1`, key); C. tali sepatu (`0`); D. gesper (`0`); E. lidah (`0`).
+- Key: **B**. Explanation: `null`.
+- Rationale internal: Sol merupakan bagian yang selalu terdapat pada sepatu, sedangkan bahan dan bagian lain bergantung pada jenis sepatu.
+- Difficulty basis: Hard sesuai overlay aplikasi untuk soal 10.
+- Reviews: `ambiguity_review=pass`; `language_review_notes=source_transcription: pass`; `logic_review_notes=manual_semantic_validation: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ### se-011
 
 - Contract: `subtest_code=SE`; `kind=scored`; `display_order=11`; `difficulty_target=hard`; `answer_type=single_choice`.
-- Prompt: Kedua rencana menawarkan manfaat serupa, sehingga keputusan perlu dibuat berdasarkan kriteria yang paling ___ dengan tujuan utama.
-- Options: A. konsisten (`0`); B. seimbang (`0`); C. relevan (`1`, key); D. serasi (`0`); E. tetap (`0`).
+- Prompt: Suatu ..... tidak menyangkut persoalan pencegahan kecelakaan.
+- Options: A. lampu lalu lintas (`0`); B. kacamata pelindung (`0`); C. kotak PPPK (`1`, key); D. tanda peringatan (`0`); E. palang kereta api (`0`).
 - Key: **C**. Explanation: `null`.
-- Rationale internal: Kriteria harus memiliki hubungan langsung dengan tujuan; “relevan” menyatakan hubungan itu paling presisi.
-- Difficulty basis: Distraktor semantik dekat dan konteks pengambilan keputusan abstrak.
-- Reviews: `ambiguity_review=pass` (konsisten dapat menjadi sifat kriteria, tetapi tidak menjamin keterkaitan dengan tujuan); `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
+- Rationale internal: Kotak PPPK digunakan untuk penanganan setelah kecelakaan, bukan untuk pencegahan kecelakaan.
+- Difficulty basis: Hard sesuai overlay aplikasi untuk soal 11.
+- Reviews: `ambiguity_review=pass`; `language_review_notes=source_transcription: pass`; `logic_review_notes=manual_semantic_validation: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ### se-012
 
-- Contract: `subtest_code=SE`; `kind=scored`; `display_order=12`; `difficulty_target=medium`; `answer_type=single_choice`.
-- Prompt: Sebelum mengirim laporan, Nara memeriksa ulang angka-angkanya untuk ___ kesalahan terbawa ke versi akhir.
-- Options: A. menyusun (`0`); B. menunda (`0`); C. merangkum (`0`); D. mencegah (`1`, key); E. menyalin (`0`).
+- Contract: `subtest_code=SE`; `kind=scored`; `display_order=12`; `difficulty_target=hard`; `answer_type=single_choice`.
+- Prompt: Mata uang logam Rp 50,- tahun 1991, garis tengahnya ialah ..... mm.
+- Options: A. 17 (`0`); B. 29 (`0`); C. 25 (`0`); D. 20 (`1`, key); E. 15 (`0`).
 - Key: **D**. Explanation: `null`.
-- Rationale internal: Pemeriksaan ulang dilakukan untuk mencegah kesalahan terbawa ke laporan versi akhir.
-- Difficulty basis: Hubungan tujuan cukup langsung, tetapi semua opsi merupakan verba tindakan yang gramatikal.
-- Reviews: `ambiguity_review=pass`; `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
+- Rationale internal: Diameter nominal uang logam Rp 50 tahun emisi 1991 adalah 20 mm.
+- Difficulty basis: Hard sesuai overlay aplikasi untuk soal 12.
+- Reviews: `ambiguity_review=pass`; `language_review_notes=source_transcription: pass`; `logic_review_notes=external_factual_validation: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ### Rekap SE
 
 - Scored: 12; example: 1; seluruh record: 13.
-- Difficulty scored: easy 4 (`001,003,006,009`); medium 5 (`002,005,007,010,012`); hard 3 (`004,008,011`).
-- Distribusi key scored: A=2, B=2, C=3, D=3, E=2.
-- Urutan key: C–A–E–B–D–C–B–E–A–D–C–D (tidak membentuk siklus A–E).
+- Difficulty scored: easy 4 (`001–004`); medium 5 (`005–009`); hard 3 (`010–012`).
+- Distribusi key scored: A=1, B=2, C=3, D=4, E=2.
+- Urutan key: E–C–D–D–D–B–C–A–E–B–C–D.
+- Weighted maximum: `4×1 + 5×2 + 3×3 = 23`.
 
 ---
 
 # WA — Kata yang Berbeda
 
-**Petunjuk singkat:** Empat pilihan mempunyai kategori atau fungsi bersama. Pilih satu pilihan yang tidak termasuk kelompok tersebut.
+**Petunjuk singkat:** Perhatikan lima kata pada setiap soal. Empat kata mempunyai suatu kesamaan. Pilih satu kata yang paling tidak memiliki kesamaan dengan empat kata lainnya.
+
+**Sumber transkripsi:** Screenshot yang diberikan pemilik proyek; example pertama dan soal sumber 21–32 ditranskripsikan tanpa mengambil soal 33–40. Nomor sumber hanya menjadi referensi transkripsi; `display_order` aplikasi tetap 1–12. Difficulty merupakan overlay aplikasi dan bukan bagian dari sumber.
 
 ## WA Example
 
 ### wa-example-001
 
 - Contract: `subtest_code=WA`; `kind=example`; `display_order=0`; `difficulty_target=null`; `answer_type=single_choice`.
-- Prompt: Pilih kata yang berbeda dari empat kata lainnya.
-- Options: A. apel (`0`); B. mangga (`0`); C. wortel (`1`, key); D. jeruk (`0`); E. pisang (`0`).
+- Prompt: Pilih satu kata yang paling tidak memiliki kesamaan dengan empat kata lainnya.
+- Options: A. meja (`0`); B. kursi (`0`); C. burung (`1`, key); D. lemari (`0`); E. tempat tidur (`0`).
 - Key: **C**.
-- Explanation peserta: Apel, mangga, jeruk, dan pisang adalah buah. Wortel adalah sayuran, sehingga menjadi pilihan yang berbeda.
-- Rationale internal: Kategori bersama empat opsi adalah buah; wortel berbeda sebagai sayuran. Alternatif warna, bentuk, dan cara konsumsi tidak membentuk kelompok empat yang lebih kuat.
-- Difficulty basis: Example; kategori konkret dan umum, tidak masuk distribusi difficulty.
-- Reviews: `ambiguity_review=pass`; `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
+- Explanation peserta: Meja, kursi, lemari, dan tempat tidur adalah perabot rumah. Burung bukan perabot rumah, sehingga menjadi pilihan yang berbeda.
+- Rationale internal: Empat opsi merupakan perabot rumah; burung adalah hewan.
+- Difficulty basis: Example; tidak masuk distribusi difficulty.
+- Reviews: `ambiguity_review=pass`; `language_review_notes=source_transcription: pass`; `logic_review_notes=manual_semantic_validation: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ## WA Scored Questions
@@ -209,160 +214,163 @@ Lima opsi yang masing-masing menjadi key minimal dua kali memakai 10 dari 12 pos
 ### wa-001
 
 - Contract: `subtest_code=WA`; `kind=scored`; `display_order=1`; `difficulty_target=easy`; `answer_type=single_choice`.
-- Prompt: Pilih kata yang berbeda dari empat kata lainnya.
-- Options: A. meja (`0`); B. sepeda (`1`, key); C. kursi (`0`); D. lemari (`0`); E. rak (`0`).
+- Prompt: Pilih satu kata yang paling tidak memiliki kesamaan dengan empat kata lainnya.
+- Options: A. lingkaran (`0`); B. panah (`1`, key); C. elips (`0`); D. busur (`0`); E. lengkungan (`0`).
 - Key: **B**. Explanation: `null`.
-- Rationale internal: Meja, kursi, lemari, dan rak adalah perabot; sepeda adalah alat transportasi. Dasar bahan atau lokasi penggunaan tidak menghasilkan kelompok empat yang lebih kuat.
-- Difficulty basis: Kategori fungsi konkret dengan pemisah jelas.
-- Reviews: `ambiguity_review=pass`; `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
+- Rationale internal: Lingkaran, elips, busur, dan lengkungan merupakan bentuk atau konsep geometris melengkung; panah adalah benda penunjuk atau proyektil.
+- Difficulty basis: Easy sesuai overlay aplikasi untuk soal sumber 21.
+- Reviews: `ambiguity_review=pass`; `language_review_notes=source_transcription: pass`; `logic_review_notes=manual_semantic_validation: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ### wa-002
 
 - Contract: `subtest_code=WA`; `kind=scored`; `display_order=2`; `difficulty_target=easy`; `answer_type=single_choice`.
-- Prompt: Pilih kata yang berbeda dari empat kata lainnya.
-- Options: A. mendengar (`0`); B. melihat (`0`); C. mencium (`0`); D. menulis (`1`, key); E. mengecap (`0`).
-- Key: **D**. Explanation: `null`.
-- Rationale internal: Empat opsi adalah aktivitas menerima rangsangan indra; menulis adalah aktivitas menghasilkan simbol. Alternatif organ tubuh tidak mengubah pemisahan fungsional ini.
-- Difficulty basis: Fungsi indra dikenal umum dan odd-one-out langsung.
-- Reviews: `ambiguity_review=pass`; `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
+- Prompt: Pilih satu kata yang paling tidak memiliki kesamaan dengan empat kata lainnya.
+- Options: A. mengetuk (`0`); B. memaki (`1`, key); C. menjahit (`0`); D. menggergaji (`0`); E. memukul (`0`).
+- Key: **B**. Explanation: `null`.
+- Rationale internal: Mengetuk, menjahit, menggergaji, dan memukul merupakan tindakan fisik dengan tangan atau alat; memaki merupakan tindakan verbal.
+- Difficulty basis: Easy sesuai overlay aplikasi untuk soal sumber 22.
+- Reviews: `ambiguity_review=pass`; `language_review_notes=source_transcription: pass`; `logic_review_notes=manual_semantic_validation: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ### wa-003
 
-- Contract: `subtest_code=WA`; `kind=scored`; `display_order=3`; `difficulty_target=medium`; `answer_type=single_choice`.
-- Prompt: Pilih kata yang berbeda dari empat kata lainnya.
-- Options: A. puncak (`1`, key); B. akar (`0`); C. fondasi (`0`); D. landasan (`0`); E. dasar (`0`).
-- Key: **A**. Explanation: `null`.
-- Rationale internal: Akar, fondasi, landasan, dan dasar sama-sama menyatakan penopang atau bagian bawah; puncak menyatakan bagian teratas. Penggunaan literal dan kiasan telah diperiksa dan tetap mempertahankan arah bawah versus atas.
-- Difficulty basis: Memerlukan abstraksi makna bersama lintas konteks literal dan kiasan.
-- Reviews: `ambiguity_review=pass`; `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
+- Contract: `subtest_code=WA`; `kind=scored`; `display_order=3`; `difficulty_target=easy`; `answer_type=single_choice`.
+- Prompt: Pilih satu kata yang paling tidak memiliki kesamaan dengan empat kata lainnya.
+- Options: A. lebar (`0`); B. keliling (`0`); C. luas (`0`); D. isi (`1`, key); E. panjang (`0`).
+- Key: **D**. Explanation: `null`.
+- Rationale internal: Lebar, keliling, luas, dan panjang merupakan ukuran yang digunakan pada bidang; isi menyatakan kapasitas atau volume ruang.
+- Difficulty basis: Easy sesuai overlay aplikasi untuk soal sumber 23.
+- Reviews: `ambiguity_review=pass`; `language_review_notes=source_transcription: pass`; `logic_review_notes=manual_semantic_validation: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ### wa-004
 
 - Contract: `subtest_code=WA`; `kind=scored`; `display_order=4`; `difficulty_target=easy`; `answer_type=single_choice`.
-- Prompt: Pilih kata yang berbeda dari empat kata lainnya.
-- Options: A. merah (`0`); B. biru (`0`); C. manis (`1`, key); D. hijau (`0`); E. kuning (`0`).
+- Prompt: Pilih satu kata yang paling tidak memiliki kesamaan dengan empat kata lainnya.
+- Options: A. mengikat (`0`); B. menyatukan (`0`); C. melepaskan (`1`, key); D. mengaitkan (`0`); E. melekatkan (`0`).
 - Key: **C**. Explanation: `null`.
-- Rationale internal: Empat opsi adalah warna; manis adalah rasa. Tidak ada pengelompokan alternatif utama yang menyatukan empat opsi selain kategori warna.
-- Difficulty basis: Kategori sifat inderawi konkret dengan pemisah jelas.
-- Reviews: `ambiguity_review=pass`; `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
+- Rationale internal: Mengikat, menyatukan, mengaitkan, dan melekatkan menyatakan tindakan menghubungkan; melepaskan menyatakan tindakan memisahkan.
+- Difficulty basis: Easy sesuai overlay aplikasi untuk soal sumber 24.
+- Reviews: `ambiguity_review=pass`; `language_review_notes=source_transcription: pass`; `logic_review_notes=manual_semantic_validation: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ### wa-005
 
 - Contract: `subtest_code=WA`; `kind=scored`; `display_order=5`; `difficulty_target=medium`; `answer_type=single_choice`.
-- Prompt: Pilih kata yang berbeda dari empat kata lainnya.
-- Options: A. dokter (`0`); B. perawat (`0`); C. apoteker (`0`); D. fisioterapis (`0`); E. arsitek (`1`, key).
-- Key: **E**. Explanation: `null`.
-- Rationale internal: Empat opsi merupakan profesi layanan kesehatan; arsitek bekerja dalam perancangan bangunan. Dasar pendidikan atau tempat kerja tidak membentuk alternatif kelompok empat yang lebih tepat.
-- Difficulty basis: Memerlukan pengenalan bidang fungsi profesi, tetapi bukan pengetahuan khusus.
-- Reviews: `ambiguity_review=pass`; `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
+- Prompt: Pilih satu kata yang paling tidak memiliki kesamaan dengan empat kata lainnya.
+- Options: A. arah (`0`); B. timur (`0`); C. perjalanan (`1`, key); D. tujuan (`0`); E. selatan (`0`).
+- Key: **C**. Explanation: `null`.
+- Rationale internal: Arah, timur, tujuan, dan selatan berkaitan dengan orientasi atau arah yang dituju; perjalanan merupakan proses berpindah.
+- Difficulty basis: Medium sesuai overlay aplikasi untuk soal sumber 25.
+- Reviews: `ambiguity_review=pass`; `language_review_notes=source_transcription: pass`; `logic_review_notes=manual_semantic_validation: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ### wa-006
 
-- Contract: `subtest_code=WA`; `kind=scored`; `display_order=6`; `difficulty_target=hard`; `answer_type=single_choice`.
-- Prompt: Pilih kata yang berbeda dari empat kata lainnya.
-- Options: A. menyimpulkan (`0`); B. menyalin (`1`, key); C. menafsirkan (`0`); D. menganalisis (`0`); E. membandingkan (`0`).
-- Key: **B**. Explanation: `null`.
-- Rationale internal: Empat opsi mengolah informasi untuk menghasilkan pemahaman atau penilaian; menyalin hanya mereproduksi informasi. Alternatif “semua aktivitas kognitif” terlalu luas dan tidak sekuat perbedaan transformasi versus reproduksi.
-- Difficulty basis: Kategori proses mental abstrak dengan kata-kata yang semuanya tampak sebagai kegiatan informasi.
-- Reviews: `ambiguity_review=pass`; `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
+- Contract: `subtest_code=WA`; `kind=scored`; `display_order=6`; `difficulty_target=medium`; `answer_type=single_choice`.
+- Prompt: Pilih satu kata yang paling tidak memiliki kesamaan dengan empat kata lainnya.
+- Options: A. jarak (`0`); B. perpisahan (`0`); C. tugas (`1`, key); D. batas (`0`); E. perceraian (`0`).
+- Key: **C**. Explanation: `null`.
+- Rationale internal: Jarak, perpisahan, batas, dan perceraian berkaitan dengan pemisahan; tugas merupakan pekerjaan atau kewajiban.
+- Difficulty basis: Medium sesuai overlay aplikasi untuk soal sumber 26.
+- Reviews: `ambiguity_review=pass`; `language_review_notes=source_transcription: pass`; `logic_review_notes=manual_semantic_validation: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ### wa-007
 
 - Contract: `subtest_code=WA`; `kind=scored`; `display_order=7`; `difficulty_target=medium`; `answer_type=single_choice`.
-- Prompt: Pilih kata yang berbeda dari empat kata lainnya.
-- Options: A. benih (`0`); B. bibit (`0`); C. tunas (`0`); D. ranting (`1`, key); E. kecambah (`0`).
-- Key: **D**. Explanation: `null`.
-- Rationale internal: Benih, bibit, tunas, dan kecambah berkaitan dengan tahap awal pertumbuhan tanaman; ranting merupakan bagian tanaman yang telah berkembang. Alternatif “bagian tanaman” tidak mencakup empat opsi secara setara.
-- Difficulty basis: Memerlukan pengelompokan berdasarkan tahap proses, bukan sekadar asosiasi dengan tanaman.
-- Reviews: `ambiguity_review=pass`; `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
+- Prompt: Pilih satu kata yang paling tidak memiliki kesamaan dengan empat kata lainnya.
+- Options: A. saringan (`0`); B. kelambu (`0`); C. payung (`1`, key); D. tapisan (`0`); E. jala (`0`).
+- Key: **C**. Explanation: `null`.
+- Rationale internal: Saringan, kelambu, tapisan, dan jala berupa anyaman atau jejaring berlubang; payung merupakan pelindung berbidang penutup.
+- Difficulty basis: Medium sesuai overlay aplikasi untuk soal sumber 27.
+- Reviews: `ambiguity_review=pass`; `language_review_notes=source_transcription: pass`; `logic_review_notes=manual_semantic_validation: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ### wa-008
 
-- Contract: `subtest_code=WA`; `kind=scored`; `display_order=8`; `difficulty_target=hard`; `answer_type=single_choice`.
-- Prompt: Pilih kata yang berbeda dari empat kata lainnya.
-- Options: A. janji (`0`); B. kontrak (`0`); C. perkiraan (`1`, key); D. kesepakatan (`0`); E. komitmen (`0`).
-- Key: **C**. Explanation: `null`.
-- Rationale internal: Janji, kontrak, kesepakatan, dan komitmen menyatakan keterikatan untuk melakukan sesuatu; perkiraan menyatakan dugaan. Tingkat formalitas berbeda, tetapi dasar keterikatan tetap mengelompokkan empat opsi.
-- Difficulty basis: Konsep abstrak dengan distraktor yang sama-sama berkaitan dengan pernyataan tentang masa depan.
-- Reviews: `ambiguity_review=pass`; `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
+- Contract: `subtest_code=WA`; `kind=scored`; `display_order=8`; `difficulty_target=medium`; `answer_type=single_choice`.
+- Prompt: Pilih satu kata yang paling tidak memiliki kesamaan dengan empat kata lainnya.
+- Options: A. putih (`0`); B. pucat (`0`); C. buram (`0`); D. kasar (`1`, key); E. berkilauan (`0`).
+- Key: **D**. Explanation: `null`.
+- Rationale internal: Putih, pucat, buram, dan berkilauan merupakan sifat tampak secara visual; kasar terutama menyatakan tekstur permukaan.
+- Difficulty basis: Medium sesuai overlay aplikasi untuk soal sumber 28.
+- Reviews: `ambiguity_review=pass`; `language_review_notes=source_transcription: pass`; `logic_review_notes=manual_semantic_validation: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ### wa-009
 
-- Contract: `subtest_code=WA`; `kind=scored`; `display_order=9`; `difficulty_target=easy`; `answer_type=single_choice`.
-- Prompt: Pilih kata yang berbeda dari empat kata lainnya.
-- Options: A. kubus (`1`, key); B. persegi (`0`); C. lingkaran (`0`); D. segitiga (`0`); E. trapesium (`0`).
-- Key: **A**. Explanation: `null`.
-- Rationale internal: Persegi, lingkaran, segitiga, dan trapesium adalah bentuk dua dimensi; kubus adalah bentuk tiga dimensi. Dasar geometri ini tunggal dan jelas.
-- Difficulty basis: Perbedaan dimensi bentuk dikenal umum.
-- Reviews: `ambiguity_review=pass`; `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
+- Contract: `subtest_code=WA`; `kind=scored`; `display_order=9`; `difficulty_target=medium`; `answer_type=single_choice`.
+- Prompt: Pilih satu kata yang paling tidak memiliki kesamaan dengan empat kata lainnya.
+- Options: A. otobis (`0`); B. pesawat terbang (`0`); C. sepeda motor (`0`); D. sepeda (`1`, key); E. kapal api (`0`).
+- Key: **D**. Explanation: `null`.
+- Rationale internal: Otobis, pesawat terbang, sepeda motor, dan kapal api menggunakan tenaga mesin; sepeda digerakkan oleh tenaga manusia.
+- Difficulty basis: Medium sesuai overlay aplikasi untuk soal sumber 29.
+- Reviews: `ambiguity_review=pass`; `language_review_notes=source_transcription: pass`; `logic_review_notes=manual_semantic_validation: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ### wa-010
 
-- Contract: `subtest_code=WA`; `kind=scored`; `display_order=10`; `difficulty_target=medium`; `answer_type=single_choice`.
-- Prompt: Pilih kata yang berbeda dari empat kata lainnya.
-- Options: A. mengiris (`0`); B. mencincang (`0`); C. memarut (`0`); D. mengupas (`0`); E. merebus (`1`, key).
-- Key: **E**. Explanation: `null`.
-- Rationale internal: Empat opsi mengubah bahan melalui tindakan mekanis dengan alat; merebus menggunakan panas. Semua dapat menjadi proses persiapan makanan, tetapi mekanisme membentuk pemisahan yang jelas.
-- Difficulty basis: Memerlukan klasifikasi berdasarkan proses, bukan bidang penggunaan umum.
-- Reviews: `ambiguity_review=pass`; `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
+- Contract: `subtest_code=WA`; `kind=scored`; `display_order=10`; `difficulty_target=hard`; `answer_type=single_choice`.
+- Prompt: Pilih satu kata yang paling tidak memiliki kesamaan dengan empat kata lainnya.
+- Options: A. biola (`1`, key); B. seruling (`0`); C. klarinet (`0`); D. trompet (`0`); E. saxophon (`0`).
+- Key: **A**. Explanation: `null`.
+- Rationale internal: Seruling, klarinet, trompet, dan saxophon merupakan alat musik tiup; biola merupakan alat musik gesek berdawai.
+- Difficulty basis: Hard sesuai overlay aplikasi untuk soal sumber 30.
+- Reviews: `ambiguity_review=pass`; `language_review_notes=source_transcription: pass`; `logic_review_notes=manual_semantic_validation: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ### wa-011
 
 - Contract: `subtest_code=WA`; `kind=scored`; `display_order=11`; `difficulty_target=hard`; `answer_type=single_choice`.
-- Prompt: Pilih kata yang berbeda dari empat kata lainnya.
-- Options: A. kompas (`0`); B. peta (`0`); C. jadwal (`1`, key); D. alamat (`0`); E. koordinat (`0`).
-- Key: **C**. Explanation: `null`.
-- Rationale internal: Kompas, peta, alamat, dan koordinat membantu menentukan arah atau lokasi; jadwal mengatur waktu. Alternatif “alat bantu perjalanan” terlalu kontekstual dan kurang mendasar daripada informasi spasial versus temporal.
-- Difficulty basis: Pengelompokan fungsi abstrak spasial dengan distraktor temporal yang masih relevan dalam perjalanan.
-- Reviews: `ambiguity_review=pass`; `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
+- Prompt: Pilih satu kata yang paling tidak memiliki kesamaan dengan empat kata lainnya.
+- Options: A. bergelombang (`0`); B. kasar (`0`); C. berduri (`0`); D. licin (`0`); E. lurus (`1`, key).
+- Key: **E**. Explanation: `null`.
+- Rationale internal: Bergelombang, kasar, berduri, dan licin menggambarkan keadaan atau tekstur permukaan; lurus menggambarkan arah atau bentuk garis.
+- Difficulty basis: Hard sesuai overlay aplikasi untuk soal sumber 31.
+- Reviews: `ambiguity_review=pass`; `language_review_notes=source_transcription: pass`; `logic_review_notes=manual_semantic_validation: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ### wa-012
 
-- Contract: `subtest_code=WA`; `kind=scored`; `display_order=12`; `difficulty_target=medium`; `answer_type=single_choice`.
-- Prompt: Pilih kata yang berbeda dari empat kata lainnya.
-- Options: A. mengawali (`0`); B. memulai (`0`); C. membuka (`0`); D. mengakhiri (`1`, key); E. merintis (`0`).
-- Key: **D**. Explanation: `null`.
-- Rationale internal: Empat opsi menyatakan tindakan memulai; mengakhiri menyatakan tindakan menutup atau menyelesaikan. Makna “membuka” yang lain tidak mengalahkan penggunaan umum sebagai awal suatu kegiatan.
-- Difficulty basis: Memerlukan abstraksi sinonimi fungsional dengan satu lawan arah.
-- Reviews: `ambiguity_review=pass`; `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
+- Contract: `subtest_code=WA`; `kind=scored`; `display_order=12`; `difficulty_target=hard`; `answer_type=single_choice`.
+- Prompt: Pilih satu kata yang paling tidak memiliki kesamaan dengan empat kata lainnya.
+- Options: A. jam (`1`, key); B. kompas (`0`); C. penunjuk jalan (`0`); D. bintang pari (`0`); E. arah (`0`).
+- Key: **A**. Explanation: `null`.
+- Rationale internal: Kompas, penunjuk jalan, bintang pari, dan arah berkaitan dengan penentuan arah; jam menunjukkan waktu.
+- Difficulty basis: Hard sesuai overlay aplikasi untuk soal sumber 32.
+- Reviews: `ambiguity_review=pass`; `language_review_notes=source_transcription: pass`; `logic_review_notes=manual_semantic_validation: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ### Rekap WA
 
 - Scored: 12; example: 1; seluruh record: 13.
-- Difficulty scored: easy 4 (`001,002,004,009`); medium 5 (`003,005,007,010,012`); hard 3 (`006,008,011`).
-- Distribusi key scored: A=2, B=2, C=3, D=3, E=2.
-- Urutan key: B–D–A–C–E–B–D–C–A–E–C–D (tidak membentuk siklus A–E).
+- Difficulty scored: easy 4 (`001–004`); medium 5 (`005–009`); hard 3 (`010–012`).
+- Distribusi key scored: A=2, B=2, C=4, D=3, E=1.
+- Urutan key: B–B–D–C–C–C–C–D–D–A–E–A.
+- Weighted maximum: `4×1 + 5×2 + 3×3 = 23`.
 
 ---
 
 # AN — Analogi
 
-**Petunjuk singkat:** Tentukan hubungan pada pasangan pertama, lalu pilih kata yang membentuk hubungan paling setara pada pasangan kedua: `A : B = C : ?`.
+**Petunjuk singkat:** Perhatikan hubungan antara kata pertama dan kata kedua. Pilih satu kata A–E yang mempunyai hubungan paling tepat dengan kata ketiga, dengan pola hubungan yang sama: `Kata 1 : Kata 2 = Kata 3 : ?`.
+
+**Sumber transkripsi:** Screenshot yang diberikan pemilik proyek; example pertama dan soal sumber 41–52 ditranskripsikan tanpa mengambil soal 53–60. Nomor sumber hanya menjadi referensi transkripsi; `display_order` aplikasi tetap 1–12. Difficulty merupakan overlay aplikasi dan bukan bagian dari sumber.
 
 ## AN Example
 
 ### an-example-001
 
 - Contract: `subtest_code=AN`; `kind=example`; `display_order=0`; `difficulty_target=null`; `answer_type=single_choice`.
-- Prompt: Kunci : Membuka = Pensil : ?
-- Options: A. menghapus (`0`); B. menulis (`1`, key); C. mengukur (`0`); D. melipat (`0`); E. memotong (`0`).
-- Key: **B**.
-- Explanation peserta: Kunci digunakan untuk membuka; dengan hubungan yang sama, pensil digunakan untuk menulis.
-- Rationale internal: Relasi alat terhadap fungsi utama identik pada kedua pasangan.
-- Difficulty basis: Example; relasi alat-fungsi langsung, tidak masuk distribusi difficulty.
-- Reviews: `ambiguity_review=pass`; `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
+- Prompt: Hutan : pohon = tembok : ?
+- Options: A. batu bata (`1`, key); B. rumah (`0`); C. semen (`0`); D. putih (`0`); E. dinding (`0`).
+- Key: **A**.
+- Explanation peserta: Hutan terdiri atas pohon-pohon; dengan hubungan yang sama, tembok terdiri atas batu bata.
+- Rationale internal: Relasi keseluruhan terhadap unsur penyusun identik pada kedua pasangan.
+- Difficulty basis: Example; tidak masuk distribusi difficulty.
+- Reviews: `ambiguity_review=pass`; `language_review_notes=source_transcription: pass`; `logic_review_notes=manual_semantic_validation: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ## AN Scored Questions
@@ -370,141 +378,142 @@ Lima opsi yang masing-masing menjadi key minimal dua kali memakai 10 dari 12 pos
 ### an-001
 
 - Contract: `subtest_code=AN`; `kind=scored`; `display_order=1`; `difficulty_target=easy`; `answer_type=single_choice`.
-- Prompt: Sapu : Membersihkan = Gunting : ?
-- Options: A. menempel (`0`); B. menimbang (`0`); C. mengikat (`0`); D. menyimpan (`0`); E. memotong (`1`, key).
-- Key: **E**. Explanation: `null`.
-- Rationale internal: Sapu digunakan untuk membersihkan; gunting digunakan untuk memotong.
-- Difficulty basis: Relasi alat-fungsi langsung dengan distraktor berbeda.
-- Reviews: `ambiguity_review=pass`; `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
+- Prompt: Menemukan : menghilangkan = Mengingat : ?
+- Options: A. menghapal (`0`); B. mengenai (`0`); C. melupakan (`1`, key); D. berpikir (`0`); E. menimpikan (`0`).
+- Key: **C**. Explanation: `null`.
+- Rationale internal: Menemukan berlawanan dengan menghilangkan; mengingat berlawanan dengan melupakan.
+- Difficulty basis: Easy sesuai overlay aplikasi untuk soal sumber 41.
+- Reviews: `ambiguity_review=pass`; `language_review_notes=source_transcription: pass`; `logic_review_notes=manual_semantic_validation: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ### an-002
 
-- Contract: `subtest_code=AN`; `kind=scored`; `display_order=2`; `difficulty_target=medium`; `answer_type=single_choice`.
-- Prompt: Bab : Buku = Adegan : ?
-- Options: A. kamera (`0`); B. dialog (`0`); C. film (`1`, key); D. panggung (`0`); E. pemeran (`0`).
-- Key: **C**. Explanation: `null`.
-- Rationale internal: Bab merupakan bagian dari buku; adegan merupakan bagian dari film.
-- Difficulty basis: Relasi bagian-keseluruhan lintas media dengan distraktor yang masih terkait film.
-- Reviews: `ambiguity_review=pass` (adegan juga dapat ada dalam drama, tetapi “film” satu-satunya keseluruhan karya pada opsi); `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
+- Contract: `subtest_code=AN`; `kind=scored`; `display_order=2`; `difficulty_target=easy`; `answer_type=single_choice`.
+- Prompt: Bunga : jambangan = Burung : ?
+- Options: A. sarang (`0`); B. langit (`0`); C. pagar (`0`); D. pohon (`0`); E. sangkar (`1`, key).
+- Key: **E**. Explanation: `null`.
+- Rationale internal: Bunga ditempatkan dalam jambangan; burung ditempatkan dalam sangkar.
+- Difficulty basis: Easy sesuai overlay aplikasi untuk soal sumber 42.
+- Reviews: `ambiguity_review=pass`; `language_review_notes=source_transcription: pass`; `logic_review_notes=manual_semantic_validation: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ### an-003
 
 - Contract: `subtest_code=AN`; `kind=scored`; `display_order=3`; `difficulty_target=easy`; `answer_type=single_choice`.
-- Prompt: Dokter : Pasien = Guru : ?
-- Options: A. kelas (`0`); B. murid (`1`, key); C. buku (`0`); D. papan (`0`); E. sekolah (`0`).
-- Key: **B**. Explanation: `null`.
-- Rationale internal: Dokter memberikan layanan profesional kepada pasien; guru mengajar murid.
-- Difficulty basis: Relasi profesi terhadap penerima layanan sangat umum.
-- Reviews: `ambiguity_review=pass`; `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
+- Prompt: Kereta api : rel = Otobis : ?
+- Options: A. roda (`0`); B. poros (`0`); C. ban (`0`); D. jalan raya (`1`, key); E. kecepatan (`0`).
+- Key: **D**. Explanation: `null`.
+- Rationale internal: Kereta api bergerak di rel; otobis bergerak di jalan raya.
+- Difficulty basis: Easy sesuai overlay aplikasi untuk soal sumber 43.
+- Reviews: `ambiguity_review=pass`; `language_review_notes=source_transcription: pass`; `logic_review_notes=manual_semantic_validation: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ### an-004
 
-- Contract: `subtest_code=AN`; `kind=scored`; `display_order=4`; `difficulty_target=medium`; `answer_type=single_choice`.
-- Prompt: Pembekuan : Es = Penguapan : ?
-- Options: A. embun (`0`); B. hujan (`0`); C. cairan (`0`); D. uap (`1`, key); E. kristal (`0`).
+- Contract: `subtest_code=AN`; `kind=scored`; `display_order=4`; `difficulty_target=easy`; `answer_type=single_choice`.
+- Prompt: Perak : emas = Cincin : ?
+- Options: A. arloji (`0`); B. berlian (`0`); C. permata (`0`); D. gelang (`1`, key); E. platina (`0`).
 - Key: **D**. Explanation: `null`.
-- Rationale internal: Pembekuan menghasilkan es; penguapan menghasilkan uap.
-- Difficulty basis: Relasi proses-hasil memerlukan pemetaan perubahan wujud, tetapi tetap pengetahuan umum.
-- Reviews: `ambiguity_review=pass`; `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
+- Rationale internal: Perak dan emas merupakan logam sejenis; cincin dan gelang merupakan perhiasan sejenis.
+- Difficulty basis: Easy sesuai overlay aplikasi untuk soal sumber 44.
+- Reviews: `ambiguity_review=pass`; `language_review_notes=source_transcription: pass`; `logic_review_notes=manual_semantic_validation: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ### an-005
 
-- Contract: `subtest_code=AN`; `kind=scored`; `display_order=5`; `difficulty_target=hard`; `answer_type=single_choice`.
-- Prompt: Peta : Wilayah = Diagram : ?
-- Options: A. hubungan (`1`, key); B. pensil (`0`); C. kertas (`0`); D. warna (`0`); E. ukuran (`0`).
-- Key: **A**. Explanation: `null`.
-- Rationale internal: Peta merepresentasikan wilayah; diagram merepresentasikan hubungan antarkomponen.
-- Difficulty basis: Relasi representasi abstrak dua domain; distraktor merupakan atribut atau media, bukan objek yang direpresentasikan.
-- Reviews: `ambiguity_review=pass` (diagram dapat merepresentasikan proses, tetapi “hubungan” mencakup fungsi representasional yang paling umum dan satu-satunya objek abstrak relevan pada opsi); `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
+- Contract: `subtest_code=AN`; `kind=scored`; `display_order=5`; `difficulty_target=medium`; `answer_type=single_choice`.
+- Prompt: Lingkaran : bola = Bujur sangkar : ?
+- Options: A. bentuk (`0`); B. gambar (`0`); C. segi empat (`0`); D. kubus (`1`, key); E. piramida (`0`).
+- Key: **D**. Explanation: `null`.
+- Rationale internal: Bola merupakan bentuk ruang yang bersesuaian dengan lingkaran; kubus merupakan bentuk ruang yang bersesuaian dengan bujur sangkar.
+- Difficulty basis: Medium sesuai overlay aplikasi untuk soal sumber 45.
+- Reviews: `ambiguity_review=pass`; `language_review_notes=source_transcription: pass`; `logic_review_notes=manual_semantic_validation: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ### an-006
 
-- Contract: `subtest_code=AN`; `kind=scored`; `display_order=6`; `difficulty_target=easy`; `answer_type=single_choice`.
-- Prompt: Tepung : Roti = Tanah liat : ?
-- Options: A. pasir (`0`); B. batu (`0`); C. kayu (`0`); D. kaca (`0`); E. gerabah (`1`, key).
-- Key: **E**. Explanation: `null`.
-- Rationale internal: Tepung merupakan bahan untuk membuat roti; tanah liat merupakan bahan untuk membuat gerabah.
-- Difficulty basis: Relasi bahan-produk konkret dan umum.
-- Reviews: `ambiguity_review=pass`; `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
+- Contract: `subtest_code=AN`; `kind=scored`; `display_order=6`; `difficulty_target=medium`; `answer_type=single_choice`.
+- Prompt: Saran : keputusan = Merundingkan : ?
+- Options: A. menawarkan (`0`); B. menentukan (`1`, key); C. menilai (`0`); D. menimbang (`0`); E. merenungkan (`0`).
+- Key: **B**. Explanation: `null`.
+- Rationale internal: Saran dapat mengarah pada keputusan; merundingkan dapat mengarah pada menentukan.
+- Difficulty basis: Medium sesuai overlay aplikasi untuk soal sumber 46.
+- Reviews: `ambiguity_review=pass`; `language_review_notes=source_transcription: pass`; `logic_review_notes=manual_semantic_validation: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ### an-007
 
 - Contract: `subtest_code=AN`; `kind=scored`; `display_order=7`; `difficulty_target=medium`; `answer_type=single_choice`.
-- Prompt: Perpustakaan : Buku = Galeri : ?
-- Options: A. tiket (`0`); B. dinding (`0`); C. pengunjung (`0`); D. lukisan (`1`, key); E. penjaga (`0`).
+- Prompt: Lidah : asam = Hidung : ?
+- Options: A. mencium (`0`); B. bernafas (`0`); C. mengecap (`0`); D. tengik (`1`, key); E. asin (`0`).
 - Key: **D**. Explanation: `null`.
-- Rationale internal: Perpustakaan merupakan tempat koleksi buku; galeri merupakan tempat koleksi atau pajangan lukisan.
-- Difficulty basis: Relasi tempat terhadap isi dengan distraktor yang sama-sama dapat berada di lokasi.
-- Reviews: `ambiguity_review=pass`; `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
+- Rationale internal: Lidah mengenali rasa asam; hidung mengenali bau tengik.
+- Difficulty basis: Medium sesuai overlay aplikasi untuk soal sumber 47.
+- Reviews: `ambiguity_review=pass`; `language_review_notes=source_transcription: pass`; `logic_review_notes=manual_semantic_validation: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ### an-008
 
-- Contract: `subtest_code=AN`; `kind=scored`; `display_order=8`; `difficulty_target=hard`; `answer_type=single_choice`.
-- Prompt: Gerimis : Hujan = Senyum : ?
-- Options: A. sapaan (`0`); B. tawa (`1`, key); C. tangis (`0`); D. diam (`0`); E. tatapan (`0`).
+- Contract: `subtest_code=AN`; `kind=scored`; `display_order=8`; `difficulty_target=medium`; `answer_type=single_choice`.
+- Prompt: Darah : pembuluh = Air : ?
+- Options: A. pintu air (`0`); B. sungai (`1`, key); C. talang (`0`); D. hujan (`0`); E. ember (`0`).
 - Key: **B**. Explanation: `null`.
-- Rationale internal: Gerimis merupakan bentuk presipitasi berintensitas lebih rendah daripada hujan; senyum merupakan ekspresi kegembiraan berintensitas lebih rendah daripada tawa.
-- Difficulty basis: Relasi tingkat/intensitas dipetakan antar dua domain berbeda.
-- Reviews: `ambiguity_review=pass` (relasi bukan sebab atau urutan waktu; hanya B mempertahankan peningkatan intensitas ekspresi positif); `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
+- Rationale internal: Darah mengalir melalui pembuluh; air mengalir melalui sungai.
+- Difficulty basis: Medium sesuai overlay aplikasi untuk soal sumber 48.
+- Reviews: `ambiguity_review=pass`; `language_review_notes=source_transcription: pass`; `logic_review_notes=manual_semantic_validation: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ### an-009
 
 - Contract: `subtest_code=AN`; `kind=scored`; `display_order=9`; `difficulty_target=medium`; `answer_type=single_choice`.
-- Prompt: Termometer : Suhu = Timbangan : ?
-- Options: A. panjang (`0`); B. waktu (`0`); C. berat (`1`, key); D. arah (`0`); E. bunyi (`0`).
-- Key: **C**. Explanation: `null`.
-- Rationale internal: Termometer mengukur suhu; timbangan mengukur berat.
-- Difficulty basis: Relasi alat-objek ukur langsung, dengan opsi berupa besaran berbeda.
-- Reviews: `ambiguity_review=pass`; `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
+- Prompt: Saraf : penyalur = Pupil : ?
+- Options: A. penyinaran (`0`); B. mata (`0`); C. melihat (`0`); D. cahaya (`1`, key); E. pelindung (`0`).
+- Key: **D**. Explanation: `null`.
+- Rationale internal: Saraf menyalurkan rangsangan; pupil menyalurkan cahaya ke dalam mata.
+- Difficulty basis: Medium sesuai overlay aplikasi untuk soal sumber 49.
+- Reviews: `ambiguity_review=pass`; `language_review_notes=source_transcription: pass`; `logic_review_notes=manual_semantic_validation: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ### an-010
 
-- Contract: `subtest_code=AN`; `kind=scored`; `display_order=10`; `difficulty_target=easy`; `answer_type=single_choice`.
-- Prompt: Kandang : Burung = Akuarium : ?
-- Options: A. ikan (`1`, key); B. air (`0`); C. kaca (`0`); D. pasir (`0`); E. tanaman (`0`).
-- Key: **A**. Explanation: `null`.
-- Rationale internal: Kandang menjadi tempat pemeliharaan burung; akuarium menjadi tempat pemeliharaan ikan.
-- Difficulty basis: Relasi tempat terhadap penghuni konkret dan familiar.
-- Reviews: `ambiguity_review=pass` (air adalah isi akuarium, tetapi bukan penghuni yang setara dengan burung); `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
+- Contract: `subtest_code=AN`; `kind=scored`; `display_order=10`; `difficulty_target=hard`; `answer_type=single_choice`.
+- Prompt: Pengantar surat : pengantar telegram = Pandai besi : ?
+- Options: A. palu godam (`0`); B. pedagang besi (`0`); C. api (`0`); D. tukang emas (`1`, key); E. besi tempa (`0`).
+- Key: **D**. Explanation: `null`.
+- Rationale internal: Pengantar surat dan pengantar telegram merupakan pekerjaan sejenis; pandai besi dan tukang emas merupakan pekerjaan sejenis dalam mengolah logam.
+- Difficulty basis: Hard sesuai overlay aplikasi untuk soal sumber 50.
+- Reviews: `ambiguity_review=pass`; `language_review_notes=source_transcription: pass`; `logic_review_notes=manual_semantic_validation: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ### an-011
 
 - Contract: `subtest_code=AN`; `kind=scored`; `display_order=11`; `difficulty_target=hard`; `answer_type=single_choice`.
-- Prompt: Draf awal : Naskah final = Sketsa awal : ?
-- Options: A. kanvas kosong (`0`); B. pensil warna (`0`); C. bingkai kayu (`0`); D. lukisan final (`1`, key); E. garis bantu (`0`).
-- Key: **D**. Explanation: `null`.
-- Rationale internal: Draf awal dikembangkan menjadi naskah final; sketsa awal dikembangkan menjadi lukisan final.
-- Difficulty basis: Relasi tahap awal-hasil final melibatkan proses tersirat dan distraktor yang terkait media gambar.
-- Reviews: `ambiguity_review=pass`; `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
+- Prompt: Buta : warna = Tuli : ?
+- Options: A. pendengaran (`0`); B. mendengar (`0`); C. nada (`1`, key); D. kata (`0`); E. telinga (`0`).
+- Key: **C**. Explanation: `null`.
+- Rationale internal: Orang buta tidak dapat mempersepsi warna; orang tuli tidak dapat mempersepsi nada.
+- Difficulty basis: Hard sesuai overlay aplikasi untuk soal sumber 51.
+- Reviews: `ambiguity_review=pass`; `language_review_notes=source_transcription: pass`; `logic_review_notes=manual_semantic_validation: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ### an-012
 
-- Contract: `subtest_code=AN`; `kind=scored`; `display_order=12`; `difficulty_target=medium`; `answer_type=single_choice`.
-- Prompt: Tanda tanya : Pertanyaan = Tanda seru : ?
-- Options: A. jawaban (`0`); B. jeda (`0`); C. seruan (`1`, key); D. kutipan (`0`); E. perintah (`0`).
+- Contract: `subtest_code=AN`; `kind=scored`; `display_order=12`; `difficulty_target=hard`; `answer_type=single_choice`.
+- Prompt: Makanan : bumbu = Ceramah : ?
+- Options: A. penghinaan (`0`); B. pidato (`0`); C. kelakar (`1`, key); D. kesan (`0`); E. ayat (`0`).
 - Key: **C**. Explanation: `null`.
-- Rationale internal: Tanda tanya menandai pertanyaan; tanda seru menandai seruan.
-- Difficulty basis: Relasi simbol-fungsi dengan “perintah” sebagai distraktor dekat karena tanda seru dapat menyertai kalimat perintah, tetapi tidak terbatas padanya.
-- Reviews: `ambiguity_review=pass` (seruan adalah fungsi tanda yang paling umum dan setara dengan kategori pertanyaan); `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
+- Rationale internal: Bumbu menyedapkan makanan; kelakar menyegarkan atau menghidupkan ceramah.
+- Difficulty basis: Hard sesuai overlay aplikasi untuk soal sumber 52.
+- Reviews: `ambiguity_review=pass`; `language_review_notes=source_transcription: pass`; `logic_review_notes=manual_semantic_validation: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ### Rekap AN
 
 - Scored: 12; example: 1; seluruh record: 13.
-- Difficulty scored: easy 4 (`001,003,006,010`); medium 5 (`002,004,007,009,012`); hard 3 (`005,008,011`).
-- Distribusi key scored: A=2, B=2, C=3, D=3, E=2.
-- Urutan key: E–C–B–D–A–E–D–B–C–A–D–C (tidak membentuk siklus A–E).
+- Difficulty scored: easy 4 (`001–004`); medium 5 (`005–009`); hard 3 (`010–012`).
+- Distribusi key scored: A=0, B=2, C=3, D=6, E=1.
+- Urutan key: C–E–D–D–D–B–D–B–D–D–C–C.
+- Weighted maximum: `4×1 + 5×2 + 3×3 = 23`.
 
 ---
 

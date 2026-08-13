@@ -1,9 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="240" height="180" viewBox="0 0 240 180" role="img" aria-hidden="true" data-wu-role="target" data-face-u="ring" data-face-d="x" data-face-f="plus" data-face-b="diamond" data-face-l="square" data-face-r="dot">
-<ellipse cx="120" cy="157" rx="64" ry="8" fill="#18181b" opacity="0.08"/>
-<polygon points="120,22 178,52 120,82 62,52" fill="#fafafa" stroke="#18181b" stroke-width="3" stroke-linejoin="round"/>
-<polygon points="62,52 120,82 120,154 62,124" fill="#f4f4f5" stroke="#18181b" stroke-width="3" stroke-linejoin="round"/>
-<polygon points="120,82 178,52 178,124 120,154" fill="#e4e4e7" stroke="#18181b" stroke-width="3" stroke-linejoin="round"/>
-<circle cx="120.00" cy="52.00" r="10.00" fill="none" stroke="#18181b" stroke-width="2.70"/>
-<path d="M 82.45 105.00 H 99.55 M 91.00 96.45 V 113.55" fill="none" stroke="#18181b" stroke-width="2.56" stroke-linecap="round"/>
-<circle cx="149.00" cy="105.00" r="5.51" fill="#18181b"/>
+<svg data-wu-role="target" data-wu-source="source-146" xmlns="http://www.w3.org/2000/svg" width="240" height="180" viewBox="0 0 240 180" role="img" aria-labelledby="title desc">
+  <title id="title">Kandidat target WU sumber 146</title>
+  <desc id="desc">Sisi atas terbagi diagonal dari pojok kanan-atas menuju pojok kiri-bawah dengan bidang atas-belakang gelap dan bidang bawah-depan terang, sisi depan bertitik di bawah, dan sisi kanan bertanda silang.</desc>
+  <g stroke="#292524" stroke-width="3" stroke-linejoin="round" vector-effect="non-scaling-stroke">
+    <polygon points="120,20 181,45 121,75 58,50" fill="#f7f3e8"/>
+    <polygon points="120,20 181,45 58,50" fill="#292524" stroke="none"/>
+    <line x1="181" y1="45" x2="58" y2="50"/>
+    <polygon points="58,50 121,75 121,151 58,126" fill="#f7f3e8"/>
+    <polygon points="121,75 181,45 181,121 121,151" fill="#f7f3e8"/>
+    <line x1="121" y1="75" x2="181" y2="121"/>
+    <line x1="181" y1="45" x2="121" y2="151"/>
+  </g>
+  <circle cx="70" cy="115" r="5.2" fill="#292524"/>
 </svg>

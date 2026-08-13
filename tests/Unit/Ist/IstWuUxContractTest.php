@@ -3,6 +3,7 @@
 namespace Tests\Unit\Ist;
 
 use PHPUnit\Framework\TestCase;
+use Tests\Support\Ist\WuSourceGeometry;
 
 final class IstWuUxContractTest extends TestCase
 {
@@ -28,7 +29,7 @@ final class IstWuUxContractTest extends TestCase
 
         $this->assertCount(13, $questions);
         $this->assertStringContainsString(
-            'Pada setiap soal hanya ditampilkan satu kubus.',
+            'Pada setiap soal hanya ditampilkan satu kubus target',
             $this->wu['instruction_content']
         );
         $this->assertStringNotContainsString(
@@ -72,123 +73,79 @@ final class IstWuUxContractTest extends TestCase
 
     public function test_every_wu_target_matches_exactly_one_non_mirrored_master_across_24_rotations(): void
     {
-        $example = collect($this->wu['questions'])->firstWhere('kind', 'example');
-        $masters = [];
-        $rotationKeys = [];
-        $reflectionKeys = [];
+        $expected = [
+            137 => 'A', 138 => 'C', 139 => 'D', 140 => 'E',
+            141 => 'A', 142 => 'C', 143 => 'D', 144 => 'C',
+            145 => 'E', 146 => 'A', 147 => 'B', 148 => 'D',
+        ];
+        $audit = WuSourceGeometry::audit();
 
-        foreach ($example['options'] as $option) {
-            $media = $this->media[$option['media_ref']];
-            $svg = $this->source('database/data/ist-final-staging/'.$media['relative_path']);
-            $this->assertStringContainsString('data-wu-role="master"', $svg);
-            $masters[$option['key']] = $this->parseOrientation($svg);
-            $rotations = $this->rotations($masters[$option['key']]);
-            $reflections = $this->rotations($this->reflect($masters[$option['key']]));
+        $this->assertCount(12, $audit);
 
-            $this->assertCount(24, $rotations, "Master {$option['key']} tidak memiliki 24 proper rotations.");
-            $this->assertCount(24, $reflections);
-            $rotationKeys[$option['key']] = array_fill_keys(array_map([$this, 'orientationKey'], $rotations), true);
-            $reflectionKeys[$option['key']] = array_fill_keys(array_map([$this, 'orientationKey'], $reflections), true);
-            $this->assertSame([], array_intersect_key($rotationKeys[$option['key']], $reflectionKeys[$option['key']]));
-        }
-
-        $visibleMasterSets = [];
-
-        foreach ($masters as $key => $master) {
-            $visible = [$master['U'], $master['F'], $master['R']];
-            sort($visible, SORT_STRING);
-            $visibleKey = implode('|', $visible);
-            $this->assertArrayNotHasKey($visibleKey, $visibleMasterSets, "Master {$key} tidak berbeda secara visual.");
-            $visibleMasterSets[$visibleKey] = $key;
-        }
-
-        $this->assertCount(5, $visibleMasterSets);
-
-        foreach (array_keys($masters) as $leftIndex => $leftKey) {
-            foreach (array_slice(array_keys($masters), $leftIndex + 1) as $rightKey) {
-                $this->assertSame(
-                    [],
-                    array_intersect_key($rotationKeys[$leftKey], $rotationKeys[$rightKey]),
-                    "Master {$leftKey} dan {$rightKey} ekuivalen melalui rotasi."
-                );
-                $this->assertSame(
-                    [],
-                    array_intersect_key($reflectionKeys[$leftKey], $rotationKeys[$rightKey]),
-                    "Master {$leftKey} merupakan mirror-equivalent dari {$rightKey}."
-                );
-            }
-        }
-
-        $scoredTriples = [];
-
-        foreach ($this->wu['questions'] as $question) {
-            $promptMedia = $this->media[$question['media']['prompt_ref']];
-            $targetSvg = $this->source('database/data/ist-final-staging/'.$promptMedia['relative_path']);
-            $target = $this->parseOrientation($targetSvg);
-            $targetKey = $this->orientationKey($target);
-            $visibleTriple = implode('|', [$target['U'], $target['F'], $target['R']]);
-            $correctOptions = collect($question['options'])->where('correct', true);
-            $expectedKey = $correctOptions->first()['key'];
-            $matches = array_keys(array_filter(
-                $rotationKeys,
-                static fn (array $keys): bool => isset($keys[$targetKey])
-            ));
-
-            $this->assertStringContainsString('data-wu-role="target"', $targetSvg);
-            $this->assertCount(1, $correctOptions, "{$question['logical_id']} mempunyai multi/zero-correct option.");
-            $this->assertSame([$expectedKey], $matches, "{$question['logical_id']} ambigu pada 24 proper rotations.");
-
-            $targetVisible = [$target['U'], $target['F'], $target['R']];
-            $referenceVisible = [$masters[$expectedKey]['U'], $masters[$expectedKey]['F'], $masters[$expectedKey]['R']];
-            sort($targetVisible, SORT_STRING);
-            sort($referenceVisible, SORT_STRING);
+        foreach ($expected as $source => $key) {
+            $this->assertSame(24, $audit[$source]['proper_rotations_checked']);
+            $this->assertSame(24, $audit[$source]['reflections_checked']);
             $this->assertSame(
-                $referenceVisible,
-                $targetVisible,
-                "{$question['logical_id']} tidak dapat diselesaikan dari tiga simbol yang terlihat."
+                [$key => 1],
+                $audit[$source]['proper_matches'],
+                "WU sumber {$source} harus mempunyai tepat satu proper-rotation match."
             );
-            $visualMatches = array_keys(array_filter(
-                $masters,
-                static function (array $master) use ($targetVisible): bool {
-                    $visible = [$master['U'], $master['F'], $master['R']];
-                    sort($visible, SORT_STRING);
-
-                    return $visible === $targetVisible;
-                }
-            ));
-            $this->assertSame([$expectedKey], $visualMatches, "{$question['logical_id']} ambigu dari visual peserta.");
-
-            if ($question['kind'] === 'scored') {
-                $this->assertArrayNotHasKey($visibleTriple, $scoredTriples, "Visible triple duplikat: {$visibleTriple}.");
-                $scoredTriples[$visibleTriple] = true;
-            }
+            $this->assertSame(
+                [],
+                $audit[$source]['reflection_matches'],
+                "WU sumber {$source} tidak boleh cocok melalui reflection."
+            );
         }
-
-        $this->assertCount(12, $scoredTriples);
     }
 
-    public function test_wu_keys_and_difficulties_remain_equal_to_the_human_reviewed_draft(): void
+    public function test_wu_keys_difficulties_and_source_media_are_final(): void
     {
-        $draft = $this->json('docs/ist/content-drafts/stage-15-assets/geometry-spec-draft.json');
-        $draftRecords = collect($draft['records'])
-            ->where('subtest_code', 'WU')
-            ->keyBy('logical_id');
+        $expectedKeys = ['A', 'C', 'D', 'E', 'A', 'C', 'D', 'C', 'E', 'A', 'B', 'D'];
+        $expectedDifficulty = [
+            'easy', 'easy', 'easy', 'easy',
+            'medium', 'medium', 'medium', 'medium', 'medium',
+            'hard', 'hard', 'hard',
+        ];
+        $expectedHashes = [
+            '2948fac56a6a50a36138692464cafff2011e04a5b31f9927eda908207f0ba1ba',
+            '99b60f5e6d9ee21a40377ff6cd6275521a2ec1bbf220e5515c6bd87cc42d3479',
+            'f501ea2667ca7cfdacdf4a654c0143f309c19f18528588bd7d738286f68a1a6e',
+            'bc0ea10e5f75282097c8ef92e73896eff4f6a77e65da2b0c6459aab557bf50bf',
+            'da69079dcc0feb5384f6bb262974af6fd5f932727f08a16a9d28af7a152ea103',
+            '7480b5086f3d02bd70df5f173d7bcbccd7e9e4994aefc439a8ff363b6dec763c',
+            'd5eb7f8e30b3bea6886633ed3223605a782a14416f84f299985013b37e443f0e',
+            'cba591de8202b952e730625800ba37285dfa782d70e1d9383acb98b14dee4440',
+            '1b7507171e2fb723677844f430303def08c0e651fc880e8e9c1cb9dc8da71998',
+            'd5295162292e8f590838f519dedb064e5d0ff9ef932d0214ed58f2f6ee2fd582',
+            '4f50801bb773c1be2e807682b9ed580b4501a96e94e5052988783ecd6a38942c',
+            '61e2aaae2182402b0ce9b97232d2c5abf0752d4de6a0d25e53d9789085efb9c5',
+        ];
+        $scored = array_values(array_filter(
+            $this->wu['questions'],
+            static fn (array $question): bool => $question['kind'] === 'scored',
+        ));
 
-        foreach ($this->wu['questions'] as $question) {
-            $draftId = $question['kind'] === 'example'
-                ? 'wu-example-001'
-                : 'wu-'.str_pad((string) $question['display_order'], 3, '0', STR_PAD_LEFT);
-            $draftRecord = $draftRecords[$draftId];
+        $this->assertSame('A', collect($this->wu['questions'][0]['options'])->firstWhere('correct', true)['key']);
+
+        foreach ($scored as $index => $question) {
             $actualKey = collect($question['options'])->firstWhere('correct', true)['key'];
-            $draftKey = collect($draftRecord['options'])->firstWhere('is_correct', true)['code'];
+            $prompt = $this->media[$question['media']['prompt_ref']];
+            $path = $this->root.'/database/data/ist-final-staging/'.$prompt['relative_path'];
 
-            $this->assertSame($draftKey, $actualKey, "Answer key changed for {$question['logical_id']}.");
-            $this->assertSame(
-                $draftRecord['difficulty_target'],
-                $question['difficulty_target'],
-                "Difficulty changed for {$question['logical_id']}."
-            );
+            $this->assertSame($expectedKeys[$index], $actualKey);
+            $this->assertSame($expectedDifficulty[$index], $question['difficulty_target']);
+            $this->assertSame(137 + $index, $question['metadata']['internal']['source_item_number']);
+            $this->assertSame($expectedHashes[$index], hash_file('sha256', $path));
         }
+
+        $this->assertSame(
+            ['easy' => 4, 'medium' => 5, 'hard' => 3],
+            array_count_values(array_column($scored, 'difficulty_target')),
+        );
+        $this->assertSame(23, array_sum(array_map(
+            static fn (array $question): int => ['easy' => 1, 'medium' => 2, 'hard' => 3][$question['difficulty_target']],
+            $scored,
+        )));
     }
 
     public function test_wu_frontend_renders_visual_masters_in_instruction_and_work(): void

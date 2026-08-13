@@ -47,7 +47,7 @@ export default function LandingIndex() {
                 {/* Selection Cards Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto w-full mb-16">
                     <TestCard
-                        title="DISC Personality Test"
+                        title="Tes Kemampuan Gaya Kerja"
                         subtitle="Perilaku & Gaya Kerja"
                         description="Instrumen penilaian psikologi untuk mengidentifikasi 4 tipe gaya kepribadian utama: Dominance, Influence, Steadiness, dan Conscientiousness."
                         icon={UserCheck}

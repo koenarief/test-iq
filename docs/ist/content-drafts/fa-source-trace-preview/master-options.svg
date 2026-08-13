@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 210" role="img" aria-labelledby="title desc">
+  <title id="title">Percobaan tracing master FA A sampai E</title>
+  <desc id="desc">Lima bentuk acuan untuk soal sumber FA 117 sampai 126.</desc>
+  <rect width="900" height="210" fill="#ffffff"/>
+  <g fill="#111111" shape-rendering="geometricPrecision">
+    <path d="M45 132 A67 67 0 0 1 179 132 Z"/>
+    <path d="M250 128 C239 105 244 72 267 53 C286 37 318 35 340 51 C359 65 366 89 360 111 C354 136 332 151 303 153 C279 155 258 146 250 128 Z"/>
+    <path d="M432 127 C420 112 418 91 424 72 C428 60 435 51 444 45 L474 78 L505 44 C517 58 523 73 523 91 C523 126 498 151 467 153 C452 153 440 143 432 127 Z"/>
+    <ellipse cx="650" cy="98" rx="69" ry="50" transform="rotate(-8 650 98)"/>
+    <path d="M782 56 L827 101 C817 124 797 137 772 138 C750 136 731 125 721 106 Z"/>
+  </g>
+  <g fill="#111827" font-family="Arial, sans-serif" font-size="24" text-anchor="middle">
+    <text x="112" y="190">A</text>
+    <text x="304" y="190">B</text>
+    <text x="472" y="190">C</text>
+    <text x="655" y="190">D</text>
+    <text x="774" y="190">E</text>
+  </g>
+</svg>

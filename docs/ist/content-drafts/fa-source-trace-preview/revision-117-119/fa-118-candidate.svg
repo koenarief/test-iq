@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="250" viewBox="0 0 420 250" role="img" aria-labelledby="title desc" shape-rendering="geometricPrecision">
+  <title id="title">Kandidat trace FA sumber 118</title>
+  <desc id="desc">Tiga potongan hitam: satu setengah lingkaran tegak di kiri serta dua potongan memanjang melengkung di kanan.</desc>
+  <rect width="420" height="250" fill="#ffffff"/>
+  <g fill="#111111">
+    <path d="M48 82 C83 84 105 109 105 139 C105 171 83 193 48 195 Z"/>
+    <path d="M136 48 L350 48 C347 78 330 98 299 107 C258 119 205 112 136 112 Z"/>
+    <path d="M136 132 C201 132 255 127 298 139 C329 148 347 169 351 198 L136 198 Z"/>
+  </g>
+</svg>

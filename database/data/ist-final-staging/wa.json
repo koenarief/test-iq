@@ -9,7 +9,7 @@
     "source_reference": null,
     "copyright_status": "internally_authored",
     "normative_compatibility": "none",
-    "instruction_content": "Empat pilihan mempunyai kategori atau fungsi bersama. Pilih satu pilihan yang tidak termasuk kelompok tersebut.",
+    "instruction_content": "Perhatikan lima kata pada setiap soal. Empat kata mempunyai suatu kesamaan. Pilih satu kata yang paling tidak memiliki kesamaan dengan empat kata lainnya.",
     "memorization_content": null,
     "memorization": null,
     "questions": [
@@ -21,94 +21,12 @@
             "display_order": 1,
             "answer_type": "single_choice",
             "difficulty_target": null,
-            "prompt": "Pilih kata yang berbeda dari empat kata lainnya.",
-            "explanation": "Apel, mangga, jeruk, dan pisang adalah buah. Wortel adalah sayuran, sehingga menjadi pilihan yang berbeda.",
+            "prompt": "Pilih satu kata yang paling tidak memiliki kesamaan dengan empat kata lainnya.",
+            "explanation": "Meja, kursi, lemari, dan tempat tidur adalah perabot rumah. Burung bukan perabot rumah, sehingga menjadi pilihan yang berbeda.",
             "active": false,
             "source_version": 100000017,
             "source": {
                 "reference": "internal-draft/stage-12-se-wa-an.md#wa-example-001"
-            },
-            "source_reference": null,
-            "provenance": {
-                "owner": "internal-assessment-content-team",
-                "origin": "original_internal"
-            },
-            "content_origin": "original_internal",
-            "copyright_status": "internally_authored",
-            "normative_compatibility": "none",
-            "review_status": "human_review_passed",
-            "scoring": {
-                "max_score": 1
-            },
-            "options": [
-                {
-                    "key": "A",
-                    "text": "apel",
-                    "display_order": 1,
-                    "correct": false,
-                    "score": 0,
-                    "media_ref": null
-                },
-                {
-                    "key": "B",
-                    "text": "mangga",
-                    "display_order": 2,
-                    "correct": false,
-                    "score": 0,
-                    "media_ref": null
-                },
-                {
-                    "key": "C",
-                    "text": "wortel",
-                    "display_order": 3,
-                    "correct": true,
-                    "score": 1,
-                    "media_ref": null
-                },
-                {
-                    "key": "D",
-                    "text": "jeruk",
-                    "display_order": 4,
-                    "correct": false,
-                    "score": 0,
-                    "media_ref": null
-                },
-                {
-                    "key": "E",
-                    "text": "pisang",
-                    "display_order": 5,
-                    "correct": false,
-                    "score": 0,
-                    "media_ref": null
-                }
-            ],
-            "media": {
-                "prompt_ref": null
-            },
-            "metadata": {
-                "public": {
-                    "display_hint": "standard"
-                },
-                "internal": {
-                    "draft_logical_id": "wa-example-001",
-                    "rationale": "Empat opsi merupakan buah, sedangkan wortel merupakan sayuran."
-                }
-            }
-        },
-        {
-            "logical_id": "WA-S-001",
-            "subtest_code": "WA",
-            "kind": "scored",
-            "question_number": 1,
-            "display_order": 1,
-            "answer_type": "single_choice",
-            "difficulty_target": "easy",
-            "prompt": "Pilih kata yang berbeda dari empat kata lainnya.",
-            "explanation": null,
-            "active": false,
-            "source_version": 100000017,
-            "source": {
-                "reference": "internal-draft/stage-12-se-wa-an.md#wa-001"
             },
             "source_reference": null,
             "provenance": {
@@ -141,7 +59,7 @@
                 },
                 {
                     "key": "C",
-                    "text": "sepeda",
+                    "text": "burung",
                     "display_order": 3,
                     "correct": true,
                     "score": 1,
@@ -157,7 +75,89 @@
                 },
                 {
                     "key": "E",
-                    "text": "rak",
+                    "text": "tempat tidur",
+                    "display_order": 5,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                }
+            ],
+            "media": {
+                "prompt_ref": null
+            },
+            "metadata": {
+                "public": {
+                    "display_hint": "standard"
+                },
+                "internal": {
+                    "draft_logical_id": "wa-example-001",
+                    "rationale": "Empat opsi merupakan perabot rumah; burung adalah hewan."
+                }
+            }
+        },
+        {
+            "logical_id": "WA-S-001",
+            "subtest_code": "WA",
+            "kind": "scored",
+            "question_number": 1,
+            "display_order": 1,
+            "answer_type": "single_choice",
+            "difficulty_target": "easy",
+            "prompt": "Pilih satu kata yang paling tidak memiliki kesamaan dengan empat kata lainnya.",
+            "explanation": null,
+            "active": false,
+            "source_version": 100000017,
+            "source": {
+                "reference": "internal-draft/stage-12-se-wa-an.md#wa-001"
+            },
+            "source_reference": null,
+            "provenance": {
+                "owner": "internal-assessment-content-team",
+                "origin": "original_internal"
+            },
+            "content_origin": "original_internal",
+            "copyright_status": "internally_authored",
+            "normative_compatibility": "none",
+            "review_status": "human_review_passed",
+            "scoring": {
+                "max_score": 1
+            },
+            "options": [
+                {
+                    "key": "A",
+                    "text": "lingkaran",
+                    "display_order": 1,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "B",
+                    "text": "panah",
+                    "display_order": 2,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": null
+                },
+                {
+                    "key": "C",
+                    "text": "elips",
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "D",
+                    "text": "busur",
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
+                    "key": "E",
+                    "text": "lengkungan",
                     "display_order": 5,
                     "correct": false,
                     "score": 0,
@@ -173,7 +173,7 @@
                 },
                 "internal": {
                     "draft_logical_id": "wa-001",
-                    "rationale": "Meja, kursi, lemari, dan rak merupakan perabot. Sepeda merupakan alat transportasi."
+                    "rationale": "Lingkaran, elips, busur, dan lengkungan merupakan bentuk atau konsep geometris melengkung; panah adalah benda penunjuk atau proyektil."
                 }
             }
         },
@@ -185,7 +185,7 @@
             "display_order": 2,
             "answer_type": "single_choice",
             "difficulty_target": "easy",
-            "prompt": "Pilih kata yang berbeda dari empat kata lainnya.",
+            "prompt": "Pilih satu kata yang paling tidak memiliki kesamaan dengan empat kata lainnya.",
             "explanation": null,
             "active": false,
             "source_version": 100000017,
@@ -207,7 +207,7 @@
             "options": [
                 {
                     "key": "A",
-                    "text": "mendengar",
+                    "text": "mengetuk",
                     "display_order": 1,
                     "correct": false,
                     "score": 0,
@@ -215,15 +215,15 @@
                 },
                 {
                     "key": "B",
-                    "text": "melihat",
+                    "text": "memaki",
                     "display_order": 2,
-                    "correct": false,
-                    "score": 0,
+                    "correct": true,
+                    "score": 1,
                     "media_ref": null
                 },
                 {
                     "key": "C",
-                    "text": "mencium",
+                    "text": "menjahit",
                     "display_order": 3,
                     "correct": false,
                     "score": 0,
@@ -231,15 +231,15 @@
                 },
                 {
                     "key": "D",
-                    "text": "menulis",
+                    "text": "menggergaji",
                     "display_order": 4,
-                    "correct": true,
-                    "score": 1,
+                    "correct": false,
+                    "score": 0,
                     "media_ref": null
                 },
                 {
                     "key": "E",
-                    "text": "mengecap",
+                    "text": "memukul",
                     "display_order": 5,
                     "correct": false,
                     "score": 0,
@@ -255,7 +255,7 @@
                 },
                 "internal": {
                     "draft_logical_id": "wa-002",
-                    "rationale": "Empat opsi merupakan aktivitas penerimaan rangsangan indrawi. Menulis merupakan aktivitas menghasilkan simbol."
+                    "rationale": "Mengetuk, menjahit, menggergaji, dan memukul merupakan tindakan fisik dengan tangan atau alat; memaki merupakan tindakan verbal."
                 }
             }
         },
@@ -267,7 +267,7 @@
             "display_order": 3,
             "answer_type": "single_choice",
             "difficulty_target": "easy",
-            "prompt": "Pilih kata yang berbeda dari empat kata lainnya.",
+            "prompt": "Pilih satu kata yang paling tidak memiliki kesamaan dengan empat kata lainnya.",
             "explanation": null,
             "active": false,
             "source_version": 100000017,
@@ -289,7 +289,7 @@
             "options": [
                 {
                     "key": "A",
-                    "text": "Senin",
+                    "text": "lebar",
                     "display_order": 1,
                     "correct": false,
                     "score": 0,
@@ -297,7 +297,7 @@
                 },
                 {
                     "key": "B",
-                    "text": "Selasa",
+                    "text": "keliling",
                     "display_order": 2,
                     "correct": false,
                     "score": 0,
@@ -305,23 +305,23 @@
                 },
                 {
                     "key": "C",
-                    "text": "Januari",
+                    "text": "luas",
                     "display_order": 3,
-                    "correct": true,
-                    "score": 1,
-                    "media_ref": null
-                },
-                {
-                    "key": "D",
-                    "text": "Rabu",
-                    "display_order": 4,
                     "correct": false,
                     "score": 0,
                     "media_ref": null
                 },
                 {
+                    "key": "D",
+                    "text": "isi",
+                    "display_order": 4,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": null
+                },
+                {
                     "key": "E",
-                    "text": "Kamis",
+                    "text": "panjang",
                     "display_order": 5,
                     "correct": false,
                     "score": 0,
@@ -337,7 +337,7 @@
                 },
                 "internal": {
                     "draft_logical_id": "wa-003",
-                    "rationale": "Senin, Selasa, Rabu, dan Kamis merupakan nama hari. Januari merupakan nama bulan."
+                    "rationale": "Lebar, keliling, luas, dan panjang merupakan ukuran yang digunakan pada bidang; isi menyatakan kapasitas atau volume ruang."
                 }
             }
         },
@@ -349,7 +349,7 @@
             "display_order": 4,
             "answer_type": "single_choice",
             "difficulty_target": "easy",
-            "prompt": "Pilih kata yang berbeda dari empat kata lainnya.",
+            "prompt": "Pilih satu kata yang paling tidak memiliki kesamaan dengan empat kata lainnya.",
             "explanation": null,
             "active": false,
             "source_version": 100000017,
@@ -371,7 +371,7 @@
             "options": [
                 {
                     "key": "A",
-                    "text": "meter",
+                    "text": "mengikat",
                     "display_order": 1,
                     "correct": false,
                     "score": 0,
@@ -379,7 +379,7 @@
                 },
                 {
                     "key": "B",
-                    "text": "kilometer",
+                    "text": "menyatukan",
                     "display_order": 2,
                     "correct": false,
                     "score": 0,
@@ -387,23 +387,23 @@
                 },
                 {
                     "key": "C",
-                    "text": "sentimeter",
+                    "text": "melepaskan",
                     "display_order": 3,
-                    "correct": false,
-                    "score": 0,
-                    "media_ref": null
-                },
-                {
-                    "key": "D",
-                    "text": "liter",
-                    "display_order": 4,
                     "correct": true,
                     "score": 1,
                     "media_ref": null
                 },
                 {
+                    "key": "D",
+                    "text": "mengaitkan",
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
                     "key": "E",
-                    "text": "milimeter",
+                    "text": "melekatkan",
                     "display_order": 5,
                     "correct": false,
                     "score": 0,
@@ -419,7 +419,7 @@
                 },
                 "internal": {
                     "draft_logical_id": "wa-004",
-                    "rationale": "Meter, kilometer, sentimeter, dan milimeter merupakan satuan panjang. Liter merupakan satuan volume."
+                    "rationale": "Mengikat, menyatukan, mengaitkan, dan melekatkan menyatakan tindakan menghubungkan; melepaskan menyatakan tindakan memisahkan."
                 }
             }
         },
@@ -431,7 +431,7 @@
             "display_order": 5,
             "answer_type": "single_choice",
             "difficulty_target": "medium",
-            "prompt": "Pilih kata yang berbeda dari empat kata lainnya.",
+            "prompt": "Pilih satu kata yang paling tidak memiliki kesamaan dengan empat kata lainnya.",
             "explanation": null,
             "active": false,
             "source_version": 100000017,
@@ -453,7 +453,7 @@
             "options": [
                 {
                     "key": "A",
-                    "text": "akar",
+                    "text": "arah",
                     "display_order": 1,
                     "correct": false,
                     "score": 0,
@@ -461,7 +461,7 @@
                 },
                 {
                     "key": "B",
-                    "text": "fondasi",
+                    "text": "timur",
                     "display_order": 2,
                     "correct": false,
                     "score": 0,
@@ -469,23 +469,23 @@
                 },
                 {
                     "key": "C",
-                    "text": "landasan",
+                    "text": "perjalanan",
                     "display_order": 3,
-                    "correct": false,
-                    "score": 0,
-                    "media_ref": null
-                },
-                {
-                    "key": "D",
-                    "text": "puncak",
-                    "display_order": 4,
                     "correct": true,
                     "score": 1,
                     "media_ref": null
                 },
                 {
+                    "key": "D",
+                    "text": "tujuan",
+                    "display_order": 4,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
                     "key": "E",
-                    "text": "dasar",
+                    "text": "selatan",
                     "display_order": 5,
                     "correct": false,
                     "score": 0,
@@ -501,7 +501,7 @@
                 },
                 "internal": {
                     "draft_logical_id": "wa-005",
-                    "rationale": "Akar, fondasi, landasan, dan dasar berhubungan dengan bagian atau konsep penopang di bawah. Puncak menunjukkan bagian teratas."
+                    "rationale": "Arah, timur, tujuan, dan selatan berkaitan dengan orientasi atau arah yang dituju; perjalanan merupakan proses berpindah."
                 }
             }
         },
@@ -513,7 +513,7 @@
             "display_order": 6,
             "answer_type": "single_choice",
             "difficulty_target": "medium",
-            "prompt": "Pilih kata yang berbeda dari empat kata lainnya.",
+            "prompt": "Pilih satu kata yang paling tidak memiliki kesamaan dengan empat kata lainnya.",
             "explanation": null,
             "active": false,
             "source_version": 100000017,
@@ -535,7 +535,7 @@
             "options": [
                 {
                     "key": "A",
-                    "text": "merencanakan",
+                    "text": "jarak",
                     "display_order": 1,
                     "correct": false,
                     "score": 0,
@@ -543,7 +543,7 @@
                 },
                 {
                     "key": "B",
-                    "text": "mengorganisasi",
+                    "text": "perpisahan",
                     "display_order": 2,
                     "correct": false,
                     "score": 0,
@@ -551,15 +551,15 @@
                 },
                 {
                     "key": "C",
-                    "text": "mengendalikan",
+                    "text": "tugas",
                     "display_order": 3,
-                    "correct": false,
-                    "score": 0,
+                    "correct": true,
+                    "score": 1,
                     "media_ref": null
                 },
                 {
                     "key": "D",
-                    "text": "mengevaluasi",
+                    "text": "batas",
                     "display_order": 4,
                     "correct": false,
                     "score": 0,
@@ -567,10 +567,10 @@
                 },
                 {
                     "key": "E",
-                    "text": "mengangkut",
+                    "text": "perceraian",
                     "display_order": 5,
-                    "correct": true,
-                    "score": 1,
+                    "correct": false,
+                    "score": 0,
                     "media_ref": null
                 }
             ],
@@ -583,7 +583,7 @@
                 },
                 "internal": {
                     "draft_logical_id": "wa-006",
-                    "rationale": "Empat opsi merupakan aktivitas pengelolaan atau manajerial. Mengangkut merupakan aktivitas pemindahan barang atau orang."
+                    "rationale": "Jarak, perpisahan, batas, dan perceraian berkaitan dengan pemisahan; tugas merupakan pekerjaan atau kewajiban."
                 }
             }
         },
@@ -595,7 +595,7 @@
             "display_order": 7,
             "answer_type": "single_choice",
             "difficulty_target": "medium",
-            "prompt": "Pilih kata yang berbeda dari empat kata lainnya.",
+            "prompt": "Pilih satu kata yang paling tidak memiliki kesamaan dengan empat kata lainnya.",
             "explanation": null,
             "active": false,
             "source_version": 100000017,
@@ -617,7 +617,7 @@
             "options": [
                 {
                     "key": "A",
-                    "text": "hipotesis",
+                    "text": "saringan",
                     "display_order": 1,
                     "correct": false,
                     "score": 0,
@@ -625,7 +625,7 @@
                 },
                 {
                     "key": "B",
-                    "text": "asumsi",
+                    "text": "kelambu",
                     "display_order": 2,
                     "correct": false,
                     "score": 0,
@@ -633,15 +633,15 @@
                 },
                 {
                     "key": "C",
-                    "text": "dugaan",
+                    "text": "payung",
                     "display_order": 3,
-                    "correct": false,
-                    "score": 0,
+                    "correct": true,
+                    "score": 1,
                     "media_ref": null
                 },
                 {
                     "key": "D",
-                    "text": "perkiraan",
+                    "text": "tapisan",
                     "display_order": 4,
                     "correct": false,
                     "score": 0,
@@ -649,10 +649,10 @@
                 },
                 {
                     "key": "E",
-                    "text": "kepastian",
+                    "text": "jala",
                     "display_order": 5,
-                    "correct": true,
-                    "score": 1,
+                    "correct": false,
+                    "score": 0,
                     "media_ref": null
                 }
             ],
@@ -665,7 +665,7 @@
                 },
                 "internal": {
                     "draft_logical_id": "wa-007",
-                    "rationale": "Hipotesis, asumsi, dugaan, dan perkiraan sama-sama belum menunjukkan kepastian penuh. Kepastian mempunyai sifat yang berbeda."
+                    "rationale": "Saringan, kelambu, tapisan, dan jala berupa anyaman atau jejaring berlubang; payung merupakan pelindung berbidang penutup."
                 }
             }
         },
@@ -677,7 +677,7 @@
             "display_order": 8,
             "answer_type": "single_choice",
             "difficulty_target": "medium",
-            "prompt": "Pilih kata yang berbeda dari empat kata lainnya.",
+            "prompt": "Pilih satu kata yang paling tidak memiliki kesamaan dengan empat kata lainnya.",
             "explanation": null,
             "active": false,
             "source_version": 100000017,
@@ -699,7 +699,7 @@
             "options": [
                 {
                     "key": "A",
-                    "text": "kompas",
+                    "text": "putih",
                     "display_order": 1,
                     "correct": false,
                     "score": 0,
@@ -707,7 +707,7 @@
                 },
                 {
                     "key": "B",
-                    "text": "peta",
+                    "text": "pucat",
                     "display_order": 2,
                     "correct": false,
                     "score": 0,
@@ -715,7 +715,7 @@
                 },
                 {
                     "key": "C",
-                    "text": "GPS",
+                    "text": "buram",
                     "display_order": 3,
                     "correct": false,
                     "score": 0,
@@ -723,7 +723,7 @@
                 },
                 {
                     "key": "D",
-                    "text": "termometer",
+                    "text": "kasar",
                     "display_order": 4,
                     "correct": true,
                     "score": 1,
@@ -731,7 +731,7 @@
                 },
                 {
                     "key": "E",
-                    "text": "petunjuk arah",
+                    "text": "berkilauan",
                     "display_order": 5,
                     "correct": false,
                     "score": 0,
@@ -747,7 +747,7 @@
                 },
                 "internal": {
                     "draft_logical_id": "wa-008",
-                    "rationale": "Kompas, peta, GPS, dan petunjuk arah berfungsi membantu navigasi. Termometer digunakan untuk mengukur suhu."
+                    "rationale": "Putih, pucat, buram, dan berkilauan merupakan sifat tampak secara visual; kasar terutama menyatakan tekstur permukaan."
                 }
             }
         },
@@ -759,7 +759,7 @@
             "display_order": 9,
             "answer_type": "single_choice",
             "difficulty_target": "medium",
-            "prompt": "Pilih kata yang berbeda dari empat kata lainnya.",
+            "prompt": "Pilih satu kata yang paling tidak memiliki kesamaan dengan empat kata lainnya.",
             "explanation": null,
             "active": false,
             "source_version": 100000017,
@@ -781,7 +781,7 @@
             "options": [
                 {
                     "key": "A",
-                    "text": "meringkas",
+                    "text": "otobis",
                     "display_order": 1,
                     "correct": false,
                     "score": 0,
@@ -789,7 +789,7 @@
                 },
                 {
                     "key": "B",
-                    "text": "merangkum",
+                    "text": "pesawat terbang",
                     "display_order": 2,
                     "correct": false,
                     "score": 0,
@@ -797,7 +797,7 @@
                 },
                 {
                     "key": "C",
-                    "text": "menyimpulkan",
+                    "text": "sepeda motor",
                     "display_order": 3,
                     "correct": false,
                     "score": 0,
@@ -805,18 +805,18 @@
                 },
                 {
                     "key": "D",
-                    "text": "memadatkan",
+                    "text": "sepeda",
                     "display_order": 4,
-                    "correct": false,
-                    "score": 0,
+                    "correct": true,
+                    "score": 1,
                     "media_ref": null
                 },
                 {
                     "key": "E",
-                    "text": "memperluas",
+                    "text": "kapal api",
                     "display_order": 5,
-                    "correct": true,
-                    "score": 1,
+                    "correct": false,
+                    "score": 0,
                     "media_ref": null
                 }
             ],
@@ -829,7 +829,7 @@
                 },
                 "internal": {
                     "draft_logical_id": "wa-009",
-                    "rationale": "Empat opsi mengarah pada pengurangan atau pemadatan informasi. Memperluas justru menambah cakupan atau rincian."
+                    "rationale": "Otobis, pesawat terbang, sepeda motor, dan kapal api menggunakan tenaga mesin; sepeda digerakkan oleh tenaga manusia."
                 }
             }
         },
@@ -841,7 +841,7 @@
             "display_order": 10,
             "answer_type": "single_choice",
             "difficulty_target": "hard",
-            "prompt": "Pilih kata yang berbeda dari empat kata lainnya.",
+            "prompt": "Pilih satu kata yang paling tidak memiliki kesamaan dengan empat kata lainnya.",
             "explanation": null,
             "active": false,
             "source_version": 100000017,
@@ -863,15 +863,15 @@
             "options": [
                 {
                     "key": "A",
-                    "text": "implisit",
+                    "text": "biola",
                     "display_order": 1,
-                    "correct": false,
-                    "score": 0,
+                    "correct": true,
+                    "score": 1,
                     "media_ref": null
                 },
                 {
                     "key": "B",
-                    "text": "tersirat",
+                    "text": "seruling",
                     "display_order": 2,
                     "correct": false,
                     "score": 0,
@@ -879,7 +879,7 @@
                 },
                 {
                     "key": "C",
-                    "text": "tersembunyi",
+                    "text": "klarinet",
                     "display_order": 3,
                     "correct": false,
                     "score": 0,
@@ -887,15 +887,15 @@
                 },
                 {
                     "key": "D",
-                    "text": "eksplisit",
+                    "text": "trompet",
                     "display_order": 4,
-                    "correct": true,
-                    "score": 1,
+                    "correct": false,
+                    "score": 0,
                     "media_ref": null
                 },
                 {
                     "key": "E",
-                    "text": "terselubung",
+                    "text": "saxophon",
                     "display_order": 5,
                     "correct": false,
                     "score": 0,
@@ -911,7 +911,7 @@
                 },
                 "internal": {
                     "draft_logical_id": "wa-010",
-                    "rationale": "Implisit, tersirat, tersembunyi, dan terselubung memiliki unsur makna tidak dinyatakan secara langsung. Eksplisit berarti dinyatakan secara jelas."
+                    "rationale": "Seruling, klarinet, trompet, dan saxophon merupakan alat musik tiup; biola merupakan alat musik gesek berdawai."
                 }
             }
         },
@@ -923,7 +923,7 @@
             "display_order": 11,
             "answer_type": "single_choice",
             "difficulty_target": "hard",
-            "prompt": "Pilih kata yang berbeda dari empat kata lainnya.",
+            "prompt": "Pilih satu kata yang paling tidak memiliki kesamaan dengan empat kata lainnya.",
             "explanation": null,
             "active": false,
             "source_version": 100000017,
@@ -945,7 +945,7 @@
             "options": [
                 {
                     "key": "A",
-                    "text": "korelasi",
+                    "text": "bergelombang",
                     "display_order": 1,
                     "correct": false,
                     "score": 0,
@@ -953,7 +953,7 @@
                 },
                 {
                     "key": "B",
-                    "text": "asosiasi",
+                    "text": "kasar",
                     "display_order": 2,
                     "correct": false,
                     "score": 0,
@@ -961,7 +961,7 @@
                 },
                 {
                     "key": "C",
-                    "text": "keterkaitan",
+                    "text": "berduri",
                     "display_order": 3,
                     "correct": false,
                     "score": 0,
@@ -969,7 +969,7 @@
                 },
                 {
                     "key": "D",
-                    "text": "hubungan",
+                    "text": "licin",
                     "display_order": 4,
                     "correct": false,
                     "score": 0,
@@ -977,7 +977,7 @@
                 },
                 {
                     "key": "E",
-                    "text": "isolasi",
+                    "text": "lurus",
                     "display_order": 5,
                     "correct": true,
                     "score": 1,
@@ -993,7 +993,7 @@
                 },
                 "internal": {
                     "draft_logical_id": "wa-011",
-                    "rationale": "Korelasi, asosiasi, keterkaitan, dan hubungan menyatakan adanya relasi antara unsur. Isolasi menunjukkan pemisahan."
+                    "rationale": "Bergelombang, kasar, berduri, dan licin menggambarkan keadaan atau tekstur permukaan; lurus menggambarkan arah atau bentuk garis."
                 }
             }
         },
@@ -1005,7 +1005,7 @@
             "display_order": 12,
             "answer_type": "single_choice",
             "difficulty_target": "hard",
-            "prompt": "Pilih kata yang berbeda dari empat kata lainnya.",
+            "prompt": "Pilih satu kata yang paling tidak memiliki kesamaan dengan empat kata lainnya.",
             "explanation": null,
             "active": false,
             "source_version": 100000017,
@@ -1027,15 +1027,15 @@
             "options": [
                 {
                     "key": "A",
-                    "text": "premis",
+                    "text": "jam",
                     "display_order": 1,
-                    "correct": false,
-                    "score": 0,
+                    "correct": true,
+                    "score": 1,
                     "media_ref": null
                 },
                 {
                     "key": "B",
-                    "text": "alasan",
+                    "text": "kompas",
                     "display_order": 2,
                     "correct": false,
                     "score": 0,
@@ -1043,7 +1043,7 @@
                 },
                 {
                     "key": "C",
-                    "text": "bukti",
+                    "text": "penunjuk jalan",
                     "display_order": 3,
                     "correct": false,
                     "score": 0,
@@ -1051,7 +1051,7 @@
                 },
                 {
                     "key": "D",
-                    "text": "dukungan",
+                    "text": "bintang pari",
                     "display_order": 4,
                     "correct": false,
                     "score": 0,
@@ -1059,10 +1059,10 @@
                 },
                 {
                     "key": "E",
-                    "text": "kesimpulan",
+                    "text": "arah",
                     "display_order": 5,
-                    "correct": true,
-                    "score": 1,
+                    "correct": false,
+                    "score": 0,
                     "media_ref": null
                 }
             ],
@@ -1075,7 +1075,7 @@
                 },
                 "internal": {
                     "draft_logical_id": "wa-012",
-                    "rationale": "Premis, alasan, bukti, dan dukungan digunakan sebagai dasar untuk menopang suatu argumen. Kesimpulan merupakan hasil yang ditarik dari dasar tersebut."
+                    "rationale": "Kompas, penunjuk jalan, bintang pari, dan arah berkaitan dengan penentuan arah; jam menunjukkan waktu."
                 }
             }
         }

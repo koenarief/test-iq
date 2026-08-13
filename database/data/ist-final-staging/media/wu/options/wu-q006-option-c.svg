@@ -1,9 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="240" height="180" viewBox="0 0 240 180" role="img" aria-hidden="true" data-wu-role="master" data-face-u="dot" data-face-d="plus" data-face-f="ring" data-face-b="square" data-face-l="x" data-face-r="diamond">
-<ellipse cx="120" cy="157" rx="64" ry="8" fill="#18181b" opacity="0.08"/>
-<polygon points="120,22 178,52 120,82 62,52" fill="#fafafa" stroke="#18181b" stroke-width="3" stroke-linejoin="round"/>
-<polygon points="62,52 120,82 120,154 62,124" fill="#f4f4f5" stroke="#18181b" stroke-width="3" stroke-linejoin="round"/>
-<polygon points="120,82 178,52 178,124 120,154" fill="#e4e4e7" stroke="#18181b" stroke-width="3" stroke-linejoin="round"/>
-<circle cx="120.00" cy="52.00" r="5.80" fill="#18181b"/>
-<circle cx="91.00" cy="105.00" r="9.50" fill="none" stroke="#18181b" stroke-width="2.56"/>
-<polygon points="149.00,95.50 158.50,105.00 149.00,114.50 139.50,105.00" fill="none" stroke="#18181b" stroke-width="2.56" stroke-linejoin="round"/>
+<svg data-wu-role="master" data-wu-source="master-c" xmlns="http://www.w3.org/2000/svg" width="240" height="180" viewBox="0 0 240 180" role="img" aria-labelledby="title desc">
+  <title id="title">Kubus acuan C</title>
+  <desc id="desc">Sisi atas bertitik, sisi depan terbagi diagonal hitam, dan sisi kanan bertanda silang.</desc>
+  <g stroke="#292524" stroke-width="3" stroke-linejoin="round" vector-effect="non-scaling-stroke">
+    <polygon points="120,20 181,45 121,75 58,50" fill="#f7f3e8"/>
+    <polygon points="58,50 121,75 121,151 58,126" fill="#f7f3e8"/>
+    <polygon points="58,126 121,75 121,151" fill="#292524" stroke="none"/>
+    <line x1="58" y1="126" x2="121" y2="75"/>
+    <polygon points="121,75 181,45 181,121 121,151" fill="#f7f3e8"/>
+    <line x1="121" y1="75" x2="181" y2="121"/>
+    <line x1="181" y1="45" x2="121" y2="151"/>
+  </g>
+  <circle cx="81" cy="50" r="5.5" fill="#292524"/>
 </svg>

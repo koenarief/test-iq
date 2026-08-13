@@ -2,50 +2,44 @@
 
 > **INTERNAL REVIEW ONLY — MEMUAT BOBOT DAN KUNCI, JANGAN DIPUBLIKASIKAN KE PESERTA**
 
-Dokumen ini memuat 1 example dan 10 scored questions GE untuk **Tes Kemampuan Kognitif Adaptasi**. Konten disusun independen untuk menemukan persamaan utama atau konsep bersama dari dua objek/gagasan. Konten ini dibuat untuk asesmen adaptasi internal dan tidak ditujukan sebagai reproduksi atau pengganti instrumen psikologi normatif.
+Dokumen ini memuat 1 example dan 10 scored questions GE untuk **Tes Kemampuan Kognitif Adaptasi**. Pasangan kata ditranskripsikan dari screenshot yang diberikan pemilik proyek: example pertama serta soal sumber 61–70. Nomor sumber hanya menjadi referensi transkripsi; urutan aplikasi tetap 1–10 dan soal 71–76 tidak digunakan.
 
 ## Status dan kontrak
 
-- `author_draft`: complete
-- `automated_language_review`: complete (self-review awal, bukan approval manusia)
-- `automated_logic_review`: complete (self-review awal, bukan approval manusia)
-- `human_language_review`: pending
-- `human_logic_review`: pending
-- `human_weight_review`: passed
-- `overall_status`: human_review_passed
+- `overall_status`: in_review
 - `active`: false
 - `answer_type`: single_choice_weighted
 - `duration_seconds`: 300
 - `max_item_score`: 3
-- `max_subtest_score`: 30
-- Heading level tiga setiap butir adalah field `logical_id` record.
+- `raw_maximum`: 30
+- `weighted_maximum`: 60
 - Example memakai `display_order=0`; scored memakai display order lokal 1–10.
-- Setiap record mempunyai tepat satu opsi skor 3, dua opsi skor 2, satu opsi skor 1, dan satu opsi skor 0.
+- Setiap record mempunyai tepat satu opsi skor 3, satu opsi skor 2, satu opsi skor 1, dan dua opsi skor 0.
 - Hanya opsi skor 3 memakai `is_correct=true`; skor 0–2 memakai `is_correct=false`.
 - Metadata setiap record: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 - Bobot 0–3 adalah hierarki editorial internal dan tidak mempunyai makna normatif.
 
 ## Petunjuk peserta
 
-Setiap soal menampilkan dua konsep. Pilih opsi yang paling tepat menjelaskan persamaan utama keduanya. Beberapa opsi mungkin berkaitan, tetapi pilih persamaan yang paling spesifik dan paling bermakna bagi kedua konsep.
+Pilih kata yang paling tepat mencakup pengertian kedua kata berikut. Beberapa pilihan mungkin masih berhubungan, tetapi pilih konsep yang paling tepat dan paling spesifik untuk keduanya.
 
 ## Example
 
 ### ge-example-001
 
 - Contract: `subtest_code=GE`; `kind=example`; `display_order=0`; `difficulty_target=null`; `answer_type=single_choice_weighted`.
-- Prompt: Apakah persamaan utama antara jam dinding dan kalender?
+- Prompt: Pilih kata yang paling tepat mencakup pengertian kedua kata berikut: ayam — itik.
 - Options:
-  - A. `text=Benda yang dapat dipasang pada dinding`; `score_value=1`; `is_correct=false`.
-  - B. `text=Alat bantu untuk mengatur dan memahami waktu`; `score_value=3`; `is_correct=true`.
-  - C. `text=Penyaji informasi yang dapat dilihat`; `score_value=2`; `is_correct=false`.
-  - D. `text=Benda yang memuat angka atau tanda`; `score_value=2`; `is_correct=false`.
-  - E. `text=Alat untuk mengukur suhu ruangan`; `score_value=0`; `is_correct=false`.
+  - A. `text=Hewan`; `score_value=1`; `is_correct=false`.
+  - B. `text=Burung`; `score_value=3`; `is_correct=true`.
+  - C. `text=Hewan ternak`; `score_value=2`; `is_correct=false`.
+  - D. `text=Petelur`; `score_value=0`; `is_correct=false`.
+  - E. `text=Kandang`; `score_value=0`; `is_correct=false`.
 - Best answer: **B** (`3`).
-- Explanation peserta: Keduanya membantu memahami dan mengatur waktu. Kalender menunjukkan hari atau tanggal, sedangkan jam menunjukkan waktu dalam sehari.
-- Rationale internal: Skor 3 menangkap fungsi temporal bersama. Dua opsi skor 2 tetap berkaitan tetapi lebih umum atau hanya mencerminkan ciri permukaan; skor 1 bersifat kemungkinan penempatan; skor 0 tidak sesuai fungsi.
-- Difficulty basis: Example; persamaan fungsi umum dan tidak masuk distribusi difficulty.
-- Reviews: `ambiguity_review=pass`; `weight_hierarchy_review=pass`; `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
+- Explanation peserta: Ayam dan itik sama-sama termasuk burung.
+- Rationale internal: Burung merupakan konsep yang langsung mencakup keduanya. Hewan ternak dekat tetapi bergantung konteks pemeliharaan; hewan terlalu umum; petelur hanya sifat sebagian individu dan kandang adalah tempat.
+- Difficulty basis: Example; tidak masuk distribusi difficulty.
+- Reviews: `ambiguity_review=pass`; `weight_hierarchy_review=pass`; `language_review_notes=source_transcription_and_internal_options: pass`; `logic_review_notes=manual_semantic_validation: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ## Scored Questions
@@ -53,172 +47,171 @@ Setiap soal menampilkan dua konsep. Pilih opsi yang paling tepat menjelaskan per
 ### ge-001
 
 - Contract: `subtest_code=GE`; `kind=scored`; `display_order=1`; `difficulty_target=easy`; `answer_type=single_choice_weighted`.
-- Prompt: Apakah persamaan utama antara payung dan jas hujan?
+- Prompt: Pilih kata yang paling tepat mencakup pengertian kedua kata berikut: mawar — melati.
 - Options:
-  - A. `text=Perlengkapan untuk menghadapi kondisi cuaca`; `score_value=2`; `is_correct=false`.
-  - B. `text=Alat untuk mengeringkan pakaian basah`; `score_value=0`; `is_correct=false`.
-  - C. `text=Perlengkapan yang melindungi tubuh dari air hujan`; `score_value=3`; `is_correct=true`.
-  - D. `text=Barang yang biasa digunakan di luar ruang`; `score_value=2`; `is_correct=false`.
-  - E. `text=Benda yang dapat disimpan setelah digunakan`; `score_value=1`; `is_correct=false`.
-- Best answer: **C** (`3`). Explanation: `null`.
-- Rationale internal: Skor 3 menyebut fungsi dan ancaman yang sama secara tepat. Dua opsi skor 2 mencerminkan kategori fungsi yang lebih luas atau konteks penggunaan; skor 1 ciri generik; skor 0 berlawanan dengan fungsi perlindungan.
-- Difficulty basis: Persamaan konkret sehari-hari dengan opsi terbaik yang langsung.
-- Reviews: `ambiguity_review=pass`; `weight_hierarchy_review=pass`; `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
+  - A. `text=Tanaman`; `score_value=1`; `is_correct=false`.
+  - B. `text=Bunga`; `score_value=3`; `is_correct=true`.
+  - C. `text=Tumbuhan hias`; `score_value=2`; `is_correct=false`.
+  - D. `text=Kebun`; `score_value=0`; `is_correct=false`.
+  - E. `text=Harum`; `score_value=0`; `is_correct=false`.
+- Best answer: **B** (`3`). Explanation: `null`.
+- Rationale internal: Bunga adalah kategori langsung keduanya. Tumbuhan hias dekat tetapi berbasis penggunaan; tanaman lebih umum; kebun adalah tempat dan harum adalah sifat yang tidak mencakup semua individu.
+- Difficulty basis: Easy sesuai overlay aplikasi untuk soal sumber 61.
+- Reviews: `ambiguity_review=pass`; `weight_hierarchy_review=pass`; `language_review_notes=source_transcription_and_internal_options: pass`; `logic_review_notes=manual_semantic_validation: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ### ge-002
 
 - Contract: `subtest_code=GE`; `kind=scored`; `display_order=2`; `difficulty_target=easy`; `answer_type=single_choice_weighted`.
-- Prompt: Apakah persamaan utama antara sepeda dan perahu dayung?
+- Prompt: Pilih kata yang paling tepat mencakup pengertian kedua kata berikut: mata — telinga.
 - Options:
-  - A. `text=Alat transportasi yang digerakkan dengan tenaga manusia`; `score_value=3`; `is_correct=true`.
-  - B. `text=Benda yang sering dipakai untuk kegiatan luar ruang`; `score_value=2`; `is_correct=false`.
-  - C. `text=Barang yang dapat dipinjam atau disewakan`; `score_value=1`; `is_correct=false`.
-  - D. `text=Kendaraan yang mengandalkan mesin pembakaran`; `score_value=0`; `is_correct=false`.
-  - E. `text=Alat yang memindahkan orang dari satu tempat ke tempat lain`; `score_value=2`; `is_correct=false`.
-- Best answer: **A** (`3`). Explanation: `null`.
-- Rationale internal: Skor 3 menambahkan mekanisme penggerak yang sama pada kategori transportasi. Dua opsi skor 2 benar tetapi lebih umum atau hanya menyatakan konteks; skor 1 kemungkinan kepemilikan; skor 0 salah.
-- Difficulty basis: Objek konkret dan fungsi transportasi yang mudah dikenali.
-- Reviews: `ambiguity_review=pass`; `weight_hierarchy_review=pass`; `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
+  - A. `text=Indra`; `score_value=2`; `is_correct=false`.
+  - B. `text=Organ tubuh`; `score_value=1`; `is_correct=false`.
+  - C. `text=Kepala`; `score_value=0`; `is_correct=false`.
+  - D. `text=Pancaindra`; `score_value=3`; `is_correct=true`.
+  - E. `text=Wajah`; `score_value=0`; `is_correct=false`.
+- Best answer: **D** (`3`). Explanation: `null`.
+- Rationale internal: Pancaindra adalah kategori paling spesifik. Indra sangat dekat tetapi lebih umum; organ tubuh benar namun luas; kepala dan wajah hanya lokasi yang tidak menjadi kategori keduanya.
+- Difficulty basis: Easy sesuai overlay aplikasi untuk soal sumber 62.
+- Reviews: `ambiguity_review=pass`; `weight_hierarchy_review=pass`; `language_review_notes=source_transcription_and_internal_options: pass`; `logic_review_notes=manual_semantic_validation: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ### ge-003
 
 - Contract: `subtest_code=GE`; `kind=scored`; `display_order=3`; `difficulty_target=easy`; `answer_type=single_choice_weighted`.
-- Prompt: Apakah persamaan utama antara pensil dan kapur tulis?
+- Prompt: Pilih kata yang paling tepat mencakup pengertian kedua kata berikut: gula — intan.
 - Options:
-  - A. `text=Benda yang umumnya berbentuk memanjang`; `score_value=1`; `is_correct=false`.
-  - B. `text=Alat yang dapat digunakan untuk menulis atau menggambar`; `score_value=2`; `is_correct=false`.
-  - C. `text=Alat tulis yang menggunakan tinta cair`; `score_value=0`; `is_correct=false`.
-  - D. `text=Perlengkapan yang dapat digunakan dalam kegiatan belajar`; `score_value=2`; `is_correct=false`.
-  - E. `text=Alat untuk menulis atau menggambar tanpa menggunakan tinta`; `score_value=3`; `is_correct=true`.
-- Best answer: **E** (`3`). Explanation: `null`.
-- Rationale internal: Skor 3 menyatakan fungsi bersama sekaligus pembeda mekanisme tanpa tinta. Dua opsi skor 2 benar tetapi kurang spesifik atau hanya menyatakan kategori penggunaan; skor 1 bentuk permukaan; skor 0 bertentangan.
-- Difficulty basis: Fungsi konkret dan perbedaan tinta yang familiar.
-- Reviews: `ambiguity_review=pass`; `weight_hierarchy_review=pass`; `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
+  - A. `text=Benda padat`; `score_value=1`; `is_correct=false`.
+  - B. `text=Benda bening`; `score_value=2`; `is_correct=false`.
+  - C. `text=Kristal`; `score_value=3`; `is_correct=true`.
+  - D. `text=Mineral`; `score_value=0`; `is_correct=false`.
+  - E. `text=Perhiasan`; `score_value=0`; `is_correct=false`.
+- Best answer: **C** (`3`). Explanation: `null`.
+- Rationale internal: Gula dan intan dapat berbentuk kristal. Bening merupakan kemiripan tampak yang cukup dekat tetapi tidak selalu berlaku; benda padat terlalu umum; mineral dan perhiasan hanya tepat untuk intan.
+- Difficulty basis: Easy sesuai overlay aplikasi untuk soal sumber 63.
+- Reviews: `ambiguity_review=pass`; `weight_hierarchy_review=pass`; `language_review_notes=source_transcription_and_internal_options: pass`; `logic_review_notes=manual_semantic_validation: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ### ge-004
 
 - Contract: `subtest_code=GE`; `kind=scored`; `display_order=4`; `difficulty_target=medium`; `answer_type=single_choice_weighted`.
-- Prompt: Apakah persamaan utama antara peta dan denah?
+- Prompt: Pilih kata yang paling tepat mencakup pengertian kedua kata berikut: hujan — salju.
 - Options:
-  - A. `text=Dokumen visual yang dapat dicetak pada kertas`; `score_value=2`; `is_correct=false`.
-  - B. `text=Representasi visual tentang lokasi dan hubungan ruang`; `score_value=3`; `is_correct=true`.
-  - C. `text=Sumber informasi yang membantu menemukan tempat`; `score_value=2`; `is_correct=false`.
-  - D. `text=Benda yang mungkin dilipat saat disimpan`; `score_value=1`; `is_correct=false`.
-  - E. `text=Rekaman yang menyimpan suara suatu tempat`; `score_value=0`; `is_correct=false`.
-- Best answer: **B** (`3`). Explanation: `null`.
-- Rationale internal: Skor 3 menangkap sifat representasi spasial. Dua opsi skor 2 hanya menyatakan salah satu fungsi atau media penyajian; skor 1 sifat fisik yang tidak wajib; skor 0 tidak sesuai.
-- Difficulty basis: Memerlukan pembedaan konsep representasi, fungsi navigasi, dan media fisik.
-- Reviews: `ambiguity_review=pass`; `weight_hierarchy_review=pass`; `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
+  - A. `text=Presipitasi`; `score_value=3`; `is_correct=true`.
+  - B. `text=Fenomena cuaca`; `score_value=2`; `is_correct=false`.
+  - C. `text=Air`; `score_value=1`; `is_correct=false`.
+  - D. `text=Awan`; `score_value=0`; `is_correct=false`.
+  - E. `text=Dingin`; `score_value=0`; `is_correct=false`.
+- Best answer: **A** (`3`). Explanation: `null`.
+- Rationale internal: Keduanya merupakan bentuk presipitasi. Fenomena cuaca benar tetapi lebih luas; air menyebut bahan dasarnya secara lemah; awan berkaitan sebagai asal dan dingin tidak wajib bagi hujan.
+- Difficulty basis: Medium sesuai overlay aplikasi untuk soal sumber 64.
+- Reviews: `ambiguity_review=pass`; `weight_hierarchy_review=pass`; `language_review_notes=source_transcription_and_internal_options: pass`; `logic_review_notes=manual_semantic_validation: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ### ge-005
 
 - Contract: `subtest_code=GE`; `kind=scored`; `display_order=5`; `difficulty_target=medium`; `answer_type=single_choice_weighted`.
-- Prompt: Apakah persamaan utama antara termometer dan speedometer?
+- Prompt: Pilih kata yang paling tepat mencakup pengertian kedua kata berikut: pengantar surat — telepon.
 - Options:
-  - A. `text=Perangkat utama untuk mengirim pesan jarak jauh`; `score_value=0`; `is_correct=false`.
-  - B. `text=Benda buatan yang digunakan dalam aktivitas manusia`; `score_value=1`; `is_correct=false`.
-  - C. `text=Alat yang memberikan informasi melalui skala atau indikator`; `score_value=2`; `is_correct=false`.
-  - D. `text=Alat ukur yang menyatakan hasil pengukuran sebagai nilai`; `score_value=3`; `is_correct=true`.
-  - E. `text=Perangkat yang membantu pengguna memperoleh informasi`; `score_value=2`; `is_correct=false`.
+  - A. `text=Percakapan`; `score_value=0`; `is_correct=false`.
+  - B. `text=Penghubung`; `score_value=2`; `is_correct=false`.
+  - C. `text=Sarana komunikasi`; `score_value=1`; `is_correct=false`.
+  - D. `text=Penyampai pesan`; `score_value=3`; `is_correct=true`.
+  - E. `text=Kantor`; `score_value=0`; `is_correct=false`.
 - Best answer: **D** (`3`). Explanation: `null`.
-- Rationale internal: Skor 3 mengidentifikasi keduanya sebagai alat ukur dengan keluaran nilai. Dua opsi skor 2 berkaitan tetapi tidak menyatakan pengukuran atau masih terlalu umum; skor 1 generik; skor 0 salah fungsi.
-- Difficulty basis: Persamaan fungsi perlu dibedakan dari cara tampilan dan kategori perangkat umum.
-- Reviews: `ambiguity_review=pass`; `weight_hierarchy_review=pass`; `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
+- Rationale internal: Keduanya menjalankan fungsi menyampaikan pesan. Penghubung sangat dekat tetapi kurang menyebut objek yang disampaikan; sarana komunikasi lebih umum dan kurang tepat untuk orang; percakapan adalah bentuk komunikasi dan kantor hanya tempat terkait.
+- Difficulty basis: Medium sesuai overlay aplikasi untuk soal sumber 65.
+- Reviews: `ambiguity_review=pass`; `weight_hierarchy_review=pass`; `language_review_notes=source_transcription_and_internal_options: pass`; `logic_review_notes=manual_semantic_validation: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ### ge-006
 
 - Contract: `subtest_code=GE`; `kind=scored`; `display_order=6`; `difficulty_target=medium`; `answer_type=single_choice_weighted`.
-- Prompt: Apakah persamaan utama antara akar dan fondasi?
+- Prompt: Pilih kata yang paling tepat mencakup pengertian kedua kata berikut: kamera — kacamata.
 - Options:
-  - A. `text=Bagian dasar yang menopang dan membantu menjaga kestabilan keseluruhan`; `score_value=2`; `is_correct=false`.
-  - B. `text=Hiasan yang ditempatkan pada bagian paling atas`; `score_value=0`; `is_correct=false`.
-  - C. `text=Struktur dasar yang mengikat keseluruhan pada tempatnya sekaligus menopangnya`; `score_value=3`; `is_correct=true`.
-  - D. `text=Bagian yang biasanya berada dekat permukaan bawah`; `score_value=1`; `is_correct=false`.
-  - E. `text=Unsur struktur yang menjadi bagian dari sesuatu yang lebih besar`; `score_value=2`; `is_correct=false`.
-- Best answer: **C** (`3`). Explanation: `null`.
-- Rationale internal: Skor 3 memuat dua fungsi bersama: menambatkan dan menopang. Dua opsi skor 2 benar tetapi kurang lengkap atau hanya menyatakan kategori bagian; skor 1 hanya posisi; skor 0 berlawanan.
-- Difficulty basis: Persamaan lintas domain biologis dan konstruksi memerlukan abstraksi fungsi.
-- Reviews: `ambiguity_review=pass`; `weight_hierarchy_review=pass`; `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
+  - A. `text=Penglihatan`; `score_value=0`; `is_correct=false`.
+  - B. `text=Alat optik`; `score_value=3`; `is_correct=true`.
+  - C. `text=Peralatan berlensa`; `score_value=2`; `is_correct=false`.
+  - D. `text=Benda buatan`; `score_value=1`; `is_correct=false`.
+  - E. `text=Fotografi`; `score_value=0`; `is_correct=false`.
+- Best answer: **B** (`3`). Explanation: `null`.
+- Rationale internal: Alat optik adalah kategori fungsi paling tepat. Peralatan berlensa sangat dekat tetapi menekankan komponen; benda buatan terlalu luas; penglihatan dan fotografi hanya berkaitan kuat dengan salah satu fungsi.
+- Difficulty basis: Medium sesuai overlay aplikasi untuk soal sumber 66.
+- Reviews: `ambiguity_review=pass`; `weight_hierarchy_review=pass`; `language_review_notes=source_transcription_and_internal_options: pass`; `logic_review_notes=manual_semantic_validation: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ### ge-007
 
 - Contract: `subtest_code=GE`; `kind=scored`; `display_order=7`; `difficulty_target=medium`; `answer_type=single_choice_weighted`.
-- Prompt: Apakah persamaan utama antara resep masakan dan petunjuk perakitan?
+- Prompt: Pilih kata yang paling tepat mencakup pengertian kedua kata berikut: lambung — usus.
 - Options:
-  - A. `text=Informasi tertulis yang dapat dibaca berulang kali`; `score_value=2`; `is_correct=false`.
-  - B. `text=Bahan informasi yang dapat disimpan untuk digunakan kembali`; `score_value=1`; `is_correct=false`.
-  - C. `text=Cerita rekaan yang dibuat untuk menghibur pembaca`; `score_value=0`; `is_correct=false`.
-  - D. `text=Panduan praktis untuk melakukan suatu kegiatan`; `score_value=2`; `is_correct=false`.
-  - E. `text=Urutan langkah yang diikuti untuk menghasilkan hasil tertentu`; `score_value=3`; `is_correct=true`.
-- Best answer: **E** (`3`). Explanation: `null`.
-- Rationale internal: Skor 3 menangkap struktur berurutan dan orientasi hasil. Dua opsi skor 2 benar tetapi lebih luas atau hanya menyatakan media informasi; skor 1 menunjukkan bahwa keduanya dapat disimpan dan digunakan kembali, tetapi hal tersebut hanya merupakan ciri praktis yang lemah dan tidak menjelaskan struktur langkah ataupun orientasi hasil; skor 0 salah jenis teks.
-- Difficulty basis: Memerlukan pemilihan ciri definisional dibanding kategori panduan yang lebih umum.
-- Reviews: `ambiguity_review=pass`; `weight_hierarchy_review=pass`; `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
+  - A. `text=Bagian tubuh`; `score_value=1`; `is_correct=false`.
+  - B. `text=Rongga perut`; `score_value=0`; `is_correct=false`.
+  - C. `text=Organ dalam`; `score_value=2`; `is_correct=false`.
+  - D. `text=Organ pencernaan`; `score_value=3`; `is_correct=true`.
+  - E. `text=Penyerap makanan`; `score_value=0`; `is_correct=false`.
+- Best answer: **D** (`3`). Explanation: `null`.
+- Rationale internal: Organ pencernaan adalah kategori fungsi langsung. Organ dalam dekat tetapi lebih luas; bagian tubuh sangat umum; rongga perut adalah lokasi dan penyerap makanan tidak menggambarkan fungsi keduanya secara setara.
+- Difficulty basis: Medium sesuai overlay aplikasi untuk soal sumber 67.
+- Reviews: `ambiguity_review=pass`; `weight_hierarchy_review=pass`; `language_review_notes=source_transcription_and_internal_options: pass`; `logic_review_notes=manual_semantic_validation: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ### ge-008
 
 - Contract: `subtest_code=GE`; `kind=scored`; `display_order=8`; `difficulty_target=hard`; `answer_type=single_choice_weighted`.
-- Prompt: Apakah persamaan utama antara kompas dan prinsip?
+- Prompt: Pilih kata yang paling tepat mencakup pengertian kedua kata berikut: banyak — sedikit.
 - Options:
-  - A. `text=Acuan yang membantu menjaga arah ketika menentukan langkah`; `score_value=3`; `is_correct=true`.
-  - B. `text=Sumber informasi yang dapat dipertimbangkan`; `score_value=2`; `is_correct=false`.
-  - C. `text=Sesuatu yang dapat dimiliki atau digunakan seseorang`; `score_value=1`; `is_correct=false`.
-  - D. `text=Panduan yang membantu seseorang memilih tindakan`; `score_value=2`; `is_correct=false`.
-  - E. `text=Alat yang digunakan untuk menghitung jumlah benda`; `score_value=0`; `is_correct=false`.
+  - A. `text=Keterangan kuantitas`; `score_value=3`; `is_correct=true`.
+  - B. `text=Ukuran jumlah`; `score_value=2`; `is_correct=false`.
+  - C. `text=Besaran`; `score_value=1`; `is_correct=false`.
+  - D. `text=Bilangan`; `score_value=0`; `is_correct=false`.
+  - E. `text=Urutan`; `score_value=0`; `is_correct=false`.
 - Best answer: **A** (`3`). Explanation: `null`.
-- Rationale internal: Kompas menjaga arah perjalanan secara literal, sedangkan prinsip menjaga arah tindakan secara figuratif. Dua opsi skor 2 menangkap fungsi panduan atau informasi yang lebih umum tanpa mempertahankan konsep arah; skor 1 lebih umum lagi; skor 0 tidak sesuai.
-- Difficulty basis: Memerlukan abstraksi literal–figuratif dengan dua opsi fungsi yang semantik dekat.
-- Reviews: `ambiguity_review=pass` (skor 3 mempertahankan unsur “arah” yang menjadi jembatan konsep); `weight_hierarchy_review=pass`; `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
+- Rationale internal: Banyak dan sedikit merupakan keterangan kuantitas. Ukuran jumlah sangat dekat tetapi kurang tepat sebagai kelas kata/konsep; besaran lebih umum; keduanya bukan bilangan tertentu dan bukan urutan.
+- Difficulty basis: Hard sesuai overlay aplikasi untuk soal sumber 68; pilihan berdekatan pada domain kuantitas.
+- Reviews: `ambiguity_review=pass`; `weight_hierarchy_review=pass`; `language_review_notes=source_transcription_and_internal_options: pass`; `logic_review_notes=manual_semantic_validation: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ### ge-009
 
 - Contract: `subtest_code=GE`; `kind=scored`; `display_order=9`; `difficulty_target=hard`; `answer_type=single_choice_weighted`.
-- Prompt: Apakah persamaan utama antara saringan dan editor?
+- Prompt: Pilih kata yang paling tepat mencakup pengertian kedua kata berikut: telur — benih.
 - Options:
-  - A. `text=Bagian yang terlibat dalam suatu proses kerja`; `score_value=1`; `is_correct=false`.
-  - B. `text=Alat untuk memasukkan semua bahan tanpa pemilihan`; `score_value=0`; `is_correct=false`.
-  - C. `text=Sarana yang dapat membantu memperbaiki hasil`; `score_value=2`; `is_correct=false`.
-  - D. `text=Penyeleksi yang mempertahankan bagian sesuai kriteria dan menyisihkan bagian lain`; `score_value=3`; `is_correct=true`.
-  - E. `text=Pihak atau alat yang menyingkirkan bagian yang tidak diinginkan`; `score_value=2`; `is_correct=false`.
-- Best answer: **D** (`3`). Explanation: `null`.
-- Rationale internal: Keduanya melakukan seleksi berdasar kriteria, bukan sekadar membuang. Dua opsi skor 2 hanya menangkap penghilangan atau hasil umum; skor 1 sangat luas; skor 0 berlawanan.
-- Difficulty basis: Persamaan mekanisme lintas objek fisik dan peran abstrak, dengan dua tingkat jawaban seleksi yang dekat.
-- Reviews: `ambiguity_review=pass`; `weight_hierarchy_review=pass`; `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
+  - A. `text=Hasil perkembangbiakan`; `score_value=1`; `is_correct=false`.
+  - B. `text=Awal kehidupan`; `score_value=2`; `is_correct=false`.
+  - C. `text=Calon individu baru`; `score_value=3`; `is_correct=true`.
+  - D. `text=Bahan pangan`; `score_value=0`; `is_correct=false`.
+  - E. `text=Tumbuhan`; `score_value=0`; `is_correct=false`.
+- Best answer: **C** (`3`). Explanation: `null`.
+- Rationale internal: Telur dan benih memuat calon individu baru. Awal kehidupan sangat dekat tetapi lebih abstrak; hasil perkembangbiakan lebih umum dan tidak selalu menunjuk potensi individu; bahan pangan hanya penggunaan tertentu dan tumbuhan tidak mencakup telur.
+- Difficulty basis: Hard sesuai overlay aplikasi untuk soal sumber 69; opsi 3, 2, dan 1 membedakan potensi individu dari tahap dan asal.
+- Reviews: `ambiguity_review=pass`; `weight_hierarchy_review=pass`; `language_review_notes=source_transcription_and_internal_options: pass`; `logic_review_notes=manual_semantic_validation: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ### ge-010
 
 - Contract: `subtest_code=GE`; `kind=scored`; `display_order=10`; `difficulty_target=hard`; `answer_type=single_choice_weighted`.
-- Prompt: Apakah persamaan utama antara benih dan gagasan?
+- Prompt: Pilih kata yang paling tepat mencakup pengertian kedua kata berikut: bendera — lencana.
 - Options:
-  - A. `text=Hasil akhir yang tidak lagi mengalami perubahan`; `score_value=0`; `is_correct=false`.
-  - B. `text=Awal yang menyimpan potensi untuk berkembang menjadi sesuatu yang lebih besar`; `score_value=3`; `is_correct=true`.
-  - C. `text=Tahap awal dari suatu proses perkembangan`; `score_value=2`; `is_correct=false`.
-  - D. `text=Sesuatu yang dapat menjadi sumber perubahan`; `score_value=2`; `is_correct=false`.
-  - E. `text=Sesuatu yang dapat disimpan sebelum dikembangkan lebih lanjut`; `score_value=1`; `is_correct=false`.
-- Best answer: **B** (`3`). Explanation: `null`.
-- Rationale internal: Benih berkembang menjadi tumbuhan dan gagasan berkembang menjadi karya atau tindakan; skor 3 menangkap awal sekaligus potensi. Dua opsi skor 2 hanya menangkap tahap atau dampak umum. Pada skor 1, benih dapat disimpan sebelum ditanam, sedangkan gagasan dapat dicatat atau disimpan sebelum dikembangkan; kesamaan ini bersifat praktis dan bukan inti hubungan keduanya. Skor 0 berlawanan.
-- Difficulty basis: Persamaan abstrak lintas wujud fisik dan mental dengan hierarki kedekatan makna.
-- Reviews: `ambiguity_review=pass`; `weight_hierarchy_review=pass`; `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
+  - A. `text=Penanda`; `score_value=1`; `is_correct=false`.
+  - B. `text=Hiasan`; `score_value=0`; `is_correct=false`.
+  - C. `text=Tanda identitas`; `score_value=2`; `is_correct=false`.
+  - D. `text=Kain`; `score_value=0`; `is_correct=false`.
+  - E. `text=Lambang`; `score_value=3`; `is_correct=true`.
+- Best answer: **E** (`3`). Explanation: `null`.
+- Rationale internal: Bendera dan lencana berfungsi sebagai lambang. Tanda identitas sangat dekat tetapi tidak mencakup seluruh fungsi keduanya; penanda lebih umum; hiasan hanya penggunaan tambahan dan kain tidak mencakup lencana.
+- Difficulty basis: Hard sesuai overlay aplikasi untuk soal sumber 70; pilihan dekat membedakan lambang, identitas, dan penanda.
+- Reviews: `ambiguity_review=pass`; `weight_hierarchy_review=pass`; `language_review_notes=source_transcription_and_internal_options: pass`; `logic_review_notes=manual_semantic_validation: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ## Rekap audit draft
 
 - Record: 11 (1 example + 10 scored).
 - Opsi: 55; setiap record tepat lima opsi A–E.
-- Setiap record memiliki tepat satu skor 3, dua skor 2, satu skor 1, dan satu skor 0.
+- Setiap record memiliki tepat satu skor 3, satu skor 2, satu skor 1, dan dua skor 0.
 - Setiap record memiliki tepat satu `is_correct=true`, selalu pada skor 3.
 - Difficulty scored: easy 3 (`ge-001`–`ge-003`); medium 4 (`ge-004`–`ge-007`); hard 3 (`ge-008`–`ge-010`).
-- Distribusi posisi best answer scored: A=2, B=2, C=2, D=2, E=2.
-- Urutan posisi best answer: C–A–E–B–D–C–E–A–D–B.
-- Seluruh `qc_status=pass`; tidak ada record `revise` atau `reject` pada self-review awal.
-- Seluruh record `review_status=in_review` dan `active=false`; tidak ada approval atau freeze.
-- Status review draft: `human_review_passed`; `active=false`; belum approved dan belum frozen.
+- Urutan posisi best answer scored: B–D–C–A–D–B–D–A–C–E.
+- Raw maximum: `10 × 3 = 30`.
+- Weighted maximum: `3×(3×1) + 4×(3×2) + 3×(3×3) = 60`.
+- Seluruh record tetap `active=false`, belum approved, belum frozen, dan belum diimpor.

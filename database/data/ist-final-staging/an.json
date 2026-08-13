@@ -9,7 +9,7 @@
     "source_reference": null,
     "copyright_status": "internally_authored",
     "normative_compatibility": "none",
-    "instruction_content": "Tentukan hubungan pada pasangan pertama, lalu pilih kata yang membentuk hubungan paling setara pada pasangan kedua.",
+    "instruction_content": "Perhatikan hubungan antara kata pertama dan kata kedua. Pilih satu kata A–E yang mempunyai hubungan paling tepat dengan kata ketiga, dengan pola hubungan yang sama: Kata 1 : Kata 2 = Kata 3 : ?.",
     "memorization_content": null,
     "memorization": null,
     "questions": [
@@ -21,8 +21,8 @@
             "display_order": 1,
             "answer_type": "single_choice",
             "difficulty_target": null,
-            "prompt": "Kunci : Membuka = Pensil : ?",
-            "explanation": "Kunci digunakan untuk membuka; dengan hubungan yang sama, pensil digunakan untuk menulis.",
+            "prompt": "Hutan : pohon = tembok : ?",
+            "explanation": "Hutan terdiri atas pohon-pohon; dengan hubungan yang sama, tembok terdiri atas batu bata.",
             "active": false,
             "source_version": 100000017,
             "source": {
@@ -43,23 +43,23 @@
             "options": [
                 {
                     "key": "A",
-                    "text": "menghapus",
+                    "text": "batu bata",
                     "display_order": 1,
-                    "correct": false,
-                    "score": 0,
-                    "media_ref": null
-                },
-                {
-                    "key": "B",
-                    "text": "menulis",
-                    "display_order": 2,
                     "correct": true,
                     "score": 1,
                     "media_ref": null
                 },
                 {
+                    "key": "B",
+                    "text": "rumah",
+                    "display_order": 2,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
                     "key": "C",
-                    "text": "mengukur",
+                    "text": "semen",
                     "display_order": 3,
                     "correct": false,
                     "score": 0,
@@ -67,7 +67,7 @@
                 },
                 {
                     "key": "D",
-                    "text": "melipat",
+                    "text": "putih",
                     "display_order": 4,
                     "correct": false,
                     "score": 0,
@@ -75,7 +75,7 @@
                 },
                 {
                     "key": "E",
-                    "text": "memotong",
+                    "text": "dinding",
                     "display_order": 5,
                     "correct": false,
                     "score": 0,
@@ -91,7 +91,7 @@
                 },
                 "internal": {
                     "draft_logical_id": "an-example-001",
-                    "rationale": "Relasi alat terhadap fungsi utama identik pada kedua pasangan."
+                    "rationale": "Relasi keseluruhan terhadap unsur penyusun identik pada kedua pasangan."
                 }
             }
         },
@@ -103,7 +103,7 @@
             "display_order": 1,
             "answer_type": "single_choice",
             "difficulty_target": "easy",
-            "prompt": "Sapu : Membersihkan = Gunting : ?",
+            "prompt": "Menemukan : menghilangkan = Mengingat : ?",
             "explanation": null,
             "active": false,
             "source_version": 100000017,
@@ -125,7 +125,7 @@
             "options": [
                 {
                     "key": "A",
-                    "text": "menempel",
+                    "text": "menghapal",
                     "display_order": 1,
                     "correct": false,
                     "score": 0,
@@ -133,7 +133,7 @@
                 },
                 {
                     "key": "B",
-                    "text": "menimbang",
+                    "text": "mengenai",
                     "display_order": 2,
                     "correct": false,
                     "score": 0,
@@ -141,7 +141,7 @@
                 },
                 {
                     "key": "C",
-                    "text": "memotong",
+                    "text": "melupakan",
                     "display_order": 3,
                     "correct": true,
                     "score": 1,
@@ -149,7 +149,7 @@
                 },
                 {
                     "key": "D",
-                    "text": "menyimpan",
+                    "text": "berpikir",
                     "display_order": 4,
                     "correct": false,
                     "score": 0,
@@ -157,7 +157,7 @@
                 },
                 {
                     "key": "E",
-                    "text": "mengikat",
+                    "text": "menimpikan",
                     "display_order": 5,
                     "correct": false,
                     "score": 0,
@@ -173,7 +173,7 @@
                 },
                 "internal": {
                     "draft_logical_id": "an-001",
-                    "rationale": "Sapu digunakan untuk membersihkan; gunting digunakan untuk memotong."
+                    "rationale": "Menemukan berlawanan dengan menghilangkan; mengingat berlawanan dengan melupakan."
                 }
             }
         },
@@ -185,7 +185,7 @@
             "display_order": 2,
             "answer_type": "single_choice",
             "difficulty_target": "easy",
-            "prompt": "Bab : Buku = Adegan : ?",
+            "prompt": "Bunga : jambangan = Burung : ?",
             "explanation": null,
             "active": false,
             "source_version": 100000017,
@@ -207,7 +207,7 @@
             "options": [
                 {
                     "key": "A",
-                    "text": "kamera",
+                    "text": "sarang",
                     "display_order": 1,
                     "correct": false,
                     "score": 0,
@@ -215,15 +215,15 @@
                 },
                 {
                     "key": "B",
-                    "text": "film",
+                    "text": "langit",
                     "display_order": 2,
-                    "correct": true,
-                    "score": 1,
+                    "correct": false,
+                    "score": 0,
                     "media_ref": null
                 },
                 {
                     "key": "C",
-                    "text": "dialog",
+                    "text": "pagar",
                     "display_order": 3,
                     "correct": false,
                     "score": 0,
@@ -231,7 +231,7 @@
                 },
                 {
                     "key": "D",
-                    "text": "pemeran",
+                    "text": "pohon",
                     "display_order": 4,
                     "correct": false,
                     "score": 0,
@@ -239,10 +239,10 @@
                 },
                 {
                     "key": "E",
-                    "text": "panggung",
+                    "text": "sangkar",
                     "display_order": 5,
-                    "correct": false,
-                    "score": 0,
+                    "correct": true,
+                    "score": 1,
                     "media_ref": null
                 }
             ],
@@ -255,7 +255,7 @@
                 },
                 "internal": {
                     "draft_logical_id": "an-002",
-                    "rationale": "Bab merupakan bagian dari buku; adegan merupakan bagian dari film."
+                    "rationale": "Bunga ditempatkan dalam jambangan; burung ditempatkan dalam sangkar."
                 }
             }
         },
@@ -267,7 +267,7 @@
             "display_order": 3,
             "answer_type": "single_choice",
             "difficulty_target": "easy",
-            "prompt": "Dokter : Rumah Sakit = Guru : ?",
+            "prompt": "Kereta api : rel = Otobis : ?",
             "explanation": null,
             "active": false,
             "source_version": 100000017,
@@ -289,15 +289,15 @@
             "options": [
                 {
                     "key": "A",
-                    "text": "sekolah",
+                    "text": "roda",
                     "display_order": 1,
-                    "correct": true,
-                    "score": 1,
+                    "correct": false,
+                    "score": 0,
                     "media_ref": null
                 },
                 {
                     "key": "B",
-                    "text": "buku",
+                    "text": "poros",
                     "display_order": 2,
                     "correct": false,
                     "score": 0,
@@ -305,7 +305,7 @@
                 },
                 {
                     "key": "C",
-                    "text": "murid",
+                    "text": "ban",
                     "display_order": 3,
                     "correct": false,
                     "score": 0,
@@ -313,15 +313,15 @@
                 },
                 {
                     "key": "D",
-                    "text": "kelas",
+                    "text": "jalan raya",
                     "display_order": 4,
-                    "correct": false,
-                    "score": 0,
+                    "correct": true,
+                    "score": 1,
                     "media_ref": null
                 },
                 {
                     "key": "E",
-                    "text": "pelajaran",
+                    "text": "kecepatan",
                     "display_order": 5,
                     "correct": false,
                     "score": 0,
@@ -337,7 +337,7 @@
                 },
                 "internal": {
                     "draft_logical_id": "an-003",
-                    "rationale": "Dokter bekerja di rumah sakit; guru bekerja di sekolah."
+                    "rationale": "Kereta api bergerak di rel; otobis bergerak di jalan raya."
                 }
             }
         },
@@ -349,7 +349,7 @@
             "display_order": 4,
             "answer_type": "single_choice",
             "difficulty_target": "easy",
-            "prompt": "Api : Panas = Es : ?",
+            "prompt": "Perak : emas = Cincin : ?",
             "explanation": null,
             "active": false,
             "source_version": 100000017,
@@ -371,7 +371,7 @@
             "options": [
                 {
                     "key": "A",
-                    "text": "cair",
+                    "text": "arloji",
                     "display_order": 1,
                     "correct": false,
                     "score": 0,
@@ -379,15 +379,15 @@
                 },
                 {
                     "key": "B",
-                    "text": "dingin",
+                    "text": "berlian",
                     "display_order": 2,
-                    "correct": true,
-                    "score": 1,
+                    "correct": false,
+                    "score": 0,
                     "media_ref": null
                 },
                 {
                     "key": "C",
-                    "text": "beku",
+                    "text": "permata",
                     "display_order": 3,
                     "correct": false,
                     "score": 0,
@@ -395,15 +395,15 @@
                 },
                 {
                     "key": "D",
-                    "text": "putih",
+                    "text": "gelang",
                     "display_order": 4,
-                    "correct": false,
-                    "score": 0,
+                    "correct": true,
+                    "score": 1,
                     "media_ref": null
                 },
                 {
                     "key": "E",
-                    "text": "keras",
+                    "text": "platina",
                     "display_order": 5,
                     "correct": false,
                     "score": 0,
@@ -419,7 +419,7 @@
                 },
                 "internal": {
                     "draft_logical_id": "an-004",
-                    "rationale": "Panas merupakan karakteristik yang diasosiasikan dengan api; dingin merupakan karakteristik yang diasosiasikan dengan es."
+                    "rationale": "Perak dan emas merupakan logam sejenis; cincin dan gelang merupakan perhiasan sejenis."
                 }
             }
         },
@@ -431,7 +431,7 @@
             "display_order": 5,
             "answer_type": "single_choice",
             "difficulty_target": "medium",
-            "prompt": "Termometer : Suhu = Timbangan : ?",
+            "prompt": "Lingkaran : bola = Bujur sangkar : ?",
             "explanation": null,
             "active": false,
             "source_version": 100000017,
@@ -453,15 +453,15 @@
             "options": [
                 {
                     "key": "A",
-                    "text": "berat",
+                    "text": "bentuk",
                     "display_order": 1,
-                    "correct": true,
-                    "score": 1,
+                    "correct": false,
+                    "score": 0,
                     "media_ref": null
                 },
                 {
                     "key": "B",
-                    "text": "tinggi",
+                    "text": "gambar",
                     "display_order": 2,
                     "correct": false,
                     "score": 0,
@@ -469,7 +469,7 @@
                 },
                 {
                     "key": "C",
-                    "text": "jarak",
+                    "text": "segi empat",
                     "display_order": 3,
                     "correct": false,
                     "score": 0,
@@ -477,15 +477,15 @@
                 },
                 {
                     "key": "D",
-                    "text": "waktu",
+                    "text": "kubus",
                     "display_order": 4,
-                    "correct": false,
-                    "score": 0,
+                    "correct": true,
+                    "score": 1,
                     "media_ref": null
                 },
                 {
                     "key": "E",
-                    "text": "kecepatan",
+                    "text": "piramida",
                     "display_order": 5,
                     "correct": false,
                     "score": 0,
@@ -501,7 +501,7 @@
                 },
                 "internal": {
                     "draft_logical_id": "an-005",
-                    "rationale": "Termometer mengukur suhu; timbangan mengukur berat."
+                    "rationale": "Bola merupakan bentuk ruang yang bersesuaian dengan lingkaran; kubus merupakan bentuk ruang yang bersesuaian dengan bujur sangkar."
                 }
             }
         },
@@ -513,7 +513,7 @@
             "display_order": 6,
             "answer_type": "single_choice",
             "difficulty_target": "medium",
-            "prompt": "Benih : Tanaman = Gagasan : ?",
+            "prompt": "Saran : keputusan = Merundingkan : ?",
             "explanation": null,
             "active": false,
             "source_version": 100000017,
@@ -535,7 +535,7 @@
             "options": [
                 {
                     "key": "A",
-                    "text": "masalah",
+                    "text": "menawarkan",
                     "display_order": 1,
                     "correct": false,
                     "score": 0,
@@ -543,23 +543,23 @@
                 },
                 {
                     "key": "B",
-                    "text": "pendapat",
+                    "text": "menentukan",
                     "display_order": 2,
-                    "correct": false,
-                    "score": 0,
-                    "media_ref": null
-                },
-                {
-                    "key": "C",
-                    "text": "inovasi",
-                    "display_order": 3,
                     "correct": true,
                     "score": 1,
                     "media_ref": null
                 },
                 {
+                    "key": "C",
+                    "text": "menilai",
+                    "display_order": 3,
+                    "correct": false,
+                    "score": 0,
+                    "media_ref": null
+                },
+                {
                     "key": "D",
-                    "text": "kritik",
+                    "text": "menimbang",
                     "display_order": 4,
                     "correct": false,
                     "score": 0,
@@ -567,7 +567,7 @@
                 },
                 {
                     "key": "E",
-                    "text": "aturan",
+                    "text": "merenungkan",
                     "display_order": 5,
                     "correct": false,
                     "score": 0,
@@ -583,7 +583,7 @@
                 },
                 "internal": {
                     "draft_logical_id": "an-006",
-                    "rationale": "Benih dapat berkembang menjadi tanaman; gagasan dapat dikembangkan menjadi inovasi."
+                    "rationale": "Saran dapat mengarah pada keputusan; merundingkan dapat mengarah pada menentukan."
                 }
             }
         },
@@ -595,7 +595,7 @@
             "display_order": 7,
             "answer_type": "single_choice",
             "difficulty_target": "medium",
-            "prompt": "Gejala : Diagnosis = Bukti : ?",
+            "prompt": "Lidah : asam = Hidung : ?",
             "explanation": null,
             "active": false,
             "source_version": 100000017,
@@ -617,15 +617,15 @@
             "options": [
                 {
                     "key": "A",
-                    "text": "kesimpulan",
+                    "text": "mencium",
                     "display_order": 1,
-                    "correct": true,
-                    "score": 1,
+                    "correct": false,
+                    "score": 0,
                     "media_ref": null
                 },
                 {
                     "key": "B",
-                    "text": "pertanyaan",
+                    "text": "bernafas",
                     "display_order": 2,
                     "correct": false,
                     "score": 0,
@@ -633,7 +633,7 @@
                 },
                 {
                     "key": "C",
-                    "text": "perdebatan",
+                    "text": "mengecap",
                     "display_order": 3,
                     "correct": false,
                     "score": 0,
@@ -641,15 +641,15 @@
                 },
                 {
                     "key": "D",
-                    "text": "asumsi",
+                    "text": "tengik",
                     "display_order": 4,
-                    "correct": false,
-                    "score": 0,
+                    "correct": true,
+                    "score": 1,
                     "media_ref": null
                 },
                 {
                     "key": "E",
-                    "text": "catatan",
+                    "text": "asin",
                     "display_order": 5,
                     "correct": false,
                     "score": 0,
@@ -665,7 +665,7 @@
                 },
                 "internal": {
                     "draft_logical_id": "an-007",
-                    "rationale": "Gejala digunakan sebagai dasar untuk menetapkan diagnosis; bukti digunakan sebagai dasar untuk menarik kesimpulan."
+                    "rationale": "Lidah mengenali rasa asam; hidung mengenali bau tengik."
                 }
             }
         },
@@ -677,7 +677,7 @@
             "display_order": 8,
             "answer_type": "single_choice",
             "difficulty_target": "medium",
-            "prompt": "Konstitusi : Negara = Anggaran Dasar : ?",
+            "prompt": "Darah : pembuluh = Air : ?",
             "explanation": null,
             "active": false,
             "source_version": 100000017,
@@ -699,23 +699,23 @@
             "options": [
                 {
                     "key": "A",
-                    "text": "organisasi",
+                    "text": "pintu air",
                     "display_order": 1,
-                    "correct": true,
-                    "score": 1,
-                    "media_ref": null
-                },
-                {
-                    "key": "B",
-                    "text": "rapat",
-                    "display_order": 2,
                     "correct": false,
                     "score": 0,
                     "media_ref": null
                 },
                 {
+                    "key": "B",
+                    "text": "sungai",
+                    "display_order": 2,
+                    "correct": true,
+                    "score": 1,
+                    "media_ref": null
+                },
+                {
                     "key": "C",
-                    "text": "anggota",
+                    "text": "talang",
                     "display_order": 3,
                     "correct": false,
                     "score": 0,
@@ -723,7 +723,7 @@
                 },
                 {
                     "key": "D",
-                    "text": "peraturan",
+                    "text": "hujan",
                     "display_order": 4,
                     "correct": false,
                     "score": 0,
@@ -731,7 +731,7 @@
                 },
                 {
                     "key": "E",
-                    "text": "dokumen",
+                    "text": "ember",
                     "display_order": 5,
                     "correct": false,
                     "score": 0,
@@ -747,7 +747,7 @@
                 },
                 "internal": {
                     "draft_logical_id": "an-008",
-                    "rationale": "Konstitusi menjadi dasar bagi negara; anggaran dasar menjadi dasar bagi organisasi."
+                    "rationale": "Darah mengalir melalui pembuluh; air mengalir melalui sungai."
                 }
             }
         },
@@ -759,7 +759,7 @@
             "display_order": 9,
             "answer_type": "single_choice",
             "difficulty_target": "medium",
-            "prompt": "Geometri : Bentuk = Tata Bahasa : ?",
+            "prompt": "Saraf : penyalur = Pupil : ?",
             "explanation": null,
             "active": false,
             "source_version": 100000017,
@@ -781,15 +781,15 @@
             "options": [
                 {
                     "key": "A",
-                    "text": "bahasa",
+                    "text": "penyinaran",
                     "display_order": 1,
-                    "correct": true,
-                    "score": 1,
+                    "correct": false,
+                    "score": 0,
                     "media_ref": null
                 },
                 {
                     "key": "B",
-                    "text": "huruf",
+                    "text": "mata",
                     "display_order": 2,
                     "correct": false,
                     "score": 0,
@@ -797,7 +797,7 @@
                 },
                 {
                     "key": "C",
-                    "text": "suara",
+                    "text": "melihat",
                     "display_order": 3,
                     "correct": false,
                     "score": 0,
@@ -805,15 +805,15 @@
                 },
                 {
                     "key": "D",
-                    "text": "kalimat",
+                    "text": "cahaya",
                     "display_order": 4,
-                    "correct": false,
-                    "score": 0,
+                    "correct": true,
+                    "score": 1,
                     "media_ref": null
                 },
                 {
                     "key": "E",
-                    "text": "kamus",
+                    "text": "pelindung",
                     "display_order": 5,
                     "correct": false,
                     "score": 0,
@@ -829,7 +829,7 @@
                 },
                 "internal": {
                     "draft_logical_id": "an-009",
-                    "rationale": "Geometri merupakan bidang yang mempelajari bentuk; tata bahasa merupakan bidang aturan yang mengatur bahasa."
+                    "rationale": "Saraf menyalurkan rangsangan; pupil menyalurkan cahaya ke dalam mata."
                 }
             }
         },
@@ -841,7 +841,7 @@
             "display_order": 10,
             "answer_type": "single_choice",
             "difficulty_target": "hard",
-            "prompt": "Premis : Kesimpulan = Data : ?",
+            "prompt": "Pengantar surat : pengantar telegram = Pandai besi : ?",
             "explanation": null,
             "active": false,
             "source_version": 100000017,
@@ -863,7 +863,7 @@
             "options": [
                 {
                     "key": "A",
-                    "text": "analisis",
+                    "text": "palu godam",
                     "display_order": 1,
                     "correct": false,
                     "score": 0,
@@ -871,15 +871,15 @@
                 },
                 {
                     "key": "B",
-                    "text": "temuan",
+                    "text": "pedagang besi",
                     "display_order": 2,
-                    "correct": true,
-                    "score": 1,
+                    "correct": false,
+                    "score": 0,
                     "media_ref": null
                 },
                 {
                     "key": "C",
-                    "text": "hipotesis",
+                    "text": "api",
                     "display_order": 3,
                     "correct": false,
                     "score": 0,
@@ -887,15 +887,15 @@
                 },
                 {
                     "key": "D",
-                    "text": "metode",
+                    "text": "tukang emas",
                     "display_order": 4,
-                    "correct": false,
-                    "score": 0,
+                    "correct": true,
+                    "score": 1,
                     "media_ref": null
                 },
                 {
                     "key": "E",
-                    "text": "sampel",
+                    "text": "besi tempa",
                     "display_order": 5,
                     "correct": false,
                     "score": 0,
@@ -911,7 +911,7 @@
                 },
                 "internal": {
                     "draft_logical_id": "an-010",
-                    "rationale": "Premis menjadi dasar untuk memperoleh kesimpulan; data menjadi dasar untuk memperoleh temuan."
+                    "rationale": "Pengantar surat dan pengantar telegram merupakan pekerjaan sejenis; pandai besi dan tukang emas merupakan pekerjaan sejenis dalam mengolah logam."
                 }
             }
         },
@@ -923,7 +923,7 @@
             "display_order": 11,
             "answer_type": "single_choice",
             "difficulty_target": "hard",
-            "prompt": "Simptom : Penyakit = Indikator : ?",
+            "prompt": "Buta : warna = Tuli : ?",
             "explanation": null,
             "active": false,
             "source_version": 100000017,
@@ -945,15 +945,15 @@
             "options": [
                 {
                     "key": "A",
-                    "text": "fenomena",
+                    "text": "pendengaran",
                     "display_order": 1,
-                    "correct": true,
-                    "score": 1,
+                    "correct": false,
+                    "score": 0,
                     "media_ref": null
                 },
                 {
                     "key": "B",
-                    "text": "argumen",
+                    "text": "mendengar",
                     "display_order": 2,
                     "correct": false,
                     "score": 0,
@@ -961,15 +961,15 @@
                 },
                 {
                     "key": "C",
-                    "text": "penjelasan",
+                    "text": "nada",
                     "display_order": 3,
-                    "correct": false,
-                    "score": 0,
+                    "correct": true,
+                    "score": 1,
                     "media_ref": null
                 },
                 {
                     "key": "D",
-                    "text": "metode",
+                    "text": "kata",
                     "display_order": 4,
                     "correct": false,
                     "score": 0,
@@ -977,7 +977,7 @@
                 },
                 {
                     "key": "E",
-                    "text": "ukuran",
+                    "text": "telinga",
                     "display_order": 5,
                     "correct": false,
                     "score": 0,
@@ -993,7 +993,7 @@
                 },
                 "internal": {
                     "draft_logical_id": "an-011",
-                    "rationale": "Simptom merupakan tanda keberadaan penyakit; indikator merupakan tanda keberadaan atau kondisi suatu fenomena."
+                    "rationale": "Orang buta tidak dapat mempersepsi warna; orang tuli tidak dapat mempersepsi nada."
                 }
             }
         },
@@ -1005,7 +1005,7 @@
             "display_order": 12,
             "answer_type": "single_choice",
             "difficulty_target": "hard",
-            "prompt": "Aksioma : Teorema = Prinsip : ?",
+            "prompt": "Makanan : bumbu = Ceramah : ?",
             "explanation": null,
             "active": false,
             "source_version": 100000017,
@@ -1027,15 +1027,15 @@
             "options": [
                 {
                     "key": "A",
-                    "text": "penerapan",
+                    "text": "penghinaan",
                     "display_order": 1,
-                    "correct": true,
-                    "score": 1,
+                    "correct": false,
+                    "score": 0,
                     "media_ref": null
                 },
                 {
                     "key": "B",
-                    "text": "pendapat",
+                    "text": "pidato",
                     "display_order": 2,
                     "correct": false,
                     "score": 0,
@@ -1043,15 +1043,15 @@
                 },
                 {
                     "key": "C",
-                    "text": "perdebatan",
+                    "text": "kelakar",
                     "display_order": 3,
-                    "correct": false,
-                    "score": 0,
+                    "correct": true,
+                    "score": 1,
                     "media_ref": null
                 },
                 {
                     "key": "D",
-                    "text": "dugaan",
+                    "text": "kesan",
                     "display_order": 4,
                     "correct": false,
                     "score": 0,
@@ -1059,7 +1059,7 @@
                 },
                 {
                     "key": "E",
-                    "text": "pengecualian",
+                    "text": "ayat",
                     "display_order": 5,
                     "correct": false,
                     "score": 0,
@@ -1075,7 +1075,7 @@
                 },
                 "internal": {
                     "draft_logical_id": "an-012",
-                    "rationale": "Aksioma menjadi dasar untuk membangun teorema; prinsip menjadi dasar untuk menentukan penerapan."
+                    "rationale": "Bumbu menyedapkan makanan; kelakar menyegarkan atau menghidupkan ceramah."
                 }
             }
         }

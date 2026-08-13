@@ -11,6 +11,7 @@ use App\Models\Ist\IstTest;
 use Carbon\CarbonImmutable;
 use DomainException;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Log;
 use Inertia\Inertia;
 use Inertia\Response;
 
@@ -27,7 +28,12 @@ final class IstTestController extends Controller
     ): RedirectResponse {
         try {
             $creation = $creator->create($request->participantData());
-        } catch (DomainException) {
+        } catch (DomainException $exception) {
+            Log::warning('IST participant session creation was rejected.', [
+                'exception' => $exception::class,
+                'reason' => $exception->getMessage(),
+            ]);
+
             abort(409, 'Asesmen belum tersedia.');
         }
 

@@ -1,9 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="240" height="180" viewBox="0 0 240 180" role="img" aria-hidden="true" data-wu-role="target" data-face-u="x" data-face-d="plus" data-face-f="square" data-face-b="diamond" data-face-l="ring" data-face-r="dot">
-<ellipse cx="120" cy="157" rx="64" ry="8" fill="#18181b" opacity="0.08"/>
-<polygon points="120,22 178,52 120,82 62,52" fill="#fafafa" stroke="#18181b" stroke-width="3" stroke-linejoin="round"/>
-<polygon points="62,52 120,82 120,154 62,124" fill="#f4f4f5" stroke="#18181b" stroke-width="3" stroke-linejoin="round"/>
-<polygon points="120,82 178,52 178,124 120,154" fill="#e4e4e7" stroke="#18181b" stroke-width="3" stroke-linejoin="round"/>
-<path d="M 111.50 43.50 L 128.50 60.50 M 128.50 43.50 L 111.50 60.50" fill="none" stroke="#18181b" stroke-width="2.70" stroke-linecap="round"/>
-<rect x="83.88" y="97.88" width="14.25" height="14.25" rx="1.5" fill="#18181b"/>
-<circle cx="149.00" cy="105.00" r="5.51" fill="#18181b"/>
+<svg data-wu-role="target" data-wu-source="source-144" xmlns="http://www.w3.org/2000/svg" width="240" height="180" viewBox="0 0 240 180" role="img" aria-labelledby="title desc">
+  <title id="title">Kandidat target WU sumber 144</title>
+  <desc id="desc">Sisi atas bertitik, sisi depan berpola checker, dan sisi kanan memiliki diagonal dengan bidang bawah gelap.</desc>
+  <g stroke="#292524" stroke-width="3" stroke-linejoin="round" vector-effect="non-scaling-stroke">
+    <polygon points="120,20 181,45 121,75 58,50" fill="#f7f3e8"/>
+    <polygon points="58,50 121,75 121,151 58,126" fill="#f7f3e8"/>
+    <polygon points="58,50 89.5,62.5 89.5,100.5 58,88" fill="#292524" stroke="none"/>
+    <polygon points="89.5,100.5 121,113 121,151 89.5,138.5" fill="#292524" stroke="none"/>
+    <line x1="89.5" y1="62.5" x2="89.5" y2="138.5"/>
+    <line x1="58" y1="88" x2="121" y2="113"/>
+    <polygon points="121,75 181,45 181,121 121,151" fill="#f7f3e8"/>
+    <polygon points="181,45 181,121 121,151" fill="#292524" stroke="none"/>
+    <line x1="181" y1="45" x2="121" y2="151"/>
+  </g>
+  <circle cx="130" cy="60" r="5.2" fill="#292524"/>
 </svg>

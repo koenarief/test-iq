@@ -25,7 +25,9 @@ Dokumen ini memuat draft orisinal RA dan ZR untuk **Tes Kemampuan Kognitif Adapt
 
 # RA — Perhitungan Kontekstual
 
-**Petunjuk peserta:** Bacalah situasi hitung dengan cermat. Masukkan satu bilangan bulat sebagai jawaban. Jangan menuliskan satuan atau pemisah ribuan.
+**Petunjuk peserta:** Persoalan berikut adalah soal-soal hitungan. Bacalah setiap soal dengan cermat, hitung hasil akhirnya, lalu masukkan angka saja tanpa satuan atau pemisah ribuan.
+
+**Sumber transkripsi:** Screenshot yang diberikan pemilik proyek; example dan soal sumber 77–88 ditranskripsikan tanpa mengambil soal 89–96. Nomor sumber hanya menjadi referensi internal; aplikasi menampilkan soal 1–12. Difficulty merupakan overlay aplikasi dan bukan bagian dari sumber.
 
 **Kontrak subtes:** 1 example + 12 scored; `duration_seconds=360`; `max_item_score=1`; `max_subtest_score=12`.
 
@@ -34,11 +36,11 @@ Dokumen ini memuat draft orisinal RA dan ZR untuk **Tes Kemampuan Kognitif Adapt
 ### ra-example-001
 
 - Contract: `subtest_code=RA`; `kind=example`; `display_order=0`; `difficulty_target=null`; `answer_type=numeric`.
-- Prompt: Sebuah rak mempunyai 4 tingkat. Setiap tingkat berisi 6 kotak. Berapa jumlah seluruh kotak? Masukkan angka saja.
-- `numeric_answer_key`: `"24"`.
-- Explanation peserta: Empat tingkat masing-masing berisi enam kotak, sehingga jumlahnya `4 × 6 = 24`.
-- Solution internal: `4 × 6 = 24`.
-- Rationale internal: Seluruh informasi diperlukan dan hanya menghasilkan satu bilangan bulat.
+- Prompt: Sebatang pensil harganya 25 rupiah. Berapakah harga 3 batang?
+- `numeric_answer_key`: `"75"`.
+- Explanation peserta: Harga tiga batang pensil adalah `25 × 3 = 75` rupiah. Masukkan `75` pada input jawaban.
+- Solution internal: `25 × 3 = 75`.
+- Rationale internal: Perkalian harga satu batang dengan tiga batang menghasilkan satu jawaban numerik.
 - Difficulty basis: Example; perkalian langsung, tidak masuk distribusi difficulty.
 - Reviews: `ambiguity_review=pass`; `canonical_answer_review=pass`; `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
@@ -48,158 +50,160 @@ Dokumen ini memuat draft orisinal RA dan ZR untuk **Tes Kemampuan Kognitif Adapt
 ### ra-001
 
 - Contract: `subtest_code=RA`; `kind=scored`; `display_order=1`; `difficulty_target=easy`; `answer_type=numeric`.
-- Prompt: Terdapat 7 paket pensil. Setiap paket berisi 5 pensil. Berapa jumlah seluruh pensil? Masukkan angka saja.
+- Prompt: Jika seorang anak memiliki 50 rupiah dan memberikan 15 rupiah kepada orang lain, berapa rupiahkah yang masih tinggal padanya?
 - `numeric_answer_key`: `"35"`.
 - Explanation: `null`.
-- Solution internal: `7 × 5 = 35`.
-- Rationale internal: Perkalian jumlah kelompok dan isi per kelompok menghasilkan satu jawaban.
-- Difficulty basis: Satu operasi perkalian dengan bilangan kecil.
+- Solution internal: `50 − 15 = 35`.
+- Rationale internal: Uang yang diberikan dikurangkan dari jumlah awal.
+- Difficulty basis: Easy sesuai overlay aplikasi untuk soal sumber 77.
 - Reviews: `ambiguity_review=pass`; `canonical_answer_review=pass`; `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ### ra-002
 
 - Contract: `subtest_code=RA`; `kind=scored`; `display_order=2`; `difficulty_target=easy`; `answer_type=numeric`.
-- Prompt: Sebanyak 48 apel dibagikan sama rata kepada 6 kelompok. Berapa apel yang diterima setiap kelompok? Masukkan angka saja.
-- `numeric_answer_key`: `"8"`.
+- Prompt: Berapa km-kah yang dapat ditempuh oleh kereta api dalam waktu 7 jam, jika kecepatannya 40 km/jam?
+- `numeric_answer_key`: `"280"`.
 - Explanation: `null`.
-- Solution internal: `48 ÷ 6 = 8`.
-- Rationale internal: Frasa “sama rata” menentukan operasi pembagian tunggal.
-- Difficulty basis: Satu operasi pembagian yang habis dibagi.
+- Solution internal: `7 × 40 = 280`.
+- Rationale internal: Jarak diperoleh dari waktu dikalikan kecepatan.
+- Difficulty basis: Easy sesuai overlay aplikasi untuk soal sumber 78.
 - Reviews: `ambiguity_review=pass`; `canonical_answer_review=pass`; `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ### ra-003
 
-- Contract: `subtest_code=RA`; `kind=scored`; `display_order=3`; `difficulty_target=medium`; `answer_type=numeric`.
-- Prompt: Sebuah buku memiliki 125 halaman. Raka membaca 38 halaman pada hari pertama dan 27 halaman pada hari kedua. Berapa halaman yang belum dibaca? Masukkan angka saja.
-- `numeric_answer_key`: `"60"`.
+- Contract: `subtest_code=RA`; `kind=scored`; `display_order=3`; `difficulty_target=easy`; `answer_type=numeric`.
+- Prompt: 15 peti buah-buahan beratnya 250 kg dan setiap peti kosong beratnya 3 kg, berapakah berat buah-buahan itu?
+- `numeric_answer_key`: `"205"`.
 - Explanation: `null`.
-- Solution internal: `125 − 38 − 27 = 60`.
-- Rationale internal: Dua jumlah yang telah dibaca harus dikurangkan dari total; tidak ada halaman yang dibaca ulang.
-- Difficulty basis: Dua langkah pengurangan dengan informasi kontekstual.
+- Solution internal: `250 − (15 × 3) = 250 − 45 = 205`.
+- Rationale internal: Berat seluruh peti kosong dikurangkan dari berat total peti beserta buah.
+- Difficulty basis: Easy sesuai overlay aplikasi untuk soal sumber 79.
 - Reviews: `ambiguity_review=pass`; `canonical_answer_review=pass`; `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ### ra-004
 
 - Contract: `subtest_code=RA`; `kind=scored`; `display_order=4`; `difficulty_target=easy`; `answer_type=numeric`.
-- Prompt: Tiga bus masing-masing membawa 26 penumpang. Berapa jumlah seluruh penumpang? Masukkan angka saja.
-- `numeric_answer_key`: `"78"`.
+- Prompt: Seseorang mempunyai persediaan rumput yang cukup untuk 7 ekor kuda selama 78 hari. Berapa harikah persediaan itu cukup untuk 21 ekor kuda?
+- `numeric_answer_key`: `"26"`.
 - Explanation: `null`.
-- Solution internal: `3 × 26 = 78`.
-- Rationale internal: Kapasitas aktual setiap bus dinyatakan sama dan seluruh penumpang dijumlahkan.
-- Difficulty basis: Perkalian langsung satu langkah.
+- Solution internal: `(7 × 78) ÷ 21 = 26`.
+- Rationale internal: Persediaan tetap setara dengan 546 kuda-hari; untuk 21 kuda cukup selama 26 hari.
+- Difficulty basis: Easy sesuai overlay aplikasi untuk soal sumber 80.
 - Reviews: `ambiguity_review=pass`; `canonical_answer_review=pass`; `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ### ra-005
 
 - Contract: `subtest_code=RA`; `kind=scored`; `display_order=5`; `difficulty_target=medium`; `answer_type=numeric`.
-- Prompt: Empat buku catatan masing-masing berharga 7 token. Pembeli juga membayar biaya kemasan 5 token. Berapa total token yang dibayar? Masukkan angka saja.
-- `numeric_answer_key`: `"33"`.
+- Prompt: 3 batang coklat harganya Rp 5,-. Berapa batangkah yang dapat kita beli dengan Rp 50,-?
+- `numeric_answer_key`: `"30"`.
 - Explanation: `null`.
-- Solution internal: `(4 × 7) + 5 = 33`.
-- Rationale internal: Harga barang dihitung terlebih dahulu, lalu biaya tetap ditambahkan satu kali.
-- Difficulty basis: Menggabungkan perkalian dan penjumlahan dengan biaya tetap.
+- Solution internal: `(50 ÷ 5) × 3 = 30`.
+- Rationale internal: Lima puluh rupiah membeli sepuluh kelompok yang masing-masing berisi tiga batang.
+- Difficulty basis: Medium sesuai overlay aplikasi untuk soal sumber 81.
 - Reviews: `ambiguity_review=pass`; `canonical_answer_review=pass`; `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ### ra-006
 
-- Contract: `subtest_code=RA`; `kind=scored`; `display_order=6`; `difficulty_target=hard`; `answer_type=numeric`.
-- Prompt: Enam kotak masing-masing berisi 18 botol. Sebanyak 36 botol dipindahkan. Sisa botol dibagikan sama rata ke 3 rak. Berapa botol pada setiap rak? Masukkan angka saja.
-- `numeric_answer_key`: `"24"`.
+- Contract: `subtest_code=RA`; `kind=scored`; `display_order=6`; `difficulty_target=medium`; `answer_type=numeric`.
+- Prompt: Seseorang dapat berjalan 1,75 m dalam waktu ¼ detik. Berapakah meterkah yang dapat ia tempuh dalam waktu 10 detik?
+- `numeric_answer_key`: `"70"`.
 - Explanation: `null`.
-- Solution internal: `(6 × 18 − 36) ÷ 3 = 24`.
-- Rationale internal: Jumlah awal adalah `6 × 18 = 108`; setelah 36 botol dipindahkan tersisa 72, lalu pembagian sama rata ke 3 rak menghasilkan 24 botol per rak.
-- Difficulty basis: Tiga tahap operasi berupa perkalian, pengurangan, dan pembagian sama rata.
-- Reviews: `ambiguity_review=pass (kata “masing-masing”, jumlah yang dipindahkan, dan pembagian sama rata menentukan satu urutan operasi)`; `canonical_answer_review=pass`; `language_review_notes=automated_language_review: pass`; `logic_review_notes=human_logic_review: pass`; `qc_status=pass`.
+- Solution internal: `1,75 ÷ ¼ × 10 = 7 × 10 = 70`.
+- Rationale internal: Kecepatan berjalan adalah tujuh meter per detik, sehingga dalam sepuluh detik ditempuh 70 meter.
+- Difficulty basis: Medium sesuai overlay aplikasi untuk soal sumber 82.
+- Reviews: `ambiguity_review=pass`; `canonical_answer_review=pass`; `language_review_notes=source_transcription: pass`; `logic_review_notes=manual_arithmetic_validation: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ### ra-007
 
 - Contract: `subtest_code=RA`; `kind=scored`; `display_order=7`; `difficulty_target=medium`; `answer_type=numeric`.
-- Prompt: Sebuah mesin menghasilkan 15 komponen dalam 5 menit dengan laju tetap. Berapa komponen yang dihasilkan dalam 22 menit? Masukkan angka saja.
-- `numeric_answer_key`: `"66"`.
+- Prompt: Jika sebuah batu terletak 15 m di sebelah selatan dari sebatang pohon dan pohon itu berada 30 m di sebelah selatan dari sebuah rumah, berapa meterkah jarak antara batu dan rumah itu?
+- `numeric_answer_key`: `"45"`.
 - Explanation: `null`.
-- Solution internal: `15 ÷ 5 = 3` komponen per menit; `3 × 22 = 66`.
-- Rationale internal: Laju dinyatakan tetap sehingga perbandingan langsung mempunyai satu hasil.
-- Difficulty basis: Dua langkah perhitungan laju dan proyeksi waktu.
+- Solution internal: `15 + 30 = 45`.
+- Rationale internal: Batu berada 15 meter lebih jauh ke selatan dari pohon yang sudah 30 meter di selatan rumah.
+- Difficulty basis: Medium sesuai overlay aplikasi untuk soal sumber 83.
 - Reviews: `ambiguity_review=pass`; `canonical_answer_review=pass`; `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ### ra-008
 
-- Contract: `subtest_code=RA`; `kind=scored`; `display_order=8`; `difficulty_target=hard`; `answer_type=numeric`.
-- Prompt: Rata-rata lima nilai adalah 18. Empat nilai pertama adalah 12, 17, 19, dan 21. Berapa nilai kelima? Masukkan angka saja.
-- `numeric_answer_key`: `"21"`.
+- Contract: `subtest_code=RA`; `kind=scored`; `display_order=8`; `difficulty_target=medium`; `answer_type=numeric`.
+- Prompt: Jika 4 ½ m bahan sandang harganya Rp 90,-, berapakah rupiahkah harganya 2 ½ m?
+- `numeric_answer_key`: `"50"`.
 - Explanation: `null`.
-- Solution internal: Total lima nilai `5 × 18 = 90`; jumlah empat nilai `12 + 17 + 19 + 21 = 69`; nilai kelima `90 − 69 = 21`.
-- Rationale internal: Definisi rata-rata menentukan total, lalu nilai yang hilang diperoleh dengan pengurangan.
-- Difficulty basis: Memerlukan membalik konsep rata-rata dan melakukan beberapa operasi.
+- Solution internal: `90 ÷ 4,5 × 2,5 = 20 × 2,5 = 50`.
+- Rationale internal: Harga per meter adalah 20 rupiah, sehingga dua setengah meter berharga 50 rupiah.
+- Difficulty basis: Medium sesuai overlay aplikasi untuk soal sumber 84.
 - Reviews: `ambiguity_review=pass`; `canonical_answer_review=pass`; `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ### ra-009
 
-- Contract: `subtest_code=RA`; `kind=scored`; `display_order=9`; `difficulty_target=easy`; `answer_type=numeric`.
-- Prompt: Usia Lina 9 tahun. Kakaknya 4 tahun lebih tua. Berapa usia kakak Lina? Masukkan angka saja.
-- `numeric_answer_key`: `"13"`.
+- Contract: `subtest_code=RA`; `kind=scored`; `display_order=9`; `difficulty_target=medium`; `answer_type=numeric`.
+- Prompt: 7 orang dapat menyelesaikan sesuatu pekerjaan dalam 6 hari. Berapa orangkah yang diperlukan untuk menyelesaikan pekerjaan itu dalam setengah hari?
+- `numeric_answer_key`: `"84"`.
 - Explanation: `null`.
-- Solution internal: `9 + 4 = 13`.
-- Rationale internal: “Lebih tua” menentukan penambahan selisih usia.
-- Difficulty basis: Penjumlahan satu langkah dengan bilangan kecil.
+- Solution internal: `(7 × 6) ÷ 0,5 = 84`.
+- Rationale internal: Pekerjaan memerlukan 42 orang-hari; agar selesai dalam setengah hari diperlukan 84 orang.
+- Difficulty basis: Medium sesuai overlay aplikasi untuk soal sumber 85.
 - Reviews: `ambiguity_review=pass`; `canonical_answer_review=pass`; `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ### ra-010
 
-- Contract: `subtest_code=RA`; `kind=scored`; `display_order=10`; `difficulty_target=medium`; `answer_type=numeric`.
-- Prompt: Gudang mula-mula menyimpan 240 paket. Tiga kelompok yang masing-masing berisi 28 paket dikirim, lalu 35 paket baru diterima. Berapa paket yang tersimpan sekarang? Masukkan angka saja.
-- `numeric_answer_key`: `"191"`.
+- Contract: `subtest_code=RA`; `kind=scored`; `display_order=10`; `difficulty_target=hard`; `answer_type=numeric`.
+- Prompt: Karena dipanaskan, kawat yang panjangnya 48 cm akan mengembang menjadi 52 cm setelah pemanasan, berapakah panjangnya kawat yang berukuran 72 cm?
+- `numeric_answer_key`: `"78"`.
 - Explanation: `null`.
-- Solution internal: `240 − (3 × 28) + 35 = 240 − 84 + 35 = 191`.
-- Rationale internal: Jumlah terkirim dikurangkan dan penerimaan baru ditambahkan dalam urutan yang jelas.
-- Difficulty basis: Tiga operasi dengan perubahan stok dua arah.
+- Solution internal: `72 × (52 ÷ 48) = 78`.
+- Rationale internal: Faktor pemuaian yang sama adalah 52/48; diterapkan pada kawat 72 cm menghasilkan 78 cm.
+- Difficulty basis: Hard sesuai overlay aplikasi untuk soal sumber 86.
 - Reviews: `ambiguity_review=pass`; `canonical_answer_review=pass`; `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ### ra-011
 
 - Contract: `subtest_code=RA`; `kind=scored`; `display_order=11`; `difficulty_target=hard`; `answer_type=numeric`.
-- Prompt: Sebuah gudang memiliki 72 paket. Setelah menerima 18 paket, sebanyak 20 paket dikirim. Sisa paket dibagi sama rata ke 5 rak. Berapa paket pada setiap rak? Masukkan angka saja.
-- `numeric_answer_key`: `"14"`.
+- Prompt: Suatu pabrik dapat menghasilkan 304 batang pensil dalam waktu 8 jam. Berapa batangkah dihasilkan dalam waktu setengah jam?
+- `numeric_answer_key`: `"19"`.
 - Explanation: `null`.
-- Solution internal: `(72 + 18 − 20) ÷ 5 = 14`.
-- Rationale internal: Stok menjadi `72 + 18 = 90`, kemudian berkurang menjadi 70 setelah 20 paket dikirim; pembagian sama rata ke 5 rak menghasilkan 14 paket per rak.
-- Difficulty basis: Tiga perubahan stok harus diterapkan berurutan sebelum pembagian sama rata.
-- Reviews: `ambiguity_review=pass (urutan menerima, mengirim, lalu membagi dinyatakan eksplisit dan menghasilkan satu jawaban bulat)`; `canonical_answer_review=pass`; `language_review_notes=automated_language_review: pass`; `logic_review_notes=human_logic_review: pass`; `qc_status=pass`.
+- Solution internal: `304 ÷ 8 × 0,5 = 38 × 0,5 = 19`.
+- Rationale internal: Laju produksi adalah 38 batang per jam; dalam setengah jam dihasilkan 19 batang.
+- Difficulty basis: Hard sesuai overlay aplikasi untuk soal sumber 87.
+- Reviews: `ambiguity_review=pass`; `canonical_answer_review=pass`; `language_review_notes=source_transcription: pass`; `logic_review_notes=manual_arithmetic_validation: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ### ra-012
 
-- Contract: `subtest_code=RA`; `kind=scored`; `display_order=12`; `difficulty_target=medium`; `answer_type=numeric`.
-- Prompt: Sebuah perjalanan terdiri dari tiga tahap selama 45 menit, 35 menit, dan 50 menit. Di antara tahap terdapat dua kali jeda selama 10 menit dan 15 menit. Berapa total menit perjalanan beserta jeda? Masukkan angka saja.
-- `numeric_answer_key`: `"155"`.
+- Contract: `subtest_code=RA`; `kind=scored`; `display_order=12`; `difficulty_target=hard`; `answer_type=numeric`.
+- Prompt: Untuk suatu campuran diperlukan 2 bagian perak dan 3 bagian timah. Berapa gramkah perak yang diperlukan untuk mendapatkan campuran itu yang beratnya 15 gram?
+- `numeric_answer_key`: `"6"`.
 - Explanation: `null`.
-- Solution internal: `45 + 35 + 50 + 10 + 15 = 155`.
-- Rationale internal: Semua durasi tahap dan kedua jeda dimasukkan tepat satu kali.
-- Difficulty basis: Menyeleksi dan menjumlahkan lima durasi dari narasi.
+- Solution internal: `2 ÷ (2 + 3) × 15 = 6`.
+- Rationale internal: Perak merupakan dua dari lima bagian campuran, sehingga massanya dua perlima dari 15 gram.
+- Difficulty basis: Hard sesuai overlay aplikasi untuk soal sumber 88.
 - Reviews: `ambiguity_review=pass`; `canonical_answer_review=pass`; `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ### Rekap RA
 
 - Record: 13 (1 example + 12 scored); maksimum skor 12.
-- Difficulty scored: easy 4 (`ra-001, ra-002, ra-004, ra-009`); medium 5 (`ra-003, ra-005, ra-007, ra-010, ra-012`); hard 3 (`ra-006, ra-008, ra-011`).
-- Canonical scored keys: `35, 8, 60, 78, 33, 24, 66, 21, 13, 191, 14, 155`.
+- Difficulty scored: easy 4 (`ra-001, ra-002, ra-003, ra-004`); medium 5 (`ra-005, ra-006, ra-007, ra-008, ra-009`); hard 3 (`ra-010, ra-011, ra-012`).
+- Canonical scored keys: `35, 280, 205, 26, 30, 70, 45, 50, 84, 78, 19, 6`.
 
 ---
 
 # ZR — Deret Angka
 
-**Petunjuk peserta:** Temukan aturan paling sederhana yang konsisten pada deret, lalu masukkan satu bilangan berikutnya. Masukkan angka saja.
+**Petunjuk peserta:** Setiap deret tersusun menurut suatu aturan tertentu. Temukan aturannya, lalu masukkan angka berikutnya saja tanpa satuan atau pemisah.
+
+**Sumber transkripsi:** Screenshot yang diberikan pemilik proyek; example dan deret sumber 97–108 ditranskripsikan tanpa mengambil soal 109–116. Nomor sumber hanya menjadi referensi internal; aplikasi menampilkan soal 1–12. Difficulty merupakan overlay aplikasi dan bukan bagian dari sumber.
 
 **Kontrak subtes:** 1 example + 12 scored; `duration_seconds=360`; `max_item_score=1`; `max_subtest_score=12`.
 
@@ -208,12 +212,12 @@ Dokumen ini memuat draft orisinal RA dan ZR untuk **Tes Kemampuan Kognitif Adapt
 ### zr-example-001
 
 - Contract: `subtest_code=ZR`; `kind=example`; `display_order=0`; `difficulty_target=null`; `answer_type=numeric`.
-- Prompt: Tentukan angka berikutnya: 4, 7, 10, 13, ___. Masukkan angka saja.
+- Prompt: Tentukan angka berikutnya: 2, 4, 6, 8, 10, 12, 14, ?
 - `numeric_answer_key`: `"16"`.
-- Explanation peserta: Setiap angka bertambah 3, sehingga angka berikutnya adalah `13 + 3 = 16`.
-- Solution internal: Selisih tetap `+3`; berikutnya `16`.
-- Rationale internal: Lima posisi menunjukkan aturan aritmetika paling sederhana dengan satu kelanjutan.
-- Difficulty basis: Example; selisih tetap langsung, tidak masuk distribusi difficulty.
+- Explanation peserta: Setiap angka bertambah 2, sehingga angka berikutnya adalah `14 + 2 = 16`. Masukkan `16` pada input jawaban.
+- Solution internal: Selisih tetap `+2`; berikutnya `16`.
+- Rationale internal: Tujuh suku menunjukkan aturan penambahan dua dengan satu kelanjutan.
+- Difficulty basis: Example; penambahan tetap, tidak masuk distribusi difficulty.
 - Reviews: `ambiguity_review=pass`; `canonical_answer_review=pass`; `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
@@ -222,144 +226,144 @@ Dokumen ini memuat draft orisinal RA dan ZR untuk **Tes Kemampuan Kognitif Adapt
 ### zr-001
 
 - Contract: `subtest_code=ZR`; `kind=scored`; `display_order=1`; `difficulty_target=easy`; `answer_type=numeric`.
-- Prompt: Tentukan angka berikutnya: 6, 11, 16, 21, ___. Masukkan angka saja.
-- `numeric_answer_key`: `"26"`.
+- Prompt: Tentukan angka berikutnya: 6, 9, 12, 15, 18, 21, 24, ?
+- `numeric_answer_key`: `"27"`.
 - Explanation: `null`.
-- Solution internal: Selisih tetap `+5`; `21 + 5 = 26`.
-- Rationale internal: Empat transisi mendukung satu aturan selisih tetap yang sederhana.
-- Difficulty basis: Penambahan tetap satu digit.
+- Solution internal: Selisih tetap `+3`; `24 + 3 = 27`.
+- Rationale internal: Seluruh transisi bertambah tiga.
+- Difficulty basis: Easy sesuai overlay aplikasi untuk soal sumber 97.
 - Reviews: `ambiguity_review=pass`; `canonical_answer_review=pass`; `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ### zr-002
 
 - Contract: `subtest_code=ZR`; `kind=scored`; `display_order=2`; `difficulty_target=easy`; `answer_type=numeric`.
-- Prompt: Tentukan angka berikutnya: 3, 6, 12, 24, ___. Masukkan angka saja.
-- `numeric_answer_key`: `"48"`.
+- Prompt: Tentukan angka berikutnya: 15, 16, 18, 19, 21, 22, 24, ?
+- `numeric_answer_key`: `"25"`.
 - Explanation: `null`.
-- Solution internal: Setiap angka dikalikan `2`; `24 × 2 = 48`.
-- Rationale internal: Rasio tetap ditunjukkan pada seluruh transisi.
-- Difficulty basis: Perkalian tetap yang mudah dikenali.
+- Solution internal: Penambahan bergantian `+1, +2`; setelah 24 berlaku `+1`, sehingga hasilnya 25.
+- Rationale internal: Dua penambahan berselang-seling berulang secara konsisten.
+- Difficulty basis: Easy sesuai overlay aplikasi untuk soal sumber 98.
 - Reviews: `ambiguity_review=pass`; `canonical_answer_review=pass`; `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ### zr-003
 
 - Contract: `subtest_code=ZR`; `kind=scored`; `display_order=3`; `difficulty_target=easy`; `answer_type=numeric`.
-- Prompt: Tentukan angka berikutnya: 45, 40, 35, 30, ___. Masukkan angka saja.
-- `numeric_answer_key`: `"25"`.
+- Prompt: Tentukan angka berikutnya: 19, 18, 22, 21, 25, 24, 28, ?
+- `numeric_answer_key`: `"27"`.
 - Explanation: `null`.
-- Solution internal: Selisih tetap `−5`; `30 − 5 = 25`.
-- Rationale internal: Seluruh transisi menggunakan pengurangan yang sama dan tetap nonnegatif.
-- Difficulty basis: Pengurangan tetap langsung.
+- Solution internal: Operasi bergantian `−1, +4`; setelah 28 berlaku `−1`, sehingga hasilnya 27.
+- Rationale internal: Pengurangan satu dan penambahan empat berulang secara konsisten.
+- Difficulty basis: Easy sesuai overlay aplikasi untuk soal sumber 99.
 - Reviews: `ambiguity_review=pass`; `canonical_answer_review=pass`; `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ### zr-004
 
 - Contract: `subtest_code=ZR`; `kind=scored`; `display_order=4`; `difficulty_target=easy`; `answer_type=numeric`.
-- Prompt: Tentukan angka berikutnya: 1, 4, 9, 16, 25, ___. Masukkan angka saja.
-- `numeric_answer_key`: `"36"`.
+- Prompt: Tentukan angka berikutnya: 16, 12, 17, 13, 18, 14, 19, ?
+- `numeric_answer_key`: `"15"`.
 - Explanation: `null`.
-- Solution internal: Suku adalah kuadrat berurutan `1², 2², 3², 4², 5²`; berikutnya `6² = 36`.
-- Rationale internal: Lima suku tepat mengikuti kuadrat bilangan bulat berurutan, sehingga kelanjutan paling sederhana adalah kuadrat berikutnya.
-- Difficulty basis: Pola kuadrat berurutan yang umum dengan lima suku pendukung.
-- Reviews: `ambiguity_review=pass (lima kuadrat berurutan mendukung satu kelanjutan editorial yang sederhana)`; `canonical_answer_review=pass`; `language_review_notes=automated_language_review: pass`; `logic_review_notes=human_logic_review: pass`; `qc_status=pass`.
+- Solution internal: Operasi bergantian `−4, +5`; setelah 19 berlaku `−4`, sehingga hasilnya 15.
+- Rationale internal: Pengurangan empat dan penambahan lima berulang secara konsisten.
+- Difficulty basis: Easy sesuai overlay aplikasi untuk soal sumber 100.
+- Reviews: `ambiguity_review=pass`; `canonical_answer_review=pass`; `language_review_notes=source_transcription: pass`; `logic_review_notes=manual_sequence_validation: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ### zr-005
 
 - Contract: `subtest_code=ZR`; `kind=scored`; `display_order=5`; `difficulty_target=medium`; `answer_type=numeric`.
-- Prompt: Tentukan angka berikutnya: 5, 8, 14, 23, 35, ___. Masukkan angka saja.
-- `numeric_answer_key`: `"50"`.
+- Prompt: Tentukan angka berikutnya: 2, 4, 8, 10, 20, 22, 44, ?
+- `numeric_answer_key`: `"46"`.
 - Explanation: `null`.
-- Solution internal: Selisih berturut-turut `+3, +6, +9, +12`; selisih berikutnya `+15`; `35 + 15 = 50`.
-- Rationale internal: Selisih meningkat teratur sebesar 3 dan menggunakan cukup transisi untuk membedakan dari selisih tetap.
-- Difficulty basis: Memerlukan analisis selisih tingkat pertama yang berubah teratur.
+- Solution internal: Operasi bergantian `×2, +2`; setelah 44 berlaku `+2`, sehingga hasilnya 46.
+- Rationale internal: Perkalian dua dan penambahan dua berulang secara konsisten.
+- Difficulty basis: Medium sesuai overlay aplikasi untuk soal sumber 101.
 - Reviews: `ambiguity_review=pass`; `canonical_answer_review=pass`; `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ### zr-006
 
 - Contract: `subtest_code=ZR`; `kind=scored`; `display_order=6`; `difficulty_target=medium`; `answer_type=numeric`.
-- Prompt: Tentukan angka berikutnya: 2, 6, 12, 20, 30, ___. Masukkan angka saja.
-- `numeric_answer_key`: `"42"`.
+- Prompt: Tentukan angka berikutnya: 15, 13, 16, 12, 17, 11, 18, ?
+- `numeric_answer_key`: `"10"`.
 - Explanation: `null`.
-- Solution internal: Selisih `+4, +6, +8, +10`; berikutnya `+12`; `30 + 12 = 42`.
-- Rationale internal: Selisih berupa bilangan genap berurutan; setara dengan pola `n × (n+1)`.
-- Difficulty basis: Selisih bertingkat dengan kenaikan dua.
+- Solution internal: Selisih bergantian `−2, +3, −4, +5, −6, +7`; berikutnya `−8`, sehingga `18 − 8 = 10`.
+- Rationale internal: Besar pengurangan dan penambahan meningkat satu secara bergantian.
+- Difficulty basis: Medium sesuai overlay aplikasi untuk soal sumber 102.
 - Reviews: `ambiguity_review=pass`; `canonical_answer_review=pass`; `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ### zr-007
 
 - Contract: `subtest_code=ZR`; `kind=scored`; `display_order=7`; `difficulty_target=medium`; `answer_type=numeric`.
-- Prompt: Tentukan angka berikutnya: 81, 27, 9, 3, ___. Masukkan angka saja.
-- `numeric_answer_key`: `"1"`.
+- Prompt: Tentukan angka berikutnya: 25, 22, 11, 33, 30, 15, 45, ?
+- `numeric_answer_key`: `"42"`.
 - Explanation: `null`.
-- Solution internal: Setiap angka dibagi `3`; `3 ÷ 3 = 1`.
-- Rationale internal: Rasio pembagian tetap berlaku pada semua transisi dan menghasilkan bilangan bulat.
-- Difficulty basis: Deret menurun dengan pembagian tetap.
+- Solution internal: Siklus operasi `−3, ÷2, ×3`; setelah 45 berlaku `−3`, sehingga hasilnya 42.
+- Rationale internal: Tiga operasi berulang dua kali dan menentukan kelanjutan berikutnya.
+- Difficulty basis: Medium sesuai overlay aplikasi untuk soal sumber 103.
 - Reviews: `ambiguity_review=pass`; `canonical_answer_review=pass`; `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ### zr-008
 
 - Contract: `subtest_code=ZR`; `kind=scored`; `display_order=8`; `difficulty_target=medium`; `answer_type=numeric`.
-- Prompt: Tentukan angka berikutnya: 4, 9, 19, 39, 79, ___. Masukkan angka saja.
-- `numeric_answer_key`: `"159"`.
+- Prompt: Tentukan angka berikutnya: 49, 51, 54, 27, 9, 11, 14, ?
+- `numeric_answer_key`: `"7"`.
 - Explanation: `null`.
-- Solution internal: Setiap angka dikalikan `2` lalu ditambah `1`; `79 × 2 + 1 = 159`.
-- Rationale internal: Aturan gabungan yang sama menghasilkan seluruh suku setelah suku pertama.
-- Difficulty basis: Memerlukan identifikasi operasi dua tahap berulang.
+- Solution internal: Siklus operasi `+2, +3, ÷2, ÷3`; setelah 14 berlaku `÷2`, sehingga hasilnya 7.
+- Rationale internal: Empat operasi berulang dan bagian kedua siklus mengonfirmasi kelanjutannya.
+- Difficulty basis: Medium sesuai overlay aplikasi untuk soal sumber 104.
 - Reviews: `ambiguity_review=pass`; `canonical_answer_review=pass`; `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ### zr-009
 
 - Contract: `subtest_code=ZR`; `kind=scored`; `display_order=9`; `difficulty_target=medium`; `answer_type=numeric`.
-- Prompt: Tentukan angka berikutnya: 100, 96, 88, 76, 60, ___. Masukkan angka saja.
-- `numeric_answer_key`: `"40"`.
+- Prompt: Tentukan angka berikutnya: 2, 3, 1, 3, 4, 2, 4, ?
+- `numeric_answer_key`: `"5"`.
 - Explanation: `null`.
-- Solution internal: Pengurangan berturut-turut `4, 8, 12, 16`; berikutnya `20`; `60 − 20 = 40`.
-- Rationale internal: Besar pengurangan bertambah tetap sebesar 4 dan kelanjutan tetap nonnegatif.
-- Difficulty basis: Memerlukan analisis selisih negatif yang berubah teratur.
+- Solution internal: Siklus operasi `+1, −2, +2`; setelah 4 berlaku `+1`, sehingga hasilnya 5.
+- Rationale internal: Tiga perubahan berulang dua kali dan menentukan kelanjutan berikutnya.
+- Difficulty basis: Medium sesuai overlay aplikasi untuk soal sumber 105.
 - Reviews: `ambiguity_review=pass`; `canonical_answer_review=pass`; `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ### zr-010
 
 - Contract: `subtest_code=ZR`; `kind=scored`; `display_order=10`; `difficulty_target=hard`; `answer_type=numeric`.
-- Prompt: Tentukan angka berikutnya: 3, 4, 7, 11, 18, 29, ___. Masukkan angka saja.
-- `numeric_answer_key`: `"47"`.
+- Prompt: Tentukan angka berikutnya: 19, 17, 20, 16, 21, 15, 22, ?
+- `numeric_answer_key`: `"14"`.
 - Explanation: `null`.
-- Solution internal: Mulai suku ketiga, setiap suku adalah jumlah dua suku sebelumnya; `18 + 29 = 47`.
-- Rationale internal: Empat suku berturut-turut memverifikasi aturan rekursif yang sama.
-- Difficulty basis: Memerlukan pengenalan relasi antar dua suku sebelumnya, bukan selisih tunggal.
+- Solution internal: Selisih bergantian `−2, +3, −4, +5, −6, +7`; berikutnya `−8`, sehingga `22 − 8 = 14`.
+- Rationale internal: Besar pengurangan dan penambahan meningkat satu secara bergantian.
+- Difficulty basis: Hard sesuai overlay aplikasi untuk soal sumber 106.
 - Reviews: `ambiguity_review=pass`; `canonical_answer_review=pass`; `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ### zr-011
 
 - Contract: `subtest_code=ZR`; `kind=scored`; `display_order=11`; `difficulty_target=hard`; `answer_type=numeric`.
-- Prompt: Tentukan angka berikutnya: 2, 5, 4, 10, 6, 15, 8, ___. Masukkan angka saja.
-- `numeric_answer_key`: `"20"`.
+- Prompt: Tentukan angka berikutnya: 94, 92, 46, 44, 22, 20, 10, ?
+- `numeric_answer_key`: `"8"`.
 - Explanation: `null`.
-- Solution internal: Posisi ganjil `2, 4, 6, 8` bertambah 2; posisi genap `5, 10, 15, 20` bertambah 5.
-- Rationale internal: Dua deret berselang-seling masing-masing mempunyai aturan aritmetika sederhana dan menentukan posisi berikutnya secara tunggal.
-- Difficulty basis: Memerlukan pemisahan dua pola interleaved.
+- Solution internal: Operasi bergantian `−2, ÷2`; setelah 10 berlaku `−2`, sehingga hasilnya 8.
+- Rationale internal: Pengurangan dua dan pembagian dua berulang secara konsisten.
+- Difficulty basis: Hard sesuai overlay aplikasi untuk soal sumber 107.
 - Reviews: `ambiguity_review=pass`; `canonical_answer_review=pass`; `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
 ### zr-012
 
 - Contract: `subtest_code=ZR`; `kind=scored`; `display_order=12`; `difficulty_target=hard`; `answer_type=numeric`.
-- Prompt: Tentukan angka berikutnya: 1, 2, 6, 15, 31, 56, ___. Masukkan angka saja.
-- `numeric_answer_key`: `"92"`.
+- Prompt: Tentukan angka berikutnya: 5, 8, 9, 8, 11, 12, 11, ?
+- `numeric_answer_key`: `"14"`.
 - Explanation: `null`.
-- Solution internal: Selisih berturut-turut `1, 4, 9, 16, 25` atau `1², 2², 3², 4², 5²`; selisih berikutnya `6² = 36`; `56 + 36 = 92`.
-- Rationale internal: Lima selisih membentuk kuadrat berurutan dan memberikan satu kelanjutan paling sederhana.
-- Difficulty basis: Memerlukan analisis selisih dan pengenalan pola kuadrat tingkat kedua.
+- Solution internal: Siklus operasi `+3, +1, −1`; setelah 11 berlaku `+3`, sehingga hasilnya 14.
+- Rationale internal: Tiga perubahan berulang dua kali dan menentukan kelanjutan berikutnya.
+- Difficulty basis: Hard sesuai overlay aplikasi untuk soal sumber 108.
 - Reviews: `ambiguity_review=pass`; `canonical_answer_review=pass`; `language_review_notes=automated_language_review: pass`; `logic_review_notes=automated_logic_review: pass`; `qc_status=pass`.
 - Metadata: `content_origin=original_internal`; `source_reference=null`; `copyright_status=internally_authored`; `normative_compatibility=none`; `review_status=in_review`; `active=false`.
 
@@ -367,7 +371,7 @@ Dokumen ini memuat draft orisinal RA dan ZR untuk **Tes Kemampuan Kognitif Adapt
 
 - Record: 13 (1 example + 12 scored); maksimum skor 12.
 - Difficulty scored: easy 4 (`zr-001`–`zr-004`); medium 5 (`zr-005`–`zr-009`); hard 3 (`zr-010`–`zr-012`).
-- Canonical scored keys: `26, 48, 25, 36, 50, 42, 1, 159, 40, 47, 20, 92`.
+- Canonical scored keys: `27, 25, 27, 15, 46, 10, 42, 7, 5, 14, 8, 14`.
 
 ---
 

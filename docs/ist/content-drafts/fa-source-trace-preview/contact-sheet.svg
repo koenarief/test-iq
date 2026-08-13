@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Contact sheet percobaan tracing FA</title>
+  <desc id="desc">Preview master A sampai E serta prompt sumber 117 dan 118.</desc>
+  <rect width="1200" height="900" fill="#f3f4f6"/>
+  <text x="60" y="62" fill="#111827" font-family="Arial, sans-serif" font-size="34" font-weight="700">Preview tracing FA — belum canonical</text>
+  <text x="60" y="100" fill="#4b5563" font-family="Arial, sans-serif" font-size="20">Sumber foto terbaru · tanpa key · tanpa database/runtime</text>
+
+  <rect x="50" y="135" width="1100" height="280" rx="18" fill="#ffffff" stroke="#d1d5db" stroke-width="2"/>
+  <text x="80" y="180" fill="#111827" font-family="Arial, sans-serif" font-size="25" font-weight="700">Master scored A–E</text>
+  <g transform="translate(130 205) scale(1.05)" fill="#111111" shape-rendering="geometricPrecision">
+    <path d="M0 130 A67 67 0 0 1 134 130 Z"/>
+    <path d="M205 126 C194 103 199 70 222 51 C241 35 273 33 295 49 C314 63 321 87 315 109 C309 134 287 149 258 151 C234 153 213 144 205 126 Z"/>
+    <path d="M387 125 C375 110 373 89 379 70 C383 58 390 49 399 43 L429 76 L460 42 C472 56 478 71 478 89 C478 124 453 149 422 151 C407 151 395 141 387 125 Z"/>
+    <ellipse cx="610" cy="96" rx="66" ry="48" transform="rotate(-8 610 96)"/>
+    <path d="M786 51 L832 97 C822 121 802 134 776 135 C753 133 734 122 724 102 Z"/>
+  </g>
+  <g fill="#111827" font-family="Arial, sans-serif" font-size="25" font-weight="700" text-anchor="middle">
+    <text x="200" y="390">A</text><text x="415" y="390">B</text><text x="594" y="390">C</text><text x="770" y="390">D</text><text x="995" y="390">E</text>
+  </g>
+
+  <rect x="50" y="450" width="535" height="390" rx="18" fill="#ffffff" stroke="#d1d5db" stroke-width="2"/>
+  <text x="80" y="500" fill="#111827" font-family="Arial, sans-serif" font-size="27" font-weight="700">Soal web 1 · sumber 117</text>
+  <g transform="translate(100 535)" fill="#111111" shape-rendering="geometricPrecision">
+    <path d="M0 20 L0 197 L133 197 C145 179 151 156 151 131 C151 76 117 27 68 20 Z"/>
+    <path d="M278 14 C321 24 353 63 353 110 L353 135 C353 186 313 213 258 213 C226 213 198 204 176 187 C222 179 249 161 261 132 C275 98 271 57 278 14 Z"/>
+  </g>
+  <text x="317" y="808" fill="#6b7280" font-family="Arial, sans-serif" font-size="18" text-anchor="middle">Trace percobaan — belum divalidasi exact-cover</text>
+
+  <rect x="615" y="450" width="535" height="390" rx="18" fill="#ffffff" stroke="#d1d5db" stroke-width="2"/>
+  <text x="645" y="500" fill="#111827" font-family="Arial, sans-serif" font-size="27" font-weight="700">Soal web 2 · sumber 118</text>
+  <g transform="translate(670 555)" fill="#111111" shape-rendering="geometricPrecision">
+    <path d="M0 46 C39 48 66 76 66 113 C66 150 40 176 0 177 Z"/>
+    <path d="M116 8 L340 8 C338 41 316 64 282 73 C239 83 184 76 116 76 Z"/>
+    <path d="M116 111 C175 111 228 103 274 111 C310 118 333 141 340 176 L116 176 Z"/>
+  </g>
+  <text x="882" y="808" fill="#6b7280" font-family="Arial, sans-serif" font-size="18" text-anchor="middle">Trace percobaan — belum divalidasi exact-cover</text>
+</svg>
