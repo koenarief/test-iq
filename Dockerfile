@@ -27,5 +27,11 @@ COPY . /var/www/html
 # Set hak akses permission untuk storage dan bootstrap/cache
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 
+# Ensure directories exist and have proper ownership
+RUN mkdir -p /var/www/html/storage /var/www/html/bootstrap/cache \
+    && chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache \
+    && chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache
+
+
 EXPOSE 9000
 CMD ["php-fpm"]
