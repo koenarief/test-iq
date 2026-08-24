@@ -169,4 +169,116 @@ class IstScoringService
 
         return 'Seimbang (Balanced)';
     }
+
+
+
+    public function calculateSessionScore(int $sessionId): array
+    {
+        $session = IstTestSession::with('responses')->findOrFail($sessionId);
+        $age = $session->age;
+
+        // 1. Ambil seluruh kunci jawaban
+        $answerKeys = IstAnswerKey::all()->keyBy(function ($item) {
+            return $item->subtest . '_' . $item->question_number;
+        });
+
+        $subtestRw = [
+            'SE' => 0, 'WA' => 0, 'AN' => 0, 'GE' => 0,
+            'RA' => 0, 'ZR' => 0, 'FA' => 0, 'WU' => 0, 'ME' => 0
+        ];
+
+        // 2. Kalkulasi Raw Score (RW)
+        foreach ($session->responses as $response) {
+            $key = $response->subtest . '_' . $response->question_number;
+            if (!isset($answerKeys[$key])) continue;
+
+            $correctKey = $answerKeys[$key];
+            $earnedScore = 0;
+
+            if ($response->subtest === 'GE') {
+                // Grading kata kunci GE (0, 1, atau 2)
+                $keywords = json_decode($correctKey->correct_answer, true);
+                $userAns = strtolower(trim($response->user_answer));
+
+                if (in_array($userAns, $keywords['score_2'] ?? [])) {
+                    $earnedScore = 2;
+                } elseif (in_array($userAns, $keywords['score_1'] ?? [])) {
+                    $earnedScore = 1;
+                }
+            } else {
+                // Grading Pilihan Ganda & Angka
+                if (strtolower(trim($response->user_answer)) === strtolower(trim($correctKey->correct_answer))) {
+                    $earnedScore = 1;
+                }
+            }
+
+            // Simpan skor per butir soal
+            $response->update(['earned_score' => $earnedScore]);
+            $subtestRw[$response->subtest] += $earnedScore;
+        }
+
+        // 3. Lookup Standard Score (SW) per Subtes berdasarkan Usia
+        $subtestSw = [];
+        $subtestCategory = [];
+        $totalSw = 0;
+
+        foreach ($subtestRw as $subtest => $rw) {
+            $norm = IstNormSubtest::lookup($age, $subtest, $rw)->first();
+            $sw = $norm ? $norm->standard_score : 100; // default 100 jika tidak ditemukan
+            
+            $subtestSw[$subtest] = $sw;
+            $subtestCategory[$subtest] = $this->getSubtestCategory($sw);
+            $totalSw += $sw;
+        }
+
+        // 4. Lookup Gesamt IQ Score & Kategori berdasarkan Total SW
+        $normTotal = IstNormTotal::lookup($age, $totalSw)->first();
+        $iqScore = $normTotal ? $normTotal->iq_score : 100;
+        $iqCategory = $normTotal ? $normTotal->iq_category : 'Average';
+
+        // 5. Analisis Dominasi Berpikir
+        $verbalSw = $subtestSw['SE'] + $subtestSw['WA'] + $subtestSw['AN'] + $subtestSw['GE'];
+        $spatialSw = $subtestSw['FA'] + $subtestSw['WU'] + $subtestSw['ME'];
+        $dominance = $this->calculateDominance($verbalSw, $spatialSw);
+
+        // 6. Simpan Hasil Akhir ke Session
+        $session->update([
+            'total_sw' => $totalSw,
+            'iq_score' => $iqScore,
+            'iq_category' => $iqCategory,
+            'dominance_type' => $dominance,
+            'subtest_scores' => json_encode([
+                'rw' => $subtestRw,
+                'sw' => $subtestSw,
+                'categories' => $subtestCategory
+            ])
+        ]);
+
+        return [
+            'session_id' => $sessionId,
+            'subtest_rw' => $subtestRw,
+            'subtest_sw' => $subtestSw,
+            'total_sw' => $totalSw,
+            'iq_score' => $iqScore,
+            'iq_category' => $iqCategory,
+            'dominance' => $dominance
+        ];
+    }
+
+    private function getSubtestCategory(int $sw): string
+    {
+        if ($sw > 118) return 'Sangat Tinggi';
+        if ($sw >= 109) return 'Tinggi';
+        if ($sw >= 91) return 'Rata-Rata';
+        if ($sw >= 82) return 'Rendah';
+        return 'Sangat Rendah';
+    }
+
+    private function calculateDominance(int $verbalSw, int $spatialSw): string
+    {
+        $diff = $verbalSw - $spatialSw;
+        if ($diff > 15) return 'Dominan Verbal / Konseptual';
+        if ($diff < -15) return 'Dominan Spasial / Praktis';
+        return 'Seimbang (Balanced)';
+    }
 }

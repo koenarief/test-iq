@@ -1,0 +1,54 @@
+services:
+  # Service 1: Laravel PHP-FPM Application
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: tes_iq_app
+    restart: unless-stopped
+    working_dir: /var/www/html
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      - db
+    networks:
+      - tes_iq_network
+
+  # Service 2: Nginx Web Server
+  webserver:
+    image: nginx:alpine
+    container_name: tes_iq_webserver
+    restart: unless-stopped
+    ports:
+      - "8000:80"
+    volumes:
+      - .:/var/www/html
+      - ./docker/nginx/conf.d:/etc/nginx/conf.d
+    depends_on:
+      - app
+    networks:
+      - tes_iq_network
+
+  # Service 3: MySQL Database Inside Docker
+  db:
+    image: mysql:8.0
+    container_name: tes_iq_db
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: tes_iq
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes" # Atau sesuaikan jika pakai password
+    ports:
+      - "33061:3306" # Port 33061 di host dipetakan ke 3306 di container agar tidak konflik dengan MySQL host
+    volumes:
+      - dbdata:/var/lib/mysql
+      - ./docker/mysql/init.sql:/docker-entrypoint-initdb.d/init.sql # Copy & Auto-import DB
+    networks:
+      - tes_iq_network
+
+networks:
+  tes_iq_network:
+    driver: bridge
+
+volumes:
+  dbdata:
+    driver: local
