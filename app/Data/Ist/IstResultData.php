@@ -18,17 +18,10 @@ final readonly class IstResultData
         public array $subtests,
         public array $graphPoints,
 
-        public array $areaScores,
-        public array $areaGraphPoints,
-
-        public float $totalInternalScore,
-        public string $performanceCategory,
-        public string $performanceBenchmark,
-
-        public array $strongestAreas,
-        public array $developmentAreas,
-
-        public float $profileSpread,
-        public string $profileBalanceLabel,
+        public int $totalRawScore,
+        public ?int $totalStandardScore,
+        public ?int $iqScore,
+        public ?string $iqCategory,
+        public ?string $dominanceProfile,
     ) {}
 }

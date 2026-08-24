@@ -208,13 +208,12 @@ final class IstParticipantPayloadPresenter
                     'code' => $subtest->code,
                     'name' => $subtest->name,
                     'sequence' => $subtest->sequence,
-                    'awardedScore' => $subtest->awardedScore,
-                    'maxScore' => $subtest->maxScore,
+                    'rawScore' => $subtest->rawScore,
+                    'standardScore' => $subtest->standardScore,
                     'correctCount' => $subtest->correctCount,
                     'partialCount' => $subtest->partialCount,
                     'wrongCount' => $subtest->wrongCount,
                     'blankCount' => $subtest->blankCount,
-                    'percentage' => $subtest->percentage,
                 ],
                 $result->subtests,
             ),
@@ -228,30 +227,14 @@ final class IstParticipantPayloadPresenter
 
             /*
             |--------------------------------------------------------------------------
-            | 4 Cognitive Areas
+            | Overall IQ Result
             |--------------------------------------------------------------------------
             */
-            'areaScores' => $result->areaScores,
-            'areaGraphPoints' => $result->areaGraphPoints,
-
-            /*
-            |--------------------------------------------------------------------------
-            | Overall Cognitive Performance
-            |--------------------------------------------------------------------------
-            */
-            'totalInternalScore' => $result->totalInternalScore,
-            'performanceCategory' => $result->performanceCategory,
-            'performanceBenchmark' => $result->performanceBenchmark,
-
-            /*
-            |--------------------------------------------------------------------------
-            | Profile Interpretation
-            |--------------------------------------------------------------------------
-            */
-            'strongestAreas' => $result->strongestAreas,
-            'developmentAreas' => $result->developmentAreas,
-            'profileSpread' => $result->profileSpread,
-            'profileBalanceLabel' => $result->profileBalanceLabel,
+            'totalRawScore' => $result->totalRawScore,
+            'totalStandardScore' => $result->totalStandardScore,
+            'iqScore' => $result->iqScore,
+            'iqCategory' => $result->iqCategory,
+            'dominanceProfile' => $result->dominanceProfile,
         ];
     }
 

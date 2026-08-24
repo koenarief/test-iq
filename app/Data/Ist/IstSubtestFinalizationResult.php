@@ -24,6 +24,5 @@ final readonly class IstSubtestFinalizationResult
         public CarbonImmutable $lockedAt,
         public ?int $nextTestSubtestId,
         public bool $overallCompleted,
-        public ?float $totalInternalScore,
     ) {}
 }

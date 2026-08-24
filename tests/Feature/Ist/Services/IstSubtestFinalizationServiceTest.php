@@ -59,8 +59,8 @@ class IstSubtestFinalizationServiceTest extends IstDatabaseTestCase
         $this->assertSame(IstTestSubtest::STATUS_COMPLETED, $runtime->status);
         $this->assertSame('submitted', $runtime->finalized_reason);
         $this->assertNotNull($runtime->locked_at);
-        $this->assertSame('8.0000', $runtime->awarded_score);
-        $this->assertSame('12.0000', $runtime->max_score);
+        $this->assertSame('4.0000', $runtime->awarded_score);
+        $this->assertSame('6.0000', $runtime->max_score);
         $this->assertSame(2, $runtime->correct_count);
         $this->assertSame(1, $runtime->partial_count);
         $this->assertSame(0, $runtime->wrong_count);
@@ -104,7 +104,7 @@ class IstSubtestFinalizationServiceTest extends IstDatabaseTestCase
 
         $this->assertSame('B', $answer->selected_option_key);
         $this->assertSame(1, $answer->client_revision);
-        $this->assertSame('6.0000', $answer->awarded_score);
+        $this->assertSame('3.0000', $answer->awarded_score);
         $this->assertSame(IstAnswer::OUTCOME_CORRECT, $answer->outcome);
         $this->assertSame(1, $result->correctCount);
         $this->assertSame(0, $result->partialCount);
@@ -300,7 +300,7 @@ class IstSubtestFinalizationServiceTest extends IstDatabaseTestCase
         }
     }
 
-    public function test_finalizing_me_completes_overall_test_with_mean_percentage(): void
+    public function test_finalizing_me_completes_overall_test_without_computing_iq(): void
     {
         $creation = $this->lifecycle->create([
             'participant_name' => 'ME Final',
@@ -316,12 +316,12 @@ class IstSubtestFinalizationServiceTest extends IstDatabaseTestCase
         ]);
 
         foreach ($test->subtests()->where('sequence', '<', 9)->get() as $earlier) {
-            $percentage = $earlier->sequence * 10;
             $earlier->update([
                 'status' => IstTestSubtest::STATUS_COMPLETED,
                 'locked_at' => $this->now->subMinute(),
                 'finalized_reason' => IstFinalizationReason::SUBMITTED->value,
-                'percentage' => $percentage,
+                'awarded_score' => $earlier->sequence,
+                'correct_count' => $earlier->sequence,
             ]);
         }
 
@@ -348,8 +348,7 @@ class IstSubtestFinalizationServiceTest extends IstDatabaseTestCase
         $this->assertTrue($result->overallCompleted);
         $this->assertSame(IstTest::STATUS_COMPLETED, $test->status);
         $this->assertSame(9, $test->current_subtest_sequence);
-        $this->assertSame('63.750', $test->total_internal_score);
-        $this->assertSame(63.75, $result->totalInternalScore);
+        $this->assertNull($test->total_internal_score);
         $this->assertNotNull($test->finished_at);
         $this->assertNull($test->subtests()->where('sequence', 10)->first());
     }

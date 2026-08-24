@@ -4,6 +4,7 @@ namespace App\Services\Ist;
 
 use App\Data\Ist\IstResultData;
 use App\Data\Ist\IstSubtestResultData;
+use App\Exceptions\Ist\IstNormLookupException;
 use App\Exceptions\Ist\IstResultUnavailableException;
 use App\Models\Ist\IstTest;
 use App\Models\Ist\IstTestSubtest;
@@ -14,6 +15,7 @@ final class IstResultService
 {
     public function __construct(
         private readonly IstScoreCalculator $calculator,
+        private readonly IstScoringService $scoring,
     ) {}
 
     public function build(IstTest $test): IstResultData
@@ -63,6 +65,63 @@ final class IstResultService
 
         /*
         |--------------------------------------------------------------------------
+        | Raw score (RW) per subtest
+        |--------------------------------------------------------------------------
+        |
+        | Difficulty weighting has been removed from finalization, so each
+        | subtest's awarded_score is already the flat raw score (1 point per
+        | correct item, or 0-3 per GE item).
+        */
+
+        $rawScores = [];
+
+        foreach ($test->subtests as $runtime) {
+            if (! $runtime->subtest) {
+                throw new IstResultUnavailableException(
+                    $test->id,
+                    'master subtest is unavailable'
+                );
+            }
+
+            $rawScores[strtoupper(trim((string) $runtime->subtest->code))]
+                = (int) round((float) $runtime->awarded_score);
+        }
+
+        if (count($rawScores) !== 9) {
+            throw new IstResultUnavailableException(
+                $test->id,
+                'exactly nine unique subtest scores are required'
+            );
+        }
+
+        /*
+        |--------------------------------------------------------------------------
+        | Standard score (SW) / IQ / dominance profile
+        |--------------------------------------------------------------------------
+        |
+        | Computed on demand from IST age norm tables. Norm data may not yet
+        | cover every age/subtest/raw-score combination, so a missing lookup
+        | degrades to a null IQ rather than blocking the whole result page or
+        | guessing a fake score.
+        */
+
+        try {
+            $scoring = $this->scoring->calculateFromRawScores($rawScores, $test->age);
+            $standardScores = $scoring['standard_scores'];
+            $totalStandardScore = $scoring['total_standard_score'];
+            $iqScore = $scoring['iq_score'];
+            $iqCategory = $scoring['iq_category'];
+            $dominanceProfile = $scoring['dominance_profile'];
+        } catch (IstNormLookupException) {
+            $standardScores = array_fill_keys(array_keys($rawScores), null);
+            $totalStandardScore = null;
+            $iqScore = null;
+            $iqCategory = null;
+            $dominanceProfile = null;
+        }
+
+        /*
+        |--------------------------------------------------------------------------
         | 9 Subtest Results
         |--------------------------------------------------------------------------
         */
@@ -70,27 +129,19 @@ final class IstResultService
         $subtests = $test->subtests
             ->map(function (
                 IstTestSubtest $runtime
-            ) use ($test): IstSubtestResultData {
-                if (! $runtime->subtest) {
-                    throw new IstResultUnavailableException(
-                        $test->id,
-                        'master subtest is unavailable'
-                    );
-                }
+            ) use ($rawScores, $standardScores): IstSubtestResultData {
+                $code = strtoupper(trim((string) $runtime->subtest->code));
 
                 return new IstSubtestResultData(
-                    code: strtoupper(
-                        trim((string) $runtime->subtest->code)
-                    ),
+                    code: $code,
                     name: $runtime->subtest->name,
                     sequence: $runtime->sequence,
-                    awardedScore: (float) $runtime->awarded_score,
-                    maxScore: (float) $runtime->max_score,
+                    rawScore: $rawScores[$code],
+                    standardScore: $standardScores[$code] ?? null,
                     correctCount: $runtime->correct_count,
                     partialCount: $runtime->partial_count,
                     wrongCount: $runtime->wrong_count,
                     blankCount: $runtime->blank_count,
-                    percentage: (float) $runtime->percentage,
                 );
             })
             ->values()
@@ -107,120 +158,10 @@ final class IstResultService
                 IstSubtestResultData $subtest
             ): array => [
                 'code' => $subtest->code,
-                'percentage' => $subtest->percentage,
+                'standardScore' => $subtest->standardScore,
             ],
             $subtests,
         );
-
-        /*
-        |--------------------------------------------------------------------------
-        | Build keyed subtest scores
-        |--------------------------------------------------------------------------
-        */
-
-        $subtestScores = [];
-
-        foreach ($subtests as $subtest) {
-            $subtestScores[$subtest->code] =
-                $subtest->percentage;
-        }
-
-        if (count($subtestScores) !== 9) {
-            throw new IstResultUnavailableException(
-                $test->id,
-                'exactly nine unique subtest scores are required'
-            );
-        }
-
-        /*
-        |--------------------------------------------------------------------------
-        | 4 Cognitive Areas
-        |--------------------------------------------------------------------------
-        */
-
-        $areaScores = $this->calculator->areaScores(
-            $subtestScores
-        );
-
-        $areaGraphPoints = [
-            [
-                'key' => 'verbal',
-                'label' => 'Verbal',
-                'percentage' => $areaScores['verbal'],
-            ],
-            [
-                'key' => 'numeric',
-                'label' => 'Numerik',
-                'percentage' => $areaScores['numeric'],
-            ],
-            [
-                'key' => 'figural',
-                'label' => 'Figural',
-                'percentage' => $areaScores['figural'],
-            ],
-            [
-                'key' => 'memory',
-                'label' => 'Memori',
-                'percentage' => $areaScores['memory'],
-            ],
-        ];
-
-        /*
-        |--------------------------------------------------------------------------
-        | Cognitive Performance Index
-        |--------------------------------------------------------------------------
-        */
-
-        $calculatedIndex =
-            $this->calculator
-                ->cognitivePerformanceIndex($areaScores);
-
-        $storedIndex =
-            (float) $test->total_internal_score;
-
-        /*
-         * The stored result was produced during finalization.
-         * Recalculate here as a consistency check.
-         */
-        if (
-            abs($calculatedIndex - $storedIndex)
-            > 0.001
-        ) {
-            throw new IstResultUnavailableException(
-                $test->id,
-                'stored cognitive performance index is inconsistent'
-            );
-        }
-
-        /*
-        |--------------------------------------------------------------------------
-        | Interpretation
-        |--------------------------------------------------------------------------
-        */
-
-        $performanceCategory =
-            $this->calculator
-                ->performanceCategory($storedIndex);
-
-        $performanceBenchmark =
-            $this->calculator
-                ->performanceBenchmark($storedIndex);
-
-        $strongestAreas =
-            $this->calculator
-                ->strongestAreas($areaScores);
-
-        $developmentAreas =
-            $this->calculator
-                ->developmentAreas($areaScores);
-
-        $profileSpread =
-            $this->calculator
-                ->profileSpread($areaScores);
-
-        $profileBalanceLabel =
-            $this->calculator
-                ->profileBalanceLabel($profileSpread);
 
         $ageGroup =
             $this->calculator
@@ -245,19 +186,11 @@ final class IstResultService
             subtests: $subtests,
             graphPoints: $graphPoints,
 
-            areaScores: $areaScores,
-            areaGraphPoints: $areaGraphPoints,
-
-            totalInternalScore: $storedIndex,
-
-            performanceCategory: $performanceCategory,
-            performanceBenchmark: $performanceBenchmark,
-
-            strongestAreas: $strongestAreas,
-            developmentAreas: $developmentAreas,
-
-            profileSpread: $profileSpread,
-            profileBalanceLabel: $profileBalanceLabel,
+            totalRawScore: array_sum($rawScores),
+            totalStandardScore: $totalStandardScore,
+            iqScore: $iqScore,
+            iqCategory: $iqCategory,
+            dominanceProfile: $dominanceProfile,
         );
     }
 
@@ -299,13 +232,6 @@ final class IstResultService
             );
         }
 
-        if ($test->total_internal_score === null) {
-            throw new IstResultUnavailableException(
-                $test->id,
-                'overall internal score is unavailable'
-            );
-        }
-
         if ($test->subtests->count() !== 9) {
             throw new IstResultUnavailableException(
                 $test->id,
@@ -327,13 +253,6 @@ final class IstResultService
                 throw new IstResultUnavailableException(
                     $test->id,
                     'all runtime subtests must be finalized'
-                );
-            }
-
-            if ($runtime->percentage === null) {
-                throw new IstResultUnavailableException(
-                    $test->id,
-                    'a subtest percentage is unavailable'
                 );
             }
 

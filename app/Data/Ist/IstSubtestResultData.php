@@ -8,12 +8,11 @@ final readonly class IstSubtestResultData
         public string $code,
         public string $name,
         public int $sequence,
-        public float $awardedScore,
-        public float $maxScore,
+        public int $rawScore,
+        public ?int $standardScore,
         public int $correctCount,
         public int $partialCount,
         public int $wrongCount,
         public int $blankCount,
-        public float $percentage,
     ) {}
 }

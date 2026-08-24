@@ -5,9 +5,7 @@ import {
     BarChart3,
     CheckCircle2,
     Clock3,
-    Lightbulb,
-    Target,
-    TrendingUp,
+    Compass,
     User,
 } from 'lucide-react';
 import IstResultChart from '@/Components/IST/IstResultChart';
@@ -51,10 +49,7 @@ function formatDuration(value) {
         .join(' ');
 }
 
-function formatNumber(
-    value,
-    maximumFractionDigits = 3,
-) {
+function formatNumber(value) {
     if (
         value === null
         || value === ''
@@ -69,9 +64,7 @@ function formatNumber(
         return '—';
     }
 
-    return new Intl.NumberFormat('id-ID', {
-        maximumFractionDigits,
-    }).format(numeric);
+    return new Intl.NumberFormat('id-ID').format(numeric);
 }
 
 function genderLabel(value) {
@@ -79,17 +72,6 @@ function genderLabel(value) {
     if (value === 'P') return 'Perempuan';
 
     return '-';
-}
-
-const AREA_LABELS = {
-    verbal: 'Verbal',
-    numeric: 'Numerik',
-    figural: 'Figural',
-    memory: 'Memori',
-};
-
-function areaLabel(value) {
-    return AREA_LABELS[value] ?? value ?? '—';
 }
 
 export default function Result({
@@ -101,94 +83,24 @@ export default function Result({
     subtests = [],
     graphPoints = [],
 
-    areaScores = {},
-    areaGraphPoints = [],
-
-    totalInternalScore = null,
-    performanceCategory = null,
-    performanceBenchmark = null,
-
-    strongestAreas = [],
-    developmentAreas = [],
-
-    profileSpread = null,
-    profileBalanceLabel = null,
+    totalRawScore = null,
+    totalStandardScore = null,
+    iqScore = null,
+    iqCategory = null,
+    dominanceProfile = null,
 }) {
     const safeSubtests =
         Array.isArray(subtests)
             ? subtests
             : [];
 
-    const safeAreaGraphPoints =
-        Array.isArray(areaGraphPoints)
-            ? areaGraphPoints
-            : [];
-
-    const safeStrongestAreas =
-        Array.isArray(strongestAreas)
-            ? strongestAreas
-            : [];
-
-    const safeDevelopmentAreas =
-        Array.isArray(developmentAreas)
-            ? developmentAreas
-            : [];
-
-    const hasTotalInternalScore =
-        totalInternalScore !== null
-        && totalInternalScore !== ''
-        && Number.isFinite(
-            Number(totalInternalScore),
-        );
-
-    const totalScoreIsInRange =
-        hasTotalInternalScore
-        && Number(totalInternalScore) >= 0
-        && Number(totalInternalScore) <= 100;
+    const hasIqScore =
+        iqScore !== null
+        && iqScore !== ''
+        && Number.isFinite(Number(iqScore));
 
     const hasCompleteSubtestResults =
-        safeSubtests.length === 9
-        && safeSubtests.every(
-            (subtest) => {
-                const percentage =
-                    Number(
-                        subtest?.percentage,
-                    );
-
-                return (
-                    subtest?.percentage
-                    !== null
-                    && subtest?.percentage
-                    !== ''
-                    && Number.isFinite(
-                        percentage,
-                    )
-                    && percentage >= 0
-                    && percentage <= 100
-                );
-            },
-        );
-
-    const hasCompleteAreaResults =
-        safeAreaGraphPoints.length === 4
-        && safeAreaGraphPoints.every(
-            (area) => {
-                const percentage =
-                    Number(
-                        area?.percentage,
-                    );
-
-                return (
-                    area?.percentage !== null
-                    && area?.percentage !== ''
-                    && Number.isFinite(
-                        percentage,
-                    )
-                    && percentage >= 0
-                    && percentage <= 100
-                );
-            },
-        );
+        safeSubtests.length === 9;
 
     return (
         <PublicLayout>
@@ -226,9 +138,9 @@ export default function Result({
                     </h1>
 
                     <p className="mt-2 max-w-3xl text-sm leading-relaxed text-zinc-400">
-                        Ringkasan performa berdasarkan
-                        empat area kemampuan dan sembilan
-                        subtes yang telah diselesaikan.
+                        Skor mentah (RW) dan skor standar (SW) sembilan
+                        subtes, dikonversi ke IQ berdasarkan tabel norma
+                        usia peserta.
                     </p>
                 </header>
 
@@ -341,17 +253,17 @@ export default function Result({
                                 className="h-4 w-4"
                                 aria-hidden="true"
                             />
-                            Indeks Performa Kognitif
+                            Skor IQ
                         </div>
 
                         <p className="text-sm text-zinc-300">
-                            Skor keseluruhan dari rata-rata
-                            empat area kemampuan.
+                            Hasil konversi Total SW terhadap tabel
+                            norma usia.
                         </p>
 
                         <p className="mt-3 text-4xl font-bold text-white">
-                            {hasTotalInternalScore
-                                ? formatNumber(totalInternalScore)
+                            {hasIqScore
+                                ? formatNumber(iqScore)
                                 : '—'}
                         </p>
 
@@ -362,164 +274,69 @@ export default function Result({
                                 </span>
 
                                 <span className="text-right font-semibold text-white">
-                                    {performanceCategory
-                                        ?? '—'}
+                                    {iqCategory ?? '—'}
                                 </span>
                             </div>
 
                             <div className="flex justify-between gap-4">
                                 <span className="text-zinc-400">
-                                    Posisi Performa
+                                    Total SW
                                 </span>
 
                                 <span className="text-right font-semibold text-blue-200">
-                                    {performanceBenchmark
-                                        ?? '—'}
+                                    {formatNumber(totalStandardScore)}
+                                </span>
+                            </div>
+
+                            <div className="flex justify-between gap-4">
+                                <span className="text-zinc-400">
+                                    Total RW
+                                </span>
+
+                                <span className="text-right font-semibold text-blue-200">
+                                    {formatNumber(totalRawScore)}
                                 </span>
                             </div>
                         </div>
+
+                        {!hasIqScore && (
+                            <p className="mt-4 rounded-lg border border-amber-500/30 bg-amber-500/10 px-3 py-2 text-xs leading-relaxed text-amber-100">
+                                Data norma usia untuk peserta ini
+                                belum tersedia. Skor RW tetap
+                                tersimpan dan IQ akan tampil
+                                otomatis begitu data norma dimuat.
+                            </p>
+                        )}
                     </section>
                 </div>
 
-                {(
-                    !hasCompleteSubtestResults
-                    || !hasCompleteAreaResults
-                    || !totalScoreIsInRange
-                ) && (
+                {!hasCompleteSubtestResults && (
                     <div
                         className="mb-6 rounded-xl border border-amber-500/30 bg-amber-500/10 p-4 text-sm leading-relaxed text-amber-100"
                         role="status"
                     >
-                        Data hasil belum lengkap atau berada
-                        di luar rentang persentase yang
-                        diharapkan. Beberapa nilai dapat
-                        ditampilkan sebagai “—”.
+                        Data hasil sembilan subtes belum lengkap.
+                        Beberapa nilai dapat ditampilkan sebagai
+                        “—”.
                     </div>
                 )}
 
-                <section className="mb-6 rounded-2xl border border-zinc-800 bg-zinc-900/90 p-5 shadow-xl sm:p-7">
-                    <div className="mb-4 flex items-center gap-3">
-                        <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-blue-500/30 bg-blue-500/10 text-blue-300">
-                            <TrendingUp
-                                className="h-5 w-5"
-                                aria-hidden="true"
-                            />
-                        </span>
-
-                        <div>
-                            <h2
-                                id="ist-area-chart-title"
-                                className="text-lg font-bold text-white"
-                            >
-                                Profil Empat Area Kemampuan
-                            </h2>
-
-                            <p
-                                id="ist-area-chart-description"
-                                className="text-xs text-zinc-500"
-                            >
-                                Verbal, numerik, figural,
-                                dan memori pada skala 0–100
-                            </p>
-                        </div>
+                <section className="mb-6 rounded-2xl border border-indigo-500/20 bg-indigo-500/5 p-5">
+                    <div className="mb-4 flex items-center gap-2 text-sm font-semibold text-indigo-300">
+                        <Compass className="h-4 w-4" />
+                        Profil Dominasi
                     </div>
 
-                    <IstResultChart
-                        mode="area"
-                        areaGraphPoints={
-                            safeAreaGraphPoints
-                        }
-                        labelledBy="ist-area-chart-title ist-area-chart-description"
-                    />
+                    <p className="text-lg font-bold text-white">
+                        {dominanceProfile ?? '—'}
+                    </p>
+
+                    <p className="mt-2 text-sm text-zinc-400">
+                        Perbandingan SW subtes verbal (SE, WA, AN,
+                        GE) terhadap subtes spasial (FA, WU, ZR,
+                        RA).
+                    </p>
                 </section>
-
-                <div className="mb-6 grid gap-4 lg:grid-cols-3">
-                    <section className="rounded-2xl border border-emerald-500/20 bg-emerald-500/5 p-5">
-                        <div className="mb-4 flex items-center gap-2 text-sm font-semibold text-emerald-300">
-                            <Award className="h-4 w-4" />
-                            Kekuatan utama
-                        </div>
-
-                        {safeStrongestAreas.length === 0 ? (
-                            <p className="text-sm text-zinc-500">
-                                Belum tersedia.
-                            </p>
-                        ) : (
-                            <div className="space-y-2">
-                                {safeStrongestAreas.map(
-                                    (area) => (
-                                        <div
-                                            key={area}
-                                            className="rounded-xl border border-emerald-500/20 bg-zinc-950/40 px-4 py-3 text-sm font-semibold text-white"
-                                        >
-                                            {areaLabel(area)}
-                                        </div>
-                                    ),
-                                )}
-                            </div>
-                        )}
-                    </section>
-
-                    <section className="rounded-2xl border border-amber-500/20 bg-amber-500/5 p-5">
-                        <div className="mb-4 flex items-center gap-2 text-sm font-semibold text-amber-300">
-                            <Target className="h-4 w-4" />
-                            Area pengembangan
-                        </div>
-
-                        {safeDevelopmentAreas.length
-                            === 0 ? (
-                                <p className="text-sm text-zinc-500">
-                                    Belum tersedia.
-                                </p>
-                            ) : (
-                                <div className="space-y-2">
-                                    {safeDevelopmentAreas.map(
-                                        (area) => (
-                                            <div
-                                                key={area}
-                                                className="rounded-xl border border-amber-500/20 bg-zinc-950/40 px-4 py-3 text-sm font-semibold text-white"
-                                            >
-                                                {areaLabel(
-                                                    area,
-                                                )}
-                                            </div>
-                                        ),
-                                    )}
-                                </div>
-                            )}
-                    </section>
-
-                    <section className="rounded-2xl border border-indigo-500/20 bg-indigo-500/5 p-5">
-                        <div className="mb-4 flex items-center gap-2 text-sm font-semibold text-indigo-300">
-                            <Lightbulb className="h-4 w-4" />
-                            Pola profil
-                        </div>
-
-                        <p className="text-lg font-bold text-white">
-                            {profileBalanceLabel ?? '—'}
-                        </p>
-
-                        <p className="mt-3 text-sm text-zinc-400">
-                            Selisih area tertinggi dan
-                            terendah:
-                        </p>
-
-                        <p className="mt-1 text-2xl font-bold text-indigo-200">
-                            {formatNumber(
-                                profileSpread,
-                            )}
-                            {profileSpread !== null
-                                && profileSpread !== ''
-                                && Number.isFinite(
-                                    Number(
-                                        profileSpread,
-                                    ),
-                                )
-                                ? '%'
-                                : ''}
-                        </p>
-                    </section>
-                </div>
 
                 <section className="mb-6 rounded-2xl border border-zinc-800 bg-zinc-900/90 p-5 shadow-xl sm:p-7">
                     <div className="mb-4 flex items-center gap-3">
@@ -542,8 +359,8 @@ export default function Result({
                                 id="ist-result-chart-description"
                                 className="text-xs text-zinc-500"
                             >
-                                Persentase hasil tiap subtes
-                                pada skala 0–100
+                                Standard score (SW) tiap subtes,
+                                rata-rata norma di 100
                             </p>
                         </div>
                     </div>
@@ -562,8 +379,8 @@ export default function Result({
                         </h2>
 
                         <p className="mt-1 text-xs text-zinc-500">
-                            Detail skor dan persentase pada
-                            setiap subtes.
+                            Raw score (RW) dan standard score
+                            (SW) pada setiap subtes.
                         </p>
                     </div>
 
@@ -579,7 +396,7 @@ export default function Result({
                             role="region"
                             aria-label="Detail skor sembilan subtes, gulir horizontal bila diperlukan"
                         >
-                            <table className="min-w-[920px] w-full border-collapse text-left text-sm">
+                            <table className="min-w-[820px] w-full border-collapse text-left text-sm">
                                 <caption className="sr-only">
                                     Rincian hasil sembilan
                                     subtes
@@ -598,14 +415,14 @@ export default function Result({
                                             scope="col"
                                             className="px-4 py-4 text-right"
                                         >
-                                            Skor diperoleh
+                                            RW
                                         </th>
 
                                         <th
                                             scope="col"
                                             className="px-4 py-4 text-right"
                                         >
-                                            Skor maksimum
+                                            SW
                                         </th>
 
                                         <th
@@ -631,16 +448,9 @@ export default function Result({
 
                                         <th
                                             scope="col"
-                                            className="px-4 py-4 text-right"
-                                        >
-                                            Kosong
-                                        </th>
-
-                                        <th
-                                            scope="col"
                                             className="px-5 py-4 text-right"
                                         >
-                                            Persentase
+                                            Kosong
                                         </th>
                                     </tr>
                                 </thead>
@@ -673,60 +483,38 @@ export default function Result({
 
                                                 <td className="px-4 py-4 text-right">
                                                     {formatNumber(
-                                                        subtest?.awardedScore,
+                                                        subtest?.rawScore,
                                                     )}
                                                 </td>
 
-                                                <td className="px-4 py-4 text-right">
+                                                <td className="px-4 py-4 text-right font-semibold text-blue-300">
                                                     {formatNumber(
-                                                        subtest?.maxScore,
+                                                        subtest?.standardScore,
                                                     )}
                                                 </td>
 
                                                 <td className="px-4 py-4 text-right">
                                                     {formatNumber(
                                                         subtest?.correctCount,
-                                                        0,
                                                     )}
                                                 </td>
 
                                                 <td className="px-4 py-4 text-right">
                                                     {formatNumber(
                                                         subtest?.partialCount,
-                                                        0,
                                                     )}
                                                 </td>
 
                                                 <td className="px-4 py-4 text-right">
                                                     {formatNumber(
                                                         subtest?.wrongCount,
-                                                        0,
                                                     )}
                                                 </td>
 
-                                                <td className="px-4 py-4 text-right">
+                                                <td className="px-5 py-4 text-right">
                                                     {formatNumber(
                                                         subtest?.blankCount,
-                                                        0,
                                                     )}
-                                                </td>
-
-                                                <td className="px-5 py-4 text-right font-semibold text-blue-300">
-                                                    {formatNumber(
-                                                        subtest?.percentage,
-                                                    )}
-
-                                                    {subtest?.percentage
-                                                        !== null
-                                                        && subtest?.percentage
-                                                        !== ''
-                                                        && Number.isFinite(
-                                                            Number(
-                                                                subtest?.percentage,
-                                                            ),
-                                                        )
-                                                        ? '%'
-                                                        : ''}
                                                 </td>
                                             </tr>
                                         ),

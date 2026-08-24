@@ -3,6 +3,8 @@
 namespace Tests\Feature\Ist\Services;
 
 use App\Exceptions\Ist\IstResultUnavailableException;
+use App\Models\IstNormSubtest;
+use App\Models\IstNormTotal;
 use App\Models\Ist\IstSubtest;
 use App\Models\Ist\IstTest;
 use App\Models\Ist\IstTestSubtest;
@@ -10,7 +12,6 @@ use App\Services\Ist\IstResultService;
 use App\Services\Ist\IstTestLifecycleService;
 use App\Support\Ist\IstAnswerType;
 use Carbon\CarbonImmutable;
-use ReflectionMethod;
 
 class IstResultServiceTest extends IstDatabaseTestCase
 {
@@ -35,6 +36,7 @@ class IstResultServiceTest extends IstDatabaseTestCase
     public function test_completed_result_is_ordered_has_graph_integer_duration_and_is_read_only(): void
     {
         $test = $this->completedTest();
+        $this->seedNorms($test->age);
         $updatedAt = $test->updated_at->toISOString();
         $runtimeTimestamps = $test->subtests()
             ->orderBy('sequence')
@@ -54,60 +56,18 @@ class IstResultServiceTest extends IstDatabaseTestCase
             $result->subtests,
         ));
         $this->assertCount(9, $result->graphPoints);
-        $this->assertSame(['code' => 'SE', 'percentage' => 10.0], $result->graphPoints[0]);
-        $this->assertSame([
-            'verbal' => 25.0,
-            'numeric' => 55.0,
-            'figural' => 75.0,
-            'memory' => 90.0,
-        ], $result->areaScores);
+        $this->assertSame(['code' => 'SE', 'standardScore' => 91], $result->graphPoints[0]);
+        $this->assertSame(1, $result->subtests[0]->rawScore);
+        $this->assertSame(91, $result->subtests[0]->standardScore);
+        $this->assertSame(9, $result->subtests[8]->rawScore);
+        $this->assertSame(99, $result->subtests[8]->standardScore);
 
-        $this->assertSame([
-            [
-                'key' => 'verbal',
-                'label' => 'Verbal',
-                'percentage' => 25.0,
-            ],
-            [
-                'key' => 'numeric',
-                'label' => 'Numerik',
-                'percentage' => 55.0,
-            ],
-            [
-                'key' => 'figural',
-                'label' => 'Figural',
-                'percentage' => 75.0,
-            ],
-            [
-                'key' => 'memory',
-                'label' => 'Memori',
-                'percentage' => 90.0,
-            ],
-        ], $result->areaGraphPoints);
-
-        $this->assertSame(61.25, $result->totalInternalScore);
-        $this->assertSame('Cukup', $result->performanceCategory);
-        $this->assertSame('Rata-rata', $result->performanceBenchmark);
-
-        $this->assertSame(
-            ['memory', 'figural'],
-            $result->strongestAreas
-        );
-
-        $this->assertSame(
-            ['verbal'],
-            $result->developmentAreas
-        );
-
-        $this->assertSame(
-            65.0,
-            $result->profileSpread
-        );
-
-        $this->assertSame(
-            'Perbedaan Kemampuan Cukup Menonjol',
-            $result->profileBalanceLabel
-        );
+        $this->assertSame(45, $result->totalRawScore);
+        $this->assertSame(855, $result->totalStandardScore);
+        $this->assertSame(97, $result->iqScore);
+        $this->assertSame('Rata-rata', $result->iqCategory);
+        // verbal (SE+WA+AN+GE=370) vs spatial (FA+WU+ZR+RA=386): diff -16.
+        $this->assertSame('M-Dominant (Spatial High)', $result->dominanceProfile);
 
         $this->assertSame(
             '25–34 tahun',
@@ -124,6 +84,20 @@ class IstResultServiceTest extends IstDatabaseTestCase
                 ])
                 ->all(),
         );
+    }
+
+    public function test_iq_gracefully_degrades_to_null_when_norm_data_is_missing(): void
+    {
+        $test = $this->completedTest();
+
+        $result = $this->service->build($test);
+
+        $this->assertSame(45, $result->totalRawScore);
+        $this->assertNull($result->totalStandardScore);
+        $this->assertNull($result->iqScore);
+        $this->assertNull($result->iqCategory);
+        $this->assertNull($result->dominanceProfile);
+        $this->assertNull($result->subtests[0]->standardScore);
     }
 
     public function test_result_dto_json_contains_no_sensitive_or_answer_payload_fields(): void
@@ -210,22 +184,38 @@ class IstResultServiceTest extends IstDatabaseTestCase
         $this->assertUnavailable($other);
     }
 
-    public function test_non_final_runtime_and_null_percentage_are_rejected(): void
+    public function test_non_final_runtime_is_rejected(): void
     {
         $test = $this->completedTest();
         $test->subtests()->where('sequence', 5)->update([
             'status' => IstTestSubtest::STATUS_ANSWERING,
         ]);
         $this->assertUnavailable($test);
+    }
 
-        // The database column is NOT NULL, so exercise the service consistency
-        // guard with a loaded model containing the otherwise-unpersistable state.
-        $loaded = $this->completedTest('Null percentage')->load('subtests');
-        $loaded->subtests->first()->setAttribute('percentage', null);
-        $method = new ReflectionMethod(IstResultService::class, 'assertResultIsConsistent');
+    private function seedNorms(int $age): void
+    {
+        $codes = ['SE', 'WA', 'AN', 'GE', 'RA', 'ZR', 'FA', 'WU', 'ME'];
 
-        $this->expectException(IstResultUnavailableException::class);
-        $method->invoke($this->service, $loaded);
+        foreach ($codes as $sequence => $code) {
+            $rawScore = $sequence + 1;
+
+            IstNormSubtest::create([
+                'subtest' => $code,
+                'raw_score' => $rawScore,
+                'standard_score' => 90 + $rawScore,
+                'min_age' => $age - 5,
+                'max_age' => $age + 5,
+            ]);
+        }
+
+        IstNormTotal::create([
+            'total_sw' => 855,
+            'iq_score' => 97,
+            'iq_category' => 'Rata-rata',
+            'min_age' => $age - 5,
+            'max_age' => $age + 5,
+        ]);
     }
 
     private function completedTest(string $participant = 'Result'): IstTest
@@ -242,7 +232,6 @@ class IstResultServiceTest extends IstDatabaseTestCase
             'started_at' => $this->startedAt,
             'finished_at' => $this->finishedAt,
             'current_subtest_sequence' => 9,
-            'total_internal_score' => 61.25,
         ]);
 
         foreach ($test->subtests()->get() as $runtime) {

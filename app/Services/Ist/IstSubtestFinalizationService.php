@@ -21,6 +21,13 @@ use Throwable;
 
 final class IstSubtestFinalizationService
 {
+    /**
+     * Per-item scoring is intentionally flat (1 point, or 0-3 for GE) so the
+     * resulting raw score can be looked up directly against IST age norm
+     * tables. Difficulty weighting no longer multiplies the point value.
+     */
+    private const NEUTRAL_DIFFICULTY = 'easy';
+
     public function __construct(
         private readonly IstAutosaveService $autosave,
         private readonly IstTimerService $timer,
@@ -225,7 +232,7 @@ final class IstSubtestFinalizationService
 
             $statistics['max_score'] += $this->calculator->weightedMaxScore(
                 $question->max_score,
-                $question->difficulty,
+                self::NEUTRAL_DIFFICULTY,
             );
 
             $statistics[$score['outcome'].'_count']++;
@@ -256,7 +263,7 @@ final class IstSubtestFinalizationService
                     ? null
                     : $answer->selected_option_key
                         === ($question->answer_key_snapshot['correct_option_key'] ?? null),
-                $question->difficulty,
+                self::NEUTRAL_DIFFICULTY,
             ),
 
             IstAnswerType::SINGLE_CHOICE_WEIGHTED => $this->scoreWeighted(
@@ -270,7 +277,7 @@ final class IstSubtestFinalizationService
                     $runtime->id,
                     'numeric answer key snapshot is unavailable',
                 ),
-                $question->difficulty,
+                self::NEUTRAL_DIFFICULTY,
             ),
 
             default => throw new InvalidIstFinalizationException(
@@ -295,7 +302,7 @@ final class IstSubtestFinalizationService
         if ($answer->selected_option_key === null) {
             return $this->calculator->scoreWeighted(
                 null,
-                $question->difficulty,
+                self::NEUTRAL_DIFFICULTY,
             );
         }
 
@@ -310,7 +317,7 @@ final class IstSubtestFinalizationService
 
         return $this->calculator->scoreWeighted(
             $scores[$answer->selected_option_key],
-            $question->difficulty,
+            self::NEUTRAL_DIFFICULTY,
         );
     }
 
@@ -334,45 +341,36 @@ final class IstSubtestFinalizationService
             throw new InvalidIstFinalizationException($runtime->id, 'exactly nine finalized subtests are required');
         }
 
-        $subtestScores = [];
+        $subtestCodes = [];
 
         foreach ($terminal as $item) {
-            if (
-                ! $item->subtest
-                || $item->percentage === null
-            ) {
+            if (! $item->subtest) {
                 throw new InvalidIstFinalizationException(
                     $runtime->id,
                     'a finalized subtest score is unavailable',
                 );
             }
 
-            $code = strtoupper(
+            $subtestCodes[] = strtoupper(
                 trim((string) $item->subtest->code)
             );
-
-            $subtestScores[$code] = (float) $item->percentage;
         }
 
-        if (count($subtestScores) !== 9) {
+        if (count(array_unique($subtestCodes)) !== 9) {
             throw new InvalidIstFinalizationException(
                 $runtime->id,
                 'exactly nine unique finalized subtest scores are required',
             );
         }
 
-        $total = $this->calculator->totalInternalScore(
-            $subtestScores
-        );
-
-        if ($total === null) {
-            throw new InvalidIstFinalizationException($runtime->id, 'overall score is not final');
-        }
-
+        // Raw score -> standard score -> IQ conversion is intentionally not
+        // done here. It is computed on demand in IstResultService from the
+        // persisted awarded_score per subtest, so results self-heal as soon
+        // as IST age norm data becomes available, instead of freezing an
+        // incomplete/invalid IQ at finalization time.
         $test->update([
             'status' => IstTest::STATUS_COMPLETED,
             'finished_at' => CarbonImmutable::instance($now),
-            'total_internal_score' => $total,
         ]);
     }
 
@@ -419,9 +417,6 @@ final class IstSubtestFinalizationService
             lockedAt: CarbonImmutable::instance($runtime->locked_at),
             nextTestSubtestId: $nextId,
             overallCompleted: $test->status === IstTest::STATUS_COMPLETED,
-            totalInternalScore: $test->total_internal_score === null
-                ? null
-                : (float) $test->total_internal_score,
         );
     }
 

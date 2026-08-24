@@ -3,6 +3,7 @@ import {
     Line,
     LineChart,
     ResponsiveContainer,
+    ReferenceLine,
     Tooltip,
     XAxis,
     YAxis,
@@ -20,21 +21,10 @@ const SUBTEST_ORDER = [
     'ME',
 ];
 
-const AREA_ORDER = [
-    'verbal',
-    'numeric',
-    'figural',
-    'memory',
-];
+const CHART_DOMAIN = [55, 145];
+const CHART_TICKS = [55, 70, 85, 100, 115, 130, 145];
 
-const AREA_LABELS = {
-    verbal: 'Verbal',
-    numeric: 'Numerik',
-    figural: 'Figural',
-    memory: 'Memori',
-};
-
-function clampPercentage(value) {
+function clampToDomain(value) {
     if (
         value === null
         || value === ''
@@ -46,14 +36,14 @@ function clampPercentage(value) {
     const numeric = Number(value);
 
     return Number.isFinite(numeric)
-        ? Math.min(100, Math.max(0, numeric))
+        ? Math.min(
+            CHART_DOMAIN[1],
+            Math.max(CHART_DOMAIN[0], numeric),
+        )
         : null;
 }
 
-function formatNumber(
-    value,
-    maximumFractionDigits = 3,
-) {
+function formatNumber(value) {
     if (
         value === null
         || value === ''
@@ -69,23 +59,11 @@ function formatNumber(
     }
 
     return new Intl.NumberFormat('id-ID', {
-        maximumFractionDigits,
+        maximumFractionDigits: 0,
     }).format(numeric);
 }
 
-function formatPercentage(value) {
-    const formatted = formatNumber(value);
-
-    return formatted === '—'
-        ? formatted
-        : `${formatted}%`;
-}
-
-function ChartTooltip({
-    active,
-    payload,
-    mode,
-}) {
+function ChartTooltip({ active, payload }) {
     if (!active || !payload?.length) {
         return null;
     }
@@ -95,198 +73,62 @@ function ChartTooltip({
     return (
         <div className="rounded-xl border border-zinc-700 bg-zinc-900/95 px-3 py-2 text-xs shadow-xl">
             <p className="font-semibold text-white">
-                {mode === 'area' ? (
-                    point?.label ?? '—'
-                ) : (
-                    <>
-                        <span className="font-mono text-blue-300">
-                            {point?.code ?? '—'}
-                        </span>
+                <span className="font-mono text-blue-300">
+                    {point?.code ?? '—'}
+                </span>
 
-                        {point?.name
-                            ? ` — ${point.name}`
-                            : ''}
-                    </>
-                )}
+                {point?.name ? ` — ${point.name}` : ''}
             </p>
 
             <dl className="mt-2 space-y-1 text-zinc-300">
                 <div className="flex justify-between gap-5">
-                    <dt>Persentase</dt>
+                    <dt>Standard score (SW)</dt>
 
                     <dd className="font-semibold text-blue-300">
-                        {formatPercentage(
-                            point?.percentage
-                        )}
+                        {formatNumber(point?.standardScore)}
                     </dd>
                 </div>
 
-                {mode === 'subtest' && (
-                    <div className="flex justify-between gap-5">
-                        <dt>Skor</dt>
+                <div className="flex justify-between gap-5">
+                    <dt>Raw score (RW)</dt>
 
-                        <dd>
-                            {formatNumber(
-                                point?.awardedScore
-                            )}
-                            {' / '}
-                            {formatNumber(
-                                point?.maxScore
-                            )}
-                        </dd>
-                    </div>
-                )}
+                    <dd>{formatNumber(point?.rawScore)}</dd>
+                </div>
             </dl>
 
-            {point?.isOutsideRange && (
+            {point?.standardScore === null && (
                 <p className="mt-2 max-w-56 text-amber-300">
-                    Nilai sumber di luar rentang 0–100;
-                    posisi visual dibatasi pada rentang
-                    grafik.
+                    Data norma usia untuk subtes ini belum tersedia.
                 </p>
             )}
         </div>
     );
 }
 
-function buildSubtestData(
-    graphPoints,
-    subtests,
-) {
+function buildSubtestData(graphPoints, subtests) {
     const graphByCode = new Map(
-        graphPoints.map(
-            (point) => [
-                point?.code,
-                point,
-            ],
-        ),
+        graphPoints.map((point) => [point?.code, point]),
     );
 
     const subtestByCode = new Map(
-        subtests.map(
-            (subtest) => [
-                subtest?.code,
-                subtest,
-            ],
-        ),
+        subtests.map((subtest) => [subtest?.code, subtest]),
     );
 
     return SUBTEST_ORDER.map((code) => {
-        const graphPoint =
-            graphByCode.get(code);
+        const graphPoint = graphByCode.get(code);
+        const subtest = subtestByCode.get(code);
 
-        const subtest =
-            subtestByCode.get(code);
-
-        const percentage =
-            subtest?.percentage
-            ?? graphPoint?.percentage
+        const standardScore =
+            subtest?.standardScore
+            ?? graphPoint?.standardScore
             ?? null;
-
-        const numericPercentage =
-            percentage === null
-            || percentage === ''
-                ? null
-                : Number(percentage);
 
         return {
             code,
-            label: code,
-            name:
-                subtest?.name
-                ?? graphPoint?.name
-                ?? null,
-
-            percentage:
-                Number.isFinite(
-                    numericPercentage
-                )
-                    ? numericPercentage
-                    : null,
-
-            visualPercentage:
-                clampPercentage(
-                    percentage
-                ),
-
-            awardedScore:
-                subtest?.awardedScore
-                ?? graphPoint?.awardedScore
-                ?? null,
-
-            maxScore:
-                subtest?.maxScore
-                ?? graphPoint?.maxScore
-                ?? null,
-
-            isOutsideRange:
-                Number.isFinite(
-                    numericPercentage
-                )
-                && (
-                    numericPercentage < 0
-                    || numericPercentage > 100
-                ),
-        };
-    });
-}
-
-function buildAreaData(
-    areaGraphPoints,
-) {
-    const areaByKey = new Map(
-        areaGraphPoints.map(
-            (point) => [
-                point?.key,
-                point,
-            ],
-        ),
-    );
-
-    return AREA_ORDER.map((key) => {
-        const point =
-            areaByKey.get(key);
-
-        const percentage =
-            point?.percentage
-            ?? null;
-
-        const numericPercentage =
-            percentage === null
-            || percentage === ''
-                ? null
-                : Number(percentage);
-
-        return {
-            key,
-            code: key,
-            label:
-                point?.label
-                ?? AREA_LABELS[key],
-
-            percentage:
-                Number.isFinite(
-                    numericPercentage
-                )
-                    ? numericPercentage
-                    : null,
-
-            visualPercentage:
-                clampPercentage(
-                    percentage
-                ),
-
-            awardedScore: null,
-            maxScore: null,
-
-            isOutsideRange:
-                Number.isFinite(
-                    numericPercentage
-                )
-                && (
-                    numericPercentage < 0
-                    || numericPercentage > 100
-                ),
+            name: subtest?.name ?? null,
+            standardScore,
+            rawScore: subtest?.rawScore ?? null,
+            visualStandardScore: clampToDomain(standardScore),
         };
     });
 }
@@ -294,44 +136,15 @@ function buildAreaData(
 export default function IstResultChart({
     graphPoints = [],
     subtests = [],
-    areaGraphPoints = [],
-    mode = 'subtest',
     labelledBy = 'ist-result-chart-title ist-result-chart-description',
 }) {
-    const safeGraphPoints =
-        Array.isArray(graphPoints)
-            ? graphPoints
-            : [];
+    const safeGraphPoints = Array.isArray(graphPoints) ? graphPoints : [];
+    const safeSubtests = Array.isArray(subtests) ? subtests : [];
 
-    const safeSubtests =
-        Array.isArray(subtests)
-            ? subtests
-            : [];
-
-    const safeAreaGraphPoints =
-        Array.isArray(areaGraphPoints)
-            ? areaGraphPoints
-            : [];
-
-    const isAreaMode =
-        mode === 'area';
-
-    const data = isAreaMode
-        ? buildAreaData(
-            safeAreaGraphPoints
-        )
-        : buildSubtestData(
-            safeGraphPoints,
-            safeSubtests
-        );
+    const data = buildSubtestData(safeGraphPoints, safeSubtests);
 
     const hasSourceData =
-        isAreaMode
-            ? safeAreaGraphPoints.length > 0
-            : (
-                safeGraphPoints.length > 0
-                || safeSubtests.length > 0
-            );
+        safeGraphPoints.length > 0 || safeSubtests.length > 0;
 
     if (!hasSourceData) {
         return (
@@ -347,10 +160,7 @@ export default function IstResultChart({
             role="img"
             aria-labelledby={labelledBy}
         >
-            <ResponsiveContainer
-                width="100%"
-                height="100%"
-            >
+            <ResponsiveContainer width="100%" height="100%">
                 <LineChart
                     data={data}
                     margin={{
@@ -367,65 +177,40 @@ export default function IstResultChart({
                     />
 
                     <XAxis
-                        dataKey={
-                            isAreaMode
-                                ? 'label'
-                                : 'code'
-                        }
+                        dataKey="code"
                         tick={{
                             fill: '#d4d4d8',
                             fontSize: 12,
                             fontWeight: 700,
                         }}
                         tickLine={false}
-                        axisLine={{
-                            stroke: '#52525b',
-                        }}
+                        axisLine={{ stroke: '#52525b' }}
                     />
 
                     <YAxis
-                        domain={[0, 100]}
-                        ticks={[
-                            0,
-                            20,
-                            40,
-                            60,
-                            80,
-                            100,
-                        ]}
-                        tickFormatter={
-                            (value) =>
-                                `${value}%`
-                        }
+                        domain={CHART_DOMAIN}
+                        ticks={CHART_TICKS}
                         tick={{
                             fill: '#a1a1aa',
                             fontSize: 11,
                         }}
                         tickLine={false}
                         axisLine={false}
-                        width={44}
+                        width={36}
                     />
 
-                    <Tooltip
-                        content={
-                            <ChartTooltip
-                                mode={
-                                    isAreaMode
-                                        ? 'area'
-                                        : 'subtest'
-                                }
-                            />
-                        }
+                    <ReferenceLine
+                        y={100}
+                        stroke="#52525b"
+                        strokeDasharray="4 4"
                     />
+
+                    <Tooltip content={<ChartTooltip />} />
 
                     <Line
-                        name={
-                            isAreaMode
-                                ? 'Skor area'
-                                : 'Persentase subtes'
-                        }
+                        name="Standard score subtes"
                         type="linear"
-                        dataKey="visualPercentage"
+                        dataKey="visualStandardScore"
                         stroke="#60a5fa"
                         strokeWidth={3}
                         dot={{

@@ -44,24 +44,21 @@ final class IstParticipantCopyContractTest extends TestCase
         $this->assertLegacyParticipantCopyAbsent($work.$question.$image);
     }
 
-    public function test_result_uses_final_four_area_internal_score_copy_without_normative_claims(): void
+    public function test_result_uses_iq_norm_based_raw_and_standard_score_copy(): void
     {
         $source = $this->source('resources/js/Pages/IST/Result.jsx');
 
         $this->assertStringContainsString('<Head title="Hasil Asesmen Kemampuan Kognitif" />', $source);
         $this->assertStringContainsString('Asesmen Kemampuan Kognitif', $source);
         $this->assertStringContainsString('Ringkasan Hasil', $source);
-        $this->assertStringContainsString('Indeks Performa Kognitif', $source);
-        $this->assertStringContainsString('Skor keseluruhan dari rata-rata', $source);
-        $this->assertStringContainsString('empat area kemampuan.', $source);
-        $this->assertStringContainsString('Profil Empat Area Kemampuan', $source);
-        foreach (['Verbal', 'Numerik', 'Figural', 'Memori'] as $area) {
-            $this->assertStringContainsString($area, $source);
-        }
+        $this->assertStringContainsString('Skor IQ', $source);
+        $this->assertStringContainsString('Total SW', $source);
+        $this->assertStringContainsString('Total RW', $source);
+        $this->assertStringContainsString('Profil Dominasi', $source);
         $this->assertStringContainsString('Profil Sembilan Subtes', $source);
         $this->assertStringContainsString('Rincian Hasil Sembilan Subtes', $source);
-        $this->assertDoesNotMatchRegularExpression('/\bIQ\b/ui', $source);
-        $this->assertDoesNotMatchRegularExpression('/\bnorma(?:tif)?\b/ui', $source);
+        $this->assertMatchesRegularExpression('/\bIQ\b/u', $source);
+        $this->assertMatchesRegularExpression('/\bnorma\b/ui', $source);
         $this->assertLegacyParticipantCopyAbsent($source);
     }
 
@@ -102,7 +99,7 @@ final class IstParticipantCopyContractTest extends TestCase
         $this->assertStringContainsString("Route::prefix('ist')->name('ist.')", $routes);
     }
 
-    public function test_chart_preserves_subtest_order_and_supports_final_area_profile(): void
+    public function test_chart_preserves_subtest_order_and_supports_standard_score_profile(): void
     {
         $source = $this->source('resources/js/Components/IST/IstResultChart.jsx');
 
@@ -110,15 +107,10 @@ final class IstParticipantCopyContractTest extends TestCase
             "/const SUBTEST_ORDER = \[\s*'SE',\s*'WA',\s*'AN',\s*'GE',\s*'RA',\s*'ZR',\s*'FA',\s*'WU',\s*'ME',?\s*\];/",
             $source,
         );
-        $this->assertMatchesRegularExpression(
-            "/const AREA_ORDER = \[\s*'verbal',\s*'numeric',\s*'figural',\s*'memory',?\s*\];/",
-            $source,
-        );
         $this->assertStringContainsString('Number.isFinite(', $source);
-        $this->assertStringContainsString('visualPercentage:', $source);
-        $this->assertStringContainsString('awardedScore:', $source);
-        $this->assertStringContainsString('maxScore:', $source);
-        $this->assertStringContainsString("mode === 'area'", $source);
+        $this->assertStringContainsString('visualStandardScore:', $source);
+        $this->assertStringContainsString('rawScore:', $source);
+        $this->assertStringContainsString('standardScore', $source);
     }
 
     private function assertLegacyParticipantCopyAbsent(string $source): void

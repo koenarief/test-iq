@@ -1,6 +1,7 @@
 <?php
 namespace App\Services\Ist;
 
+use App\Exceptions\Ist\IstNormLookupException;
 use App\Models\IstTestSession;
 use App\Models\IstAnswerKey;
 use App\Models\IstNormSubtest;
@@ -10,6 +11,67 @@ use Illuminate\Support\Facades\DB;
 
 class IstScoringService
 {
+    /**
+     * Konversi raw score (RW) per subtes yang sudah dihitung di tempat lain
+     * (mis. dari runtime tes online) menjadi standard score (SW), Total SW,
+     * IQ, dan profil dominasi berdasarkan tabel norma usia.
+     *
+     * Berbeda dari processScoring()/calculateSessionScore(), method ini tidak
+     * menyentuh ist_answer_keys atau ist_user_responses sama sekali — RW
+     * sudah harus dihitung oleh caller. Melempar IstNormLookupException bila
+     * data norma untuk subtes/usia/skor tertentu belum tersedia, alih-alih
+     * diam-diam memakai nilai default, supaya hasil yang tidak valid tidak
+     * pernah ditampilkan seolah-olah nyata.
+     *
+     * @param  array<string,int>  $rawScores  RW per kode subtes (SE, WA, AN, GE, RA, ZR, FA, WU, ME)
+     * @return array{
+     *     standard_scores: array<string,int>,
+     *     total_standard_score: int,
+     *     iq_score: int,
+     *     iq_category: string,
+     *     dominance_profile: string,
+     * }
+     *
+     * @throws IstNormLookupException
+     */
+    public function calculateFromRawScores(array $rawScores, int $age): array
+    {
+        $subtests = ['SE', 'WA', 'AN', 'GE', 'RA', 'ZR', 'FA', 'WU', 'ME'];
+        $standardScores = [];
+
+        foreach ($subtests as $subtest) {
+            if (! array_key_exists($subtest, $rawScores)) {
+                throw new IstNormLookupException($subtest, $age, 0);
+            }
+
+            $rw = (int) $rawScores[$subtest];
+
+            $norm = IstNormSubtest::lookup($age, $subtest, $rw)->first();
+
+            if (! $norm) {
+                throw new IstNormLookupException($subtest, $age, $rw);
+            }
+
+            $standardScores[$subtest] = $norm->standard_score;
+        }
+
+        $totalSw = array_sum($standardScores);
+
+        $normTotal = IstNormTotal::lookup($age, $totalSw)->first();
+
+        if (! $normTotal) {
+            throw new IstNormLookupException('total', $age, $totalSw);
+        }
+
+        return [
+            'standard_scores' => $standardScores,
+            'total_standard_score' => $totalSw,
+            'iq_score' => $normTotal->iq_score,
+            'iq_category' => $normTotal->iq_category,
+            'dominance_profile' => $this->calculateDominanceProfile($standardScores),
+        ];
+    }
+
     /**
      * Hitung otomatis seluruh skor dan simpan ke database
      */
