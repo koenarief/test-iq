@@ -83,7 +83,7 @@ class IstScoringServiceTest extends IstDatabaseTestCase
         $this->createNormSubtest('GE', 2, 105);
         $this->createNormSubtest('FA', 1, 90);
 
-        $this->createNormTotal(900, 115, 'Tinggi');
+        $this->createNormTotal(100, 115, 'Tinggi');
 
         $session = $this->createSession(age: 20);
 
@@ -114,7 +114,8 @@ class IstScoringServiceTest extends IstDatabaseTestCase
         $this->assertSame(100, $result->sw_zr);
         $this->assertSame(100, $result->sw_wu);
         $this->assertSame(100, $result->sw_me);
-        $this->assertSame(900, $result->total_sw);
+        // Total SW is the mean (not sum) of the 9 subtest SW values.
+        $this->assertSame(100, $result->total_sw);
 
         $this->assertSame(115, $result->iq_score);
         $this->assertSame('Tinggi', $result->iq_category);
@@ -155,7 +156,7 @@ class IstScoringServiceTest extends IstDatabaseTestCase
 
         $this->assertSame(1, $result->rw_se);
         $this->assertSame(100, $result->sw_se);
-        $this->assertSame(900, $result->total_sw);
+        $this->assertSame(100, $result->total_sw);
         $this->assertNull($result->iq_score);
         $this->assertNull($result->iq_category);
     }
@@ -207,7 +208,9 @@ class IstScoringServiceTest extends IstDatabaseTestCase
 
         $this->createNormSubtest('SE', 1, 97);
         $this->createNormSubtest('GE', 2, 102);
-        $this->createNormTotal(899, 108, 'Rata-Rata');
+        // Mean of the 9 subtest SW values (97, 102, and seven fallback 100s)
+        // rounds to 100, not their sum (899).
+        $this->createNormTotal(100, 108, 'Rata-Rata');
 
         $result = $this->service->calculateSessionScore($session->id);
 
@@ -218,7 +221,7 @@ class IstScoringServiceTest extends IstDatabaseTestCase
         $this->assertSame(97, $result['subtest_sw']['SE']);
         $this->assertSame(102, $result['subtest_sw']['GE']);
         $this->assertSame(100, $result['subtest_sw']['AN']);
-        $this->assertSame(899, $result['total_sw']);
+        $this->assertSame(100, $result['total_sw']);
         $this->assertSame(108, $result['iq_score']);
         $this->assertSame('Rata-Rata', $result['iq_category']);
         $this->assertSame('Dominan Verbal / Konseptual', $result['dominance']);
@@ -237,7 +240,7 @@ class IstScoringServiceTest extends IstDatabaseTestCase
         ]);
 
         $fresh = $session->fresh();
-        $this->assertSame(899, $fresh->total_sw);
+        $this->assertSame(100, $fresh->total_sw);
         $this->assertSame(108, $fresh->iq_score);
         $this->assertSame('Rata-Rata', $fresh->iq_category);
         $this->assertSame('Dominan Verbal / Konseptual', $fresh->dominance_type);

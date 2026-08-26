@@ -63,7 +63,8 @@ class IstResultServiceTest extends IstDatabaseTestCase
         $this->assertSame(99, $result->subtests[8]->standardScore);
 
         $this->assertSame(45, $result->totalRawScore);
-        $this->assertSame(855, $result->totalStandardScore);
+        // Total SW is the mean (not sum) of the 9 subtest SW values: 855 / 9 = 95.
+        $this->assertSame(95, $result->totalStandardScore);
         $this->assertSame(97, $result->iqScore);
         $this->assertSame('Rata-rata', $result->iqCategory);
         // verbal (SE+WA+AN+GE=370) vs spatial (FA+WU+ZR+RA=386): diff -16.
@@ -210,7 +211,8 @@ class IstResultServiceTest extends IstDatabaseTestCase
         }
 
         IstNormTotal::create([
-            'total_sw' => 855,
+            // Mean of standard scores 91..99 = 95, not their sum (855).
+            'total_sw' => 95,
             'iq_score' => 97,
             'iq_category' => 'Rata-rata',
             'min_age' => $age - 5,

@@ -23,6 +23,12 @@ class IstScoringService
      * diam-diam memakai nilai default, supaya hasil yang tidak valid tidak
      * pernah ditampilkan seolah-olah nyata.
      *
+     * Total SW pada tabel norma Gesamt adalah RATA-RATA (bukan jumlah) dari
+     * 9 SW subtes, dibulatkan ke bilangan bulat terdekat — dikonfirmasi dari
+     * tabel norma resmi (storage/app/Skoring_Tes_IST_3_Sheet.xlsx, sheet
+     * NORMA), yang indeks Total SW-nya hanya berjangkau 0-180, sama seperti
+     * skala SW satu subtes, bukan skala 500-1000+ hasil penjumlahan 9 subtes.
+     *
      * @param  array<string,int>  $rawScores  RW per kode subtes (SE, WA, AN, GE, RA, ZR, FA, WU, ME)
      * @return array{
      *     standard_scores: array<string,int>,
@@ -55,7 +61,7 @@ class IstScoringService
             $standardScores[$subtest] = $norm->standard_score;
         }
 
-        $totalSw = array_sum($standardScores);
+        $totalSw = (int) round(array_sum($standardScores) / count($standardScores));
 
         $normTotal = IstNormTotal::lookup($age, $totalSw)->first();
 
@@ -157,7 +163,9 @@ class IstScoringService
                 $session->$swCol = $sw;
             }
 
-            $totalSw = array_sum($standardScores);
+            // Total SW = rata-rata (bukan jumlah) 9 SW subtes, dibulatkan;
+            // lihat catatan pada calculateFromRawScores().
+            $totalSw = (int) round(array_sum($standardScores) / count($standardScores));
             $session->total_sw = $totalSw;
 
             // 5. Lookup TOTAL SW -> IQ & Kategori Psikotes
@@ -282,16 +290,18 @@ class IstScoringService
         // 3. Lookup Standard Score (SW) per Subtes berdasarkan Usia
         $subtestSw = [];
         $subtestCategory = [];
-        $totalSw = 0;
 
         foreach ($subtestRw as $subtest => $rw) {
             $norm = IstNormSubtest::lookup($age, $subtest, $rw)->first();
             $sw = $norm ? $norm->standard_score : 100; // default 100 jika tidak ditemukan
-            
+
             $subtestSw[$subtest] = $sw;
             $subtestCategory[$subtest] = $this->getSubtestCategory($sw);
-            $totalSw += $sw;
         }
+
+        // Total SW = rata-rata (bukan jumlah) 9 SW subtes, dibulatkan;
+        // lihat catatan pada calculateFromRawScores().
+        $totalSw = (int) round(array_sum($subtestSw) / count($subtestSw));
 
         // 4. Lookup Gesamt IQ Score & Kategori berdasarkan Total SW
         $normTotal = IstNormTotal::lookup($age, $totalSw)->first();
