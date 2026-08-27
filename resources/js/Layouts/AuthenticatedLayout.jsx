@@ -30,6 +30,44 @@ export default function AuthenticatedLayout({ header, children }) {
                                 >
                                     Dashboard
                                 </NavLink>
+                                <NavLink
+                                    href={route('admin.ist-questions.index')}
+                                    active={route().current(
+                                        'admin.ist-questions.*',
+                                    )}
+                                >
+                                    Soal IST
+                                </NavLink>
+                                <NavLink
+                                    href={route('admin.ist-answer-keys.index')}
+                                    active={route().current(
+                                        'admin.ist-answer-keys.*',
+                                    )}
+                                >
+                                    Kunci Jawaban
+                                </NavLink>
+                                <NavLink
+                                    href={route('admin.ist-results.index')}
+                                    active={route().current(
+                                        'admin.ist-results.*',
+                                    )}
+                                >
+                                    Hasil IST
+                                </NavLink>
+                                <NavLink
+                                    href={route('admin.disc-results.index')}
+                                    active={route().current(
+                                        'admin.disc-results.*',
+                                    )}
+                                >
+                                    Hasil DISC
+                                </NavLink>
+                                <NavLink
+                                    href={route('admin.users.index')}
+                                    active={route().current('admin.users.*')}
+                                >
+                                    User
+                                </NavLink>
                             </div>
                         </div>
 
@@ -133,6 +171,40 @@ export default function AuthenticatedLayout({ header, children }) {
                             active={route().current('dashboard')}
                         >
                             Dashboard
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink
+                            href={route('admin.ist-questions.index')}
+                            active={route().current('admin.ist-questions.*')}
+                        >
+                            Soal IST
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink
+                            href={route('admin.ist-answer-keys.index')}
+                            active={route().current(
+                                'admin.ist-answer-keys.*',
+                            )}
+                        >
+                            Kunci Jawaban
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink
+                            href={route('admin.ist-results.index')}
+                            active={route().current('admin.ist-results.*')}
+                        >
+                            Hasil IST
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink
+                            href={route('admin.disc-results.index')}
+                            active={route().current(
+                                'admin.disc-results.*',
+                            )}
+                        >
+                            Hasil DISC
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink
+                            href={route('admin.users.index')}
+                            active={route().current('admin.users.*')}
+                        >
+                            User
                         </ResponsiveNavLink>
                     </div>
 

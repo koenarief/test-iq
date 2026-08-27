@@ -5,6 +5,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Disc\DiscTestController;
+use App\Http\Controllers\Admin\IstAnswerKeyController;
+use App\Http\Controllers\Admin\IstQuestionController;
+use App\Http\Controllers\Admin\IstResultController;
+use App\Http\Controllers\Admin\DiscResultController;
+use App\Http\Controllers\Admin\UserController;
 use Inertia\Inertia;
 
 Route::get('/', [LandingController::class, 'index'])
@@ -59,6 +64,32 @@ Route::middleware('auth')->group(function () {
 
     Route::delete('/profile', [ProfileController::class, 'destroy'])
         ->name('profile.destroy');
+
+    Route::prefix('admin')
+        ->name('admin.')
+        ->group(function () {
+            Route::resource('ist-questions', IstQuestionController::class)
+                ->parameters(['ist-questions' => 'question'])
+                ->except('show');
+
+            Route::resource('ist-answer-keys', IstAnswerKeyController::class)
+                ->parameters(['ist-answer-keys' => 'answerKey'])
+                ->except('show');
+
+            Route::get('ist-results', [IstResultController::class, 'index'])
+                ->name('ist-results.index');
+            Route::get('ist-results/{test:public_id}', [IstResultController::class, 'show'])
+                ->whereUuid('test')
+                ->name('ist-results.show');
+
+            Route::get('disc-results', [DiscResultController::class, 'index'])
+                ->name('disc-results.index');
+            Route::get('disc-results/{discTest}', [DiscResultController::class, 'show'])
+                ->name('disc-results.show');
+
+            Route::resource('users', UserController::class)
+                ->except('show');
+        });
 });
 
 Route::get('/ist/fa-preview', function () {
