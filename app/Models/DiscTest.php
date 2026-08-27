@@ -14,6 +14,7 @@ class DiscTest extends Model
 {
     protected $fillable = [
     'user_id',
+    'merchant_id',
     'participant_name',
     'age',
     'gender',
@@ -60,5 +61,10 @@ class DiscTest extends Model
     public function profile(): BelongsTo
     {
         return $this->belongsTo(DiscProfile::class, 'disc_profile_id');
+    }
+
+    public function merchant(): BelongsTo
+    {
+        return $this->belongsTo(Merchant::class);
     }
 }

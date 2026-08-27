@@ -84,6 +84,12 @@ export default function Show({ test, result, unavailableReason }) {
                                 {test.age} tahun ·{' '}
                                 {genderLabel(test.gender)}
                             </p>
+                            <p className="mt-1 text-sm text-gray-600">
+                                Merchant:{' '}
+                                <span className="font-medium text-gray-800">
+                                    {test.merchant_name ?? 'Umum'}
+                                </span>
+                            </p>
                         </div>
                         <div>
                             <p className="text-xs uppercase tracking-wide text-gray-500">

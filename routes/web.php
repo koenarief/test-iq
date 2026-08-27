@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\IstQuestionController;
 use App\Http\Controllers\Admin\IstResultController;
 use App\Http\Controllers\Admin\DiscResultController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\MerchantController;
 use Inertia\Inertia;
 
 Route::get('/', [LandingController::class, 'index'])
@@ -27,6 +28,10 @@ Route::prefix('disc')
 
         Route::get('/', [DiscTestController::class, 'index'])
             ->name('index');
+
+        Route::get('/m/{merchant}', [DiscTestController::class, 'index'])
+            ->whereUuid('merchant')
+            ->name('index.merchant');
 
         Route::post('/start', [DiscTestController::class, 'start'])
             ->name('start');
@@ -89,6 +94,10 @@ Route::middleware('auth')->group(function () {
 
             Route::resource('users', UserController::class)
                 ->except('show');
+
+            Route::resource('merchants', MerchantController::class)
+                ->except('show')
+                ->where(['merchant' => '[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}']);
         });
 });
 

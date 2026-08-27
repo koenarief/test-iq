@@ -3,7 +3,7 @@ import PublicLayout from '@/Layouts/PublicLayout';
 import { motion } from 'motion/react';
 import { User, Calendar, Users, ArrowRight, ArrowLeft, ShieldCheck } from 'lucide-react';
 
-export default function Biodata() {
+export default function Biodata({ merchantName = null }) {
     const { data, setData, post, processing, errors } = useForm({
         participant_name: '',
         age: '',
@@ -52,6 +52,11 @@ export default function Biodata() {
                             <p className="text-xs sm:text-sm text-zinc-400 mt-1 leading-relaxed">
                                 Isikan informasi biodata Anda dengan benar sebelum memulai sesi psikotes DISC.
                             </p>
+                            {merchantName && (
+                                <span className="mt-3 inline-flex items-center gap-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 px-3 py-1 text-xs font-medium text-blue-300">
+                                    Terdaftar melalui merchant: {merchantName}
+                                </span>
+                            )}
                         </div>
 
                         {/* Form Body */}

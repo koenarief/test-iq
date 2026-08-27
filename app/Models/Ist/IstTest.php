@@ -2,6 +2,7 @@
 
 namespace App\Models\Ist;
 
+use App\Models\Merchant;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -25,6 +26,7 @@ class IstTest extends Model
         'public_id',
         'access_token_hash',
         'user_id',
+        'merchant_id',
         'participant_name',
         'age',
         'gender',
@@ -49,6 +51,11 @@ class IstTest extends Model
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function merchant(): BelongsTo
+    {
+        return $this->belongsTo(Merchant::class);
     }
 
     public function subtests(): HasMany

@@ -10,7 +10,7 @@ export default function Dashboard() {
                 </h2>
             }
         >
-            <Head title="Dashboard" />
+            <Head title="Dashboard Admin" />
 
             <div className="py-12">
                 <div className="mx-auto grid max-w-7xl gap-6 sm:px-6 md:grid-cols-2 lg:px-8">
@@ -77,6 +77,19 @@ export default function Dashboard() {
                         <p className="mt-1 text-sm text-gray-600">
                             Tambah, ubah, dan hapus akun user yang bisa login
                             ke halaman admin ini.
+                        </p>
+                    </Link>
+
+                    <Link
+                        href={route('admin.merchants.index')}
+                        className="block overflow-hidden bg-white p-6 shadow-sm transition hover:shadow-md sm:rounded-lg"
+                    >
+                        <h3 className="text-lg font-semibold text-gray-900">
+                            Merchant
+                        </h3>
+                        <p className="mt-1 text-sm text-gray-600">
+                            Kelola data merchant dan dapatkan link mulai tes
+                            khusus tiap merchant.
                         </p>
                     </Link>
                 </div>

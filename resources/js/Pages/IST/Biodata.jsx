@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import IstStateNotice from '@/Components/IST/IstStateNotice';
 import PublicLayout from '@/Layouts/PublicLayout';
 
-export default function Biodata() {
+export default function Biodata({ merchantName = null }) {
     const [availabilityError, setAvailabilityError] = useState(null);
     const { data, setData, post, processing, errors, clearErrors } = useForm({
         participant_name: '',
@@ -101,6 +101,11 @@ export default function Biodata() {
                             <div className="mb-6">
                                 <p className="text-xs font-mono uppercase tracking-widest text-blue-400">Biodata peserta</p>
                                 <h2 className="mt-1 text-xl font-bold text-white">Lengkapi data diri dengan benar</h2>
+                                {merchantName && (
+                                    <span className="mt-3 inline-flex items-center gap-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 px-3 py-1 text-xs font-medium text-blue-300">
+                                        Terdaftar melalui merchant: {merchantName}
+                                    </span>
+                                )}
                             </div>
 
                             {availabilityError && (

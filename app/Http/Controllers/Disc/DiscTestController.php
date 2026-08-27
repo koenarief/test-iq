@@ -9,6 +9,7 @@ use App\Models\DiscGraphConversion;
 use App\Models\DiscProfile;
 use App\Models\DiscQuestion;
 use App\Models\DiscTest;
+use App\Models\Merchant;
 use App\Services\DiscSummaryService;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -18,6 +19,8 @@ use Inertia\Response;
 
 class DiscTestController extends Controller
 {
+    private const SESSION_MERCHANT_KEY = 'disc.merchant_id';
+
     public function __construct(
         private DiscSummaryService $discSummaryService
     ) {}
@@ -25,9 +28,17 @@ class DiscTestController extends Controller
     /**
      * Form Biodata
      */
-    public function index(): Response
+    public function index(Request $request, ?Merchant $merchant = null): Response
     {
-        return Inertia::render('DISC/Biodata');
+        if ($merchant !== null && ! $merchant->is_active) {
+            abort(404);
+        }
+
+        $request->session()->put(self::SESSION_MERCHANT_KEY, $merchant?->id);
+
+        return Inertia::render('DISC/Biodata', [
+            'merchantName' => $merchant?->name,
+        ]);
     }
 
     /**
@@ -35,11 +46,20 @@ class DiscTestController extends Controller
      */
     public function start(StartDiscTestRequest $request)
     {
+        $merchantId = $request->session()->get(self::SESSION_MERCHANT_KEY);
+
+        if ($merchantId !== null && ! Merchant::where('id', $merchantId)->where('is_active', true)->exists()) {
+            $merchantId = null;
+        }
+
+        $request->session()->forget(self::SESSION_MERCHANT_KEY);
+
         $discTest = DiscTest::create([
             'participant_name' => $request->participant_name,
             'age' => $request->age,
             'gender' => $request->gender,
             'status' => 'draft',
+            'merchant_id' => $merchantId,
         ]);
 
         return redirect()->route('disc.instruction', $discTest->id);

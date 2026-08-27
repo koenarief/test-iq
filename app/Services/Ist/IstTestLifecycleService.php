@@ -22,11 +22,11 @@ final class IstTestLifecycleService
 
     private const ALLOWED_GENDERS = ['L', 'P'];
 
-    public function create(array $participantData): IstTestCreationResult
+    public function create(array $participantData, ?int $merchantId = null): IstTestCreationResult
     {
         $validated = $this->validateParticipant($participantData);
 
-        return DB::transaction(function () use ($validated): IstTestCreationResult {
+        return DB::transaction(function () use ($validated, $merchantId): IstTestCreationResult {
             $subtests = IstSubtest::query()
                 ->where('is_active', true)
                 ->orderBy('sequence')
@@ -40,6 +40,7 @@ final class IstTestLifecycleService
             $test = IstTest::create([
                 'public_id' => (string) Str::uuid(),
                 'access_token_hash' => hash('sha256', $rawAccessToken),
+                'merchant_id' => $merchantId,
                 'participant_name' => $validated['participant_name'],
                 'age' => $validated['age'],
                 'gender' => $validated['gender'],

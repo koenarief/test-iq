@@ -14,10 +14,10 @@ final class CreateIstParticipantSession
         private readonly IstQuestionSnapshotService $snapshots,
     ) {}
 
-    public function create(array $participantData): IstTestCreationResult
+    public function create(array $participantData, ?int $merchantId = null): IstTestCreationResult
     {
-        return DB::transaction(function () use ($participantData): IstTestCreationResult {
-            $result = $this->lifecycle->create($participantData);
+        return DB::transaction(function () use ($participantData, $merchantId): IstTestCreationResult {
+            $result = $this->lifecycle->create($participantData, $merchantId);
 
             foreach ($result->test->subtests()->orderBy('sequence')->get() as $runtime) {
                 $this->snapshots->snapshot($runtime);

@@ -34,7 +34,7 @@ function formatDate(value) {
     }).format(date);
 }
 
-export default function Index({ tests, statuses, filters }) {
+export default function Index({ tests, statuses, merchants, filters }) {
     const [search, setSearch] = useState(filters.search ?? '');
 
     const applyFilters = (next) => {
@@ -93,19 +93,44 @@ export default function Index({ tests, statuses, filters }) {
                             ))}
                         </div>
 
-                        <form
-                            onSubmit={submitSearch}
-                            className="flex items-center gap-2"
-                        >
-                            <TextInput
-                                value={search}
-                                onChange={(e) => setSearch(e.target.value)}
-                                placeholder="Cari nama peserta..."
-                            />
-                            <SecondaryButton type="submit">
-                                Cari
-                            </SecondaryButton>
-                        </form>
+                        <div className="flex flex-wrap items-center gap-2">
+                            <select
+                                value={filters.merchant_id ?? ''}
+                                onChange={(e) =>
+                                    applyFilters({
+                                        merchant_id: e.target.value,
+                                    })
+                                }
+                                className="rounded-md border-gray-300 text-sm shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                            >
+                                <option value="">Semua Merchant</option>
+                                <option value="0">Peserta Umum</option>
+                                {merchants.map((merchant) => (
+                                    <option
+                                        key={merchant.id}
+                                        value={merchant.id}
+                                    >
+                                        {merchant.name}
+                                    </option>
+                                ))}
+                            </select>
+
+                            <form
+                                onSubmit={submitSearch}
+                                className="flex items-center gap-2"
+                            >
+                                <TextInput
+                                    value={search}
+                                    onChange={(e) =>
+                                        setSearch(e.target.value)
+                                    }
+                                    placeholder="Cari nama peserta..."
+                                />
+                                <SecondaryButton type="submit">
+                                    Cari
+                                </SecondaryButton>
+                            </form>
+                        </div>
                     </div>
 
                     <div className="overflow-x-auto bg-white shadow-sm sm:rounded-lg">
@@ -120,6 +145,9 @@ export default function Index({ tests, statuses, filters }) {
                                     </th>
                                     <th className="px-4 py-3 text-left font-medium text-gray-500">
                                         Status
+                                    </th>
+                                    <th className="px-4 py-3 text-left font-medium text-gray-500">
+                                        Merchant
                                     </th>
                                     <th className="px-4 py-3 text-left font-medium text-gray-500">
                                         Progres
@@ -160,6 +188,13 @@ export default function Index({ tests, statuses, filters }) {
                                             </span>
                                         </td>
                                         <td className="px-4 py-3 text-gray-700">
+                                            {test.merchant?.name ?? (
+                                                <span className="text-gray-400">
+                                                    Umum
+                                                </span>
+                                            )}
+                                        </td>
+                                        <td className="px-4 py-3 text-gray-700">
                                             {test.current_subtest_sequence}/9
                                         </td>
                                         <td className="px-4 py-3 text-gray-700">
@@ -191,7 +226,7 @@ export default function Index({ tests, statuses, filters }) {
                                 {tests.data.length === 0 && (
                                     <tr>
                                         <td
-                                            colSpan={7}
+                                            colSpan={8}
                                             className="px-4 py-6 text-center text-gray-500"
                                         >
                                             Belum ada peserta untuk filter
