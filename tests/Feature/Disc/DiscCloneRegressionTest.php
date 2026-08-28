@@ -196,7 +196,9 @@ final class DiscCloneRegressionTest extends TestCase
         foreach (['D', 'I', 'S', 'C'] as $dimension) {
             $change[$dimension] = $most[$dimension] - $least[$dimension];
             $graph[$dimension] = (int) DiscGraphConversion::query()
-                ->where('change_score', $change[$dimension])
+                ->where('graph_type', 'change')
+                ->where('dimension', $dimension)
+                ->where('raw_score', $change[$dimension])
                 ->value('graph_score');
         }
 

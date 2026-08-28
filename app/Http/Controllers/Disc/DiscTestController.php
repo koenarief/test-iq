@@ -339,42 +339,14 @@ class DiscTestController extends Controller
 
             /*
              * =================================================
-             * GRAPH SCORE
+             * GRAPH SCORE (Graph I: Most, Graph II: Least,
+             * Graph III: Change) — dikonversi per dimensi dari
+             * norma-disc.xlsx via DiscGraphConversionSeeder.
              * =================================================
              */
-            $graph = [
-                'D' => DiscGraphConversion::where(
-                    'change_score',
-                    $change['D']
-                )->value('graph_score'),
-
-                'I' => DiscGraphConversion::where(
-                    'change_score',
-                    $change['I']
-                )->value('graph_score'),
-
-                'S' => DiscGraphConversion::where(
-                    'change_score',
-                    $change['S']
-                )->value('graph_score'),
-
-                'C' => DiscGraphConversion::where(
-                    'change_score',
-                    $change['C']
-                )->value('graph_score'),
-            ];
-
-            /*
-             * Fallback defensif.
-             *
-             * Idealnya tabel DiscGraphConversion memiliki seluruh
-             * range yang dibutuhkan.
-             */
-            foreach ($graph as $dimension => $score) {
-                if ($score === null) {
-                    $graph[$dimension] = 50;
-                }
-            }
+            $mostGraph = $this->convertToGraphScores('most', $most);
+            $leastGraph = $this->convertToGraphScores('least', $least);
+            $graph = $this->convertToGraphScores('change', $change);
 
             /*
              * =================================================
@@ -449,12 +421,28 @@ class DiscTestController extends Controller
                 'change_c' => $change['C'],
 
                 /*
-                 * Graph Score
+                 * Graph Score (Graph III: Change)
                  */
                 'graph_d' => $graph['D'],
                 'graph_i' => $graph['I'],
                 'graph_s' => $graph['S'],
                 'graph_c' => $graph['C'],
+
+                /*
+                 * Graph Score (Graph I: Most)
+                 */
+                'most_graph_d' => $mostGraph['D'],
+                'most_graph_i' => $mostGraph['I'],
+                'most_graph_s' => $mostGraph['S'],
+                'most_graph_c' => $mostGraph['C'],
+
+                /*
+                 * Graph Score (Graph II: Least)
+                 */
+                'least_graph_d' => $leastGraph['D'],
+                'least_graph_i' => $leastGraph['I'],
+                'least_graph_s' => $leastGraph['S'],
+                'least_graph_c' => $leastGraph['C'],
 
                 /*
                  * Profile
@@ -466,6 +454,31 @@ class DiscTestController extends Controller
         });
 
         return redirect()->route('disc.result', $discTest);
+    }
+
+    /**
+     * Konversi raw score per dimensi (D/I/S/C) menjadi nilai grafik 0-100
+     * memakai tabel norma yang sesuai ($graphType: 'most', 'least', atau
+     * 'change'). Fallback ke 50 (netral) bila kombinasi raw score/dimensi
+     * tidak ada pada tabel norma — idealnya tabel DiscGraphConversion
+     * memiliki seluruh range yang dibutuhkan.
+     *
+     * @param  array<string,int>  $rawScores
+     * @return array<string,int>
+     */
+    private function convertToGraphScores(string $graphType, array $rawScores): array
+    {
+        $graph = [];
+
+        foreach ($rawScores as $dimension => $rawScore) {
+            $graph[$dimension] = DiscGraphConversion::query()
+                ->where('graph_type', $graphType)
+                ->where('dimension', $dimension)
+                ->where('raw_score', $rawScore)
+                ->value('graph_score') ?? 50;
+        }
+
+        return $graph;
     }
 
     /**

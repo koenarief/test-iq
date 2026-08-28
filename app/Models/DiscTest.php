@@ -44,6 +44,16 @@ class DiscTest extends Model
     'graph_s',
     'graph_c',
 
+    'most_graph_d',
+    'most_graph_i',
+    'most_graph_s',
+    'most_graph_c',
+
+    'least_graph_d',
+    'least_graph_i',
+    'least_graph_s',
+    'least_graph_c',
+
     'primary_type',
     'secondary_type',
     'disc_type',

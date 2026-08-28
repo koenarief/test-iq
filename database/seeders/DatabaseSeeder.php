@@ -8,6 +8,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Database\Seeders\DiscQuestionSeeder;
 use Database\Seeders\DiscProfileSeeder;
 use Database\Seeders\DiscStatementInterpretationSeeder;
+use Database\Seeders\DiscGraphConversionSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -24,6 +25,7 @@ class DatabaseSeeder extends Seeder
             DiscQuestionSeeder::class,
             DiscProfileSeeder::class,
             DiscStatementInterpretationSeeder::class,
+            DiscGraphConversionSeeder::class,
         ]);
     }
 }

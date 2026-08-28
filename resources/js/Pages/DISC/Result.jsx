@@ -9,6 +9,7 @@ import {
     YAxis,
     CartesianGrid,
     Tooltip,
+    Legend,
 } from 'recharts';
 import {
     User,
@@ -31,9 +32,17 @@ import {
 const CustomTooltip = ({ active, payload, label }) => {
     if (active && payload && payload.length) {
         return (
-            <div className="bg-zinc-900/95 border border-zinc-800 p-3 rounded-xl shadow-xl font-mono text-xs backdrop-blur-md">
+            <div className="bg-zinc-900/95 border border-zinc-800 p-3 rounded-xl shadow-xl font-mono text-xs backdrop-blur-md space-y-1">
                 <p className="text-zinc-400 font-semibold mb-1">Tipe: {label}</p>
-                <p className="text-blue-400 font-bold">Skor: {payload[0].value}</p>
+                {payload.map((entry) => (
+                    <p
+                        key={entry.dataKey}
+                        className="font-bold"
+                        style={{ color: entry.stroke }}
+                    >
+                        {entry.name}: {entry.value}
+                    </p>
+                ))}
             </div>
         );
     }
@@ -44,19 +53,27 @@ export default function Result({ discTest, profile, personalSummary }) {
     const chartData = [
         {
             subject: "D",
-            score: discTest.graph_d,
+            most: discTest.most_graph_d,
+            least: discTest.least_graph_d,
+            change: discTest.graph_d,
         },
         {
             subject: "I",
-            score: discTest.graph_i,
+            most: discTest.most_graph_i,
+            least: discTest.least_graph_i,
+            change: discTest.graph_i,
         },
         {
             subject: "S",
-            score: discTest.graph_s,
+            most: discTest.most_graph_s,
+            least: discTest.least_graph_s,
+            change: discTest.graph_s,
         },
         {
             subject: "C",
-            score: discTest.graph_c,
+            most: discTest.most_graph_c,
+            least: discTest.least_graph_c,
+            change: discTest.graph_c,
         },
     ];
 
@@ -247,9 +264,34 @@ export default function Result({ discTest, profile, personalSummary }) {
                                             tick={{ fill: '#a1a1aa', fontSize: 12 }}
                                         />
                                         <Tooltip content={<CustomTooltip />} />
+                                        <Legend
+                                            wrapperStyle={{ fontSize: 12 }}
+                                            formatter={(value) => (
+                                                <span className="text-zinc-300">{value}</span>
+                                            )}
+                                        />
                                         <Line
                                             type="monotone"
-                                            dataKey="score"
+                                            dataKey="most"
+                                            name="Graph I (Most)"
+                                            stroke="#f59e0b"
+                                            strokeWidth={2}
+                                            dot={{ r: 4, fill: '#f59e0b', stroke: '#fbbf24', strokeWidth: 1 }}
+                                            activeDot={{ r: 6 }}
+                                        />
+                                        <Line
+                                            type="monotone"
+                                            dataKey="least"
+                                            name="Graph II (Least)"
+                                            stroke="#a855f7"
+                                            strokeWidth={2}
+                                            dot={{ r: 4, fill: '#a855f7', stroke: '#c084fc', strokeWidth: 1 }}
+                                            activeDot={{ r: 6 }}
+                                        />
+                                        <Line
+                                            type="monotone"
+                                            dataKey="change"
+                                            name="Graph III (Hasil)"
                                             stroke="#3b82f6"
                                             strokeWidth={3}
                                             dot={{ r: 6, fill: '#3b82f6', stroke: '#60a5fa', strokeWidth: 2 }}

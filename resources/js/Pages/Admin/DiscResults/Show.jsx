@@ -112,7 +112,13 @@ export default function Show({ test, profile }) {
                                         Change
                                     </th>
                                     <th className="px-4 py-3 text-right font-medium text-gray-500">
-                                        Graph
+                                        Graph I (Most)
+                                    </th>
+                                    <th className="px-4 py-3 text-right font-medium text-gray-500">
+                                        Graph II (Least)
+                                    </th>
+                                    <th className="px-4 py-3 text-right font-medium text-gray-500">
+                                        Graph III (Change)
                                     </th>
                                 </tr>
                             </thead>
@@ -130,6 +136,12 @@ export default function Show({ test, profile }) {
                                         </td>
                                         <td className="px-4 py-3 text-right text-gray-700">
                                             {test[`change_${key}`] ?? '—'}
+                                        </td>
+                                        <td className="px-4 py-3 text-right font-semibold text-gray-700">
+                                            {test[`most_graph_${key}`] ?? '—'}
+                                        </td>
+                                        <td className="px-4 py-3 text-right font-semibold text-gray-700">
+                                            {test[`least_graph_${key}`] ?? '—'}
                                         </td>
                                         <td className="px-4 py-3 text-right font-semibold text-indigo-700">
                                             {test[`graph_${key}`] ?? '—'}

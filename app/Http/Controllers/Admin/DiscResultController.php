@@ -57,6 +57,8 @@ class DiscResultController extends Controller
                     'least_d', 'least_i', 'least_s', 'least_c',
                     'change_d', 'change_i', 'change_s', 'change_c',
                     'graph_d', 'graph_i', 'graph_s', 'graph_c',
+                    'most_graph_d', 'most_graph_i', 'most_graph_s', 'most_graph_c',
+                    'least_graph_d', 'least_graph_i', 'least_graph_s', 'least_graph_c',
                     'primary_type', 'secondary_type', 'disc_type',
                 ]),
                 'merchant_name' => $discTest->merchant?->name,
