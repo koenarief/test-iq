@@ -11,6 +11,9 @@ use App\Http\Controllers\Admin\IstResultController;
 use App\Http\Controllers\Admin\DiscResultController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\MerchantController;
+use App\Http\Controllers\Merchant\DashboardController as MerchantDashboardController;
+use App\Http\Controllers\Merchant\IstResultController as MerchantIstResultController;
+use App\Http\Controllers\Merchant\DiscResultController as MerchantDiscResultController;
 use Inertia\Inertia;
 
 Route::get('/', [LandingController::class, 'index'])
@@ -57,10 +60,6 @@ Route::prefix('disc')
 
 Route::middleware('auth')->group(function () {
 
-    Route::get('/dashboard', function () {
-        return inertia('Admin/Dashboard');
-    })->name('dashboard');
-
     Route::get('/profile', [ProfileController::class, 'edit'])
         ->name('profile.edit');
 
@@ -70,34 +69,60 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])
         ->name('profile.destroy');
 
-    Route::prefix('admin')
-        ->name('admin.')
+    Route::middleware('admin')->group(function () {
+
+        Route::get('/dashboard', function () {
+            return inertia('Admin/Dashboard');
+        })->name('dashboard');
+
+        Route::prefix('admin')
+            ->name('admin.')
+            ->group(function () {
+                Route::resource('ist-questions', IstQuestionController::class)
+                    ->parameters(['ist-questions' => 'question'])
+                    ->except('show');
+
+                Route::resource('ist-answer-keys', IstAnswerKeyController::class)
+                    ->parameters(['ist-answer-keys' => 'answerKey'])
+                    ->except('show');
+
+                Route::get('ist-results', [IstResultController::class, 'index'])
+                    ->name('ist-results.index');
+                Route::get('ist-results/{test:public_id}', [IstResultController::class, 'show'])
+                    ->whereUuid('test')
+                    ->name('ist-results.show');
+
+                Route::get('disc-results', [DiscResultController::class, 'index'])
+                    ->name('disc-results.index');
+                Route::get('disc-results/{discTest}', [DiscResultController::class, 'show'])
+                    ->name('disc-results.show');
+
+                Route::resource('users', UserController::class)
+                    ->except('show');
+
+                Route::resource('merchants', MerchantController::class)
+                    ->except('show')
+                    ->where(['merchant' => '[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}']);
+            });
+    });
+
+    Route::middleware('merchant')
+        ->prefix('merchant')
+        ->name('merchant.')
         ->group(function () {
-            Route::resource('ist-questions', IstQuestionController::class)
-                ->parameters(['ist-questions' => 'question'])
-                ->except('show');
+            Route::get('/dashboard', [MerchantDashboardController::class, 'index'])
+                ->name('dashboard');
 
-            Route::resource('ist-answer-keys', IstAnswerKeyController::class)
-                ->parameters(['ist-answer-keys' => 'answerKey'])
-                ->except('show');
-
-            Route::get('ist-results', [IstResultController::class, 'index'])
+            Route::get('ist-results', [MerchantIstResultController::class, 'index'])
                 ->name('ist-results.index');
-            Route::get('ist-results/{test:public_id}', [IstResultController::class, 'show'])
+            Route::get('ist-results/{test:public_id}', [MerchantIstResultController::class, 'show'])
                 ->whereUuid('test')
                 ->name('ist-results.show');
 
-            Route::get('disc-results', [DiscResultController::class, 'index'])
+            Route::get('disc-results', [MerchantDiscResultController::class, 'index'])
                 ->name('disc-results.index');
-            Route::get('disc-results/{discTest}', [DiscResultController::class, 'show'])
+            Route::get('disc-results/{discTest}', [MerchantDiscResultController::class, 'show'])
                 ->name('disc-results.show');
-
-            Route::resource('users', UserController::class)
-                ->except('show');
-
-            Route::resource('merchants', MerchantController::class)
-                ->except('show')
-                ->where(['merchant' => '[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}']);
         });
 });
 

@@ -91,6 +91,9 @@ export default function Index({ users, filters }) {
                                         Email
                                     </th>
                                     <th className="px-4 py-3 text-left font-medium text-gray-500">
+                                        Role
+                                    </th>
+                                    <th className="px-4 py-3 text-left font-medium text-gray-500">
                                         Terverifikasi
                                     </th>
                                     <th className="px-4 py-3 text-left font-medium text-gray-500">
@@ -114,6 +117,20 @@ export default function Index({ users, filters }) {
                                         </td>
                                         <td className="px-4 py-3 text-gray-700">
                                             {user.email}
+                                        </td>
+                                        <td className="px-4 py-3 text-gray-700">
+                                            {user.role === 'merchant' ? (
+                                                <span className="rounded-full bg-indigo-100 px-2 py-0.5 text-xs text-indigo-700">
+                                                    Merchant
+                                                    {user.merchant
+                                                        ? ` — ${user.merchant.name}`
+                                                        : ''}
+                                                </span>
+                                            ) : (
+                                                <span className="rounded-full bg-gray-100 px-2 py-0.5 text-xs text-gray-600">
+                                                    Admin
+                                                </span>
+                                            )}
                                         </td>
                                         <td className="px-4 py-3">
                                             {user.email_verified_at ? (
@@ -160,7 +177,7 @@ export default function Index({ users, filters }) {
                                 {users.data.length === 0 && (
                                     <tr>
                                         <td
-                                            colSpan={5}
+                                            colSpan={6}
                                             className="px-4 py-6 text-center text-gray-500"
                                         >
                                             Tidak ada user ditemukan.
