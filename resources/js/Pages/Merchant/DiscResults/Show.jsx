@@ -1,6 +1,16 @@
 import SecondaryButton from '@/Components/SecondaryButton';
 import MerchantLayout from '@/Layouts/MerchantLayout';
 import { Head, Link } from '@inertiajs/react';
+import {
+    CartesianGrid,
+    Legend,
+    Line,
+    LineChart,
+    ResponsiveContainer,
+    Tooltip,
+    XAxis,
+    YAxis,
+} from 'recharts';
 
 const DIMENSIONS = [
     { key: 'd', label: 'D — Dominance' },
@@ -8,6 +18,35 @@ const DIMENSIONS = [
     { key: 's', label: 'S — Steadiness' },
     { key: 'c', label: 'C — Conscientiousness' },
 ];
+
+// Slots 1-3 of the validated categorical palette (blue, orange, aqua) —
+// the only three that clear the all-pairs CVD/contrast gates together.
+const SERIES_COLORS = {
+    change: '#2a78d6',
+    most: '#eb6834',
+    least: '#1baf7a',
+};
+
+function DiscTooltip({ active, payload, label }) {
+    if (!active || !payload?.length) return null;
+
+    return (
+        <div className="rounded-lg border border-gray-200 bg-white px-3 py-2 text-xs shadow-lg">
+            <p className="mb-1 font-semibold text-gray-500">
+                Dimensi {label}
+            </p>
+            {payload.map((entry) => (
+                <p
+                    key={entry.dataKey}
+                    className="font-semibold"
+                    style={{ color: entry.stroke }}
+                >
+                    {entry.name}: {entry.value ?? '—'}
+                </p>
+            ))}
+        </div>
+    );
+}
 
 function genderLabel(value) {
     if (value === 'L') return 'Laki-laki';
@@ -32,6 +71,13 @@ function asList(value) {
 }
 
 export default function Show({ test, profile }) {
+    const chartData = DIMENSIONS.map(({ key, label }) => ({
+        subject: label.charAt(0),
+        most: test[`most_graph_${key}`] ?? null,
+        least: test[`least_graph_${key}`] ?? null,
+        change: test[`graph_${key}`] ?? null,
+    }));
+
     return (
         <MerchantLayout
             header={
@@ -85,6 +131,106 @@ export default function Show({ test, profile }) {
                                 Primer: {test.primary_type ?? '—'} ·
                                 Sekunder: {test.secondary_type ?? '—'}
                             </p>
+                        </div>
+                    </div>
+
+                    <div className="bg-white p-6 shadow-sm sm:rounded-lg">
+                        <h3 className="text-sm font-semibold text-gray-900">
+                            Visualisasi Grafik DISC
+                        </h3>
+                        <p className="mt-1 text-xs text-gray-500">
+                            Sebaran nilai Graph I (Most), Graph II (Least), dan
+                            Graph III (Change/Hasil) pada tiap dimensi.
+                        </p>
+
+                        <div className="mt-4 h-80 w-full">
+                            <ResponsiveContainer width="100%" height="100%">
+                                <LineChart
+                                    data={chartData}
+                                    margin={{
+                                        top: 10,
+                                        right: 20,
+                                        left: 0,
+                                        bottom: 0,
+                                    }}
+                                >
+                                    <CartesianGrid
+                                        strokeDasharray="0"
+                                        stroke="#e1e0d9"
+                                        vertical={false}
+                                    />
+                                    <XAxis
+                                        dataKey="subject"
+                                        stroke="#c3c2b7"
+                                        tick={{
+                                            fill: '#52514e',
+                                            fontSize: 12,
+                                            fontWeight: 600,
+                                        }}
+                                        tickLine={false}
+                                        axisLine={{ stroke: '#c3c2b7' }}
+                                    />
+                                    <YAxis
+                                        domain={[0, 100]}
+                                        stroke="#c3c2b7"
+                                        tick={{ fill: '#898781', fontSize: 12 }}
+                                        tickLine={false}
+                                        axisLine={false}
+                                        width={32}
+                                    />
+                                    <Tooltip content={<DiscTooltip />} />
+                                    <Legend
+                                        wrapperStyle={{ fontSize: 12 }}
+                                        formatter={(value) => (
+                                            <span className="text-gray-600">
+                                                {value}
+                                            </span>
+                                        )}
+                                    />
+                                    <Line
+                                        type="monotone"
+                                        dataKey="most"
+                                        name="Graph I (Most)"
+                                        stroke={SERIES_COLORS.most}
+                                        strokeWidth={2}
+                                        dot={{
+                                            r: 4,
+                                            fill: SERIES_COLORS.most,
+                                            stroke: '#ffffff',
+                                            strokeWidth: 2,
+                                        }}
+                                        activeDot={{ r: 6 }}
+                                    />
+                                    <Line
+                                        type="monotone"
+                                        dataKey="least"
+                                        name="Graph II (Least)"
+                                        stroke={SERIES_COLORS.least}
+                                        strokeWidth={2}
+                                        dot={{
+                                            r: 4,
+                                            fill: SERIES_COLORS.least,
+                                            stroke: '#ffffff',
+                                            strokeWidth: 2,
+                                        }}
+                                        activeDot={{ r: 6 }}
+                                    />
+                                    <Line
+                                        type="monotone"
+                                        dataKey="change"
+                                        name="Graph III (Change/Hasil)"
+                                        stroke={SERIES_COLORS.change}
+                                        strokeWidth={2}
+                                        dot={{
+                                            r: 4,
+                                            fill: SERIES_COLORS.change,
+                                            stroke: '#ffffff',
+                                            strokeWidth: 2,
+                                        }}
+                                        activeDot={{ r: 6 }}
+                                    />
+                                </LineChart>
+                            </ResponsiveContainer>
                         </div>
                     </div>
 
