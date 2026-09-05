@@ -67,7 +67,7 @@ export default function QuestionForm({
                       image_path: option.image_path ?? '',
                       image_alt: option.image_alt ?? '',
                       is_correct: option.is_correct,
-                      score_value: option.score_value,
+                      score_value: Number(option.score_value),
                   }))
                 : blankOptions(optionKeys),
     });

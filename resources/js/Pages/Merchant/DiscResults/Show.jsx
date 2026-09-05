@@ -1,3 +1,4 @@
+import DiscScoreCharts from '@/Components/DiscScoreCharts';
 import SecondaryButton from '@/Components/SecondaryButton';
 import MerchantLayout from '@/Layouts/MerchantLayout';
 import { Head, Link } from '@inertiajs/react';
@@ -87,6 +88,8 @@ export default function Show({ test, profile }) {
                             </p>
                         </div>
                     </div>
+
+                    <DiscScoreCharts test={test} />
 
                     <div className="overflow-x-auto bg-white shadow-sm sm:rounded-lg">
                         <table className="min-w-full divide-y divide-gray-200 text-sm">
