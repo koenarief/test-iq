@@ -20,7 +20,7 @@ class IstSubtestCatalogTest extends TestCase
         $this->assertSame(range(1, 9), array_column($catalog, 'sequence'));
     }
 
-    public function test_catalog_contains_104_questions_and_2700_seconds_of_core_time(): void
+    public function test_catalog_contains_128_questions_and_3180_seconds_of_core_time(): void
     {
         $catalog = IstSubtestCatalog::all();
 
@@ -32,7 +32,7 @@ class IstSubtestCatalogTest extends TestCase
             IstSubtestCatalog::EXPECTED_CORE_DURATION_SECONDS,
             array_sum(array_column($catalog, 'duration_seconds'))
         );
-        $this->assertSame(45, array_sum(array_column($catalog, 'duration_seconds')) / 60);
+        $this->assertSame(53, array_sum(array_column($catalog, 'duration_seconds')) / 60);
     }
 
     public function test_every_duration_is_the_sum_of_memorization_and_answering_time(): void

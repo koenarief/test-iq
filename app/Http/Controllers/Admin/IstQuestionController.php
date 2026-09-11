@@ -60,11 +60,15 @@ class IstQuestionController extends Controller
 
         try {
             DB::transaction(function () use ($data) {
+                $version = IstQuestion::where('ist_subtest_id', $data['question']['ist_subtest_id'])
+                    ->where('is_active', true)
+                    ->max('version') ?? 1;
+
                 $question = IstQuestion::create([
                     ...$data['question'],
                     'created_by' => auth()->id(),
                     'updated_by' => auth()->id(),
-                    'version' => 1,
+                    'version' => $version,
                 ]);
 
                 $this->syncOptions($question, $data['options']);

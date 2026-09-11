@@ -6,9 +6,9 @@ final class IstSubtestCatalog
 {
     public const EXPECTED_SUBTEST_COUNT = 9;
 
-    public const EXPECTED_QUESTION_COUNT = 104;
+    public const EXPECTED_QUESTION_COUNT = 128;
 
-    public const EXPECTED_CORE_DURATION_SECONDS = 2700;
+    public const EXPECTED_CORE_DURATION_SECONDS = 3180;
 
     public static function all(): array
     {
@@ -17,31 +17,31 @@ final class IstSubtestCatalog
                 'code' => 'SE',
                 'name' => 'Satzerganzung (Melengkapi Kalimat)',
                 'sequence' => 1,
-                'question_count' => 12,
+                'question_count' => 20,
                 'default_answer_type' => IstAnswerType::SINGLE_CHOICE,
-                'duration_seconds' => 240,
+                'duration_seconds' => 400,
                 'memorization_seconds' => 0,
-                'answering_seconds' => 240,
+                'answering_seconds' => 400,
             ],
             [
                 'code' => 'WA',
                 'name' => 'Wortauswahl (Memilih Kata)',
                 'sequence' => 2,
-                'question_count' => 12,
+                'question_count' => 20,
                 'default_answer_type' => IstAnswerType::SINGLE_CHOICE,
-                'duration_seconds' => 240,
+                'duration_seconds' => 400,
                 'memorization_seconds' => 0,
-                'answering_seconds' => 240,
+                'answering_seconds' => 400,
             ],
             [
                 'code' => 'AN',
                 'name' => 'Analogien (Analogi)',
                 'sequence' => 3,
-                'question_count' => 12,
+                'question_count' => 20,
                 'default_answer_type' => IstAnswerType::SINGLE_CHOICE,
-                'duration_seconds' => 240,
+                'duration_seconds' => 400,
                 'memorization_seconds' => 0,
-                'answering_seconds' => 240,
+                'answering_seconds' => 400,
             ],
             [
                 'code' => 'GE',

@@ -28,7 +28,7 @@ class IstParticipantFlowHttpTest extends IstHttpTestCase
         $runtime->refresh();
         $originalDeadline = $runtime->answering_ends_at->toISOString();
         $this->assertSame($this->now->toISOString(), $runtime->started_at->toISOString());
-        $this->assertSame($this->now->addSeconds(240)->toISOString(), $originalDeadline);
+        $this->assertSame($this->now->addSeconds(400)->toISOString(), $originalDeadline);
         $this->assertSame($this->now->toISOString(), $test->fresh()->started_at->toISOString());
 
         $this->post($url)->assertStatus(303);

@@ -50,7 +50,7 @@ class IstTestLifecycleServiceTest extends IstDatabaseTestCase
             $runtimes->pluck('subtest.code')->all(),
         );
         $this->assertSame(
-            [12, 12, 12, 10, 12, 12, 10, 12, 12],
+            [20, 20, 20, 10, 12, 12, 10, 12, 12],
             $runtimes->pluck('question_count')->all(),
         );
         $this->assertSame(IstTestSubtest::STATUS_INSTRUCTION, $runtimes->first()->status);

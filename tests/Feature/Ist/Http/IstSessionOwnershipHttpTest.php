@@ -31,7 +31,7 @@ class IstSessionOwnershipHttpTest extends IstHttpTestCase
         $this->assertTrue(hash_equals($test->access_token_hash, hash('sha256', $token)));
         $this->assertSame('HTTP Start', $test->participant_name);
         $this->assertSame(9, $test->subtests()->count());
-        $this->assertSame(104, $test->subtests()->withCount('testQuestions')->get()->sum('test_questions_count'));
+        $this->assertSame(128, $test->subtests()->withCount('testQuestions')->get()->sum('test_questions_count'));
         $this->assertStringNotContainsString($token, $response->getContent());
         $this->assertStringNotContainsString($token, (string) $response->headers->get('Location'));
     }
