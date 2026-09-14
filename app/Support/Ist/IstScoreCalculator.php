@@ -65,16 +65,20 @@ final class IstScoreCalculator
     }
 
     /**
-     * Final GE scoring:
+     * Weighted GE scoring. The "correct" threshold is each question's own
+     * configured maximum (not a fixed literal), so the active question bank
+     * can use a different weighted scale per question without this needing
+     * to change:
      *
-     * 3   = correct
-     * 1-2 = partial
-     * 0   = wrong
-     * null = blank
+     * baseScore === maxScore = correct
+     * 1..maxScore-1          = partial
+     * 0                      = wrong
+     * null                   = blank
      */
     public function scoreWeighted(
         int|float|string|null $scoreValue,
         string $difficulty = 'medium',
+        int $maxScore = 3,
     ): array {
         $weight = $this->difficultyWeight($difficulty);
 
@@ -85,18 +89,24 @@ final class IstScoreCalculator
             );
         }
 
+        if ($maxScore < 1) {
+            throw new InvalidArgumentException(
+                'Weighted IST max score must be a positive integer.'
+            );
+        }
+
         $canonical = $this->canonicalNumber($scoreValue);
 
-        if (! in_array($canonical, ['0', '1', '2', '3'], true)) {
+        if (! in_array($canonical, array_map('strval', range(0, $maxScore)), true)) {
             throw new InvalidArgumentException(
-                'Weighted IST score must be an integer from 0 to 3.'
+                "Weighted IST score must be an integer from 0 to {$maxScore}."
             );
         }
 
         $baseScore = (int) $canonical;
         $awardedScore = $baseScore * $weight;
 
-        if ($baseScore === 3) {
+        if ($baseScore === $maxScore) {
             return $this->result(
                 $awardedScore,
                 IstAnswer::OUTCOME_CORRECT,

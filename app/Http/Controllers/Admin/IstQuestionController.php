@@ -72,6 +72,7 @@ class IstQuestionController extends Controller
                 ]);
 
                 $this->syncOptions($question, $data['options']);
+                $this->syncSubtestQuestionCount($data['question']['ist_subtest_id']);
             });
         } catch (QueryException $exception) {
             throw $this->duplicateQuestionException($exception);
@@ -95,15 +96,18 @@ class IstQuestionController extends Controller
     public function update(Request $request, IstQuestion $question): RedirectResponse
     {
         $data = $this->validated($request, $question);
+        $previousSubtestId = $question->ist_subtest_id;
 
         try {
-            DB::transaction(function () use ($question, $data) {
+            DB::transaction(function () use ($question, $data, $previousSubtestId) {
                 $question->update([
                     ...$data['question'],
                     'updated_by' => auth()->id(),
                 ]);
 
                 $this->syncOptions($question, $data['options']);
+                $this->syncSubtestQuestionCount($previousSubtestId);
+                $this->syncSubtestQuestionCount($data['question']['ist_subtest_id']);
             });
         } catch (QueryException $exception) {
             throw $this->duplicateQuestionException($exception);
@@ -118,9 +122,10 @@ class IstQuestionController extends Controller
     {
         $subtestId = $question->ist_subtest_id;
 
-        DB::transaction(function () use ($question) {
+        DB::transaction(function () use ($question, $subtestId) {
             $question->options()->delete();
             $question->delete();
+            $this->syncSubtestQuestionCount($subtestId);
         });
 
         return redirect()
@@ -232,18 +237,26 @@ class IstQuestionController extends Controller
         $correctByKey = $options->pluck('is_correct', 'option_key')->map(fn ($value) => (bool) $value);
 
         if ($answerType === IstAnswerType::SINGLE_CHOICE_WEIGHTED) {
+            $maxScore = (int) round((float) $request->input('max_score'));
+
+            if ($maxScore < 1) {
+                $validator->errors()->add('max_score', 'Skor maksimum soal weighted harus bilangan bulat positif.');
+
+                return;
+            }
+
             foreach ($scoreByKey as $key => $score) {
-                if ($score < 0 || $score > 3) {
-                    $validator->errors()->add('options', "Skor opsi {$key} harus berupa bilangan bulat 0 sampai 3.");
+                if ($score < 0 || $score > $maxScore) {
+                    $validator->errors()->add('options', "Skor opsi {$key} harus berupa bilangan bulat 0 sampai {$maxScore}.");
                 }
 
-                if (($score === 3) !== $correctByKey[$key]) {
-                    $validator->errors()->add('options', "Tanda jawaban benar pada opsi {$key} harus konsisten dengan skor 3.");
+                if (($score === $maxScore) !== $correctByKey[$key]) {
+                    $validator->errors()->add('options', "Tanda jawaban benar pada opsi {$key} harus konsisten dengan skor maksimum ({$maxScore}).");
                 }
             }
 
-            if ($scoreByKey->filter(fn ($score) => $score === 3)->count() !== 1) {
-                $validator->errors()->add('options', 'Harus ada tepat satu opsi dengan skor 3 sebagai jawaban benar.');
+            if ($scoreByKey->filter(fn ($score) => $score === $maxScore)->count() !== 1) {
+                $validator->errors()->add('options', "Harus ada tepat satu opsi dengan skor {$maxScore} sebagai jawaban benar.");
             }
         } else {
             foreach ($scoreByKey as $key => $score) {
@@ -306,6 +319,26 @@ class IstQuestionController extends Controller
             ->where('ist_question_id', $question->id)
             ->when($desiredKeys !== [], fn ($query) => $query->whereNotIn('option_key', $desiredKeys))
             ->delete();
+    }
+
+    /**
+     * Keeps ist_subtests.question_count truthful to the live active scored
+     * question bank after every admin mutation, so a test session's expected
+     * question count (copied from this column at creation) can never silently
+     * drift from what is actually active — the exact gap that once let a test
+     * start fail in production because the two had gone out of sync.
+     */
+    private function syncSubtestQuestionCount(int $subtestId): void
+    {
+        $activeScoredCount = IstQuestion::query()
+            ->where('ist_subtest_id', $subtestId)
+            ->where('kind', IstQuestion::KIND_SCORED)
+            ->where('is_active', true)
+            ->count();
+
+        IstSubtest::query()
+            ->where('id', $subtestId)
+            ->update(['question_count' => $activeScoredCount]);
     }
 
     private function duplicateQuestionException(QueryException $exception): ValidationException

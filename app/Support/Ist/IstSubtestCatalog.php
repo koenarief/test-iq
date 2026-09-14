@@ -6,7 +6,7 @@ final class IstSubtestCatalog
 {
     public const EXPECTED_SUBTEST_COUNT = 9;
 
-    public const EXPECTED_QUESTION_COUNT = 128;
+    public const EXPECTED_QUESTION_COUNT = 158;
 
     public const EXPECTED_CORE_DURATION_SECONDS = 3180;
 
@@ -47,7 +47,7 @@ final class IstSubtestCatalog
                 'code' => 'GE',
                 'name' => 'Gemeinsamkeiten (Persamaan)',
                 'sequence' => 4,
-                'question_count' => 10,
+                'question_count' => 16,
                 'default_answer_type' => IstAnswerType::SINGLE_CHOICE_WEIGHTED,
                 'duration_seconds' => 300,
                 'memorization_seconds' => 0,
@@ -57,7 +57,7 @@ final class IstSubtestCatalog
                 'code' => 'RA',
                 'name' => 'Rechenaufgaben (Berhitung)',
                 'sequence' => 5,
-                'question_count' => 12,
+                'question_count' => 20,
                 'default_answer_type' => IstAnswerType::NUMERIC,
                 'duration_seconds' => 360,
                 'memorization_seconds' => 0,
@@ -67,7 +67,7 @@ final class IstSubtestCatalog
                 'code' => 'ZR',
                 'name' => 'Zahlenreihen (Deret Angka)',
                 'sequence' => 6,
-                'question_count' => 12,
+                'question_count' => 20,
                 'default_answer_type' => IstAnswerType::NUMERIC,
                 'duration_seconds' => 360,
                 'memorization_seconds' => 0,
@@ -97,7 +97,7 @@ final class IstSubtestCatalog
                 'code' => 'ME',
                 'name' => 'Merkaufgaben (Latihan Mengingat)',
                 'sequence' => 9,
-                'question_count' => 12,
+                'question_count' => 20,
                 'default_answer_type' => IstAnswerType::SINGLE_CHOICE,
                 'duration_seconds' => 360,
                 'memorization_seconds' => 120,

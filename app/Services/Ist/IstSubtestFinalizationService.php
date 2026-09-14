@@ -299,10 +299,13 @@ final class IstSubtestFinalizationService
         IstTestQuestion $question,
         IstAnswer $answer,
     ): array {
+        $maxScore = (int) round((float) $question->max_score);
+
         if ($answer->selected_option_key === null) {
             return $this->calculator->scoreWeighted(
                 null,
                 self::NEUTRAL_DIFFICULTY,
+                $maxScore,
             );
         }
 
@@ -318,6 +321,7 @@ final class IstSubtestFinalizationService
         return $this->calculator->scoreWeighted(
             $scores[$answer->selected_option_key],
             self::NEUTRAL_DIFFICULTY,
+            $maxScore,
         );
     }
 

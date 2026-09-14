@@ -271,10 +271,26 @@ final class IstQuestionSnapshotService
         ];
     }
 
+    /**
+     * The "correct" score is each question's own configured max_score, not a
+     * fixed literal, so the active question bank can carry a different
+     * weighted scale per question (e.g. to stay within an IQ norm table's
+     * raw-score range) without this needing to change.
+     */
     private function buildWeightedSnapshots(string $subtestCode, IstQuestion $question): array
     {
         $options = $question->options;
         $this->assertFiveOptions($subtestCode, $question, $options);
+
+        $maxScore = $this->integerScore($subtestCode, $question, $question->max_score);
+
+        if ($maxScore < 1) {
+            throw $this->invalidDefinition(
+                $subtestCode,
+                $question,
+                'weighted max score must be a positive integer',
+            );
+        }
 
         $scores = [];
         $outcomes = [];
@@ -283,19 +299,19 @@ final class IstQuestionSnapshotService
         foreach ($options as $option) {
             $score = $this->integerScore($subtestCode, $question, $option->score_value);
 
-            if ($score < 0 || $score > 3) {
+            if ($score < 0 || $score > $maxScore) {
                 throw $this->invalidDefinition(
                     $subtestCode,
                     $question,
-                    'weighted option score must be an integer from 0 to 3',
+                    "weighted option score must be an integer from 0 to {$maxScore}",
                 );
             }
 
-            if ($score === 3) {
+            if ($score === $maxScore) {
                 $maximumScoreCount++;
             }
 
-            if (($score === 3) !== $option->is_correct) {
+            if (($score === $maxScore) !== $option->is_correct) {
                 throw $this->invalidDefinition(
                     $subtestCode,
                     $question,
@@ -305,7 +321,7 @@ final class IstQuestionSnapshotService
 
             $scores[$option->option_key] = $score;
             $outcomes[$option->option_key] = match (true) {
-                $score === 3 => 'correct',
+                $score === $maxScore => 'correct',
                 $score >= 1 => 'partial',
                 default => 'wrong',
             };
@@ -315,7 +331,7 @@ final class IstQuestionSnapshotService
             throw $this->invalidDefinition(
                 $subtestCode,
                 $question,
-                'weighted question must have exactly one option with score 3',
+                "weighted question must have exactly one option with score {$maxScore}",
             );
         }
 
