@@ -32,8 +32,8 @@ Route::prefix('disc')
         Route::get('/', [DiscTestController::class, 'index'])
             ->name('index');
 
-        Route::get('/m/{merchant}', [DiscTestController::class, 'index'])
-            ->whereUuid('merchant')
+        Route::get('/m/{merchant:slug}', [DiscTestController::class, 'index'])
+            ->where('merchant', '[a-z0-9-]+')
             ->name('index.merchant');
 
         Route::post('/start', [DiscTestController::class, 'start'])

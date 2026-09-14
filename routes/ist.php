@@ -15,8 +15,8 @@ Route::prefix('ist')->name('ist.')
     ->middleware(EnsureIstRehearsalPreviewAccess::class)
     ->group(function (): void {
         Route::get('/', [IstTestController::class, 'index'])->name('index');
-        Route::get('/m/{merchant}', [IstTestController::class, 'index'])
-            ->whereUuid('merchant')
+        Route::get('/m/{merchant:slug}', [IstTestController::class, 'index'])
+            ->where('merchant', '[a-z0-9-]+')
             ->name('index.merchant');
         Route::post('/start', [IstTestController::class, 'store'])
             ->middleware('throttle:10,1')

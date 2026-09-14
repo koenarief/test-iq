@@ -71,8 +71,9 @@ class MerchantFlowTest extends IstHttpTestCase
             ->assertJsonPath('props.startUrls.ist', route('ist.index.merchant', $merchant))
             ->assertJsonPath('props.startUrls.disc', route('disc.index.merchant', $merchant));
 
-        $this->assertStringContainsString($merchant->public_id, $response->json('props.startUrls.ist'));
+        $this->assertStringContainsString($merchant->slug, $response->json('props.startUrls.ist'));
         $this->assertStringNotContainsString('/m/'.$merchant->id, $response->json('props.startUrls.ist'));
+        $this->assertStringNotContainsString($merchant->public_id, $response->json('props.startUrls.ist'));
     }
 
     public function test_deleting_merchant_keeps_existing_tests_but_unlinks_them(): void
@@ -217,9 +218,6 @@ class MerchantFlowTest extends IstHttpTestCase
     {
         $merchant = Merchant::create(['name' => 'Numeric Id Test', 'is_active' => true]);
 
-        $this->withoutExceptionHandling();
-        $this->expectException(NotFoundHttpException::class);
-
-        $this->get('/ist/m/'.$merchant->id);
+        $this->get('/ist/m/'.$merchant->id)->assertNotFound();
     }
 }

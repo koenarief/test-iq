@@ -121,7 +121,7 @@ export default function Index({ merchants, filters }) {
                                                 <a
                                                     href={route(
                                                         'ist.index.merchant',
-                                                        merchant.public_id,
+                                                        merchant.slug,
                                                     )}
                                                     target="_blank"
                                                     rel="noreferrer"
@@ -132,7 +132,7 @@ export default function Index({ merchants, filters }) {
                                                 <a
                                                     href={route(
                                                         'disc.index.merchant',
-                                                        merchant.public_id,
+                                                        merchant.slug,
                                                     )}
                                                     target="_blank"
                                                     rel="noreferrer"
