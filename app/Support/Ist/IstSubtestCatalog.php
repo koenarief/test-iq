@@ -6,9 +6,9 @@ final class IstSubtestCatalog
 {
     public const EXPECTED_SUBTEST_COUNT = 9;
 
-    public const EXPECTED_QUESTION_COUNT = 158;
+    public const EXPECTED_QUESTION_COUNT = 176;
 
-    public const EXPECTED_CORE_DURATION_SECONDS = 3180;
+    public const EXPECTED_CORE_DURATION_SECONDS = 3660;
 
     public static function all(): array
     {
@@ -77,21 +77,21 @@ final class IstSubtestCatalog
                 'code' => 'FA',
                 'name' => 'Figurenauswahl (Memilih Bentuk)',
                 'sequence' => 7,
-                'question_count' => 10,
+                'question_count' => 20,
                 'default_answer_type' => IstAnswerType::IMAGE_CHOICE,
-                'duration_seconds' => 240,
+                'duration_seconds' => 480,
                 'memorization_seconds' => 0,
-                'answering_seconds' => 240,
+                'answering_seconds' => 480,
             ],
             [
                 'code' => 'WU',
                 'name' => 'Wurfelaufgaben (Latihan Kubus)',
                 'sequence' => 8,
-                'question_count' => 12,
+                'question_count' => 20,
                 'default_answer_type' => IstAnswerType::IMAGE_CHOICE,
-                'duration_seconds' => 360,
+                'duration_seconds' => 600,
                 'memorization_seconds' => 0,
-                'answering_seconds' => 360,
+                'answering_seconds' => 600,
             ],
             [
                 'code' => 'ME',
