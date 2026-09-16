@@ -2,7 +2,7 @@ import { Head } from '@inertiajs/react';
 import PublicLayout from '@/Layouts/PublicLayout';
 import TestCard from '@/Components/TestCard';
 import { motion } from 'motion/react';
-import { UserCheck, BrainCircuit, ShieldCheck, Zap, BarChart3 } from 'lucide-react';
+import { UserCheck, BrainCircuit, Briefcase, ShieldCheck, Zap, BarChart3 } from 'lucide-react';
 
 export default function LandingIndex() {
     return (
@@ -45,7 +45,7 @@ export default function LandingIndex() {
                 </div>
 
                 {/* Selection Cards Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto w-full mb-16">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto w-full mb-16">
                     <TestCard
                         title="Tes Kemampuan Gaya Kerja"
                         subtitle="Perilaku & Gaya Kerja"
@@ -79,6 +79,23 @@ export default function LandingIndex() {
                             'Autosave pengerjaan',
                         ]}
                         index={1}
+                    />
+
+                    <TestCard
+                        title="Tes Kompetensi"
+                        subtitle="Studi Kasus Sesuai Divisi Lamaran"
+                        description="Asesmen situasional untuk mengukur kompetensi kerja sesuai divisi yang dilamar: Sales, Marketing, Procurement, Content Creator, atau Finance."
+                        icon={Briefcase}
+                        badge="Tersedia / Aktif"
+                        isActive={true}
+                        href={route('competency.index')}
+                        features={[
+                            'Pilih divisi sebelum mengerjakan',
+                            '30 Soal Studi Kasus',
+                            'Subtes menyesuaikan tiap divisi',
+                            'Estimasi Waktu: 30 Menit',
+                        ]}
+                        index={2}
                     />
                 </div>
 

@@ -40,7 +40,7 @@ export default function Dashboard({ stats, startUrls }) {
 
             <div className="py-12">
                 <div className="mx-auto max-w-7xl space-y-6 sm:px-6 lg:px-8">
-                    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                         <div className="bg-white p-6 shadow-sm sm:rounded-lg">
                             <p className="text-xs uppercase tracking-wide text-gray-500">
                                 Total Peserta IST
@@ -48,13 +48,8 @@ export default function Dashboard({ stats, startUrls }) {
                             <p className="mt-1 text-3xl font-bold text-gray-900">
                                 {stats.ist_total}
                             </p>
-                        </div>
-                        <div className="bg-white p-6 shadow-sm sm:rounded-lg">
-                            <p className="text-xs uppercase tracking-wide text-gray-500">
-                                IST Selesai
-                            </p>
-                            <p className="mt-1 text-3xl font-bold text-green-700">
-                                {stats.ist_completed}
+                            <p className="mt-1 text-xs text-green-700">
+                                {stats.ist_completed} selesai
                             </p>
                         </div>
                         <div className="bg-white p-6 shadow-sm sm:rounded-lg">
@@ -64,13 +59,19 @@ export default function Dashboard({ stats, startUrls }) {
                             <p className="mt-1 text-3xl font-bold text-gray-900">
                                 {stats.disc_total}
                             </p>
+                            <p className="mt-1 text-xs text-green-700">
+                                {stats.disc_completed} selesai
+                            </p>
                         </div>
                         <div className="bg-white p-6 shadow-sm sm:rounded-lg">
                             <p className="text-xs uppercase tracking-wide text-gray-500">
-                                DISC Selesai
+                                Total Peserta Kompetensi
                             </p>
-                            <p className="mt-1 text-3xl font-bold text-green-700">
-                                {stats.disc_completed}
+                            <p className="mt-1 text-3xl font-bold text-gray-900">
+                                {stats.competency_total}
+                            </p>
+                            <p className="mt-1 text-xs text-green-700">
+                                {stats.competency_completed} selesai
                             </p>
                         </div>
                     </div>
@@ -88,6 +89,10 @@ export default function Dashboard({ stats, startUrls }) {
 
                         <StartUrlRow label="Tes IST" url={startUrls.ist} />
                         <StartUrlRow label="Tes DISC" url={startUrls.disc} />
+                        <StartUrlRow
+                            label="Tes Kompetensi"
+                            url={startUrls.competency}
+                        />
                     </div>
 
                     <div className="flex flex-wrap gap-4">
@@ -102,6 +107,12 @@ export default function Dashboard({ stats, startUrls }) {
                             className="rounded-md bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-500"
                         >
                             Lihat Hasil DISC
+                        </Link>
+                        <Link
+                            href={route('merchant.competency-results.index')}
+                            className="rounded-md bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-500"
+                        >
+                            Lihat Hasil Kompetensi
                         </Link>
                     </div>
                 </div>

@@ -3,4 +3,7 @@
 
 @theme {
     --font-sans: "Figtree", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    /* Tema panel admin (lihat resources/js/Layouts/AuthenticatedLayout.jsx) memakai
+       Inter, mengikuti gaya profile.html — sisi lain aplikasi tetap pakai Figtree. */
+    --font-admin: "Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }

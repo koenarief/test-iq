@@ -5,15 +5,18 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Disc\DiscTestController;
+use App\Http\Controllers\Competency\CompetencyTestController;
 use App\Http\Controllers\Admin\IstAnswerKeyController;
 use App\Http\Controllers\Admin\IstQuestionController;
 use App\Http\Controllers\Admin\IstResultController;
 use App\Http\Controllers\Admin\DiscResultController;
+use App\Http\Controllers\Admin\CompetencyResultController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\MerchantController;
 use App\Http\Controllers\Merchant\DashboardController as MerchantDashboardController;
 use App\Http\Controllers\Merchant\IstResultController as MerchantIstResultController;
 use App\Http\Controllers\Merchant\DiscResultController as MerchantDiscResultController;
+use App\Http\Controllers\Merchant\CompetencyResultController as MerchantCompetencyResultController;
 use Inertia\Inertia;
 
 Route::get('/', [LandingController::class, 'index'])
@@ -49,6 +52,39 @@ Route::prefix('disc')
             ->name('submit');
 
         Route::get('/result/{discTest}', [DiscTestController::class, 'result'])
+            ->name('result');
+    });
+
+/*
+|--------------------------------------------------------------------------
+| TES KOMPETENSI
+|--------------------------------------------------------------------------
+*/
+
+Route::prefix('competency')
+    ->name('competency.')
+    ->group(function () {
+
+        Route::get('/', [CompetencyTestController::class, 'index'])
+            ->name('index');
+
+        Route::get('/m/{merchant:slug}', [CompetencyTestController::class, 'index'])
+            ->where('merchant', '[a-z0-9-]+')
+            ->name('index.merchant');
+
+        Route::post('/start', [CompetencyTestController::class, 'start'])
+            ->name('start');
+
+        Route::get('/instruction/{competencyTest}', [CompetencyTestController::class, 'instruction'])
+            ->name('instruction');
+
+        Route::get('/test/{competencyTest}', [CompetencyTestController::class, 'test'])
+            ->name('test');
+
+        Route::post('/test/{competencyTest}/submit', [CompetencyTestController::class, 'submit'])
+            ->name('submit');
+
+        Route::get('/result/{competencyTest}', [CompetencyTestController::class, 'result'])
             ->name('result');
     });
 
@@ -97,6 +133,11 @@ Route::middleware('auth')->group(function () {
                 Route::get('disc-results/{discTest}', [DiscResultController::class, 'show'])
                     ->name('disc-results.show');
 
+                Route::get('competency-results', [CompetencyResultController::class, 'index'])
+                    ->name('competency-results.index');
+                Route::get('competency-results/{competencyTest}', [CompetencyResultController::class, 'show'])
+                    ->name('competency-results.show');
+
                 Route::resource('users', UserController::class)
                     ->except('show');
 
@@ -123,6 +164,11 @@ Route::middleware('auth')->group(function () {
                 ->name('disc-results.index');
             Route::get('disc-results/{discTest}', [MerchantDiscResultController::class, 'show'])
                 ->name('disc-results.show');
+
+            Route::get('competency-results', [MerchantCompetencyResultController::class, 'index'])
+                ->name('competency-results.index');
+            Route::get('competency-results/{competencyTest}', [MerchantCompetencyResultController::class, 'show'])
+                ->name('competency-results.show');
         });
 });
 

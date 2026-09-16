@@ -65,4 +65,9 @@ class Merchant extends Model
     {
         return $this->hasMany(DiscTest::class);
     }
+
+    public function competencyTests(): HasMany
+    {
+        return $this->hasMany(CompetencyTest::class);
+    }
 }

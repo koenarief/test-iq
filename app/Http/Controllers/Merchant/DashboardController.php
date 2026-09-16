@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Merchant;
 
 use App\Http\Controllers\Controller;
+use App\Models\CompetencyTest;
 use App\Models\DiscTest;
 use App\Models\Ist\IstTest;
 use Illuminate\Http\Request;
@@ -24,10 +25,14 @@ class DashboardController extends Controller
                 'disc_total' => DiscTest::query()->where('merchant_id', $merchantId)->count(),
                 'disc_completed' => DiscTest::query()->where('merchant_id', $merchantId)
                     ->where('status', 'completed')->count(),
+                'competency_total' => CompetencyTest::query()->where('merchant_id', $merchantId)->count(),
+                'competency_completed' => CompetencyTest::query()->where('merchant_id', $merchantId)
+                    ->where('status', 'completed')->count(),
             ],
             'startUrls' => [
                 'ist' => route('ist.index.merchant', $merchant),
                 'disc' => route('disc.index.merchant', $merchant),
+                'competency' => route('competency.index.merchant', $merchant),
             ],
         ]);
     }

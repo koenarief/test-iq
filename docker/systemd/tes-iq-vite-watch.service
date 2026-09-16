@@ -1,0 +1,30 @@
+# Rebuilds public/build automatically whenever resources/ (or package.json,
+# vite.config.js) changes, so the live site never serves stale compiled
+# JS/CSS after a source edit or `git pull`. Docker doesn't run Node, and the
+# app/webserver containers just read public/build off the bind mount, so
+# this runs as a host-level systemd --user service instead of a container.
+#
+# Install on a server as the deploy user (no root needed):
+#   mkdir -p ~/.config/systemd/user
+#   cp docker/systemd/tes-iq-vite-watch.service ~/.config/systemd/user/
+#   loginctl enable-linger "$USER"   # keep it running across logout/reboot
+#   systemctl --user daemon-reload
+#   systemctl --user enable --now tes-iq-vite-watch.service
+#
+# Adjust WorkingDirectory below if the checkout path differs.
+
+[Unit]
+Description=tes-iq frontend asset build watcher (vite build --watch)
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/gs/tes-iq
+ExecStart=/usr/bin/npm run build -- --watch
+Restart=always
+RestartSec=5
+StandardOutput=append:%h/.local/state/tes-iq/vite-watch.log
+StandardError=append:%h/.local/state/tes-iq/vite-watch.log
+
+[Install]
+WantedBy=default.target

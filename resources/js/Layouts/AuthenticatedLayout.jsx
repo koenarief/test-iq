@@ -1,9 +1,58 @@
-import ApplicationLogo from '@/Components/ApplicationLogo';
 import Dropdown from '@/Components/Dropdown';
-import NavLink from '@/Components/NavLink';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink';
 import { Link, usePage } from '@inertiajs/react';
 import { useState } from 'react';
+
+const NAV_ITEMS = [
+    { href: 'dashboard', pattern: 'dashboard', label: 'Dashboard' },
+    {
+        href: 'admin.ist-questions.index',
+        pattern: 'admin.ist-questions.*',
+        label: 'Soal IST',
+    },
+    {
+        href: 'admin.ist-answer-keys.index',
+        pattern: 'admin.ist-answer-keys.*',
+        label: 'Kunci Jawaban',
+    },
+    {
+        href: 'admin.ist-results.index',
+        pattern: 'admin.ist-results.*',
+        label: 'Hasil IST',
+    },
+    {
+        href: 'admin.disc-results.index',
+        pattern: 'admin.disc-results.*',
+        label: 'Hasil DISC',
+    },
+    {
+        href: 'admin.competency-results.index',
+        pattern: 'admin.competency-results.*',
+        label: 'Hasil Kompetensi',
+    },
+    { href: 'admin.users.index', pattern: 'admin.users.*', label: 'User' },
+    {
+        href: 'admin.merchants.index',
+        pattern: 'admin.merchants.*',
+        label: 'Merchant',
+    },
+];
+
+function PillNavLink({ href, active, children }) {
+    return (
+        <Link
+            href={href}
+            className={
+                'rounded-full px-3 py-1.5 text-[13px] font-medium transition ' +
+                (active
+                    ? 'bg-zinc-900 text-white'
+                    : 'text-zinc-500 hover:bg-zinc-100 hover:text-zinc-800')
+            }
+        >
+            {children}
+        </Link>
+    );
+}
 
 export default function AuthenticatedLayout({ header, children }) {
     const user = usePage().props.auth.user;
@@ -12,70 +61,35 @@ export default function AuthenticatedLayout({ header, children }) {
         useState(false);
 
     return (
-        <div className="min-h-screen bg-gray-100">
-            <nav className="border-b border-gray-100 bg-white">
+        <div className="font-admin min-h-screen bg-[#F7F8FA] text-zinc-900 antialiased">
+            <nav className="sticky top-0 z-10 border-b border-zinc-200/80 bg-white/90 backdrop-blur">
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                    <div className="flex h-16 justify-between">
-                        <div className="flex">
-                            <div className="flex shrink-0 items-center">
-                                <Link href="/">
-                                    <ApplicationLogo className="block h-9 w-auto fill-current text-gray-800" />
-                                </Link>
-                            </div>
+                    <div className="flex h-16 items-center justify-between">
+                        <div className="flex items-center">
+                            <Link
+                                href="/"
+                                className="flex shrink-0 items-center gap-2.5"
+                            >
+                                <span className="grid h-9 w-9 place-items-center rounded-xl bg-zinc-900 text-[14px] font-bold text-white">
+                                    A
+                                </span>
+                                <span className="hidden text-[14px] font-extrabold tracking-[-0.02em] text-zinc-900 sm:block">
+                                    Admin Panel
+                                </span>
+                            </Link>
 
-                            <div className="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                                <NavLink
-                                    href={route('dashboard')}
-                                    active={route().current('dashboard')}
-                                >
-                                    Dashboard
-                                </NavLink>
-                                <NavLink
-                                    href={route('admin.ist-questions.index')}
-                                    active={route().current(
-                                        'admin.ist-questions.*',
-                                    )}
-                                >
-                                    Soal IST
-                                </NavLink>
-                                <NavLink
-                                    href={route('admin.ist-answer-keys.index')}
-                                    active={route().current(
-                                        'admin.ist-answer-keys.*',
-                                    )}
-                                >
-                                    Kunci Jawaban
-                                </NavLink>
-                                <NavLink
-                                    href={route('admin.ist-results.index')}
-                                    active={route().current(
-                                        'admin.ist-results.*',
-                                    )}
-                                >
-                                    Hasil IST
-                                </NavLink>
-                                <NavLink
-                                    href={route('admin.disc-results.index')}
-                                    active={route().current(
-                                        'admin.disc-results.*',
-                                    )}
-                                >
-                                    Hasil DISC
-                                </NavLink>
-                                <NavLink
-                                    href={route('admin.users.index')}
-                                    active={route().current('admin.users.*')}
-                                >
-                                    User
-                                </NavLink>
-                                <NavLink
-                                    href={route('admin.merchants.index')}
-                                    active={route().current(
-                                        'admin.merchants.*',
-                                    )}
-                                >
-                                    Merchant
-                                </NavLink>
+                            <div className="hidden items-center gap-1 sm:ms-8 sm:flex">
+                                {NAV_ITEMS.map((item) => (
+                                    <PillNavLink
+                                        key={item.href}
+                                        href={route(item.href)}
+                                        active={route().current(
+                                            item.pattern,
+                                        )}
+                                    >
+                                        {item.label}
+                                    </PillNavLink>
+                                ))}
                             </div>
                         </div>
 
@@ -83,15 +97,15 @@ export default function AuthenticatedLayout({ header, children }) {
                             <div className="relative ms-3">
                                 <Dropdown>
                                     <Dropdown.Trigger>
-                                        <span className="inline-flex rounded-md">
+                                        <span className="inline-flex rounded-full">
                                             <button
                                                 type="button"
-                                                className="inline-flex items-center rounded-md border border-transparent bg-white px-3 py-2 text-sm font-medium leading-4 text-gray-500 transition duration-150 ease-in-out hover:text-gray-700 focus:outline-none"
+                                                className="inline-flex items-center gap-2 rounded-full border border-zinc-200 bg-white px-3 py-1.5 text-[13px] font-semibold text-zinc-700 shadow-sm transition hover:text-zinc-900"
                                             >
                                                 {user.name}
 
                                                 <svg
-                                                    className="-me-0.5 ms-2 h-4 w-4"
+                                                    className="-me-0.5 h-4 w-4"
                                                     xmlns="http://www.w3.org/2000/svg"
                                                     viewBox="0 0 20 20"
                                                     fill="currentColor"
@@ -131,7 +145,7 @@ export default function AuthenticatedLayout({ header, children }) {
                                         (previousState) => !previousState,
                                     )
                                 }
-                                className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none"
+                                className="inline-flex items-center justify-center rounded-full p-2 text-zinc-400 transition hover:bg-zinc-100 hover:text-zinc-600 focus:bg-zinc-100 focus:text-zinc-600 focus:outline-none"
                             >
                                 <svg
                                     className="h-6 w-6"
@@ -170,64 +184,27 @@ export default function AuthenticatedLayout({ header, children }) {
                 <div
                     className={
                         (showingNavigationDropdown ? 'block' : 'hidden') +
-                        ' sm:hidden'
+                        ' border-t border-zinc-200/80 sm:hidden'
                     }
                 >
-                    <div className="space-y-1 pb-3 pt-2">
-                        <ResponsiveNavLink
-                            href={route('dashboard')}
-                            active={route().current('dashboard')}
-                        >
-                            Dashboard
-                        </ResponsiveNavLink>
-                        <ResponsiveNavLink
-                            href={route('admin.ist-questions.index')}
-                            active={route().current('admin.ist-questions.*')}
-                        >
-                            Soal IST
-                        </ResponsiveNavLink>
-                        <ResponsiveNavLink
-                            href={route('admin.ist-answer-keys.index')}
-                            active={route().current(
-                                'admin.ist-answer-keys.*',
-                            )}
-                        >
-                            Kunci Jawaban
-                        </ResponsiveNavLink>
-                        <ResponsiveNavLink
-                            href={route('admin.ist-results.index')}
-                            active={route().current('admin.ist-results.*')}
-                        >
-                            Hasil IST
-                        </ResponsiveNavLink>
-                        <ResponsiveNavLink
-                            href={route('admin.disc-results.index')}
-                            active={route().current(
-                                'admin.disc-results.*',
-                            )}
-                        >
-                            Hasil DISC
-                        </ResponsiveNavLink>
-                        <ResponsiveNavLink
-                            href={route('admin.users.index')}
-                            active={route().current('admin.users.*')}
-                        >
-                            User
-                        </ResponsiveNavLink>
-                        <ResponsiveNavLink
-                            href={route('admin.merchants.index')}
-                            active={route().current('admin.merchants.*')}
-                        >
-                            Merchant
-                        </ResponsiveNavLink>
+                    <div className="space-y-1 px-2 pb-3 pt-2">
+                        {NAV_ITEMS.map((item) => (
+                            <ResponsiveNavLink
+                                key={item.href}
+                                href={route(item.href)}
+                                active={route().current(item.pattern)}
+                            >
+                                {item.label}
+                            </ResponsiveNavLink>
+                        ))}
                     </div>
 
-                    <div className="border-t border-gray-200 pb-1 pt-4">
+                    <div className="border-t border-zinc-200/80 pb-1 pt-4">
                         <div className="px-4">
-                            <div className="text-base font-medium text-gray-800">
+                            <div className="text-base font-medium text-zinc-800">
                                 {user.name}
                             </div>
-                            <div className="text-sm font-medium text-gray-500">
+                            <div className="text-sm font-medium text-zinc-500">
                                 {user.email}
                             </div>
                         </div>
@@ -249,7 +226,7 @@ export default function AuthenticatedLayout({ header, children }) {
             </nav>
 
             {header && (
-                <header className="bg-white shadow">
+                <header className="border-b border-zinc-200/80 bg-white/60">
                     <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
                         {header}
                     </div>
