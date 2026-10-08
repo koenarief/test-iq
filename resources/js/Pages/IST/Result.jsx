@@ -1,6 +1,6 @@
 import { Head, Link } from '@inertiajs/react';
 import {
-    ArrowLeft,
+    ArrowRight,
     Award,
     BarChart3,
     CheckCircle2,
@@ -109,14 +109,16 @@ export default function Result({
             <div className="mx-auto w-full max-w-7xl flex-1 px-4 py-8 sm:px-6 sm:py-12">
                 <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
                     <Link
-                        href={route('landing')}
-                        className="inline-flex min-h-11 items-center gap-2 rounded-lg text-xs font-mono text-zinc-400 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
+                        href={route('assessment.continue.competency')}
+                        method="post"
+                        as="button"
+                        className="inline-flex min-h-11 items-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 px-4 text-xs font-semibold text-white shadow-lg shadow-blue-600/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
                     >
-                        <ArrowLeft
+                        Lanjutkan ke Tes Kompetensi
+                        <ArrowRight
                             className="h-4 w-4"
                             aria-hidden="true"
                         />
-                        Kembali ke Beranda
                     </Link>
 
                     <span className="inline-flex min-h-11 items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 text-xs font-semibold text-emerald-300">

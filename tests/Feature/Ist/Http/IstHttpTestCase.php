@@ -7,6 +7,7 @@ use App\Models\Ist\IstQuestionOption;
 use App\Models\Ist\IstTest;
 use App\Models\Ist\IstTestQuestion;
 use App\Models\Ist\IstTestSubtest;
+use App\Models\User;
 use App\Services\Ist\IstTestLifecycleService;
 use App\Support\Ist\IstAnswerType;
 use Carbon\CarbonImmutable;
@@ -15,6 +16,8 @@ use Tests\Feature\Ist\Services\IstDatabaseTestCase;
 abstract class IstHttpTestCase extends IstDatabaseTestCase
 {
     protected CarbonImmutable $now;
+
+    protected User $candidateUser;
 
     protected function setUp(): void
     {
@@ -29,6 +32,15 @@ abstract class IstHttpTestCase extends IstDatabaseTestCase
 
         $this->now = CarbonImmutable::parse('2026-08-05 10:00:00', 'UTC');
         CarbonImmutable::setTestNow($this->now);
+
+        // IST routes require login since the candidate-registration feature
+        // was added; every HTTP request in this test tree now needs an
+        // authenticated user regardless of IstTest's own token ownership.
+        $this->candidateUser = User::factory()->create([
+            'role' => User::ROLE_CANDIDATE,
+            'status' => User::STATUS_AKTIF,
+        ]);
+        $this->actingAs($this->candidateUser);
     }
 
     protected function tearDown(): void
@@ -166,7 +178,7 @@ abstract class IstHttpTestCase extends IstDatabaseTestCase
             'participant_name' => $participant,
             'age' => 30,
             'gender' => 'L',
-        ]);
+        ], null, $this->candidateUser->id);
         $token = $result->takeRawAccessToken();
         $test = $result->test;
 

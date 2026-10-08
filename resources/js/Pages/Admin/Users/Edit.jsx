@@ -2,7 +2,7 @@ import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head } from '@inertiajs/react';
 import UserForm from './Partials/Form';
 
-export default function Edit({ user, merchants }) {
+export default function Edit({ user, merchants, positions }) {
     return (
         <AuthenticatedLayout
             header={
@@ -19,6 +19,7 @@ export default function Edit({ user, merchants }) {
                         <UserForm
                             user={user}
                             merchants={merchants}
+                            positions={positions}
                             submitUrl={route('admin.users.update', user.id)}
                             method="put"
                         />

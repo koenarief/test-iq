@@ -36,6 +36,16 @@ const NAV_ITEMS = [
         pattern: 'admin.merchants.*',
         label: 'Merchant',
     },
+    {
+        href: 'admin.positions.index',
+        pattern: 'admin.positions.*',
+        label: 'Posisi',
+    },
+    {
+        href: 'admin.assessment-recaps.index',
+        pattern: 'admin.assessment-recaps.*',
+        label: 'Rekap Kandidat',
+    },
 ];
 
 function PillNavLink({ href, active, children }) {

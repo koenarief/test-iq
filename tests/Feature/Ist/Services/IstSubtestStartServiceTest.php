@@ -40,7 +40,7 @@ class IstSubtestStartServiceTest extends IstDatabaseTestCase
         $this->assertSame(IstTestSubtest::STATUS_ANSWERING, $started->status);
         $this->assertSame($this->now->toISOString(), $started->started_at->toISOString());
         $this->assertSame($this->now->toISOString(), $started->answering_started_at->toISOString());
-        $this->assertSame($this->now->addSeconds(360)->toISOString(), $started->answering_ends_at->toISOString());
+        $this->assertSame($this->now->addSeconds(180)->toISOString(), $started->answering_ends_at->toISOString());
         $this->assertNull($started->memorization_started_at);
         $this->assertNull($started->memorization_ends_at);
         $this->assertSame(IstTest::STATUS_IN_PROGRESS, $test->status);
@@ -71,7 +71,7 @@ class IstSubtestStartServiceTest extends IstDatabaseTestCase
         $test->refresh();
 
         $this->assertSame(IstTestSubtest::STATUS_ANSWERING, $started->status);
-        $this->assertSame($this->now->addSeconds(360)->toISOString(), $started->answering_ends_at->toISOString());
+        $this->assertSame($this->now->addSeconds(180)->toISOString(), $started->answering_ends_at->toISOString());
         $this->assertSame(IstTest::STATUS_IN_PROGRESS, $test->status);
         $this->assertSame($overallStartedAt, $test->started_at->toISOString());
         $this->assertSame(2, $test->current_subtest_sequence);
@@ -83,14 +83,14 @@ class IstSubtestStartServiceTest extends IstDatabaseTestCase
         $overallStartedAt = $test->started_at->toISOString();
 
         $first = $this->startService->start($runtime, $this->now);
-        $second = $this->startService->start($first, $this->now->addSeconds(180));
+        $second = $this->startService->start($first, $this->now->addSeconds(80));
         $test->refresh();
 
         $this->assertSame(IstTestSubtest::STATUS_MEMORIZING, $first->status);
         $this->assertSame($this->now->toISOString(), $first->memorization_started_at->toISOString());
-        $this->assertSame($this->now->addSeconds(180)->toISOString(), $first->memorization_ends_at->toISOString());
-        $this->assertSame($this->now->addSeconds(180)->toISOString(), $first->answering_started_at->toISOString());
-        $this->assertSame($this->now->addSeconds(540)->toISOString(), $first->answering_ends_at->toISOString());
+        $this->assertSame($this->now->addSeconds(80)->toISOString(), $first->memorization_ends_at->toISOString());
+        $this->assertSame($this->now->addSeconds(80)->toISOString(), $first->answering_started_at->toISOString());
+        $this->assertSame($this->now->addSeconds(240)->toISOString(), $first->answering_ends_at->toISOString());
         $this->assertSame($first->started_at->toISOString(), $second->started_at->toISOString());
         $this->assertSame($first->memorization_ends_at->toISOString(), $second->memorization_ends_at->toISOString());
         $this->assertSame($first->answering_ends_at->toISOString(), $second->answering_ends_at->toISOString());

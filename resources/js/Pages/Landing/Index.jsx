@@ -1,27 +1,33 @@
-import { Head } from '@inertiajs/react';
+import { Head, Link } from '@inertiajs/react';
 import PublicLayout from '@/Layouts/PublicLayout';
-import TestCard from '@/Components/TestCard';
 import { motion } from 'motion/react';
-import { UserCheck, BrainCircuit, Briefcase, ShieldCheck, Zap, BarChart3 } from 'lucide-react';
+import { UserCheck, BrainCircuit, Briefcase, ShieldCheck, Zap, BarChart3, ArrowRight } from 'lucide-react';
+
+const STAGES = [
+    {
+        title: 'Tes Gaya Kerja (DISC)',
+        description: 'Mengidentifikasi tipe gaya kepribadian & perilaku kerja utama.',
+        icon: UserCheck,
+    },
+    {
+        title: 'Tes Kemampuan Kognitif Adaptasi (IST)',
+        description: 'Mengukur performa pada sembilan area kemampuan kognitif.',
+        icon: BrainCircuit,
+    },
+    {
+        title: 'Tes Kompetensi',
+        description: 'Studi kasus situasional sesuai jabatan/divisi yang dilamar.',
+        icon: Briefcase,
+    },
+];
 
 export default function LandingIndex() {
     return (
         <PublicLayout>
-            <Head title="Pilih Jenis Psikotes" />
+            <Head title="Portal Psikotes Enterprise" />
 
-            <div className="max-w-7xl mx-auto px-6 py-12 md:py-20 flex-1 flex flex-col justify-center">
-                {/* Hero Section */}
-                <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-                    {/* <motion.div
-                        initial={{ opacity: 0, y: -10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.4 }}
-                        className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 text-xs font-mono text-blue-400"
-                    >
-                        <Zap className="w-3.5 h-3.5" />
-                        <span>Platform Evaluasi Kepribadian & Potensi Kerja</span>
-                    </motion.div> */}
-
+            <div className="max-w-5xl mx-auto px-6 py-12 md:py-20 flex-1 flex flex-col justify-center">
+                <div className="text-center max-w-3xl mx-auto mb-12 space-y-4">
                     <motion.h1
                         initial={{ opacity: 0, y: 15 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -40,66 +46,53 @@ export default function LandingIndex() {
                         transition={{ duration: 0.5, delay: 0.2 }}
                         className="text-base md:text-lg text-zinc-400 max-w-2xl mx-auto leading-relaxed"
                     >
-                        Pilih modul penilaian di bawah ini untuk memulai evaluasi. Pastikan Anda menyelesaikan tes sesuai petunjuk dalam suasana yang tenang.
+                        Satu rangkaian evaluasi berisi tiga tahap tes yang berjalan berurutan.
+                        Isi data diri sekali di awal, lalu kerjakan ketiganya tanpa perlu
+                        membuat akun atau login.
                     </motion.p>
                 </div>
 
-                {/* Selection Cards Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto w-full mb-16">
-                    <TestCard
-                        title="Tes Kemampuan Gaya Kerja"
-                        subtitle="Perilaku & Gaya Kerja"
-                        description="Instrumen penilaian psikologi untuk mengidentifikasi 4 tipe gaya kepribadian utama: Dominance, Influence, Steadiness, dan Conscientiousness."
-                        icon={UserCheck}
-                        badge="Tersedia / Aktif"
-                        isActive={true}
-                        href={route('disc.index')}
-                        features={[
-                            '24 Nomor Soal Pilihan Berganda',
-                            'Opsi: Paling & Paling Tidak Sesuai',
-                            'Perhitungan Profil Otomatis (Graph 1, 2, 3)',
-                            'Estimasi Waktu: 30 Menit',
-                        ]}
-                        index={0}
-                    />
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.3 }}
+                    className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto w-full mb-10"
+                >
+                    {STAGES.map(({ title, description, icon: Icon }, index) => (
+                        <div
+                            key={title}
+                            className="relative flex flex-col gap-3 p-6 rounded-2xl border border-zinc-800/60 bg-zinc-900/40"
+                        >
+                            <div className="flex items-center gap-3">
+                                <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-blue-500/10 border border-blue-500/30 text-blue-400 font-mono text-sm font-bold">
+                                    {index + 1}
+                                </div>
+                                <Icon className="w-5 h-5 text-blue-400" />
+                            </div>
+                            <h3 className="text-sm font-semibold text-white">{title}</h3>
+                            <p className="text-xs text-zinc-400 leading-relaxed">{description}</p>
+                        </div>
+                    ))}
+                </motion.div>
 
-                    <TestCard
-                        title="Tes Kemampuan Kognitif Adaptasi"
-                        subtitle="Mengukur performa pada sembilan area kemampuan kognitif melalui asesmen singkat sekitar 72 menit."
-                        description="Asesmen singkat untuk melihat profil performa pada sembilan area kemampuan kognitif."
-                        icon={BrainCircuit}
-                        badge="Tersedia / Aktif"
-                        isActive={true}
-                        href={route('ist.index')}
-                        features={[
-                            'Durasi: Sekitar 72 menit',
-                            '9 subtes',
-                            '104 soal',
-                            'Hasil internal',
-                            'Autosave pengerjaan',
-                        ]}
-                        index={1}
-                    />
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.4 }}
+                    className="flex flex-col items-center gap-4 mb-16"
+                >
+                    <Link
+                        href={route('assessment.start')}
+                        className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-semibold text-base shadow-lg shadow-blue-600/25 transition-all duration-300 group"
+                    >
+                        <span>Mulai Tes</span>
+                        <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    </Link>
+                    <span className="text-xs font-mono text-zinc-500">
+                        Estimasi total waktu: ±30 menit DISC, ±35 menit IST, ±30 menit Kompetensi
+                    </span>
+                </motion.div>
 
-                    <TestCard
-                        title="Tes Kompetensi"
-                        subtitle="Studi Kasus Sesuai Divisi Lamaran"
-                        description="Asesmen situasional untuk mengukur kompetensi kerja sesuai divisi yang dilamar: Sales, Marketing, Procurement, Content Creator, atau Finance."
-                        icon={Briefcase}
-                        badge="Tersedia / Aktif"
-                        isActive={true}
-                        href={route('competency.index')}
-                        features={[
-                            'Pilih divisi sebelum mengerjakan',
-                            '30 Soal Studi Kasus',
-                            'Subtes menyesuaikan tiap divisi',
-                            'Estimasi Waktu: 30 Menit',
-                        ]}
-                        index={2}
-                    />
-                </div>
-
-                {/* Trust & Feature Badges */}
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}

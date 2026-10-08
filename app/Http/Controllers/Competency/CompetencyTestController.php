@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers\Competency;
 
-use App\Actions\Competency\SelectCompetencyQuestionsForTest;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StartCompetencyTestRequest;
 use App\Models\CompetencyAnswer;
 use App\Models\CompetencyQuestionOption;
 use App\Models\CompetencyTest;
-use App\Models\Merchant;
+use App\Services\Scoring\AssessmentScoringService;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -17,47 +15,9 @@ use Inertia\Response;
 
 class CompetencyTestController extends Controller
 {
-    private const SESSION_MERCHANT_KEY = 'competency.merchant_id';
-
-    public function index(Request $request, ?Merchant $merchant = null): Response
-    {
-        if ($merchant !== null && ! $merchant->is_active) {
-            abort(404);
-        }
-
-        $request->session()->put(self::SESSION_MERCHANT_KEY, $merchant?->id);
-
-        return Inertia::render('Competency/Biodata', [
-            'merchantName' => $merchant?->name,
-            'departments' => $this->departmentOptions(),
-        ]);
-    }
-
-    public function start(
-        StartCompetencyTestRequest $request,
-        SelectCompetencyQuestionsForTest $selector,
-    ) {
-        $merchantId = $request->session()->get(self::SESSION_MERCHANT_KEY);
-
-        if ($merchantId !== null && ! Merchant::where('id', $merchantId)->where('is_active', true)->exists()) {
-            $merchantId = null;
-        }
-
-        $request->session()->forget(self::SESSION_MERCHANT_KEY);
-
-        $competencyTest = CompetencyTest::create([
-            'participant_name' => $request->participant_name,
-            'age' => $request->age,
-            'gender' => $request->gender,
-            'department' => $request->department,
-            'status' => 'draft',
-            'merchant_id' => $merchantId,
-        ]);
-
-        $selector->handle($competencyTest);
-
-        return redirect()->route('competency.instruction', $competencyTest->id);
-    }
+    public function __construct(
+        private AssessmentScoringService $assessmentScoringService,
+    ) {}
 
     public function instruction(CompetencyTest $competencyTest): Response
     {
@@ -236,6 +196,10 @@ class CompetencyTestController extends Controller
             ]);
         });
 
+        if ($request->user()) {
+            $this->assessmentScoringService->recomputeForCandidate($request->user());
+        }
+
         return redirect()->route('competency.result', $competencyTest);
     }
 
@@ -268,17 +232,6 @@ class CompetencyTestController extends Controller
             'breakdown' => $breakdown,
             'overallPercentage' => round(((float) $competencyTest->total_score / 5) * 100, 1),
         ]);
-    }
-
-    /**
-     * @return array<int, array{key: string, label: string}>
-     */
-    private function departmentOptions(): array
-    {
-        return collect(config('competency.departments'))
-            ->map(fn ($department, $key) => ['key' => $key, 'label' => $department['label']])
-            ->values()
-            ->all();
     }
 
     private function departmentLabel(string $department): string

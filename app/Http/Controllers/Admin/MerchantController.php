@@ -54,11 +54,7 @@ class MerchantController extends Controller
     {
         return Inertia::render('Admin/Merchants/Edit', [
             'merchant' => $merchant,
-            'startUrls' => [
-                'ist' => route('ist.index.merchant', $merchant),
-                'disc' => route('disc.index.merchant', $merchant),
-                'competency' => route('competency.index.merchant', $merchant),
-            ],
+            'startUrl' => route('assessment.start.merchant', $merchant),
         ]);
     }
 

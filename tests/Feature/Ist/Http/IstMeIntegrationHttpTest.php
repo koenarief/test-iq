@@ -74,8 +74,8 @@ final class IstMeIntegrationHttpTest extends IstHttpTestCase
         $originalAnsweringEnd = $runtime->answering_ends_at->toISOString();
 
         $this->assertSame($startedAt->toISOString(), $runtime->started_at->toISOString());
-        $this->assertSame($startedAt->addSeconds(180)->toISOString(), $originalMemorizationEnd);
-        $this->assertSame($startedAt->addSeconds(540)->toISOString(), $originalAnsweringEnd);
+        $this->assertSame($startedAt->addSeconds(80)->toISOString(), $originalMemorizationEnd);
+        $this->assertSame($startedAt->addSeconds(240)->toISOString(), $originalAnsweringEnd);
 
         CarbonImmutable::setTestNow($startedAt->addMinute());
         $this->post($this->startUrl($test))->assertStatus(303);

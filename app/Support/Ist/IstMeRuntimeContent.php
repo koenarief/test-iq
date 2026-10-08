@@ -9,9 +9,9 @@ final class IstMeRuntimeContent
 {
     public const MODEL = 'initial_letter_to_category';
 
-    public const MEMORIZATION_SECONDS = 180;
+    public const MEMORIZATION_SECONDS = 80;
 
-    public const ANSWERING_SECONDS = 360;
+    public const ANSWERING_SECONDS = 160;
 
     private const GROUP_KEYS = ['A', 'B', 'C', 'D', 'E'];
 

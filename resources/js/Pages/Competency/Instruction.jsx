@@ -13,11 +13,11 @@ export default function Instruction({ competencyTest, categories = [], totalQues
                     {/* Back Button */}
                     <div className="mb-6">
                         <Link
-                            href={route('competency.index')}
+                            href={route('landing')}
                             className="inline-flex items-center gap-2 text-xs font-mono text-zinc-400 hover:text-white transition-colors group"
                         >
                             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-                            <span>Kembali ke Edit Biodata</span>
+                            <span>Kembali ke Halaman Utama</span>
                         </Link>
                     </div>
 

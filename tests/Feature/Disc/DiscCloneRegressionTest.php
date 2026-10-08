@@ -5,6 +5,8 @@ namespace Tests\Feature\Disc;
 use App\Models\DiscGraphConversion;
 use App\Models\DiscQuestion;
 use App\Models\DiscTest;
+use App\Models\Instansi;
+use App\Models\Position;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
@@ -49,15 +51,15 @@ final class DiscCloneRegressionTest extends TestCase
     public function test_landing_routes_and_active_question_bank_remain_available(): void
     {
         $this->assertTrue(Route::has('landing'));
-        $this->assertTrue(Route::has('disc.index'));
-        $this->assertTrue(Route::has('disc.start'));
+        $this->assertTrue(Route::has('assessment.start'));
+        $this->assertTrue(Route::has('assessment.begin'));
         $this->assertTrue(Route::has('disc.test'));
         $this->assertTrue(Route::has('disc.submit'));
         $this->assertTrue(Route::has('disc.result'));
         $this->assertSame(24, DiscQuestion::query()->where('is_active', true)->count());
 
         $this->get(route('landing'))->assertOk();
-        $this->get(route('disc.index'))->assertOk();
+        $this->get(route('assessment.start'))->assertOk();
     }
 
     public function test_disc_creation_exact_answer_validation_persistence_scoring_and_result_are_deterministic(): void
@@ -65,10 +67,15 @@ final class DiscCloneRegressionTest extends TestCase
         $existingTestCount = DiscTest::query()->count();
         $existingAnswerCount = DB::table('disc_answers')->count();
 
-        $start = $this->post(route('disc.start'), [
+        $instansi = Instansi::firstOrCreate(['nama' => 'Stage 18 Instansi']);
+        $position = Position::create(['name' => 'Stage 18 Position', 'department' => 'sales', 'is_active' => true]);
+
+        $start = $this->post(route('assessment.begin'), [
             'participant_name' => 'Stage 18 Clone Regression',
             'age' => 30,
             'gender' => 'L',
+            'instansi_id' => $instansi->id,
+            'position_id' => $position->id,
         ]);
 
         $created = DiscTest::query()->latest('id')->firstOrFail();

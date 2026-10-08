@@ -28,7 +28,7 @@ function StartUrlRow({ label, url }) {
     );
 }
 
-export default function Edit({ merchant, startUrls }) {
+export default function Edit({ merchant, startUrl }) {
     return (
         <AuthenticatedLayout
             header={
@@ -64,12 +64,7 @@ export default function Edit({ merchant, startUrls }) {
                             </p>
                         </div>
 
-                        <StartUrlRow label="Tes IST" url={startUrls.ist} />
-                        <StartUrlRow label="Tes DISC" url={startUrls.disc} />
-                        <StartUrlRow
-                            label="Tes Kompetensi"
-                            url={startUrls.competency}
-                        />
+                        <StartUrlRow label="Link Tes" url={startUrl} />
                     </div>
                 </div>
             </div>

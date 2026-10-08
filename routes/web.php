@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\AssessmentSequenceController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Disc\DiscTestController;
@@ -17,10 +18,47 @@ use App\Http\Controllers\Merchant\DashboardController as MerchantDashboardContro
 use App\Http\Controllers\Merchant\IstResultController as MerchantIstResultController;
 use App\Http\Controllers\Merchant\DiscResultController as MerchantDiscResultController;
 use App\Http\Controllers\Merchant\CompetencyResultController as MerchantCompetencyResultController;
+use App\Http\Controllers\Candidate\CandidateDashboardController;
+use App\Http\Controllers\Admin\PositionController;
+use App\Http\Controllers\Admin\InterviewScoreController;
+use App\Http\Controllers\Admin\AssessmentRecapController;
 use Inertia\Inertia;
 
 Route::get('/', [LandingController::class, 'index'])
     ->name('landing');
+
+/*
+|--------------------------------------------------------------------------
+| RANGKAIAN TES (DISC -> IST -> KOMPETENSI)
+|--------------------------------------------------------------------------
+|
+| Satu biodata di depan, tanpa login, lalu otomatis berjalan berurutan
+| lewat ketiga modul. Lihat juga routes/ist.php untuk rute "ist.resume"
+| yang dipanggil oleh continueToIst().
+|
+*/
+
+Route::prefix('tes')
+    ->name('assessment.')
+    ->group(function () {
+        Route::get('/', [AssessmentSequenceController::class, 'start'])
+            ->name('start');
+
+        Route::get('/m/{merchant:slug}', [AssessmentSequenceController::class, 'start'])
+            ->where('merchant', '[a-z0-9-]+')
+            ->name('start.merchant');
+
+        Route::post('/mulai', [AssessmentSequenceController::class, 'begin'])
+            ->name('begin');
+
+        Route::middleware('auth')->group(function () {
+            Route::post('/lanjut/ist', [AssessmentSequenceController::class, 'continueToIst'])
+                ->name('continue.ist');
+
+            Route::post('/lanjut/kompetensi', [AssessmentSequenceController::class, 'continueToCompetency'])
+                ->name('continue.competency');
+        });
+    });
 
 /*
 |--------------------------------------------------------------------------
@@ -30,17 +68,8 @@ Route::get('/', [LandingController::class, 'index'])
 
 Route::prefix('disc')
     ->name('disc.')
+    ->middleware('auth')
     ->group(function () {
-
-        Route::get('/', [DiscTestController::class, 'index'])
-            ->name('index');
-
-        Route::get('/m/{merchant:slug}', [DiscTestController::class, 'index'])
-            ->where('merchant', '[a-z0-9-]+')
-            ->name('index.merchant');
-
-        Route::post('/start', [DiscTestController::class, 'start'])
-            ->name('start');
 
         Route::get('/instruction/{discTest}', [DiscTestController::class, 'instruction'])
             ->name('instruction');
@@ -63,17 +92,8 @@ Route::prefix('disc')
 
 Route::prefix('competency')
     ->name('competency.')
+    ->middleware('auth')
     ->group(function () {
-
-        Route::get('/', [CompetencyTestController::class, 'index'])
-            ->name('index');
-
-        Route::get('/m/{merchant:slug}', [CompetencyTestController::class, 'index'])
-            ->where('merchant', '[a-z0-9-]+')
-            ->name('index.merchant');
-
-        Route::post('/start', [CompetencyTestController::class, 'start'])
-            ->name('start');
 
         Route::get('/instruction/{competencyTest}', [CompetencyTestController::class, 'instruction'])
             ->name('instruction');
@@ -156,8 +176,29 @@ Route::middleware('auth')->group(function () {
                 Route::resource('merchants', MerchantController::class)
                     ->except('show')
                     ->where(['merchant' => '[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}']);
+
+                Route::resource('positions', PositionController::class)
+                    ->except('show');
+
+                Route::get('assessment-recaps', [AssessmentRecapController::class, 'index'])
+                    ->name('assessment-recaps.index');
+                Route::get('assessment-recaps/{candidateAssessment}', [AssessmentRecapController::class, 'show'])
+                    ->name('assessment-recaps.show');
+
+                Route::get('candidate-assessments/{candidateAssessment}/interview', [InterviewScoreController::class, 'edit'])
+                    ->name('candidate-assessments.interview.edit');
+                Route::put('candidate-assessments/{candidateAssessment}/interview', [InterviewScoreController::class, 'update'])
+                    ->name('candidate-assessments.interview.update');
             });
     });
+
+    Route::middleware('candidate')
+        ->prefix('candidate')
+        ->name('candidate.')
+        ->group(function () {
+            Route::get('/dashboard', [CandidateDashboardController::class, 'index'])
+                ->name('dashboard');
+        });
 
     Route::middleware('merchant')
         ->prefix('merchant')

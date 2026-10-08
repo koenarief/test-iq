@@ -87,7 +87,7 @@ final class IstMeRuntimeContentTest extends TestCase
     public function test_it_rejects_noncanonical_me_timers(): void
     {
         $master = $this->master();
-        $master->answering_seconds = 361;
+        $master->answering_seconds = 161;
 
         $this->expectException(DomainException::class);
         $this->content->fromMaster($master);
@@ -114,8 +114,8 @@ final class IstMeRuntimeContentTest extends TestCase
             'code' => 'ME',
             'instruction_content' => 'Hafalkan lima kelompok. Setelah itu pilih kategori berdasarkan huruf awal.',
             'memorization_content' => json_encode(['groups' => $groups], JSON_THROW_ON_ERROR),
-            'memorization_seconds' => 180,
-            'answering_seconds' => 360,
+            'memorization_seconds' => 80,
+            'answering_seconds' => 160,
         ]);
     }
 }

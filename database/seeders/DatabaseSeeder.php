@@ -26,6 +26,7 @@ class DatabaseSeeder extends Seeder
             DiscProfileSeeder::class,
             DiscStatementInterpretationSeeder::class,
             DiscGraphConversionSeeder::class,
+            PositionSeeder::class,
         ]);
     }
 }

@@ -20,7 +20,7 @@ class IstSubtestCatalogTest extends TestCase
         $this->assertSame(range(1, 9), array_column($catalog, 'sequence'));
     }
 
-    public function test_catalog_contains_176_questions_and_4320_seconds_of_core_time(): void
+    public function test_catalog_contains_176_questions_and_2100_seconds_of_core_time(): void
     {
         $catalog = IstSubtestCatalog::all();
 
@@ -32,7 +32,7 @@ class IstSubtestCatalogTest extends TestCase
             IstSubtestCatalog::EXPECTED_CORE_DURATION_SECONDS,
             array_sum(array_column($catalog, 'duration_seconds'))
         );
-        $this->assertSame(72, array_sum(array_column($catalog, 'duration_seconds')) / 60);
+        $this->assertSame(35, array_sum(array_column($catalog, 'duration_seconds')) / 60);
     }
 
     public function test_every_duration_is_the_sum_of_memorization_and_answering_time(): void
@@ -46,13 +46,13 @@ class IstSubtestCatalogTest extends TestCase
         }
     }
 
-    public function test_me_has_a_three_minute_memorization_and_six_minute_answering_phase(): void
+    public function test_me_has_an_eighty_second_memorization_and_160_second_answering_phase(): void
     {
         $me = $this->findSubtest('ME');
 
-        $this->assertSame(180, $me['memorization_seconds']);
-        $this->assertSame(360, $me['answering_seconds']);
-        $this->assertSame(540, $me['duration_seconds']);
+        $this->assertSame(80, $me['memorization_seconds']);
+        $this->assertSame(160, $me['answering_seconds']);
+        $this->assertSame(240, $me['duration_seconds']);
 
         foreach (IstSubtestCatalog::all() as $subtest) {
             if ($subtest['code'] !== 'ME') {

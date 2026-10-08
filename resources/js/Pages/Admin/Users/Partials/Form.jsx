@@ -9,6 +9,7 @@ import { Link, useForm } from '@inertiajs/react';
 export default function UserForm({
     user,
     merchants = [],
+    positions = [],
     submitUrl,
     method = 'post',
 }) {
@@ -22,6 +23,7 @@ export default function UserForm({
         verified: user ? Boolean(user.email_verified_at) : true,
         role: user?.role ?? 'admin',
         merchant_id: user?.merchant_id ?? '',
+        position_id: user?.position_id ?? '',
     });
 
     const submit = (e) => {
@@ -114,9 +116,35 @@ export default function UserForm({
                 >
                     <option value="admin">Admin</option>
                     <option value="merchant">Merchant</option>
+                    <option value="candidate">Candidate</option>
                 </select>
                 <InputError message={errors.role} className="mt-2" />
             </div>
+
+            {data.role === 'candidate' && (
+                <div>
+                    <InputLabel htmlFor="position_id" value="Posisi" />
+                    <select
+                        id="position_id"
+                        value={data.position_id}
+                        onChange={(e) =>
+                            setData('position_id', e.target.value)
+                        }
+                        className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                    >
+                        <option value="">Pilih posisi...</option>
+                        {positions.map((position) => (
+                            <option key={position.id} value={position.id}>
+                                {position.name}
+                            </option>
+                        ))}
+                    </select>
+                    <InputError
+                        message={errors.position_id}
+                        className="mt-2"
+                    />
+                </div>
+            )}
 
             {data.role === 'merchant' && (
                 <div>

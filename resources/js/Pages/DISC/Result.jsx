@@ -23,7 +23,7 @@ import {
     ShieldAlert,
     Sprout,
     Briefcase,
-    ArrowLeft,
+    ArrowRight,
     Sparkles,
     CheckCircle2,
 } from 'lucide-react';
@@ -146,11 +146,13 @@ export default function Result({ discTest, profile, personalSummary }) {
                     {/* Top Navigation & Status Badge */}
                     <div className="flex items-center justify-between">
                         <Link
-                            href={route('landing')}
-                            className="inline-flex items-center gap-2 text-xs font-mono text-zinc-400 hover:text-white transition-colors group"
+                            href={route('assessment.continue.ist')}
+                            method="post"
+                            as="button"
+                            className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 px-4 py-2.5 text-xs font-semibold text-white shadow-lg shadow-blue-600/25 transition-all group"
                         >
-                            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-                            <span>Selesai & Kembali ke Beranda</span>
+                            <span>Lanjutkan ke Tes Kemampuan Kognitif (IST)</span>
+                            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                         </Link>
 
                         <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono">

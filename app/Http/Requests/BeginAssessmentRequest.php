@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
-class StartCompetencyTestRequest extends FormRequest
+class BeginAssessmentRequest extends FormRequest
 {
     public function authorize(): bool
     {
@@ -18,7 +18,8 @@ class StartCompetencyTestRequest extends FormRequest
             'participant_name' => ['required', 'string', 'max:255'],
             'age' => ['required', 'integer', 'between:10,100'],
             'gender' => ['required', 'in:L,P'],
-            'department' => ['required', Rule::in(array_keys(config('competency.departments')))],
+            'instansi_id' => ['required', 'integer', 'exists:instansi,id'],
+            'position_id' => ['required', 'integer', Rule::exists('positions', 'id')->where('is_active', true)],
         ];
     }
 
@@ -31,8 +32,10 @@ class StartCompetencyTestRequest extends FormRequest
             'age.between' => 'Usia tidak valid.',
             'gender.required' => 'Jenis kelamin wajib dipilih.',
             'gender.in' => 'Jenis kelamin tidak valid.',
-            'department.required' => 'Divisi wajib dipilih.',
-            'department.in' => 'Divisi tidak valid.',
+            'instansi_id.required' => 'Instansi wajib dipilih.',
+            'instansi_id.exists' => 'Instansi tidak valid.',
+            'position_id.required' => 'Jabatan/divisi yang dilamar wajib dipilih.',
+            'position_id.exists' => 'Jabatan/divisi tidak valid.',
         ];
     }
 }

@@ -27,7 +27,7 @@ function StartUrlRow({ label, url }) {
     );
 }
 
-export default function Dashboard({ stats, startUrls }) {
+export default function Dashboard({ stats, startUrl }) {
     return (
         <MerchantLayout
             header={
@@ -87,12 +87,7 @@ export default function Dashboard({ stats, startUrls }) {
                             </p>
                         </div>
 
-                        <StartUrlRow label="Tes IST" url={startUrls.ist} />
-                        <StartUrlRow label="Tes DISC" url={startUrls.disc} />
-                        <StartUrlRow
-                            label="Tes Kompetensi"
-                            url={startUrls.competency}
-                        />
+                        <StartUrlRow label="Link Tes" url={startUrl} />
                     </div>
 
                     <div className="flex flex-wrap gap-4">

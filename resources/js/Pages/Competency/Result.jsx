@@ -46,7 +46,7 @@ export default function Result({ competencyTest, breakdown = [], overallPercenta
                             className="inline-flex items-center gap-2 text-xs font-mono text-zinc-400 hover:text-white transition-colors group"
                         >
                             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-                            <span>Selesai & Kembali ke Beranda</span>
+                            <span>Rangkaian Tes Selesai & Kembali ke Beranda</span>
                         </Link>
 
                         <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono">

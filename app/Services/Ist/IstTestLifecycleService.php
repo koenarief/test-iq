@@ -22,11 +22,11 @@ final class IstTestLifecycleService
 
     private const ALLOWED_GENDERS = ['L', 'P'];
 
-    public function create(array $participantData, ?int $merchantId = null): IstTestCreationResult
+    public function create(array $participantData, ?int $merchantId = null, ?int $userId = null): IstTestCreationResult
     {
         $validated = $this->validateParticipant($participantData);
 
-        return DB::transaction(function () use ($validated, $merchantId): IstTestCreationResult {
+        return DB::transaction(function () use ($validated, $merchantId, $userId): IstTestCreationResult {
             $subtests = IstSubtest::query()
                 ->where('is_active', true)
                 ->orderBy('sequence')
@@ -41,6 +41,7 @@ final class IstTestLifecycleService
                 'public_id' => (string) Str::uuid(),
                 'access_token_hash' => hash('sha256', $rawAccessToken),
                 'merchant_id' => $merchantId,
+                'user_id' => $userId,
                 'participant_name' => $validated['participant_name'],
                 'age' => $validated['age'],
                 'gender' => $validated['gender'],
@@ -102,7 +103,9 @@ final class IstTestLifecycleService
         }
 
         if ($subtests->sum('duration_seconds') !== IstSubtestCatalog::EXPECTED_CORE_DURATION_SECONDS) {
-            throw new InvalidIstCatalogException('active subtest duration total must be 2700 seconds');
+            throw new InvalidIstCatalogException(
+                'active subtest duration total must be '.IstSubtestCatalog::EXPECTED_CORE_DURATION_SECONDS.' seconds'
+            );
         }
     }
 }

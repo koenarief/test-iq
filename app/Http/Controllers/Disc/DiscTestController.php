@@ -3,14 +3,13 @@
 namespace App\Http\Controllers\Disc;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StartDiscTestRequest;
 use App\Models\DiscAnswer;
 use App\Models\DiscGraphConversion;
 use App\Models\DiscProfile;
 use App\Models\DiscQuestion;
 use App\Models\DiscTest;
-use App\Models\Merchant;
 use App\Services\DiscSummaryService;
+use App\Services\Scoring\AssessmentScoringService;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -19,51 +18,10 @@ use Inertia\Response;
 
 class DiscTestController extends Controller
 {
-    private const SESSION_MERCHANT_KEY = 'disc.merchant_id';
-
     public function __construct(
-        private DiscSummaryService $discSummaryService
+        private DiscSummaryService $discSummaryService,
+        private AssessmentScoringService $assessmentScoringService,
     ) {}
-
-    /**
-     * Form Biodata
-     */
-    public function index(Request $request, ?Merchant $merchant = null): Response
-    {
-        if ($merchant !== null && ! $merchant->is_active) {
-            abort(404);
-        }
-
-        $request->session()->put(self::SESSION_MERCHANT_KEY, $merchant?->id);
-
-        return Inertia::render('DISC/Biodata', [
-            'merchantName' => $merchant?->name,
-        ]);
-    }
-
-    /**
-     * Simpan biodata & lanjut ke instruksi
-     */
-    public function start(StartDiscTestRequest $request)
-    {
-        $merchantId = $request->session()->get(self::SESSION_MERCHANT_KEY);
-
-        if ($merchantId !== null && ! Merchant::where('id', $merchantId)->where('is_active', true)->exists()) {
-            $merchantId = null;
-        }
-
-        $request->session()->forget(self::SESSION_MERCHANT_KEY);
-
-        $discTest = DiscTest::create([
-            'participant_name' => $request->participant_name,
-            'age' => $request->age,
-            'gender' => $request->gender,
-            'status' => 'draft',
-            'merchant_id' => $merchantId,
-        ]);
-
-        return redirect()->route('disc.instruction', $discTest->id);
-    }
 
     /**
      * Halaman Instruksi Tes
@@ -452,6 +410,10 @@ class DiscTestController extends Controller
                 'disc_type' => $discType,
             ]);
         });
+
+        if ($request->user()) {
+            $this->assessmentScoringService->recomputeForCandidate($request->user());
+        }
 
         return redirect()->route('disc.result', $discTest);
     }

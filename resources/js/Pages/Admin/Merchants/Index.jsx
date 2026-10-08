@@ -120,36 +120,14 @@ export default function Index({ merchants, filters }) {
                                             <div className="flex flex-wrap gap-2">
                                                 <a
                                                     href={route(
-                                                        'ist.index.merchant',
+                                                        'assessment.start.merchant',
                                                         merchant.slug,
                                                     )}
                                                     target="_blank"
                                                     rel="noreferrer"
                                                     className="inline-flex items-center rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-xs font-medium text-blue-700 hover:bg-blue-100"
                                                 >
-                                                    Link IST
-                                                </a>
-                                                <a
-                                                    href={route(
-                                                        'disc.index.merchant',
-                                                        merchant.slug,
-                                                    )}
-                                                    target="_blank"
-                                                    rel="noreferrer"
-                                                    className="inline-flex items-center rounded-full border border-indigo-200 bg-indigo-50 px-3 py-1 text-xs font-medium text-indigo-700 hover:bg-indigo-100"
-                                                >
-                                                    Link DISC
-                                                </a>
-                                                <a
-                                                    href={route(
-                                                        'competency.index.merchant',
-                                                        merchant.slug,
-                                                    )}
-                                                    target="_blank"
-                                                    rel="noreferrer"
-                                                    className="inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-xs font-medium text-emerald-700 hover:bg-emerald-100"
-                                                >
-                                                    Link Kompetensi
+                                                    Link Tes
                                                 </a>
                                             </div>
                                         </td>

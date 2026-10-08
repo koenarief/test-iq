@@ -15,6 +15,7 @@ use App\Models\Ist\IstTestSubtest;
 use App\Services\Ist\IstSubtestFinalizationService;
 use App\Services\Ist\IstSubtestStartService;
 use App\Services\Ist\IstTimerService;
+use App\Services\Scoring\AssessmentScoringService;
 use Carbon\CarbonImmutable;
 use DomainException;
 use Illuminate\Http\RedirectResponse;
@@ -23,6 +24,10 @@ use Inertia\Response;
 
 final class IstSubtestSessionController extends Controller
 {
+    public function __construct(
+        private AssessmentScoringService $assessmentScoringService,
+    ) {}
+
     public function start(
         StartIstSubtestRequest $request,
         IstTest $test,
@@ -146,6 +151,11 @@ final class IstSubtestSessionController extends Controller
 
         try {
             $freshTest = $test->fresh();
+
+            if ($freshTest->status === IstTest::STATUS_COMPLETED && $request->user()) {
+                $this->assessmentScoringService->recomputeForCandidate($request->user());
+            }
+
             $decision = $navigator->decide(
                 $freshTest,
                 IstAccessDestination::INSTRUCTION,

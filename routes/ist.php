@@ -12,16 +12,8 @@ use App\Http\Middleware\Ist\ResolveIstRuntimeSubtest;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('ist')->name('ist.')
-    ->middleware(EnsureIstRehearsalPreviewAccess::class)
+    ->middleware(['auth', EnsureIstRehearsalPreviewAccess::class])
     ->group(function (): void {
-        Route::get('/', [IstTestController::class, 'index'])->name('index');
-        Route::get('/m/{merchant:slug}', [IstTestController::class, 'index'])
-            ->where('merchant', '[a-z0-9-]+')
-            ->name('index.merchant');
-        Route::post('/start', [IstTestController::class, 'store'])
-            ->middleware('throttle:10,1')
-            ->name('start');
-
         Route::prefix('{test:public_id}')
             ->whereUuid('test')
             ->middleware(EnsureIstTestOwnership::class)

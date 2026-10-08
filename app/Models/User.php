@@ -9,10 +9,11 @@ use Illuminate\Database\Eloquent\Attributes\Hidden;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-#[Fillable(['name', 'email', 'password', 'role', 'merchant_id', 'instansi_id', 'jabatan_id', 'no_whatsapp', 'status'])]
+#[Fillable(['name', 'email', 'password', 'role', 'merchant_id', 'position_id', 'instansi_id', 'jabatan_id', 'no_whatsapp', 'status'])]
 #[Hidden(['password', 'remember_token'])]
 class User extends Authenticatable
 {
@@ -26,6 +27,8 @@ class User extends Authenticatable
     public const ROLE_HRD = 'hrd';
 
     public const ROLE_KARYAWAN = 'karyawan';
+
+    public const ROLE_CANDIDATE = 'candidate';
 
     public const STATUS_PENDING = 'pending';
 
@@ -79,6 +82,16 @@ class User extends Authenticatable
         return $this->belongsTo(Merchant::class);
     }
 
+    public function position(): BelongsTo
+    {
+        return $this->belongsTo(Position::class);
+    }
+
+    public function candidateAssessment(): HasOne
+    {
+        return $this->hasOne(CandidateAssessment::class);
+    }
+
     public function instansi(): BelongsTo
     {
         return $this->belongsTo(Instansi::class);
@@ -112,6 +125,11 @@ class User extends Authenticatable
     public function isKaryawan(): bool
     {
         return $this->role === self::ROLE_KARYAWAN;
+    }
+
+    public function isCandidate(): bool
+    {
+        return $this->role === self::ROLE_CANDIDATE;
     }
 
     /**

@@ -2,23 +2,52 @@
 
 namespace Tests\Feature\Ist\Http;
 
+use App\Models\DiscTest;
 use App\Models\Ist\IstTest;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 class IstSessionOwnershipHttpTest extends IstHttpTestCase
 {
-    public function test_valid_age_one_hundred_creates_atomic_session_regenerates_id_and_hides_token(): void
+    /**
+     * The merged assessment flow validates biodata once, at
+     * `assessment.begin`, and only reaches `assessment.continue.ist` once a
+     * candidate has a completed DISC test. This mirrors that precondition
+     * without driving the actual DISC HTTP flow, since that is not what
+     * these tests are about.
+     */
+    private function candidateReadyForIst(string $name, int $age, string $gender): User
+    {
+        $candidate = User::factory()->create([
+            'role' => User::ROLE_CANDIDATE,
+            'status' => User::STATUS_AKTIF,
+            'name' => $name,
+        ]);
+
+        DiscTest::create([
+            'user_id' => $candidate->id,
+            'participant_name' => $name,
+            'age' => $age,
+            'gender' => $gender,
+            'status' => 'completed',
+        ]);
+
+        $this->actingAs($candidate);
+        $this->withSession(['assessment.biodata' => ['age' => $age, 'gender' => $gender]]);
+
+        return $candidate;
+    }
+
+    public function test_continue_to_ist_creates_atomic_session_regenerates_id_and_hides_token(): void
     {
         $this->createQuestionBank();
+        $this->candidateReadyForIst('  HTTP Start  ', 100, 'P');
+
         $session = $this->app['session']->driver();
         $session->start();
         $oldSessionId = $session->getId();
 
-        $response = $this->post(route('ist.start'), [
-            'participant_name' => '  HTTP Start  ',
-            'age' => 100,
-            'gender' => 'P',
-        ]);
+        $response = $this->post(route('assessment.continue.ist'));
 
         $test = IstTest::query()->sole();
         $newSessionId = $this->app['session']->driver()->getId();
@@ -36,20 +65,27 @@ class IstSessionOwnershipHttpTest extends IstHttpTestCase
         $this->assertStringNotContainsString($token, (string) $response->headers->get('Location'));
     }
 
-    public function test_age_101_and_invalid_biodata_or_foreign_fields_are_rejected(): void
+    public function test_continue_to_ist_requires_a_completed_disc_test_first(): void
     {
-        $this->postJson(route('ist.start'), [
-            'participant_name' => 'Age', 'age' => 101, 'gender' => 'L',
-        ])->assertStatus(422);
-        $this->postJson(route('ist.start'), [
-            'participant_name' => '', 'age' => 20, 'gender' => 'L',
-        ])->assertStatus(422);
-        $this->postJson(route('ist.start'), [
-            'participant_name' => 'Gender', 'age' => 20, 'gender' => 'X',
-        ])->assertStatus(422);
-        $this->postJson(route('ist.start'), [
-            'participant_name' => 'Foreign', 'age' => 20, 'gender' => 'L', 'score' => 99,
-        ])->assertStatus(422);
+        $candidate = User::factory()->create([
+            'role' => User::ROLE_CANDIDATE,
+            'status' => User::STATUS_AKTIF,
+        ]);
+
+        DiscTest::create([
+            'user_id' => $candidate->id,
+            'participant_name' => $candidate->name,
+            'age' => 25,
+            'gender' => 'L',
+            'status' => 'in_progress',
+        ]);
+
+        $discTest = DiscTest::where('user_id', $candidate->id)->firstOrFail();
+
+        $this->actingAs($candidate)
+            ->withSession(['assessment.biodata' => ['age' => 25, 'gender' => 'L']])
+            ->post(route('assessment.continue.ist'))
+            ->assertRedirect(route('disc.instruction', $discTest->id));
 
         $this->assertDatabaseCount('ist_tests', 0);
     }
@@ -57,12 +93,9 @@ class IstSessionOwnershipHttpTest extends IstHttpTestCase
     public function test_snapshot_failure_rolls_back_test_all_runtimes_and_session_token(): void
     {
         $this->createQuestionBank(1);
+        $this->candidateReadyForIst('Incomplete Bank', 25, 'L');
 
-        $this->post(route('ist.start'), [
-            'participant_name' => 'Incomplete Bank',
-            'age' => 25,
-            'gender' => 'L',
-        ])->assertStatus(409);
+        $this->post(route('assessment.continue.ist'))->assertStatus(409);
 
         $this->assertDatabaseCount('ist_tests', 0);
         $this->assertDatabaseCount('ist_test_subtests', 0);
@@ -104,28 +137,20 @@ class IstSessionOwnershipHttpTest extends IstHttpTestCase
         $this->get("/ist/{$test->id}/resume")->assertNotFound();
     }
 
-    public function test_landing_disc_and_active_cognitive_routes_remain_available(): void
+    public function test_landing_and_merged_assessment_routes_remain_available(): void
     {
         $this->assertTrue(Route::has('landing'));
-        $this->assertTrue(Route::has('disc.index'));
-        $this->assertTrue(Route::has('ist.index'));
-        $this->assertTrue(Route::has('ist.start'));
+        $this->assertTrue(Route::has('assessment.start'));
+        $this->assertTrue(Route::has('assessment.begin'));
+        $this->assertTrue(Route::has('assessment.continue.ist'));
+        $this->assertTrue(Route::has('assessment.continue.competency'));
         $this->assertTrue(Route::has('ist.resume'));
-        $this->assertSame('disc', Route::getRoutes()->getByName('disc.index')->uri());
-        $this->assertSame('ist', Route::getRoutes()->getByName('ist.index')->uri());
+        $this->assertFalse(Route::has('ist.index'));
+        $this->assertFalse(Route::has('ist.start'));
+        $this->assertFalse(Route::has('disc.index'));
 
         $landing = file_get_contents(resource_path('js/Pages/Landing/Index.jsx'));
         $this->assertIsString($landing);
-        $this->assertStringContainsString('title="DISC Personality Test"', $landing);
-        $this->assertStringContainsString('title="Tes Kemampuan Kognitif Adaptasi"', $landing);
-        $this->assertStringContainsString('Durasi: Sekitar 45 menit', $landing);
-        $this->assertMatchesRegularExpression(
-            '/title="Tes Kemampuan Kognitif Adaptasi"[\s\S]*?isActive=\{true\}[\s\S]*?href=\{route\(\'ist\.index\'\)\}/',
-            $landing,
-        );
-        $this->assertMatchesRegularExpression(
-            '/title="DISC Personality Test"[\s\S]*?isActive=\{true\}/',
-            $landing,
-        );
+        $this->assertStringContainsString("route('assessment.start')", $landing);
     }
 }

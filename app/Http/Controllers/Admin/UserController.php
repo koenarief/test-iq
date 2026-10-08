@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Merchant;
+use App\Models\Position;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -40,6 +41,7 @@ class UserController extends Controller
     {
         return Inertia::render('Admin/Users/Create', [
             'merchants' => Merchant::query()->orderBy('name')->get(['id', 'name']),
+            'positions' => Position::query()->active()->orderBy('name')->get(['id', 'name']),
         ]);
     }
 
@@ -54,7 +56,13 @@ class UserController extends Controller
             'password' => Hash::make($validated['password']),
             'role' => $role,
             'merchant_id' => $role === User::ROLE_MERCHANT ? $validated['merchant_id'] : null,
+            'position_id' => $role === User::ROLE_CANDIDATE ? ($validated['position_id'] ?? null) : null,
         ]);
+
+        if ($role === User::ROLE_CANDIDATE) {
+            $user->status = User::STATUS_AKTIF;
+        }
+
         $user->email_verified_at = ($validated['verified'] ?? true) ? now() : null;
         $user->save();
 
@@ -66,8 +74,9 @@ class UserController extends Controller
     public function edit(User $user): Response
     {
         return Inertia::render('Admin/Users/Edit', [
-            'user' => $user->only(['id', 'name', 'email', 'email_verified_at', 'role', 'merchant_id']),
+            'user' => $user->only(['id', 'name', 'email', 'email_verified_at', 'role', 'merchant_id', 'position_id']),
             'merchants' => Merchant::query()->orderBy('name')->get(['id', 'name']),
+            'positions' => Position::query()->active()->orderBy('name')->get(['id', 'name']),
         ]);
     }
 
@@ -81,7 +90,13 @@ class UserController extends Controller
             'email' => $validated['email'],
             'role' => $role,
             'merchant_id' => $role === User::ROLE_MERCHANT ? $validated['merchant_id'] : null,
+            'position_id' => $role === User::ROLE_CANDIDATE ? ($validated['position_id'] ?? null) : null,
         ]);
+
+        if ($role === User::ROLE_CANDIDATE && $user->status !== User::STATUS_AKTIF) {
+            $user->status = User::STATUS_AKTIF;
+        }
+
         $user->email_verified_at = ($validated['verified'] ?? false) ? ($user->email_verified_at ?? now()) : null;
 
         if (! empty($validated['password'])) {
@@ -117,8 +132,9 @@ class UserController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users', 'email')->ignore($user?->id)],
             'password' => [$user ? 'nullable' : 'required', 'string', 'min:8', 'confirmed'],
             'verified' => ['boolean'],
-            'role' => ['nullable', Rule::in([User::ROLE_ADMIN, User::ROLE_MERCHANT])],
+            'role' => ['nullable', Rule::in([User::ROLE_ADMIN, User::ROLE_MERCHANT, User::ROLE_CANDIDATE])],
             'merchant_id' => ['nullable', 'required_if:role,'.User::ROLE_MERCHANT, 'exists:merchants,id'],
+            'position_id' => ['nullable', 'exists:positions,id'],
         ]);
     }
 }

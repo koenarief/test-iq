@@ -40,6 +40,7 @@ class AuthenticatedSessionController extends Controller
             $user->isKaryawan() => route('karyawan.dashboard', absolute: false),
             $user->isHrd() => route('hrd.karyawan.index', absolute: false),
             $user->isMerchant() => route('merchant.dashboard', absolute: false),
+            $user->isCandidate() => route('candidate.dashboard', absolute: false),
             default => route('dashboard', absolute: false),
         };
 

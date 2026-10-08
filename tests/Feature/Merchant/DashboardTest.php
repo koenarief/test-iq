@@ -37,8 +37,7 @@ class DashboardTest extends TestCase
 
         $response->assertOk()
             ->assertJsonPath('component', 'Merchant/Dashboard')
-            ->assertJsonPath('props.startUrls.ist', route('ist.index.merchant', $merchant))
-            ->assertJsonPath('props.startUrls.disc', route('disc.index.merchant', $merchant));
+            ->assertJsonPath('props.startUrl', route('assessment.start.merchant', $merchant));
     }
 
     public function test_admin_hitting_merchant_dashboard_is_redirected_to_admin_dashboard(): void

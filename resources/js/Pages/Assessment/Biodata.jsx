@@ -1,39 +1,35 @@
-import { Head, useForm, Link } from '@inertiajs/react';
+import { Head, useForm } from '@inertiajs/react';
 import PublicLayout from '@/Layouts/PublicLayout';
 import { motion } from 'motion/react';
-import { User, Calendar, Users, Briefcase, ArrowRight, ArrowLeft, ShieldCheck } from 'lucide-react';
+import { User, Calendar, Users, ArrowRight, ShieldCheck, Building2, Briefcase } from 'lucide-react';
 
-export default function Biodata({ merchantName = null, departments = [] }) {
+export default function Biodata({ merchantName = null, instansiOptions = [], positions = [] }) {
     const { data, setData, post, processing, errors } = useForm({
         participant_name: '',
         age: '',
         gender: '',
-        department: '',
+        instansi_id: '',
+        position_id: '',
     });
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        post(route('competency.start'));
+        post(route('assessment.begin'));
     };
+
+    const selectClass = (hasError) =>
+        `w-full pl-11 pr-8 py-3 sm:py-3.5 bg-zinc-950/90 border ${
+            hasError
+                ? 'border-red-500/80 focus:ring-red-500/20'
+                : 'border-zinc-800 focus:border-blue-500 focus:ring-blue-500/20'
+        } rounded-xl text-sm text-white focus:outline-none focus:ring-4 transition-all appearance-none cursor-pointer`;
 
     return (
         <PublicLayout>
-            <Head title="Biodata Peserta Tes Kompetensi" />
+            <Head title="Biodata Peserta Tes" />
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12 flex-1 flex flex-col justify-center items-center">
                 <div className="w-full max-w-xl">
-                    {/* Back Button */}
-                    <div className="mb-6">
-                        <Link
-                            href={route('landing')}
-                            className="inline-flex items-center gap-2 text-xs font-mono text-zinc-400 hover:text-white transition-colors group"
-                        >
-                            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-                            <span>Kembali ke Pilihan Tes</span>
-                        </Link>
-                    </div>
-
-                    {/* Main Form Card */}
                     <motion.div
                         initial={{ opacity: 0, y: 15 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -42,16 +38,17 @@ export default function Biodata({ merchantName = null, departments = [] }) {
                     >
                         <div className="absolute top-0 right-0 w-40 h-40 bg-blue-600/10 blur-3xl rounded-full pointer-events-none" />
 
-                        {/* Form Header */}
                         <div className="mb-6 sm:mb-8">
                             <span className="text-xs font-mono text-blue-400 uppercase tracking-widest block mb-1">
-                                Langkah 1 dari 3
+                                Sebelum Memulai
                             </span>
                             <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
-                                Data Diri & Divisi Lamaran
+                                Data Diri Peserta Tes
                             </h2>
                             <p className="text-xs sm:text-sm text-zinc-400 mt-1 leading-relaxed">
-                                Isikan biodata dan pilih divisi yang Anda lamar sebelum memulai Tes Kompetensi.
+                                Isikan data berikut dengan benar. Setelah ini Anda akan mengerjakan
+                                tiga tahap tes secara berurutan: DISC, Kemampuan Kognitif (IST), dan
+                                Kompetensi — tanpa perlu membuat akun atau login.
                             </p>
                             {merchantName && (
                                 <span className="mt-3 inline-flex items-center gap-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 px-3 py-1 text-xs font-medium text-blue-300">
@@ -60,9 +57,7 @@ export default function Biodata({ merchantName = null, departments = [] }) {
                             )}
                         </div>
 
-                        {/* Form Body */}
                         <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
-                            {/* Participant Name */}
                             <div>
                                 <label className="block text-xs font-semibold text-zinc-300 uppercase tracking-wider mb-2">
                                     Nama Lengkap <span className="text-red-400">*</span>
@@ -86,9 +81,7 @@ export default function Biodata({ merchantName = null, departments = [] }) {
                                 )}
                             </div>
 
-                            {/* Grid for Age and Gender */}
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
-                                {/* Age */}
                                 <div>
                                     <label className="block text-xs font-semibold text-zinc-300 uppercase tracking-wider mb-2">
                                         Usia (Tahun) <span className="text-red-400">*</span>
@@ -107,12 +100,9 @@ export default function Biodata({ merchantName = null, departments = [] }) {
                                             } rounded-xl text-sm text-white placeholder-zinc-600 focus:outline-none focus:ring-4 transition-all`}
                                         />
                                     </div>
-                                    {errors.age && (
-                                        <p className="mt-1.5 text-xs text-red-400">{errors.age}</p>
-                                    )}
+                                    {errors.age && <p className="mt-1.5 text-xs text-red-400">{errors.age}</p>}
                                 </div>
 
-                                {/* Gender */}
                                 <div>
                                     <label className="block text-xs font-semibold text-zinc-300 uppercase tracking-wider mb-2">
                                         Jenis Kelamin <span className="text-red-400">*</span>
@@ -124,82 +114,86 @@ export default function Biodata({ merchantName = null, departments = [] }) {
                                         <select
                                             value={data.gender}
                                             onChange={(e) => setData('gender', e.target.value)}
-                                            className={`w-full pl-11 pr-8 py-3 sm:py-3.5 bg-zinc-950/90 border ${
-                                                errors.gender ? 'border-red-500/80 focus:ring-red-500/20' : 'border-zinc-800 focus:border-blue-500 focus:ring-blue-500/20'
-                                            } rounded-xl text-sm text-white focus:outline-none focus:ring-4 transition-all appearance-none cursor-pointer`}
+                                            className={selectClass(Boolean(errors.gender))}
                                         >
                                             <option value="" disabled className="bg-zinc-900 text-zinc-500">
                                                 -- Pilih --
                                             </option>
-                                            <option value="L" className="bg-zinc-900 text-white">
-                                                Laki-laki
-                                            </option>
-                                            <option value="P" className="bg-zinc-900 text-white">
-                                                Perempuan
-                                            </option>
+                                            <option value="L" className="bg-zinc-900 text-white">Laki-laki</option>
+                                            <option value="P" className="bg-zinc-900 text-white">Perempuan</option>
                                         </select>
-                                        <div className="absolute right-3.5 pointer-events-none text-zinc-500 text-xs">
-                                            ▼
-                                        </div>
+                                        <div className="absolute right-3.5 pointer-events-none text-zinc-500 text-xs">▼</div>
                                     </div>
-                                    {errors.gender && (
-                                        <p className="mt-1.5 text-xs text-red-400">{errors.gender}</p>
-                                    )}
+                                    {errors.gender && <p className="mt-1.5 text-xs text-red-400">{errors.gender}</p>}
                                 </div>
                             </div>
 
-                            {/* Department */}
                             <div>
                                 <label className="block text-xs font-semibold text-zinc-300 uppercase tracking-wider mb-2">
-                                    Divisi yang Dilamar <span className="text-red-400">*</span>
+                                    Instansi <span className="text-red-400">*</span>
+                                </label>
+                                <div className="relative flex items-center">
+                                    <div className="absolute left-3.5 text-zinc-500 pointer-events-none flex items-center justify-center z-10">
+                                        <Building2 className="w-4 h-4 sm:w-5 sm:h-5 text-zinc-400" />
+                                    </div>
+                                    <select
+                                        value={data.instansi_id}
+                                        onChange={(e) => setData('instansi_id', e.target.value)}
+                                        className={selectClass(Boolean(errors.instansi_id))}
+                                    >
+                                        <option value="" disabled className="bg-zinc-900 text-zinc-500">
+                                            -- Pilih Instansi --
+                                        </option>
+                                        {instansiOptions.map((instansi) => (
+                                            <option key={instansi.id} value={instansi.id} className="bg-zinc-900 text-white">
+                                                {instansi.nama}
+                                            </option>
+                                        ))}
+                                    </select>
+                                    <div className="absolute right-3.5 pointer-events-none text-zinc-500 text-xs">▼</div>
+                                </div>
+                                {errors.instansi_id && <p className="mt-1.5 text-xs text-red-400">{errors.instansi_id}</p>}
+                            </div>
+
+                            <div>
+                                <label className="block text-xs font-semibold text-zinc-300 uppercase tracking-wider mb-2">
+                                    Jabatan/Divisi yang Dilamar <span className="text-red-400">*</span>
                                 </label>
                                 <div className="relative flex items-center">
                                     <div className="absolute left-3.5 text-zinc-500 pointer-events-none flex items-center justify-center z-10">
                                         <Briefcase className="w-4 h-4 sm:w-5 sm:h-5 text-zinc-400" />
                                     </div>
                                     <select
-                                        value={data.department}
-                                        onChange={(e) => setData('department', e.target.value)}
-                                        className={`w-full pl-11 pr-8 py-3 sm:py-3.5 bg-zinc-950/90 border ${
-                                            errors.department ? 'border-red-500/80 focus:ring-red-500/20' : 'border-zinc-800 focus:border-blue-500 focus:ring-blue-500/20'
-                                        } rounded-xl text-sm text-white focus:outline-none focus:ring-4 transition-all appearance-none cursor-pointer`}
+                                        value={data.position_id}
+                                        onChange={(e) => setData('position_id', e.target.value)}
+                                        className={selectClass(Boolean(errors.position_id))}
                                     >
                                         <option value="" disabled className="bg-zinc-900 text-zinc-500">
-                                            -- Pilih Divisi --
+                                            -- Pilih Jabatan/Divisi --
                                         </option>
-                                        {departments.map((department) => (
-                                            <option
-                                                key={department.key}
-                                                value={department.key}
-                                                className="bg-zinc-900 text-white"
-                                            >
-                                                {department.label}
+                                        {positions.map((position) => (
+                                            <option key={position.id} value={position.id} className="bg-zinc-900 text-white">
+                                                {position.name}
                                             </option>
                                         ))}
                                     </select>
-                                    <div className="absolute right-3.5 pointer-events-none text-zinc-500 text-xs">
-                                        ▼
-                                    </div>
+                                    <div className="absolute right-3.5 pointer-events-none text-zinc-500 text-xs">▼</div>
                                 </div>
-                                {errors.department && (
-                                    <p className="mt-1.5 text-xs text-red-400">{errors.department}</p>
-                                )}
+                                {errors.position_id && <p className="mt-1.5 text-xs text-red-400">{errors.position_id}</p>}
                             </div>
 
-                            {/* Submit Button */}
                             <div className="pt-2 sm:pt-4">
                                 <button
                                     type="submit"
                                     disabled={processing}
                                     className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 sm:py-4 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-semibold text-sm shadow-lg shadow-blue-600/25 transition-all duration-300 disabled:opacity-50 group cursor-pointer"
                                 >
-                                    <span>{processing ? 'Menyimpan...' : 'Lanjut ke Instruksi Tes'}</span>
+                                    <span>{processing ? 'Menyiapkan...' : 'Mulai Rangkaian Tes'}</span>
                                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                                 </button>
                             </div>
                         </form>
 
-                        {/* Privacy Footer Notice */}
                         <div className="mt-6 pt-4 border-t border-zinc-800/60 flex items-center justify-center gap-2 text-xs text-zinc-500">
                             <ShieldCheck className="w-4 h-4 text-blue-400 shrink-0" />
                             <span>Data Anda hanya dipergunakan untuk keperluan evaluasi internal.</span>

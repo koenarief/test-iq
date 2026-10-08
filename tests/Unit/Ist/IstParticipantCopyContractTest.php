@@ -8,14 +8,13 @@ final class IstParticipantCopyContractTest extends TestCase
 {
     private const PRODUCT_NAME = 'Tes Kemampuan Kognitif Adaptasi';
 
-    public function test_biodata_uses_product_copy_without_legacy_participant_labels(): void
+    public function test_merged_biodata_uses_product_copy_without_legacy_participant_labels(): void
     {
-        $source = $this->source('resources/js/Pages/IST/Biodata.jsx');
+        $source = $this->source('resources/js/Pages/Assessment/Biodata.jsx');
 
-        $this->assertStringContainsString('<Head title="'.self::PRODUCT_NAME.'" />', $source);
-        $this->assertStringContainsString('Isi Data Peserta', $source);
-        $this->assertStringContainsString('Lengkapi data berikut sebelum memulai asesmen.', $source);
-        $this->assertStringContainsString('waktu pengerjaan inti sekitar 45 menit', $source);
+        $this->assertStringContainsString('Data Diri Peserta Tes', $source);
+        $this->assertStringContainsString('tanpa perlu membuat akun atau login', $source);
+        $this->assertStringContainsString('Jabatan/Divisi yang Dilamar', $source);
         $this->assertLegacyParticipantCopyAbsent($source);
     }
 
@@ -66,14 +65,9 @@ final class IstParticipantCopyContractTest extends TestCase
     {
         $source = $this->source('resources/js/Pages/Landing/Index.jsx');
 
-        $this->assertStringContainsString('title="'.self::PRODUCT_NAME.'"', $source);
-        $this->assertStringContainsString('Mengukur performa pada sembilan area kemampuan kognitif melalui asesmen singkat sekitar 45 menit.', $source);
-        $this->assertStringContainsString('Asesmen singkat untuk melihat profil performa pada sembilan area kemampuan kognitif.', $source);
-        $this->assertStringContainsString('Durasi: Sekitar 45 menit', $source);
-        $this->assertMatchesRegularExpression(
-            '/title="Tes Kemampuan Kognitif Adaptasi"[\s\S]*?isActive=\{true\}[\s\S]*?href=\{route\(\'ist\.index\'\)\}/',
-            $source,
-        );
+        $this->assertStringContainsString(self::PRODUCT_NAME, $source);
+        $this->assertStringContainsString('Mengukur performa pada sembilan area kemampuan kognitif.', $source);
+        $this->assertStringContainsString("route('assessment.start')", $source);
         $this->assertStringNotContainsString('90 Menit', $source);
         $this->assertLegacyParticipantCopyAbsent($source);
     }
@@ -83,6 +77,7 @@ final class IstParticipantCopyContractTest extends TestCase
         $httpSources = implode("\n", array_map(
             fn (string $path): string => $this->source($path),
             [
+                'app/Http/Controllers/AssessmentSequenceController.php',
                 'app/Http/Controllers/Ist/IstTestController.php',
                 'app/Http/Controllers/Ist/IstSubtestInstructionController.php',
                 'app/Http/Controllers/Ist/IstSubtestSessionController.php',

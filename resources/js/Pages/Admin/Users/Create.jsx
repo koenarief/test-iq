@@ -2,7 +2,7 @@ import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head } from '@inertiajs/react';
 import UserForm from './Partials/Form';
 
-export default function Create({ merchants }) {
+export default function Create({ merchants, positions }) {
     return (
         <AuthenticatedLayout
             header={
@@ -18,6 +18,7 @@ export default function Create({ merchants }) {
                     <div className="bg-white p-6 shadow-sm sm:rounded-lg">
                         <UserForm
                             merchants={merchants}
+                            positions={positions}
                             submitUrl={route('admin.users.store')}
                             method="post"
                         />

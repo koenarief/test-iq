@@ -5,12 +5,13 @@ import TextInput from '@/Components/TextInput';
 import GuestLayout from '@/Layouts/GuestLayout';
 import { Head, Link, useForm } from '@inertiajs/react';
 
-export default function Register() {
+export default function Register({ positions = [] }) {
     const { data, setData, post, processing, errors, reset } = useForm({
         name: '',
         email: '',
         password: '',
         password_confirmation: '',
+        position_id: '',
     });
 
     const submit = (e) => {
@@ -101,6 +102,34 @@ export default function Register() {
                         className="mt-2"
                     />
                 </div>
+
+                {positions.length > 0 && (
+                    <div className="mt-4">
+                        <InputLabel
+                            htmlFor="position_id"
+                            value="Posisi yang Dilamar (opsional)"
+                        />
+                        <select
+                            id="position_id"
+                            value={data.position_id}
+                            onChange={(e) =>
+                                setData('position_id', e.target.value)
+                            }
+                            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                        >
+                            <option value="">Pilih posisi...</option>
+                            {positions.map((position) => (
+                                <option key={position.id} value={position.id}>
+                                    {position.name}
+                                </option>
+                            ))}
+                        </select>
+                        <InputError
+                            message={errors.position_id}
+                            className="mt-2"
+                        />
+                    </div>
+                )}
 
                 <div className="mt-4 flex items-center justify-end">
                     <Link

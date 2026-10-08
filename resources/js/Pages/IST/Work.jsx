@@ -574,10 +574,10 @@ export default function Work({
                                 )}
                                 {sessionUnavailable && (
                                     <Link
-                                        href={route('ist.index')}
+                                        href={route('landing')}
                                         className="inline-flex min-h-11 items-center rounded-lg border border-red-300/30 px-4 font-semibold hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
                                     >
-                                        Kembali ke Halaman Asesmen
+                                        Kembali ke Halaman Utama
                                     </Link>
                                 )}
                             </div>
