@@ -2,23 +2,28 @@
 
 namespace App\Services\Scoring;
 
+use App\Exceptions\Ist\IstNormLookupException;
 use App\Models\CandidateAssessment;
 use App\Models\CompetencyTest;
 use App\Models\DiscTest;
 use App\Models\Ist\IstTest;
 use App\Models\User;
+use App\Services\Ist\IstScoringService;
 
 /**
  * Computes the score.md "Assessment Score" = (DISC x 20%) + (IST x 25%) +
  * (Competency x 55%) and its Minimum Score Gate, for a candidate whose
  * three test attempts (DISC/IST/Competency) may still be incomplete.
  *
- * DISC and IST have no native 0-100 score in this codebase, so this class
- * defines the house formulas:
  * - DISC score = the candidate's dominant-dimension graph score
  *   (disc_tests.graph_d/i/s/c are already 0-100, see DiscTestController).
- * - IST score  = average of ist_test_subtests.percentage across the 9
- *   completed subtests (already a 0-100 per-subtest correct/max ratio).
+ * - IST score  = the same age-normed IQ score shown on the Hasil IST page
+ *   (see IstResultService/IstScoringService::calculateFromRawScores()),
+ *   not a 0-100 percentage. It previously averaged
+ *   ist_test_subtests.percentage instead, which produced a number
+ *   unrelated to, and far lower than, the IQ score the candidate actually
+ *   sees on their result page (e.g. 2.2 vs. the real IQ of 92) — this was
+ *   a bug, not an intentional separate metric.
  * Competency score reuses the existing overallPercentage formula from
  * CompetencyTestController::result() (total_score/5*100).
  */
@@ -41,6 +46,7 @@ class AssessmentScoringService
     public function __construct(
         private readonly JobFitScoringService $jobFitScoringService,
         private readonly StrengthDevelopmentService $strengthDevelopmentService,
+        private readonly IstScoringService $istScoringService,
     ) {}
 
     public static function scoreDisc(DiscTest $test): float
@@ -53,15 +59,30 @@ class AssessmentScoringService
         );
     }
 
-    public static function scoreIst(IstTest $test): float
+    public function scoreIst(IstTest $test): float
     {
-        $percentages = $test->subtests()->pluck('percentage');
+        $rawScores = [];
 
-        if ($percentages->isEmpty()) {
+        foreach ($test->subtests()->with('subtest')->get() as $runtime) {
+            if (! $runtime->subtest) {
+                continue;
+            }
+
+            $code = strtoupper(trim((string) $runtime->subtest->code));
+            $rawScores[$code] = (int) round((float) $runtime->awarded_score);
+        }
+
+        if (count($rawScores) !== 9) {
             return 0.0;
         }
 
-        return round((float) $percentages->avg(), 2);
+        try {
+            $scoring = $this->istScoringService->calculateFromRawScores($rawScores, (int) $test->age);
+        } catch (IstNormLookupException) {
+            return 0.0;
+        }
+
+        return (float) $scoring['iq_score'];
     }
 
     public static function scoreCompetency(CompetencyTest $test): float
@@ -98,14 +119,14 @@ class AssessmentScoringService
         if (! $discTest || ! $competencyTest || ! $istTest) {
             $assessment->disc_score = $discTest ? self::scoreDisc($discTest) : null;
             $assessment->competency_score = $competencyTest ? self::scoreCompetency($competencyTest) : null;
-            $assessment->ist_score = $istTest ? self::scoreIst($istTest) : null;
+            $assessment->ist_score = $istTest ? $this->scoreIst($istTest) : null;
             $assessment->save();
 
             return $assessment;
         }
 
         $discScore = self::scoreDisc($discTest);
-        $istScore = self::scoreIst($istTest);
+        $istScore = $this->scoreIst($istTest);
         $competencyScore = self::scoreCompetency($competencyTest);
 
         $assessmentScore = round(
