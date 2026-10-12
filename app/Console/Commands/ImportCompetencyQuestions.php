@@ -13,13 +13,13 @@ use PhpOffice\PhpSpreadsheet\Worksheet\Worksheet;
 
 class ImportCompetencyQuestions extends Command
 {
-    protected $signature = 'competency:import {path? : Lokasi file soal-competency.xlsx}';
+    protected $signature = 'competency:import {path? : Lokasi file soal-kompetensi.xlsx} {--fresh : Hapus seluruh kategori/soal/opsi lama tiap divisi sebelum impor, lalu ganti total dengan isi file}';
 
-    protected $description = 'Import bank soal Tes Kompetensi (per divisi/subtes) dari file soal-competency.xlsx';
+    protected $description = 'Import bank soal Tes Kompetensi (per divisi/subtes) dari file soal-kompetensi.xlsx';
 
     public function handle(): int
     {
-        $path = $this->argument('path') ?? base_path('soal-competency.xlsx');
+        $path = $this->argument('path') ?? base_path('soal-kompetensi.xlsx');
 
         if (! is_file($path)) {
             $this->error("File tidak ditemukan: {$path}");
@@ -27,11 +27,12 @@ class ImportCompetencyQuestions extends Command
             return self::FAILURE;
         }
 
+        $fresh = (bool) $this->option('fresh');
         $departments = config('competency.departments');
 
         $spreadsheet = IOFactory::load($path);
 
-        DB::transaction(function () use ($spreadsheet, $departments) {
+        DB::transaction(function () use ($spreadsheet, $departments, $fresh) {
             foreach ($departments as $departmentKey => $department) {
                 $sheet = $spreadsheet->getSheetByName($department['sheet']);
 
@@ -39,6 +40,15 @@ class ImportCompetencyQuestions extends Command
                     $this->warn("Sheet '{$department['sheet']}' tidak ditemukan, dilewati.");
 
                     continue;
+                }
+
+                if ($fresh) {
+                    // Replace total: hapus kategori lama divisi ini (cascade ke
+                    // questions/options/test-questions/answers) sebelum diisi ulang
+                    // dari file, supaya tidak ada kategori/soal basi yang tersisa.
+                    CompetencyCategory::query()
+                        ->where('department', $departmentKey)
+                        ->delete();
                 }
 
                 $this->importSheet($departmentKey, $sheet);
@@ -55,96 +65,87 @@ class ImportCompetencyQuestions extends Command
         return $sheet->getCell([$col, $row])->getValue();
     }
 
+    /**
+     * soal-kompetensi.xlsx menyusun tiap blok sub-kompetensi secara bertumpuk
+     * (bukan bersebelahan seperti soal-competency.xlsx lama): baris judul
+     * blok (hanya kolom A terisi) -> baris header "No"/"Soal"/pilihan -> N
+     * baris soal -> baris kosong pemisah -> blok berikutnya.
+     */
     private function importSheet(string $departmentKey, Worksheet $sheet): void
     {
         $highestColumnIndex = Coordinate::columnIndexFromString($sheet->getHighestDataColumn());
         $highestRow = $sheet->getHighestDataRow();
 
-        // Baris 1 menandai kolom awal tiap blok kompetensi (nama subtes).
-        $blockStarts = [];
-
-        for ($col = 1; $col <= $highestColumnIndex; $col++) {
-            $value = trim((string) $this->cellValue($sheet, $col, 1));
-
-            if ($value !== '') {
-                $blockStarts[$col] = $value;
-            }
-        }
-
-        $starts = array_keys($blockStarts);
-        sort($starts);
-
-        foreach ($starts as $index => $startCol) {
-            $endCol = $starts[$index + 1] ?? ($highestColumnIndex + 1);
-            $endCol--;
-
-            $categoryName = $blockStarts[$startCol];
-
-            $category = CompetencyCategory::query()->updateOrCreate(
-                ['department' => $departmentKey, 'name' => $categoryName],
-                ['order' => $index + 1],
-            );
-
-            $this->importBlock($category, $sheet, $startCol, $endCol, $highestRow);
-        }
-    }
-
-    private function importBlock(
-        CompetencyCategory $category,
-        Worksheet $sheet,
-        int $startCol,
-        int $endCol,
-        int $highestRow,
-    ): void {
-        // Baris 2 = header kolom pada blok ini (No, Soal/Situasi, lalu pilihan).
-        $headers = [];
-
-        for ($col = $startCol; $col <= $endCol; $col++) {
-            $value = trim((string) $this->cellValue($sheet, $col, 2));
-
-            if ($value !== '') {
-                $headers[$col] = $value;
-            }
-        }
-
-        $headerCols = array_keys($headers);
-
-        // Kolom pertama = No, kolom kedua = teks soal (Soal/Situasi).
-        $questionTextCol = $headerCols[1] ?? null;
-
-        if ($questionTextCol === null) {
-            return;
-        }
-
-        $choiceCols = array_slice($headerCols, 2);
-
-        // Format A: kolom "Pilihan X" diikuti kolom "Poin"/"Poin X" terpisah.
-        // Format B: kolom pilihan tunggal berlabel A-E, poin tertanam pada teks "... (N)".
-        $hasExplicitPoinColumns = false;
-
-        foreach ($choiceCols as $col) {
-            if (str_starts_with(strtolower($headers[$col]), 'poin')) {
-                $hasExplicitPoinColumns = true;
-                break;
-            }
-        }
-
         $labels = ['A', 'B', 'C', 'D', 'E'];
 
-        for ($row = 3; $row <= $highestRow; $row++) {
-            $questionNumberRaw = $this->cellValue($sheet, $startCol, $row);
-            $questionText = trim((string) $this->cellValue($sheet, $questionTextCol, $row));
+        $category = null;
+        $order = 0;
+        $questionTextCol = null;
+        $choiceCols = [];
+        $hasExplicitPoinColumns = false;
 
-            if ($questionText === '' || trim((string) $questionNumberRaw) === '') {
+        for ($row = 1; $row <= $highestRow; $row++) {
+            $colA = trim((string) $this->cellValue($sheet, 1, $row));
+            $colB = trim((string) $this->cellValue($sheet, 2, $row));
+
+            if ($colA === '') {
+                // Baris kosong pemisah antar blok.
+                continue;
+            }
+
+            if ($colB === '') {
+                // Baris judul blok (nama sub-kompetensi).
+                $order++;
+                $category = CompetencyCategory::query()->updateOrCreate(
+                    ['department' => $departmentKey, 'name' => $colA],
+                    ['order' => $order],
+                );
+                $questionTextCol = null;
+
+                continue;
+            }
+
+            if (strtolower($colA) === 'no') {
+                // Baris header kolom pada blok ini.
+                $headers = [];
+
+                for ($col = 1; $col <= $highestColumnIndex; $col++) {
+                    $value = trim((string) $this->cellValue($sheet, $col, $row));
+
+                    if ($value !== '') {
+                        $headers[$col] = $value;
+                    }
+                }
+
+                $headerCols = array_keys($headers);
+                $questionTextCol = $headerCols[1] ?? null;
+                $choiceCols = array_slice($headerCols, 2);
+
+                // Format A: kolom "Pilihan X" diikuti kolom "Poin"/"Poin X" terpisah.
+                // Format B: kolom pilihan tunggal berlabel A-E, poin tertanam pada teks "... (N)".
+                $hasExplicitPoinColumns = false;
+
+                foreach ($choiceCols as $col) {
+                    if (str_starts_with(strtolower($headers[$col]), 'poin')) {
+                        $hasExplicitPoinColumns = true;
+                        break;
+                    }
+                }
+
+                continue;
+            }
+
+            // Baris soal.
+            if ($category === null || $questionTextCol === null) {
                 continue;
             }
 
             $question = CompetencyQuestion::query()->updateOrCreate(
                 [
                     'competency_category_id' => $category->id,
-                    'question_number' => (int) $questionNumberRaw,
+                    'question_number' => (int) $colA,
                 ],
-                ['question_text' => $questionText],
+                ['question_text' => trim((string) $this->cellValue($sheet, $questionTextCol, $row))],
             );
 
             $options = $hasExplicitPoinColumns

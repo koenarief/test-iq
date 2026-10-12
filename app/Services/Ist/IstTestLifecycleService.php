@@ -98,14 +98,19 @@ final class IstTestLifecycleService
             throw new InvalidIstCatalogException('active subtest sequences must be 1 through 9');
         }
 
-        if ($subtests->sum('question_count') !== IstSubtestCatalog::EXPECTED_QUESTION_COUNT) {
-            throw new InvalidIstCatalogException('active subtest question total must be 104');
+        // question_count and duration_seconds are intentionally not checked
+        // against IstSubtestCatalog's canonical totals here: Admin\IstQuestionController
+        // keeps question_count synced to whatever scored questions are
+        // actually active, which legitimately drifts below the canonical
+        // per-subtest count while content is still being filled in. Pinning
+        // this to a fixed total blocked every real test start as soon as any
+        // subtest's bank was incomplete.
+        if ($subtests->contains(fn ($subtest) => $subtest->question_count < 1)) {
+            throw new InvalidIstCatalogException('every active subtest must have at least one question configured');
         }
 
-        if ($subtests->sum('duration_seconds') !== IstSubtestCatalog::EXPECTED_CORE_DURATION_SECONDS) {
-            throw new InvalidIstCatalogException(
-                'active subtest duration total must be '.IstSubtestCatalog::EXPECTED_CORE_DURATION_SECONDS.' seconds'
-            );
+        if ($subtests->contains(fn ($subtest) => $subtest->duration_seconds < 1)) {
+            throw new InvalidIstCatalogException('every active subtest must have a positive duration');
         }
     }
 }

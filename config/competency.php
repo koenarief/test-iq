@@ -33,6 +33,10 @@ return [
             'label' => 'Finance',
             'sheet' => 'FINANCE',
         ],
+        'teknisi_jaringan' => [
+            'label' => 'Teknisi Jaringan',
+            'sheet' => 'Teknisi Jaringan',
+        ],
     ],
 
     /*

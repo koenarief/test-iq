@@ -22,6 +22,7 @@ use App\Http\Controllers\Candidate\CandidateDashboardController;
 use App\Http\Controllers\Admin\PositionController;
 use App\Http\Controllers\Admin\InterviewScoreController;
 use App\Http\Controllers\Admin\AssessmentRecapController;
+use App\Http\Controllers\Admin\DashboardController;
 use Inertia\Inertia;
 
 Route::get('/', [LandingController::class, 'index'])
@@ -127,9 +128,8 @@ Route::middleware('auth')->group(function () {
 
     Route::middleware('admin')->group(function () {
 
-        Route::get('/dashboard', function () {
-            return inertia('Admin/Dashboard');
-        })->name('dashboard');
+        Route::get('/dashboard', [DashboardController::class, 'index'])
+            ->name('dashboard');
 
         Route::prefix('admin')
             ->name('admin.')

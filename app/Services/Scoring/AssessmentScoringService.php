@@ -162,12 +162,10 @@ class AssessmentScoringService
                 $istTest,
             );
 
-            if ($assessment->position_id) {
-                $jobFit = $this->jobFitScoringService->score($assessment, $competencyTest, $discTest, $istTest);
-                $assessment->job_fit_score = $jobFit['score'];
-                $assessment->job_fit_breakdown = $jobFit['breakdown'];
-                $assessment->job_fit_scored_at = now();
-            }
+            $jobFit = $this->jobFitScoringService->score($competencyTest);
+            $assessment->job_fit_score = $jobFit['score'];
+            $assessment->job_fit_breakdown = $jobFit['breakdown'];
+            $assessment->job_fit_scored_at = now();
         }
 
         $assessment->save();

@@ -20,7 +20,7 @@ const BAND_CLASS = {
     Strong: 'bg-green-100 text-green-700',
     Adequate: 'bg-amber-100 text-amber-700',
     'Development Area': 'bg-orange-100 text-orange-700',
-    Weak: 'bg-red-100 text-red-700',
+    Weakness: 'bg-red-100 text-red-700',
 };
 
 function GateRow({ label, score, passed, min }) {

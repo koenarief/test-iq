@@ -19,7 +19,7 @@ class StrengthDevelopmentServiceTest extends TestCase
         $this->assertSame('Adequate', $service->band(70));
         $this->assertSame('Development Area', $service->band(69.99));
         $this->assertSame('Development Area', $service->band(60));
-        $this->assertSame('Weak', $service->band(59.99));
-        $this->assertSame('Weak', $service->band(0));
+        $this->assertSame('Weakness', $service->band(59.99));
+        $this->assertSame('Weakness', $service->band(0));
     }
 }

@@ -2,87 +2,47 @@
 
 namespace App\Services\Scoring;
 
-use App\Models\CandidateAssessment;
 use App\Models\CompetencyTest;
-use App\Models\DiscTest;
-use App\Models\Ist\IstTest;
-use App\Models\Position;
 
 /**
- * Job Fit Score = Sum(Competency category value x weight) + (DISC score x
- * DISC weight) + (IST score x IST weight), weights defined per Position.
+ * Job Fit Score = nilai akhir Tes Competency kandidat, sesuai
+ * prosentasi-kompetensi.docx: tiap sub-kompetensi (kategori) dibobot rata
+ * (100% / jumlah kategori), dan Nilai Akhir = Total Skor seluruh soal yang
+ * dijawab (skala 0-100) — identik dengan `AssessmentScoringService::scoreCompetency()`.
  *
- * The DISC/IST line items reuse the same single 0-100 "profile strength"
- * and "average subtest percentage" numbers computed by
- * AssessmentScoringService, rather than a per-dimension/per-subtest value —
- * score.md's example lists "DISC = 15%" and "Cognitive/IST = 15%" as flat
- * line items alongside competency sub-dimensions, with no indication which
- * specific dimension should matter per position.
+ * Breakdown-nya memecah nilai itu per sub-kompetensi (kategori) hanya untuk
+ * keperluan tampilan di Rekap Kandidat, bukan untuk menghitung ulang skor.
  */
 class JobFitScoringService
 {
     /**
      * @return array{score: float, breakdown: array<int, array{label: string, weight: float, value: float, contribution: float}>}
      */
-    public function score(
-        CandidateAssessment $assessment,
-        CompetencyTest $competencyTest,
-        DiscTest $discTest,
-        IstTest $istTest,
-    ): array {
-        /** @var Position $position */
-        $position = Position::query()
-            ->with('competencyCategoryWeights.category')
-            ->findOrFail($assessment->position_id);
+    public function score(CompetencyTest $competencyTest): array
+    {
+        $categoryRows = $competencyTest->answers()
+            ->join('competency_categories', 'competency_categories.id', '=', 'competency_answers.competency_category_id')
+            ->selectRaw('competency_categories.id as category_id, competency_categories.name as category_name, AVG(competency_answers.points) as avg_points')
+            ->groupBy('competency_categories.id', 'competency_categories.name', 'competency_categories.order')
+            ->orderBy('competency_categories.order')
+            ->get();
 
-        $categoryPercentages = $competencyTest->answers()
-            ->selectRaw('competency_category_id, AVG(points) as avg_points')
-            ->groupBy('competency_category_id')
-            ->pluck('avg_points', 'competency_category_id');
+        $categoryCount = $categoryRows->count();
+        $weight = $categoryCount > 0 ? round(100 / $categoryCount, 2) : 0.0;
 
-        $breakdown = [];
-        $total = 0.0;
+        $breakdown = $categoryRows->map(function ($row) use ($weight) {
+            $value = round(((float) $row->avg_points / 5) * 100, 2);
 
-        foreach ($position->competencyCategoryWeights as $categoryWeight) {
-            $avgPoints = (float) ($categoryPercentages[$categoryWeight->competency_category_id] ?? 0);
-            $value = round(($avgPoints / 5) * 100, 2);
-            $weight = (float) $categoryWeight->weight;
-            $contribution = round($value * $weight / 100, 2);
-
-            $breakdown[] = [
-                'label' => $categoryWeight->category->name,
+            return [
+                'label' => $row->category_name,
                 'weight' => $weight,
                 'value' => $value,
-                'contribution' => $contribution,
+                'contribution' => round($value * $weight / 100, 2),
             ];
-
-            $total += $contribution;
-        }
-
-        $discValue = AssessmentScoringService::scoreDisc($discTest);
-        $discWeight = (float) $position->disc_weight;
-        $discContribution = round($discValue * $discWeight / 100, 2);
-        $breakdown[] = [
-            'label' => 'DISC',
-            'weight' => $discWeight,
-            'value' => $discValue,
-            'contribution' => $discContribution,
-        ];
-        $total += $discContribution;
-
-        $istValue = AssessmentScoringService::scoreIst($istTest);
-        $istWeight = (float) $position->ist_weight;
-        $istContribution = round($istValue * $istWeight / 100, 2);
-        $breakdown[] = [
-            'label' => 'Cognitive/IST',
-            'weight' => $istWeight,
-            'value' => $istValue,
-            'contribution' => $istContribution,
-        ];
-        $total += $istContribution;
+        })->all();
 
         return [
-            'score' => round($total, 2),
+            'score' => AssessmentScoringService::scoreCompetency($competencyTest),
             'breakdown' => $breakdown,
         ];
     }

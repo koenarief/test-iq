@@ -20,7 +20,7 @@ class StrengthDevelopmentService
             $score >= 80 => 'Strong',
             $score >= 70 => 'Adequate',
             $score >= 60 => 'Development Area',
-            default => 'Weak',
+            default => 'Weakness',
         };
     }
 

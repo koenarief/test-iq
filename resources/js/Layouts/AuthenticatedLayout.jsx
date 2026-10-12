@@ -3,43 +3,65 @@ import ResponsiveNavLink from '@/Components/ResponsiveNavLink';
 import { Link, usePage } from '@inertiajs/react';
 import { useState } from 'react';
 
-const NAV_ITEMS = [
+const NAV_GROUPS = [
     { href: 'dashboard', pattern: 'dashboard', label: 'Dashboard' },
     {
-        href: 'admin.ist-questions.index',
-        pattern: 'admin.ist-questions.*',
-        label: 'Soal IST',
+        label: 'Soal & Kunci',
+        pattern: 'admin.ist-questions.*|admin.ist-answer-keys.*',
+        items: [
+            {
+                href: 'admin.ist-questions.index',
+                pattern: 'admin.ist-questions.*',
+                label: 'Soal IST',
+            },
+            {
+                href: 'admin.ist-answer-keys.index',
+                pattern: 'admin.ist-answer-keys.*',
+                label: 'Kunci Jawaban',
+            },
+        ],
     },
     {
-        href: 'admin.ist-answer-keys.index',
-        pattern: 'admin.ist-answer-keys.*',
-        label: 'Kunci Jawaban',
+        label: 'Hasil Tes',
+        pattern: 'admin.ist-results.*|admin.disc-results.*|admin.competency-results.*',
+        items: [
+            {
+                href: 'admin.ist-results.index',
+                pattern: 'admin.ist-results.*',
+                label: 'Hasil IST',
+            },
+            {
+                href: 'admin.disc-results.index',
+                pattern: 'admin.disc-results.*',
+                label: 'Hasil DISC',
+            },
+            {
+                href: 'admin.competency-results.index',
+                pattern: 'admin.competency-results.*',
+                label: 'Hasil Kompetensi',
+            },
+        ],
     },
     {
-        href: 'admin.ist-results.index',
-        pattern: 'admin.ist-results.*',
-        label: 'Hasil IST',
-    },
-    {
-        href: 'admin.disc-results.index',
-        pattern: 'admin.disc-results.*',
-        label: 'Hasil DISC',
-    },
-    {
-        href: 'admin.competency-results.index',
-        pattern: 'admin.competency-results.*',
-        label: 'Hasil Kompetensi',
-    },
-    { href: 'admin.users.index', pattern: 'admin.users.*', label: 'User' },
-    {
-        href: 'admin.merchants.index',
-        pattern: 'admin.merchants.*',
-        label: 'Merchant',
-    },
-    {
-        href: 'admin.positions.index',
-        pattern: 'admin.positions.*',
-        label: 'Posisi',
+        label: 'Master Data',
+        pattern: 'admin.users.*|admin.merchants.*|admin.positions.*',
+        items: [
+            {
+                href: 'admin.users.index',
+                pattern: 'admin.users.*',
+                label: 'User',
+            },
+            {
+                href: 'admin.merchants.index',
+                pattern: 'admin.merchants.*',
+                label: 'Merchant',
+            },
+            {
+                href: 'admin.positions.index',
+                pattern: 'admin.positions.*',
+                label: 'Posisi',
+            },
+        ],
     },
     {
         href: 'admin.assessment-recaps.index',
@@ -47,6 +69,14 @@ const NAV_ITEMS = [
         label: 'Rekap Kandidat',
     },
 ];
+
+// Flat list (every leaf link), used for the mobile menu where a dropdown
+// inside a dropdown-style tray adds more friction than it saves.
+const NAV_ITEMS = NAV_GROUPS.flatMap((group) => group.items ?? [group]);
+
+function isGroupActive(pattern) {
+    return pattern.split('|').some((p) => route().current(p));
+}
 
 function PillNavLink({ href, active, children }) {
     return (
@@ -61,6 +91,46 @@ function PillNavLink({ href, active, children }) {
         >
             {children}
         </Link>
+    );
+}
+
+function PillNavDropdown({ label, active, items }) {
+    return (
+        <Dropdown>
+            <Dropdown.Trigger>
+                <button
+                    type="button"
+                    className={
+                        'inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-[13px] font-medium transition ' +
+                        (active
+                            ? 'bg-zinc-900 text-white'
+                            : 'text-zinc-500 hover:bg-zinc-100 hover:text-zinc-800')
+                    }
+                >
+                    {label}
+                    <svg
+                        className="-me-0.5 h-3.5 w-3.5"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                    >
+                        <path
+                            fillRule="evenodd"
+                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                            clipRule="evenodd"
+                        />
+                    </svg>
+                </button>
+            </Dropdown.Trigger>
+
+            <Dropdown.Content align="left">
+                {items.map((item) => (
+                    <Dropdown.Link key={item.href} href={route(item.href)}>
+                        {item.label}
+                    </Dropdown.Link>
+                ))}
+            </Dropdown.Content>
+        </Dropdown>
     );
 }
 
@@ -89,17 +159,28 @@ export default function AuthenticatedLayout({ header, children }) {
                             </Link>
 
                             <div className="hidden items-center gap-1 sm:ms-8 sm:flex">
-                                {NAV_ITEMS.map((item) => (
-                                    <PillNavLink
-                                        key={item.href}
-                                        href={route(item.href)}
-                                        active={route().current(
-                                            item.pattern,
-                                        )}
-                                    >
-                                        {item.label}
-                                    </PillNavLink>
-                                ))}
+                                {NAV_GROUPS.map((group) =>
+                                    group.items ? (
+                                        <PillNavDropdown
+                                            key={group.label}
+                                            label={group.label}
+                                            active={isGroupActive(
+                                                group.pattern,
+                                            )}
+                                            items={group.items}
+                                        />
+                                    ) : (
+                                        <PillNavLink
+                                            key={group.href}
+                                            href={route(group.href)}
+                                            active={route().current(
+                                                group.pattern,
+                                            )}
+                                        >
+                                            {group.label}
+                                        </PillNavLink>
+                                    ),
+                                )}
                             </div>
                         </div>
 
