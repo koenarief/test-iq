@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\CandidateAssessment;
 use App\Services\Scoring\AssessmentScoringService;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Inertia\Response;
@@ -48,11 +49,28 @@ class AssessmentRecapController extends Controller
             'discTest',
             'competencyTest',
             'istTest',
-            'interviewer:id,name',
+            'hrdInterviewer:id,name',
+            'userInterviewer:id,name',
         ]);
 
         return Inertia::render('Admin/AssessmentRecaps/Show', [
             'assessment' => $candidateAssessment,
         ]);
+    }
+
+    /**
+     * Job Fit is only auto-computed once per candidate (see
+     * AssessmentScoringService::recomputeForCandidate) so a later change to
+     * a position's subtest weights doesn't retroactively change an
+     * already-scored candidate. This lets an admin explicitly re-score Job
+     * Fit (e.g. after fixing a position's weight configuration).
+     */
+    public function recomputeJobFit(CandidateAssessment $candidateAssessment): RedirectResponse
+    {
+        $this->assessmentScoringService->recomputeForCandidate($candidateAssessment->candidate, force: true);
+
+        return redirect()
+            ->route('admin.assessment-recaps.show', $candidateAssessment)
+            ->with('success', 'Job Fit Score berhasil dihitung ulang.');
     }
 }

@@ -3,31 +3,19 @@
 namespace App\Services\Scoring;
 
 /**
- * Interview Score = Sum(aspect score x weight), fixed weights per score.md's
- * example. Each aspect score is entered manually by HR on a 0-100 scale.
+ * INTERVIEW = (Skor HRD x 40%) + (Skor User x 60%), per konsep-hrd.pdf §7.
+ * Skor HRD/User itu sendiri datang dari InterviewHrdScoringService /
+ * InterviewUserScoringService — kelas ini hanya menggabungkan keduanya
+ * setelah kedua tahap selesai.
  */
 class InterviewScoringService
 {
-    public const WEIGHTS = [
-        'communication' => 0.20,
-        'motivation' => 0.15,
-        'problem_solving' => 0.20,
-        'job_knowledge' => 0.20,
-        'attitude' => 0.15,
-        'work_alignment' => 0.10,
-    ];
+    public const HRD_WEIGHT = 0.40;
 
-    /**
-     * @param  array<string, float>  $aspectScores  keyed by the WEIGHTS keys above
-     */
-    public function score(array $aspectScores): float
+    public const USER_WEIGHT = 0.60;
+
+    public function combine(float $hrdScore, float $userScore): float
     {
-        $total = 0.0;
-
-        foreach (self::WEIGHTS as $aspect => $weight) {
-            $total += (float) ($aspectScores[$aspect] ?? 0) * $weight;
-        }
-
-        return round($total, 2);
+        return round($hrdScore * self::HRD_WEIGHT + $userScore * self::USER_WEIGHT, 2);
     }
 }

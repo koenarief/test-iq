@@ -32,8 +32,6 @@ class PositionController extends Controller
                 'id' => $position->id,
                 'name' => $position->name,
                 'department' => $position->department,
-                'disc_weight' => (float) $position->disc_weight,
-                'ist_weight' => (float) $position->ist_weight,
                 'is_active' => $position->is_active,
                 'total_weight' => $position->totalWeight(),
             ];
@@ -61,8 +59,6 @@ class PositionController extends Controller
             $position = Position::create([
                 'name' => $validated['name'],
                 'department' => $validated['department'],
-                'disc_weight' => $validated['disc_weight'],
-                'ist_weight' => $validated['ist_weight'],
                 'is_active' => $validated['is_active'] ?? true,
             ]);
 
@@ -83,8 +79,6 @@ class PositionController extends Controller
                 'id' => $position->id,
                 'name' => $position->name,
                 'department' => $position->department,
-                'disc_weight' => (float) $position->disc_weight,
-                'ist_weight' => (float) $position->ist_weight,
                 'is_active' => $position->is_active,
                 'category_weights' => $position->competencyCategoryWeights->map(fn ($weight) => [
                     'competency_category_id' => $weight->competency_category_id,
@@ -104,8 +98,6 @@ class PositionController extends Controller
             $position->update([
                 'name' => $validated['name'],
                 'department' => $validated['department'],
-                'disc_weight' => $validated['disc_weight'],
-                'ist_weight' => $validated['ist_weight'],
                 'is_active' => $validated['is_active'] ?? true,
             ]);
 
@@ -131,20 +123,17 @@ class PositionController extends Controller
         $validated = $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'department' => ['required', Rule::in(array_keys(config('competency.departments')))],
-            'disc_weight' => ['required', 'numeric', 'min:0', 'max:100'],
-            'ist_weight' => ['required', 'numeric', 'min:0', 'max:100'],
             'is_active' => ['boolean'],
             'category_weights' => ['required', 'array', 'min:1'],
             'category_weights.*.competency_category_id' => ['required', 'exists:competency_categories,id'],
             'category_weights.*.weight' => ['required', 'numeric', 'min:0', 'max:100'],
         ]);
 
-        $total = (float) $validated['disc_weight'] + (float) $validated['ist_weight']
-            + array_sum(array_column($validated['category_weights'], 'weight'));
+        $total = array_sum(array_column($validated['category_weights'], 'weight'));
 
         if (round($total, 2) !== 100.0) {
             throw ValidationException::withMessages([
-                'category_weights' => "Total seluruh bobot (DISC + IST + kompetensi) harus 100%, saat ini {$total}%.",
+                'category_weights' => "Total bobot subtes Competency (Job Fit) harus 100%, saat ini {$total}%.",
             ]);
         }
 

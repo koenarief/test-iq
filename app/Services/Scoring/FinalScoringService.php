@@ -5,15 +5,16 @@ namespace App\Services\Scoring;
 use App\Models\CandidateAssessment;
 
 /**
- * Final Score = (Assessment x 50%) + (Job Fit x 20%) + (Interview x 30%),
- * only meaningful once the candidate passed the Assessment Gate and both
- * Job Fit and Interview scores are available.
+ * Final Score = (Assessment x 35%) + (Job Fit x 35%) + (Interview x 30%),
+ * per konsep-hrd.pdf. Computed once Assessment, Job Fit, and the combined
+ * Interview score are all available — the Assessment Gate (DISC/IST
+ * minimums) is an indicator only and never blocks this calculation.
  */
 class FinalScoringService
 {
-    public const ASSESSMENT_WEIGHT = 0.50;
+    public const ASSESSMENT_WEIGHT = 0.35;
 
-    public const JOB_FIT_WEIGHT = 0.20;
+    public const JOB_FIT_WEIGHT = 0.35;
 
     public const INTERVIEW_WEIGHT = 0.30;
 

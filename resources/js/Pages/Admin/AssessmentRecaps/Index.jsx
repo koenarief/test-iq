@@ -119,11 +119,11 @@ export default function Index({ assessments, filters }) {
                                                 </span>
                                             ) : assessment.gate_passed ? (
                                                 <span className="rounded-full bg-green-100 px-2 py-0.5 text-xs text-green-700">
-                                                    PASS
+                                                    Memenuhi Kriteria
                                                 </span>
                                             ) : (
-                                                <span className="rounded-full bg-red-100 px-2 py-0.5 text-xs text-red-700">
-                                                    FAIL
+                                                <span className="rounded-full bg-amber-100 px-2 py-0.5 text-xs text-amber-700">
+                                                    Di Bawah Kriteria
                                                 </span>
                                             )}
                                         </td>

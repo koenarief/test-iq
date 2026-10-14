@@ -27,7 +27,6 @@ class CandidateAssessment extends Model
         'assessment_score',
         'gate_disc_passed',
         'gate_ist_passed',
-        'gate_competency_passed',
         'gate_assessment_passed',
         'gate_passed',
         'assessment_scored_at',
@@ -38,15 +37,29 @@ class CandidateAssessment extends Model
 
         'strength_development_breakdown',
 
-        'interview_communication',
-        'interview_motivation',
-        'interview_problem_solving',
-        'interview_job_knowledge',
-        'interview_attitude',
-        'interview_work_alignment',
+        'interview_hrd_attitude_ethics',
+        'interview_hrd_communication',
+        'interview_hrd_motivation_goals',
+        'interview_hrd_discipline_responsibility',
+        'interview_hrd_commitment_readiness',
+        'interview_hrd_adaptability_teamwork',
+        'interview_hrd_score',
+        'interview_hrd_notes',
+        'interview_hrd_by',
+        'interview_hrd_scored_at',
+
+        'interview_user_task_understanding',
+        'interview_user_work_competence',
+        'interview_user_problem_analysis',
+        'interview_user_work_quality',
+        'interview_user_initiative_independence',
+        'interview_user_communication_teamwork',
+        'interview_user_score',
+        'interview_user_notes',
+        'interview_user_by',
+        'interview_user_scored_at',
+
         'interview_score',
-        'interview_notes',
-        'interviewed_by',
         'interview_scored_at',
 
         'final_score',
@@ -63,7 +76,6 @@ class CandidateAssessment extends Model
             'assessment_score' => 'decimal:2',
             'gate_disc_passed' => 'boolean',
             'gate_ist_passed' => 'boolean',
-            'gate_competency_passed' => 'boolean',
             'gate_assessment_passed' => 'boolean',
             'gate_passed' => 'boolean',
             'assessment_scored_at' => 'datetime',
@@ -74,12 +86,24 @@ class CandidateAssessment extends Model
 
             'strength_development_breakdown' => 'array',
 
-            'interview_communication' => 'decimal:2',
-            'interview_motivation' => 'decimal:2',
-            'interview_problem_solving' => 'decimal:2',
-            'interview_job_knowledge' => 'decimal:2',
-            'interview_attitude' => 'decimal:2',
-            'interview_work_alignment' => 'decimal:2',
+            'interview_hrd_attitude_ethics' => 'decimal:2',
+            'interview_hrd_communication' => 'decimal:2',
+            'interview_hrd_motivation_goals' => 'decimal:2',
+            'interview_hrd_discipline_responsibility' => 'decimal:2',
+            'interview_hrd_commitment_readiness' => 'decimal:2',
+            'interview_hrd_adaptability_teamwork' => 'decimal:2',
+            'interview_hrd_score' => 'decimal:2',
+            'interview_hrd_scored_at' => 'datetime',
+
+            'interview_user_task_understanding' => 'decimal:2',
+            'interview_user_work_competence' => 'decimal:2',
+            'interview_user_problem_analysis' => 'decimal:2',
+            'interview_user_work_quality' => 'decimal:2',
+            'interview_user_initiative_independence' => 'decimal:2',
+            'interview_user_communication_teamwork' => 'decimal:2',
+            'interview_user_score' => 'decimal:2',
+            'interview_user_scored_at' => 'datetime',
+
             'interview_score' => 'decimal:2',
             'interview_scored_at' => 'datetime',
 
@@ -113,8 +137,13 @@ class CandidateAssessment extends Model
         return $this->belongsTo(IstTest::class, 'ist_test_id');
     }
 
-    public function interviewer(): BelongsTo
+    public function hrdInterviewer(): BelongsTo
     {
-        return $this->belongsTo(User::class, 'interviewed_by');
+        return $this->belongsTo(User::class, 'interview_hrd_by');
+    }
+
+    public function userInterviewer(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'interview_user_by');
     }
 }

@@ -28,24 +28,21 @@ class AssessmentScoringServiceTest extends TestCase
         $this->assertSame(80.0, AssessmentScoringService::scoreCompetency($test));
     }
 
-    public function test_assessment_gate_minimums_match_score_md(): void
+    public function test_assessment_indicator_minimums_match_konsep_hrd(): void
     {
-        $this->assertSame(60.0, AssessmentScoringService::DISC_GATE_MIN);
-        $this->assertSame(60.0, AssessmentScoringService::IST_GATE_MIN);
-        $this->assertSame(65.0, AssessmentScoringService::COMPETENCY_GATE_MIN);
-        $this->assertSame(70.0, AssessmentScoringService::ASSESSMENT_GATE_MIN);
+        $this->assertSame(60.0, AssessmentScoringService::DISC_INDICATOR_MIN);
+        $this->assertSame(60.0, AssessmentScoringService::IST_INDICATOR_MIN);
+        $this->assertSame(75.0, AssessmentScoringService::ASSESSMENT_INDICATOR_MIN);
     }
 
-    public function test_assessment_weights_match_score_md(): void
+    public function test_assessment_weights_match_konsep_hrd(): void
     {
         $this->assertSame(1.0, round(
             AssessmentScoringService::DISC_WEIGHT
-            + AssessmentScoringService::IST_WEIGHT
-            + AssessmentScoringService::COMPETENCY_WEIGHT,
+            + AssessmentScoringService::IST_WEIGHT,
             2,
         ));
-        $this->assertSame(0.20, AssessmentScoringService::DISC_WEIGHT);
-        $this->assertSame(0.25, AssessmentScoringService::IST_WEIGHT);
-        $this->assertSame(0.55, AssessmentScoringService::COMPETENCY_WEIGHT);
+        $this->assertSame(0.50, AssessmentScoringService::DISC_WEIGHT);
+        $this->assertSame(0.50, AssessmentScoringService::IST_WEIGHT);
     }
 }

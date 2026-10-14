@@ -7,41 +7,17 @@ use PHPUnit\Framework\TestCase;
 
 class InterviewScoringServiceTest extends TestCase
 {
-    public function test_weights_match_score_md_example(): void
+    public function test_weights_match_konsep_hrd(): void
     {
-        $this->assertSame(1.0, array_sum(InterviewScoringService::WEIGHTS));
-        $this->assertSame(0.20, InterviewScoringService::WEIGHTS['communication']);
-        $this->assertSame(0.15, InterviewScoringService::WEIGHTS['motivation']);
-        $this->assertSame(0.20, InterviewScoringService::WEIGHTS['problem_solving']);
-        $this->assertSame(0.20, InterviewScoringService::WEIGHTS['job_knowledge']);
-        $this->assertSame(0.15, InterviewScoringService::WEIGHTS['attitude']);
-        $this->assertSame(0.10, InterviewScoringService::WEIGHTS['work_alignment']);
+        $this->assertSame(0.40, InterviewScoringService::HRD_WEIGHT);
+        $this->assertSame(0.60, InterviewScoringService::USER_WEIGHT);
     }
 
-    public function test_score_is_weighted_sum_of_aspects(): void
+    public function test_combine_is_weighted_sum_of_hrd_and_user(): void
     {
         $service = new InterviewScoringService();
 
-        $score = $service->score([
-            'communication' => 80,
-            'motivation' => 80,
-            'problem_solving' => 80,
-            'job_knowledge' => 80,
-            'attitude' => 80,
-            'work_alignment' => 80,
-        ]);
-
-        $this->assertSame(80.0, $score);
-    }
-
-    public function test_missing_aspect_defaults_to_zero(): void
-    {
-        $service = new InterviewScoringService();
-
-        $score = $service->score([
-            'communication' => 100,
-        ]);
-
-        $this->assertSame(20.0, $score);
+        // 80*0.40 + 90*0.60 = 32 + 54 = 86
+        $this->assertSame(86.0, $service->combine(80, 90));
     }
 }
