@@ -185,10 +185,17 @@ Route::middleware('auth')->group(function () {
                 Route::get('assessment-recaps/{candidateAssessment}', [AssessmentRecapController::class, 'show'])
                     ->name('assessment-recaps.show');
 
-                Route::get('candidate-assessments/{candidateAssessment}/interview', [InterviewScoreController::class, 'edit'])
-                    ->name('candidate-assessments.interview.edit');
-                Route::put('candidate-assessments/{candidateAssessment}/interview', [InterviewScoreController::class, 'update'])
-                    ->name('candidate-assessments.interview.update');
+                Route::post('candidate-assessments/{candidateAssessment}/recompute-job-fit', [AssessmentRecapController::class, 'recomputeJobFit'])
+                    ->name('candidate-assessments.recompute-job-fit');
+
+                Route::get('candidate-assessments/{candidateAssessment}/interview-hrd', [InterviewScoreController::class, 'editHrd'])
+                    ->name('candidate-assessments.interview-hrd.edit');
+                Route::put('candidate-assessments/{candidateAssessment}/interview-hrd', [InterviewScoreController::class, 'updateHrd'])
+                    ->name('candidate-assessments.interview-hrd.update');
+                Route::get('candidate-assessments/{candidateAssessment}/interview-user', [InterviewScoreController::class, 'editUser'])
+                    ->name('candidate-assessments.interview-user.edit');
+                Route::put('candidate-assessments/{candidateAssessment}/interview-user', [InterviewScoreController::class, 'updateUser'])
+                    ->name('candidate-assessments.interview-user.update');
             });
     });
 

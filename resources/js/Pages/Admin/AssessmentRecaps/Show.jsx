@@ -84,6 +84,13 @@ function recomputeJobFit(assessmentId) {
     );
 }
 
+const DISC_LABELS = {
+    D: 'Dominance',
+    I: 'Influence',
+    S: 'Steadiness',
+    C: 'Conscientiousness',
+};
+
 export default function Show({ assessment }) {
     const breakdownByType = (type) =>
         (assessment.strength_development_breakdown ?? []).filter(
@@ -91,6 +98,7 @@ export default function Show({ assessment }) {
         );
 
     const jobFitRows = assessment.job_fit_breakdown?.rows ?? [];
+    const discRows = assessment.disc_breakdown?.rows ?? [];
     const hrdDone = assessment.interview_hrd_scored_at !== null;
     const userDone = assessment.interview_user_scored_at !== null;
 
@@ -139,6 +147,28 @@ export default function Show({ assessment }) {
                             meetsCriteria={assessment.gate_disc_passed}
                             min={60}
                         />
+                        {discRows.length > 0 && (
+                            <div className="mb-2 ml-4 rounded-md bg-gray-50 px-3 py-2 text-xs text-gray-600">
+                                <div className="mb-1 font-semibold">
+                                    DISC Fit Score — bobot posisi
+                                </div>
+                                {discRows.map((row) => (
+                                    <div
+                                        key={row.dimension}
+                                        className="flex justify-between"
+                                    >
+                                        <span>
+                                            {DISC_LABELS[row.dimension]} (
+                                            {row.weight}%)
+                                        </span>
+                                        <span>
+                                            {row.value} × {row.weight}% ={' '}
+                                            {row.contribution}
+                                        </span>
+                                    </div>
+                                ))}
+                            </div>
+                        )}
                         <IndicatorRow
                             label="IST"
                             score={assessment.ist_score}

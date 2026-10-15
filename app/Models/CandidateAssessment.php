@@ -22,6 +22,7 @@ class CandidateAssessment extends Model
         'ist_test_id',
 
         'disc_score',
+        'disc_breakdown',
         'ist_score',
         'competency_score',
         'assessment_score',
@@ -71,6 +72,7 @@ class CandidateAssessment extends Model
     {
         return [
             'disc_score' => 'decimal:2',
+            'disc_breakdown' => 'array',
             'ist_score' => 'decimal:2',
             'competency_score' => 'decimal:2',
             'assessment_score' => 'decimal:2',

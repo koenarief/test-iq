@@ -17,8 +17,9 @@ use App\Services\Ist\IstScoringService;
  *
  * - ASSESSMENT = DISC x50% + IST x50%. Competency is NOT part of Assessment
  *   (it only feeds Job Fit) — only needs a completed DISC + IST test.
- * - DISC score = the candidate's dominant-dimension graph score
- *   (disc_tests.graph_d/i/s/c are already 0-100, see DiscTestController).
+ * - DISC score = DISC Fit Score, Σ(graph_X × bobot_X) using the position
+ *   department's weights (bobot-disc.pdf, see discBreakdown()).
+ *   disc_tests.graph_d/i/s/c are already 0-100, see DiscTestController.
  * - IST score = the age-normed IQ score shown on the Hasil IST page (see
  *   IstResultService/IstScoringService::calculateFromRawScores()).
  * - competency_score is informational only (raw Competency test result),
@@ -51,14 +52,52 @@ class AssessmentScoringService
         private readonly FinalScoringService $finalScoringService,
     ) {}
 
-    public static function scoreDisc(DiscTest $test): float
+    public static function scoreDisc(DiscTest $test, ?string $department = null): float
     {
-        return (float) max(
-            (float) $test->graph_d,
-            (float) $test->graph_i,
-            (float) $test->graph_s,
-            (float) $test->graph_c,
-        );
+        return self::discBreakdown($test, $department)['score'];
+    }
+
+    /**
+     * DISC Fit Score = Σ(graph_X × bobot_X) dengan bobot per departemen
+     * posisi dari config('competency.departments.*.disc_weights')
+     * (bobot-disc.pdf). Tanpa bobot (posisi kosong/departemen tak dikenal)
+     * jatuh kembali ke dimensi dominan, max(D, I, S, C).
+     *
+     * @return array{score: float, department: ?string, rows: array<int, array{dimension: string, weight: float, value: float, contribution: float}>}
+     */
+    public static function discBreakdown(DiscTest $test, ?string $department = null): array
+    {
+        $graph = [
+            'D' => (float) $test->graph_d,
+            'I' => (float) $test->graph_i,
+            'S' => (float) $test->graph_s,
+            'C' => (float) $test->graph_c,
+        ];
+
+        $weights = $department ? config("competency.departments.{$department}.disc_weights") : null;
+
+        if (! $weights) {
+            return ['score' => max($graph), 'department' => null, 'rows' => []];
+        }
+
+        $rows = [];
+
+        foreach ($graph as $dimension => $value) {
+            $weight = (float) ($weights[$dimension] ?? 0);
+
+            $rows[] = [
+                'dimension' => $dimension,
+                'weight' => $weight,
+                'value' => $value,
+                'contribution' => round($value * $weight / 100, 3),
+            ];
+        }
+
+        return [
+            'score' => round(array_sum(array_column($rows, 'contribution')), 2),
+            'department' => $department,
+            'rows' => $rows,
+        ];
     }
 
     public function scoreIst(IstTest $test): float
@@ -120,9 +159,16 @@ class AssessmentScoringService
 
         $assessment->competency_score = $competencyTest ? self::scoreCompetency($competencyTest) : null;
 
-        // ASSESSMENT = DISC x50% + IST x50% — only needs DISC + IST.
+        $position = $assessment->position_id
+            ? Position::with('competencyCategoryWeights')->find($assessment->position_id)
+            : null;
+
+        $discBreakdown = $discTest ? self::discBreakdown($discTest, $position?->department) : null;
+        $assessment->disc_breakdown = $discBreakdown;
+
+        // ASSESSMENT = DISC Fit x50% + IST x50% — only needs DISC + IST.
         if ($discTest && $istTest) {
-            $discScore = self::scoreDisc($discTest);
+            $discScore = $discBreakdown['score'];
             $istScore = $this->scoreIst($istTest);
 
             $assessmentScore = round(
@@ -147,7 +193,7 @@ class AssessmentScoringService
                 'assessment_scored_at' => now(),
             ]);
         } else {
-            $assessment->disc_score = $discTest ? self::scoreDisc($discTest) : null;
+            $assessment->disc_score = $discBreakdown['score'] ?? null;
             $assessment->ist_score = $istTest ? $this->scoreIst($istTest) : null;
         }
 
@@ -155,10 +201,6 @@ class AssessmentScoringService
         // Scored once; a snapshot of the weights used is kept in
         // job_fit_breakdown, so later weight edits don't retroactively
         // change an already-scored candidate unless $force is passed.
-        $position = $assessment->position_id
-            ? Position::with('competencyCategoryWeights')->find($assessment->position_id)
-            : null;
-
         if ($competencyTest && $position && ($force || $assessment->job_fit_scored_at === null)) {
             $jobFit = $this->jobFitScoringService->score($competencyTest, $position);
             $assessment->job_fit_score = $jobFit['score'];
