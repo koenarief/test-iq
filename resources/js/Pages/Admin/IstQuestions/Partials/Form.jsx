@@ -44,7 +44,6 @@ export default function QuestionForm({
         ist_subtest_id: question?.ist_subtest_id ?? subtests[0]?.id ?? '',
         kind: question?.kind ?? kinds[0] ?? 'scored',
         question_number: question?.question_number ?? '',
-        display_order: question?.display_order ?? '',
         answer_type:
             question?.answer_type ??
             subtests[0]?.default_answer_type ??
@@ -180,7 +179,7 @@ export default function QuestionForm({
                 <div>
                     <InputLabel
                         htmlFor="question_number"
-                        value="Nomor Soal"
+                        value="Posisi / Nomor Soal"
                     />
                     <TextInput
                         id="question_number"
@@ -196,24 +195,10 @@ export default function QuestionForm({
                         message={errors.question_number}
                         className="mt-2"
                     />
-                </div>
-
-                <div>
-                    <InputLabel htmlFor="display_order" value="Urutan Tampil" />
-                    <TextInput
-                        id="display_order"
-                        type="number"
-                        min="1"
-                        value={data.display_order}
-                        onChange={(e) =>
-                            setData('display_order', e.target.value)
-                        }
-                        className="mt-1 block w-full"
-                    />
-                    <InputError
-                        message={errors.display_order}
-                        className="mt-2"
-                    />
+                    <p className="mt-2 text-sm text-gray-500">
+                        Soal lain bergeser otomatis dalam subtes dan jenis yang sama.
+                        Posisi melebihi jumlah soal akan ditempatkan di akhir.
+                    </p>
                 </div>
 
                 <div>

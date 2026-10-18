@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Ist\IstQuestion;
 use App\Models\Ist\IstQuestionOption;
 use App\Models\Ist\IstSubtest;
+use App\Services\Ist\IstQuestionOrderService;
 use App\Support\Ist\IstAnswerType;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\RedirectResponse;
@@ -21,6 +22,8 @@ use Throwable;
 
 class IstQuestionController extends Controller
 {
+    public function __construct(private readonly IstQuestionOrderService $ordering) {}
+
     private const OPTION_KEYS = ['A', 'B', 'C', 'D', 'E'];
 
     private const DIFFICULTIES = ['easy', 'medium', 'hard'];
@@ -235,11 +238,12 @@ class IstQuestionController extends Controller
 
         try {
             DB::transaction(function () use ($data) {
+                $this->ordering->lock();
                 $version = IstQuestion::where('ist_subtest_id', $data['question']['ist_subtest_id'])
                     ->where('is_active', true)
                     ->max('version') ?? 1;
 
-                $question = IstQuestion::create([
+                $question = $this->ordering->save([
                     ...$data['question'],
                     'created_by' => auth()->id(),
                     'updated_by' => auth()->id(),
@@ -270,15 +274,17 @@ class IstQuestionController extends Controller
 
     public function update(Request $request, IstQuestion $question): RedirectResponse
     {
-        $data = $this->validated($request, $question);
-        $previousSubtestId = $question->ist_subtest_id;
+        $data = $this->validated($request);
 
         try {
-            DB::transaction(function () use ($question, $data, $previousSubtestId) {
-                $question->update([
+            DB::transaction(function () use ($question, $data) {
+                $this->ordering->lock();
+                $question = IstQuestion::query()->findOrFail($question->id);
+                $previousSubtestId = $question->ist_subtest_id;
+                $question = $this->ordering->save([
                     ...$data['question'],
                     'updated_by' => auth()->id(),
-                ]);
+                ], $question);
 
                 $this->syncOptions($question, $data['options']);
                 $this->syncSubtestQuestionCount($previousSubtestId);
@@ -298,8 +304,12 @@ class IstQuestionController extends Controller
         $subtestId = $question->ist_subtest_id;
 
         DB::transaction(function () use ($question, $subtestId) {
+            $this->ordering->lock();
+            $question = IstQuestion::query()->findOrFail($question->id);
+            $subtestId = $question->ist_subtest_id;
             $question->options()->delete();
             $question->delete();
+            $this->ordering->normalize($subtestId, $question->kind);
             $this->syncSubtestQuestionCount($subtestId);
         });
 
@@ -326,7 +336,7 @@ class IstQuestionController extends Controller
      * a master question into a participant-facing snapshot, so an admin edit
      * can never save a combination that would later fail a real test run.
      */
-    private function validated(Request $request, ?IstQuestion $question = null): array
+    private function validated(Request $request): array
     {
         $answerType = $request->input('answer_type');
         $isNumeric = $answerType === IstAnswerType::NUMERIC;
@@ -334,16 +344,7 @@ class IstQuestionController extends Controller
         $validator = Validator::make($request->all(), [
             'ist_subtest_id' => ['required', 'integer', Rule::exists('ist_subtests', 'id')],
             'kind' => ['required', Rule::in(self::KINDS)],
-            'question_number' => [
-                'required', 'integer', 'min:1',
-                Rule::unique('ist_questions', 'question_number')
-                    ->where(fn ($query) => $query
-                        ->where('ist_subtest_id', $request->input('ist_subtest_id'))
-                        ->where('kind', $request->input('kind'))
-                        ->whereNull('deleted_at'))
-                    ->ignore($question?->id),
-            ],
-            'display_order' => ['required', 'integer', 'min:1'],
+            'question_number' => ['required', 'integer', 'min:1', 'max:65535'],
             'answer_type' => ['required', Rule::in(IstAnswerType::all())],
             'prompt' => ['nullable', 'string'],
             'image_disk' => ['nullable', 'string', 'max:255'],
@@ -378,7 +379,7 @@ class IstQuestionController extends Controller
                 'ist_subtest_id' => $validated['ist_subtest_id'],
                 'kind' => $validated['kind'],
                 'question_number' => $validated['question_number'],
-                'display_order' => $validated['display_order'],
+                'display_order' => $validated['question_number'],
                 'answer_type' => $validated['answer_type'],
                 'prompt' => $validated['prompt'] ?? null,
                 'image_disk' => $validated['image_disk'] ?? null,
@@ -544,12 +545,13 @@ class IstQuestionController extends Controller
 
     private function duplicateQuestionException(QueryException $exception): ValidationException
     {
-        if ($exception->getCode() !== '23000') {
+        if (! str_contains($exception->getMessage(), 'ist_questions_live_number_unique')
+            && ! str_contains($exception->getMessage(), 'ist_questions.ist_subtest_id, ist_questions.kind, ist_questions.live_question_number')) {
             throw $exception;
         }
 
         return ValidationException::withMessages([
-            'question_number' => 'Kombinasi subtes, jenis, dan nomor soal ini sudah dipakai (termasuk soal yang pernah dihapus). Gunakan nomor lain.',
+            'question_number' => 'Urutan soal berubah saat disimpan. Muat ulang halaman lalu coba lagi.',
         ]);
     }
 }
