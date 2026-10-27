@@ -27,8 +27,8 @@ export default function IstImageViewer({ image, fallbackAlt = 'Ilustrasi soal', 
 
     return (
         <>
-            <figure className={`rounded-xl border border-zinc-800 bg-zinc-950/70 p-3 ${className}`}>
-                <div className="relative flex min-h-40 items-center justify-center overflow-hidden rounded-lg bg-zinc-950">
+            <figure className={`rounded-xl border border-zinc-800 bg-zinc-950/70 p-2 sm:p-3 ${className}`}>
+                <div className="relative flex min-h-28 items-center justify-center overflow-hidden rounded-lg bg-zinc-950 sm:min-h-40">
                     {isLoading && (
                         <div className="absolute inset-0 flex items-center justify-center text-xs text-zinc-500" role="status">
                             Memuat gambar…
@@ -36,7 +36,7 @@ export default function IstImageViewer({ image, fallbackAlt = 'Ilustrasi soal', 
                     )}
 
                     {hasError ? (
-                        <div className="flex min-h-40 flex-col items-center justify-center gap-2 px-4 text-center text-sm text-zinc-500" role="alert">
+                        <div className="flex min-h-28 flex-col items-center justify-center gap-2 px-4 text-center text-sm text-zinc-500 sm:min-h-40" role="alert">
                             <ImageOff className="h-7 w-7 text-zinc-600" aria-hidden="true" />
                             Gambar tidak dapat dimuat.
                         </div>
@@ -47,7 +47,7 @@ export default function IstImageViewer({ image, fallbackAlt = 'Ilustrasi soal', 
                             loading="lazy"
                             onLoad={() => setIsLoading(false)}
                             onError={handleError}
-                            className={`max-h-[28rem] w-full object-contain ${isLoading ? 'opacity-0' : 'opacity-100'}`}
+                            className={`max-h-72 w-full object-contain sm:max-h-[28rem] ${isLoading ? 'opacity-0' : 'opacity-100'}`}
                         />
                     )}
                 </div>

@@ -49,9 +49,13 @@ class IstNormSeeder extends Seeder
      *    9 subtes (SE, WA, AN, GE, RA, ZR, FA, WU, ME) berurutan, dan baris
      *    setelah itu = data RW 0-20 (satu kolom RW + 9 kolom SW per blok).
      *  - Tabel Gesamt/Total IQ ditandai sel berisi kata "gesamt". Baris tepat
-     *    di bawahnya = header ("RW" pada kolom indeks Total SW), baris
-     *    berikutnya = label usia per kolom, baris setelah itu = data (kolom
-     *    indeks = Total SW, kolom lain = IQ untuk usia terkait).
+     *    di bawahnya = header ("RW" pada kolom indeks Total SW, dan kolom
+     *    berlabel "IQ" -- kolom P pada norma-ist.xlsx -- untuk IQ final yang
+     *    TIDAK bergantung usia), baris berikutnya = label usia per kolom
+     *    (hanya dipakai sebagai fallback, lihat di bawah), baris setelah itu
+     *    = data (kolom indeks = Total SW, kolom "IQ" = IQ final, kolom
+     *    kelompok usia lain = pita klasifikasi per usia yang TIDAK dipakai
+     *    untuk skor akhir).
      *
      * PENTING: "Total SW" pada tabel Gesamt adalah RATA-RATA (bukan jumlah)
      * dari 9 SW subtes, dibulatkan ke bilangan bulat terdekat -> jangkauan
@@ -59,6 +63,17 @@ class IstNormSeeder extends Seeder
      * bukan skala 500-1000+ seperti hasil penjumlahan 9 subtes. Dikonfirmasi
      * dengan menghitung ulang rata-rata SW dari data RW=20 dan mencocokkannya
      * ke baris tabel Gesamt yang bersangkutan.
+     *
+     * PENTING #2: Skor IQ final HARUS diambil dari kolom "IQ" (kolom P pada
+     * norma-ist.xlsx) yang berlaku untuk semua usia, BUKAN dari kolom-kolom
+     * kelompok usia (13 tahun, 14 tahun, ..., <60) di sebelahnya. Kolom
+     * kelompok usia itu memetakan Total SW rendah (termasuk Total SW=0, yang
+     * terjadi bila peserta tidak menjawab sama sekali) ke IQ yang masih
+     * tergolong "Average" (>=90) -- jelas tidak masuk akal untuk peserta
+     * yang tidak mengerjakan sama sekali. Kolom "IQ" memetakan Total SW yang
+     * sama ke angka yang jauh lebih rendah dan masuk akal. Kolom-kolom
+     * kelompok usia disimpan tetap (untuk histori/keperluan lain) tapi tidak
+     * lagi dipakai sebagai sumber iq_score; lihat $iqCol di bawah.
      */
     private function seedFromExcel(string $filePath): void
     {
@@ -136,39 +151,69 @@ class IstNormSeeder extends Seeder
             return;
         }
 
-        $gesamtAgeCols = [];
-
-        foreach ($rows[$ageLabelRow] ?? [] as $col => $label) {
-            if ($col === $totalSwCol || $label === null || $label === '') {
-                continue;
-            }
-
-            $age = $this->parseAgeLabel((string) $label);
-
-            if ($age !== null) {
-                $gesamtAgeCols[$col] = $age;
-            }
-        }
+        // Kolom "IQ" (kolom P pada norma-ist.xlsx) berisi IQ final yang
+        // berlaku untuk SEMUA usia -- lihat catatan "PENTING #2" di atas
+        // method seedFromExcel(). Ini satu-satunya sumber iq_score; kolom
+        // kelompok usia (13 tahun, 14 tahun, ..., <60) di baris yang sama
+        // TIDAK dipakai lagi karena memetakan Total SW rendah ke IQ yang
+        // tidak masuk akal (mis. Total SW=0 -> IQ "Average").
+        $iqCol = $this->findColumnsWithCellValue($rows[$headerRow] ?? [], 'IQ')[0] ?? null;
 
         $totalData = [];
 
-        for ($r = $dataStartRow; $this->isNumericCell($rows[$r][$totalSwCol] ?? null); $r++) {
-            $totalSw = (int) $rows[$r][$totalSwCol];
-
-            foreach ($gesamtAgeCols as $col => $age) {
-                $iqVal = $rows[$r][$col] ?? null;
+        if ($iqCol !== null) {
+            for ($r = $dataStartRow; $this->isNumericCell($rows[$r][$totalSwCol] ?? null); $r++) {
+                $totalSw = (int) $rows[$r][$totalSwCol];
+                $iqVal = $rows[$r][$iqCol] ?? null;
 
                 if ($this->isNumericCell($iqVal)) {
-                    $iq = (int) $iqVal;
+                    $iq = (int) round((float) $iqVal);
                     $totalData[] = [
-                        'min_age' => $age['min'],
-                        'max_age' => $age['max'],
+                        'min_age' => 0,
+                        'max_age' => 999,
                         'total_sw' => $totalSw,
                         'iq_score' => $iq,
                         'iq_category' => $this->getIqCategory($iq),
                         'created_at' => now(),
                         'updated_at' => now(),
                     ];
+                }
+            }
+        } else {
+            // Fallback untuk file norma lama yang tidak punya kolom "IQ"
+            // universal: pakai kolom kelompok usia seperti sebelumnya.
+            $gesamtAgeCols = [];
+
+            foreach ($rows[$ageLabelRow] ?? [] as $col => $label) {
+                if ($col === $totalSwCol || $label === null || $label === '') {
+                    continue;
+                }
+
+                $age = $this->parseAgeLabel((string) $label);
+
+                if ($age !== null) {
+                    $gesamtAgeCols[$col] = $age;
+                }
+            }
+
+            for ($r = $dataStartRow; $this->isNumericCell($rows[$r][$totalSwCol] ?? null); $r++) {
+                $totalSw = (int) $rows[$r][$totalSwCol];
+
+                foreach ($gesamtAgeCols as $col => $age) {
+                    $iqVal = $rows[$r][$col] ?? null;
+
+                    if ($this->isNumericCell($iqVal)) {
+                        $iq = (int) $iqVal;
+                        $totalData[] = [
+                            'min_age' => $age['min'],
+                            'max_age' => $age['max'],
+                            'total_sw' => $totalSw,
+                            'iq_score' => $iq,
+                            'iq_category' => $this->getIqCategory($iq),
+                            'created_at' => now(),
+                            'updated_at' => now(),
+                        ];
+                    }
                 }
             }
         }

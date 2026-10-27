@@ -21,7 +21,7 @@ export default function IstExpiredPanel({ onContinue, processing = false, error 
                 type="button"
                 onClick={onContinue}
                 disabled={processing}
-                className="mt-7 inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 px-6 text-sm font-semibold text-white shadow-lg shadow-blue-600/20 hover:from-blue-500 hover:to-indigo-500 disabled:cursor-not-allowed disabled:opacity-60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950"
+                className="mt-7 inline-flex min-h-14 w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 px-6 text-base font-bold text-white shadow-xl shadow-blue-600/30 hover:from-blue-500 hover:to-indigo-500 disabled:cursor-not-allowed disabled:opacity-60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950 sm:w-auto"
             >
                 {processing ? 'Memproses timeout…' : error ? 'Coba Lanjutkan' : 'Lanjutkan Proses Timeout'}
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />

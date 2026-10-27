@@ -43,21 +43,32 @@ final class IstParticipantCopyContractTest extends TestCase
         $this->assertLegacyParticipantCopyAbsent($work.$question.$image);
     }
 
-    public function test_result_uses_iq_norm_based_raw_and_standard_score_copy(): void
+    public function test_result_hides_scores_from_the_candidate(): void
     {
         $source = $this->source('resources/js/Pages/IST/Result.jsx');
 
-        $this->assertStringContainsString('<Head title="Hasil Asesmen Kemampuan Kognitif" />', $source);
         $this->assertStringContainsString('Asesmen Kemampuan Kognitif', $source);
-        $this->assertStringContainsString('Ringkasan Hasil', $source);
-        $this->assertStringContainsString('Skor IQ', $source);
-        $this->assertStringContainsString('Total SW', $source);
-        $this->assertStringContainsString('Total RW', $source);
-        $this->assertStringContainsString('Profil Dominasi', $source);
-        $this->assertStringContainsString('Profil Sembilan Subtes', $source);
-        $this->assertStringContainsString('Rincian Hasil Sembilan Subtes', $source);
-        $this->assertMatchesRegularExpression('/\bIQ\b/u', $source);
-        $this->assertMatchesRegularExpression('/\bnorma\b/ui', $source);
+        $this->assertStringContainsString('Asesmen selesai', $source);
+        $this->assertStringContainsString("route('assessment.continue.competency')", $source);
+
+        foreach ([
+            'Skor IQ',
+            'Total SW',
+            'Total RW',
+            'Profil Dominasi',
+            'Profil Sembilan Subtes',
+            'Rincian Hasil Sembilan Subtes',
+            'iqScore',
+            'iqCategory',
+            'totalStandardScore',
+            'totalRawScore',
+            'dominanceProfile',
+            'graphPoints',
+            'IstResultChart',
+        ] as $scoreCopy) {
+            $this->assertStringNotContainsString($scoreCopy, $source);
+        }
+
         $this->assertLegacyParticipantCopyAbsent($source);
     }
 

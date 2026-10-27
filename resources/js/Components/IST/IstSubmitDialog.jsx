@@ -56,7 +56,7 @@ export default function IstSubmitDialog({
                                 type="button"
                                 onClick={onClose}
                                 disabled={processing}
-                                className="min-h-11 rounded-xl border border-zinc-700 bg-zinc-950 px-5 text-sm font-semibold text-zinc-300 hover:border-zinc-600 hover:text-white disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
+                                className="min-h-12 rounded-xl border border-zinc-700 bg-zinc-950 px-5 text-sm font-semibold text-zinc-300 hover:border-zinc-600 hover:text-white disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
                             >
                                 Batal
                             </button>
@@ -64,7 +64,7 @@ export default function IstSubmitDialog({
                                 type="button"
                                 onClick={onConfirm}
                                 disabled={processing}
-                                className="min-h-11 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 px-5 text-sm font-semibold text-white hover:from-blue-500 hover:to-indigo-500 disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
+                                className="min-h-14 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 px-7 text-base font-bold text-white shadow-xl shadow-blue-600/30 hover:from-blue-500 hover:to-indigo-500 disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
                             >
                                 {processing ? 'Memproses…' : 'Konfirmasi Selesai'}
                             </button>

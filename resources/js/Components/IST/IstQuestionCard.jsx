@@ -50,13 +50,13 @@ export default function IstQuestionCard({
     const fieldName = `ist-question-${question.id}`;
 
     return (
-        <article className="rounded-2xl border border-zinc-800 bg-zinc-900/90 p-5 shadow-2xl sm:p-8">
-            <header className="mb-6 flex flex-wrap items-center justify-between gap-3 border-b border-zinc-800 pb-4">
+        <article className="rounded-2xl border border-zinc-800 bg-zinc-900/90 p-3 shadow-2xl sm:p-8">
+            <header className="mb-3 flex flex-wrap items-center justify-between gap-3 border-b border-zinc-800 pb-3 sm:mb-6 sm:pb-4">
                 <div className="flex items-center gap-3">
                     <span className="inline-flex h-10 min-w-10 items-center justify-center rounded-xl border border-blue-500/30 bg-blue-500/10 px-2 font-mono text-sm font-bold text-blue-300">
                         #{question.displayOrder ?? '-'}
                     </span>
-                    <h1 className="text-lg font-bold text-white">Pengerjaan Subtes</h1>
+                    <h1 className="text-base font-bold text-white sm:text-lg">Pengerjaan Subtes</h1>
                 </div>
 
                 <span
@@ -75,7 +75,7 @@ export default function IstQuestionCard({
                 </span>
             </header>
 
-            <div className="space-y-6">
+            <div className="space-y-4 sm:space-y-6">
                 {disabled && disabledReason && (
                     <p className="rounded-xl border border-amber-500/30 bg-amber-500/10 p-3 text-sm text-amber-100" role="status">
                         {disabledReason}

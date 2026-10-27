@@ -520,14 +520,14 @@ export default function Work({
 
             <div className="sr-only" aria-live="polite">{timerAnnouncement}</div>
 
-            <div className="mx-auto w-full max-w-7xl flex-1 px-4 py-5 sm:px-6 sm:py-8">
-                <header className="sticky top-3 z-30 mb-5 rounded-2xl border border-zinc-800 bg-zinc-900/95 p-4 shadow-xl backdrop-blur-xl">
-                    <div className="flex flex-col gap-4 xl:flex-row xl:items-center xl:justify-between">
+            <div className="mx-auto w-full max-w-7xl flex-1 px-4 py-3 sm:px-6 sm:py-8">
+                <header className="sticky top-2 z-30 mb-3 rounded-2xl border border-zinc-800 bg-zinc-900/95 p-3 shadow-xl backdrop-blur-xl sm:top-3 sm:mb-5 sm:p-4">
+                    <div className="flex flex-col gap-3 xl:flex-row xl:items-center xl:justify-between">
                         <div className="min-w-0">
                             <p className="text-xs font-mono uppercase tracking-widest text-blue-400">
                                 Subtes {subtest?.sequence ?? '-'} dari 9
                             </p>
-                            <h1 className="mt-1 truncate text-lg font-bold text-white sm:text-xl">{title}</h1>
+                            <h1 className="mt-1 text-base font-bold leading-snug text-white sm:text-xl">{title}</h1>
                         </div>
 
                         <div className="flex flex-wrap items-center gap-2">
@@ -546,7 +546,7 @@ export default function Work({
                         </div>
                     </div>
 
-                    <div className="mt-4 border-t border-zinc-800 pt-4">
+                    <div className="hidden border-t border-zinc-800 pt-4 mt-4 sm:mt-4 sm:block">
                         <IstSubtestProgress currentSequence={subtest?.sequence} />
                     </div>
                 </header>
@@ -609,14 +609,14 @@ export default function Work({
 
                 {mode === 'answering' && !showExpiredPanel && (
                     <>
-                        <div className="mb-5 grid grid-cols-2 gap-3 sm:max-w-sm">
-                            <div className="rounded-xl border border-emerald-500/20 bg-emerald-500/10 p-3">
+                        <div className="mb-3 grid grid-cols-2 gap-2 sm:mb-5 sm:max-w-sm sm:gap-3">
+                            <div className="rounded-xl border border-emerald-500/20 bg-emerald-500/10 px-3 py-2 sm:p-3">
                                 <p className="text-xs text-emerald-200">Dijawab</p>
-                                <p className="mt-1 text-xl font-bold text-white">{answeredCount}</p>
+                                <p className="mt-0.5 text-lg font-bold text-white sm:mt-1 sm:text-xl">{answeredCount}</p>
                             </div>
-                            <div className="rounded-xl border border-amber-500/20 bg-amber-500/10 p-3">
+                            <div className="rounded-xl border border-amber-500/20 bg-amber-500/10 px-3 py-2 sm:p-3">
                                 <p className="text-xs text-amber-200">Kosong</p>
-                                <p className="mt-1 text-xl font-bold text-white">{blankCount}</p>
+                                <p className="mt-0.5 text-lg font-bold text-white sm:mt-1 sm:text-xl">{blankCount}</p>
                             </div>
                         </div>
 
@@ -636,12 +636,12 @@ export default function Work({
                                     subtestCode={subtest?.code}
                                 />
 
-                                    <div className="mt-5 flex flex-col gap-3 rounded-2xl border border-zinc-800 bg-zinc-900/80 p-4 sm:flex-row sm:items-center sm:justify-between">
+                                    <div className="mt-5 flex flex-col-reverse gap-3 rounded-2xl border border-zinc-800 bg-zinc-900/80 p-4 sm:flex-row sm:items-center sm:justify-between">
                                         <button
                                             type="button"
                                             onClick={() => setCurrentIndex((index) => Math.max(0, index - 1))}
                                             disabled={currentIndex === 0}
-                                            className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-zinc-700 bg-zinc-950 px-5 text-sm font-semibold text-zinc-300 hover:border-zinc-600 hover:text-white disabled:cursor-not-allowed disabled:opacity-40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
+                                            className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-zinc-700 bg-zinc-950 px-5 text-sm font-semibold text-zinc-300 hover:border-zinc-600 hover:text-white disabled:cursor-not-allowed disabled:opacity-40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
                                         >
                                             <ArrowLeft className="h-4 w-4" aria-hidden="true" />
                                             Sebelumnya
@@ -655,19 +655,19 @@ export default function Work({
                                             <button
                                                 type="button"
                                                 onClick={() => setCurrentIndex((index) => Math.min(safeQuestions.length - 1, index + 1))}
-                                                className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-blue-600 px-5 text-sm font-semibold text-white hover:bg-blue-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
+                                                className="inline-flex min-h-14 w-full items-center justify-center gap-2 rounded-xl bg-blue-600 px-6 text-base font-bold text-white shadow-lg shadow-blue-600/30 hover:bg-blue-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 sm:w-auto sm:px-7"
                                             >
-                                                Berikutnya
-                                                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                                                Soal Selanjutnya
+                                                <ArrowRight className="h-5 w-5" aria-hidden="true" />
                                             </button>
                                         ) : (
                                             <button
                                                 type="button"
                                                 onClick={() => setSubmitDialogOpen(true)}
                                                 disabled={inputLocked}
-                                                className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 px-5 text-sm font-semibold text-white hover:from-blue-500 hover:to-indigo-500 disabled:cursor-not-allowed disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
+                                                className="inline-flex min-h-14 w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 px-6 text-base font-bold text-white shadow-xl shadow-blue-600/30 hover:from-blue-500 hover:to-indigo-500 disabled:cursor-not-allowed disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 sm:w-auto sm:px-8"
                                             >
-                                                <Flag className="h-4 w-4" aria-hidden="true" />
+                                                <Flag className="h-5 w-5" aria-hidden="true" />
                                                 Selesaikan Subtes
                                             </button>
                                         )}
@@ -679,7 +679,7 @@ export default function Work({
                                                 type="button"
                                                 onClick={() => setSubmitDialogOpen(true)}
                                                 disabled={inputLocked}
-                                                className="inline-flex min-h-11 items-center gap-2 rounded-xl px-4 text-xs font-semibold text-zinc-400 hover:bg-zinc-900 hover:text-white disabled:cursor-not-allowed disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
+                                                className="inline-flex min-h-11 items-center gap-2 rounded-xl border border-zinc-800 px-4 text-xs font-semibold text-zinc-400 hover:border-zinc-700 hover:bg-zinc-900 hover:text-white disabled:cursor-not-allowed disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
                                             >
                                                 <CheckCircle2 className="h-4 w-4" aria-hidden="true" />
                                                 Selesai lebih awal
