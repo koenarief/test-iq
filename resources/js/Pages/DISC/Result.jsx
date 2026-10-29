@@ -1,445 +1,47 @@
 import { Head, Link } from '@inertiajs/react';
 import PublicLayout from '@/Layouts/PublicLayout';
 import { motion } from 'motion/react';
-import {
-    ResponsiveContainer,
-    LineChart,
-    Line,
-    XAxis,
-    YAxis,
-    CartesianGrid,
-    Tooltip,
-    Legend,
-} from 'recharts';
-import {
-    User,
-    Award,
-    BarChart3,
-    Zap,
-    AlertTriangle,
-    MessageSquare,
-    Crown,
-    Flame,
-    ShieldAlert,
-    Sprout,
-    Briefcase,
-    ArrowRight,
-    Sparkles,
-    CheckCircle2,
-} from 'lucide-react';
+import { CheckCircle2, ArrowRight } from 'lucide-react';
 
-// Custom Tooltip Recharts dengan tema Dark Mode & Glassmorphism
-const CustomTooltip = ({ active, payload, label }) => {
-    if (active && payload && payload.length) {
-        return (
-            <div className="bg-zinc-900/95 border border-zinc-800 p-3 rounded-xl shadow-xl font-mono text-xs backdrop-blur-md space-y-1">
-                <p className="text-zinc-400 font-semibold mb-1">Tipe: {label}</p>
-                {payload.map((entry) => (
-                    <p
-                        key={entry.dataKey}
-                        className="font-bold"
-                        style={{ color: entry.stroke }}
-                    >
-                        {entry.name}: {entry.value}
-                    </p>
-                ))}
-            </div>
-        );
-    }
-    return null;
-};
-
-export default function Result({ discTest, profile, personalSummary }) {
-    const chartData = [
-        {
-            subject: "D",
-            most: discTest.most_graph_d,
-            least: discTest.least_graph_d,
-            change: discTest.graph_d,
-        },
-        {
-            subject: "I",
-            most: discTest.most_graph_i,
-            least: discTest.least_graph_i,
-            change: discTest.graph_i,
-        },
-        {
-            subject: "S",
-            most: discTest.most_graph_s,
-            least: discTest.least_graph_s,
-            change: discTest.graph_s,
-        },
-        {
-            subject: "C",
-            most: discTest.most_graph_c,
-            least: discTest.least_graph_c,
-            change: discTest.graph_c,
-        },
-    ];
-
-    // Konfigurasi seksi profil untuk grid 2 kolom (Job Match dipisah ke Card Landscape)
-    const profileSections = [
-        {
-            title: "Strength (Kekuatan Utama)",
-            items: profile?.strength || [],
-            icon: Zap,
-            color: "text-amber-400",
-            bgColor: "bg-amber-500/10",
-            borderColor: "border-amber-500/30",
-        },
-        {
-            title: "Weakness (Area Kelemahan)",
-            items: profile?.weakness || [],
-            icon: AlertTriangle,
-            color: "text-rose-400",
-            bgColor: "bg-rose-500/10",
-            borderColor: "border-rose-500/30",
-        },
-        {
-            title: "Gaya Komunikasi",
-            items: profile?.communication || [],
-            icon: MessageSquare,
-            color: "text-blue-400",
-            bgColor: "bg-blue-500/10",
-            borderColor: "border-blue-500/30",
-        },
-        {
-            title: "Gaya Kepemimpinan",
-            items: profile?.leadership || [],
-            icon: Crown,
-            color: "text-purple-400",
-            bgColor: "bg-purple-500/10",
-            borderColor: "border-purple-500/30",
-        },
-        {
-            title: "Faktor Motivasi",
-            items: profile?.motivation || [],
-            icon: Flame,
-            color: "text-orange-400",
-            bgColor: "bg-orange-500/10",
-            borderColor: "border-orange-500/30",
-        },
-        {
-            title: "Pemicu Stres",
-            items: profile?.stress || [],
-            icon: ShieldAlert,
-            color: "text-red-400",
-            bgColor: "bg-red-500/10",
-            borderColor: "border-red-500/30",
-        },
-        // {
-        //     title: "Area Pengembangan",
-        //     items: profile?.development || [],
-        //     icon: Sprout,
-        //     color: "text-emerald-400",
-        //     bgColor: "bg-emerald-500/10",
-        //     borderColor: "border-emerald-500/30",
-        // },
-    ];
-
+export default function Result({ discTest }) {
     return (
         <PublicLayout>
-            <Head title="Hasil Tes DISC" />
+            <Head title="Jawaban Tersimpan" />
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12 flex-1 flex flex-col justify-center items-center">
-                <div className="w-full max-w-4xl space-y-6">
-                    {/* Top Navigation & Status Badge */}
-                    <div className="flex items-center justify-between">
-                        <Link
-                            href={route('assessment.continue.ist')}
-                            method="post"
-                            as="button"
-                            className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 px-4 py-2.5 text-xs font-semibold text-white shadow-lg shadow-blue-600/25 transition-all group"
-                        >
-                            <span>Lanjutkan ke Tes Kemampuan Kognitif (IST)</span>
-                            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                        </Link>
+            <div className="max-w-xl mx-auto px-4 sm:px-6 py-8 sm:py-12 flex-1 flex flex-col justify-center items-center">
+                <motion.div
+                    initial={{ opacity: 0, y: 15 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4 }}
+                    className="w-full bg-zinc-900/90 border border-zinc-800 rounded-2xl p-6 sm:p-8 shadow-2xl backdrop-blur-xl relative overflow-hidden text-center space-y-6"
+                >
+                    <div className="absolute top-0 right-0 w-64 h-64 bg-blue-600/10 blur-3xl rounded-full pointer-events-none" />
 
-                        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono">
-                            <CheckCircle2 className="w-3.5 h-3.5" />
-                            Evaluasi Selesai
-                        </span>
+                    <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full border border-emerald-500/30 bg-emerald-500/10">
+                        <CheckCircle2 className="w-7 h-7 text-emerald-400" />
                     </div>
 
-                    {/* Main Container Card */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 15 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.4 }}
-                        className="bg-zinc-900/90 border border-zinc-800 rounded-2xl p-6 sm:p-8 shadow-2xl backdrop-blur-xl relative overflow-hidden space-y-8"
+                    <div className="space-y-2">
+                        <h2 className="text-2xl font-bold text-white">
+                            Jawaban Anda Telah Tersimpan
+                        </h2>
+                        <p className="text-sm text-zinc-400 leading-relaxed">
+                            Terima kasih, {discTest?.participant_name}. Seluruh jawaban tes
+                            DISC Anda berhasil disimpan. Silakan lanjutkan ke Tes Kemampuan
+                            Kognitif (IST) saat Anda sudah siap.
+                        </p>
+                    </div>
+
+                    <Link
+                        href={route('assessment.continue.ist')}
+                        method="post"
+                        as="button"
+                        className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 px-4 py-2.5 text-xs font-semibold text-white shadow-lg shadow-blue-600/25 transition-all group mx-auto"
                     >
-                        <div className="absolute top-0 right-0 w-64 h-64 bg-blue-600/10 blur-3xl rounded-full pointer-events-none" />
-
-                        {/* Page Header */}
-                        <div className="pb-6 border-b border-zinc-800">
-                            <span className="text-xs font-mono text-blue-400 uppercase tracking-widest block mb-1">
-                                Langkah 3 dari 3 - Hasil Evaluasi
-                            </span>
-                            <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight flex items-center gap-3">
-                                <span>Laporan Profil Kepribadian DISC</span>
-                            </h2>
-                            <p className="text-xs sm:text-sm text-zinc-400 mt-1 leading-relaxed">
-                                Berikut adalah rangkuman analisis potensi, kecenderungan perilaku, dan gambaran kepribadian kerja Anda.
-                            </p>
-                        </div>
-
-                        {/* Participant Biodata & Result Summary Cards */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            {/* Participant Bio Card */}
-                            <div className="p-5 rounded-xl bg-zinc-950/60 border border-zinc-800/80 space-y-3">
-                                <div className="flex items-center gap-2 text-xs font-mono text-blue-400 uppercase tracking-wider mb-2">
-                                    <User className="w-4 h-4" />
-                                    <span>Biodata Peserta</span>
-                                </div>
-
-                                <div className="space-y-2.5 text-sm">
-                                    <div className="flex justify-between items-center py-1 border-b border-zinc-800/50">
-                                        <span className="text-zinc-500 text-xs">Nama Lengkap</span>
-                                        <span className="font-semibold text-white">{discTest?.participant_name}</span>
-                                    </div>
-                                    <div className="flex justify-between items-center py-1 border-b border-zinc-800/50">
-                                        <span className="text-zinc-500 text-xs">Usia</span>
-                                        <span className="font-semibold text-white">{discTest?.age} Tahun</span>
-                                    </div>
-                                    <div className="flex justify-between items-center py-1">
-                                        <span className="text-zinc-500 text-xs">Jenis Kelamin</span>
-                                        <span className="font-semibold text-white">
-                                            {discTest?.gender === 'L' ? 'Laki-laki' : discTest?.gender === 'P' ? 'Perempuan' : discTest?.gender}
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* DISC Profile Result Card */}
-                            <div className="p-5 rounded-xl bg-zinc-950/60 border border-zinc-800/80 space-y-3">
-                                <div className="flex items-center gap-2 text-xs font-mono text-indigo-400 uppercase tracking-wider mb-2">
-                                    <Award className="w-4 h-4" />
-                                    <span>Hasil Profil DISC</span>
-                                </div>
-
-                                <div className="space-y-2.5 text-sm">
-                                    <div className="flex justify-between items-center py-1 border-b border-zinc-800/50">
-                                        <span className="text-zinc-500 text-xs">Tipe DISC Utama</span>
-                                        <span className="font-mono font-bold text-base text-blue-400 px-3 py-0.5 rounded-md bg-blue-500/10 border border-blue-500/30">
-                                            {discTest?.disc_type}
-                                        </span>
-                                    </div>
-                                    <div className="flex justify-between items-center py-1 border-b border-zinc-800/50">
-                                        <span className="text-zinc-500 text-xs">Primary</span>
-                                        <span className="font-semibold text-zinc-200">{discTest?.primary_type}</span>
-                                    </div>
-                                    <div className="flex justify-between items-center py-1">
-                                        <span className="text-zinc-500 text-xs">Secondary</span>
-                                        <span className="font-semibold text-zinc-200">{discTest?.secondary_type}</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Chart Section */}
-                        <div className="p-5 sm:p-6 rounded-xl bg-zinc-950/60 border border-zinc-800/80 space-y-4">
-                            <div className="flex items-center gap-2">
-                                <div className="p-2 rounded-lg bg-blue-500/10 text-blue-400 border border-blue-500/30">
-                                    <BarChart3 className="w-5 h-5" />
-                                </div>
-                                <div>
-                                    <h3 className="text-base font-bold text-white">Visualisasi Grafik DISC</h3>
-                                    <p className="text-xs text-zinc-400">Plot sebaran kecenderungan nilai D, I, S, dan C</p>
-                                </div>
-                            </div>
-
-                            <div className="w-full h-[350px] pt-4">
-                                <ResponsiveContainer width="100%" height="100%">
-                                    <LineChart
-                                        data={chartData}
-                                        margin={{ top: 20, right: 30, left: -10, bottom: 10 }}
-                                    >
-                                        <CartesianGrid strokeDasharray="3 3" stroke="#27272a" />
-                                        <XAxis
-                                            dataKey="subject"
-                                            stroke="#a1a1aa"
-                                            tick={{ fill: '#a1a1aa', fontSize: 12, fontWeight: 'bold' }}
-                                        />
-                                        <YAxis
-                                            domain={[0, 100]}
-                                            stroke="#a1a1aa"
-                                            tick={{ fill: '#a1a1aa', fontSize: 12 }}
-                                        />
-                                        <Tooltip content={<CustomTooltip />} />
-                                        <Legend
-                                            wrapperStyle={{ fontSize: 12 }}
-                                            formatter={(value) => (
-                                                <span className="text-zinc-300">{value}</span>
-                                            )}
-                                        />
-                                        <Line
-                                            type="monotone"
-                                            dataKey="most"
-                                            name="Graph I (Most)"
-                                            stroke="#f59e0b"
-                                            strokeWidth={2}
-                                            dot={{ r: 4, fill: '#f59e0b', stroke: '#fbbf24', strokeWidth: 1 }}
-                                            activeDot={{ r: 6 }}
-                                        />
-                                        <Line
-                                            type="monotone"
-                                            dataKey="least"
-                                            name="Graph II (Least)"
-                                            stroke="#a855f7"
-                                            strokeWidth={2}
-                                            dot={{ r: 4, fill: '#a855f7', stroke: '#c084fc', strokeWidth: 1 }}
-                                            activeDot={{ r: 6 }}
-                                        />
-                                        <Line
-                                            type="monotone"
-                                            dataKey="change"
-                                            name="Graph III (Hasil)"
-                                            stroke="#3b82f6"
-                                            strokeWidth={3}
-                                            dot={{ r: 6, fill: '#3b82f6', stroke: '#60a5fa', strokeWidth: 2 }}
-                                            activeDot={{ r: 8, fill: '#60a5fa', stroke: '#ffffff', strokeWidth: 2 }}
-                                        />
-                                    </LineChart>
-                                </ResponsiveContainer>
-                            </div>
-                        </div>
-
-                        {/* Ringkasan Profil Personal — disusun dari jawaban dominan peserta */}
-                        {personalSummary?.paragraphs?.length > 0 && (
-                            <div className="p-5 sm:p-6 rounded-xl bg-gradient-to-r from-blue-950/40 via-indigo-950/30 to-zinc-950/60 border border-blue-500/30 space-y-4 relative overflow-hidden">
-                                <div className="flex items-center gap-2 text-xs font-mono text-blue-400 uppercase tracking-wider">
-                                    <Sparkles className="w-4 h-4" />
-                                    <span>Ringkasan Profil Personal</span>
-                                </div>
-
-                                <h3 className="text-xl sm:text-2xl font-bold text-white">
-                                    {personalSummary.title}
-                                </h3>
-
-                                <div className="space-y-4">
-                                    {personalSummary.paragraphs.map((paragraph, idx) => (
-                                        <p
-                                            key={idx}
-                                            className="text-xs sm:text-sm text-zinc-300 leading-relaxed"
-                                        >
-                                            {paragraph}
-                                        </p>
-                                    ))}
-                                </div>
-
-                                {personalSummary.highlighted_statements?.length > 0 && (
-                                    <div className="pt-4 border-t border-blue-500/20 space-y-2">
-                                        <p className="text-[10px] font-mono text-blue-400 uppercase tracking-widest">
-                                            Karakteristik Utama Yang Anda Pilih
-                                        </p>
-                                        <div className="flex flex-wrap gap-2">
-                                            {personalSummary.highlighted_statements.map((item, idx) => (
-                                                <span
-                                                    key={idx}
-                                                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-zinc-950/60 border border-zinc-700/80 text-xs text-zinc-200"
-                                                >
-                                                    <span className="font-mono font-bold text-blue-400">
-                                                        {item.dimension}
-                                                    </span>
-                                                    <span>{item.statement}</span>
-                                                </span>
-                                            ))}
-                                        </div>
-                                    </div>
-                                )}
-                            </div>
-                        )}
-
-                        {/* Fallback: profil seeder jika ringkasan personal belum tersedia */}
-                        {!personalSummary?.paragraphs?.length && profile && (
-                            <div className="p-5 sm:p-6 rounded-xl bg-gradient-to-r from-blue-950/40 via-indigo-950/30 to-zinc-950/60 border border-blue-500/30 space-y-3 relative overflow-hidden">
-                                <div className="flex items-center gap-2 text-xs font-mono text-blue-400 uppercase tracking-wider">
-                                    <Sparkles className="w-4 h-4" />
-                                    <span>Ringkasan Profil Tipe {discTest?.disc_type}</span>
-                                </div>
-                                <h3 className="text-xl sm:text-2xl font-bold text-white">
-                                    {profile.title}
-                                </h3>
-                                <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed">
-                                    {profile.summary}
-                                </p>
-                            </div>
-                        )}
-
-                        {/* Detailed Metrics Grid (Strength, Weakness, Communication, Leadership, dll) */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                            {profileSections.map((section, idx) => {
-                                const IconComponent = section.icon;
-                                const items = section.items || [];
-
-                                if (items.length === 0) return null;
-
-                                return (
-                                    <div
-                                        key={idx}
-                                        className="p-5 rounded-xl bg-zinc-950/60 border border-zinc-800/80 space-y-3 hover:border-zinc-700/80 transition-all"
-                                    >
-                                        <div className="flex items-center gap-3 pb-3 border-b border-zinc-800/80">
-                                            <div className={`p-2 rounded-lg ${section.bgColor} ${section.borderColor} border ${section.color}`}>
-                                                <IconComponent className="w-4 h-4" />
-                                            </div>
-                                            <h4 className="text-sm font-semibold text-white">
-                                                {section.title}
-                                            </h4>
-                                        </div>
-
-                                        <ul className="space-y-2">
-                                            {items.map((item, itemIdx) => (
-                                                <li
-                                                    key={itemIdx}
-                                                    className="text-xs sm:text-sm text-zinc-300 leading-relaxed flex items-start gap-2.5"
-                                                >
-                                                    <span className="w-1.5 h-1.5 rounded-full bg-blue-400/80 mt-2 shrink-0" />
-                                                    <span>{item}</span>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                );
-                            })}
-                        </div>
-
-                        {/* ========================================================================= */}
-                        {/* LANDSCAPE CARD KHUSUS: REKOMENDASI PEKERJAAN (JOB MATCH)                  */}
-                        {/* ========================================================================= */}
-                        {profile?.job_match && profile.job_match.length > 0 && (
-                            <div className="p-6 rounded-xl bg-gradient-to-r from-cyan-950/40 via-blue-950/30 to-zinc-950/80 border border-cyan-500/30 space-y-4 shadow-lg backdrop-blur-sm relative overflow-hidden">
-                                <div className="flex items-center gap-3 pb-3 border-b border-cyan-500/20">
-                                    <div className="p-2.5 rounded-lg bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">
-                                        <Briefcase className="w-5 h-5" />
-                                    </div>
-                                    <div>
-                                        <h3 className="text-base sm:text-lg font-bold text-white tracking-wide">
-                                            Rekomendasi Pekerjaan (Job Match)
-                                        </h3>
-                                        <p className="text-xs text-zinc-400">
-                                            Peran dan bidang karir yang paling selaras dengan profil kecenderungan kerja Anda
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 pt-1">
-                                    {profile.job_match.map((job, jobIdx) => (
-                                        <div
-                                            key={jobIdx}
-                                            className="p-3.5 rounded-lg bg-zinc-900/80 border border-cyan-500/20 flex items-center gap-3 hover:border-cyan-400/50 hover:bg-cyan-950/20 transition-all group"
-                                        >
-                                            <span className="w-2 h-2 rounded-full bg-cyan-400 group-hover:scale-125 transition-transform shrink-0" />
-                                            <span className="text-xs sm:text-sm font-medium text-zinc-200 group-hover:text-cyan-300 transition-colors">
-                                                {job}
-                                            </span>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        )}
-                    </motion.div>
-                </div>
+                        <span>Lanjutkan Sekarang</span>
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </Link>
+                </motion.div>
             </div>
         </PublicLayout>
     );

@@ -205,32 +205,11 @@ class CompetencyTestController extends Controller
 
     public function result(CompetencyTest $competencyTest): Response
     {
-        $breakdown = $competencyTest->answers()
-            ->join('competency_categories', 'competency_categories.id', '=', 'competency_answers.competency_category_id')
-            ->selectRaw('
-                competency_categories.id as category_id,
-                competency_categories.name as category_name,
-                COUNT(*) as answered_count,
-                AVG(competency_answers.points) as avg_points
-            ')
-            ->groupBy('competency_categories.id', 'competency_categories.name', 'competency_categories.order')
-            ->orderBy('competency_categories.order')
-            ->get()
-            ->map(fn ($row) => [
-                'category_id' => $row->category_id,
-                'category_name' => $row->category_name,
-                'answered_count' => (int) $row->answered_count,
-                'avg_points' => round((float) $row->avg_points, 2),
-                'percentage' => round(((float) $row->avg_points / 5) * 100, 1),
-            ]);
-
         return Inertia::render('Competency/Result', [
             'competencyTest' => [
                 ...$competencyTest->toArray(),
                 'department_label' => $this->departmentLabel($competencyTest->department),
             ],
-            'breakdown' => $breakdown,
-            'overallPercentage' => round(((float) $competencyTest->total_score / 5) * 100, 1),
         ]);
     }
 

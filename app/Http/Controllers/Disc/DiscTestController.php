@@ -8,7 +8,6 @@ use App\Models\DiscGraphConversion;
 use App\Models\DiscProfile;
 use App\Models\DiscQuestion;
 use App\Models\DiscTest;
-use App\Services\DiscSummaryService;
 use App\Services\Scoring\AssessmentScoringService;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -19,7 +18,6 @@ use Inertia\Response;
 class DiscTestController extends Controller
 {
     public function __construct(
-        private DiscSummaryService $discSummaryService,
         private AssessmentScoringService $assessmentScoringService,
     ) {}
 
@@ -448,19 +446,8 @@ class DiscTestController extends Controller
      */
     public function result(DiscTest $discTest)
     {
-        $discTest->load([
-            'profile',
-            'answers.question.interpretations',
-        ]);
-
-        $personalSummary = $this->discSummaryService->generate(
-            $discTest
-        );
-
         return Inertia::render('DISC/Result', [
             'discTest' => $discTest,
-            'profile' => $discTest->profile,
-            'personalSummary' => $personalSummary,
         ]);
     }
 }

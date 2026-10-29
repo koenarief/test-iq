@@ -90,7 +90,13 @@ export default function IstQuestionCard({
                     <p className="text-sm text-zinc-500">Teks soal tidak tersedia.</p>
                 )}
 
-                <IstImageViewer image={displayedQuestionImage} fallbackAlt="Ilustrasi soal" />
+                <IstImageViewer
+                    image={displayedQuestionImage}
+                    fallbackAlt="Ilustrasi soal"
+                    showExpandButton={!usesFixedVisualMasters}
+                    minHeightClassName={usesFixedVisualMasters ? 'min-h-14 sm:min-h-40' : undefined}
+                    maxHeightClassName={usesFixedVisualMasters ? 'max-h-36 sm:max-h-[28rem]' : undefined}
+                />
 
                 {isChoice && (
                     <fieldset>
@@ -171,9 +177,10 @@ export default function IstQuestionCard({
                                                     : isWu
                                                       ? `Kubus acuan ${optionKey}`
                                                       : `Ilustrasi pilihan ${optionKey}`}
-                                                className={usesFixedVisualMasters
-                                                    ? 'mt-2 [&>div]:min-h-24'
-                                                    : 'mt-2'}
+                                                className="mt-2"
+                                                minHeightClassName={usesFixedVisualMasters ? 'min-h-14 sm:min-h-20' : undefined}
+                                                maxHeightClassName={usesFixedVisualMasters ? 'max-h-16 sm:max-h-24' : undefined}
+                                                showExpandButton={!usesFixedVisualMasters}
                                             />
                                         </div>
                                     );

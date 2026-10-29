@@ -2,7 +2,14 @@ import { Dialog, DialogPanel, DialogTitle } from '@headlessui/react';
 import { Expand, ImageOff, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
-export default function IstImageViewer({ image, fallbackAlt = 'Ilustrasi soal', className = '' }) {
+export default function IstImageViewer({
+    image,
+    fallbackAlt = 'Ilustrasi soal',
+    className = '',
+    showExpandButton = true,
+    minHeightClassName = 'min-h-28 sm:min-h-40',
+    maxHeightClassName = 'max-h-72 sm:max-h-[28rem]',
+}) {
     const url = image?.url ?? null;
     const alt = image?.alt?.trim() || fallbackAlt;
     const [isOpen, setIsOpen] = useState(false);
@@ -28,7 +35,7 @@ export default function IstImageViewer({ image, fallbackAlt = 'Ilustrasi soal', 
     return (
         <>
             <figure className={`rounded-xl border border-zinc-800 bg-zinc-950/70 p-2 sm:p-3 ${className}`}>
-                <div className="relative flex min-h-28 items-center justify-center overflow-hidden rounded-lg bg-zinc-950 sm:min-h-40">
+                <div className={`relative flex ${minHeightClassName} items-center justify-center overflow-hidden rounded-lg bg-zinc-950`}>
                     {isLoading && (
                         <div className="absolute inset-0 flex items-center justify-center text-xs text-zinc-500" role="status">
                             Memuat gambar…
@@ -36,7 +43,7 @@ export default function IstImageViewer({ image, fallbackAlt = 'Ilustrasi soal', 
                     )}
 
                     {hasError ? (
-                        <div className="flex min-h-28 flex-col items-center justify-center gap-2 px-4 text-center text-sm text-zinc-500 sm:min-h-40" role="alert">
+                        <div className={`flex ${minHeightClassName} flex-col items-center justify-center gap-2 px-4 text-center text-sm text-zinc-500`} role="alert">
                             <ImageOff className="h-7 w-7 text-zinc-600" aria-hidden="true" />
                             Gambar tidak dapat dimuat.
                         </div>
@@ -47,12 +54,12 @@ export default function IstImageViewer({ image, fallbackAlt = 'Ilustrasi soal', 
                             loading="lazy"
                             onLoad={() => setIsLoading(false)}
                             onError={handleError}
-                            className={`max-h-72 w-full object-contain sm:max-h-[28rem] ${isLoading ? 'opacity-0' : 'opacity-100'}`}
+                            className={`${maxHeightClassName} w-full object-contain ${isLoading ? 'opacity-0' : 'opacity-100'}`}
                         />
                     )}
                 </div>
 
-                {!hasError && (
+                {!hasError && showExpandButton && (
                     <div className="mt-3 flex justify-end">
                         <button
                             type="button"
@@ -71,31 +78,33 @@ export default function IstImageViewer({ image, fallbackAlt = 'Ilustrasi soal', 
                 )}
             </figure>
 
-            <Dialog open={isOpen} onClose={setIsOpen} className="relative z-50">
-                <div className="fixed inset-0 bg-zinc-950/90 backdrop-blur-sm" aria-hidden="true" />
-                <div className="fixed inset-0 overflow-y-auto p-4 sm:p-8">
-                    <div className="flex min-h-full items-center justify-center">
-                        <DialogPanel className="w-full max-w-6xl rounded-2xl border border-zinc-700 bg-zinc-900 p-4 shadow-2xl sm:p-6">
-                            <div className="mb-4 flex items-center justify-between gap-4">
-                                <DialogTitle className="text-sm font-semibold text-white">
-                                    Tampilan gambar diperbesar
-                                </DialogTitle>
-                                <button
-                                    type="button"
-                                    onClick={() => setIsOpen(false)}
-                                    className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-zinc-700 text-zinc-300 hover:bg-zinc-800 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
-                                    aria-label="Tutup tampilan gambar"
-                                >
-                                    <X className="h-5 w-5" aria-hidden="true" />
-                                </button>
-                            </div>
-                            <div className="flex max-h-[78vh] min-h-64 items-center justify-center overflow-auto rounded-xl bg-zinc-950 p-3">
-                                <img src={url} alt={alt} className="max-h-[74vh] max-w-full object-contain" />
-                            </div>
-                        </DialogPanel>
+            {showExpandButton && (
+                <Dialog open={isOpen} onClose={setIsOpen} className="relative z-50">
+                    <div className="fixed inset-0 bg-zinc-950/90 backdrop-blur-sm" aria-hidden="true" />
+                    <div className="fixed inset-0 overflow-y-auto p-4 sm:p-8">
+                        <div className="flex min-h-full items-center justify-center">
+                            <DialogPanel className="w-full max-w-6xl rounded-2xl border border-zinc-700 bg-zinc-900 p-4 shadow-2xl sm:p-6">
+                                <div className="mb-4 flex items-center justify-between gap-4">
+                                    <DialogTitle className="text-sm font-semibold text-white">
+                                        Tampilan gambar diperbesar
+                                    </DialogTitle>
+                                    <button
+                                        type="button"
+                                        onClick={() => setIsOpen(false)}
+                                        className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-zinc-700 text-zinc-300 hover:bg-zinc-800 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
+                                        aria-label="Tutup tampilan gambar"
+                                    >
+                                        <X className="h-5 w-5" aria-hidden="true" />
+                                    </button>
+                                </div>
+                                <div className="flex max-h-[78vh] min-h-64 items-center justify-center overflow-auto rounded-xl bg-zinc-950 p-3">
+                                    <img src={url} alt={alt} className="max-h-[74vh] max-w-full object-contain" />
+                                </div>
+                            </DialogPanel>
+                        </div>
                     </div>
-                </div>
-            </Dialog>
+                </Dialog>
+            )}
         </>
     );
 }
