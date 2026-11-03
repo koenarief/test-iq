@@ -150,9 +150,11 @@ export default function AuthenticatedLayout({ header, children }) {
                                 href="/"
                                 className="flex shrink-0 items-center gap-2.5"
                             >
-                                <span className="grid h-9 w-9 place-items-center rounded-xl bg-zinc-900 text-[14px] font-bold text-white">
-                                    A
-                                </span>
+                                <img
+                                    src="/logo-hr.png"
+                                    alt="Logo"
+                                    className="h-9 w-auto object-contain"
+                                />
                                 <span className="hidden text-[14px] font-extrabold tracking-[-0.02em] text-zinc-900 sm:block">
                                     Admin Panel
                                 </span>

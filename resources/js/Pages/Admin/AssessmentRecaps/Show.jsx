@@ -222,9 +222,6 @@ export default function Show({ assessment }) {
                             <div className="font-semibold text-gray-900">
                                 {assessment.candidate.name}
                             </div>
-                            <div className="text-sm text-gray-500">
-                                {assessment.candidate.email}
-                            </div>
                         </div>
                         <div className="text-sm text-gray-600">
                             Posisi:{' '}

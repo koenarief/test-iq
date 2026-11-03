@@ -123,6 +123,13 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])
         ->name('profile.update');
 
+    Route::post('/merchant/logo', [\App\Http\Controllers\Merchant\LogoController::class, 'update'])
+        ->middleware('merchant')
+        ->name('merchant.logo.update');
+    Route::delete('/merchant/logo', [\App\Http\Controllers\Merchant\LogoController::class, 'destroy'])
+        ->middleware('merchant')
+        ->name('merchant.logo.destroy');
+
     Route::delete('/profile', [ProfileController::class, 'destroy'])
         ->name('profile.destroy');
 

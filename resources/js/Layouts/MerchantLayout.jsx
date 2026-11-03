@@ -6,7 +6,8 @@ import { Link, usePage } from '@inertiajs/react';
 import { useState } from 'react';
 
 export default function MerchantLayout({ header, children }) {
-    const user = usePage().props.auth.user;
+    const { auth, merchantLogoUrl } = usePage().props;
+    const user = auth.user;
 
     const [showingNavigationDropdown, setShowingNavigationDropdown] =
         useState(false);
@@ -19,7 +20,15 @@ export default function MerchantLayout({ header, children }) {
                         <div className="flex">
                             <div className="flex shrink-0 items-center">
                                 <Link href={route('merchant.dashboard')}>
-                                    <ApplicationLogo className="block h-9 w-auto fill-current text-gray-800" />
+                                    {merchantLogoUrl ? (
+                                        <img
+                                            src={merchantLogoUrl}
+                                            alt="Logo merchant"
+                                            className="block h-9 w-auto object-contain"
+                                        />
+                                    ) : (
+                                        <ApplicationLogo className="block h-9 w-auto" />
+                                    )}
                                 </Link>
                             </div>
 
@@ -49,6 +58,16 @@ export default function MerchantLayout({ header, children }) {
                                     )}
                                 >
                                     Hasil DISC
+                                </NavLink>
+                                <NavLink
+                                    href={route(
+                                        'merchant.competency-results.index',
+                                    )}
+                                    active={route().current(
+                                        'merchant.competency-results.*',
+                                    )}
+                                >
+                                    Hasil Kompetensi
                                 </NavLink>
                             </div>
                         </div>
@@ -169,6 +188,14 @@ export default function MerchantLayout({ header, children }) {
                             )}
                         >
                             Hasil DISC
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink
+                            href={route('merchant.competency-results.index')}
+                            active={route().current(
+                                'merchant.competency-results.*',
+                            )}
+                        >
+                            Hasil Kompetensi
                         </ResponsiveNavLink>
                     </div>
 

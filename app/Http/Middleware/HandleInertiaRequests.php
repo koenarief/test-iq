@@ -34,6 +34,9 @@ class HandleInertiaRequests extends Middleware
             'auth' => [
                 'user' => $request->user(),
             ],
+            'merchantLogoUrl' => fn () => $request->user()?->isMerchant()
+                ? $request->user()->merchant?->logo_url
+                : null,
             'flash' => [
                 'success' => $request->session()->get('success'),
             ],
