@@ -3,7 +3,7 @@ import PublicLayout from '@/Layouts/PublicLayout';
 import { motion } from 'motion/react';
 import { User, Calendar, Users, ArrowRight, ShieldCheck, Building2, Briefcase } from 'lucide-react';
 
-export default function Biodata({ merchantName = null, instansiOptions = [], positions = [] }) {
+export default function Biodata({ merchantName = null, quotaFull = false, instansiOptions = [], positions = [] }) {
     const { data, setData, post, processing, errors } = useForm({
         participant_name: '',
         age: '',
@@ -56,6 +56,12 @@ export default function Biodata({ merchantName = null, instansiOptions = [], pos
                                 </span>
                             )}
                         </div>
+
+                        {quotaFull && (
+                            <div className="mb-5 rounded-xl border border-red-500/40 bg-red-500/10 px-4 py-3 text-sm text-red-300">
+                                Kuota peserta trial untuk merchant ini sudah penuh. Silakan hubungi penyelenggara tes.
+                            </div>
+                        )}
 
                         <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
                             <div>
@@ -185,7 +191,7 @@ export default function Biodata({ merchantName = null, instansiOptions = [], pos
                             <div className="pt-2 sm:pt-4">
                                 <button
                                     type="submit"
-                                    disabled={processing}
+                                    disabled={processing || quotaFull}
                                     className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 sm:py-4 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-semibold text-sm shadow-lg shadow-blue-600/25 transition-all duration-300 disabled:opacity-50 group cursor-pointer"
                                 >
                                     <span>{processing ? 'Menyiapkan...' : 'Mulai Rangkaian Tes'}</span>

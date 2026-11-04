@@ -109,6 +109,11 @@ export default function Index({ merchants, filters }) {
                                                     Nonaktif
                                                 </span>
                                             )}
+                                            {merchant.is_trial && (
+                                                <span className="ml-2 rounded-full bg-amber-100 px-2 py-0.5 text-xs text-amber-700">
+                                                    Trial · maks {merchant.max_participants ?? '∞'}
+                                                </span>
+                                            )}
                                         </td>
                                         <td className="px-4 py-3 text-gray-700">
                                             {merchant.ist_tests_count}

@@ -17,6 +17,8 @@ class Merchant extends Model
         'slug',
         'logo_path',
         'is_active',
+        'is_trial',
+        'max_participants',
     ];
 
     protected $appends = ['logo_url'];
@@ -30,6 +32,8 @@ class Merchant extends Model
     {
         return [
             'is_active' => 'boolean',
+            'is_trial' => 'boolean',
+            'max_participants' => 'integer',
         ];
     }
 
@@ -58,6 +62,21 @@ class Merchant extends Model
         }
 
         return $slug;
+    }
+
+    /**
+     * Peserta = kandidat yang memulai rangkaian tes (satu DiscTest per peserta).
+     */
+    public function participantCount(): int
+    {
+        return $this->discTests()->count();
+    }
+
+    public function trialLimitReached(): bool
+    {
+        return $this->is_trial
+            && $this->max_participants !== null
+            && $this->participantCount() >= $this->max_participants;
     }
 
     public function getRouteKeyName(): string

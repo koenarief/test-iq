@@ -45,6 +45,7 @@ class AssessmentSequenceController extends Controller
 
         return Inertia::render('Assessment/Biodata', [
             'merchantName' => $merchant?->name,
+            'quotaFull' => $merchant?->trialLimitReached() ?? false,
             'instansiOptions' => Instansi::query()
                 ->orderBy('nama')
                 ->get(['id', 'nama']),
@@ -65,6 +66,16 @@ class AssessmentSequenceController extends Controller
 
         if ($merchantId !== null && ! Merchant::where('id', $merchantId)->where('is_active', true)->exists()) {
             $merchantId = null;
+        }
+
+        if ($merchantId !== null) {
+            $merchant = Merchant::find($merchantId);
+
+            if ($merchant?->trialLimitReached()) {
+                return back()->withErrors([
+                    'participant_name' => 'Kuota peserta trial untuk merchant ini sudah penuh.',
+                ]);
+            }
         }
 
         $candidate = User::create([
