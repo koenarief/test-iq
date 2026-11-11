@@ -28,7 +28,7 @@ function StartUrlRow({ label, url }) {
     );
 }
 
-export default function Edit({ merchant, startUrl }) {
+export default function Edit({ merchant, instansiOptions = [], startUrl }) {
     return (
         <AuthenticatedLayout
             header={
@@ -44,6 +44,7 @@ export default function Edit({ merchant, startUrl }) {
                     <div className="bg-white p-6 shadow-sm sm:rounded-lg">
                         <MerchantForm
                             merchant={merchant}
+                            instansiOptions={instansiOptions}
                             submitUrl={route(
                                 'admin.merchants.update',
                                 merchant.public_id,

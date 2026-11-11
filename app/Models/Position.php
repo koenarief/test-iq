@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Position extends Model
@@ -11,6 +12,7 @@ class Position extends Model
     protected $fillable = [
         'name',
         'department',
+        'instansi_id',
         'is_active',
     ];
 
@@ -24,6 +26,11 @@ class Position extends Model
     public function scopeActive(Builder $query): Builder
     {
         return $query->where('is_active', true);
+    }
+
+    public function instansi(): BelongsTo
+    {
+        return $this->belongsTo(Instansi::class);
     }
 
     public function competencyCategoryWeights(): HasMany

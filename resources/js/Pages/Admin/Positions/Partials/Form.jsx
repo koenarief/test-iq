@@ -22,6 +22,7 @@ function buildCategoryWeights(categories, existingWeights = []) {
 export default function PositionForm({
     position,
     departments,
+    instansiOptions = [],
     categoriesByDepartment,
     submitUrl,
     method = 'post',
@@ -34,6 +35,7 @@ export default function PositionForm({
     const { data, setData, post, put, processing, errors } = useForm({
         name: position?.name ?? '',
         department: initialDepartment,
+        instansi_id: position?.instansi_id ?? '',
         is_active: position ? Boolean(position.is_active) : true,
         category_weights: buildCategoryWeights(
             initialCategories,
@@ -110,6 +112,24 @@ export default function PositionForm({
                     ))}
                 </select>
                 <InputError message={errors.department} className="mt-2" />
+            </div>
+
+            <div>
+                <InputLabel htmlFor="instansi_id" value="Khusus Instansi (opsional)" />
+                <select
+                    id="instansi_id"
+                    value={data.instansi_id}
+                    onChange={(e) => setData('instansi_id', e.target.value)}
+                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                >
+                    <option value="">Semua instansi</option>
+                    {instansiOptions.map((instansi) => (
+                        <option key={instansi.id} value={instansi.id}>
+                            {instansi.nama}
+                        </option>
+                    ))}
+                </select>
+                <InputError message={errors.instansi_id} className="mt-2" />
             </div>
 
             <div className="rounded-md border border-gray-200 p-4">

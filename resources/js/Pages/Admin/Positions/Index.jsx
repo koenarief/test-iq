@@ -94,6 +94,11 @@ export default function Index({ positions, filters }) {
                                         </td>
                                         <td className="px-4 py-3 text-gray-700">
                                             {position.department}
+                                            {position.instansi && (
+                                                <span className="ml-2 text-xs text-gray-500">
+                                                    ({position.instansi})
+                                                </span>
+                                            )}
                                         </td>
                                         <td className="px-4 py-3">
                                             <span

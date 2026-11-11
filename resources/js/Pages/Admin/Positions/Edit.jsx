@@ -2,7 +2,7 @@ import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head } from '@inertiajs/react';
 import PositionForm from './Partials/Form';
 
-export default function Edit({ position, departments, categoriesByDepartment }) {
+export default function Edit({ position, departments, instansiOptions, categoriesByDepartment }) {
     return (
         <AuthenticatedLayout
             header={
@@ -19,6 +19,7 @@ export default function Edit({ position, departments, categoriesByDepartment }) 
                         <PositionForm
                             position={position}
                             departments={departments}
+                            instansiOptions={instansiOptions}
                             categoriesByDepartment={categoriesByDepartment}
                             submitUrl={route(
                                 'admin.positions.update',

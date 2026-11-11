@@ -47,6 +47,13 @@ return [
             'sheet' => 'Teknisi Jaringan',
             'disc_weights' => ['D' => 25, 'I' => 15, 'S' => 25, 'C' => 35],
         ],
+        // Khusus posisi Admin Toko/Kasir instansi Tabinaco; soalnya ada di
+        // soal-kompetensi-kasir.xlsx (impor dengan --department=admin_toko).
+        'admin_toko' => [
+            'label' => 'Admin Toko / Kasir',
+            'sheet' => 'Ad. Toko Kasir',
+            'disc_weights' => ['D' => 10, 'I' => 20, 'S' => 35, 'C' => 35],
+        ],
     ],
 
     /*

@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Models\DiscTest;
 use App\Models\Ist\IstTest;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -15,6 +16,7 @@ class Merchant extends Model
         'public_id',
         'name',
         'slug',
+        'instansi_id',
         'logo_path',
         'is_active',
         'is_trial',
@@ -26,6 +28,11 @@ class Merchant extends Model
     public function getLogoUrlAttribute(): ?string
     {
         return $this->logo_path ? Storage::disk('public')->url($this->logo_path) : null;
+    }
+
+    public function instansi(): BelongsTo
+    {
+        return $this->belongsTo(Instansi::class);
     }
 
     protected function casts(): array

@@ -13,7 +13,7 @@ use PhpOffice\PhpSpreadsheet\Worksheet\Worksheet;
 
 class ImportCompetencyQuestions extends Command
 {
-    protected $signature = 'competency:import {path? : Lokasi file soal-kompetensi.xlsx} {--fresh : Hapus seluruh kategori/soal/opsi lama tiap divisi sebelum impor, lalu ganti total dengan isi file}';
+    protected $signature = 'competency:import {path? : Lokasi file soal-kompetensi.xlsx} {--department= : Hanya impor satu departemen (key di config/competency.php), departemen lain dilewati} {--fresh : Hapus seluruh kategori/soal/opsi lama tiap divisi sebelum impor, lalu ganti total dengan isi file}';
 
     protected $description = 'Import bank soal Tes Kompetensi (per divisi/subtes) dari file soal-kompetensi.xlsx';
 
@@ -29,6 +29,17 @@ class ImportCompetencyQuestions extends Command
 
         $fresh = (bool) $this->option('fresh');
         $departments = config('competency.departments');
+        $only = $this->option('department');
+
+        if ($only !== null) {
+            if (! isset($departments[$only])) {
+                $this->error("Departemen '{$only}' tidak dikenal.");
+
+                return self::FAILURE;
+            }
+
+            $departments = [$only => $departments[$only]];
+        }
 
         $spreadsheet = IOFactory::load($path);
 

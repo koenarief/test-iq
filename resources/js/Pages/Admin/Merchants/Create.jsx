@@ -2,7 +2,7 @@ import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head } from '@inertiajs/react';
 import MerchantForm from './Partials/Form';
 
-export default function Create() {
+export default function Create({ instansiOptions = [] }) {
     return (
         <AuthenticatedLayout
             header={
@@ -17,6 +17,7 @@ export default function Create() {
                 <div className="mx-auto max-w-2xl sm:px-6 lg:px-8">
                     <div className="bg-white p-6 shadow-sm sm:rounded-lg">
                         <MerchantForm
+                            instansiOptions={instansiOptions}
                             submitUrl={route('admin.merchants.store')}
                             method="post"
                         />

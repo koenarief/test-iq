@@ -2,7 +2,7 @@ import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head } from '@inertiajs/react';
 import PositionForm from './Partials/Form';
 
-export default function Create({ departments, categoriesByDepartment }) {
+export default function Create({ departments, instansiOptions, categoriesByDepartment }) {
     return (
         <AuthenticatedLayout
             header={
@@ -18,6 +18,7 @@ export default function Create({ departments, categoriesByDepartment }) {
                     <div className="bg-white p-6 shadow-sm sm:rounded-lg">
                         <PositionForm
                             departments={departments}
+                            instansiOptions={instansiOptions}
                             categoriesByDepartment={categoriesByDepartment}
                             submitUrl={route('admin.positions.store')}
                             method="post"

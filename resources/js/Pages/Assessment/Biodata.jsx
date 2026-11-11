@@ -3,14 +3,35 @@ import PublicLayout from '@/Layouts/PublicLayout';
 import { motion } from 'motion/react';
 import { User, Calendar, Users, ArrowRight, ShieldCheck, Building2, Briefcase } from 'lucide-react';
 
-export default function Biodata({ merchantName = null, quotaFull = false, instansiOptions = [], positions = [] }) {
+export default function Biodata({ merchantName = null, lockedInstansi = null, quotaFull = false, instansiOptions = [], positions = [] }) {
     const { data, setData, post, processing, errors } = useForm({
         participant_name: '',
         age: '',
         gender: '',
-        instansi_id: '',
+        instansi_id: lockedInstansi ? String(lockedInstansi.id) : '',
         position_id: '',
     });
+
+    // Posisi ber-instansi (mis. Kasir/Admin Toko untuk Tabinaco) hanya tampil bila instansi cocok.
+    const visiblePositions = positions.filter(
+        (position) =>
+            position.instansi_id === null ||
+            String(position.instansi_id) === String(data.instansi_id),
+    );
+
+    const handleInstansiChange = (value) => {
+        const stillValid = positions.some(
+            (position) =>
+                String(position.id) === String(data.position_id) &&
+                (position.instansi_id === null || String(position.instansi_id) === String(value)),
+        );
+
+        setData((prev) => ({
+            ...prev,
+            instansi_id: value,
+            position_id: stillValid ? prev.position_id : '',
+        }));
+    };
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -134,6 +155,21 @@ export default function Biodata({ merchantName = null, quotaFull = false, instan
                                 </div>
                             </div>
 
+                            {lockedInstansi ? (
+                            <div>
+                                <label className="block text-xs font-semibold text-zinc-300 uppercase tracking-wider mb-2">
+                                    Instansi
+                                </label>
+                                <div className="relative flex items-center">
+                                    <div className="absolute left-3.5 pointer-events-none flex items-center justify-center">
+                                        <Building2 className="w-4 h-4 sm:w-5 sm:h-5 text-zinc-400" />
+                                    </div>
+                                    <div className="w-full pl-11 pr-4 py-3 sm:py-3.5 bg-zinc-950/60 border border-zinc-800 rounded-xl text-sm text-zinc-300">
+                                        {lockedInstansi.nama}
+                                    </div>
+                                </div>
+                            </div>
+                            ) : (
                             <div>
                                 <label className="block text-xs font-semibold text-zinc-300 uppercase tracking-wider mb-2">
                                     Instansi <span className="text-red-400">*</span>
@@ -144,7 +180,7 @@ export default function Biodata({ merchantName = null, quotaFull = false, instan
                                     </div>
                                     <select
                                         value={data.instansi_id}
-                                        onChange={(e) => setData('instansi_id', e.target.value)}
+                                        onChange={(e) => handleInstansiChange(e.target.value)}
                                         className={selectClass(Boolean(errors.instansi_id))}
                                     >
                                         <option value="" disabled className="bg-zinc-900 text-zinc-500">
@@ -160,6 +196,7 @@ export default function Biodata({ merchantName = null, quotaFull = false, instan
                                 </div>
                                 {errors.instansi_id && <p className="mt-1.5 text-xs text-red-400">{errors.instansi_id}</p>}
                             </div>
+                            )}
 
                             <div>
                                 <label className="block text-xs font-semibold text-zinc-300 uppercase tracking-wider mb-2">
@@ -177,7 +214,7 @@ export default function Biodata({ merchantName = null, quotaFull = false, instan
                                         <option value="" disabled className="bg-zinc-900 text-zinc-500">
                                             -- Pilih Jabatan/Divisi --
                                         </option>
-                                        {positions.map((position) => (
+                                        {visiblePositions.map((position) => (
                                             <option key={position.id} value={position.id} className="bg-zinc-900 text-white">
                                                 {position.name}
                                             </option>

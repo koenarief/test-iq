@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\CompetencyCategory;
+use App\Models\Instansi;
 use App\Models\Position;
 use Illuminate\Database\Seeder;
 
@@ -41,6 +42,37 @@ class PositionSeeder extends Seeder
             $position->competencyCategoryWeights()->updateOrCreate(
                 ['competency_category_id' => $category->id],
                 ['weight' => $weight],
+            );
+        }
+
+        $this->seedKasirAdminTokoTabinaco();
+    }
+
+    /**
+     * Posisi Kasir/Admin Toko khusus instansi Tabinaco (soal dari
+     * soal-kompetensi-kasir.xlsx, department `admin_toko`).
+     */
+    private function seedKasirAdminTokoTabinaco(): void
+    {
+        $instansi = Instansi::query()->whereRaw('LOWER(nama) = ?', ['tabinaco'])->first();
+
+        if (! $instansi) {
+            return;
+        }
+
+        $position = Position::query()->firstOrCreate(
+            ['name' => 'Kasir/Admin Toko', 'instansi_id' => $instansi->id],
+            ['department' => 'admin_toko', 'is_active' => true],
+        );
+
+        $categories = CompetencyCategory::query()
+            ->where('department', 'admin_toko')
+            ->get();
+
+        foreach ($categories as $category) {
+            $position->competencyCategoryWeights()->updateOrCreate(
+                ['competency_category_id' => $category->id],
+                ['weight' => round(100 / $categories->count(), 2)],
             );
         }
     }

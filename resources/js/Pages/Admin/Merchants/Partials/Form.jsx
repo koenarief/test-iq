@@ -6,9 +6,10 @@ import SecondaryButton from '@/Components/SecondaryButton';
 import TextInput from '@/Components/TextInput';
 import { Link, useForm } from '@inertiajs/react';
 
-export default function MerchantForm({ merchant, submitUrl, method = 'post' }) {
+export default function MerchantForm({ merchant, instansiOptions = [], submitUrl, method = 'post' }) {
     const { data, setData, post, put, processing, errors } = useForm({
         name: merchant?.name ?? '',
+        instansi_id: merchant?.instansi_id ?? '',
         is_active: merchant ? Boolean(merchant.is_active) : true,
         is_trial: merchant ? Boolean(merchant.is_trial) : false,
         max_participants: merchant?.max_participants ?? '',
@@ -36,6 +37,27 @@ export default function MerchantForm({ merchant, submitUrl, method = 'post' }) {
                     required
                 />
                 <InputError message={errors.name} className="mt-2" />
+            </div>
+
+            <div>
+                <InputLabel htmlFor="instansi_id" value="Instansi Terkait (opsional)" />
+                <select
+                    id="instansi_id"
+                    value={data.instansi_id}
+                    onChange={(e) => setData('instansi_id', e.target.value)}
+                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                >
+                    <option value="">Peserta memilih sendiri</option>
+                    {instansiOptions.map((instansi) => (
+                        <option key={instansi.id} value={instansi.id}>
+                            {instansi.nama}
+                        </option>
+                    ))}
+                </select>
+                <p className="mt-1 text-xs text-gray-500">
+                    Bila diisi, peserta dari link merchant ini otomatis memakai instansi tersebut.
+                </p>
+                <InputError message={errors.instansi_id} className="mt-2" />
             </div>
 
             <div className="flex items-center gap-2">

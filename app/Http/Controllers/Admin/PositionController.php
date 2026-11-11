@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\CompetencyCategory;
+use App\Models\Instansi;
 use App\Models\Position;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -21,7 +22,7 @@ class PositionController extends Controller
 
         $positions = Position::query()
             ->withCount('competencyCategoryWeights')
-            ->with('competencyCategoryWeights')
+            ->with(['competencyCategoryWeights', 'instansi:id,nama'])
             ->when($search, fn ($query) => $query->where('name', 'like', '%'.$search.'%'))
             ->orderBy('name')
             ->paginate(20)
@@ -32,6 +33,7 @@ class PositionController extends Controller
                 'id' => $position->id,
                 'name' => $position->name,
                 'department' => $position->department,
+                'instansi' => $position->instansi?->nama,
                 'is_active' => $position->is_active,
                 'total_weight' => $position->totalWeight(),
             ];
@@ -47,6 +49,7 @@ class PositionController extends Controller
     {
         return Inertia::render('Admin/Positions/Create', [
             'departments' => $this->departmentOptions(),
+            'instansiOptions' => Instansi::query()->orderBy('nama')->get(['id', 'nama']),
             'categoriesByDepartment' => $this->categoriesByDepartment(),
         ]);
     }
@@ -59,6 +62,7 @@ class PositionController extends Controller
             $position = Position::create([
                 'name' => $validated['name'],
                 'department' => $validated['department'],
+                'instansi_id' => $validated['instansi_id'] ?? null,
                 'is_active' => $validated['is_active'] ?? true,
             ]);
 
@@ -79,6 +83,7 @@ class PositionController extends Controller
                 'id' => $position->id,
                 'name' => $position->name,
                 'department' => $position->department,
+                'instansi_id' => $position->instansi_id,
                 'is_active' => $position->is_active,
                 'category_weights' => $position->competencyCategoryWeights->map(fn ($weight) => [
                     'competency_category_id' => $weight->competency_category_id,
@@ -86,6 +91,7 @@ class PositionController extends Controller
                 ]),
             ],
             'departments' => $this->departmentOptions(),
+            'instansiOptions' => Instansi::query()->orderBy('nama')->get(['id', 'nama']),
             'categoriesByDepartment' => $this->categoriesByDepartment(),
         ]);
     }
@@ -98,6 +104,7 @@ class PositionController extends Controller
             $position->update([
                 'name' => $validated['name'],
                 'department' => $validated['department'],
+                'instansi_id' => $validated['instansi_id'] ?? null,
                 'is_active' => $validated['is_active'] ?? true,
             ]);
 
@@ -123,6 +130,7 @@ class PositionController extends Controller
         $validated = $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'department' => ['required', Rule::in(array_keys(config('competency.departments')))],
+            'instansi_id' => ['nullable', 'exists:instansi,id'],
             'is_active' => ['boolean'],
             'category_weights' => ['required', 'array', 'min:1'],
             'category_weights.*.competency_category_id' => ['required', 'exists:competency_categories,id'],

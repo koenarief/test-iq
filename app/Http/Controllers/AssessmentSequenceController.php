@@ -45,6 +45,7 @@ class AssessmentSequenceController extends Controller
 
         return Inertia::render('Assessment/Biodata', [
             'merchantName' => $merchant?->name,
+            'lockedInstansi' => $merchant?->instansi?->only(['id', 'nama']),
             'quotaFull' => $merchant?->trialLimitReached() ?? false,
             'instansiOptions' => Instansi::query()
                 ->orderBy('nama')
@@ -52,7 +53,7 @@ class AssessmentSequenceController extends Controller
             'positions' => Position::query()
                 ->active()
                 ->orderBy('name')
-                ->get(['id', 'name', 'department']),
+                ->get(['id', 'name', 'department', 'instansi_id']),
         ]);
     }
 
@@ -68,6 +69,8 @@ class AssessmentSequenceController extends Controller
             $merchantId = null;
         }
 
+        $merchant = null;
+
         if ($merchantId !== null) {
             $merchant = Merchant::find($merchantId);
 
@@ -78,13 +81,24 @@ class AssessmentSequenceController extends Controller
             }
         }
 
+        // Link merchant yang terhubung ke instansi mengunci instansi peserta.
+        $instansiId = (int) ($merchant?->instansi_id ?? $request->instansi_id);
+
+        $position = Position::query()->active()->find($request->position_id);
+
+        if ($position?->instansi_id !== null && $position->instansi_id !== $instansiId) {
+            return back()->withErrors([
+                'position_id' => 'Jabatan/divisi tidak tersedia untuk instansi yang dipilih.',
+            ]);
+        }
+
         $candidate = User::create([
             'name' => $request->participant_name,
             'email' => 'candidate-'.Str::uuid().'@tes-iq.local',
             'password' => Hash::make(Str::random(40)),
             'role' => User::ROLE_CANDIDATE,
             'status' => User::STATUS_AKTIF,
-            'instansi_id' => $request->instansi_id,
+            'instansi_id' => $instansiId,
             'position_id' => $request->position_id,
         ]);
 
