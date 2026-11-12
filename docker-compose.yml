@@ -45,6 +45,16 @@ services:
     networks:
       - tes_iq_network
 
+  adminer:
+    image: adminer
+    container_name: adminer
+    restart: always
+    ports:
+      - "8086:8080"
+    networks:
+      - tes_iq_network
+
+
 networks:
   tes_iq_network:
     driver: bridge
