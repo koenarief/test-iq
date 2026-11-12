@@ -148,8 +148,8 @@ class AssessmentSequenceController extends Controller
             $creation = $this->istParticipantSession->create(
                 [
                     'participant_name' => $candidate->name,
-                    'age' => $biodata['age'] ?? null,
-                    'gender' => $biodata['gender'] ?? null,
+                    'age' => $biodata['age'] ?? $discTest->age,
+                    'gender' => $biodata['gender'] ?? $discTest->gender,
                 ],
                 $discTest->merchant_id,
                 $candidate->id,
@@ -203,11 +203,32 @@ class AssessmentSequenceController extends Controller
             abort(409, 'Jabatan/divisi kandidat tidak valid untuk tes kompetensi.');
         }
 
+        // Hindari duplikasi jika kandidat me-refresh / klik ulang tombol lanjut.
+        $existing = CompetencyTest::query()
+            ->where('user_id', $candidate->id)
+            ->where('status', '!=', 'completed')
+            ->latest('id')
+            ->first();
+
+        if ($existing) {
+            return redirect()->route('competency.instruction', $existing->id);
+        }
+
+        // Biodata di session bisa hilang (session expired / sudah di-forget),
+        // jadi fallback ke data yang tersimpan di tes IST/DISC.
+        $discTest = DiscTest::query()->where('user_id', $candidate->id)->latest('id')->first();
+        $age = $biodata['age'] ?? $istTest->age ?? $discTest?->age;
+        $gender = $biodata['gender'] ?? $istTest->gender ?? $discTest?->gender;
+
+        if ($age === null) {
+            return redirect()->route('assessment.start');
+        }
+
         $competencyTest = CompetencyTest::create([
             'user_id' => $candidate->id,
             'participant_name' => $candidate->name,
-            'age' => $biodata['age'] ?? null,
-            'gender' => $biodata['gender'] ?? null,
+            'age' => $age,
+            'gender' => $gender,
             'department' => $department,
             'status' => 'draft',
             'merchant_id' => $istTest->merchant_id,
