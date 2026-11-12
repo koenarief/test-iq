@@ -1,3 +1,4 @@
+import PrimaryButton from '@/Components/PrimaryButton';
 import SecondaryButton from '@/Components/SecondaryButton';
 import MerchantLayout from '@/Layouts/MerchantLayout';
 import { Head, Link } from '@inertiajs/react';
@@ -18,7 +19,7 @@ function formatDate(value) {
     }).format(date);
 }
 
-export default function Show({ test, breakdown = [] }) {
+export default function Show({ test, breakdown = [], interview = null }) {
     return (
         <MerchantLayout
             header={
@@ -26,11 +27,29 @@ export default function Show({ test, breakdown = [] }) {
                     <h2 className="text-xl font-semibold leading-tight text-gray-800">
                         Hasil Kompetensi — {test.participant_name}
                     </h2>
-                    <Link href={route('merchant.competency-results.index')}>
-                        <SecondaryButton type="button">
-                            Kembali ke Daftar
-                        </SecondaryButton>
-                    </Link>
+                    <div className="flex gap-2">
+                        {interview && test.status === 'completed' && (
+                            <>
+                                <Link href={route('merchant.competency-results.interview-hrd.edit', test.id)}>
+                                    <PrimaryButton type="button">
+                                        {interview.hrd_done ? 'Ubah Interview HRD' : 'Interview HRD'}
+                                    </PrimaryButton>
+                                </Link>
+                                {interview.hrd_done && (
+                                    <Link href={route('merchant.competency-results.interview-user.edit', test.id)}>
+                                        <PrimaryButton type="button">
+                                            {interview.user_done ? 'Ubah Interview User' : 'Interview User'}
+                                        </PrimaryButton>
+                                    </Link>
+                                )}
+                            </>
+                        )}
+                        <Link href={route('merchant.competency-results.index')}>
+                            <SecondaryButton type="button">
+                                Kembali ke Daftar
+                            </SecondaryButton>
+                        </Link>
+                    </div>
                 </div>
             }
         >

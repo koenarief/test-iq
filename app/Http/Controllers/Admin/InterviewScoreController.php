@@ -29,6 +29,11 @@ class InterviewScoreController extends Controller
      */
     public function editHrd(CandidateAssessment $candidateAssessment): Response
     {
+        return $this->renderHrd($candidateAssessment);
+    }
+
+    protected function renderHrd(CandidateAssessment $candidateAssessment, array $extra = []): Response
+    {
         $candidateAssessment->load('candidate:id,name,email');
 
         return Inertia::render('Admin/InterviewScores/HrdEdit', [
@@ -44,10 +49,20 @@ class InterviewScoreController extends Controller
                 'interview_hrd_notes' => $candidateAssessment->interview_hrd_notes,
             ],
             'weights' => InterviewHrdScoringService::WEIGHTS,
+            ...$extra,
         ]);
     }
 
     public function updateHrd(Request $request, CandidateAssessment $candidateAssessment): RedirectResponse
+    {
+        $this->saveHrd($request, $candidateAssessment);
+
+        return redirect()
+            ->route('admin.assessment-recaps.show', $candidateAssessment)
+            ->with('success', 'Skor Interview HRD berhasil disimpan.');
+    }
+
+    protected function saveHrd(Request $request, CandidateAssessment $candidateAssessment): void
     {
         $validated = $request->validate([
             'interview_hrd_attitude_ethics' => ['required', 'numeric', 'min:1', 'max:100'],
@@ -95,10 +110,6 @@ class InterviewScoreController extends Controller
 
             $this->assessmentScoringService->recomputeFinalScore($candidateAssessment);
         });
-
-        return redirect()
-            ->route('admin.assessment-recaps.show', $candidateAssessment)
-            ->with('success', 'Skor Interview HRD berhasil disimpan.');
     }
 
     /**
@@ -107,6 +118,11 @@ class InterviewScoreController extends Controller
      * not a score threshold, so it never blocks on any score value.
      */
     public function editUser(CandidateAssessment $candidateAssessment): Response
+    {
+        return $this->renderUser($candidateAssessment);
+    }
+
+    protected function renderUser(CandidateAssessment $candidateAssessment, array $extra = []): Response
     {
         abort_unless(
             $candidateAssessment->interview_hrd_scored_at !== null,
@@ -129,10 +145,20 @@ class InterviewScoreController extends Controller
                 'interview_user_notes' => $candidateAssessment->interview_user_notes,
             ],
             'weights' => InterviewUserScoringService::WEIGHTS,
+            ...$extra,
         ]);
     }
 
     public function updateUser(Request $request, CandidateAssessment $candidateAssessment): RedirectResponse
+    {
+        $this->saveUser($request, $candidateAssessment);
+
+        return redirect()
+            ->route('admin.assessment-recaps.show', $candidateAssessment)
+            ->with('success', 'Skor Interview User berhasil disimpan.');
+    }
+
+    protected function saveUser(Request $request, CandidateAssessment $candidateAssessment): void
     {
         abort_unless(
             $candidateAssessment->interview_hrd_scored_at !== null,
@@ -183,9 +209,5 @@ class InterviewScoreController extends Controller
 
             $this->assessmentScoringService->recomputeFinalScore($candidateAssessment);
         });
-
-        return redirect()
-            ->route('admin.assessment-recaps.show', $candidateAssessment)
-            ->with('success', 'Skor Interview User berhasil disimpan.');
     }
 }

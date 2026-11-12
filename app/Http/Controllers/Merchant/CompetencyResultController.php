@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Merchant;
 
 use App\Http\Controllers\Controller;
+use App\Models\CandidateAssessment;
 use App\Models\CompetencyTest;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -65,7 +66,13 @@ class CompetencyResultController extends Controller
                 'percentage' => round(((float) $row->avg_points / 5) * 100, 1),
             ]);
 
+        $assessment = CandidateAssessment::where('competency_test_id', $competencyTest->id)->first();
+
         return Inertia::render('Merchant/CompetencyResults/Show', [
+            'interview' => $assessment ? [
+                'hrd_done' => $assessment->interview_hrd_scored_at !== null,
+                'user_done' => $assessment->interview_user_scored_at !== null,
+            ] : null,
             'test' => [
                 ...$competencyTest->only([
                     'id', 'participant_name', 'age', 'gender', 'department',

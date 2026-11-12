@@ -1,4 +1,5 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
+import MerchantLayout from '@/Layouts/MerchantLayout';
 import { Head } from '@inertiajs/react';
 import AspectForm from './Partials/AspectForm';
 
@@ -11,9 +12,11 @@ const ASPECTS = [
     { key: 'interview_user_communication_teamwork', weightKey: 'communication_teamwork', label: 'Komunikasi dan Kerja Sama' },
 ];
 
-export default function UserEdit({ candidateAssessment, weights }) {
+export default function UserEdit({ candidateAssessment, weights, urls, layout }) {
+    const Layout = layout === 'merchant' ? MerchantLayout : AuthenticatedLayout;
+
     return (
-        <AuthenticatedLayout
+        <Layout
             header={
                 <h2 className="text-xl font-semibold leading-tight text-gray-800">
                     Interview User
@@ -30,17 +33,23 @@ export default function UserEdit({ candidateAssessment, weights }) {
                         notesKey="interview_user_notes"
                         candidateAssessment={candidateAssessment}
                         weights={weights}
-                        updateRoute={route(
-                            'admin.candidate-assessments.interview-user.update',
-                            candidateAssessment.id,
-                        )}
-                        cancelRoute={route(
-                            'admin.assessment-recaps.show',
-                            candidateAssessment.id,
-                        )}
+                        updateRoute={
+                            urls?.update ??
+                            route(
+                                'admin.candidate-assessments.interview-user.update',
+                                candidateAssessment.id,
+                            )
+                        }
+                        cancelRoute={
+                            urls?.cancel ??
+                            route(
+                                'admin.assessment-recaps.show',
+                                candidateAssessment.id,
+                            )
+                        }
                     />
                 </div>
             </div>
-        </AuthenticatedLayout>
+        </Layout>
     );
 }

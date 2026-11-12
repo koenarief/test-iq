@@ -18,6 +18,7 @@ use App\Http\Controllers\Merchant\DashboardController as MerchantDashboardContro
 use App\Http\Controllers\Merchant\IstResultController as MerchantIstResultController;
 use App\Http\Controllers\Merchant\DiscResultController as MerchantDiscResultController;
 use App\Http\Controllers\Merchant\CompetencyResultController as MerchantCompetencyResultController;
+use App\Http\Controllers\Merchant\InterviewScoreController as MerchantInterviewScoreController;
 use App\Http\Controllers\Candidate\CandidateDashboardController;
 use App\Http\Controllers\Admin\PositionController;
 use App\Http\Controllers\Admin\InterviewScoreController;
@@ -236,6 +237,15 @@ Route::middleware('auth')->group(function () {
                 ->name('competency-results.index');
             Route::get('competency-results/{competencyTest}', [MerchantCompetencyResultController::class, 'show'])
                 ->name('competency-results.show');
+
+            Route::get('competency-results/{competencyTest}/interview-hrd', [MerchantInterviewScoreController::class, 'editHrdFor'])
+                ->name('competency-results.interview-hrd.edit');
+            Route::put('competency-results/{competencyTest}/interview-hrd', [MerchantInterviewScoreController::class, 'updateHrdFor'])
+                ->name('competency-results.interview-hrd.update');
+            Route::get('competency-results/{competencyTest}/interview-user', [MerchantInterviewScoreController::class, 'editUserFor'])
+                ->name('competency-results.interview-user.edit');
+            Route::put('competency-results/{competencyTest}/interview-user', [MerchantInterviewScoreController::class, 'updateUserFor'])
+                ->name('competency-results.interview-user.update');
         });
 });
 
